@@ -10,7 +10,7 @@ pub struct Root {
     pub assist_units: Vec<Value>,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Server {
     pub address: String,
     pub port: u16,
@@ -48,4 +48,13 @@ pub struct CharConfig {
     pub skill_level: u8,
     pub level: u16,
     pub evolve_phase: u8,
+}
+
+impl Default for Server {
+    fn default() -> Self {
+        Self {
+            address: String::from("127.0.0.1"),
+            port: 8443,
+        }
+    }
 }
