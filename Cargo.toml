@@ -1,7 +1,10 @@
 [package]
 name = "doctorate_rs"
+readme = "README.md"
 version = "0.1.0"
 edition = "2021"
+license = "LICENSE"
+publish = false
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
