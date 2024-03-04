@@ -46,8 +46,8 @@ pub struct CharConfig {
     pub favor_point: u32,
     pub potential_rank: u8,
     pub skill_level: u8,
-    pub level: u16,
-    pub evolve_phase: u8,
+    pub level: i16,
+    pub evolve_phase: i8,
 }
 
 impl Default for Server {

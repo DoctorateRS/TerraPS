@@ -19,7 +19,12 @@
         "secretary_skin": ""
     },
     "char_config": {
-
+        "favor_point": 25570,
+        "potential_rank": 5,
+        "skill_level": 7,
+        "level": -1,
+        "evolve_phase": -1,
+        "skillsSpecializeLevel": 3
     },
     "assist_units": [
 
