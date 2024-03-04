@@ -48,6 +48,7 @@ pub struct CharConfig {
     pub skill_level: u8,
     pub level: i16,
     pub evolve_phase: i8,
+    pub skills_specialize_level: u8,
 }
 
 impl Default for Server {

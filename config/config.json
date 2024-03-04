@@ -24,7 +24,7 @@
         "skill_level": 7,
         "level": -1,
         "evolve_phase": -1,
-        "skillsSpecializeLevel": 3
+        "skills_specialize_level": 3
     },
     "assist_units": [
 
