@@ -1,0 +1,27 @@
+{
+    "server": {
+        "address": "127.0.0.1",
+        "port": 8443
+    },
+    "version": {
+        "android": {
+            "res_version": "24-02-26-08-28-19-0f351f",
+            "client_version": "2.2.01"
+        }
+    },
+    "user_config": {
+        "restore": {
+            "integrated_strategies": false,
+            "squad_and_favs": false,
+            "ui": false
+        },
+        "secretary": "",
+        "secretary_skin": ""
+    },
+    "char_config": {
+
+    },
+    "assist_units": [
+
+    ]
+}
