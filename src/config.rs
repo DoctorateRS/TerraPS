@@ -59,3 +59,15 @@ impl Default for Server {
         }
     }
 }
+
+impl Root {
+    pub fn get_char_config(self) -> CharConfig {
+        self.char_config
+    }
+    pub fn get_user_config(self) -> UserConfig {
+        self.user_config
+    }
+    pub fn get_server_config(self) -> Server {
+        self.server
+    }
+}
