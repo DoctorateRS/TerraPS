@@ -1,0 +1,35 @@
+name: Update Data
+
+on:
+  schedule:
+    - cron: '30 15,3 */7 * *'
+  workflow_dispatch:
+  
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install requests
+      - run: python update_config.py
+      - run: python update_game.py
+      - run: rm -rf data/excel/
+      - run: mkdir -p tmp/
+      - uses: actions/checkout@v3
+        with:
+          repository: Kengxxiao/ArknightsGameData
+          path: tmp/
+          sparse-checkout: zh_CN/gamedata/excel/
+      - run: mv tmp/zh_CN/gamedata/excel/ data/
+      - run: rm -rf tmp/
+      - run: python update_activity.py
+      - run: git config --global user.name 'github-actions[bot]'
+      - run: git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - run: git add . && git commit -m 'Automatic Update' && git push origin main || true
