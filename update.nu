@@ -26,9 +26,6 @@ rm -r tmp/
 echo "Updating activities..."
 python3 update_activity.py
 
-echo "Generating custom banner..."
-python3 generate_gacha.py
-
 git add -A --sparse .
 git commit -m "Data Update"
 git push origin main
