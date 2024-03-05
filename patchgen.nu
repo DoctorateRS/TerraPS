@@ -1,0 +1,1 @@
+git format-patch --minimal 1dc6d8378e6a3800078954cd55c7903c6325e420..MAIN -o patches/
