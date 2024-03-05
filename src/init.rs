@@ -17,4 +17,16 @@ pub fn dir_init() {
     if !Path::new("./data/crisisV2/").exists() {
         DirBuilder::new().recursive(true).create("./data/crisisV2/").expect("Failed to create crisisV2 directory");
     }
+    if !Path::new("./data/excel/").exists() {
+        DirBuilder::new().recursive(true).create("./data/excel/").expect("Failed to create excel directory");
+    }
+    if !Path::new("./data/rlv2/").exists() {
+        DirBuilder::new().recursive(true).create("./data/excel/").expect("Failed to create rlv2 directory");
+    }
+    if !Path::new("./data/tower/").exists() {
+        DirBuilder::new().recursive(true).create("./data/tower/").expect("Failed to create tower directory");
+    }
+    if !Path::new("./data/user/").exists() {
+        DirBuilder::new().recursive(true).create("./data/user/").expect("Failed to create raid directory");
+    }
 }
