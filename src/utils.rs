@@ -16,4 +16,6 @@ pub fn write_json(path: &str, value: Value) -> Result<()> {
     to_writer_pretty(file, &value)
 }
 
-pub fn decrypt_battle_data() {}
+pub fn decrypt_battle_data() {
+    const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
+}
