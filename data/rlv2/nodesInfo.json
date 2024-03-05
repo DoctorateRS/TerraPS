@@ -1,0 +1,8 @@
+{
+    "BattleZones": {
+        "1": {
+            "Normal": ["ro1_n_1_1", "ro1_n_1_2", "ro1_n_1_3", "ro1_n_1_4"],
+            "Emergency": ["ro1_e_1_1", "ro1_e_1_2", "ro1_e_1_3", "ro1_e_1_4"]
+        }
+    }
+}

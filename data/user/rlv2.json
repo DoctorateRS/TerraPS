@@ -1,0 +1,395 @@
+{
+    "player": {
+        "state": "WAIT_MOVE",
+        "property": {
+            "exp": 0,
+            "level": 10,
+            "maxLevel": 10,
+            "hp": {
+                "current": 10000,
+                "max": 10000
+            },
+            "gold": 450,
+            "shield": 0,
+            "capacity": 13,
+            "population": {
+                "cost": 0,
+                "max": 6
+            },
+            "conPerfectBattle": 0
+        },
+        "cursor": {
+            "zone": 2,
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "trace": [
+            {
+                "zone": 1,
+                "position": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            {
+                "zone": 1,
+                "position": {
+                    "x": 9,
+                    "y": 0
+                }
+            },
+            {
+                "zone": 2,
+                "position": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        ],
+        "pending": [],
+        "status": {
+            "bankPut": 0
+        },
+        "toEnding": "ro_ending_1",
+        "chgEnding": false
+    },
+    "record": {
+        "brief": null
+    },
+    "map": {
+        "zones": {}
+    },
+    "troop": {
+        "chars": {},
+        "expedition": [],
+        "expeditionReturn": null,
+        "hasExpeditionReturn": false
+    },
+    "inventory": {
+        "relic": {
+            "r_0": {
+                "index": "r_0",
+                "id": "rogue_1_band_1",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_1": {
+                "index": "r_1",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_2": {
+                "index": "r_2",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_3": {
+                "index": "r_3",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_4": {
+                "index": "r_4",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_5": {
+                "index": "r_5",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_6": {
+                "index": "r_6",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_7": {
+                "index": "r_7",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_8": {
+                "index": "r_8",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_9": {
+                "index": "r_9",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_10": {
+                "index": "r_10",
+                "id": "rogue_1_relic_a28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_11": {
+                "index": "r_11",
+                "id": "rogue_1_relic_q28",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_12": {
+                "index": "r_12",
+                "id": "rogue_1_relic_p41",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_13": {
+                "index": "r_13",
+                "id": "rogue_1_relic_a48",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_14": {
+                "index": "r_14",
+                "id": "rogue_1_relic_a48",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_15": {
+                "index": "r_15",
+                "id": "rogue_1_relic_a48",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_16": {
+                "index": "r_16",
+                "id": "rogue_1_relic_q13",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_17": {
+                "index": "r_17",
+                "id": "rogue_1_relic_q13",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_18": {
+                "index": "r_18",
+                "id": "rogue_1_relic_a07",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_19": {
+                "index": "r_19",
+                "id": "rogue_1_relic_m09",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_20": {
+                "index": "r_20",
+                "id": "rogue_1_relic_m08",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_21": {
+                "index": "r_21",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_22": {
+                "index": "r_22",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_23": {
+                "index": "r_23",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_24": {
+                "index": "r_24",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_25": {
+                "index": "r_25",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_26": {
+                "index": "r_26",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_27": {
+                "index": "r_27",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_28": {
+                "index": "r_28",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_29": {
+                "index": "r_29",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_30": {
+                "index": "r_30",
+                "id": "rogue_1_relic_a21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_31": {
+                "index": "r_31",
+                "id": "rogue_1_relic_p13",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_32": {
+                "index": "r_32",
+                "id": "rogue_1_relic_p14",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_33": {
+                "index": "r_33",
+                "id": "rogue_1_relic_n21",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_34": {
+                "index": "r_34",
+                "id": "rogue_1_relic_p12",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_35": {
+                "index": "r_35",
+                "id": "rogue_1_relic_a20",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_36": {
+                "index": "r_36",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_37": {
+                "index": "r_37",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_38": {
+                "index": "r_38",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_39": {
+                "index": "r_39",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_40": {
+                "index": "r_40",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_41": {
+                "index": "r_41",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_42": {
+                "index": "r_42",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_43": {
+                "index": "r_43",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_44": {
+                "index": "r_44",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_45": {
+                "index": "r_45",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_46": {
+                "index": "r_46",
+                "id": "rogue_1_relic_a31",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_47": {
+                "index": "r_47",
+                "id": "rogue_1_relic_a15",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_48": {
+                "index": "r_48",
+                "id": "rogue_1_relic_p15",
+                "count": 1,
+                "ts": 1695000000
+            },
+            "r_49": {
+                "index": "r_49",
+                "id": "rogue_1_relic_q37",
+                "count": 1,
+                "ts": 1695000000
+            }
+        },
+        "recruit": {},
+        "trap": null,
+        "consumable": {},
+        "exploreTool": {}
+    },
+    "game": {
+        "mode": "HARD",
+        "predefined": null,
+        "theme": "rogue_1",
+        "outer": {
+            "support": false
+        },
+        "start": 1695000000,
+        "modeGrade": 0,
+        "equivalentGrade": 0
+    },
+    "buff": {
+        "tmpHP": 0,
+        "capsule": null,
+        "squadBuff": []
+    },
+    "module": {}
+}

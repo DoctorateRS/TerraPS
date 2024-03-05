@@ -1,0 +1,36 @@
+{
+    "choice_startbuff_1": {
+        "relic": false,
+        "items": [{
+            "id": "rogue_1_hp",
+            "count": 3
+        }]
+    },
+    "choice_startbuff_2": {
+        "relic": false,
+        "items": [{
+            "id": "rogue_1_population",
+            "count": 2
+        }]
+    },
+    "choice_startbuff_3": {
+        "relic": false,
+        "items": [{
+            "id": "rogue_1_gold",
+            "count": 5
+        }]
+    },
+    "choice_startbuff_4": {
+
+    },
+    "choice_startbuff_5": {
+
+    },
+    "choice_startbuff_6": {
+        "relic": true,
+        "items": [{
+            "id": "rogue_1_relic_r01",
+            "count": 1
+        }]
+    }
+}

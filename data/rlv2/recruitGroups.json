@@ -1,0 +1,41 @@
+{
+    "RecruitSet" : {
+        "recruit_group_1": [
+            "rogue_1_recruit_ticket_pioneer",
+            "rogue_1_recruit_ticket_sniper",
+            "rogue_1_recruit_ticket_special"
+        ],
+        "recruit_group_2": [
+            "rogue_1_recruit_ticket_caster",
+            "rogue_1_recruit_ticket_caster",
+            "rogue_1_recruit_ticket_caster"
+        ],
+        "recruit_group_3": [
+            "rogue_1_recruit_ticket_warrior",
+            "rogue_1_recruit_ticket_support",
+            "rogue_1_recruit_ticket_medic"
+        ],
+        "recruit_group_random": {
+            "special": [
+                "rogue_1_recruit_ticket_pioneer_sp",
+                "rogue_1_recruit_ticket_warrior_sp",
+                "rogue_1_recruit_ticket_tank_sp",
+                "rogue_1_recruit_ticket_sniper_sp",
+                "rogue_1_recruit_ticket_caster_sp",
+                "rogue_1_recruit_ticket_support_sp",
+                "rogue_1_recruit_ticket_medic_sp",
+                "rogue_1_recruit_ticket_special_sp"
+            ],
+            "normal": [
+                "rogue_1_recruit_ticket_pioneer",
+                "rogue_1_recruit_ticket_warrior",
+                "rogue_1_recruit_ticket_tank",
+                "rogue_1_recruit_ticket_sniper",
+                "rogue_1_recruit_ticket_caster",
+                "rogue_1_recruit_ticket_support",
+                "rogue_1_recruit_ticket_medic",
+                "rogue_1_recruit_ticket_special"
+            ]
+        }
+    }
+}
