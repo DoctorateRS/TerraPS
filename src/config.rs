@@ -1,80 +1,9 @@
-use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use serde_json::{from_reader, Result, Value};
+use std::{fs::File, io::BufReader};
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Root {
-    pub server: Server,
-    pub version: Version,
-    pub user_config: UserConfig,
-    pub char_config: CharConfig,
-    pub assist_units: Vec<Value>,
-}
+pub fn load_config() -> Result<Value> {
+    let config_reader = BufReader::new(File::open("config/config.json").unwrap());
+    let config: Value = from_reader(config_reader).expect("Cannot parse JSON file.");
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Server {
-    pub address: String,
-    pub port: u16,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Version {
-    pub android: Android,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Android {
-    pub res_version: String,
-    pub client_version: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct UserConfig {
-    pub restore: Restore,
-    pub secretary: String,
-    pub secretary_skin: String,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct Restore {
-    pub integrated_strategies: bool,
-    pub squad_and_favs: bool,
-    pub ui: bool,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub struct CharConfig {
-    pub favor_point: u32,
-    pub potential_rank: u8,
-    pub skill_level: u8,
-    pub level: i16,
-    pub evolve_phase: i8,
-    pub skills_specialize_level: u8,
-}
-
-impl Default for Server {
-    fn default() -> Self {
-        Self {
-            address: String::from("127.0.0.1"),
-            port: 8443,
-        }
-    }
-}
-
-impl Root {
-    pub fn get_char_config(self) -> CharConfig {
-        self.char_config
-    }
-    pub fn get_user_config(self) -> UserConfig {
-        self.user_config
-    }
-    pub fn get_server_config(self) -> Server {
-        self.server
-    }
-}
-
-pub fn load_config() -> Root {
-    serde_json::from_reader(std::io::BufReader::new(
-        std::fs::File::open("config/config.json").expect("Cannot read config file."),
-    ))
-    .unwrap()
+    Ok(config)
 }
