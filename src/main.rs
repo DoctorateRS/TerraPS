@@ -13,6 +13,4 @@ async fn main() {
         Err(e) => panic!("Cannot load config: {}", e),
     };
     println!("Config: {}", config);
-
-    let x = [("method", "GET"), ("path", "/")];
 }
