@@ -1,9 +1,10 @@
-use serde_json::{from_reader, Result, Value};
-use std::{fs::File, io::BufReader};
+use serde_json::Value;
 
-pub fn load_config() -> Result<Value> {
-    let config_reader = BufReader::new(File::open("config/config.json").unwrap());
-    let config: Value = from_reader(config_reader).expect("Cannot parse JSON file.");
+use crate::json::read_json;
 
-    Ok(config)
+pub fn load_config() -> Value {
+    match read_json("config/config.json") {
+        Ok(config) => config,
+        Err(e) => panic!("Cannot load config: {}", e),
+    }
 }
