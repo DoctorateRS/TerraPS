@@ -1,6 +1,5 @@
 mod app;
 mod config;
-mod data;
 mod routing;
 
 use config::load_config;
