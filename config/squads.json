@@ -1,0 +1,266 @@
+{
+    "0": {
+        "squadId": "0",
+        "name": "Primary Squad",
+        "slots": [
+            {
+                "charId": "char_4087_ines",
+                "skillIndex": 1,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_222_bpipe",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_003_bpipe"
+            },
+            {
+                "charId": "char_1029_yato2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_yato2"
+            },
+            {
+                "charId": "char_1028_texas2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_texas2"
+            },
+            {
+                "charId": "char_1014_nearl2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_nearl2"
+            },
+            {
+                "charId": "char_377_gdglow",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_2023_ling",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_ling"
+            },
+            {
+                "charId": "char_1012_skadi2",
+                "skillIndex": 1,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_2012_typhon",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_typhon"
+            },
+            {
+                "charId": "char_1016_agoat2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_151_myrtle",
+                "skillIndex": 0,
+                "currentEquip": "uniequip_002_myrtle"
+            },
+            {
+                "charId": "char_497_ctable",
+                "skillIndex": 1,
+                "currentEquip": null
+            }
+        ]
+    },
+    "1": {
+        "squadId": "1",
+        "name": "Squad 2",
+        "slots": [
+            {
+                "charId": "char_479_sleach",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_sleach"
+            },
+            {
+                "charId": "char_293_thorns",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_4064_mlynar",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_264_f12yin",
+                "skillIndex": 1,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_350_surtr",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1013_chen2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_003_kalts",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_003_kalts"
+            },
+            {
+                "charId": "char_179_cgbird",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_cgbird"
+            },
+            {
+                "charId": "char_358_lisa",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_lisa"
+            },
+            {
+                "charId": "char_1028_texas2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_texas2"
+            },
+            {
+                "charId": "char_311_mudrok",
+                "skillIndex": 1,
+                "currentEquip": "uniequip_002_mudrok"
+            },
+            {
+                "charId": "char_202_demkni",
+                "skillIndex": 0,
+                "currentEquip": "uniequip_003_demkni"
+            }
+        ]
+    },
+    "2": {
+        "squadId": "2",
+        "name": "Squad 3",
+        "slots": [
+            {
+                "charId": "char_479_sleach",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_sleach"
+            },
+            {
+                "charId": "char_293_thorns",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_4064_mlynar",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_264_f12yin",
+                "skillIndex": 1,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_350_surtr",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1013_chen2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_003_kalts",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_003_kalts"
+            },
+            {
+                "charId": "char_179_cgbird",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_cgbird"
+            },
+            {
+                "charId": "char_1012_skadi2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1028_texas2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_texas2"
+            },
+            {
+                "charId": "char_4055_bgsnow",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_bgsnow"
+            },
+            {
+                "charId": "char_2012_typhon",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_typhon"
+            }
+        ]
+    },
+    "3": {
+        "squadId": "3",
+        "name": "Squad 4",
+        "slots": [
+            {
+                "charId": "char_479_sleach",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_sleach"
+            },
+            {
+                "charId": "char_293_thorns",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_4064_mlynar",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_264_f12yin",
+                "skillIndex": 1,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_350_surtr",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1013_chen2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_003_kalts",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_003_kalts"
+            },
+            {
+                "charId": "char_179_cgbird",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_cgbird"
+            },
+            {
+                "charId": "char_1012_skadi2",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1028_texas2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_texas2"
+            },
+            {
+                "charId": "char_180_amgoat",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_amgoat"
+            },
+            {
+                "charId": "char_134_ifrit",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_ifrit"
+            }
+        ]
+    }
+}
