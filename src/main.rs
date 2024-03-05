@@ -1,6 +1,6 @@
 mod config;
-mod constants;
 mod init;
+mod path;
 mod routing;
 mod user;
 mod utils;
