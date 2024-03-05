@@ -1,14 +1,26 @@
-use serde_json::Value;
-
 use crate::{
     datapath::CONFIG_JSON_PATH,
     utils::{read_json, update_data},
 };
+use axum::Json;
+use rand::seq::SliceRandom;
+use serde_json::{json, Value};
+
+fn random_hash() -> String {
+    let mut pool = "abcdef".chars().collect::<Vec<char>>();
+    let mut rng = rand::thread_rng();
+    pool.shuffle(&mut rng);
+    pool.iter().collect::<String>()
+}
+
+pub async fn prod_refresh_config() {
+    // data = {"resVersion": None}
+    // return data, 200 <- todo: figure out what the fuck is this
+}
 
 pub async fn prod_network_config() {
     let server_config = read_json(CONFIG_JSON_PATH).unwrap();
-    let mode = server_config["mode"].as_str().unwrap();
-    let server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]);
+    let server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
 }
 
 pub async fn prod_remote_config() -> Value {
