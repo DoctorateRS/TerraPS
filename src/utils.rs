@@ -1,9 +1,9 @@
 use reqwest::get;
 use serde::Serialize;
-use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Result, Serializer, Value};
+use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Result as SerdeJsonResult, Serializer, Value};
 use std::{fs::File, io::BufReader};
 
-pub async fn update_data(url: &str) {
+pub async fn update_data(url: &str) -> Value {
     const BASE_URL_LIST: [(&str, &str); 2] = [
         ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data"),
         // ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/en_US/gamedata", "./data"),
@@ -17,16 +17,18 @@ pub async fn update_data(url: &str) {
     };
 
     if url.contains("Android/version") {
-        let data = get(url).await.text().await;
+        get(url).await.unwrap().json::<Value>().await.unwrap()
+    } else {
+        read_json(local_path).unwrap()
     }
 }
 
-pub fn read_json(path: &str) -> Result<Value> {
+pub fn read_json(path: &str) -> SerdeJsonResult<Value> {
     let json_reader = BufReader::new(File::open(path).unwrap());
     from_reader(json_reader)
 }
 
-pub fn write_json(path: &str, value: Value) -> Result<()> {
+pub fn write_json(path: &str, value: Value) -> SerdeJsonResult<()> {
     let file = File::create(path).unwrap();
     let fmt = PrettyFormatter::with_indent(b"   ");
     let mut buf = Vec::new();

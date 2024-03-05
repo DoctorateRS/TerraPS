@@ -1,3 +1,4 @@
+mod config;
 mod datapath;
 mod init;
 mod routing;
