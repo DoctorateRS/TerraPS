@@ -71,3 +71,10 @@ impl Root {
         self.server
     }
 }
+
+pub fn load_config() -> Root {
+    serde_json::from_reader(std::io::BufReader::new(
+        std::fs::File::open("config/config.json").expect("Cannot read config file."),
+    ))
+    .unwrap()
+}
