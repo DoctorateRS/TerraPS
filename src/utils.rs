@@ -15,3 +15,5 @@ pub fn write_json(path: &str, value: Value) -> Result<()> {
     value.serialize(&mut ser).unwrap();
     to_writer_pretty(file, &value)
 }
+
+pub fn decrypt_battle_data() {}
