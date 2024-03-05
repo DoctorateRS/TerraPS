@@ -1,6 +1,11 @@
+use reqwest::get;
 use serde::Serialize;
 use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Result, Serializer, Value};
-use std::{fs::File, io::BufReader};
+use std::{
+    fs::{DirBuilder, File},
+    io::BufReader,
+    path::Path,
+};
 
 pub fn update_data(url: &str) {
     const BASE_URL_LIST: [(&str, &str); 2] = [
@@ -9,6 +14,13 @@ pub fn update_data(url: &str) {
         ("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android", "./data/announce"),
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
+
+    let local_path: &str = match BASE_URL_LIST.iter().find(|(base_url, _)| url.contains(base_url)) {
+        Some((_, path)) => path,
+        None => url,
+    };
+
+    if url.contains("Android/version") {}
 }
 
 pub fn read_json(path: &str) -> Result<Value> {
