@@ -1,13 +1,9 @@
 use reqwest::get;
 use serde::Serialize;
 use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Result, Serializer, Value};
-use std::{
-    fs::{DirBuilder, File},
-    io::BufReader,
-    path::Path,
-};
+use std::{fs::File, io::BufReader};
 
-pub fn update_data(url: &str) {
+pub async fn update_data(url: &str) {
     const BASE_URL_LIST: [(&str, &str); 2] = [
         ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data"),
         // ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/en_US/gamedata", "./data"),
@@ -20,7 +16,9 @@ pub fn update_data(url: &str) {
         None => url,
     };
 
-    if url.contains("Android/version") {}
+    if url.contains("Android/version") {
+        let data = get(url).await.text().await;
+    }
 }
 
 pub fn read_json(path: &str) -> Result<Value> {
