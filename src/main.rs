@@ -2,7 +2,7 @@ mod config;
 mod routing;
 mod utils;
 
-use serde_json::{to_string_pretty, Value};
+use serde_json::Value;
 
 use config::load_config;
 use utils::write_json;
