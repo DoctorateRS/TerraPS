@@ -4,15 +4,9 @@ use std::{fs::File, io::BufReader};
 
 pub fn update_data(url: &str) {
     const BASE_URL_LIST: [(&str, &str); 2] = [
-        (
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-            "./data",
-        ),
+        ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data"),
         // ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/en_US/gamedata", "./data"),
-        (
-            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-            "./data/announce",
-        ),
+        ("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android", "./data/announce"),
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
 }
