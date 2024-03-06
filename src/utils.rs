@@ -11,15 +11,18 @@ pub async fn update_data(url: &str) -> Value {
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
 
-    let local_path: &str = match BASE_URL_LIST.iter().find(|(base_url, _)| url.contains(base_url)) {
-        Some((_, path)) => path,
-        None => url,
+    if url.contains(BASE_URL_LIST[0].0) {
+        url.replace(BASE_URL_LIST[0].0, BASE_URL_LIST[0].1)
+    } else if url.contains(BASE_URL_LIST[1].0) {
+        url.replace(BASE_URL_LIST[1].0, BASE_URL_LIST[1].1)
+    } else {
+        url.to_string()
     };
 
     if url.contains("Android/version") {
         get(url).await.unwrap().json::<Value>().await.unwrap()
     } else {
-        read_json(local_path).unwrap()
+        read_json(url).unwrap()
     }
 }
 
