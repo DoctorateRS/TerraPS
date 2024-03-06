@@ -23,7 +23,7 @@ pub async fn update_data(url: &str) -> Value {
             Err(_) => panic!("Unable to process request."),
         }
     } else {
-        match read_json(url) {
+        match read_json(&local_path) {
             Ok(value) => value,
             Err(_) => panic!("Unable to read local JSON."),
         }
