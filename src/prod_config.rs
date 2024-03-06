@@ -14,7 +14,7 @@ fn random_hash() -> String {
 }
 
 pub async fn prod_refresh_config() -> Response<Value> {
-    return Response::builder().status(200).body(json!({"resVersion": Value::Null})).unwrap();
+    Response::builder().status(200).body(json!({"resVersion": Value::Null})).unwrap()
 }
 
 pub async fn prod_network_config() {
