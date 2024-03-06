@@ -11,23 +11,24 @@ pub async fn update_data(url: &str) -> Value {
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
 
-    if url.contains(BASE_URL_LIST[0].0) {
-        url.replace(BASE_URL_LIST[0].0, BASE_URL_LIST[0].1)
-    } else if url.contains(BASE_URL_LIST[1].0) {
-        url.replace(BASE_URL_LIST[1].0, BASE_URL_LIST[1].1)
-    } else {
-        url.to_string()
-    };
+    let url = url.replace(BASE_URL_LIST[0].0, BASE_URL_LIST[0].1);
+    let url = url.replace(BASE_URL_LIST[1].0, BASE_URL_LIST[1].1);
 
     if url.contains("Android/version") {
         get(url).await.unwrap().json::<Value>().await.unwrap()
     } else {
-        read_json(url).unwrap()
+        read_json(&url).unwrap()
     }
 }
 
 pub fn read_json(path: &str) -> SerdeJsonResult<Value> {
-    let json_reader = BufReader::new(File::open(path).unwrap());
+    let json_reader = BufReader::new(match File::open(path) {
+        Ok(file) => file,
+        Err(_) => {
+            println!("{}", path);
+            panic!("Path {} not found.", path)
+        }
+    });
     from_reader(json_reader)
 }
 
