@@ -1,3 +1,5 @@
+mod assets;
+mod crisis;
 mod datapath;
 mod init;
 mod prod_config;
