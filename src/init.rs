@@ -19511,4 +19511,5 @@ fn json_init() {
         }"#;
         write("./data/crisisv2/cc1.json", contents);
     }
+    if !Path::new("").exists() {}
 }
