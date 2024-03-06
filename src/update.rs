@@ -34,6 +34,7 @@ pub async fn update_config() {
     };
 
     println!("{:#?}", func_response);
+
     match write_json("sniffed/network.json", func_response) {
         Ok(_) => (),
         Err(_) => panic!("Unable to write to file."),
