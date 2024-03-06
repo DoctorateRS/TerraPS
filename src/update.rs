@@ -27,4 +27,25 @@ pub async fn update_config() {
     if new_client_ver != old_client_ver {
         config["version"]["android"]["clientVersion"] = new_client_ver;
     }
+
+    let func_response = match get("https://ak-conf.hypergryph.com/config/prod/official/network_config").await {
+        Ok(res) => res.json::<Value>().await.unwrap(),
+        Err(_) => panic!("Unable to parse request."),
+    };
+
+    println!("{:#?}", func_response);
+    match write_json("sniffed/network.json", func_response) {
+        Ok(_) => (),
+        Err(_) => panic!("Unable to write to file."),
+    };
+
+    // let new_func_ver = func_response["content"]["funcVer"].clone();
+
+    // if new_func_ver != old_func_ver {
+    //     config["networkConfig"]["cn"]["content"]["funcVer"] = new_func_ver.clone();
+    //     config["networkConfig"]["cn"]["content"]["configs"][new_func_ver.to_string()] = func_response["content"]["configs"][new_func_ver.to_string()].clone();
+    //     config["networkConfig"]["cn"]["content"]["configs"][old_func_ver.to_string()] = Value::Null;
+    // }
+
+    // write_json(CONFIG_JSON_PATH, config).unwrap();
 }
