@@ -40,7 +40,7 @@ pub fn read_json(path: &str) -> SerdeJsonResult<Value> {
 
 pub fn write_json(path: &str, value: Value) -> SerdeJsonResult<()> {
     let file = File::create(path).unwrap();
-    let fmt = PrettyFormatter::with_indent(b"       ");
+    let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
     let mut ser = Serializer::with_formatter(&mut buf, fmt);
     value.serialize(&mut ser).unwrap();
@@ -48,7 +48,7 @@ pub fn write_json(path: &str, value: Value) -> SerdeJsonResult<()> {
 }
 
 pub fn format_json(value: String) -> String {
-    let fmt = PrettyFormatter::with_indent(b"       ");
+    let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
     let mut ser = Serializer::with_formatter(&mut buf, fmt);
     value.serialize(&mut ser).unwrap();
