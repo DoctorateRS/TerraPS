@@ -13,8 +13,8 @@ pub async fn update_data(url: &str) -> Value {
 
     let mut local_path = String::new();
 
-    for i in 0..BASE_URL_LIST.len() {
-        local_path = url.replace(BASE_URL_LIST[i].0, BASE_URL_LIST[i].1);
+    for path_pair in BASE_URL_LIST {
+        local_path = url.replace(path_pair.0, path_pair.1);
     }
 
     if url.contains("Android/version") {
