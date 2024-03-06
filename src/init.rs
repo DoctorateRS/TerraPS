@@ -71,7 +71,5 @@ async fn json_init(path: &str) {
         let content = get(url).await.expect("Failed to get JSON.").text().await.expect("Failed to parse JSON.");
 
         write(path, content).expect("Failed to write file.");
-    } else {
-        println!("{} already exists.", path);
     }
 }
