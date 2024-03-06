@@ -41,7 +41,7 @@ fn dir_init() {
 }
 
 async fn json_init() {
-    if !Path::new("./config2/config.json").exists() {
+    if !Path::new("./config/config.json").exists() {
         let config = get("https://raw.githubusercontent.com/DoctorateRS/public-data/main/config/config.json")
             .await
             .expect("Failed to get config.json")
@@ -50,5 +50,15 @@ async fn json_init() {
             .expect("Failed to get config.json");
 
         write("./config2/config.json", config).expect("Failed to write config.json");
+    }
+    if !Path::new("./data/crisisv2/cc1.json").exists() {
+        let content = get("https://raw.githubusercontent.com/DoctorateRS/public-data/main/crisisv2/cc1.json")
+            .await
+            .expect("Failed to get config.json")
+            .text()
+            .await
+            .expect("Failed to get config.json");
+
+        write("./data/crisisv2/cc1.json", content).expect("Failed to write cc1.json");
     }
 }
