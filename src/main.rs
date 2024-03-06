@@ -2,6 +2,7 @@ mod datapath;
 mod init;
 mod prod_config;
 mod routing;
+mod update;
 mod user;
 mod utils;
 
@@ -14,12 +15,4 @@ use utils::read_json;
 async fn main() {
     dir_init();
     let config = read_json(CONFIG_JSON_PATH).unwrap();
-
-    println!("{:#?}", prod_network_config().await);
-
-    println!("{:#?}", prod_pre_announcement().await);
-
-    println!("{:#?}", prod_announcement().await);
-
-    println!("{:#?}", config)
 }
