@@ -47,6 +47,14 @@ pub fn write_json(path: &str, value: Value) -> SerdeJsonResult<()> {
     to_writer_pretty(file, &value)
 }
 
+pub fn format_json(value: String) -> String {
+    let fmt = PrettyFormatter::with_indent(b"       ");
+    let mut buf = Vec::new();
+    let mut ser = Serializer::with_formatter(&mut buf, fmt);
+    value.serialize(&mut ser).unwrap();
+    String::from_utf8(buf).unwrap()
+}
+
 pub fn decrypt_battle_data() {
     const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
 }

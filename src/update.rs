@@ -1,9 +1,9 @@
 use crate::{
     datapath::CONFIG_JSON_PATH,
-    utils::{read_json, write_json},
+    utils::{format_json, read_json, write_json},
 };
 use reqwest::get;
-use serde_json::Value;
+use serde_json::{from_str, Value};
 
 pub async fn update_config() {
     let mut config = read_json(CONFIG_JSON_PATH).unwrap();
@@ -29,13 +29,15 @@ pub async fn update_config() {
     }
 
     let func_response = match get("https://ak-conf.hypergryph.com/config/prod/official/network_config").await {
-        Ok(res) => res.json::<Value>().await.unwrap(),
+        Ok(res) => res.text().await.unwrap(),
         Err(_) => panic!("Unable to parse request."),
     };
 
+    let func_response = format_json(func_response);
+
     println!("{:#?}", func_response);
 
-    match write_json("sniffed/network.json", func_response) {
+    match write_json("sniffed/network.json", from_str::<Value>(&func_response).unwrap()) {
         Ok(_) => (),
         Err(_) => panic!("Unable to write to file."),
     };
