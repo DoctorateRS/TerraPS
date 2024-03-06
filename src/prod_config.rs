@@ -17,12 +17,26 @@ pub async fn prod_refresh_config() -> Response<Value> {
     Response::builder().status(200).body(json!({"resVersion": Value::Null})).unwrap()
 }
 
-pub async fn prod_network_config() {
+pub async fn prod_network_config() -> Response<Value> {
+    network_config_p1().await;
+    let server_config = read_json(CONFIG_JSON_PATH).unwrap();
+    let mode = server_config["server"]["mode"].as_str().unwrap();
+    let host = server_config["server"]["host"].as_str().unwrap();
+    let port = server_config["server"]["port"].as_u64().unwrap();
+    let server = format!("http://{}:{}", host, port);
+    let func_ver = server_config["networkConfig"][&mode]["content"]["funcVer"].as_str().unwrap();
+    let mut network_config = server_config["networkConfig"][&mode].clone();
+    for (index, url) in server_config["networkConfig"][&mode]["content"]["configs"][&func_ver]["network"].as_object().unwrap() {
+        if url.is_string() && url.as_str().unwrap().contains("{server}") {
+            network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
+        }
+    }
+    Response::builder().body(network_config).unwrap()
+}
+
+async fn network_config_p1() {
     let mut server_config = read_json(CONFIG_JSON_PATH).unwrap();
     let mode = server_config["server"]["mode"].to_string();
-    let server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
-    let network_config = server_config["networkConfig"][&mode].clone();
-    let func_ver = network_config["content"]["funcVer"].to_string();
 
     let version = if server_config["assets"]["autoUpdate"].as_bool().unwrap_or(false) {
         if mode == "cn" {
@@ -37,11 +51,6 @@ pub async fn prod_network_config() {
     if version != server_config["version"]["android"] {
         server_config["version"]["android"] = version;
     };
-
-    for (index, value) in network_config["content"]["configs"][&func_ver]["network"].as_object().unwrap() {
-        let url = network_config["content"]["configs"][&func_ver]["network"].clone();
-        if url.is_string() && url.as_str().unwrap().contains("{server}") {}
-    }
 }
 
 pub async fn prod_remote_config() -> Response<Value> {

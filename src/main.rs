@@ -13,4 +13,5 @@ use prod_config::*;
 #[tokio::main]
 async fn main() {
     init().await;
+    println!("{:#?}", prod_network_config().await);
 }
