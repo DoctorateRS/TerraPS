@@ -18,8 +18,27 @@ pub async fn prod_refresh_config() -> Response<Value> {
 }
 
 pub async fn prod_network_config() {
-    let server_config = read_json(CONFIG_JSON_PATH).unwrap();
-    let _server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
+    let mut server_config = read_json(CONFIG_JSON_PATH).unwrap();
+    let mode = server_config["server"]["mode"].to_string();
+    let server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
+    let network_config = server_config["networkConfig"][&mode].clone();
+    let func_ver = network_config["content"]["funcVer"].to_string();
+
+    let version = if server_config["assets"]["autoUpdate"].as_bool().unwrap_or(false) {
+        if mode == "cn" {
+            update_data("https://ak-conf.hypergryph.com/config/prod/official/Android/version").await
+        } else {
+            todo!()
+        }
+    } else {
+        server_config["version"]["android"].clone()
+    };
+
+    if version != server_config["version"]["android"] {
+        server_config["version"]["android"] = version;
+    };
+
+    for index in network_config["content"]["configs"][func_ver]["network"].iter {}
 }
 
 pub async fn prod_remote_config() -> Response<Value> {
@@ -27,9 +46,13 @@ pub async fn prod_remote_config() -> Response<Value> {
 }
 
 pub async fn prod_pre_announcement() -> Response<Value> {
-    Response::builder().body(update_data("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json").await).unwrap()
+    Response::builder()
+        .body(update_data("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/preannouncement.meta.json").await)
+        .unwrap()
 }
 
 pub async fn prod_announcement() -> Response<Value> {
-    Response::builder().body(update_data("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/announcement.meta.json").await).unwrap()
+    Response::builder()
+        .body(update_data("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android/announcement.meta.json").await)
+        .unwrap()
 }
