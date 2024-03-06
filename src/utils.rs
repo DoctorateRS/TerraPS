@@ -33,10 +33,7 @@ pub async fn update_data(url: &str) -> Value {
 pub fn read_json(path: &str) -> SerdeJsonResult<Value> {
     let json_reader = BufReader::new(match File::open(path) {
         Ok(file) => file,
-        Err(_) => {
-            println!("{}", path);
-            panic!("Path {} not found.", path)
-        }
+        Err(_) => panic!("Path {} not found.", path),
     });
     from_reader(json_reader)
 }

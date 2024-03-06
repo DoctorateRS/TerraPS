@@ -4,7 +4,7 @@ use crate::{
 };
 
 use rand::seq::SliceRandom;
-use serde_json::{Value};
+use serde_json::Value;
 
 fn random_hash() -> String {
     let mut pool = "abcdef".chars().collect::<Vec<char>>();
