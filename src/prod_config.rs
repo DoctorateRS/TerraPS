@@ -38,7 +38,10 @@ pub async fn prod_network_config() {
         server_config["version"]["android"] = version;
     };
 
-    for index in network_config["content"]["configs"][func_ver]["network"].iter {}
+    for (index, value) in network_config["content"]["configs"][&func_ver]["network"].as_object().unwrap() {
+        let url = network_config["content"]["configs"][&func_ver]["network"].clone();
+        if url.is_string() && url.as_str().unwrap().contains("{server}") {}
+    }
 }
 
 pub async fn prod_remote_config() -> Response<Value> {
