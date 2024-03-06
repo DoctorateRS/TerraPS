@@ -13,7 +13,4 @@ use prod_config::*;
 #[tokio::main]
 async fn main() {
     init().await;
-
-    println!("{:#?}", prod_pre_announcement().await);
-    println!("{:#?}", prod_announcement().await);
 }
