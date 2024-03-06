@@ -2,9 +2,9 @@ use crate::{
     datapath::CONFIG_JSON_PATH,
     utils::{read_json, update_data},
 };
-use axum::response::Response;
+
 use rand::seq::SliceRandom;
-use serde_json::{json, Value};
+use serde_json::{Value};
 
 fn random_hash() -> String {
     let mut pool = "abcdef".chars().collect::<Vec<char>>();
@@ -20,7 +20,7 @@ pub async fn prod_refresh_config() {
 
 pub async fn prod_network_config() {
     let server_config = read_json(CONFIG_JSON_PATH).unwrap();
-    let server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
+    let _server = format!("http://{}:{}", server_config["server"]["host"], server_config["server"]["port"]).as_str();
 }
 
 pub async fn prod_remote_config() -> Value {
