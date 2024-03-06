@@ -11,13 +11,22 @@ pub async fn update_data(url: &str) -> Value {
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
 
-    let url = url.replace(BASE_URL_LIST[0].0, BASE_URL_LIST[0].1);
-    let url = url.replace(BASE_URL_LIST[1].0, BASE_URL_LIST[1].1);
+    let mut local_path = String::new();
+
+    for i in 0..BASE_URL_LIST.len() {
+        local_path = url.replace(BASE_URL_LIST[i].0, BASE_URL_LIST[i].1);
+    }
 
     if url.contains("Android/version") {
-        get(url).await.unwrap().json::<Value>().await.unwrap()
+        match get(url).await.unwrap().json::<Value>().await {
+            Ok(value) => value,
+            Err(_) => panic!("Unable to process request."),
+        }
     } else {
-        read_json(&url).unwrap()
+        match read_json(&url) {
+            Ok(value) => value,
+            Err(_) => panic!("Unable to read local JSON."),
+        }
     }
 }
 
