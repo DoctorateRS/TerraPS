@@ -164,12 +164,6 @@ fn json_init() {
                 "customUnitInfo": {},
                 "duplicateUnits": []
             },
-            "gacha": {
-                "5rarity": 1.0,
-                "4rarity": 0,
-                "3rarity": 0,
-                "2rarity": 0
-            },
             "assistUnits": [
                 {
                     "charId": "char_479_sleach",
