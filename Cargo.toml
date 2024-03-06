@@ -31,3 +31,10 @@ strip = "symbols"
 panic = "abort"
 codegen-units = 1
 opt-level = 3
+
+[profile.dev]
+debug = true
+strip = false
+lto = "off"
+codegen-units = 16
+opt-level = 0
