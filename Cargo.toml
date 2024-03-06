@@ -1,7 +1,7 @@
 [package]
 name = "doctorate_rs"
 readme = "README.md"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 license = "LICENSE"
 include = [
@@ -16,6 +16,10 @@ exclude = [
     "data/gacha/*"
 ]
 publish = false
+
+[[bin]]
+name = "doc-rs"
+path = "F:/doctorate_rs/src/main.rs"
 
 [dependencies]
 axum = { version = "0.7.4", features = ["tracing"] }
