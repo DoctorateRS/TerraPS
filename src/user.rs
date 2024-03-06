@@ -1,7 +1,8 @@
 use serde_json::{json, Value};
 
 pub fn app_v1_config() -> Value {
-    json!({
+    json!(
+        {
             "status": 0,
             "msg": "OK",
             "data": {
