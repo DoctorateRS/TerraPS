@@ -7,11 +7,5 @@ mod routing;
 mod user;
 mod utils;
 
-use init::init;
-use prod_config::*;
-
 #[tokio::main]
-async fn main() {
-    init().await;
-    println!("{:#?}", prod_network_config().await);
-}
+async fn main() {}
