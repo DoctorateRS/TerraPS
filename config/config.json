@@ -17,8 +17,8 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-02-26-08-28-19-0f351f",
-            "clientVersion": "2.2.01"
+            "resVersion": "24-03-06-07-46-40-d13e0f",
+            "clientVersion": "2.2.21"
         }
     },
     "remote": {
@@ -31,9 +31,9 @@
             "sign": "sign",
             "content": {
                 "configVer": "5",
-                "funcVer": "V047",
+                "funcVer": "V048",
                 "configs": {
-                    "V047": {
+                    "V048": {
                         "override": true,
                         "network": {
                             "gs": "{server}",
@@ -103,8 +103,8 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1707984000,
-        "activityMaxStartTs": 1710359999,
+        "activityMinStartTs": 1709179200,
+        "activityMaxStartTs": 1711569599,
         "secretary": "char_245_cello",
         "secretarySkinId": "char_245_cello#2",
         "background": "bg_rogue_3",
