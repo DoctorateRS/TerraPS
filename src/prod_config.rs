@@ -3,7 +3,7 @@ use crate::{
     utils::{read_json, update_data},
 };
 use axum::response::Response;
-use rand::seq::SliceRandom;
+
 use serde_json::{json, Value};
 
 // fn random_hash() -> String {

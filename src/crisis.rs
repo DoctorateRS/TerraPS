@@ -33,11 +33,11 @@ pub fn crisis_v2_battle_start(Json(request_data): Json<Value>) -> Response<Value
 pub fn crisis_v2_battle_finish() {
     let battle_data = read_json(RUNE_JSON_PATH).unwrap();
     let mapId = battle_data["mapId"].to_string();
-    let runeSlots = battle_data["runeSlots"].to_string();
-    let mut score: [u32; 6] = [0, 0, 0, 0, 0, 0];
+    let _runeSlots = battle_data["runeSlots"].to_string();
+    let _score: [u32; 6] = [0, 0, 0, 0, 0, 0];
     let selected_crisis = read_json(CONFIG_JSON_PATH).unwrap()["crisisV2Config"]["selectedCrisis"].to_string();
     let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str()).unwrap();
 
-    let mut node = json!({});
-    for slot in rune["info"]["mapDetailDataMap"][mapId]["nodeDataMap"].as_object().unwrap() {}
+    let _node = json!({});
+    for _slot in rune["info"]["mapDetailDataMap"][mapId]["nodeDataMap"].as_object().unwrap() {}
 }
