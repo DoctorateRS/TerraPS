@@ -1,7 +1,10 @@
+mod config;
+mod constants;
+mod init;
 mod routes;
 mod utils;
 
 #[tokio::main]
 async fn main() {
-    // Rewrite in progress
+    init::init().await;
 }
