@@ -1,6 +1,7 @@
 mod routes;
 mod utils;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     // Rewrite in progress
 }
