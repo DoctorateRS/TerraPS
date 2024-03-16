@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Config {
     pub server: Server,
     pub assets: Assets,
@@ -25,7 +25,7 @@ pub struct Config {
     pub char_config: CharConfig,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Server {
     pub host: String,
     pub port: i64,
@@ -40,7 +40,7 @@ pub struct Server {
     pub timeout: i64,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Assets {
     #[serde(rename = "autoUpdate")]
     pub auto_update: bool,
@@ -52,12 +52,12 @@ pub struct Assets {
     pub skip_mod_cache_validation: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Version {
     pub android: Android,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Android {
     #[serde(rename = "resVersion")]
     pub res_version: String,
@@ -65,7 +65,7 @@ pub struct Android {
     pub client_version: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Remote {
     #[serde(rename = "enableGameBI")]
     pub enable_game_bi: bool,
@@ -75,19 +75,19 @@ pub struct Remote {
     pub enable_best_http: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct NetworkConfig {
     pub cn: Cn,
     pub global: Global,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Cn {
     pub sign: String,
     pub content: Content,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Content {
     #[serde(rename = "configVer")]
     pub config_ver: String,
@@ -96,20 +96,20 @@ pub struct Content {
     pub configs: Configs,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Configs {
     #[serde(rename = "V048")]
     pub v048: V048,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct V048 {
     #[serde(rename = "override")]
     pub override_field: bool,
     pub network: Network,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Network {
     pub gs: String,
     #[serde(rename = "as")]
@@ -129,13 +129,13 @@ pub struct Network {
     pub secure: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Global {
     pub sign: String,
     pub content: Content2,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Content2 {
     #[serde(rename = "configVer")]
     pub config_ver: String,
@@ -144,35 +144,35 @@ pub struct Content2 {
     pub configs: Configs2,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Configs2 {
     #[serde(rename = "V029")]
     pub v029: V048,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct CrisisConfig {
     #[serde(rename = "selectedCrisis")]
     pub selected_crisis: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct TowerConfig {
     pub season: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Rlv2Config {
     #[serde(rename = "allChars")]
     pub all_chars: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct BattleReplayConfig {
     pub anonymous: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct UserConfig {
     #[serde(rename = "restorePreviousStates")]
     pub restore_previous_states: RestorePreviousStates,
@@ -189,7 +189,7 @@ pub struct UserConfig {
     pub fake_time: i64,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct RestorePreviousStates {
     pub is2: bool,
     #[serde(rename = "squadsAndFavs")]
@@ -197,7 +197,7 @@ pub struct RestorePreviousStates {
     pub ui: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct CharConfig {
     #[serde(rename = "favorPoint")]
     pub favor_point: i64,
@@ -216,5 +216,5 @@ pub struct CharConfig {
     pub duplicate_units: Vec<Value>,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct CustomUnitInfo {}
