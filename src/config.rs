@@ -20,3 +20,18 @@ impl Config {
         Ok(())
     }
 }
+
+impl Default for Server {
+    fn default() -> Self {
+        Self {
+            host: "127.0.0.1".to_string(),
+            port: 8080,
+            enable_server: true,
+            maintenance_msg: "The server is currently under maintenance.".to_string(),
+            mode: "cn".to_string(),
+            adaptive: true,
+            no_proxy: false,
+            timeout: 30,
+        }
+    }
+}

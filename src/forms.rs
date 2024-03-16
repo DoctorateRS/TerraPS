@@ -218,3 +218,19 @@ pub struct CharConfig {
 
 #[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct CustomUnitInfo {}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Root {
+    #[serde(rename = "assistUnits")]
+    pub assist_units: Vec<AssistUnit>,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct AssistUnit {
+    #[serde(rename = "charId")]
+    pub char_id: String,
+    #[serde(rename = "skillIndex")]
+    pub skill_index: u8,
+    #[serde(rename = "currentEquip")]
+    pub current_equip: Option<String>,
+}

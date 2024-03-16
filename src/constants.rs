@@ -3,6 +3,7 @@ use constcat::concat;
 // Config Data
 pub const CONFIG_PATH: &str = "config/config.json";
 pub const CONFIG_JSON_PATH: &str = "config/config.json";
+pub const ASSISTS_JSON_PATH: &str = "config/assists.json";
 pub const MAILLIST_PATH: &str = "config/mails.json";
 pub const RLV2_CONFIG_PATH: &str = "config/rlv2Config.json";
 pub const SQUADS_PATH: &str = "config/squads.json";
