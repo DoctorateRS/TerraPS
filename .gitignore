@@ -4,4 +4,4 @@
 /.venv
 /packaged
 /sniffed
-/graphs/*.png
+/graphs
