@@ -17,7 +17,7 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-03-12-10-00-54-565c2b",
+            "resVersion": "24-03-18-14-54-31-f08f85",
             "clientVersion": "2.2.21"
         }
     },
@@ -103,8 +103,8 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1709179200,
-        "activityMaxStartTs": 1711569599,
+        "activityMinStartTs": 1710403200,
+        "activityMaxStartTs": 1712433599,
         "secretary": "char_245_cello",
         "secretarySkinId": "char_245_cello#2",
         "background": "bg_rogue_3",
