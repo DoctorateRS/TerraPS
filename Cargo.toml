@@ -19,6 +19,8 @@ leb128 = "0.2"
 paste = "1.0"
 sysinfo = "0.30"
 
+reqwest = { version = "0.12.0", features = ["json"] }
+
 # Tokio
 tokio = { version = "1.36.0", features = ["full"] }
 tokio-util = { version = "0.7.10", features = ["io"] }
@@ -39,6 +41,10 @@ tracing-subscriber = { version = "0.3", features = [
     "tracing-log"
 ]}
 tracing-bunyan-formatter = "0.3.9"
+
+[[bin]]
+name = "doctorate-rs"
+path = "src/main.rs"
 
 [profile.release]
 strip = true            # Automatically strip symbols from the binary.
