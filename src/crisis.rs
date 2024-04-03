@@ -63,6 +63,7 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         } else {
             slot.clone()
         };
+        if node_data.get("mutualExclusionGroup").is_none() {}
     }
     Json(nodes)
 }
