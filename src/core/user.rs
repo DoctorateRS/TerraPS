@@ -50,3 +50,36 @@ pub async fn app_v1_config() -> Json<Value> {
         }
     }))
 }
+
+pub async fn agreement_version() -> Json<Value> {
+    Json(json!({
+        "status": 0,
+        "msg": "OK",
+        "data": {
+            "agreementUrl": {
+                "privacy": "https://user.hypergryph.com/protocol/plain/ak/privacy",
+                "service": "https://user.hypergryph.com/protocol/plain/ak/service",
+                "updateOverview": "https://user.hypergryph.com/protocol/plain/ak/overview_of_changes",
+                "childrenPrivacy": "https://user.hypergryph.com/protocol/plain/ak/children_privacy"
+            },
+            "authorized": true,
+            "isLatestUserAgreement": true
+        }
+    }))
+}
+
+pub async fn info_v1_basic() -> Json<Value> {
+    Json(json!({
+        "status": 0,
+        "msg": "OK",
+        "data": {
+            "hgId": "1",
+            "phone": "doctorate",
+            "email": "doctorate",
+            "identityNum": "doctorate",
+            "identityName": "doctorate",
+            "isMinor": false,
+            "isLatestUserAgreement": true
+        }
+    }))
+}

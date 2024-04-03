@@ -15,7 +15,8 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisis", crisis_routes())
         .nest("/crisisV2", crisis_v2_routes())
-        .route("/general/v1/server_time", get(general_v1_server_time))
+        .nest("/user", user_routes())
+        .merge(misc_routes())
         .fallback(fallback)
 }
 
@@ -41,6 +42,16 @@ fn crisis_v2_routes() -> Router {
     Router::new()
         .route("/getInfo", post(crisis::crisis_v2_get_info))
         .route("/battleStart", post(crisis::crisis_v2_battle_start))
+}
+
+fn user_routes() -> Router {
+    Router::new().route("/info/v1/basic", get(user::info_v1_basic))
+}
+
+fn misc_routes() -> Router {
+    Router::new()
+        .route("/general/v1/server_time", get(general_v1_server_time))
+        .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
