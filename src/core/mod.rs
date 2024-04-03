@@ -6,6 +6,7 @@ pub(crate) type JSON = Json<Value>;
 
 use crate::{constants, utils::read_json};
 
+pub mod asset;
 pub mod prod;
 pub mod user;
 

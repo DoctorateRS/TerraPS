@@ -81,6 +81,7 @@ fn user_routes() -> Router {
 
 fn misc_routes() -> Router {
     Router::new()
+        .route("/assetbundle/official/Android/assets/:assetsHash/:fileName", todo!())
         .route("/general/v1/server_time", get(general_v1_server_time))
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
         .route("/background/setBackground", post(background::background_set_bg))
