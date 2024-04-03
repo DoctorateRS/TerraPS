@@ -25,7 +25,10 @@ fn config_routes() -> Router {
         .route("/official/network_config", get(prod::prod_network_config))
         .route("/official/remote_config", get(prod::prod_remote_config))
         .route("/official/refresh_config", get(prod::prod_refresh_config))
-        .route("/announce_meta/Android/announcement.meta.jsons", get(prod::prod_announcement))
+        .route(
+            "/announce_meta/Android/announcement.meta.jsons",
+            get(prod::prod_announcement),
+        )
         .route(
             "/announce_meta/Android/preannouncement.meta.json",
             get(prod::prod_pre_announcement),
