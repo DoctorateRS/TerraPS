@@ -45,7 +45,11 @@ fn crisis_v2_routes() -> Router {
 }
 
 fn user_routes() -> Router {
-    Router::new().route("/info/v1/basic", get(user::info_v1_basic))
+    Router::new()
+        .route("/auth", post(user::user_auth))
+        .route("/agreement", get(user::user_agreement))
+        .route("/info/v1/basic", get(user::info_v1_basic))
+        .route("/changeSecretary", post(user::user_change_secretary))
 }
 
 fn misc_routes() -> Router {

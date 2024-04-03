@@ -6,7 +6,9 @@ use crate::{
     utils::{read_json, write_json},
 };
 
-pub async fn app_v1_config() -> Json<Value> {
+use super::JsRes as Res;
+
+pub async fn app_v1_config() -> Res {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -56,7 +58,7 @@ pub async fn app_v1_config() -> Json<Value> {
     }))
 }
 
-pub async fn agreement_version() -> Json<Value> {
+pub async fn agreement_version() -> Res {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -73,7 +75,7 @@ pub async fn agreement_version() -> Json<Value> {
     }))
 }
 
-pub async fn info_v1_basic() -> Json<Value> {
+pub async fn info_v1_basic() -> Res {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -89,7 +91,7 @@ pub async fn info_v1_basic() -> Json<Value> {
     }))
 }
 
-pub async fn user_check_in() -> Json<Value> {
+pub async fn user_check_in() -> Res {
     Json(json!({
         "result": 0,
         "playerDataDelta": {
@@ -99,7 +101,7 @@ pub async fn user_check_in() -> Json<Value> {
     }))
 }
 
-pub async fn user_agreement() -> Json<Value> {
+pub async fn user_agreement() -> Res {
     Json(json!({
         "data": [
             "lol idk"
@@ -108,7 +110,7 @@ pub async fn user_agreement() -> Json<Value> {
     }))
 }
 
-pub async fn auth_v1_token_by_phone_password() -> Json<Value> {
+pub async fn auth_v1_token_by_phone_password() -> Res {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -118,7 +120,7 @@ pub async fn auth_v1_token_by_phone_password() -> Json<Value> {
     }))
 }
 
-pub async fn user_change_secretary(Json(payload): Json<Value>) -> Json<Value> {
+pub async fn user_change_secretary(Json(payload): Res) -> Res {
     let mut config = read_json(constants::config::CONFIG_JSON_PATH).clone();
     let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
     let _ = payload["charInstId"].as_str().unwrap();
@@ -143,5 +145,16 @@ pub async fn user_change_secretary(Json(payload): Json<Value>) -> Json<Value> {
             },
             "deleted": {}
         }
+    }))
+}
+
+pub async fn user_auth() -> Res {
+    Json(json!({
+        "isAuthenticate": true,
+        "isGuest": false,
+        "isLatestUserAgreement": true,
+        "isMinor": false,
+        "needAuthenticate": false,
+        "uid": "1"
     }))
 }

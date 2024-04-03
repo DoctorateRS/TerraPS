@@ -1,6 +1,8 @@
 use axum::Json;
 use serde_json::{json, Value};
 
+pub(crate) type JsRes = Json<Value>;
+
 use crate::{constants, utils::read_json};
 
 pub mod prod;
