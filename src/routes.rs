@@ -8,6 +8,7 @@ use axum::{
     Router,
 };
 use reqwest::StatusCode;
+use tower_http::trace::TraceLayer as Tracer;
 
 pub fn routes() -> Router {
     Router::new()
@@ -19,6 +20,7 @@ pub fn routes() -> Router {
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
+        .layer(Tracer::new_for_http())
 }
 
 fn app_routes() -> Router {
