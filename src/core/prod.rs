@@ -13,6 +13,16 @@ use serde_json::{json, Value};
 //     pool.iter().collect::<String>()
 // }
 
+pub async fn prod_android_version() -> Json<Value> {
+    let server_config = read_json(CONFIG_JSON_PATH);
+    let mode = server_config["server"]["mode"].as_str().unwrap_or("cn");
+    match mode {
+        "cn" => Json(server_config["version"]["android"].clone()),
+        "global" => Json(server_config["versionGlobal"]["android"].clone()),
+        _ => Json(server_config["version"]["android"].clone()),
+    }
+}
+
 pub async fn prod_refresh_config() -> Json<Value> {
     Json(json!({"resVersion": Value::Null}))
 }

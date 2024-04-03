@@ -14,6 +14,7 @@ pub fn routes() -> Router {
 
 fn config_routes() -> Router {
     Router::new()
+        .route("/official/Android/version", get(prod::prod_android_version))
         .route("/official/network_config", get(prod::prod_network_config))
         .route("/official/remote_config", get(prod::prod_remote_config))
         .route("/official/refresh_config", get(prod::prod_refresh_config))
