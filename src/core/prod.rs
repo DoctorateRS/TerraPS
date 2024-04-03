@@ -1,6 +1,6 @@
 use crate::{
     constants::config::CONFIG_JSON_PATH,
-    utils::{read_json, update_data},
+    utils::{read_json, update_data, write_json},
 };
 use axum::response::Json;
 
@@ -40,12 +40,8 @@ pub async fn prod_network_config() -> Json<Value> {
         .as_object()
         .unwrap()
     {
-        if url.is_string() {
-            if url.as_str().unwrap().contains("{server}") {
-                network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
-            }
-        } else {
-            todo!("Handle non-string network config.")
+        if url.is_string() && url.as_str().unwrap().contains("{server}") {
+            network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
         }
     }
     Json(network_config)
@@ -63,6 +59,8 @@ async fn network_config_p1() {
     if version != server_config["version"]["android"] {
         server_config["version"]["android"] = version;
     };
+
+    write_json(CONFIG_JSON_PATH, server_config);
 }
 
 pub async fn prod_remote_config() -> Json<Value> {
