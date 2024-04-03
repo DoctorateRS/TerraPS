@@ -23,6 +23,8 @@ pub fn routes() -> Router {
         .nest("/app", app_routes())
         .nest("/account", account_routes())
         .nest("/building", building_routes())
+        .nest("/char", char_routes())
+        .nest("/charBuild", char_build_routes())
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
@@ -50,6 +52,14 @@ fn building_routes() -> Router {
         .route("/changeDiySolution", post(building::building_change_diy_solution))
         .route("/assignChar", post(building::building_assign_char))
         .route("/setBuildingAssist", post(building::building_set_building_assist))
+}
+
+fn char_routes() -> Router {
+    Router::new().route("/changeMarkStar", post(char::char_change_mark_star))
+}
+
+fn char_build_routes() -> Router {
+    Router::new()
 }
 
 fn config_routes() -> Router {

@@ -6,6 +6,7 @@ mod charm;
 mod constants;
 mod core;
 mod crisis;
+mod mail;
 mod online;
 mod quest;
 mod routes;
