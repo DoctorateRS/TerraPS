@@ -1,6 +1,7 @@
 use axum::Json;
 use serde_json::{json, Value};
 
+#[allow(clippy::upper_case_acronyms)]
 pub(crate) type JSON = Json<Value>;
 
 use crate::{constants, utils::read_json};

@@ -43,6 +43,7 @@ fn crisis_v2_routes() -> Router {
     Router::new()
         .route("/getInfo", post(crisis::crisis_v2_get_info))
         .route("/battleStart", post(crisis::crisis_v2_battle_start))
+        .route("/battleFinish", post(crisis::crisis_v2_battle_finish))
 }
 
 fn online_routes() -> Router {
