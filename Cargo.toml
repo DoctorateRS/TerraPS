@@ -22,6 +22,7 @@ leb128 = "0.2"
 paste = "1.0"
 sysinfo = "0.30"
 
+
 reqwest = { version = "0.12.0", features = ["json"] }
 
 # Tokio
@@ -45,6 +46,14 @@ tracing-subscriber = { version = "0.3", features = [
 ]}
 
 tower-http = { version = "0.5", features = ["trace"] }
+
+[dependencies.uuid]
+version = "1.8.0"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+]
 
 [[bin]]
 name = "doctorate-rs"
