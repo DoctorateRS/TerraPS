@@ -56,10 +56,10 @@ fn config_routes() -> Router {
 
 fn crisis_v2_routes() -> Router {
     Router::new()
-        .route("/getInfo", post(crisis::crisis_v2_get_info))
-        .route("/battleStart", post(crisis::crisis_v2_battle_start))
-        .route("/battleFinish", post(crisis::crisis_v2_battle_finish))
-        .route("/getSnapshot", post(crisis::crisis_v2_get_snapshot))
+        .route("/getInfo", post(crisis::crisis_v2::crisis_v2_get_info))
+        .route("/battleStart", post(crisis::crisis_v2::crisis_v2_battle_start))
+        .route("/battleFinish", post(crisis::crisis_v2::crisis_v2_battle_finish))
+        .route("/getSnapshot", post(crisis::crisis_v2::crisis_v2_get_snapshot))
 }
 
 fn online_routes() -> Router {
