@@ -20,7 +20,10 @@ pub fn routes() -> Router {
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
-        .layer(Tracer::new_for_http())
+        .layer(Tracer::new_for_http().on_request(|req| {
+            tracing::info!("Request: {:?}", req);
+            req
+        }))
 }
 
 fn app_routes() -> Router {
