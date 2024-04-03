@@ -1,5 +1,7 @@
 use crate::{
-    account, background, building, charm,
+    account, background, building,
+    char_manage::{char, char_build},
+    charm,
     core::{general_v1_server_time, prod, user},
     crisis, online,
 };

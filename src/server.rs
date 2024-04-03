@@ -1,6 +1,7 @@
 mod account;
 mod background;
 mod building;
+mod char_manage;
 mod charm;
 mod constants;
 mod core;
