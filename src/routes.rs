@@ -4,25 +4,18 @@ use crate::{
     crisis, online,
 };
 use axum::{
-    extract::{MatchedPath, Request},
     http::Uri,
     routing::{get, post},
     Router,
 };
 use reqwest::StatusCode;
-use tower_http::trace::TraceLayer as Tracer;
-use tracing::debug_span;
+use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnRequest as DefOnRequest, TraceLayer as Tracer};
+use tracing::Level;
 
 pub fn routes() -> Router {
-    let trace_layer = Tracer::new_for_http().make_span_with(|req: &Request<_>| {
-        let matched_path = req.extensions().get::<MatchedPath>().map(MatchedPath::as_str);
-        debug_span!(
-            "http_request",
-            method = ?req.method(),
-            matched_path,
-            some_other_field = tracing::field::Empty
-        )
-    });
+    let trace_layer = Tracer::new_for_http()
+        .make_span_with(DefMakeSpan::new().level(Level::INFO))
+        .on_request(DefOnRequest::new().level(Level::INFO));
 
     Router::new()
         .nest("/app", app_routes())
@@ -30,6 +23,7 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
+        .nest("/quest", quest_routes())
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
@@ -68,6 +62,14 @@ fn online_routes() -> Router {
         .route("/v1/loginout", post(online::online_v1_login_out))
 }
 
+fn quest_routes() -> Router {
+    Router::new()
+        .route("/getInfo", post(crisis::crisis_v2::crisis_v2_get_info))
+        .route("/battleStart", post(crisis::crisis_v2::crisis_v2_battle_start))
+        .route("/battleFinish", post(crisis::crisis_v2::crisis_v2_battle_finish))
+        .route("/getSnapshot", post(crisis::crisis_v2::crisis_v2_get_snapshot))
+}
+
 fn user_routes() -> Router {
     Router::new()
         .route("/auth", post(user::user_auth))
@@ -81,7 +83,6 @@ fn user_routes() -> Router {
 
 fn misc_routes() -> Router {
     Router::new()
-        .route("/assetbundle/official/Android/assets/:assetsHash/:fileName", todo!())
         .route("/general/v1/server_time", get(general_v1_server_time))
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
         .route("/background/setBackground", post(background::background_set_bg))

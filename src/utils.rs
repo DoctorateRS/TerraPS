@@ -3,7 +3,6 @@ use serde::Serialize;
 use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
 use std::{fs::File, io::BufReader};
 
-#[allow(dead_code)]
 pub async fn update_data(url: &str) -> Value {
     const BASE_URL_LIST: [(&str, &str); 2] = [
         (
@@ -34,7 +33,6 @@ pub async fn update_data(url: &str) -> Value {
     }
 }
 
-#[allow(dead_code)]
 pub fn read_json(path: &str) -> Value {
     let json_reader = BufReader::new(match File::open(path) {
         Ok(file) => file,
@@ -46,7 +44,6 @@ pub fn read_json(path: &str) -> Value {
     }
 }
 
-#[allow(dead_code)]
 pub fn write_json(path: &str, value: Value) {
     let file = File::create(path).unwrap();
     let fmt = PrettyFormatter::with_indent(b"    ");
@@ -57,4 +54,8 @@ pub fn write_json(path: &str, value: Value) {
         Ok(_) => (),
         Err(_) => panic!("Unable to write JSON."),
     }
+}
+
+pub fn _decrypt_battle_data(_data: &str, _login_time: u64) -> Value {
+    todo!("decrypt_battle_data")
 }
