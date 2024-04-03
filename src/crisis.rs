@@ -6,7 +6,7 @@ use crate::{
         config::CONFIG_JSON_PATH,
         user::{CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH},
     },
-    core::{time, JSON},
+    core::JSON,
     utils::{read_json, write_json},
 };
 
@@ -32,7 +32,7 @@ pub async fn crisis_v2_battle_start(Json(payload): JSON) -> JSON {
     }))
 }
 
-pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
+pub async fn crisis_v2_battle_finish(Json(_): JSON) -> JSON {
     let config = read_json(CONFIG_JSON_PATH);
     let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap_or("cc2");
     let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
@@ -46,8 +46,8 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         None => panic!("Invalid mapId."),
     };
     for slot in slots {
-        let mut score;
-        let mut rune_data = json!({});
+        let score;
+        let rune_data;
         if !slot.as_str().unwrap().starts_with("node_") {
             continue;
         }
@@ -108,9 +108,39 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         }
         if flag {
             let bag_data = rune["info"]["mapDetailDataMap"][&map_id]["bagDataMap"][&slot_pack_id].clone();
+            let mut dimension = bag_data["dimension"].as_u64().unwrap();
+            if dimension > 5 {
+                dimension = 5;
+            }
+            score_current[dimension as usize] += bag_data["rewardScore"].as_u64().unwrap();
         }
     }
-    Json(nodes)
+
+    for (slot, _) in rune_slots.as_object().unwrap() {
+        let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot].clone();
+        if node_data.get("runeId").is_some() {
+            let rune_id = node_data["runeId"].clone();
+            let rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][rune_id.as_str().unwrap()].clone();
+            score_current[rune_data["dimension"].as_u64().unwrap() as usize] += rune_data["rewardScore"].as_u64().unwrap();
+        }
+    }
+
+    Json(json!({
+        "result": 0,
+        "mapId": map_id,
+        "runeSlots": rune_slots,
+        "isNewRecord": false,
+        "scoreRecord": [0, 0, 0, 0, 0, 0],
+        "scoreCurrent": score_current,
+        "runeCount": [0, 0],
+        "commentNew": [],
+        "commentOld": [],
+        "ts": 1700000000,
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
 }
 
 pub async fn crisis_v2_get_snapshot() -> JSON {
