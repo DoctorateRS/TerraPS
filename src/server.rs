@@ -3,6 +3,7 @@ mod constants;
 mod core;
 mod crisis;
 mod online;
+mod quest;
 mod routes;
 mod utils;
 

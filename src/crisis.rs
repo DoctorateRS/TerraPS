@@ -1,5 +1,5 @@
 use axum::Json;
-use serde_json::{json, Value};
+use serde_json::{json, Number, Value};
 
 use crate::{
     constants::{
@@ -46,6 +46,8 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         None => panic!("Invalid mapId."),
     };
     for slot in slots {
+        let mut score;
+        let mut rune_data = json!({});
         if !slot.as_str().unwrap().starts_with("node_") {
             continue;
         }
@@ -63,8 +65,26 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         } else {
             slot.clone()
         };
-        if node_data.get("mutualExclusionGroup").is_none() {}
+        if nodes[slot_id].get("mutualExclusionGroup").is_none() {
+            nodes[slot_id][mutual_exclusion_group.as_str().unwrap()] = json!({})
+        }
+        if node_data.get("runeId").is_some() {
+            let r_id = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot.as_str().unwrap()]["runeId"].clone();
+            if !r_id.is_null() {
+                rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][r_id.as_str().unwrap()].clone();
+                score = rune_data["score"].clone().as_i64().unwrap();
+            } else {
+                score = 0;
+            }
+        } else {
+            score = 0;
+        };
+        nodes[slot_pack_id.as_str().unwrap()][mutual_exclusion_group.as_str().unwrap()][slot.as_str().unwrap()] =
+            Value::Number(Number::from(score));
     }
+
+    let slots = rune_slots.clone();
+    for slot_pack_id in nodes.as_array() {}
     Json(nodes)
 }
 
