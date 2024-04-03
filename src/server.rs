@@ -18,7 +18,7 @@ async fn main() {
         }
     };
     match serve(listener, routes::routes()).await {
-        Ok(_) => println!("Server started at: {}", server_address),
+        Ok(_) => (),
         Err(e) => {
             panic!("Failed to start server: {}", e);
         }
