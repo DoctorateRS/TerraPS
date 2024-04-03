@@ -1,5 +1,5 @@
 use crate::{
-    account, background,
+    account, background, building,
     core::{general_v1_server_time, prod, user},
     crisis, online,
 };
@@ -20,6 +20,7 @@ pub fn routes() -> Router {
     Router::new()
         .nest("/app", app_routes())
         .nest("/account", account_routes())
+        .nest("/building", building_routes())
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
@@ -36,6 +37,17 @@ fn app_routes() -> Router {
 
 fn account_routes() -> Router {
     Router::new().route("/login", post(account::account_login))
+}
+
+fn building_routes() -> Router {
+    Router::new()
+        .route("/sync", post(building::building_sync))
+        .route("/getRecentVisitors", post(building::building_get_recent_visitors))
+        .route("/getInfoShareVisitorsNum", post(building::building_get_info_share_visitor_num))
+        .route("/getAssistReport", post(building::building_get_assist_report))
+        .route("/changeDiySolution", post(building::building_change_diy_solution))
+        .route("/assignChar", post(building::building_assign_char))
+        .route("/setBuildingAssist", post(building::building_set_building_assist))
 }
 
 fn config_routes() -> Router {

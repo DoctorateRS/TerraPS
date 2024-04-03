@@ -1,3 +1,5 @@
+use std::char;
+
 use axum::Json;
 use serde_json::{json, Number, Value};
 
@@ -77,6 +79,89 @@ pub async fn building_sync() -> JSON {
             "modified": {
                 "building": building_data
             },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn building_get_recent_visitors() -> JSON {
+    Json(json!({"visitors": []}))
+}
+
+pub async fn building_get_info_share_visitor_num() -> JSON {
+    Json(json!({"num": 0}))
+}
+
+pub async fn building_change_diy_solution(Json(payload): JSON) -> JSON {
+    let room_slot_id = payload["roomSlotId"].as_str().unwrap();
+    let diy_solution = payload["solution"].clone();
+
+    let mut building_data = read_json(BUILDING_JSON_PATH);
+    building_data["rooms"]["DORMITORY"][room_slot_id]["diySolution"] = diy_solution;
+    write_json(BUILDING_JSON_PATH, building_data.clone());
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "building": building_data
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn building_assign_char(Json(payload): JSON) -> JSON {
+    let room_slot_id = payload["roomSlotId"].as_str().unwrap();
+    let char_inst_id_list = payload["charInstId"].as_array().unwrap();
+
+    let mut building_data = read_json(BUILDING_JSON_PATH);
+    for char_inst_id in char_inst_id_list {
+        let char_inst_id = char_inst_id.as_i64().unwrap();
+        if char_inst_id == -1 {
+            continue;
+        }
+        let char_inst_id = char_inst_id.to_string();
+        if building_data["chars"][&char_inst_id]["index"].as_i64().unwrap() != -1 {
+            let old_char_data = building_data["chars"][&char_inst_id].clone();
+            let old_room_slot_id = old_char_data["roomSlotId"].as_str().unwrap();
+            let old_index = old_char_data["index"].as_i64().unwrap();
+            building_data["roomSlots"][old_room_slot_id]["charInstIds"][old_index as usize] = Value::Number(Number::from(-1));
+        }
+    }
+    building_data["roomSlots"][room_slot_id]["charInstIds"] = json!(char_inst_id_list);
+    building_data = update_building_char_inst_id_list(building_data);
+    write_json(BUILDING_JSON_PATH, building_data.clone());
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "building": building_data
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn building_set_building_assist(Json(payload): JSON) -> JSON {
+    let assist_type = payload["type"].as_str().unwrap();
+    let char_inst_id = payload["charInstId"].clone();
+    let mut building_data = read_json(BUILDING_JSON_PATH);
+    building_data["assist"][&assist_type]["charInstId"] = char_inst_id;
+    write_json(BUILDING_JSON_PATH, building_data.clone());
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "building": building_data
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn building_get_assist_report() -> JSON {
+    Json(json!({
+        "reports": [
+        ],
+        "playerDataDelta": {
+            "modified": {},
             "deleted": {}
         }
     }))
