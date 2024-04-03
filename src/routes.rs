@@ -6,10 +6,14 @@ use axum::{
 
 pub fn routes() -> Router {
     Router::new()
-        .route("/", get(|| async { "Hello, world!" }))
         .nest("/config/prod", config_routes())
         .nest("/crisis", crisis_routes())
-        .nest("/crisisV2", crisisV2_routes())
+        .nest("/crisisV2", crisis_v2_routes())
+        .fallback(fallback)
+}
+
+fn app_routes() -> Router {
+    Router::new().route("/", get(|| async { "Hello, world!" }))
 }
 
 fn config_routes() -> Router {
@@ -29,6 +33,10 @@ fn crisis_routes() -> Router {
     Router::new().route("/crisis", get(|| async { "Crisis" }))
 }
 
-fn crisisV2_routes() -> Router {
+fn crisis_v2_routes() -> Router {
     Router::new().route("/crisisV2", get(|| async { "CrisisV2" }))
+}
+
+async fn fallback() -> &'static str {
+    "Hello, world!"
 }
