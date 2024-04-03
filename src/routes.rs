@@ -1,4 +1,5 @@
 use crate::{
+    account,
     core::{general_v1_server_time, prod, user},
     crisis, online,
 };
@@ -26,20 +27,22 @@ pub fn routes() -> Router {
 
     Router::new()
         .nest("/app", app_routes())
+        .nest("/account", account_routes())
         .nest("/config/prod", config_routes())
-        .nest("/crisis", crisis_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
-
         .layer(trace_layer)
-
 }
 
 fn app_routes() -> Router {
     Router::new().route("/v1/config", get(user::app_v1_config))
+}
+
+fn account_routes() -> Router {
+    Router::new().route("/login", post(account::account_login))
 }
 
 fn config_routes() -> Router {
@@ -50,10 +53,6 @@ fn config_routes() -> Router {
         .route("/official/refresh_config", get(prod::prod_refresh_config))
         .route("/announce_meta/Android/announcement.meta.jsons", get(prod::prod_announcement))
         .route("/announce_meta/Android/preannouncement.meta.json", get(prod::prod_pre_announcement))
-}
-
-fn crisis_routes() -> Router {
-    Router::new().route("/crisis", get(|| async { "Crisis" }))
 }
 
 fn crisis_v2_routes() -> Router {
