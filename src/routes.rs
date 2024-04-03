@@ -1,8 +1,10 @@
 use crate::core::prod;
 use axum::{
+    http::Uri,
     routing::{get, post},
     Router,
 };
+use reqwest::StatusCode;
 
 pub fn routes() -> Router {
     Router::new()
@@ -37,6 +39,6 @@ fn crisis_v2_routes() -> Router {
     Router::new().route("/crisisV2", get(|| async { "CrisisV2" }))
 }
 
-async fn fallback() -> &'static str {
-    "Hello, world!"
+async fn fallback(uri: Uri) -> (StatusCode, String) {
+    (StatusCode::NOT_FOUND, format!("ERROR: {} not found", uri))
 }
