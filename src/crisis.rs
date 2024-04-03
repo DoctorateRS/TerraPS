@@ -58,7 +58,7 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
         if nodes.get(slot_pack_id.as_str().unwrap()).is_none() {
             nodes[slot_pack_id.as_str().unwrap()] = json!({});
         }
-        let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() {
+        let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() && !node_data["mutualExclusionGroup"].is_null() {
             node_data["mutualExclusionGroup"].clone()
         } else {
             slot.clone()
