@@ -1,6 +1,7 @@
 mod account;
 mod background;
 mod building;
+mod charm;
 mod constants;
 mod core;
 mod crisis;

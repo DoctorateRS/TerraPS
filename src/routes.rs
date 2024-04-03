@@ -1,5 +1,5 @@
 use crate::{
-    account, background, building,
+    account, background, building, charm,
     core::{general_v1_server_time, prod, user},
     crisis, online,
 };
@@ -99,6 +99,7 @@ fn misc_routes() -> Router {
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
         .route("/background/setBackground", post(background::background_set_bg))
         .route("/homeTheme/change", post(background::home_theme_change))
+        .route("/charm/setSquad", post(charm::charm_set_squad))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
