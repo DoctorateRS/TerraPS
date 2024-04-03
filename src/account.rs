@@ -1,3 +1,4 @@
+
 use crate::core::JSON;
 use axum::{http::HeaderMap, Json};
 use serde_json::json;
@@ -16,3 +17,4 @@ pub async fn account_login(header: HeaderMap) -> JSON {
         "serviceLicenseVersion": 0
     }))
 }
+

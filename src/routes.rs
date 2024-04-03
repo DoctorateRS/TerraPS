@@ -33,7 +33,9 @@ pub fn routes() -> Router {
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
+
         .layer(trace_layer)
+
 }
 
 fn app_routes() -> Router {
