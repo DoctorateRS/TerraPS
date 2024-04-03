@@ -1,4 +1,7 @@
-use crate::core::{general_v1_server_time, prod, user};
+use crate::{
+    core::{general_v1_server_time, prod, user},
+    crisis,
+};
 use axum::{
     http::Uri,
     routing::{get, post},
@@ -41,7 +44,9 @@ fn crisis_routes() -> Router {
 }
 
 fn crisis_v2_routes() -> Router {
-    Router::new().route("/crisisV2", get(|| async { "CrisisV2" }))
+    Router::new()
+        .route("/getInfo", post(crisis::crisis_v2_get_info))
+        .route("/battleStart", post(crisis::crisis_v2_battle_start))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
