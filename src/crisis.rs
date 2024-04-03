@@ -38,8 +38,8 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
     let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
     let battle_data = read_json(RUNE_JSON_PATH).clone();
     let map_id = battle_data["mapId"].as_str().unwrap_or("crisis_v2_02-01");
-    let rune_slots = battle_data["runeSlots"].as_array().unwrap();
-    let score_current = [0, 0, 0, 0, 0, 0];
+    let rune_slots = battle_data["runeSlots"].clone();
+    let mut score_current = [0, 0, 0, 0, 0, 0];
     let mut nodes = json!({});
     let slots = match rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"].as_array() {
         Some(slots) => slots,
@@ -84,7 +84,32 @@ pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
     }
 
     let slots = rune_slots.clone();
-    for slot_pack_id in nodes.as_array() {}
+    for (slot_pack_id, _) in nodes.as_object().unwrap() {
+        let mut flag = true;
+        for (mutual_exclusion_group, _) in nodes[slot_pack_id].as_object().unwrap() {
+            let mut score_max = 0;
+            for (slot, _) in nodes[slot_pack_id][mutual_exclusion_group].as_object().unwrap() {
+                score_max = max(score_max, nodes[slot_pack_id][mutual_exclusion_group][slot].as_i64().unwrap());
+            }
+            let mut flag2 = false;
+            for (slot, _) in nodes[slot_pack_id][mutual_exclusion_group].as_object().unwrap() {
+                if nodes[slot_pack_id][mutual_exclusion_group][slot].as_i64().unwrap() != score_max {
+                    continue;
+                };
+                if slots.get(slot.as_str()).is_some() {
+                    flag2 = true;
+                    break;
+                }
+            }
+            if !flag2 {
+                flag = false;
+                break;
+            }
+        }
+        if flag {
+            let bag_data = rune["info"]["mapDetailDataMap"][&map_id]["bagDataMap"][&slot_pack_id].clone();
+        }
+    }
     Json(nodes)
 }
 
@@ -97,4 +122,12 @@ pub async fn crisis_v2_get_snapshot() -> JSON {
             "deleted": {}
         }
     }))
+}
+
+fn max<T: PartialOrd>(a: T, b: T) -> T {
+    if a > b {
+        a
+    } else {
+        b
+    }
 }
