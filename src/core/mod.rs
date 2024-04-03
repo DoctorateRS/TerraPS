@@ -1,7 +1,7 @@
 use axum::Json;
 use serde_json::{json, Value};
 
-pub(crate) type JsRes = Json<Value>;
+pub(crate) type JSON = Json<Value>;
 
 use crate::{constants, utils::read_json};
 

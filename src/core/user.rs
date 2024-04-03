@@ -6,9 +6,9 @@ use crate::{
     utils::{read_json, write_json},
 };
 
-use super::JsRes as Res;
+use super::JSON;
 
-pub async fn app_v1_config() -> Res {
+pub async fn app_v1_config() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -58,7 +58,7 @@ pub async fn app_v1_config() -> Res {
     }))
 }
 
-pub async fn agreement_version() -> Res {
+pub async fn agreement_version() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -75,7 +75,7 @@ pub async fn agreement_version() -> Res {
     }))
 }
 
-pub async fn info_v1_basic() -> Res {
+pub async fn info_v1_basic() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -91,9 +91,9 @@ pub async fn info_v1_basic() -> Res {
     }))
 }
 
-pub async fn user_check_in() -> Res {
+pub async fn user_check_in() -> JSON {
     Json(json!({
-        "result": 0,
+        "JSONult": 0,
         "playerDataDelta": {
             "modified": {},
             "deleted": {}
@@ -101,7 +101,7 @@ pub async fn user_check_in() -> Res {
     }))
 }
 
-pub async fn user_agreement() -> Res {
+pub async fn user_agreement() -> JSON {
     Json(json!({
         "data": [
             "lol idk"
@@ -110,7 +110,7 @@ pub async fn user_agreement() -> Res {
     }))
 }
 
-pub async fn auth_v1_token_by_phone_password() -> Res {
+pub async fn auth_v1_token_by_phone_password() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -120,7 +120,7 @@ pub async fn auth_v1_token_by_phone_password() -> Res {
     }))
 }
 
-pub async fn user_change_secretary(Json(payload): Res) -> Res {
+pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
     let mut config = read_json(constants::config::CONFIG_JSON_PATH).clone();
     let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
     let _ = payload["charInstId"].as_str().unwrap();
@@ -148,7 +148,7 @@ pub async fn user_change_secretary(Json(payload): Res) -> Res {
     }))
 }
 
-pub async fn user_auth() -> Res {
+pub async fn user_auth() -> JSON {
     Json(json!({
         "isAuthenticate": true,
         "isGuest": false,
@@ -156,5 +156,22 @@ pub async fn user_auth() -> Res {
         "isMinor": false,
         "needAuthenticate": false,
         "uid": "1"
+    }))
+}
+
+pub async fn user_change_avatar(Json(payload): JSON) -> JSON {
+    let avatar = payload;
+    let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
+    user_data["user"]["status"]["avatarId"] = avatar.clone();
+    write_json(constants::user::USER_JSON_PATH, user_data);
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "status": {
+                    "avatarId": avatar
+                }
+            },
+            "deleted": {}
+        }
     }))
 }

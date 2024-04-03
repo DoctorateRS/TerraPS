@@ -1,6 +1,7 @@
 mod constants;
 mod core;
 mod crisis;
+mod online;
 mod routes;
 mod utils;
 

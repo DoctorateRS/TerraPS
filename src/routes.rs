@@ -1,6 +1,6 @@
 use crate::{
     core::{general_v1_server_time, prod, user},
-    crisis,
+    crisis, online,
 };
 use axum::{
     http::Uri,
@@ -15,6 +15,7 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisis", crisis_routes())
         .nest("/crisisV2", crisis_v2_routes())
+        .nest("/online", online_routes())
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
@@ -44,10 +45,19 @@ fn crisis_v2_routes() -> Router {
         .route("/battleStart", post(crisis::crisis_v2_battle_start))
 }
 
+fn online_routes() -> Router {
+    Router::new()
+        .route("/v1/ping", get(online::online_v1_ping))
+        .route("/v1/loginout", get(online::online_v1_login_out))
+}
+
 fn user_routes() -> Router {
     Router::new()
         .route("/auth", post(user::user_auth))
         .route("/agreement", get(user::user_agreement))
+        .route("/checkIn", get(user::user_check_in))
+        .route("/changeAvatar", post(user::user_change_avatar))
+        .route("/changeSecretary", post(user::user_change_secretary))
         .route("/info/v1/basic", get(user::info_v1_basic))
         .route("/changeSecretary", post(user::user_change_secretary))
 }
