@@ -3,14 +3,27 @@ use crate::{
     crisis, online,
 };
 use axum::{
+    extract::{MatchedPath, Request},
     http::Uri,
     routing::{get, post},
     Router,
 };
 use reqwest::StatusCode;
 use tower_http::trace::TraceLayer as Tracer;
+use tracing::debug_span;
 
 pub fn routes() -> Router {
+    let trace_layer = Tracer::new_for_http().make_span_with(|req: &Request<_>| {
+        let matched_path = req.extensions().get::<MatchedPath>().map(MatchedPath::as_str);
+
+        debug_span!(
+            "http_request",
+            method = ?req.method(),
+            matched_path,
+            some_other_field = tracing::field::Empty
+        )
+    });
+
     Router::new()
         .nest("/app", app_routes())
         .nest("/config/prod", config_routes())
@@ -20,10 +33,7 @@ pub fn routes() -> Router {
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
-        .layer(Tracer::new_for_http().on_request(|req| {
-            tracing::info!("Request: {:?}", req);
-            req
-        }))
+        .layer(trace_layer)
 }
 
 fn app_routes() -> Router {
