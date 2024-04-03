@@ -51,6 +51,7 @@ pub async fn crisis_v2_battle_finish(Json(payload): Json<Value>) -> Json<Value> 
         } else {
             let slot_id = slot.as_str().unwrap();
             let slot_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][slot_id].clone();
+            let slot_pack_id = slot_data;
         }
     }
     Json(nodes)
