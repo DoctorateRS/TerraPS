@@ -6,17 +6,17 @@ use crate::{
         config::CONFIG_JSON_PATH,
         user::{CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH},
     },
-    core::time,
+    core::{time, JSON},
     utils::{read_json, write_json},
 };
 
-pub async fn crisis_v2_get_info() -> Json<Value> {
+pub async fn crisis_v2_get_info() -> JSON {
     let config = read_json(CONFIG_JSON_PATH);
     let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap_or("cc2");
     Json(read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str()))
 }
 
-pub async fn crisis_v2_battle_start(Json(payload): Json<Value>) -> Json<Value> {
+pub async fn crisis_v2_battle_start(Json(payload): JSON) -> JSON {
     let battle_data = json!({
         "mapId": payload["mapId"],
         "runeSlots": payload["runeSlots"]
@@ -32,7 +32,7 @@ pub async fn crisis_v2_battle_start(Json(payload): Json<Value>) -> Json<Value> {
     }))
 }
 
-pub async fn crisis_v2_battle_finish(Json(payload): Json<Value>) -> Json<Value> {
+pub async fn crisis_v2_battle_finish(Json(payload): JSON) -> JSON {
     let config = read_json(CONFIG_JSON_PATH);
     let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap_or("cc2");
     let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
@@ -48,11 +48,32 @@ pub async fn crisis_v2_battle_finish(Json(payload): Json<Value>) -> Json<Value> 
     for slot in slots {
         if !slot.as_str().unwrap().starts_with("node_") {
             continue;
-        } else {
-            let slot_id = slot.as_str().unwrap();
-            let slot_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][slot_id].clone();
-            let slot_pack_id = slot_data;
         }
+        let slot_id = slot.as_str().unwrap();
+        let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][slot_id].clone();
+        let slot_pack_id = node_data["slotPackId"].clone();
+        if slot_pack_id.is_null() {
+            continue;
+        }
+        if nodes.get(slot_pack_id.as_str().unwrap()).is_none() {
+            nodes[slot_pack_id.as_str().unwrap()] = json!({});
+        }
+        let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() {
+            node_data["mutualExclusionGroup"].clone()
+        } else {
+            slot.clone()
+        };
     }
     Json(nodes)
+}
+
+pub async fn crisis_v2_get_snapshot() -> JSON {
+    Json(json!({
+        "detail": {},
+        "simple": {},
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
 }
