@@ -47,8 +47,8 @@ fn crisis_v2_routes() -> Router {
 
 fn online_routes() -> Router {
     Router::new()
-        .route("/v1/ping", get(online::online_v1_ping))
-        .route("/v1/loginout", get(online::online_v1_login_out))
+        .route("/v1/ping", post(online::online_v1_ping))
+        .route("/v1/loginout", post(online::online_v1_login_out))
 }
 
 fn user_routes() -> Router {
