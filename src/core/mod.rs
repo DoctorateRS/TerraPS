@@ -18,8 +18,7 @@ pub async fn general_v1_server_time() -> Json<Value> {
 }
 
 pub fn time() -> u64 {
-    let faketime_enabled = read_json(constants::config::CONFIG_JSON_PATH).clone()["userConfig"]
-        ["faketime"]
+    let faketime_enabled = read_json(constants::config::CONFIG_JSON_PATH).clone()["userConfig"]["faketime"]
         .as_i64()
         .unwrap_or(-1);
     if faketime_enabled == -1 {
