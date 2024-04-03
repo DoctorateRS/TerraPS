@@ -1,0 +1,372 @@
+{
+    "normal": {
+        "tags": [
+            11,
+            14
+        ],
+        "charId": "char_4064_mlynar",
+        "isNew": 1
+    },
+    "advanced": [
+        {
+            "charId": "char_103_angel",
+            "isNew": 1
+        },
+        {
+            "charId": "char_332_archet",
+            "isNew": 1
+        },
+        {
+            "charId": "char_456_ash",
+            "isNew": 1
+        },
+        {
+            "charId": "char_340_shwaz",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4055_bgsnow",
+            "isNew": 1
+        },
+        {
+            "charId": "char_430_fartth",
+            "isNew": 1
+        },
+        {
+            "charId": "char_113_cqbw",
+            "isNew": 1
+        },
+        {
+            "charId": "char_300_phenxi",
+            "isNew": 1
+        },
+        {
+            "charId": "char_197_poca",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2012_typhon",
+            "isNew": 1
+        },
+        {
+            "charId": "char_391_rosmon",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1013_chen2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4117_ray",
+            "isNew": 1
+        },
+        {
+            "charId": "char_112_siege",
+            "isNew": 1
+        },
+        {
+            "charId": "char_222_bpipe",
+            "isNew": 1
+        },
+        {
+            "charId": "char_362_saga",
+            "isNew": 1
+        },
+        {
+            "charId": "char_479_sleach",
+            "isNew": 1
+        },
+        {
+            "charId": "char_420_flamtl",
+            "isNew": 1
+        },
+        {
+            "charId": "char_427_vigil",
+            "isNew": 1
+        },
+        {
+            "charId": "char_249_mlyss",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4087_ines",
+            "isNew": 1
+        },
+        {
+            "charId": "char_134_ifrit",
+            "isNew": 1
+        },
+        {
+            "charId": "char_213_mostma",
+            "isNew": 1
+        },
+        {
+            "charId": "char_180_amgoat",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2013_cerber",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4027_heyak",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2015_dusk",
+            "isNew": 1
+        },
+        {
+            "charId": "char_472_pasngr",
+            "isNew": 1
+        },
+        {
+            "charId": "char_426_billro",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4080_lin",
+            "isNew": 1
+        },
+        {
+            "charId": "char_377_gdglow",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4046_ebnhlz",
+            "isNew": 1
+        },
+        {
+            "charId": "char_206_gnosis",
+            "isNew": 1
+        },
+        {
+            "charId": "char_291_aglina",
+            "isNew": 1
+        },
+        {
+            "charId": "char_358_lisa",
+            "isNew": 1
+        },
+        {
+            "charId": "char_248_mgllan",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1012_skadi2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1031_slent2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2023_ling",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4072_ironmn",
+            "isNew": 1
+        },
+        {
+            "charId": "char_245_cello",
+            "isNew": 1
+        },
+        {
+            "charId": "char_250_phatom",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1028_texas2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1029_yato2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_322_lmlee",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1033_swire2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_400_weedy",
+            "isNew": 1
+        },
+        {
+            "charId": "char_225_haak",
+            "isNew": 1
+        },
+        {
+            "charId": "char_474_glady",
+            "isNew": 1
+        },
+        {
+            "charId": "char_437_mizuki",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1023_ghost2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4048_doroth",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4123_ela",
+            "isNew": 1
+        },
+        {
+            "charId": "char_147_shining",
+            "isNew": 1
+        },
+        {
+            "charId": "char_179_cgbird",
+            "isNew": 1
+        },
+        {
+            "charId": "char_003_kalts",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4042_lumen",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1016_agoat2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1020_reed2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_136_hsguma",
+            "isNew": 1
+        },
+        {
+            "charId": "char_202_demkni",
+            "isNew": 1
+        },
+        {
+            "charId": "char_423_blemsh",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2025_shu",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2014_nian",
+            "isNew": 1
+        },
+        {
+            "charId": "char_311_mudrok",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4065_judge",
+            "isNew": 1
+        },
+        {
+            "charId": "char_416_zumama",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4039_horn",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1034_jesca2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_264_f12yin",
+            "isNew": 1
+        },
+        {
+            "charId": "char_2024_chyue",
+            "isNew": 1
+        },
+        {
+            "charId": "char_172_svrash",
+            "isNew": 1
+        },
+        {
+            "charId": "char_293_thorns",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4082_qiubai",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4088_hodrer",
+            "isNew": 1
+        },
+        {
+            "charId": "char_010_chen",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4009_irene",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4116_blkkgt",
+            "isNew": 1
+        },
+        {
+            "charId": "char_017_huang",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1026_gvial2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_350_surtr",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4098_vvana",
+            "isNew": 1
+        },
+        {
+            "charId": "char_188_helage",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4121_zuole",
+            "isNew": 1
+        },
+        {
+            "charId": "char_485_pallas",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1014_nearl2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4011_lessng",
+            "isNew": 1
+        },
+        {
+            "charId": "char_1032_excu2",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4064_mlynar",
+            "isNew": 1
+        },
+        {
+            "charId": "char_263_skadi",
+            "isNew": 1
+        }
+    ]
+}

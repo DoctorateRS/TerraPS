@@ -2413,6 +2413,25 @@
             },
             "workTime": 0
         },
+        "4125": {
+            "charId": "char_4125_rdoc",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
         "106": {
             "charId": "char_106_franka",
             "lastApAddTime": 1695000000,
@@ -2681,6 +2700,25 @@
         },
         "356": {
             "charId": "char_356_broca",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4126": {
+            "charId": "char_4126_fuze",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -4807,6 +4845,25 @@
             },
             "workTime": 0
         },
+        "4124": {
+            "charId": "char_4124_iana",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
         "103": {
             "charId": "char_103_angel",
             "lastApAddTime": 1695000000,
@@ -5778,6 +5835,25 @@
         },
         "4048": {
             "charId": "char_4048_doroth",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4123": {
+            "charId": "char_4123_ela",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -12745,6 +12821,86 @@
             "count": 9999,
             "inUse": 0
         },
+        "furni_artmuseum_headset_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_weirdexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_brochure_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_fence_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_chandelier_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_sculpture_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_notouch_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_whaleexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_pepperexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_stoneexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_fossil_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_bench_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_carpet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_twistexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_pillar_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_blackexhibit_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_droplight_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_plant_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_wallpaper_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_artmuseum_floor_01": {
+            "count": 9999,
+            "inUse": 0
+        },
         "furni_oct1st_deckChair_01": {
             "count": 9999,
             "inUse": 0
@@ -13102,6 +13258,10 @@
             "inUse": 0
         },
         "furni_act45d4_newYearPic_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_foolsDay_coat_01": {
             "count": 9999,
             "inUse": 0
         },
@@ -13490,6 +13650,10 @@
             "inUse": 0
         },
         "furni_contract2_s1_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_contract2_s2_01": {
             "count": 9999,
             "inUse": 0
         },

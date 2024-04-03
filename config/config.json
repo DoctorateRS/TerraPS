@@ -7,7 +7,8 @@
         "mode": "cn",
         "adaptive": true,
         "noProxy": false,
-        "timeout": 30
+        "gadget": false,
+        "useSu": true
     },
     "assets": {
         "autoUpdate": false,
@@ -21,11 +22,13 @@
             "clientVersion": "2.2.21"
         }
     },
-    "remote": {
-        "enableGameBI": false,
-        "enableSDKNetSecure": true,
-        "enableBestHttp": true
+    "versionGlobal": {
+        "android": {
+            "resVersion": "24-03-22-10-13-05-158013",
+            "clientVersion": "21.1.01"
+        }
     },
+    "remote": {},
     "networkConfig": {
         "cn": {
             "sign": "sign",
@@ -58,9 +61,9 @@
             "sign": "sign",
             "content": {
                 "configVer": "1",
-                "funcVer": "V029",
+                "funcVer": "V043",
                 "configs": {
-                    "V029": {
+                    "V043": {
                         "override": true,
                         "network": {
                             "gs": "{server}",
@@ -86,7 +89,7 @@
         "selectedCrisis": "cc12"
     },
     "crisisV2Config": {
-        "selectedCrisis": "cc1"
+        "selectedCrisis": "cc2"
     },
     "towerConfig": {
         "season": "tower_season_4"
@@ -95,7 +98,7 @@
         "allChars": true
     },
     "battleReplayConfig": {
-        "anonymous": false
+        "anonymous": true
     },
     "userConfig": {
         "restorePreviousStates": {
@@ -103,13 +106,14 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1710403200,
-        "activityMaxStartTs": 1712433599,
-        "secretary": "char_245_cello",
-        "secretarySkinId": "char_245_cello#2",
-        "background": "bg_rogue_3",
-        "theme": "tm_mainline_1",
-        "fakeTime": -1
+        "activityMinStartTs": 1709179200,
+        "activityMaxStartTs": 1711569599,
+        "secretary": "char_4123_ela",
+        "secretarySkinId": "char_4123_ela@rainbow6#2",
+        "background": "bg_rainbowsix_1",
+        "theme": "tm_rainbowsix_1",
+        "fakeTime": -1,
+        "vision": true
     },
     "charConfig": {
         "favorPoint": 25570,
@@ -120,5 +124,11 @@
         "skillsSpecializeLevel": 3,
         "customUnitInfo": {},
         "duplicateUnits": []
+    },
+    "gacha": {
+        "5rarity": 1.0,
+        "4rarity": 0,
+        "3rarity": 0,
+        "2rarity": 0
     }
 }

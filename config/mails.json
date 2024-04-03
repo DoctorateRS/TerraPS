@@ -1,10 +1,7 @@
 {
     "recievedIDs": [
         1,
-        2,
-        3,
-        4,
-        5
+        2
     ],
     "deletedIDs": [],
     "mailList": {
@@ -49,72 +46,6 @@
                     "id": "7004",
                     "type": "TKT_GACHA_10",
                     "count": 9
-                }
-            ]
-        },
-        "3": {
-            "from": "char_2012_typhon",
-            "subject": "Test 002",
-            "content": "Part 2",
-            "items": [
-                {
-                    "id": "4003",
-                    "type": "DIAMOND_SHD",
-                    "count": 120000
-                },
-                {
-                    "id": "7004",
-                    "type": "TKT_GACHA_10",
-                    "count": 900
-                },
-                {
-                    "id": "7003",
-                    "type": "TKT_GACHA",
-                    "count": 100
-                }
-            ]
-        },
-        "4": {
-            "from": "char_4064_mlynar",
-            "subject": "Test 003",
-            "content": "Geometry Dash 2.2",
-            "items": [
-                {
-                    "id": "4003",
-                    "type": "DIAMOND_SHD",
-                    "count": 120000
-                },
-                {
-                    "id": "7004",
-                    "type": "TKT_GACHA_10",
-                    "count": 900
-                },
-                {
-                    "id": "7003",
-                    "type": "TKT_GACHA",
-                    "count": 100
-                }
-            ]
-        },
-        "5": {
-            "from": "char_1033_swire2",
-            "subject": "Welcome to ODPy!",
-            "content": "Welcome to ODPy!",
-            "items": [
-                {
-                    "id": "4003",
-                    "type": "DIAMOND_SHD",
-                    "count": 120000
-                },
-                {
-                    "id": "7004",
-                    "type": "TKT_GACHA_10",
-                    "count": 900
-                },
-                {
-                    "id": "7003",
-                    "type": "TKT_GACHA",
-                    "count": 100
                 }
             ]
         }

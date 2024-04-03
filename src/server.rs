@@ -26,7 +26,7 @@ async fn main() {
 }
 
 fn get_server_address() -> String {
-    let config = utils::read_json(constants::config::CONFIG_PATH);
+    let config = utils::read_json(constants::config::CONFIG_JSON_PATH);
     let server_config = &config["server"];
     let host = server_config["host"].as_str().unwrap();
     let port = server_config["port"].as_u64().unwrap();
