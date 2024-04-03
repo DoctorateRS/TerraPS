@@ -1,5 +1,5 @@
 use crate::{
-    account,
+    account, background,
     core::{general_v1_server_time, prod, user},
     crisis, online,
 };
@@ -16,7 +16,6 @@ use tracing::debug_span;
 pub fn routes() -> Router {
     let trace_layer = Tracer::new_for_http().make_span_with(|req: &Request<_>| {
         let matched_path = req.extensions().get::<MatchedPath>().map(MatchedPath::as_str);
-
         debug_span!(
             "http_request",
             method = ?req.method(),
@@ -84,6 +83,8 @@ fn misc_routes() -> Router {
     Router::new()
         .route("/general/v1/server_time", get(general_v1_server_time))
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
+        .route("/background/setBackground", post(background::background_set_bg))
+        .route("/homeTheme/change", post(background::home_theme_change))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
