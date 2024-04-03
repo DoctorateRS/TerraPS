@@ -1,4 +1,4 @@
-use crate::core::{prod, user};
+use crate::core::{general_v1_server_time, prod, user};
 use axum::{
     http::Uri,
     routing::{get, post},
@@ -12,6 +12,7 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisis", crisis_routes())
         .nest("/crisisV2", crisis_v2_routes())
+        .route("/general/v1/server_time", get(general_v1_server_time))
         .fallback(fallback)
 }
 

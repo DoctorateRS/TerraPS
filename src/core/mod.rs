@@ -23,7 +23,7 @@ fn time() -> u64 {
         .as_i64()
         .unwrap_or(-1);
     if faketime_enabled == -1 {
-        chrono::Utc::now().timestamp_millis() as u64
+        chrono::Utc::now().timestamp() as u64
     } else {
         faketime_enabled as u64
     }
