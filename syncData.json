@@ -139,20 +139,25 @@
                         "tool_bomb": 1
                     }
                 }
+            },
+            "APRIL_FOOL": {
+                "act5fun": {
+                    "isOpen": true
+                }
             }
         },
         "status": {
-            "nickName": "NULL",
-            "nickNumber": "0000",
+            "nickName": "Doctorate",
+            "nickNumber": "1111",
             "level": 999,
             "exp": 0,
             "socialPoint": 6,
-            "gachaTicket": 10,
-            "tenGachaTicket": 1,
-            "instantFinishTicket": 0,
+            "gachaTicket": 0,
+            "tenGachaTicket": 0,
+            "instantFinishTicket": 9999999,
             "hggShard": 0,
             "lggShard": 0,
-            "recruitLicense": 0,
+            "recruitLicense": 9999999,
             "progress": 30000,
             "buyApRemainTimes": 99,
             "apLimitUpFlag": 0,
@@ -160,30 +165,50 @@
             "flags": {},
             "ap": 999,
             "maxAp": 999,
-            "androidDiamond": 0,
+            "androidDiamond": 9999999,
             "iosDiamond": 999,
-            "diamondShard": 0,
-            "gold": 0,
+            "diamondShard": 9999999,
+            "gold": 9999999,
             "practiceTicket": 999,
             "lastRefreshTs": 0,
             "lastApAddTime": 0,
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "NULL",
+            "serverName": "Doctorate",
             "avatarId": "0",
-            "resume": "NULL",
+            "resume": "DoctoratePy",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
-            "secretary": "char_245_cello",
-            "secretarySkinId": "char_245_cello#2",
+            "secretary": "char_4055_bgsnow",
+            "secretarySkinId": "char_4055_bgsnow#2",
             "tipMonthlyCardExpireTs": 0,
             "avatar": {
                 "type": "ICON",
                 "id": "avatar_activity_RI"
             },
             "globalVoiceLan": "JP"
+        },
+        "nameCardStyle": {
+            "componentOrder": [
+                "module_sign",
+                "module_assist",
+                "module_medal"
+            ],
+            "skin": {
+                "selected": "nc_rhodes_default",
+                "state": {
+                    "nc_rhodes_default": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_rhodes_light": {
+                        "unlock": true,
+                        "progress": null
+                    }
+                }
+            }
         },
         "troop": {
             "curCharInstId": 0,
@@ -317,23 +342,9 @@
             "seasons": {
                 "crisis_v2_season_1_1": {
                     "permanent": {
-                        "state": 1,
-                        "scoreTotal": [
-                            300,
-                            300,
-                            300,
-                            300,
-                            300,
-                            300
-                        ],
-                        "scoreSingle": [
-                            300,
-                            300,
-                            300,
-                            300,
-                            300,
-                            300
-                        ],
+                        "state": 0,
+                        "scoreTotal": [],
+                        "scoreSingle": [],
                         "comment": [],
                         "rune": {},
                         "exRunes": {
@@ -350,54 +361,26 @@
                     },
                     "temporary": {
                         "crisis_v2_01-02": {
-                            "state": 1,
-                            "scoreTotal": [
-                                150,
-                                150,
-                                150,
-                                150,
-                                150,
-                                150
-                            ],
+                            "state": 0,
+                            "scoreTotal": [],
                             "rune": {},
                             "challenge": {}
                         },
                         "crisis_v2_01-03": {
-                            "state": 1,
-                            "scoreTotal": [
-                                150,
-                                150,
-                                150,
-                                150,
-                                150,
-                                150
-                            ],
+                            "state": 0,
+                            "scoreTotal": [],
                             "rune": {},
                             "challenge": {}
                         },
                         "crisis_v2_01-05": {
-                            "state": 1,
-                            "scoreTotal": [
-                                150,
-                                150,
-                                150,
-                                150,
-                                150,
-                                150
-                            ],
+                            "state": 0,
+                            "scoreTotal": [],
                             "rune": {},
                             "challenge": {}
                         },
                         "crisis_v2_01-07": {
-                            "state": 1,
-                            "scoreTotal": [
-                                150,
-                                150,
-                                150,
-                                150,
-                                150,
-                                150
-                            ],
+                            "state": 0,
+                            "scoreTotal": [],
                             "rune": {},
                             "challenge": {}
                         }
@@ -407,8 +390,45 @@
                         "maxPnt": -1,
                         "chars": []
                     }
-                }
-            },
+                },
+                "crisis_v2_season_2_1": {
+                    "permanent": {
+                        "state": 0,
+                        "scoreTotal": [],
+                        "scoreSingle": [],
+                        "comment": [],
+                        "rune": {},
+                        "exRunes": {
+                            "node_57": 2,
+                            "node_21": 2,
+                            "node_55": 2
+                        },
+                        "runePack": {},
+                        "challenge": {},
+                        "reward": {}
+                    },
+                    "temporary": {
+                        "crisis_v2_02-02": {
+                            "state": 0,
+                            "scoreTotal": [],
+                            "rune": {},
+                            "challenge": {}
+                        },
+                        "crisis_v2_02-03": {
+                            "state": 0,
+                            "scoreTotal": [],
+                            "rune": {},
+                            "challenge": {}
+                        }
+                    },
+                    "social": {
+                        "assistCnt": 0,
+                        "maxPnt": -1,
+                        "chars": []
+                    }
+                
+            }
+        },
             "shop": {
                 "coin": 0,
                 "info": [],
@@ -420,7 +440,81 @@
             "current": null
         },
         "mainline": {
-            "record": {},
+            "record": {
+                "easy_10-01": 1,
+                "main_10-01": 1,
+                "tough_10-01": 1,
+                "easy_10-06": 1,
+                "main_10-06": 1,
+                "tough_10-06": 1,
+                "easy_10-10": 1,
+                "main_10-10": 1,
+                "tough_10-10": 1,
+                "easy_10-13": 1,
+                "main_10-13": 1,
+                "tough_10-13": 1,
+                "easy_10-15": 1,
+                "main_10-15": 1,
+                "tough_10-15": 1,
+                "hard_10-01": 1,
+                "hard_10-02": 1,
+                "hard_10-03": 1,
+                "easy_11-01": 1,
+                "main_11-01": 1,
+                "tough_11-01": 1,
+                "easy_11-06": 1,
+                "main_11-06": 1,
+                "tough_11-06": 1,
+                "easy_11-10": 1,
+                "main_11-10": 1,
+                "tough_11-10": 1,
+                "easy_11-13": 1,
+                "main_11-13": 1,
+                "tough_11-13": 1,
+                "main_11-17": 1,
+                "hard_11-01": 1,
+                "hard_11-02": 1,
+                "hard_11-03": 1,
+                "hard_11-04": 1,
+                "easy_12-03": 1,
+                "main_12-03": 1,
+                "tough_12-03": 1,
+                "easy_12-06": 1,
+                "main_12-06": 1,
+                "tough_12-06": 1,
+                "easy_12-11": 1,
+                "main_12-11": 1,
+                "tough_12-11": 1,
+                "easy_12-15": 1,
+                "main_12-15": 1,
+                "tough_12-15": 1,
+                "easy_12-18": 1,
+                "main_12-18": 1,
+                "tough_12-18": 1,
+                "hard_12-01": 1,
+                "hard_12-02": 1,
+                "hard_12-03": 1,
+                "hard_12-04": 1,
+                "easy_13-04": 1,
+                "main_13-04": 1,
+                "tough_13-04": 1,
+                "easy_13-09": 1,
+                "main_13-09": 1,
+                "tough_13-09": 1,
+                "easy_13-12": 1,
+                "main_13-12": 1,
+                "tough_13-12": 1,
+                "easy_13-16": 1,
+                "main_13-16": 1,
+                "tough_13-16": 1,
+                "easy_13-19": 1,
+                "main_13-19": 1,
+                "tough_13-19": 1,
+                "hard_13-01": 1,
+                "hard_13-02": 1,
+                "hard_13-03": 1,
+                "hard_13-04": 1
+            },
             "cache": [],
             "version": 1
         },
@@ -4329,7 +4423,7 @@
                         "totalPut": 999
                     },
                     "bp": {
-                        "point": 61000,
+                        "point": 55000,
                         "reward": {
                             "bp_level_1": 1,
                             "bp_level_2": 1,
@@ -4485,22 +4579,7 @@
                             "bp_level_152": 1,
                             "bp_level_153": 1,
                             "bp_level_154": 1,
-                            "bp_level_155": 1,
-                            "bp_level_156": 1,
-                            "bp_level_157": 1,
-                            "bp_level_158": 1,
-                            "bp_level_159": 1,
-                            "bp_level_160": 1,
-                            "bp_level_161": 1,
-                            "bp_level_162": 1,
-                            "bp_level_163": 1,
-                            "bp_level_164": 1,
-                            "bp_level_165": 1,
-                            "bp_level_166": 1,
-                            "bp_level_167": 1,
-                            "bp_level_168": 1,
-                            "bp_level_169": 1,
-                            "bp_level_170": 1
+                            "bp_level_155": 1
                         }
                     },
                     "buff": {
@@ -4515,7 +4594,6 @@
                             "rogue_3_outbuff_6": 1,
                             "rogue_3_outbuff_7": 1,
                             "rogue_3_difficulty_1": 1,
-                            "rogue_3_outbuff_8": 1,
                             "rogue_3_outbuff_9": 1,
                             "rogue_3_outbuff_10": 1,
                             "rogue_3_outbuff_11": 1,
@@ -4530,7 +4608,6 @@
                             "rogue_3_outbuff_20": 1,
                             "rogue_3_outbuff_21": 1,
                             "rogue_3_difficulty_2": 1,
-                            "rogue_3_outbuff_22": 1,
                             "rogue_3_outbuff_23": 1,
                             "rogue_3_outbuff_24": 1,
                             "rogue_3_outbuff_25": 1,
@@ -4545,7 +4622,6 @@
                             "rogue_3_outbuff_34": 1,
                             "rogue_3_outbuff_35": 1,
                             "rogue_3_difficulty_3": 1,
-                            "rogue_3_outbuff_36": 1,
                             "rogue_3_outbuff_37": 1,
                             "rogue_3_outbuff_38": 1,
                             "rogue_3_outbuff_39": 1,
@@ -5669,6 +5745,114 @@
                             "rogue_3_relic_boss_2b": {
                                 "state": 2,
                                 "progress": null
+                            },
+                            "rogue_3_relic_boss_4a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_boss_4b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_curse_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_curse_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_curse_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_legacy_173": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_legacy_174": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_legacy_175": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_hand_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_hand_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_book_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_27": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_28": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_29": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_30": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_31": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_32": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_33": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_34": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_3_relic_fight_35": {
+                                "state": 2,
+                                "progress": null
                             }
                         },
                         "capsule": {},
@@ -5769,7 +5953,8 @@
                             "month_chat_rogue_3_4": 5,
                             "month_chat_rogue_3_5": 5,
                             "month_chat_rogue_3_6": 5,
-                            "month_chat_rogue_3_7": 5
+                            "month_chat_rogue_3_7": 5,
+                            "month_chat_rogue_3_8": 5
                         },
                         "band": {
                             "rogue_3_band_1": {
@@ -5884,6 +6069,18 @@
                                 "state": 1,
                                 "progress": null
                             },
+                            "endbook_rogue_3_3_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_3_3_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_3_3_3": {
+                                "state": 1,
+                                "progress": null
+                            },
                             "endbook_rogue_3_1_4": {
                                 "state": 1,
                                 "progress": null
@@ -5909,18 +6106,6 @@
                                 "progress": null
                             },
                             "endbook_rogue_3_4_4": {
-                                "state": 1,
-                                "progress": null
-                            },
-                            "endbook_rogue_3_3_1": {
-                                "state": 1,
-                                "progress": null
-                            },
-                            "endbook_rogue_3_3_2": {
-                                "state": 1,
-                                "progress": null
-                            },
-                            "endbook_rogue_3_3_3": {
                                 "state": 1,
                                 "progress": null
                             }
@@ -6312,6 +6497,26 @@
                                 "rogue_3_totem_boss2_b": {
                                     "state": 2,
                                     "progress": null
+                                },
+                                "rogue_3_totem_A_L1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_totem_A_L2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_totem_R_E7": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_totem_G_E7": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_totem_B_E7": {
+                                    "state": 2,
+                                    "progress": null
                                 }
                             },
                             "affix": {
@@ -6369,6 +6574,34 @@
                             "rogue_3_challenge_11": 2,
                             "rogue_3_challenge_12": 2,
                             "rogue_3_challenge_13": 2
+                        },
+                        "collect": {
+                            "exploreTool": {
+                                "rogue_3_explore_tool_1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_explore_tool_2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_explore_tool_3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_explore_tool_4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_explore_tool_5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_3_explore_tool_6": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            }
                         }
                     },
                     "monthTeam": {
@@ -6379,7 +6612,8 @@
                             "month_team_4",
                             "month_team_5",
                             "month_team_6",
-                            "month_team_7"
+                            "month_team_7",
+                            "month_team_8"
                         ],
                         "reward": {
                             "month_team_1": 1,
@@ -6388,7 +6622,8 @@
                             "month_team_4": 1,
                             "month_team_5": 1,
                             "month_team_6": 1,
-                            "month_team_7": 1
+                            "month_team_7": 1,
+                            "month_team_8": 1
                         },
                         "mission": {}
                     },
@@ -6401,17 +6636,20 @@
                             "ro3_n_1_2": 1,
                             "ro3_n_1_3": 1,
                             "ro3_n_1_4": 1,
+                            "ro3_n_1_5": 1,
                             "ro3_n_2_1": 1,
                             "ro3_n_2_2": 1,
                             "ro3_n_2_3": 1,
                             "ro3_n_2_4": 1,
                             "ro3_n_2_5": 1,
+                            "ro3_n_2_6": 1,
                             "ro3_n_3_1": 1,
                             "ro3_n_3_2": 1,
                             "ro3_n_3_3": 1,
                             "ro3_n_3_4": 1,
                             "ro3_n_3_5": 1,
                             "ro3_n_3_6": 1,
+                            "ro3_n_3_7": 1,
                             "ro3_n_4_1": 1,
                             "ro3_n_4_2": 1,
                             "ro3_n_4_3": 1,
@@ -6419,6 +6657,7 @@
                             "ro3_n_4_5": 1,
                             "ro3_n_4_6": 1,
                             "ro3_n_4_7": 1,
+                            "ro3_n_4_8": 1,
                             "ro3_n_5_1": 1,
                             "ro3_n_5_2": 1,
                             "ro3_n_5_3": 1,
@@ -6426,6 +6665,7 @@
                             "ro3_n_5_5": 1,
                             "ro3_n_5_6": 1,
                             "ro3_n_5_7": 1,
+                            "ro3_n_5_8": 1,
                             "ro3_n_6_1": 1,
                             "ro3_n_6_2": 1,
                             "ro3_b_1": 1,
@@ -6435,8 +6675,13 @@
                             "ro3_b_3": 1,
                             "ro3_b_3_b": 1,
                             "ro3_b_4": 1,
+                            "ro3_b_4_b": 1,
                             "ro3_b_5": 1,
+                            "ro3_b_5_b": 1,
                             "ro3_b_6": 1,
+                            "ro3_b_6_b": 1,
+                            "ro3_b_7": 1,
+                            "ro3_b_7_b": 1,
                             "ro3_t_1": 1,
                             "ro3_t_2": 1,
                             "ro3_t_3": 1,
@@ -6448,21 +6693,26 @@
                             "ro3_ev_5": 1,
                             "ro3_ev_6": 1,
                             "ro3_ev_7": 1,
+                            "ro3_ev_8": 1,
+                            "ro3_ev_9": 1,
                             "ro3_e_1_1": 1,
                             "ro3_e_1_2": 1,
                             "ro3_e_1_3": 1,
                             "ro3_e_1_4": 1,
+                            "ro3_e_1_5": 1,
                             "ro3_e_2_1": 1,
                             "ro3_e_2_2": 1,
                             "ro3_e_2_3": 1,
                             "ro3_e_2_4": 1,
                             "ro3_e_2_5": 1,
+                            "ro3_e_2_6": 1,
                             "ro3_e_3_1": 1,
                             "ro3_e_3_2": 1,
                             "ro3_e_3_3": 1,
                             "ro3_e_3_4": 1,
                             "ro3_e_3_5": 1,
                             "ro3_e_3_6": 1,
+                            "ro3_e_3_7": 1,
                             "ro3_e_4_1": 1,
                             "ro3_e_4_2": 1,
                             "ro3_e_4_3": 1,
@@ -6470,6 +6720,7 @@
                             "ro3_e_4_5": 1,
                             "ro3_e_4_6": 1,
                             "ro3_e_4_7": 1,
+                            "ro3_e_4_8": 1,
                             "ro3_e_5_1": 1,
                             "ro3_e_5_2": 1,
                             "ro3_e_5_3": 1,
@@ -6477,6 +6728,7 @@
                             "ro3_e_5_5": 1,
                             "ro3_e_5_6": 1,
                             "ro3_e_5_7": 1,
+                            "ro3_e_5_8": 1,
                             "ro3_e_6_1": 1,
                             "ro3_e_6_2": 1
                         },
@@ -7018,6 +7270,46 @@
                         "value": 15,
                         "target": 15,
                         "hasRecv": true
+                    },
+                    "tower_season4_1": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_2": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_3": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_4": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_5": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_6": {
+                        "value": 1,
+                        "target": 1,
+                        "hasRecv": true
+                    },
+                    "tower_season4_7": {
+                        "value": 15,
+                        "target": 15,
+                        "hasRecv": true
+                    },
+                    "tower_season4_8": {
+                        "value": 15,
+                        "target": 15,
+                        "hasRecv": true
                     }
                 },
                 "passWithGodCard": {},
@@ -7046,12 +7338,367 @@
                 "area_municipio": 1
             }
         },
+        "sandboxPerm": {
+            "template": {
+                "SANDBOX_V2": {
+                    "sandbox_1": {
+                        "status": {
+                            "ver": 1,
+                            "state": 0,
+                            "ts": 0,
+                            "isRift": false,
+                            "isGuide": false,
+                            "exploreMode": false
+                        },
+                        "base": {
+                            "baseLv": 0,
+                            "upgradeProgress": [],
+                            "trapLimit": {},
+                            "portableUnlock": false,
+                            "outpostUnlock": false,
+                            "repairDiscount": 0,
+                            "bossKill": []
+                        },
+                        "main": {
+                            "game": {
+                                "mapId": "",
+                                "day": 0,
+                                "maxDay": 0,
+                                "ap": 0,
+                                "maxAp": 0
+                            },
+                            "map": {
+                                "season": {
+                                    "type": 0,
+                                    "remain": 0,
+                                    "total": 0
+                                },
+                                "zone": {},
+                                "node": {}
+                            },
+                            "stage": {
+                                "node": {}
+                            },
+                            "enemy": {
+                                "enemyRush": {},
+                                "rareAnimal": {}
+                            },
+                            "npc": {
+                                "node": {},
+                                "favor": {}
+                            },
+                            "report": {
+                                "settle": null,
+                                "daily": null
+                            },
+                            "event": {
+                                "node": {},
+                                "effect": []
+                            }
+                        },
+                        "rift": null,
+                        "riftInfo": {
+                            "isUnlocked": false,
+                            "randomRemain": 0,
+                            "difficultyLvMax": -1,
+                            "teamLv": 0,
+                            "fixFinish": [],
+                            "reservation": null,
+                            "gameInfo": null,
+                            "settleInfo": null
+                        },
+                        "quest": {
+                            "pending": [],
+                            "complete": []
+                        },
+                        "mission": {
+                            "squad": []
+                        },
+                        "troop": {
+                            "food": {},
+                            "squad": [
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                },
+                                {
+                                    "slots": [],
+                                    "tools": []
+                                }
+                            ],
+                            "usedChar": []
+                        },
+                        "cook": {
+                            "drink": 0,
+                            "extraDrink": 0,
+                            "book": {},
+                            "food": {}
+                        },
+                        "build": {
+                            "book": {},
+                            "building": {},
+                            "tactical": {},
+                            "animal": {}
+                        },
+                        "bag": {
+                            "material": {},
+                            "craft": []
+                        },
+                        "tech": {
+                            "token": 6,
+                            "cent": 0,
+                            "unlock": []
+                        },
+                        "bank": {
+                            "book": [],
+                            "coin": {}
+                        },
+                        "buff": {
+                            "rune": {
+                                "global": [],
+                                "node": {},
+                                "char": {}
+                            }
+                        },
+                        "archive": {
+                            "save": [],
+                            "nextLoadTs": 0,
+                            "loadTimes": 0,
+                            "loadTs": 0
+                        },
+                        "supply": {
+                            "unlock": false,
+                            "enable": false,
+                            "slotCnt": 0,
+                            "char": []
+                        },
+                        "shop": {
+                            "unlock": false,
+                            "day": 0,
+                            "slots": []
+                        },
+                        "month": {
+                            "rushPass": []
+                        },
+                        "collect": {
+                            "pending": {
+                                "achievement": {}
+                            },
+                            "complete": {
+                                "achievement": [
+                                    "achieve_1_1",
+                                    "achieve_1_2",
+                                    "achieve_1_3",
+                                    "achieve_1_4",
+                                    "achieve_1_5",
+                                    "achieve_1_6",
+                                    "achieve_1_7",
+                                    "achieve_1_8",
+                                    "achieve_2_1",
+                                    "achieve_2_2",
+                                    "achieve_2_3",
+                                    "achieve_2_4",
+                                    "achieve_2_5",
+                                    "achieve_2_6",
+                                    "achieve_2_7",
+                                    "achieve_2_8",
+                                    "achieve_2_9",
+                                    "achieve_2_10",
+                                    "achieve_2_11",
+                                    "achieve_2_12",
+                                    "achieve_2_13",
+                                    "achieve_2_14",
+                                    "achieve_2_15",
+                                    "achieve_2_16",
+                                    "achieve_2_17",
+                                    "achieve_2_18",
+                                    "achieve_2_19",
+                                    "achieve_3_1",
+                                    "achieve_3_2",
+                                    "achieve_3_3",
+                                    "achieve_3_4",
+                                    "achieve_3_5",
+                                    "achieve_3_6",
+                                    "achieve_3_7",
+                                    "achieve_3_8",
+                                    "achieve_3_9",
+                                    "achieve_3_10",
+                                    "achieve_3_11",
+                                    "achieve_3_12",
+                                    "achieve_3_13",
+                                    "achieve_3_14",
+                                    "achieve_3_15",
+                                    "achieve_3_16",
+                                    "achieve_3_17",
+                                    "achieve_3_18",
+                                    "achieve_3_19",
+                                    "achieve_3_20",
+                                    "achieve_3_21",
+                                    "achieve_3_22"
+                                ],
+                                "quest": [
+                                    "story_1",
+                                    "story_2",
+                                    "story_3",
+                                    "story_4",
+                                    "story_5",
+                                    "story_6",
+                                    "story_7"
+                                ],
+                                "music": [
+                                    "music_sandbox_v2_1",
+                                    "music_sandbox_v2_2",
+                                    "music_sandbox_v2_3",
+                                    "music_sandbox_v2_4",
+                                    "music_sandbox_v2_5",
+                                    "music_sandbox_v2_6",
+                                    "music_sandbox_v2_7",
+                                    "music_sandbox_v2_8",
+                                    "music_sandbox_v2_9"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "isClose": false
+        },
         "storyreview": {
             "groups": {}
         },
         "setting": {},
         "openServer": {},
-        "aprilFool": {},
+        "aprilFool": {
+            "act3fun": {
+                "stages": {
+                    "act3fun_01": {
+                        "state": 3,
+                        "scores": [
+                            0
+                        ]
+                    },
+                    "act3fun_02": {
+                        "state": 3,
+                        "scores": [
+                            0
+                        ]
+                    },
+                    "act3fun_03": {
+                        "state": 3,
+                        "scores": [
+                            0
+                        ]
+                    }
+                }
+            },
+            "act4fun": {
+                "stages": {
+                    "act4fun_tr01": {
+                        "state": 3,
+                        "liveTimes": 0
+                    },
+                    "act4fun_01": {
+                        "state": 3,
+                        "liveTimes": 0
+                    },
+                    "act4fun_02": {
+                        "state": 3,
+                        "liveTimes": 0
+                    },
+                    "act4fun_03": {
+                        "state": 3,
+                        "liveTimes": 0
+                    }
+                },
+                "liveEndings": {
+                    "badending_1": 1,
+                    "badending_2": 1,
+                    "badending_3": 1,
+                    "badending_4": 1,
+                    "badending_5": 1,
+                    "badending_6": 1,
+                    "goodending_1": 1
+                },
+                "cameraLv": 7,
+                "fans": 0,
+                "posts": 0,
+                "missions": {
+                    "mission_1": {
+                        "value": 1,
+                        "target": 1,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_2": {
+                        "value": 2,
+                        "target": 2,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_3": {
+                        "value": 3,
+                        "target": 3,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_4": {
+                        "value": 3,
+                        "target": 3,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_5": {
+                        "value": 4,
+                        "target": 4,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_6": {
+                        "value": 5,
+                        "target": 5,
+                        "finished": true,
+                        "hasRecv": true
+                    },
+                    "mission_7": {
+                        "value": 6,
+                        "target": 6,
+                        "finished": true,
+                        "hasRecv": true
+                    }
+                }
+            },
+            "act5fun": {
+                "stageState": {
+                    "act5fun_01": 3,
+                    "act5fun_02": 3
+                },
+                "highScore": 0
+            }
+        },
         "tshop": {},
         "retro": {
             "coin": 2,
@@ -7070,7 +7717,23 @@
             "building": 0,
             "status": 0
         },
-        "collectionReward": {},
+        "collectionReward": {
+            "team": {
+                "reward1_1": 1,
+                "reward2_1": 1,
+                "reward3_1": 1,
+                "reward4_1": 1,
+                "reward6_1": 1,
+                "reward8_1": 1,
+                "reward9_1": 1,
+                "reward10_1": 1,
+                "reward11_1": 1,
+                "reward12_1": 1,
+                "reward13_1": 1,
+                "reward15_1": 1,
+                "reward19_1": 1
+            }
+        },
         "campaignsV2": {
             "campaignCurrentFee": 0,
             "campaignTotalFee": 9999,
@@ -7093,7 +7756,69 @@
             "sweepMaxKills": {}
         },
         "inventory": {},
-        "recruit": {},
+        "templateTrap": {
+            "domains": {
+                "act32side": {
+                    "traps": {
+                        "trap_rnfcar": {
+                            "count": 1
+                        },
+                        "trap_ads": {
+                            "count": 1
+                        },
+                        "trap_edd": {
+                            "count": 1
+                        }
+                    },
+                    "squad": [
+                        null,
+                        null
+                    ]
+                }
+            }
+        },
+        "recruit": {
+            "normal": {
+                "slots": {
+                    "0": {
+                        "state": 1,
+                        "tags": [],
+                        "selectTags": [],
+                        "startTs": -1,
+                        "durationInSec": -1,
+                        "maxFinishTs": -1,
+                        "realFinishTs": -1
+                    },
+                    "1": {
+                        "state": 1,
+                        "tags": [],
+                        "selectTags": [],
+                        "startTs": -1,
+                        "durationInSec": -1,
+                        "maxFinishTs": -1,
+                        "realFinishTs": -1
+                    },
+                    "2": {
+                        "state": 1,
+                        "tags": [],
+                        "selectTags": [],
+                        "startTs": -1,
+                        "durationInSec": -1,
+                        "maxFinishTs": -1,
+                        "realFinishTs": -1
+                    },
+                    "3": {
+                        "state": 1,
+                        "tags": [],
+                        "selectTags": [],
+                        "startTs": -1,
+                        "durationInSec": -1,
+                        "maxFinishTs": -1,
+                        "realFinishTs": -1
+                    }
+                }
+            }
+        },
         "consumable": {},
         "checkIn": {
             "canCheckIn": 0,

@@ -1,4 +1,4 @@
-use crate::core::prod;
+use crate::core::{prod, user};
 use axum::{
     http::Uri,
     routing::{get, post},
@@ -8,6 +8,7 @@ use reqwest::StatusCode;
 
 pub fn routes() -> Router {
     Router::new()
+        .nest("/app", app_routes())
         .nest("/config/prod", config_routes())
         .nest("/crisis", crisis_routes())
         .nest("/crisisV2", crisis_v2_routes())
@@ -15,7 +16,7 @@ pub fn routes() -> Router {
 }
 
 fn app_routes() -> Router {
-    Router::new().route("/", get(|| async { "Hello, world!" }))
+    Router::new().route("/v1/config", get(user::app_v1_config))
 }
 
 fn config_routes() -> Router {

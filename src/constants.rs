@@ -1,41 +1,41 @@
 // Config Data
 #[allow(dead_code)]
 pub mod config {
-    pub const CONFIG_PATH: &str = "config/";
-    pub const CONFIG_JSON_PATH: &str = "config/config.json";
-    pub const MAILLIST_PATH: &str = "config/mails.json";
-    pub const RLV2_CONFIG_PATH: &str = "config/rlv2Config.json";
-    pub const ASSIST_JSON_PATH: &str = "config/assist.json";
-    pub const SQUADS_PATH: &str = "config/squads.json";
-    pub const SYNC_DATA_TEMPLATE_PATH: &str = "syncData.json";
+    pub const CONFIG_PATH: &str = "./config/";
+    pub const CONFIG_JSON_PATH: &str = "./config/config.json";
+    pub const MAILLIST_PATH: &str = "./config/mails.json";
+    pub const RLV2_CONFIG_PATH: &str = "./config/rlv2Config.json";
+    pub const ASSIST_JSON_PATH: &str = "./config/assist.json";
+    pub const SQUADS_PATH: &str = "./config/squads.json";
+    pub const SYNC_DATA_TEMPLATE_PATH: &str = "./syncData.json";
 }
 
 // User Data
 #[allow(dead_code)]
 pub mod user {
-    pub const USER_JSON_PATH: &str = "data/user/user.json";
-    pub const BATTLE_REPLAY_JSON_PATH: &str = "data/user/battleReplays.json";
-    pub const RLV2_JSON_PATH: &str = "data/user/rlv2.json";
-    pub const RLV2_TEMPBUFF_JSON_PATH: &str = "data/user/rlv2TempBuffs.json";
-    pub const CRISIS_JSON_BASE_PATH: &str = "data/crisis/";
-    pub const CRISIS_V2_JSON_BASE_PATH: &str = "data/crisisV2/";
-    pub const RUNE_JSON_PATH: &str = "data/user/rune.json";
-    pub const BUILDING_JSON_PATH: &str = "data/user/building.json";
-    pub const GACHA_TEMPLATE_JSON_PATH: &str = "data/gacha/gacha.json";
+    pub const USER_JSON_PATH: &str = "./data/user/user.json";
+    pub const BATTLE_REPLAY_JSON_PATH: &str = "./data/user/battleReplays.json";
+    pub const RLV2_JSON_PATH: &str = "./data/user/rlv2.json";
+    pub const RLV2_TEMPBUFF_JSON_PATH: &str = "./data/user/rlv2TempBuffs.json";
+    pub const CRISIS_JSON_BASE_PATH: &str = "./data/crisis/";
+    pub const CRISIS_V2_JSON_BASE_PATH: &str = "./data/crisisV2/";
+    pub const RUNE_JSON_PATH: &str = "./data/user/rune.json";
+    pub const BUILDING_JSON_PATH: &str = "./data/user/building.json";
+    pub const GACHA_TEMPLATE_JSON_PATH: &str = "./data/gacha/gacha.json";
 }
 
 // RLV2 Options
 #[allow(dead_code)]
 pub mod rlv2 {
-    pub const RLV2_CHOICEBUFFS: &str = "data/rlv2/choiceBuffs.json";
-    pub const RLV2_RECRUITGROUPS: &str = "data/rlv2/recruitGroups.json";
-    pub const RLV2_NODESINFO: &str = "data/rlv2/nodesInfo.json";
+    pub const RLV2_CHOICEBUFFS: &str = "./data/rlv2/choiceBuffs.json";
+    pub const RLV2_RECRUITGROUPS: &str = "./data/rlv2/recruitGroups.json";
+    pub const RLV2_NODESINFO: &str = "./data/rlv2/nodesInfo.json";
 }
 
 // TOWER Data
 #[allow(dead_code)]
 pub mod tower {
-    pub const TOWERDATA_PATH: &str = "data/tower/towerData.json";
+    pub const TOWERDATA_PATH: &str = "./data/tower/towerData.json";
 }
 
 #[allow(dead_code)]
