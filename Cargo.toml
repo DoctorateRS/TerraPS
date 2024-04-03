@@ -52,3 +52,5 @@ strip = true            # Automatically strip symbols from the binary.
 lto = true              # Link-time optimization.
 opt-level = 3           # Optimize for speed.
 codegen-units = 1       # Maximum size reduction optimizations.
+debug = false           # Disable debug information.
+rpath = true            # Disable runtime path.
