@@ -2,7 +2,10 @@ use axum::Json;
 use serde_json::{json, Number, Value};
 
 use crate::{
-    constants::{self, url::BUILDING_TABLE_URL, user::BUILDING_JSON_PATH},
+    constants::{
+        url::BUILDING_TABLE_URL,
+        user::{BUILDING_JSON_PATH, USER_JSON_PATH},
+    },
     core::JSON,
     utils::{read_json, update_data, write_json},
 };
@@ -14,17 +17,28 @@ fn update_building_char_inst_id_list(building_data: Value) -> Value {
         building_data["chars"][char_inst_id]["index"] = Value::Number(Number::from(-1));
     }
     for (room_slot, _) in building_data["roomSlots"].clone().as_object().unwrap() {
-        for (char_inst_id, char_data) in building_data["roomSlots"][&room_slot]["charInstIds"].clone().as_object().unwrap() {
-            building_data["chars"][char_inst_id]["roomSlotId"] = Value::String(room_slot.to_string());
-            building_data["chars"][char_inst_id]["index"] = Value::Number(Number::from(char_data["index"].as_i64().unwrap()));
+        for key in building_data["roomSlots"][&room_slot]["charInstIds"].clone().as_array().unwrap() {
+            if key.as_i64().unwrap() == -1 {
+                continue;
+            }
+            let key = key.as_str().unwrap();
+            building_data["chars"][key]["roomSlotId"] = Value::String(room_slot.to_string());
+            building_data["chars"][key]["index"] = Value::Number(Number::from(
+                building_data["roomSlots"][&room_slot]["charInstIds"]
+                    .as_array()
+                    .unwrap()
+                    .iter()
+                    .position(|x| x == key)
+                    .unwrap() as i64,
+            ));
         }
     }
     building_data
 }
 
 pub async fn building_sync() -> JSON {
-    let mut building_data = read_json(constants::user::BUILDING_JSON_PATH);
-    let user_data = read_json(constants::user::USER_JSON_PATH);
+    let mut building_data = read_json(BUILDING_JSON_PATH);
+    let user_data = read_json(USER_JSON_PATH);
     let mut chars = json!({});
     for (char_inst_id, _) in user_data["user"]["troop"]["chars"].as_object().unwrap() {
         chars[char_inst_id] = json!({ "charId": user_data["user"]["troop"]["chars"][char_inst_id]["charId"],
