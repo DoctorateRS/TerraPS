@@ -134,7 +134,7 @@ pub async fn account_sync_data() -> JSON {
             "level": level,
             "exp": 0,
             "evolvePhase": evolve_phase,
-            "defaultSkillIndex": char_table[operator]["skills"].as_array().unwrap().len() as u64 - 1,
+            "defaultSkillIndex": char_table[&operator]["skills"].as_array().unwrap().len() as u64 - 1,
             "gainTime": time(),
             "skills": [],
             "voiceLan": voice_lan,
@@ -162,6 +162,26 @@ pub async fn account_sync_data() -> JSON {
         if contains(&operator_keys[count], get_keys(&temp_skin_table)) {
             temp_char_list[count_inst_id.to_string()]["skin"] = json!(temp_skin_table[&operator_keys[count]]);
         }
+
+        let mut skill_vec = Vec::new();
+        // Set skills
+        for skill in char_table[&operator]["skills"].as_array().unwrap() {
+            let specialization_level = if !skill["levelUpCostCond"].as_array().unwrap().is_empty() {
+                operator_template["skillsSpecializeLevel"].as_u64().unwrap()
+            } else {
+                0
+            };
+            skill_vec.push(json!({
+                "skillId": skill["skillId"],
+                "unlock": 1,
+                "state": 0,
+                "specializeLevel": specialization_level,
+                "completeUpgradeTime": -1
+            }));
+        }
+        temp_char_list[count_inst_id.to_string()]["skills"] = json!(skill_vec);
+
+        // Set modules
     }
 
     Json(player_data)
