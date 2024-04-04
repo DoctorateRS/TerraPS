@@ -5,7 +5,7 @@ mod char_manage;
 mod charm;
 mod constants;
 mod core;
-mod crisis;
+mod crisis_manager;
 mod mail;
 mod online;
 mod quest;

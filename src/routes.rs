@@ -3,7 +3,8 @@ use crate::{
     char_manage::{char, char_build},
     charm,
     core::{general_v1_server_time, prod, user},
-    crisis, online,
+    crisis_manager::crisis_v2,
+    online,
 };
 use axum::{
     http::Uri,
@@ -74,10 +75,10 @@ fn config_routes() -> Router {
 
 fn crisis_v2_routes() -> Router {
     Router::new()
-        .route("/getInfo", post(crisis::crisis_v2::crisis_v2_get_info))
-        .route("/battleStart", post(crisis::crisis_v2::crisis_v2_battle_start))
-        .route("/battleFinish", post(crisis::crisis_v2::crisis_v2_battle_finish))
-        .route("/getSnapshot", post(crisis::crisis_v2::crisis_v2_get_snapshot))
+        .route("/getInfo", post(crisis_v2::crisis_v2_get_info))
+        .route("/battleStart", post(crisis_v2::crisis_v2_battle_start))
+        .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
+        .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
 }
 
 fn online_routes() -> Router {
@@ -88,10 +89,10 @@ fn online_routes() -> Router {
 
 fn quest_routes() -> Router {
     Router::new()
-        .route("/getInfo", post(crisis::crisis_v2::crisis_v2_get_info))
-        .route("/battleStart", post(crisis::crisis_v2::crisis_v2_battle_start))
-        .route("/battleFinish", post(crisis::crisis_v2::crisis_v2_battle_finish))
-        .route("/getSnapshot", post(crisis::crisis_v2::crisis_v2_get_snapshot))
+        .route("/getInfo", post(crisis_v2::crisis_v2_get_info))
+        .route("/battleStart", post(crisis_v2::crisis_v2_battle_start))
+        .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
+        .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
 }
 
 fn user_routes() -> Router {
