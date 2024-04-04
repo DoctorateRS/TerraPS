@@ -1,7 +1,8 @@
 use reqwest::get;
 use serde::Serialize;
 use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
-use std::{fs::File, io::BufReader};
+use std::{fs::File, io::BufReader, num::ParseIntError};
+
 
 pub async fn update_data(url: &str) -> Value {
     let local_path = url
@@ -47,8 +48,27 @@ pub fn write_json(path: &str, value: Value) {
     }
 }
 
-pub fn _decrypt_battle_data(_data: &str, _login_time: u64) -> Value {
-    todo!("decrypt_battle_data")
+pub fn decrypt_battle_data(data: &str, login_time: Option<u64>)  {
+
+    const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
+
+    let login_time = match login_time {
+        Ok(time) => time,
+        None => 1672502400,
+    };
+    let len = &data.len();
+    let data = data[..len];
+    let src = LOG_TOKEN_KEY.to_string() + login_time.as_str();
+
+    let battle_data = match from_hex(data) {
+        Ok(data) => match String::from_utf8(data) {
+            Ok(data) => data,
+            Err(e) => panic!("Error parsing UTF-8: {e}")
+        },
+        Err(e) => panic!("Error parsing Integer:{}",e)
+    };
+
+
 }
 
 pub fn get_keys(value: &Value) -> Vec<String> {
@@ -92,10 +112,25 @@ pub fn max<T: PartialOrd>(a: T, b: T) -> T {
     }
 }
 
-pub fn _min<T: PartialOrd>(a: T, b: T) -> T {
+pub fn min<T: PartialOrd>(a: T, b: T) -> T {
     if a < b {
         a
     } else {
         b
     }
+}
+
+pub fn from_hex(s: &str) -> Result<Vec<u8>, ParseIntError> {
+    (0..s.len())
+        .step_by(2)
+        .map(|i| u8::from_str_radix(&s[i..i + 2], 16))
+        .collect()
+}
+
+pub fn to_hex(bytes: &[u8]) -> String {
+    let mut s = String::with_capacity(bytes.len() * 2);
+    for &b in bytes {
+        write!(&mut s, "{:02x}", b).unwrap();
+    }
+    s
 }

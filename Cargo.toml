@@ -1,6 +1,6 @@
 [package]
 name = "doctorate-rs"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 build = "build.rs"
@@ -12,11 +12,12 @@ chrono = "0.4"
 constcat = "*"
 md-5 = "0.10"
 subtle-encoding = "0.5"
+ring = "0.17"
 axum = "0.7"
 axum-server = "0.6"
 lazy_static = "1.4"
 base64 = "0.22"
-zip = "0.6"
+zip = "0.10.0-alpha.1"
 uuid = { version = "1.8", features = ["v4", "fast-rng", "macro-diagnostics"] }
 
 # HTTP
