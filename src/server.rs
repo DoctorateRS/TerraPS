@@ -8,12 +8,12 @@ mod utils;
 use axum::serve;
 use tokio::net::TcpListener as Listener;
 use tracing::{info, Level};
-use tracing_subscriber::fmt as tracing_subscriber_fmt;
+use tracing_subscriber::fmt as subscriber_fmt;
 
 #[tokio::main]
 async fn main() {
     // TRACING
-    tracing_subscriber_fmt().with_max_level(Level::DEBUG).init();
+    subscriber_fmt().with_max_level(Level::DEBUG).init();
 
     // SERVER
     let server_address = &get_server_address();
