@@ -1,4 +1,4 @@
-use crate::core::JSON;
+use crate::core::{time, JSON};
 use axum::{http::HeaderMap, Json};
 use serde_json::json;
 use uuid::Uuid;
@@ -14,5 +14,29 @@ pub async fn account_login(header: HeaderMap) -> JSON {
         "uid": uid,
         "secret": "yostar",
         "serviceLicenseVersion": 0
+    }))
+}
+
+pub async fn account_sync_status() -> JSON {
+    Json(json!({
+        "ts": time(),
+        "result": {},
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn account_yostar_auth_req() -> JSON {
+    Json(json!({}))
+}
+
+pub async fn account_yostar_auth_submit() -> JSON {
+    Json(json!({
+        "result": 0,
+        "yostar_account": "Doctorate@doctorate.com",
+        "yostar_token": "a",
+        "yostar_uid": "1"
     }))
 }
