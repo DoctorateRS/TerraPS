@@ -424,6 +424,45 @@ pub async fn account_sync_data() -> JSON {
         }
     }
 
+    let mut avatar_list = json!({});
+
+    for avatar in display_meta_table["playerAvatarData"]["avatarList"].as_array().unwrap() {
+        let id = avatar["avatarId"].as_str().unwrap();
+        let src = if id.starts_with("avatar_def") { "initial" } else { "other" };
+        avatar_list[&id] = json!({
+            "ts": time(),
+            "src": src,
+        });
+    }
+
+    player_data["user"]["avatar"]["avatar_icon"] = avatar_list;
+
+    let mut bg_list = json!({});
+
+    for bg in display_meta_table["homeBackgroundData"]["homeBgDataList"].as_array().unwrap() {
+        let id = bg["bgId"].as_str().unwrap();
+        bg_list[&id] = json!({
+            "unlock": time(),
+        });
+    }
+    player_data["user"]["background"]["bgs"] = bg_list;
+
+    let mut theme_list = json!({});
+    for theme in display_meta_table["homeBackgroundData"]["themeList"].as_array().unwrap() {
+        let id = theme["id"].as_str().unwrap();
+        theme_list[&id] = json!({
+            "unlock": time(),
+        });
+    }
+    player_data["user"]["homeTheme"]["themes"] = theme_list;
+
+    for charm in charm_table["charmList"].as_array().unwrap() {
+        let id = charm["id"].as_str().unwrap();
+        player_data["user"]["charm"]["charms"][id] = json!(1);
+    }
+
+    // SN & IC code here
+
     Json(player_data)
 }
 
