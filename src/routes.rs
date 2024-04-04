@@ -4,7 +4,7 @@ use crate::{
         account, background, building,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        online, social,
+        online, pay, social,
     },
 };
 use axum::{
@@ -142,6 +142,8 @@ fn misc_routes() -> Router {
     Router::new()
         .route("/general/v1/server_time", get(general_v1_server_time))
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
+        .route("/u8/pay/getAllProductList", post(pay::pay_get_all_prod_list))
+        .route("/pay/getUnconfirmedOrderIdList", post(pay::pay_get_unconfirmed_order_id_list))
         .route("/background/setBackground", post(background::background_set_bg))
         .route("/homeTheme/change", post(background::home_theme_change))
         .route("/charm/setSquad", post(charm::charm_set_squad))
