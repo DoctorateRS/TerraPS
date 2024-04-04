@@ -10,6 +10,7 @@ publish = false
 chrono = "0.4"
 constcat = "*"
 crypto = "0.5"
+
 axum = "0.7"
 axum-server = "0.6"
 lazy_static = "1.4"
@@ -42,7 +43,8 @@ tracing-subscriber = { version = "0.3", features = [
 
 tower-http = { version = "0.5", features = ["trace"] }
 
-
+[build-dependencies]
+include_dir = "0.7"
 
 [[bin]]
 name = "doctorate-rs"
