@@ -50,7 +50,12 @@ fn app_routes() -> Router {
 }
 
 fn account_routes() -> Router {
-    Router::new().route("/login", post(account::account_login))
+    Router::new()
+        .route("/login", post(account::account_login))
+        .route("/syncStatus", post(account::account_sync_status))
+        .route("/syncData", post(account::account_sync_data))
+        .route("/yostar_auth_request", post(account::account_yostar_auth_req))
+        .route("/yostar_auth_submit", post(account::account_yostar_auth_submit))
 }
 
 fn building_routes() -> Router {
