@@ -4,7 +4,7 @@ pub mod quest {
 
     use crate::core::JSON;
 
-    pub async fn set_trap_squad(Json(payload): JSON) -> JSON {
+    pub async fn _set_trap_squad(Json(payload): JSON) -> JSON {
         let trap_domain_id = payload["trapDomainId"].as_str().unwrap();
         let trap_squad = payload["trapSquad"].clone();
 
@@ -31,7 +31,7 @@ pub mod bossrush {
 
     use crate::core::JSON;
 
-    pub async fn relic_select(Json(payload): JSON) -> JSON {
+    pub async fn _relic_select(Json(payload): JSON) -> JSON {
         let activity_id = payload["activityId"].as_str().unwrap();
         let relic_id = payload["relicId"].clone();
 

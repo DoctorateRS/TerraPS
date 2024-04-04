@@ -10,7 +10,6 @@ use crate::{
 use axum::{
     extract::Request,
     http::Uri,
-    response::Response,
     routing::{get, post},
     Router,
 };

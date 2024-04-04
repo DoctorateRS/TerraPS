@@ -29,8 +29,8 @@ pub async fn account_login(header: HeaderMap) -> JSON {
 }
 
 pub async fn account_sync_data() -> JSON {
-    let user_data = read_json(USER_JSON_PATH);
-    let mail_data = read_json(MAILLIST_PATH);
+    let _user_data = read_json(USER_JSON_PATH);
+    let _mail_data = read_json(MAILLIST_PATH);
     let mut player_data = read_json(SYNC_DATA_TEMPLATE_PATH);
     let config = read_json(CONFIG_JSON_PATH);
 
@@ -43,7 +43,7 @@ pub async fn account_sync_data() -> JSON {
     let display_meta_table = update_data(DM_TABLE_URL).await;
     let retro_table = update_data(RETRO_TABLE_URL).await;
     let charm_table = update_data(CHARM_TABLE_URL).await;
-    let acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
+    let _acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
     let charword_table = update_data(CHARWORD_TABLE_URL).await;
 
     let mut count = 0;

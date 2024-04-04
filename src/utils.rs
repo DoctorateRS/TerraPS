@@ -4,19 +4,6 @@ use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer
 use std::{fs::File, io::BufReader};
 
 pub async fn update_data(url: &str) -> Value {
-    const BASE_URL_LIST: [(&str, &str); 2] = [
-        (
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-            "./data",
-        ),
-        // ("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/en_US/gamedata", "./data"),
-        (
-            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-            "./data/announce",
-        ),
-        // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
-    ];
-
     let local_path = url
         .replace(
             "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
@@ -105,7 +92,7 @@ pub fn max<T: PartialOrd>(a: T, b: T) -> T {
     }
 }
 
-pub fn min<T: PartialOrd>(a: T, b: T) -> T {
+pub fn _min<T: PartialOrd>(a: T, b: T) -> T {
     if a < b {
         a
     } else {
