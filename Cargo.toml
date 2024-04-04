@@ -11,6 +11,7 @@ publish = false
 chrono = "0.4"
 constcat = "*"
 md-5 = "0.10"
+libaes = "0.7"
 subtle-encoding = "0.5"
 ring = "0.17"
 axum = "0.7"

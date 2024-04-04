@@ -369,6 +369,7 @@ dependencies = [
  "constcat",
  "include_dir",
  "lazy_static",
+ "libaes",
  "md-5",
  "reqwest",
  "ring",
@@ -772,6 +773,12 @@ name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+
+[[package]]
+name = "libaes"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "82903360c009b816f5ab72a9b68158c27c301ee2c3f20655b55c5e589e7d3bb7"
 
 [[package]]
 name = "libc"
