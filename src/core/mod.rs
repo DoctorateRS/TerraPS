@@ -1,10 +1,7 @@
 use axum::Json;
 use serde_json::{json, Value};
 
-#[allow(clippy::upper_case_acronyms)]
-pub(crate) type JSON = Json<Value>;
-
-use crate::{constants, utils::json_utils::read_json};
+use crate::{constants, utils::json::read_json};
 
 pub mod asset;
 pub mod prod;

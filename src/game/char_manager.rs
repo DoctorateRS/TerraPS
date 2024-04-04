@@ -1,8 +1,7 @@
 pub mod char {
     use crate::{
         constants::user::USER_JSON_PATH,
-        core::JSON,
-        utils::json_utils::{read_json, write_json},
+        utils::json::{read_json, write_json, JSON},
     };
     use axum::Json;
     use serde_json::json;
@@ -49,8 +48,8 @@ pub mod char {
 pub mod char_build {
     use crate::{
         constants::user::USER_JSON_PATH,
-        core::{time, JSON},
-        utils::json_utils::{read_json, write_json},
+        core::time,
+        utils::json::{read_json, write_json, JSON},
     };
     use axum::Json;
     use serde_json::json;
@@ -268,8 +267,7 @@ pub mod charm {
 
     use crate::{
         constants::user::USER_JSON_PATH,
-        core::JSON,
-        utils::json_utils::{read_json, write_json},
+        utils::json::{read_json, write_json, JSON},
     };
 
     pub async fn charm_set_squad(Json(payload): JSON) -> JSON {

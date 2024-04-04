@@ -1,9 +1,8 @@
 use crate::{
     constants::config::CONFIG_JSON_PATH,
-    core::JSON,
     utils::{
-        json_utils::{read_json, write_json},
-        update_data,
+        game::update_data,
+        json::{read_json, write_json, JSON},
     },
 };
 use axum::response::Json;

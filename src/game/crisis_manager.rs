@@ -11,10 +11,9 @@ pub mod crisis_v2 {
             config::CONFIG_JSON_PATH,
             user::{CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH},
         },
-        core::JSON,
         utils::{
             comp::max,
-            json_utils::{read_json, write_json},
+            json::{read_json, write_json, JSON},
         },
     };
     pub async fn crisis_v2_get_info() -> JSON {

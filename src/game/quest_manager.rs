@@ -2,7 +2,7 @@ pub mod quest {
     use axum::Json;
     use serde_json::json;
 
-    use crate::core::JSON;
+    use crate::utils::json::JSON;
 
     pub async fn _set_trap_squad(Json(payload): JSON) -> JSON {
         let trap_domain_id = payload["trapDomainId"].as_str().unwrap();
@@ -29,7 +29,7 @@ pub mod bossrush {
     use axum::Json;
     use serde_json::json;
 
-    use crate::core::JSON;
+    use crate::utils::json::JSON;
 
     pub async fn _relic_select(Json(payload): JSON) -> JSON {
         let activity_id = payload["activityId"].as_str().unwrap();

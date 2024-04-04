@@ -9,7 +9,7 @@ use axum::serve;
 use tokio::net::TcpListener as Listener;
 use tracing::{info, Level};
 use tracing_subscriber::fmt as subscriber_fmt;
-use utils::json_utils::read_json;
+use utils::json::read_json;
 
 #[tokio::main]
 async fn main() {

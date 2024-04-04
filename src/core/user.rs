@@ -3,10 +3,8 @@ use serde_json::{json, Value};
 
 use crate::{
     constants,
-    utils::json_utils::{read_json, write_json},
+    utils::json::{read_json, write_json, JSON},
 };
-
-use super::JSON;
 
 pub async fn app_v1_config() -> JSON {
     Json(json!({
@@ -232,7 +230,7 @@ pub mod business_card {
     use axum::Json;
     use serde_json::json;
 
-    use crate::core::JSON;
+    use crate::utils::json::JSON;
 
     pub async fn change_name_component(Json(payload): JSON) -> JSON {
         let component = payload["component"].clone();
