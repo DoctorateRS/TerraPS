@@ -114,7 +114,9 @@ fn quest_routes() -> Router {
 }
 
 fn social_routes() -> Router {
-    Router::new().route("/setAssistCharList", post(social::social_set_assist_char_list))
+    Router::new()
+        .route("/setAssistCharList", post(social::social_set_assist_char_list))
+        .route("/setCardShowMedal", post(social::social_set_card_medal))
 }
 
 fn user_routes() -> Router {
