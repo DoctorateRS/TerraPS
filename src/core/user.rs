@@ -81,10 +81,10 @@ pub async fn info_v1_basic() -> JSON {
         "msg": "OK",
         "data": {
             "hgId": "1",
-            "phone": "doctorate",
-            "email": "doctorate",
-            "identityNum": "doctorate",
-            "identityName": "doctorate",
+            "phone": "doc-rs",
+            "email": "doc-rs",
+            "identityNum": "doc-rs",
+            "identityName": "doc-rs",
             "isMinor": false,
             "isLatestUserAgreement": true
         }
@@ -115,7 +115,7 @@ pub async fn _auth_v1_token_by_phone_password() -> JSON {
         "status": 0,
         "msg": "OK",
         "data": {
-            "token": "doctorate"
+            "token": "doc-rs"
         }
     }))
 }
@@ -131,7 +131,7 @@ pub async fn user_login() -> JSON {
         "needAuthenticate": false,
         "result": 0,
         "token": "abcd",
-        "yostar_username": "Doctorate@doctorate.com",
+        "yostar_username": "doc-rs@gitea.com",
         "yostar_uid": "1",
         "uid": "1"
     }))
@@ -168,7 +168,7 @@ pub async fn user_oauth2_v2_grant() -> JSON {
         "status": 0,
         "msg": "OK",
         "data": {
-            "code": "doctorate",
+            "code": "doc-rs",
             "uid": "1"
         }
     }))
