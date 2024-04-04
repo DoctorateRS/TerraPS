@@ -1,5 +1,6 @@
 mod constants;
 mod core;
+mod crypto;
 mod game;
 mod routes;
 mod utils;
