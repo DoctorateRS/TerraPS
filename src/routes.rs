@@ -136,13 +136,17 @@ fn user_routes() -> Router {
         .route("/checkIn", get(user::user_check_in))
         .route("/changeAvatar", post(user::user_change_avatar))
         .route("/changeSecretary", post(user::user_change_secretary))
+        .route("/login", post(user::user_login))
         .route("/info/v1/basic", get(user::info_v1_basic))
+        .route("/oauth2/v1/grant", post(user::user_oauth2_v1_grant))
+        .route("/oauth2/v2/grant", post(user::user_oauth2_v2_grant))
 }
 
 fn misc_routes() -> Router {
     Router::new()
         .route("/general/v1/server_time", get(general_v1_server_time))
         .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
+        .route("/u8/user/v1/getToken", post(user::user_v1_get_token))
         .route("/u8/pay/getAllProductList", post(pay::pay_get_all_prod_list))
         .route("/pay/getUnconfirmedOrderIdList", post(pay::pay_get_unconfirmed_order_id_list))
         .route("/background/setBackground", post(background::background_set_bg))

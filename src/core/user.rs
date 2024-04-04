@@ -120,6 +120,60 @@ pub async fn _auth_v1_token_by_phone_password() -> JSON {
     }))
 }
 
+pub async fn user_login() -> JSON {
+    Json(json!({
+        "accessToken": "1",
+        "birth": Value::Null,
+        "channelId": "",
+        "isAuthenticate": true,
+        "isLatestUserAgreement": true,
+        "isMinor": false,
+        "needAuthenticate": false,
+        "result": 0,
+        "token": "abcd",
+        "yostar_username": "Doctorate@doctorate.com",
+        "yostar_uid": "1",
+        "uid": "1"
+    }))
+}
+
+pub async fn user_v1_get_token() -> JSON {
+    Json(json!({
+        "channelUid": "1",
+        "error": "",
+        "extension": {
+            "isMinor": false,
+            "isAuthenticate": true
+        },
+        "isGuest": 0,
+        "result": 0,
+        "token": "abcd",
+        "uid": "1"
+    }))
+}
+
+pub async fn user_oauth2_v1_grant() -> JSON {
+    Json(json!({
+        "data": {
+            "code": "abcd",
+            "uid": "1"
+        },
+        "msg": "OK",
+        "status": 0
+    }))
+}
+
+pub async fn user_oauth2_v2_grant() -> JSON {
+    Json(json!({
+        "status": 0,
+        "msg": "OK",
+        "data": {
+            "code": "doctorate",
+            "uid": "1"
+        }
+    }))
+}
+
 pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
     let mut config = read_json(constants::config::CONFIG_JSON_PATH).clone();
     let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
