@@ -1,4 +1,4 @@
-use std::num::ParseIntError;
+use std::{fmt::Write, num::ParseIntError};
 
 pub fn from_hex(s: &str) -> Result<Vec<u8>, ParseIntError> {
     (0..s.len()).step_by(2).map(|i| u8::from_str_radix(&s[i..i + 2], 16)).collect()

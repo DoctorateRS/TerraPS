@@ -3,7 +3,7 @@ use serde_json::{json, Value};
 
 use crate::{
     constants,
-    utils::{read_json, write_json},
+    utils::json_utils::{read_json, write_json},
 };
 
 use super::JSON;

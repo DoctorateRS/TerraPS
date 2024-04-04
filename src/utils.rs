@@ -1,8 +1,7 @@
+use self::json_utils::read_json;
+use crate::crypto::hex::from_hex;
 use reqwest::get;
-use serde::Serialize;
-use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
-use std::{fs::File, io::BufReader, num::ParseIntError};
-
+use serde_json::Value;
 
 pub async fn update_data(url: &str) -> Value {
     let local_path = url
@@ -25,50 +24,52 @@ pub async fn update_data(url: &str) -> Value {
     }
 }
 
-pub fn read_json(path: &str) -> Value {
-    let json_reader = BufReader::new(match File::open(path) {
-        Ok(file) => file,
-        Err(_) => panic!("Path {} not found.", path),
-    });
-    match from_reader(json_reader) {
-        Ok(value) => value,
-        Err(_) => panic!("Unable to read JSON."),
+pub mod json_utils {
+    use serde::Serialize;
+    use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
+    use std::{fs::File, io::BufReader};
+
+    pub fn read_json(path: &str) -> Value {
+        let json_reader = BufReader::new(match File::open(path) {
+            Ok(file) => file,
+            Err(_) => panic!("Path {} not found.", path),
+        });
+        match from_reader(json_reader) {
+            Ok(value) => value,
+            Err(_) => panic!("Unable to read JSON."),
+        }
+    }
+
+    pub fn write_json(path: &str, value: Value) {
+        let file = File::create(path).unwrap();
+        let fmt = PrettyFormatter::with_indent(b"    ");
+        let mut buf = Vec::new();
+        let mut ser = Serializer::with_formatter(&mut buf, fmt);
+        value.serialize(&mut ser).unwrap();
+        match to_writer_pretty(file, &value) {
+            Ok(_) => (),
+            Err(_) => panic!("Unable to write JSON."),
+        }
     }
 }
 
-pub fn write_json(path: &str, value: Value) {
-    let file = File::create(path).unwrap();
-    let fmt = PrettyFormatter::with_indent(b"    ");
-    let mut buf = Vec::new();
-    let mut ser = Serializer::with_formatter(&mut buf, fmt);
-    value.serialize(&mut ser).unwrap();
-    match to_writer_pretty(file, &value) {
-        Ok(_) => (),
-        Err(_) => panic!("Unable to write JSON."),
-    }
-}
-
-pub fn decrypt_battle_data(data: &str, login_time: Option<u64>)  {
-
+pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) {
     const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
 
-    let login_time = match login_time {
-        Ok(time) => time,
-        None => 1672502400,
-    };
+    let login_time = login_time.unwrap_or(1672502400);
     let len = &data.len();
-    let data = data[..len];
-    let src = LOG_TOKEN_KEY.to_string() + login_time.as_str();
+    let iv = &data[*len..];
+    let data = &data[..*len];
+
+    let src = format!("{LOG_TOKEN_KEY}{login_time}");
 
     let battle_data = match from_hex(data) {
         Ok(data) => match String::from_utf8(data) {
             Ok(data) => data,
-            Err(e) => panic!("Error parsing UTF-8: {e}")
+            Err(e) => panic!("Error parsing UTF-8: {e}"),
         },
-        Err(e) => panic!("Error parsing Integer:{}",e)
+        Err(e) => panic!("Error parsing Integer:{}", e),
     };
-
-
 }
 
 pub fn get_keys(value: &Value) -> Vec<String> {
@@ -104,20 +105,20 @@ pub fn zipper<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::
     a.into_iter().zip(b).collect()
 }
 
-pub fn max<T: PartialOrd>(a: T, b: T) -> T {
-    if a > b {
-        a
-    } else {
-        b
+pub mod comp {
+    pub fn max<T: PartialOrd>(a: T, b: T) -> T {
+        if a > b {
+            a
+        } else {
+            b
+        }
+    }
+
+    pub fn min<T: PartialOrd>(a: T, b: T) -> T {
+        if a < b {
+            a
+        } else {
+            b
+        }
     }
 }
-
-pub fn min<T: PartialOrd>(a: T, b: T) -> T {
-    if a < b {
-        a
-    } else {
-        b
-    }
-}
-
-

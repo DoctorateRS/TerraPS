@@ -7,7 +7,10 @@ use crate::{
         user::{BUILDING_JSON_PATH, USER_JSON_PATH},
     },
     core::JSON,
-    utils::{read_json, update_data, write_json},
+    utils::{
+        json_utils::{read_json, write_json},
+        update_data,
+    },
 };
 
 fn update_building_char_inst_id_list(building_data: Value) -> Value {

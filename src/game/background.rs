@@ -4,7 +4,7 @@ use serde_json::json;
 use crate::{
     constants,
     core::JSON,
-    utils::{read_json, write_json},
+    utils::json_utils::{read_json, write_json},
 };
 
 pub async fn background_set_bg(Json(payload): JSON) -> JSON {
