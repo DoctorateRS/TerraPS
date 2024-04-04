@@ -138,10 +138,11 @@ pub async fn user_login() -> JSON {
 }
 
 pub async fn user_v1_get_token() -> JSON {
+    let ext = json!({"isMinor": false,"isAuthenticate": true}).to_string();
     Json(json!({
         "channelUid": "1",
         "error": "",
-        "extension": json!({"isMinor": false,"isAuthenticate": true}).to_string(),
+        "extension": ext,
         "isGuest": 0,
         "result": 0,
         "token": "abcd",
