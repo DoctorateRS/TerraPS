@@ -183,7 +183,104 @@ pub async fn account_sync_data() -> JSON {
 
         // Set modules
         if contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string(), equip_keys.clone()) {
-            for equip in equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]] {}
+            for equip in get_keys(&equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]["charId"].to_string()]) {
+                let mut lvl = 1;
+                if contains(&equip, get_keys(&battleequip_table)) {
+                    lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
+                }
+                temp_char_list[count_inst_id.to_string()]["equip"] = json!({
+                    equip: {
+                        "hide": 0,
+                        "locked": 0,
+                        "level": lvl
+                    }
+                });
+            }
+            temp_char_list[count_inst_id.to_string()]["currentEquip"] = equip_table["charEquip"]
+                [temp_char_list[count_inst_id.to_string()]["charId"].to_string()]
+            .as_array()
+            .unwrap()
+            .last()
+            .unwrap()
+            .clone();
+        }
+        player_data["user"]["dexNav"]["character"][&operator_keys[count]] = json!({
+            "charInstId": count_inst_id,
+            "count": 6
+        });
+
+        if operator_keys[count] == "char_002_amiya" {
+            temp_char_list[count_inst_id.to_string()] = json!({
+                "defaultSkillIndex": -1,
+                "skills": [],
+                "currentTmpl": "char_002_amiya",
+                "tmpl": {
+                    "char_002_amiya": {
+                        "skinId": "char_002_amiya@test#1",
+                        "defaultSkillIndex": 2,
+                        "skills": [
+                            {
+                                "skillId": "skchr_amiya_3",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            },
+                            {
+                                "skillId": "skchr_amiya_2",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            },
+                            {
+                                "skillId": "skcom_magic_rage[3]",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            }
+                        ],
+                        "currentEquip": Value::Null,
+                        "equip": {},
+                    },
+                    "char_1001_amiya2": {
+                        "skinId": "char_1001_amiya2@casc#1",
+                        "defaultSkillIndex": 1,
+                        "skills": [
+                            {
+                                "skillId": "skchr_amiya2_1",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            },
+                            {
+                                "skillId": "skchr_amiya2_2",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "completeUpgradeTime": -1
+                            }
+                        ],
+                        "currentEquip": Value::Null,
+                        "equip": {},
+                    }
+                }
+            });
+            for equip in get_keys(&equip_table["charEquip"]["char_002_amiya"]) {
+                let mut lvl = 1;
+                if contains(&equip, get_keys(&battleequip_table)) {
+                    lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
+                }
+                temp_char_list[count_inst_id.to_string()]["tmpl"]["char_002_amiya"]["equip"] = json!({
+                    equip: {
+                        "hide": 0,
+                        "locked": 0,
+                        "level": lvl
+                    }
+                });
+            }
         }
     }
 
