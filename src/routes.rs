@@ -8,18 +8,24 @@ use crate::{
     },
 };
 use axum::{
+    extract::Request,
     http::Uri,
     routing::{get, post},
     Router,
 };
 use reqwest::StatusCode;
-use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnRequest as DefOnRequest, TraceLayer as Tracer};
-use tracing::Level;
+use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, TraceLayer as Tracer};
+use tracing::{debug, Span};
 
 pub fn routes() -> Router {
     let trace_layer = Tracer::new_for_http()
-        .make_span_with(DefMakeSpan::new().level(Level::INFO))
-        .on_request(DefOnRequest::new().level(Level::INFO));
+        .make_span_with(DefMakeSpan::default())
+        .on_request(|req: &Request<_>, _span: &Span| {
+            debug!("Received request: {:?}", req.uri());
+        })
+        .on_response(())
+        .on_failure(())
+        .on_eos(());
 
     Router::new()
         .nest("/app", app_routes())
