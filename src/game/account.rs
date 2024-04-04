@@ -3,7 +3,7 @@ use crate::{
         config::{CONFIG_JSON_PATH, MAILLIST_PATH, SYNC_DATA_TEMPLATE_PATH},
         url::{
             ACTIVITY_TABLE_URL, BATTLEEQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARM_TABLE_URL, CHARWORD_TABLE_URL, DM_TABLE_URL, EQUIP_TABLE_URL,
-            RETRO_TABLE_URL, SKIN_TABLE_URL,
+            RETRO_TABLE_URL, SKIN_TABLE_URL, STORY_TABLE_URL,
         },
         user::USER_JSON_PATH,
     },
@@ -281,7 +281,67 @@ pub async fn account_sync_data() -> JSON {
                     }
                 });
             }
+            temp_char_list[count_inst_id.to_string()]["tmpl"]["char_002_amiya"]["currentEquip"] = equip_table["charEquip"]["char_002_amiya"]
+                .as_array()
+                .unwrap()
+                .last()
+                .unwrap()
+                .clone();
+        } else if operator_keys[count] == "char_512_aprot" {
+            temp_char_list[count_inst_id.to_string()]["skin"] = json!("char_512_aprot#1");
         }
+
+        building_chars[count_inst_id.to_string()] = json!({
+            "charId": operator_keys[count],
+            "lastApAddTime": time() - 3600,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        });
+
+        count += 1;
+    }
+
+    let count_inst_id = 10000;
+
+    player_data["user"]["troop"]["chars"] = temp_char_list;
+    player_data["user"]["troop"]["charGroup"] = char_group;
+    player_data["user"]["troop"]["curCharInstId"] = json!(count_inst_id);
+
+    // Story
+    let mut story_list = json!({"init": 1});
+    let story_table = update_data(STORY_TABLE_URL).await;
+    for story in get_keys(&story_table) {
+        story_list[story] = json!(1);
+    }
+
+    player_data["user"]["status"]["flags"] = story_list;
+
+    // Stages
+    let mut stage_list = json!({});
+    let stage_table = update_data(STORY_TABLE_URL).await;
+    for stage in get_keys(&stage_table) {
+        stage_list[&stage] = json!({
+            "completeTimes": 1,
+            "hasBattleReplay": 0,
+            "noCostCnt": 0,
+            "practiceTimes": 0,
+            "stageId": stage_table["stages"][&stage]["stageId"],
+            "startTimes": 1,
+            "state": 3
+        });
     }
 
     Json(player_data)
