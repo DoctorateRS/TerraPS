@@ -3,12 +3,12 @@ use crate::{
         config::{CONFIG_JSON_PATH, MAILLIST_PATH, SYNC_DATA_TEMPLATE_PATH},
         url::{
             ACTIVITY_TABLE_URL, BATTLEEQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARM_TABLE_URL, CHARWORD_TABLE_URL, DM_TABLE_URL, EQUIP_TABLE_URL,
-            RETRO_TABLE_URL, SKIN_TABLE_URL, STORY_TABLE_URL,
+            HANDBOOK_INFO_TABLE_URL, RETRO_TABLE_URL, SKIN_TABLE_URL, STORY_TABLE_URL,
         },
         user::USER_JSON_PATH,
     },
     core::{time, JSON},
-    utils::{contains, get_keys, get_values, max, read_json, update_data},
+    utils::{contains, get_keys, get_values, max, read_json, update_data, zipper},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -341,6 +341,55 @@ pub async fn account_sync_data() -> JSON {
             "stageId": stage_table["stages"][&stage]["stageId"],
             "startTimes": 1,
             "state": 3
+        });
+    }
+
+    player_data["user"]["status"]["stages"] = stage_list;
+
+    // Addons
+    let mut addon_list = json!({});
+    let addon_table = update_data(HANDBOOK_INFO_TABLE_URL).await;
+    for char_id in get_keys(&addon_table["handbookDict"]) {
+        addon_list[&char_id] = json!({"story":{}});
+        let story = addon_table["handbookDict"][&char_id]["handbookAvgList"].clone();
+        for (story_keys, id) in zipper(get_keys(&story), 0..story.as_object().unwrap().len()) {
+            if story_keys.contains("storySetId") {
+                let story_set_id = addon_table["handbookDict"][&char_id]["handbookAvgList"].as_array().unwrap()[id]["storySetId"]
+                    .as_str()
+                    .unwrap();
+                addon_list[&char_id]["story"] = json!({
+                    story_set_id: {
+                        "fts": 1649232340,
+                        "rts": 1649232340
+                    }
+                });
+            }
+        }
+    }
+    for stage in get_keys(&addon_table["handbookStageData"]) {
+        let stage_id = addon_table["handbookStageData"][&stage]["stageId"].as_str().unwrap();
+        addon_list[&stage] = json!({
+            "stage": {
+                stage_id: {
+                    "startTimes": 0,
+                    "completeTimes": 1,
+                    "state": 3,
+                    "fts": 1624284657,
+                    "rts": 1624284657,
+                    "startTime": 2
+                }
+            }
+        });
+    }
+
+    player_data["user"]["troop"]["addon"] = addon_list;
+
+    // Retrospective
+    let mut blocks = json!({});
+    for retro in get_keys(&retro_table["retroActList"]) {
+        blocks[retro] = json!({
+            "locked": 0,
+            "open": 1
         });
     }
 

@@ -89,6 +89,10 @@ pub fn contains<T: PartialEq>(val: &T, vec: Vec<T>) -> bool {
     false
 }
 
+pub fn zipper<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
+    a.into_iter().zip(b).collect()
+}
+
 pub fn max<T: PartialOrd>(a: T, b: T) -> T {
     if a > b {
         a
