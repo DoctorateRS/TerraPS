@@ -1,4 +1,5 @@
 pub mod comp;
+pub mod crypto;
 pub mod game;
 pub mod json;
 

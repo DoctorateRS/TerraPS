@@ -1,5 +1,5 @@
 use super::json::read_json;
-use crate::crypto::hex::from_hex;
+use crate::utils::crypto::hex::from_hex;
 use reqwest::get;
 use serde_json::Value;
 
