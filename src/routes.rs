@@ -127,7 +127,6 @@ fn user_routes() -> Router {
         .route("/changeAvatar", post(user::user_change_avatar))
         .route("/changeSecretary", post(user::user_change_secretary))
         .route("/info/v1/basic", get(user::info_v1_basic))
-        .route("/changeSecretary", post(user::user_change_secretary))
 }
 
 fn misc_routes() -> Router {
