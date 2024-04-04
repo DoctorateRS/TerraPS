@@ -10,12 +10,13 @@ use crate::{
 use axum::{
     extract::Request,
     http::Uri,
+    response::Response,
     routing::{get, post},
     Router,
 };
 use reqwest::StatusCode;
-use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, TraceLayer as Tracer};
-use tracing::{debug, Span};
+use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnResponse, TraceLayer as Tracer};
+use tracing::{debug, Level, Span};
 
 pub fn routes() -> Router {
     let trace_layer = Tracer::new_for_http()
@@ -23,7 +24,7 @@ pub fn routes() -> Router {
         .on_request(|req: &Request<_>, _span: &Span| {
             debug!("Received request: {:?}", req.uri());
         })
-        .on_response(())
+        .on_response(DefaultOnResponse::default().level(Level::DEBUG))
         .on_failure(())
         .on_eos(());
 
