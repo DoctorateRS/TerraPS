@@ -5,3 +5,5 @@ pub mod char_manage;
 pub mod charm;
 pub mod crisis_manager;
 pub mod online;
+pub mod quest;
+pub mod social;
