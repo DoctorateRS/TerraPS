@@ -1,3 +1,7 @@
+pub mod crisis {
+    // Obsolete
+}
+
 pub mod crisis_v2 {
     use axum::Json;
     use serde_json::{json, Number, Value};

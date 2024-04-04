@@ -61,6 +61,8 @@ fn char_routes() -> Router {
 
 fn char_build_routes() -> Router {
     Router::new()
+        .route("/addonStory/unlock", post(char_build::char_build_addon_story_unlock))
+        .route("/batchSetCharVoiceLan", post(char_build::char_build_batch_set_char_voice_lan))
 }
 
 fn config_routes() -> Router {

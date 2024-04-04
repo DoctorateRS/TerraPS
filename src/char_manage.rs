@@ -46,4 +46,54 @@ pub mod char {
     }
 }
 
-pub mod char_build {}
+pub mod char_build {
+    use crate::{
+        constants::user::USER_JSON_PATH,
+        core::{time, JSON},
+        utils::{read_json, write_json},
+    };
+    use axum::Json;
+    use serde_json::json;
+
+    pub async fn char_build_batch_set_char_voice_lan() -> JSON {
+        Json(json!({
+            "result": {},
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn char_build_addon_story_unlock(Json(payload): JSON) -> JSON {
+        let story_id = payload["storyId"].as_str().unwrap();
+        let char_id = payload["charId"].as_str().unwrap();
+        let ts = json!({
+            "fts": time(),
+            "rts": time()
+        });
+        let mut data = json!({
+            "playerDataDelta": {
+                "deleted": {},
+                "modified": {
+                    "troop": {
+                        "addon": {
+                        }
+                    }
+                }
+            }
+        });
+        let char_data = json!({
+            char_id: {
+                "story": {
+                    story_id: ts
+                }
+            }
+        });
+        let mut user_data = read_json(USER_JSON_PATH);
+        user_data["user"]["troop"]["addon"] = char_data.clone();
+        data["playerDataDelta"]["modified"]["troop"]["addon"] = char_data;
+        write_json(USER_JSON_PATH, user_data);
+        Json(data)
+    }
+}
