@@ -8,10 +8,10 @@ use crate::{
         user::USER_JSON_PATH,
     },
     core::{time, JSON},
-    utils::{contains, get_keys, get_values, read_json, update_data},
+    utils::{contains, get_keys, get_values, max, read_json, update_data},
 };
 use axum::{http::HeaderMap, Json};
-use serde_json::json;
+use serde_json::{json, Value};
 use uuid::Uuid;
 
 pub async fn account_login(header: HeaderMap) -> JSON {
@@ -68,7 +68,7 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if !contains(skin_data["charId"].as_str().unwrap().to_string(), get_keys(&temp_skin_table))
+        if !contains(&skin_data["charId"].as_str().unwrap().to_string(), get_keys(&temp_skin_table))
             || skin_data["displaySkin"]["onYear"].as_i64().unwrap()
                 > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
                     .as_i64()
@@ -116,6 +116,52 @@ pub async fn account_sync_data() -> JSON {
             },
             None => panic!("Invalid level."),
         };
+
+        count_inst_id = operator_keys[count].split('_').collect::<Vec<&str>>()[1].parse().unwrap();
+        max_inst_id = max(max_inst_id, count_inst_id);
+        let mut voice_lan = "JP";
+        if contains(&operator_keys[count], get_keys(&charword_table)) {
+            voice_lan = charword_table["charDefaultTypeDict"][&operator_keys[count]].as_str().unwrap();
+        }
+
+        temp_char_list[count_inst_id.to_string()] = json!({
+            "instId": count_inst_id,
+            "charId": operator_keys[count],
+            "favorPoint": operator_template["favorPoint"],
+            "potentialRank": operator_template["potentialRank"],
+            "mainSkillLvl": operator_template["mainSkillLvl"],
+            "skin": operator_keys[count].clone() + "#1",
+            "level": level,
+            "exp": 0,
+            "evolvePhase": evolve_phase,
+            "defaultSkillIndex": char_table[operator]["skills"].as_array().unwrap().len() as u64 - 1,
+            "gainTime": time(),
+            "skills": [],
+            "voiceLan": voice_lan,
+            "currentEquip": Value::Null,
+            "equip": {},
+            "starMark": 0
+        });
+
+        // Set E2 skin
+
+        if contains(
+            &operator_keys[count],
+            vec![
+                "char_508_aguard".to_string(),
+                "char_509_acast".to_string(),
+                "char_510_amedic".to_string(),
+                "char_511_asnipe".to_string(),
+            ],
+        ) && temp_char_list[count_inst_id.to_string()]["evolvePhase"].as_i64().unwrap() == 2
+        {
+            temp_char_list[count_inst_id.to_string()]["skin"] = json!(operator_keys[count].clone() + "#2");
+        }
+
+        // Set skins
+        if contains(&operator_keys[count], get_keys(&temp_skin_table)) {
+            temp_char_list[count_inst_id.to_string()]["skin"] = json!(temp_skin_table[&operator_keys[count]]);
+        }
     }
 
     Json(player_data)

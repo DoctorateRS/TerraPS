@@ -80,9 +80,9 @@ pub fn get_values(value: &Value) -> Vec<Value> {
     values
 }
 
-pub fn contains<T: PartialEq>(val: T, vec: Vec<T>) -> bool {
+pub fn contains<T: PartialEq>(val: &T, vec: Vec<T>) -> bool {
     for item in vec {
-        if item == val {
+        if item == *val {
             return true;
         }
     }
