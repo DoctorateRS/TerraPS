@@ -1,14 +1,6 @@
-mod account;
-mod background;
-mod building;
-mod char_manage;
-mod charm;
 mod constants;
 mod core;
-mod crisis_manager;
-mod mail;
-mod online;
-mod quest;
+mod game;
 mod routes;
 mod utils;
 
