@@ -12,7 +12,7 @@ pub mod crisis_v2 {
             user::{CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH},
         },
         core::JSON,
-        utils::{read_json, write_json},
+        utils::{max, read_json, write_json},
     };
     pub async fn crisis_v2_get_info() -> JSON {
         let config = read_json(CONFIG_JSON_PATH);
@@ -151,13 +151,5 @@ pub mod crisis_v2 {
                 "deleted": {}
             }
         }))
-    }
-
-    fn max<T: PartialOrd>(a: T, b: T) -> T {
-        if a > b {
-            a
-        } else {
-            b
-        }
     }
 }

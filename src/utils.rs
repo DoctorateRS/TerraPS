@@ -59,3 +59,48 @@ pub fn write_json(path: &str, value: Value) {
 pub fn _decrypt_battle_data(_data: &str, _login_time: u64) -> Value {
     todo!("decrypt_battle_data")
 }
+
+pub fn get_keys(value: &Value) -> Vec<String> {
+    let mut keys = Vec::new();
+    if let Value::Object(map) = value {
+        for key in map.keys() {
+            keys.push(key.to_string());
+        }
+    }
+    keys
+}
+
+pub fn get_values(value: &Value) -> Vec<Value> {
+    let mut values = Vec::new();
+    if let Value::Object(map) = value {
+        for value in map.values() {
+            values.push(value.clone());
+        }
+    }
+    values
+}
+
+pub fn contains<T: PartialEq>(val: T, vec: Vec<T>) -> bool {
+    for item in vec {
+        if item == val {
+            return true;
+        }
+    }
+    false
+}
+
+pub fn max<T: PartialOrd>(a: T, b: T) -> T {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+pub fn min<T: PartialOrd>(a: T, b: T) -> T {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
