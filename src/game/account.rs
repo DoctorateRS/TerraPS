@@ -392,6 +392,37 @@ pub async fn account_sync_data() -> JSON {
             "open": 1
         });
     }
+    player_data["user"]["retro"]["block"] = blocks;
+
+    let mut trails = json!({});
+    for retro in get_keys(&retro_table["retroTrailList"]) {
+        trails[&retro] = json!({});
+        for trail_reward in retro_table["retroTrailList"][&retro]["trailRewardList"].as_array().unwrap() {
+            trails[&retro][trail_reward["trailRewardId"].as_str().unwrap()] = json!(1);
+        }
+    }
+    player_data["user"]["retro"]["trail"] = trails;
+
+    for stage in get_keys(&stage_table["stages"]) {
+        if stage.starts_with("camp") {
+            player_data["user"]["campaignsV2"]["instances"][&stage] = json!({
+                            "maxKills": 400,
+                            "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
+                        }
+            );
+
+            let new_perma_vec = player_data["user"]["campaignsV2"]["open"]["permanent"].clone();
+            let mut new_perma_vec = new_perma_vec.as_array().unwrap().clone();
+            let new_training_vec = player_data["user"]["campaignsV2"]["open"]["training"].clone();
+            let mut new_training_vec = new_training_vec.as_array().unwrap().clone();
+            new_perma_vec.push(json!(stage));
+            new_training_vec.push(json!(stage));
+
+            player_data["user"]["campaignsV2"]["sweepMaxKills"][&stage] = json!(400);
+            player_data["user"]["campaignsV2"]["open"]["permanent"] = json!(new_perma_vec);
+            player_data["user"]["campaignsV2"]["open"]["training"] = json!(new_training_vec);
+        }
+    }
 
     Json(player_data)
 }
