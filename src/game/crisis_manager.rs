@@ -41,21 +41,17 @@ pub mod crisis_v2 {
         let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap_or("cc2");
         let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
         let battle_data = read_json(RUNE_JSON_PATH).clone();
-        let map_id = battle_data["mapId"].as_str().unwrap_or("crisis_v2_02-01");
+        let map_id = battle_data["mapId"].as_str().unwrap();
         let rune_slots = battle_data["runeSlots"].clone();
         let mut score_current = [0, 0, 0, 0, 0, 0];
         let mut nodes = json!({});
-        let slots = match rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"].as_array() {
-            Some(slots) => slots,
-            None => panic!("Invalid mapId."),
-        };
-        for slot in slots {
+        for (slot, _) in rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"].as_object().unwrap() {
             let score;
             let rune_data;
-            if !slot.as_str().unwrap().starts_with("node_") {
+            if !slot.starts_with("node_") {
                 continue;
             }
-            let slot_id = slot.as_str().unwrap();
+            let slot_id = slot;
             let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][slot_id].clone();
             let slot_pack_id = node_data["slotPackId"].clone();
             if slot_pack_id.is_null() {
@@ -65,15 +61,15 @@ pub mod crisis_v2 {
                 nodes[slot_pack_id.as_str().unwrap()] = json!({});
             }
             let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() && !node_data["mutualExclusionGroup"].is_null() {
-                node_data["mutualExclusionGroup"].clone()
+                node_data["mutualExclusionGroup"].as_str().unwrap()
             } else {
-                slot.clone()
+                slot
             };
             if nodes[slot_id].get("mutualExclusionGroup").is_none() {
-                nodes[slot_id][mutual_exclusion_group.as_str().unwrap()] = json!({})
+                nodes[slot_id][mutual_exclusion_group] = json!({})
             }
             if node_data.get("runeId").is_some() {
-                let r_id = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot.as_str().unwrap()]["runeId"].clone();
+                let r_id = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot]["runeId"].clone();
                 if !r_id.is_null() {
                     rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][r_id.as_str().unwrap()].clone();
                     score = rune_data["score"].clone().as_i64().unwrap();
@@ -83,8 +79,7 @@ pub mod crisis_v2 {
             } else {
                 score = 0;
             };
-            nodes[slot_pack_id.as_str().unwrap()][mutual_exclusion_group.as_str().unwrap()][slot.as_str().unwrap()] =
-                Value::Number(Number::from(score));
+            nodes[slot_pack_id.as_str().unwrap()][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
         }
 
         let slots = rune_slots.clone();
@@ -120,12 +115,12 @@ pub mod crisis_v2 {
             }
         }
 
-        for (slot, _) in rune_slots.as_object().unwrap() {
-            let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot].clone();
+        for slot in rune_slots.as_array().unwrap() {
+            let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot.as_str().unwrap()].clone();
             if node_data.get("runeId").is_some() {
                 let rune_id = node_data["runeId"].clone();
                 let rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][rune_id.as_str().unwrap()].clone();
-                score_current[rune_data["dimension"].as_u64().unwrap() as usize] += rune_data["rewardScore"].as_u64().unwrap();
+                score_current[rune_data["dimension"].as_u64().unwrap() as usize] += rune_data["score"].as_u64().unwrap();
             }
         }
 
