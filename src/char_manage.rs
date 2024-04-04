@@ -126,4 +126,138 @@ pub mod char_build {
 
         Json(data)
     }
+
+    pub async fn char_build_set_char_default_skill(Json(payload): JSON) -> JSON {
+        let char_inst_id = payload["charInstId"].clone();
+        let char_inst_id = if char_inst_id.is_string() {
+            char_inst_id.as_str().unwrap().to_string()
+        } else {
+            char_inst_id.as_u64().unwrap().to_string()
+        };
+
+        let default_skill_index = payload["defaultSkillIndex"].clone();
+
+        let mut data = json!({
+            "playerDataDelta":{
+                "modified":{
+                    "troop":{
+                        "chars":{}
+                    }
+                },
+                "deleted":{}
+            }
+        });
+
+        let mut user_data = read_json(USER_JSON_PATH);
+
+        data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
+            &char_inst_id: {
+                "defaultSkillIndex": default_skill_index
+            }
+        });
+
+        user_data["user"]["troop"]["chars"][char_inst_id]["defaultSkillIndex"] = default_skill_index;
+        write_json(USER_JSON_PATH, user_data);
+
+        Json(data)
+    }
+
+    pub async fn char_build_change_char_skin(Json(payload): JSON) -> JSON {
+        let char_inst_id = payload["charInstId"].clone();
+        let char_inst_id = if char_inst_id.is_string() {
+            char_inst_id.as_str().unwrap().to_string()
+        } else {
+            char_inst_id.as_u64().unwrap().to_string()
+        };
+        let skin_id = payload["skinId"].clone();
+
+        let mut data = json!({
+            "playerDataDelta":{
+                "modified":{
+                    "troop":{
+                        "chars":{}
+                    }
+                },
+                "deleted":{}
+            }
+        });
+
+        let mut user_data = read_json(USER_JSON_PATH);
+
+        data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
+            &char_inst_id: {
+                "skinId": skin_id
+            }
+        });
+
+        user_data["user"]["troop"]["chars"][char_inst_id]["skinId"] = skin_id;
+        write_json(USER_JSON_PATH, user_data);
+
+        Json(data)
+    }
+
+    pub async fn char_build_set_char_equipment(Json(payload): JSON) -> JSON {
+        let char_inst_id = payload["charInstId"].clone();
+        let char_inst_id = if char_inst_id.is_string() {
+            char_inst_id.as_str().unwrap().to_string()
+        } else {
+            char_inst_id.as_u64().unwrap().to_string()
+        };
+        let equip_id = payload["equipId"].clone();
+
+        let mut data = json!({
+            "playerDataDelta":{
+                "modified":{
+                    "troop":{
+                        "chars":{}
+                    }
+                },
+                "deleted":{}
+            }
+        });
+
+        let mut user_data = read_json(USER_JSON_PATH);
+
+        data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
+            &char_inst_id: {
+                "currentEquip": equip_id
+            }
+        });
+
+        user_data["user"]["troop"]["chars"][char_inst_id]["currentEquip"] = equip_id;
+        write_json(USER_JSON_PATH, user_data);
+
+        Json(data)
+    }
+
+    pub async fn char_build_change_char_template(Json(payload): JSON) -> JSON {
+        let char_inst_id = payload["charInstId"].clone();
+        let char_inst_id = if char_inst_id.is_string() {
+            char_inst_id.as_str().unwrap().to_string()
+        } else {
+            char_inst_id.as_u64().unwrap().to_string()
+        };
+        let template_id = payload["templateId"].clone();
+
+        let data = json!({
+            "playerDataDelta":{
+                "modified":{
+                    "troop":{
+                        "chars":{
+                            &char_inst_id: {
+                                "currentTmpl": template_id
+                            }
+                        }
+                    }
+                },
+                "deleted":{}
+            }
+        });
+
+        let mut user_data = read_json(USER_JSON_PATH);
+        user_data["user"]["troop"]["chars"][char_inst_id]["currentTmpl"] = template_id;
+
+        write_json(USER_JSON_PATH, user_data);
+        Json(data)
+    }
 }

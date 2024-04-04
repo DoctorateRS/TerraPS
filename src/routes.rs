@@ -64,6 +64,10 @@ fn char_build_routes() -> Router {
         .route("/addonStory/unlock", post(char_build::char_build_addon_story_unlock))
         .route("/batchSetCharVoiceLan", post(char_build::char_build_batch_set_char_voice_lan))
         .route("/setCharVoiceLan", post(char_build::char_build_set_char_voice_lan))
+        .route("/setDefaultSkill", post(char_build::char_build_set_char_default_skill))
+        .route("/changeCharSkin", post(char_build::char_build_change_char_skin))
+        .route("/setEquipment", post(char_build::char_build_set_char_equipment))
+        .route("/changeCharTemplate", post(char_build::char_build_change_char_template))
 }
 
 fn config_routes() -> Router {
