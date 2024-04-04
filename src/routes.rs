@@ -2,7 +2,10 @@ use crate::{
     account, background, building,
     char_manage::{char, char_build},
     charm,
-    core::{general_v1_server_time, prod, user},
+    core::{
+        general_v1_server_time, prod,
+        user::{self, social},
+    },
     crisis_manager::crisis_v2,
     online,
 };
@@ -31,6 +34,7 @@ pub fn routes() -> Router {
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
+        .nest("/social", social_routes())
         .nest("/user", user_routes())
         .merge(misc_routes())
         .fallback(fallback)
@@ -107,6 +111,10 @@ fn quest_routes() -> Router {
         .route("/battleStart", post(crisis_v2::crisis_v2_battle_start))
         .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
         .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
+}
+
+fn social_routes() -> Router {
+    Router::new().route("/setAssistCharList", post(social::social_set_assist_char_list))
 }
 
 fn user_routes() -> Router {
