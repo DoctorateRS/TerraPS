@@ -2,8 +2,7 @@ use crate::{
     core::{general_v1_server_time, prod, user},
     game::{
         account, background, building,
-        char_manage::{char, char_build},
-        charm,
+        char_manage::{char, char_build, charm},
         crisis_manager::crisis_v2,
         online, social,
     },
