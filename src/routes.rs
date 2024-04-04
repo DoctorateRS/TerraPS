@@ -24,6 +24,7 @@ pub fn routes() -> Router {
         .nest("/app", app_routes())
         .nest("/account", account_routes())
         .nest("/building", building_routes())
+        .nest("/businessCard", business_card_routes())
         .nest("/char", char_routes())
         .nest("/charBuild", char_build_routes())
         .nest("/config/prod", config_routes())
@@ -53,6 +54,12 @@ fn building_routes() -> Router {
         .route("/changeDiySolution", post(building::building_change_diy_solution))
         .route("/assignChar", post(building::building_assign_char))
         .route("/setBuildingAssist", post(building::building_set_building_assist))
+}
+
+fn business_card_routes() -> Router {
+    Router::new()
+        .route("/changeNameCardComponent", post(user::business_card::change_name_component))
+        .route("/changeNameCardSkin", post(user::business_card::change_card_skin))
 }
 
 fn char_routes() -> Router {

@@ -175,3 +175,40 @@ pub async fn user_change_avatar(Json(payload): JSON) -> JSON {
         }
     }))
 }
+
+pub mod business_card {
+    use axum::Json;
+    use serde_json::json;
+
+    use crate::core::JSON;
+
+    pub async fn change_name_component(Json(payload): JSON) -> JSON {
+        let component = payload["component"].clone();
+        Json(json!({
+            "playerDataDelta": {
+                "modified": {
+                    "nameCardStyle": {
+                        "componentOrder": component
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn change_card_skin(Json(payload): JSON) -> JSON {
+        let skin_id = payload["skinId"].clone();
+        Json(json!({
+            "playerDataDelta": {
+                "modified": {
+                    "nameCardStyle": {
+                        "skin": {
+                            "selected": skin_id
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+}
