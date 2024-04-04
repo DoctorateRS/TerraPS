@@ -46,9 +46,8 @@ pub async fn account_sync_data() -> JSON {
     let acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
     let charword_table = update_data(CHARWORD_TABLE_URL).await;
 
-    let ts = time();
     let mut count = 0;
-    let mut count_inst_id = 1;
+    let mut count_inst_id;
     let mut max_inst_id = 1;
 
     // Generics
@@ -134,7 +133,7 @@ pub async fn account_sync_data() -> JSON {
             "level": level,
             "exp": 0,
             "evolvePhase": evolve_phase,
-            "defaultSkillIndex": char_table[&operator]["skills"].as_array().unwrap().len() as u64 - 1,
+            "defaultSkillIndex": char_table[&operator]["skills"].as_array().unwrap().len() as i64 - 1,
             "gainTime": time(),
             "skills": [],
             "voiceLan": voice_lan,
@@ -352,7 +351,7 @@ pub async fn account_sync_data() -> JSON {
     for char_id in get_keys(&addon_table["handbookDict"]) {
         addon_list[&char_id] = json!({"story":{}});
         let story = addon_table["handbookDict"][&char_id]["handbookAvgList"].clone();
-        for (story_keys, id) in zipper(get_keys(&story), 0..story.as_object().unwrap().len()) {
+        for (story_keys, id) in zipper(get_keys(&story), 0..story.as_array().unwrap().len()) {
             if story_keys.contains("storySetId") {
                 let story_set_id = addon_table["handbookDict"][&char_id]["handbookAvgList"].as_array().unwrap()[id]["storySetId"]
                     .as_str()

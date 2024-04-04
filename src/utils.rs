@@ -17,11 +17,15 @@ pub async fn update_data(url: &str) -> Value {
         // ("https://ark-us-static-online.yo-star.com/announce/Android", "./data/announce"),
     ];
 
-    let mut local_path = String::new();
-
-    for path_pair in BASE_URL_LIST {
-        local_path = url.replace(path_pair.0, path_pair.1);
-    }
+    let local_path = url
+        .replace(
+            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
+            "./data",
+        )
+        .replace(
+            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
+            "./data/announce",
+        );
 
     if url.contains("Android/version") {
         match get(url).await.unwrap().json::<Value>().await {
