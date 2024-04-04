@@ -96,4 +96,34 @@ pub mod char_build {
         write_json(USER_JSON_PATH, user_data);
         Json(data)
     }
+
+    pub async fn char_build_set_char_voice_lan(Json(payload): JSON) -> JSON {
+        let char_list = payload["charList"].clone();
+        let voice_lan = payload["voiceLan"].clone();
+
+        let mut data = json!({
+            "playerDataDelta": {
+                "deleted": {},
+                "modified": {
+                    "troop": {
+                        "chars": {
+                        }
+                    }
+                }
+            }
+        });
+
+        let mut user_data = read_json(USER_JSON_PATH);
+
+        for (character, _) in char_list.as_object().unwrap() {
+            user_data["user"]["troop"]["chars"][character]["voiceLan"] = voice_lan.clone();
+            data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
+                character: {
+                    "voiceLan": voice_lan
+                }
+            })
+        }
+
+        Json(data)
+    }
 }
