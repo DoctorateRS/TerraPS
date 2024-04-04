@@ -10,8 +10,8 @@ publish = false
 [dependencies]
 chrono = "0.4"
 constcat = "*"
-crypto = "0.5"
-
+md-5 = "0.10"
+subtle-encoding = "0.5"
 axum = "0.7"
 axum-server = "0.6"
 lazy_static = "1.4"

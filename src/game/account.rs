@@ -17,6 +17,10 @@ pub async fn account_login(header: HeaderMap) -> JSON {
     }))
 }
 
+pub async fn account_sync_data() -> JSON {
+    Json(json!({}))
+}
+
 pub async fn account_sync_status() -> JSON {
     Json(json!({
         "ts": time(),
