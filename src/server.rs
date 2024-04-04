@@ -14,7 +14,7 @@ mod utils;
 
 use axum::serve;
 use tokio::net::TcpListener as Listener;
-use tracing::{debug, Level};
+use tracing::{info, Level};
 use tracing_subscriber::fmt as tracing_subscriber_fmt;
 
 #[tokio::main]
@@ -30,7 +30,7 @@ async fn main() {
             panic!("Failed to bind to address: {}", e);
         }
     };
-    debug!("Server started at: {}", server_address);
+    info!("Server started at: {}", server_address);
     match serve(listener, routes::routes()).await {
         Ok(_) => (),
         Err(e) => {
