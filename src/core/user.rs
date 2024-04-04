@@ -141,7 +141,7 @@ pub async fn user_v1_get_token() -> JSON {
     Json(json!({
         "channelUid": "1",
         "error": "",
-        "extension": r#"{"isMinor": false,"isAuthenticate": true}"#,
+        "extension": json!({"isMinor": false,"isAuthenticate": true}).to_string(),
         "isGuest": 0,
         "result": 0,
         "token": "abcd",
