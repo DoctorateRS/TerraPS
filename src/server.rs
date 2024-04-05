@@ -48,6 +48,8 @@ Good luck and Godspeed.
 "#
     );
 
+    println!(TITLE);
+
     // SERVER
     let server_address = &get_server_address();
     let listener = match Listener::bind(server_address).await {
