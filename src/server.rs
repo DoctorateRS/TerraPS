@@ -12,17 +12,14 @@ use utils::{json::read_json, server::Server};
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    // TRACING
-
     // TITLE
     println!(r#"{}"#, TITLE);
-
     println!("IN CASE YOU PAID MONEY FOR THIS, YOU'VE BEEN SCAMMED.");
     println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
 
     // SERVER
-    let server_address = get_server_address();
-    let server = Server::new(server_address.0, server_address.1);
+    let (server_address, server_port) = get_server_address();
+    let server = Server::new(server_address, server_port);
     server.serve(routes()).await
 }
 
