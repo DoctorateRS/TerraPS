@@ -48,3 +48,11 @@ pub fn get_values(value: &Value) -> Vec<Value> {
     }
     values
 }
+
+pub fn get_lenghth(value: &Value) -> usize {
+    if let Value::Array(array) = value {
+        array.len()
+    } else {
+        0
+    }
+}

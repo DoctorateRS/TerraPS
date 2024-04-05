@@ -29,8 +29,8 @@ pub async fn account_login(header: HeaderMap) -> JSON {
 }
 
 pub async fn account_sync_data() -> JSON {
-    let _user_data = read_json(USER_JSON_PATH);
-    let _mail_data = read_json(MAILLIST_PATH);
+    let user_data = read_json(USER_JSON_PATH);
+    let mail_data = read_json(MAILLIST_PATH);
     let mut player_data = read_json(SYNC_DATA_TEMPLATE_PATH);
     let config = read_json(CONFIG_JSON_PATH);
 
@@ -43,7 +43,7 @@ pub async fn account_sync_data() -> JSON {
     let display_meta_table = update_data(DM_TABLE_URL).await;
     let retro_table = update_data(RETRO_TABLE_URL).await;
     let charm_table = update_data(CHARM_TABLE_URL).await;
-    let _acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
+    let acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
     let charword_table = update_data(CHARWORD_TABLE_URL).await;
 
     let mut count = 0;
@@ -436,8 +436,8 @@ pub async fn account_sync_data() -> JSON {
 
     player_data["user"]["avatar"]["avatar_icon"] = avatar_list;
 
+    // BGs
     let mut bg_list = json!({});
-
     for bg in display_meta_table["homeBackgroundData"]["homeBgDataList"].as_array().unwrap() {
         let id = bg["bgId"].as_str().unwrap();
         bg_list[&id] = json!({
@@ -446,6 +446,7 @@ pub async fn account_sync_data() -> JSON {
     }
     player_data["user"]["background"]["bgs"] = bg_list;
 
+    // Themes
     let mut theme_list = json!({});
     for theme in display_meta_table["homeBackgroundData"]["themeList"].as_array().unwrap() {
         let id = theme["id"].as_str().unwrap();
@@ -455,13 +456,105 @@ pub async fn account_sync_data() -> JSON {
     }
     player_data["user"]["homeTheme"]["themes"] = theme_list;
 
+    // CHARM
     for charm in charm_table["charmList"].as_array().unwrap() {
         let id = charm["id"].as_str().unwrap();
         player_data["user"]["charm"]["charms"][id] = json!(1);
     }
 
-    // SN & IC code here
+    // IDEAL CITY CARS
+    let car_table = acitivity_table["carData"]["carDict"].clone();
+    for car_gear in get_keys(&car_table) {
+        player_data["user"]["car"]["accessories"][&car_gear] = json!({
+            "id": &car_gear,
+            "num": get_lenghth(&car_table[&car_gear]["posList"])
+        })
+    }
 
+    // STULTIFERA NAVIS HAND OF SAINT
+    let act_table = acitivity_table["activity"]["TYPE_ACT17SIDE"]["act17side"].clone();
+    for place in get_keys(&act_table["placeDataMap"]) {
+        player_data["user"]["deepSea"]["places"][&place] = json!(2);
+    }
+    for node in get_keys(&act_table["nodeInfoDataMap"]) {
+        player_data["user"]["deepSea"]["nodes"][&node] = json!(2);
+    }
+    for choice_node in get_keys(&act_table["choiceNodeDataMap"]) {
+        let cv_len = get_lenghth(&act_table["choiceNodeDataMap"][&choice_node]["optionList"]);
+        let cv_vec = vec![2; cv_len];
+        player_data["user"]["deepSea"]["choices"][&choice_node] = json!(cv_vec);
+    }
+    for event in get_keys(&act_table["eventDataMap"]) {
+        player_data["user"]["deepSea"]["events"][&event] = json!(1);
+    }
+    for treasure in get_keys(&act_table["treasureNodeDataMap"]) {
+        player_data["user"]["deepSea"]["treasures"][&treasure] = json!(1);
+    }
+    for story in get_keys(&act_table["storyNodeDataMap"]) {
+        let story_key = act_table["storyNodeDataMap"][story]["storyKey"].as_str().unwrap();
+        player_data["user"]["deepSea"]["stories"][story_key] = json!(1);
+    }
+    for tech in get_keys(&act_table["techTreeDataMap"]) {
+        let branch = &act_table["techTreeDataMap"][&tech]["defaultBranchId"];
+        player_data["user"]["deepSea"]["techTrees"][&tech] = json!({
+            "state": 2,
+            "branch": branch
+        });
+    }
+    for log in get_keys(&act_table["logDataMap"]) {
+        if !log.starts_with("act17side_log_") {
+            continue;
+        }
+        let chapter = &act_table["archiveItemUnlockDataMap"][&log]["chapterId"].as_str().unwrap();
+        let mut story_array = Vec::new();
+        if contains(
+            chapter,
+            get_keys(&player_data["user"]["deepSea"]["logs"])
+                .iter()
+                .map(|s| s.as_str())
+                .collect(),
+        ) {
+            story_array = player_data["user"]["deepSea"]["logs"][chapter].as_array().unwrap().clone();
+            story_array.push(json!("log"));
+            player_data["user"]["deepSea"]["logs"][chapter] = json!(story_array);
+        } else {
+            player_data["user"]["deepSea"]["logs"][chapter] = json!([log]);
+        }
+    }
+
+    // Mails
+    let received_mails = mail_data["recievedIDs"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|id| id.as_u64().unwrap())
+        .collect::<Vec<u64>>();
+    let deleted_mails = mail_data["deletedIDs"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|id| id.as_u64().unwrap())
+        .collect::<Vec<u64>>();
+    for mail_id in get_keys(&mail_data["mailList"]) {
+        if !contains(&mail_id.parse::<u64>().unwrap(), received_mails.clone())
+            && !contains(&mail_id.parse::<u64>().unwrap(), deleted_mails.clone())
+        {
+            player_data["user"]["pushFlags"]["hasGifts"] = json!(1);
+            break;
+        }
+    }
+
+    player_data["user"]["status"]["lastRefreshTs"] = json!(time());
+    player_data["user"]["status"]["lastApAddTime"] = json!(time());
+    player_data["user"]["status"]["registerTs"] = json!(time());
+    player_data["user"]["status"]["lastOnlineTs"] = json!(time());
+    player_data["user"]["crisis"]["lst"] = json!(time());
+    player_data["user"]["crisis"]["nst"] = json!(time() + 3600);
+    player_data["ts"] = json!(time());
+
+    // REPLAY CODES
+
+    write_json(USER_JSON_PATH, player_data.clone());
     Json(player_data)
 }
 
