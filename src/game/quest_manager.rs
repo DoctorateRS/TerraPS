@@ -7,6 +7,30 @@ pub mod quest {
         utils::json::{get_keys, read_json, write_json, JSON},
     };
 
+    pub async fn squad_change_name(Json(payload): JSON) -> JSON {
+        let mut data = json!({
+            "playerDataDelta":{
+                "modified":{
+                    "troop":{
+                        "squads":{}
+                    }
+                },
+                "deleted":{}
+            }
+        });
+
+        if payload.get("squadId").is_some() && payload.get("name").is_some() {
+            let squad_id = payload["squadId"].as_u64().unwrap().to_string();
+            let name = payload["name"].clone();
+            data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["name"] = name.clone();
+            let mut user_data = read_json(USER_JSON_PATH);
+            user_data["user"]["troop"]["squads"][&squad_id]["name"] = name;
+            write_json(USER_JSON_PATH, user_data);
+        }
+
+        Json(data)
+    }
+
     pub async fn squad_set_formation(Json(payload): JSON) -> JSON {
         let mut data = json!({
             "playerDataDelta":{
@@ -29,31 +53,6 @@ pub mod quest {
         }
 
         Json(data)
-    }
-
-    pub async fn mark_story_acce_known() -> JSON {
-        Json(json!({
-            "playerDataDelta": {
-                "modified": {
-                    "storyreview": {
-                        "tags": {
-                            "knownStoryAcceleration": 1
-                        }
-                    }
-                },
-                "deleted": {}
-            }
-        }))
-    }
-
-    pub async fn read_story() -> JSON {
-        Json(json!({
-            "readCount": 1,
-            "playerDataDelta": {
-                "modified": {},
-                "deleted": {}
-            }
-        }))
     }
 
     pub async fn confirm_battle_car(Json(payload): JSON) -> JSON {
@@ -186,6 +185,36 @@ pub mod bossrush {
     }
 }
 
+pub mod story_review {
+    use crate::utils::json::JSON;
+    use axum::Json;
+    use serde_json::json;
+
+    pub async fn mark_story_acce_known() -> JSON {
+        Json(json!({
+            "playerDataDelta": {
+                "modified": {
+                    "storyreview": {
+                        "tags": {
+                            "knownStoryAcceleration": 1
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn read_story() -> JSON {
+        Json(json!({
+            "readCount": 1,
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
+}
 pub mod april_fools {
     // TODO: Implement April Fools
 }

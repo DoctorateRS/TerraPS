@@ -5,7 +5,9 @@ use crate::{
         account, background, building,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        online, pay, social,
+        online, pay,
+        quest_manager::{quest, story_review},
+        social,
     },
 };
 use axum::{
@@ -40,6 +42,7 @@ pub fn routes() -> Router {
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
         .nest("/social", social_routes())
+        .nest("/storyreview", story_review_routes())
         .nest("/user", user_routes())
         .nest("/debug", debug_routes())
         .merge(misc_routes())
@@ -118,8 +121,8 @@ fn online_routes() -> Router {
 
 fn quest_routes() -> Router {
     Router::new()
-        .route("/getInfo", post(crisis_v2::crisis_v2_get_info))
-        .route("/battleStart", post(crisis_v2::crisis_v2_battle_start))
+        .route("/changeSquadName", post(quest::squad_change_name))
+        .route("/squadFormation", post(quest::squad_set_formation))
         .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
         .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
 }
@@ -128,6 +131,12 @@ fn social_routes() -> Router {
     Router::new()
         .route("/setAssistCharList", post(social::social_set_assist_char_list))
         .route("/setCardShowMedal", post(social::social_set_card_medal))
+}
+
+fn story_review_routes() -> Router {
+    Router::new()
+        .route("/markStoryAcceKnown", post(story_review::mark_story_acce_known))
+        .route("/readStory", post(story_review::read_story))
 }
 
 fn user_routes() -> Router {
@@ -153,6 +162,8 @@ fn misc_routes() -> Router {
         .route("/background/setBackground", post(background::background_set_bg))
         .route("/homeTheme/change", post(background::home_theme_change))
         .route("/charm/setSquad", post(charm::charm_set_squad))
+        .route("/car/confirmBattleCar", post(quest::confirm_battle_car))
+        .route("/templateTrap/setTrapSquad", post(quest::set_trap_squad))
 }
 
 fn debug_routes() -> Router {
