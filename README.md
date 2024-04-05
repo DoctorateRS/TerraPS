@@ -1,6 +1,7 @@
 # DoctorateRS
 
 - Oxidized.
+- __NOTE:__ Not working yet. Refer to [this](https://github.com/DoctorateRS/DoctorateRS/issues/2).
 
 ## Big thanks
 
