@@ -3,7 +3,6 @@ name = "doctorate-rs"
 version = "0.2.1"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
-build = "build.rs"
 authors = ["Rh"]
 publish = false
 
