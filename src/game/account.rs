@@ -1,10 +1,7 @@
 use crate::{
     constants::{
         config::{CONFIG_JSON_PATH, MAILLIST_PATH, SYNC_DATA_TEMPLATE_PATH},
-        url::{
-            ACTIVITY_TABLE_URL, BATTLEEQUIP_TABLE_URL, CHARACTER_TABLE_URL, CHARM_TABLE_URL, CHARWORD_TABLE_URL, DM_TABLE_URL, EQUIP_TABLE_URL,
-            HANDBOOK_INFO_TABLE_URL, RETRO_TABLE_URL, SKIN_TABLE_URL, STORY_TABLE_URL,
-        },
+        url::*,
         user::USER_JSON_PATH,
     },
     core::time,
