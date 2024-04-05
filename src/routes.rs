@@ -2,7 +2,7 @@ use crate::{
     core::{general_v1_server_time, prod, user},
     debug,
     game::{
-        account, background, building,
+        account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
         online, pay,
@@ -35,6 +35,7 @@ pub fn routes() -> Router {
         .nest("/account", account_routes())
         .nest("/building", building_routes())
         .nest("/businessCard", business_card_routes())
+        .nest("/campaignV2", campaignv2_routes())
         .nest("/char", char_routes())
         .nest("/charBuild", char_build_routes())
         .nest("/config/prod", config_routes())
@@ -78,6 +79,13 @@ fn business_card_routes() -> Router {
     Router::new()
         .route("/changeNameCardComponent", post(user::business_card::change_name_component))
         .route("/changeNameCardSkin", post(user::business_card::change_card_skin))
+}
+
+fn campaignv2_routes() -> Router {
+    Router::new()
+        .route("/battleStart", post(campaignv2::campaignv2_battle_start))
+        .route("/battleFinish", post(campaignv2::campaignv2_battle_finish))
+        .route("/battleSweep", post(campaignv2::campaignv2_battle_sweep))
 }
 
 fn char_routes() -> Router {

@@ -1,11 +1,15 @@
 pub mod account;
 pub mod background;
 pub mod building;
+pub mod campaignv2;
 pub mod char_manager;
 pub mod crisis_manager;
 pub mod online;
 pub mod quest_manager;
+pub mod rlv2;
+pub mod sandboxv2;
 pub mod social;
+pub mod tower;
 
 pub mod pay {
     use axum::Json;
