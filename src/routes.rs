@@ -6,7 +6,7 @@ use crate::{
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
         online, pay,
-        quest_manager::{quest, story_review},
+        quest_manager::{bossrush, quest, story_review},
         social,
     },
 };
@@ -62,6 +62,10 @@ fn account_routes() -> Router {
         .route("/syncData", post(account::account_sync_data))
         .route("/yostar_auth_request", post(account::account_yostar_auth_req))
         .route("/yostar_auth_submit", post(account::account_yostar_auth_submit))
+}
+
+fn activity_routes() -> Router {
+    Router::new().route("/bossRush/relicSelect", post(bossrush::_relic_select))
 }
 
 fn building_routes() -> Router {
