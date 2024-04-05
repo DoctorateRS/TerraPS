@@ -5,15 +5,15 @@ mod game;
 mod routes;
 mod utils;
 
-use axum::serve;
-use constants::ascii::TITLE;
-use tokio::net::TcpListener as Listener;
-use tracing::{info, Level};
+use constants::{ascii::TITLE, config::CONFIG_JSON_PATH};
+use routes::routes;
+use std::io::Error;
+use tracing::Level;
 use tracing_subscriber::fmt as subscriber_fmt;
-use utils::json::read_json;
+use utils::{json::read_json, server::Server};
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
     // TRACING
     subscriber_fmt().with_max_level(Level::DEBUG).init();
 
@@ -24,26 +24,15 @@ async fn main() {
     println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
 
     // SERVER
-    let server_address = &get_server_address();
-    let listener = match Listener::bind(server_address).await {
-        Ok(listener) => listener,
-        Err(e) => {
-            panic!("Failed to bind to address: {}", e);
-        }
-    };
-    info!("Server started at: {}", server_address);
-    match serve(listener, routes::routes()).await {
-        Ok(_) => (),
-        Err(e) => {
-            panic!("Failed to start server: {}", e);
-        }
-    };
+    let server_address = get_server_address();
+    let server = Server::new(server_address.0, server_address.1);
+    server.serve(routes()).await
 }
 
-fn get_server_address() -> String {
-    let config = read_json(constants::config::CONFIG_JSON_PATH);
+fn get_server_address() -> (String, u64) {
+    let config = read_json(CONFIG_JSON_PATH);
     let server_config = &config["server"];
     let host = server_config["host"].as_str().unwrap();
     let port = server_config["port"].as_u64().unwrap();
-    format!("{}:{}", host, port)
+    (host.to_string(), port)
 }

@@ -2,6 +2,7 @@ pub mod comp;
 pub mod crypto;
 pub mod game;
 pub mod json;
+pub mod server;
 
 pub fn contains<T: PartialEq>(val: &T, vec: Vec<T>) -> bool {
     for item in vec {
