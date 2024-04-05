@@ -15,7 +15,6 @@ use utils::{json::read_json, server::Server};
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     // TRACING
-    subscriber_fmt().with_max_level(Level::DEBUG).init();
 
     // TITLE
     println!(r#"{}"#, TITLE);

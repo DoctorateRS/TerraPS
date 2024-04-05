@@ -2,6 +2,8 @@ use tokio::net::TcpListener;
 
 use axum::{serve, Router};
 use std::io::Error;
+use tracing::Level;
+use tracing_subscriber::fmt as subscriber_fmt;
 
 pub struct Server {
     pub ip: String,
@@ -19,6 +21,7 @@ impl Server {
         println!("Server started at: {}", self.get_address());
     }
     pub async fn serve(&self, routes: Router) -> Result<(), Error> {
+        subscriber_fmt().with_max_level(Level::DEBUG).init();
         let addr = &self.get_address();
         let listener = match TcpListener::bind(addr).await {
             Ok(listener) => listener,
