@@ -1,7 +1,7 @@
 pub mod char {
     use crate::{
         constants::user::USER_JSON_PATH,
-        utils::json::{read_json, write_json, JSON},
+        utils::json::{get_keys, read_json, write_json, JSON},
     };
     use axum::Json;
     use serde_json::json;
@@ -24,17 +24,17 @@ pub mod char {
         let mut user_data = read_json(USER_JSON_PATH);
         let chars = user_data["user"]["troop"]["chars"].clone();
         let mut index_list = Vec::new();
-        for (character, _) in set.as_object().unwrap() {
+        for character in get_keys(&set) {
             for (char_index, saved_char) in chars.as_object().unwrap() {
                 if saved_char["charId"].as_str().unwrap() == character {
                     index_list.push(char_index);
                 }
             }
             for index in index_list.iter() {
-                user_data["user"]["troop"]["chars"][index]["starMark"] = set[character].clone();
+                user_data["user"]["troop"]["chars"][index]["starMark"] = set[&character].clone();
                 data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
                     *index: {
-                        "starMark": set[character].clone()
+                        "starMark": set[&character].clone()
                     }
                 })
             }
@@ -49,7 +49,7 @@ pub mod char_build {
     use crate::{
         constants::user::USER_JSON_PATH,
         core::time,
-        utils::json::{read_json, write_json, JSON},
+        utils::json::{get_keys, read_json, write_json, JSON},
     };
     use axum::Json;
     use serde_json::json;
@@ -114,13 +114,9 @@ pub mod char_build {
 
         let mut user_data = read_json(USER_JSON_PATH);
 
-        for (character, _) in char_list.as_object().unwrap() {
-            user_data["user"]["troop"]["chars"][character]["voiceLan"] = voice_lan.clone();
-            data["playerDataDelta"]["modified"]["troop"]["chars"] = json!({
-                character: {
-                    "voiceLan": voice_lan
-                }
-            })
+        for character in get_keys(&char_list) {
+            user_data["user"]["troop"]["chars"][&character]["voiceLan"] = json!(voice_lan);
+            data["playerDataDelta"]["modified"]["troop"]["chars"][&character] = json!({"voiceLan": voice_lan})
         }
 
         Json(data)
