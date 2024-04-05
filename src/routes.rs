@@ -1,5 +1,6 @@
 use crate::{
     core::{general_v1_server_time, prod, user},
+    debug,
     game::{
         account, background, building,
         char_manager::{char, char_build, charm},
@@ -151,6 +152,10 @@ fn misc_routes() -> Router {
         .route("/background/setBackground", post(background::background_set_bg))
         .route("/homeTheme/change", post(background::home_theme_change))
         .route("/charm/setSquad", post(charm::charm_set_squad))
+}
+
+fn debug_routes() -> Router {
+    Router::new().route("/decryptBattleData", post(debug::decrypt_battle_data))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
