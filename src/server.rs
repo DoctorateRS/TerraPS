@@ -8,8 +8,6 @@ mod utils;
 use constants::{ascii::TITLE, config::CONFIG_JSON_PATH};
 use routes::routes;
 use std::io::Error;
-use tracing::Level;
-use tracing_subscriber::fmt as subscriber_fmt;
 use utils::{json::read_json, server::Server};
 
 #[tokio::main]
