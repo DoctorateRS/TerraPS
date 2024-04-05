@@ -41,6 +41,7 @@ pub fn routes() -> Router {
         .nest("/quest", quest_routes())
         .nest("/social", social_routes())
         .nest("/user", user_routes())
+        .nest("/debug", debug_routes())
         .merge(misc_routes())
         .fallback(fallback)
         .layer(trace_layer)
