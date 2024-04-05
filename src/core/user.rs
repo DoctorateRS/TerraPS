@@ -173,7 +173,6 @@ pub async fn user_oauth2_v2_grant() -> JSON {
 pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
     let mut config = read_json(constants::config::CONFIG_JSON_PATH).clone();
     let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
-    let _ = payload["charInstId"].as_str().unwrap();
     let skin_id = payload["skinId"].as_str().unwrap();
     let secretary = match skin_id.find('@') {
         Some(_) => skin_id.split('@').collect::<Vec<&str>>()[0],
