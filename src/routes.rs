@@ -33,6 +33,7 @@ pub fn routes() -> Router {
     Router::new()
         .nest("/app", app_routes())
         .nest("/account", account_routes())
+        .nest("/activity", activity_routes())
         .nest("/building", building_routes())
         .nest("/businessCard", business_card_routes())
         .nest("/campaignV2", campaignv2_routes())
@@ -42,8 +43,10 @@ pub fn routes() -> Router {
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
+        .nest("/retro", retro_routes())
         .nest("/social", social_routes())
         .nest("/storyreview", story_review_routes())
+        .nest("/u8", u8_routes())
         .nest("/user", user_routes())
         .nest("/debug", debug_routes())
         .merge(misc_routes())
@@ -139,6 +142,12 @@ fn quest_routes() -> Router {
         .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
 }
 
+fn retro_routes() -> Router {
+    Router::new()
+        .route("/typeAct20side/competitionStart", post(quest::act_20_competition_start))
+        .route("/typeAct20side/competitionFinish", post(quest::act_20_competition_finish))
+}
+
 fn social_routes() -> Router {
     Router::new()
         .route("/setAssistCharList", post(social::social_set_assist_char_list))
@@ -149,6 +158,13 @@ fn story_review_routes() -> Router {
     Router::new()
         .route("/markStoryAcceKnown", post(story_review::mark_story_acce_known))
         .route("/readStory", post(story_review::read_story))
+}
+
+fn u8_routes() -> Router {
+    Router::new()
+        .route("/user/auth/v1/agreement_version", get(user::agreement_version))
+        .route("/user/v1/getToken", post(user::user_v1_get_token))
+        .route("/pay/getAllProductList", post(pay::pay_get_all_prod_list))
 }
 
 fn user_routes() -> Router {
@@ -167,9 +183,6 @@ fn user_routes() -> Router {
 fn misc_routes() -> Router {
     Router::new()
         .route("/general/v1/server_time", get(general_v1_server_time))
-        .route("/u8/user/auth/v1/agreement_version", get(user::agreement_version))
-        .route("/u8/user/v1/getToken", post(user::user_v1_get_token))
-        .route("/u8/pay/getAllProductList", post(pay::pay_get_all_prod_list))
         .route("/pay/getUnconfirmedOrderIdList", post(pay::pay_get_unconfirmed_order_id_list))
         .route("/background/setBackground", post(background::background_set_bg))
         .route("/homeTheme/change", post(background::home_theme_change))
