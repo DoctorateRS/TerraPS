@@ -431,7 +431,7 @@
                                 },
                                 {
                                     "key": "max_hp",
-                                    "value": 1.70,
+                                    "value": 1.7,
                                     "valueStr": null
                                 },
                                 {
@@ -973,72 +973,78 @@
                     "points": 1,
                     "mutexGroupKey": "char_def",
                     "description": "All friendly units have -30% DEF",
-                    "runes": [{
-                        "key": "char_attribute_mul",
-                        "selector": {
-                            "professionMask": 767,
-                            "buildableMask": 3,
-                            "charIdFilter": null,
-                            "enemyIdFilter": null,
-                            "skillIdFilter": null,
-                            "tileKeyFilter": null
-                        },
-                        "blackboard": [
-                            {
-                                "key": "def",
-                                "value": 0.7,
-                                "valueStr": null
-                            }
-                        ]
-                    }]
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 0.7,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "char_def_2": {
                     "id": "char_def_2",
                     "points": 2,
                     "mutexGroupKey": "char_def",
                     "description": "All friendly units have -60% DEF",
-                    "runes": [{
-                        "key": "char_attribute_mul",
-                        "selector": {
-                            "professionMask": 767,
-                            "buildableMask": 3,
-                            "charIdFilter": null,
-                            "enemyIdFilter": null,
-                            "skillIdFilter": null,
-                            "tileKeyFilter": null
-                        },
-                        "blackboard": [
-                            {
-                                "key": "def",
-                                "value": 0.4,
-                                "valueStr": null
-                            }
-                        ]
-                    }]
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 0.4,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "char_def_3": {
                     "id": "char_def_3",
                     "points": 3,
                     "mutexGroupKey": "char_def",
                     "description": "All friendly units have -90% DEF",
-                    "runes": [{
-                        "key": "char_attribute_mul",
-                        "selector": {
-                            "professionMask": 767,
-                            "buildableMask": 3,
-                            "charIdFilter": null,
-                            "enemyIdFilter": null,
-                            "skillIdFilter": null,
-                            "tileKeyFilter": null
-                        },
-                        "blackboard": [
-                            {
-                                "key": "def",
-                                "value": 0.1,
-                                "valueStr": null
-                            }
-                        ]
-                    }]
+                    "runes": [
+                        {
+                            "key": "char_attribute_mul",
+                            "selector": {
+                                "professionMask": 767,
+                                "buildableMask": 3,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "def",
+                                    "value": 0.1,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "global_costrecovery_1": {
                     "id": "global_costrecovery_1",
@@ -1235,22 +1241,26 @@
                     "description": "Max HP Seals reduced to 1",
                     "points": 1,
                     "mutexGroupKey": null,
-                    "runes": [{
-                        "key": "global_lifepoint",
-                        "selector": {
-                            "professionMask": 0,
-                            "buildableMask": 0,
-                            "charIdFilter": null,
-                            "enemyIdFilter": null,
-                            "skillIdFilter": null,
-                            "tileKeyFilter": null
-                        },
-                        "blackboard": [{
-                            "key": "value",
-                            "value": 1,
-                            "valueStr": null
-                        }]
-                    }]
+                    "runes": [
+                        {
+                            "key": "global_lifepoint",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 1,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "enemy_def_1": {
                     "id": "enemy_def_1",
@@ -1336,7 +1346,6 @@
                     ]
                 }
             }
-            
         }
     },
     "playerDataDelta": {

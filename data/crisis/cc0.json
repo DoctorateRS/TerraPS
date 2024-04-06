@@ -1341,22 +1341,26 @@
                     "description": "Max HP Seals reduced to 1",
                     "points": 1,
                     "mutexGroupKey": null,
-                    "runes": [{
-                        "key": "global_lifepoint",
-                        "selector": {
-                            "professionMask": 0,
-                            "buildableMask": 0,
-                            "charIdFilter": null,
-                            "enemyIdFilter": null,
-                            "skillIdFilter": null,
-                            "tileKeyFilter": null
-                        },
-                        "blackboard": [{
-                            "key": "value",
-                            "value": 1,
-                            "valueStr": null
-                        }]
-                    }]
+                    "runes": [
+                        {
+                            "key": "global_lifepoint",
+                            "selector": {
+                                "professionMask": 0,
+                                "buildableMask": 0,
+                                "charIdFilter": null,
+                                "enemyIdFilter": null,
+                                "skillIdFilter": null,
+                                "tileKeyFilter": null
+                            },
+                            "blackboard": [
+                                {
+                                    "key": "value",
+                                    "value": 1,
+                                    "valueStr": null
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "enemy_def_1": {
                     "id": "enemy_def_1",

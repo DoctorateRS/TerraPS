@@ -78,219 +78,154 @@
                 "commentDataMap": {
                     "comments_0_1": {
                         "condition": "KillWithSpecSlot",
-                        "paramList": [
-                            "node_58",
-                            "1",
-                            "enemy_1269_nhfly",
-                            "30"
-                        ],
+                        "paramList": ["node_58", "1", "enemy_1269_nhfly", "30"],
                         "id": "comments_0_1",
                         "sortId": 1,
                         "desc": "眼疾手快"
                     },
                     "comments_0_2": {
                         "condition": "PassWithEventLess",
-                        "paramList": [
-                            "not_build_at_reed",
-                            "0"
-                        ],
+                        "paramList": ["not_build_at_reed", "0"],
                         "id": "comments_0_2",
                         "sortId": 2,
                         "desc": "不见人影"
                     },
                     "comments_0_3": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "0",
-                            "60"
-                        ],
+                        "paramList": ["0", "60"],
                         "id": "comments_0_3",
                         "sortId": 3,
                         "desc": "坚守战线"
                     },
                     "comments_0_4": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "0",
-                            "130"
-                        ],
+                        "paramList": ["0", "130"],
                         "id": "comments_0_4",
                         "sortId": 4,
                         "desc": "固守战线"
                     },
                     "comments_0_5": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "1",
-                            "110"
-                        ],
+                        "paramList": ["1", "110"],
                         "id": "comments_0_5",
                         "sortId": 5,
                         "desc": "精准打击"
                     },
                     "comments_0_6": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "1",
-                            "220"
-                        ],
+                        "paramList": ["1", "220"],
                         "id": "comments_0_6",
                         "sortId": 6,
                         "desc": "定点打击"
                     },
                     "comments_0_7": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "2;3",
-                            "110"
-                        ],
+                        "paramList": ["2;3", "110"],
                         "id": "comments_0_7",
                         "sortId": 7,
                         "desc": "运筹帷幄"
                     },
                     "comments_0_8": {
                         "condition": "PassWithDimensionScoreMore",
-                        "paramList": [
-                            "4;5",
-                            "110"
-                        ],
+                        "paramList": ["4;5", "110"],
                         "id": "comments_0_8",
                         "sortId": 8,
                         "desc": "制宜应变"
                     },
                     "comments_0_9": {
                         "condition": "PassWithDeployLess",
-                        "paramList": [
-                            "9"
-                        ],
+                        "paramList": ["9"],
                         "id": "comments_0_9",
                         "sortId": 9,
                         "desc": "择能善任"
                     },
                     "comments_0_10": {
                         "condition": "PassWithDeployMore",
-                        "paramList": [
-                            "20"
-                        ],
+                        "paramList": ["20"],
                         "id": "comments_0_10",
                         "sortId": 10,
                         "desc": "多多益善"
                     },
                     "comments_0_11": {
                         "condition": "PassWithDeployMore",
-                        "paramList": [
-                            "30"
-                        ],
+                        "paramList": ["30"],
                         "id": "comments_0_11",
                         "sortId": 11,
                         "desc": "人海战术"
                     },
                     "comments_0_12": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "SNIPER",
-                            "4"
-                        ],
+                        "paramList": ["SNIPER", "4"],
                         "id": "comments_0_12",
                         "sortId": 12,
                         "desc": "狙击作战 专家"
                     },
                     "comments_0_13": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "CASTER",
-                            "4"
-                        ],
+                        "paramList": ["CASTER", "4"],
                         "id": "comments_0_13",
                         "sortId": 13,
                         "desc": "法术作战专家"
                     },
                     "comments_0_14": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "WARRIOR",
-                            "4"
-                        ],
+                        "paramList": ["WARRIOR", "4"],
                         "id": "comments_0_14",
                         "sortId": 14,
                         "desc": "近身作战专家"
                     },
                     "comments_0_15": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "SUPPORT",
-                            "4"
-                        ],
+                        "paramList": ["SUPPORT", "4"],
                         "id": "comments_0_15",
                         "sortId": 15,
                         "desc": "支援作战专家"
                     },
                     "comments_0_16": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "PIONEER",
-                            "4"
-                        ],
+                        "paramList": ["PIONEER", "4"],
                         "id": "comments_0_16",
                         "sortId": 16,
                         "desc": "突击作战专家"
                     },
                     "comments_0_17": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "SPECIAL",
-                            "4"
-                        ],
+                        "paramList": ["SPECIAL", "4"],
                         "id": "comments_0_17",
                         "sortId": 17,
                         "desc": "特种作战专家"
                     },
                     "comments_0_18": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "MEDIC",
-                            "4"
-                        ],
+                        "paramList": ["MEDIC", "4"],
                         "id": "comments_0_18",
                         "sortId": 18,
                         "desc": "医疗援助专家"
                     },
                     "comments_0_19": {
                         "condition": "PassWithSpecProf",
-                        "paramList": [
-                            "TANK",
-                            "4"
-                        ],
+                        "paramList": ["TANK", "4"],
                         "id": "comments_0_19",
                         "sortId": 19,
                         "desc": "重装作战专家"
                     },
                     "comments_0_20": {
                         "condition": "PassWithEventLess",
-                        "paramList": [
-                            "COST",
-                            "10"
-                        ],
+                        "paramList": ["COST", "10"],
                         "id": "comments_0_20",
                         "sortId": 20,
                         "desc": "勤俭持家"
                     },
                     "comments_0_21": {
                         "condition": "PassWithAttrExistMore",
-                        "paramList": [
-                            "COST",
-                            "90"
-                        ],
+                        "paramList": ["COST", "90"],
                         "id": "comments_0_21",
                         "sortId": 21,
                         "desc": "功勋之人"
                     },
                     "comments_0_22": {
                         "condition": "PassWithAttrAllLess",
-                        "paramList": [
-                            "HP_RATIO",
-                            "0.01"
-                        ],
+                        "paramList": ["HP_RATIO", "0.01"],
                         "id": "comments_0_22",
                         "sortId": 22,
                         "desc": "生死一线"
@@ -299,10 +234,7 @@
                 "challengeNodeDataMap": {
                     "keypoint_1": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "300"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "300"],
                         "slotId": "keypoint_1",
                         "previewTitle": "进阶作战",
                         "previewDesc": "完成一次作战，同时评分大于等于300分",
@@ -322,10 +254,7 @@
                     },
                     "keypoint_2": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "400"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "400"],
                         "slotId": "keypoint_2",
                         "previewTitle": "巅峰作战",
                         "previewDesc": "完成一次作战，同时评分大于等于400分",
@@ -345,10 +274,7 @@
                     },
                     "keypoint_3": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "540"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "540"],
                         "slotId": "keypoint_3",
                         "previewTitle": "极限作战",
                         "previewDesc": "完成一次作战，同时评分大于等于540分",
@@ -1293,17 +1219,10 @@
                 },
                 "bagRoadDataMap": {
                     "road_70": {
-                        "nodeRoadList": [
-                            "road_35",
-                            "road_60"
-                        ]
+                        "nodeRoadList": ["road_35", "road_60"]
                     },
                     "road_56": {
-                        "nodeRoadList": [
-                            "road_38",
-                            "road_33",
-                            "road_37"
-                        ]
+                        "nodeRoadList": ["road_38", "road_33", "road_37"]
                     }
                 },
                 "nodeViewData": {
@@ -4250,10 +4169,7 @@
                             "count": 1,
                             "type": "CHAR_SKIN"
                         },
-                        "requestBagIdList": [
-                            "pack_1",
-                            "pack_2"
-                        ]
+                        "requestBagIdList": ["pack_1", "pack_2"]
                     },
                     "reward_2": {
                         "slotId": "reward_2",
@@ -4269,10 +4185,7 @@
                             "count": 1,
                             "type": "FURN"
                         },
-                        "requestBagIdList": [
-                            "pack_34",
-                            "pack_7"
-                        ]
+                        "requestBagIdList": ["pack_34", "pack_7"]
                     },
                     "reward_3": {
                         "slotId": "reward_3",
@@ -4288,10 +4201,7 @@
                             "count": 1,
                             "type": "ITEM_PACK"
                         },
-                        "requestBagIdList": [
-                            "pack_5",
-                            "pack_6"
-                        ]
+                        "requestBagIdList": ["pack_5", "pack_6"]
                     }
                 },
                 "dailyRuneUnlcokDataMap": {
@@ -4326,69 +4236,49 @@
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_2"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_2"]
                     },
                     "node_2": {
                         "runeId": "enemy_atk_1",
                         "slotPackId": "pack_1",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3",
-                            "node_1"
-                        ]
+                        "adjacentNodeList": ["node_3", "node_1"]
                     },
                     "node_3": {
                         "runeId": "enemy_atk_2",
                         "slotPackId": "pack_1",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_2",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_2", "keypoint_2"]
                     },
                     "node_4": {
                         "runeId": "enemy_hp_1",
                         "slotPackId": "pack_1",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_1",
-                            "node_5"
-                        ]
+                        "adjacentNodeList": ["node_1", "node_5"]
                     },
                     "node_5": {
                         "runeId": "enemy_hp_2",
                         "slotPackId": "pack_1",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_4", "keypoint_2"]
                     },
                     "node_6": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_9",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_9", "node_11"]
                     },
                     "node_7": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_58"
-                        ]
+                        "adjacentNodeList": ["node_58"]
                     },
                     "reward_3": {
                         "runeId": null,
@@ -4402,40 +4292,28 @@
                         "slotPackId": "pack_2",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_10",
-                            "node_6"
-                        ]
+                        "adjacentNodeList": ["node_10", "node_6"]
                     },
                     "node_10": {
                         "runeId": "char_atk_2",
                         "slotPackId": "pack_2",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_9",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_9", "keypoint_3"]
                     },
                     "node_11": {
                         "runeId": "char_hp_1",
                         "slotPackId": "pack_2",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_6"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_6"]
                     },
                     "node_12": {
                         "runeId": "char_hp_2",
                         "slotPackId": "pack_2",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_11",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_11", "keypoint_3"]
                     },
                     "node_13": {
                         "runeId": null,
@@ -4454,40 +4332,28 @@
                         "slotPackId": "pack_3",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_1",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_13"]
                     },
                     "node_15": {
                         "runeId": "skill_cost_slow_2",
                         "slotPackId": "pack_3",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_1",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_13"]
                     },
                     "node_16": {
                         "runeId": "skill_cost_block_1",
                         "slotPackId": "pack_3",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_1",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_13"]
                     },
                     "node_17": {
                         "runeId": "skill_cost_block_2",
                         "slotPackId": "pack_3",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_1",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_13"]
                     },
                     "node_18": {
                         "runeId": "char_respawntime_1",
@@ -4509,11 +4375,7 @@
                         "slotPackId": "pack_4",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_58",
-                            "node_22",
-                            "node_20"
-                        ]
+                        "adjacentNodeList": ["node_58", "node_22", "node_20"]
                     },
                     "node_20": {
                         "runeId": "nhfly_1",
@@ -4532,129 +4394,91 @@
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     },
                     "node_22": {
                         "runeId": "wdarft_2",
                         "slotPackId": "pack_4",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_19"]
                     },
                     "node_23": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_59"
-                        ]
+                        "adjacentNodeList": ["node_59"]
                     },
                     "node_24": {
                         "runeId": "dusrch_1",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_26",
-                            "node_25",
-                            "node_59"
-                        ]
+                        "adjacentNodeList": ["node_26", "node_25", "node_59"]
                     },
                     "node_25": {
                         "runeId": "dusrch_speed_1",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_2",
-                        "adjacentNodeList": [
-                            "node_24",
-                            "node_27"
-                        ]
+                        "adjacentNodeList": ["node_24", "node_27"]
                     },
                     "node_26": {
                         "runeId": "dusrch_invisible_1",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_2",
-                        "adjacentNodeList": [
-                            "node_24",
-                            "node_27"
-                        ]
+                        "adjacentNodeList": ["node_24", "node_27"]
                     },
                     "node_27": {
                         "runeId": "dusrch_2",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_26",
-                            "node_25",
-                            "node_28"
-                        ]
+                        "adjacentNodeList": ["node_26", "node_25", "node_28"]
                     },
                     "node_28": {
                         "runeId": "dusrch_3",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_27"
-                        ]
+                        "adjacentNodeList": ["node_27"]
                     },
                     "node_30": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_31",
-                            "node_49"
-                        ]
+                        "adjacentNodeList": ["node_31", "node_49"]
                     },
                     "node_31": {
                         "runeId": "reedf_skill_2",
                         "slotPackId": "pack_6",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_5",
-                        "adjacentNodeList": [
-                            "node_33",
-                            "node_32",
-                            "node_30"
-                        ]
+                        "adjacentNodeList": ["node_33", "node_32", "node_30"]
                     },
                     "node_32": {
                         "runeId": "reedf_duskls",
                         "slotPackId": "pack_6",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_49",
-                            "node_31",
-                            "node_34"
-                        ]
+                        "adjacentNodeList": ["node_49", "node_31", "node_34"]
                     },
                     "node_33": {
                         "runeId": "map_tile_reed1",
                         "slotPackId": "pack_6",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_31",
-                            "node_49"
-                        ]
+                        "adjacentNodeList": ["node_31", "node_49"]
                     },
                     "node_34": {
                         "runeId": "duskls_tal1",
                         "slotPackId": "pack_6",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "reward_2": {
                         "runeId": null,
@@ -4683,127 +4507,91 @@
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_3",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_18", "keypoint_1"]
                     },
                     "node_38": {
                         "runeId": "global_costrecovery_2",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_3",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_18", "keypoint_1"]
                     },
                     "node_39": {
                         "runeId": "global_costrecovery_3",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_3",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_18", "keypoint_1"]
                     },
                     "node_40": {
                         "runeId": "global_squadnum_1",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_4",
-                        "adjacentNodeList": [
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["keypoint_1"]
                     },
                     "node_41": {
                         "runeId": "global_pcharnum_1",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_4",
-                        "adjacentNodeList": [
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["keypoint_1"]
                     },
                     "node_42": {
                         "runeId": "global_squadnum_2",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_4",
-                        "adjacentNodeList": [
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["keypoint_1"]
                     },
                     "node_43": {
                         "runeId": "global_pcharnum_2",
                         "slotPackId": "pack_34",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_4",
-                        "adjacentNodeList": [
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["keypoint_1"]
                     },
                     "node_44": {
                         "runeId": "melee_forbid_1",
                         "slotPackId": "pack_7",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_46",
-                            "node_20"
-                        ]
+                        "adjacentNodeList": ["node_46", "node_20"]
                     },
                     "node_45": {
                         "runeId": "range_forbid_2",
                         "slotPackId": "pack_7",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_20",
-                            "node_47"
-                        ]
+                        "adjacentNodeList": ["node_20", "node_47"]
                     },
                     "node_46": {
                         "runeId": "dusrch_left_1",
                         "slotPackId": "pack_7",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_44",
-                            "node_48"
-                        ]
+                        "adjacentNodeList": ["node_44", "node_48"]
                     },
                     "node_47": {
                         "runeId": "dusrch_right_2",
                         "slotPackId": "pack_7",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_45",
-                            "node_48"
-                        ]
+                        "adjacentNodeList": ["node_45", "node_48"]
                     },
                     "node_48": {
                         "runeId": "global_lifepoint_1",
                         "slotPackId": "pack_7",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_47",
-                            "node_46"
-                        ]
+                        "adjacentNodeList": ["node_47", "node_46"]
                     },
                     "node_49": {
                         "runeId": "reedf_skill_1",
                         "slotPackId": "pack_6",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclude_5",
-                        "adjacentNodeList": [
-                            "node_32",
-                            "node_30",
-                            "node_33"
-                        ]
+                        "adjacentNodeList": ["node_32", "node_30", "node_33"]
                     },
                     "node_50": {
                         "runeId": null,
@@ -4824,56 +4612,42 @@
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     },
                     "node_53": {
                         "runeId": "lunmag_1",
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     },
                     "node_55": {
                         "runeId": "enemy_hp_3",
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     },
                     "node_57": {
                         "runeId": "dusocr_1",
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     },
                     "node_58": {
                         "runeId": "wdarft_start",
                         "slotPackId": "pack_4",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_7",
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_7", "node_19"]
                     },
                     "node_59": {
                         "runeId": "dusrch_start",
                         "slotPackId": "pack_5",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_23",
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_23", "node_24"]
                     },
                     "reward_1": {
                         "runeId": " ",
@@ -4887,38 +4661,28 @@
                         "slotPackId": "pack_1",
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_5",
-                            "node_3"
-                        ]
+                        "adjacentNodeList": ["node_5", "node_3"]
                     },
                     "keypoint_3": {
                         "runeId": null,
                         "slotPackId": "pack_2",
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_10",
-                            "node_12"
-                        ]
+                        "adjacentNodeList": ["node_10", "node_12"]
                     },
                     "node_0": {
                         "runeId": "wdarft_3",
                         "slotPackId": "pack_4",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_20"
-                        ]
+                        "adjacentNodeList": ["node_20"]
                     },
                     "node_52": {
                         "runeId": "char_blockcnt_1",
                         "slotPackId": "pack_8",
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_50"
-                        ]
+                        "adjacentNodeList": ["node_50"]
                     }
                 },
                 "runeDataMap": {
@@ -7255,10 +7019,7 @@
                 "challengeNodeDataMap": {
                     "keypoint_1": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "200"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "200"],
                         "slotId": "keypoint_1",
                         "previewTitle": "标 准能力测试",
                         "previewDesc": "完成一次作战，同时评分大于等于200分",
@@ -7286,10 +7047,7 @@
                     },
                     "keypoint_2": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_7;node_8",
-                            "2"
-                        ],
+                        "missionParamList": ["node_7;node_8", "2"],
                         "slotId": "keypoint_2",
                         "previewTitle": "协防训练",
                         "previewDesc": "完成一次作战，并同时携带【 目标：装备精良】和【目标：反击训练】",
@@ -7313,17 +7071,11 @@
                             }
                         ],
                         "requiredSlotCount": 2,
-                        "slotIdList": [
-                            "node_7",
-                            "node_8"
-                        ]
+                        "slotIdList": ["node_7", "node_8"]
                     },
                     "keypoint_3": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_12;node_14;node_18",
-                            "3"
-                        ],
+                        "missionParamList": ["node_12;node_14;node_18", "3"],
                         "slotId": "keypoint_3",
                         "previewTitle": "火力维续训练",
                         "previewDesc": "完成一次作战，并同时携带【山海众游勇：漫山遍野】、【山海众秘使：漫山遍野】、【源石环境：刺激I】",
@@ -7347,11 +7099,7 @@
                             }
                         ],
                         "requiredSlotCount": 3,
-                        "slotIdList": [
-                            "node_12",
-                            "node_14",
-                            "node_18"
-                        ]
+                        "slotIdList": ["node_12", "node_14", "node_18"]
                     }
                 },
                 "groupDescDataMap": {},
@@ -8998,22 +8746,14 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_5",
-                            "node_1",
-                            "node_0"
-                        ]
+                        "adjacentNodeList": ["node_5", "node_1", "node_0"]
                     },
                     "node_3": {
                         "runeId": "char_def_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_6",
-                            "node_0",
-                            "node_1"
-                        ]
+                        "adjacentNodeList": ["node_6", "node_0", "node_1"]
                     },
                     "node_4": {
                         "runeId": "char_blockcnt_1",
@@ -9032,66 +8772,49 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_2"
-                        ]
+                        "adjacentNodeList": ["node_2"]
                     },
                     "node_6": {
                         "runeId": "npcsld_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3"
-                        ]
+                        "adjacentNodeList": ["node_3"]
                     },
                     "node_7": {
                         "runeId": "npcsld_def_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_8": {
                         "runeId": "npcsld_atk_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_9": {
                         "runeId": "global_lifepoint_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_7",
-                            "node_8"
-                        ]
+                        "adjacentNodeList": ["node_7", "node_8"]
                     },
                     "node_10": {
                         "runeId": "char_guardspecial_cost_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusive_2",
-                        "adjacentNodeList": [
-                            "node_30"
-                        ]
+                        "adjacentNodeList": ["node_30"]
                     },
                     "node_11": {
                         "runeId": "char_cost_healerdefender_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusive_2",
-                        "adjacentNodeList": [
-                            "node_30"
-                        ]
+                        "adjacentNodeList": ["node_30"]
                     },
                     "node_12": {
                         "runeId": "enemy_atk_1",
@@ -9112,218 +8835,154 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_14"]
                     },
                     "node_14": {
                         "runeId": "level_hidden_ymknif_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_13"]
                     },
                     "node_15": {
                         "runeId": "ymkilr_skill_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_16",
-                            "node_17"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_16", "node_17"]
                     },
                     "node_16": {
                         "runeId": "ymkilr_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_15",
-                            "node_18"
-                        ]
+                        "adjacentNodeList": ["node_15", "node_18"]
                     },
                     "node_17": {
                         "runeId": "ymkilr_hp_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_15",
-                            "node_18"
-                        ]
+                        "adjacentNodeList": ["node_15", "node_18"]
                     },
                     "node_18": {
                         "runeId": "level_hidden_ymkilr_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_16",
-                            "node_17",
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_16", "node_17", "node_19"]
                     },
                     "node_19": {
                         "runeId": "ymkilr_atk_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_18"
-                        ]
+                        "adjacentNodeList": ["node_18"]
                     },
                     "node_20": {
                         "runeId": "enemy_atk_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_32"]
                     },
                     "keypoint_1": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "node_22": {
                         "runeId": "char_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_23"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_23"]
                     },
                     "node_23": {
                         "runeId": "char_hp_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_22",
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_22", "node_24"]
                     },
                     "node_24": {
                         "runeId": "char_hp_3",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_23",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_23", "keypoint_2"]
                     },
                     "node_25": {
                         "runeId": "ymmir_skill_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_26",
-                            "node_27"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_26", "node_27"]
                     },
                     "node_26": {
                         "runeId": "ymmir_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_25",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_25", "keypoint_3"]
                     },
                     "node_27": {
                         "runeId": "ymmir_hp_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_25",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_25", "keypoint_3"]
                     },
                     "node_29": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_0",
-                            "node_1"
-                        ]
+                        "adjacentNodeList": ["node_0", "node_1"]
                     },
                     "node_30": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_10",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_10", "node_11"]
                     },
                     "node_31": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12"
-                        ]
+                        "adjacentNodeList": ["node_12"]
                     },
                     "node_32": {
                         "runeId": "enemy_atk_3",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "keypoint_1",
-                            "node_20"
-                        ]
+                        "adjacentNodeList": ["keypoint_1", "node_20"]
                     },
                     "node_33": {
                         "runeId": "ymmir_invisible_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["keypoint_3"]
                     },
                     "keypoint_3": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_26",
-                            "node_27",
-                            "node_33"
-                        ]
+                        "adjacentNodeList": ["node_26", "node_27", "node_33"]
                     },
                     "keypoint_2": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_24"]
                     }
                 },
                 "runeDataMap": {
@@ -10719,10 +10378,7 @@
                 "challengeNodeDataMap": {
                     "keypoint_1": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "200"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "200"],
                         "slotId": "keypoint_1",
                         "previewTitle": "标准能力测试",
                         "previewDesc": "完成一次作战，同时评分大于等于200分",
@@ -10750,10 +10406,7 @@
                     },
                     "keypoint_2": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_0;node_3",
-                            "2"
-                        ],
+                        "missionParamList": ["node_0;node_3", "2"],
                         "slotId": "keypoint_2",
                         "previewTitle": "白刃战训练",
                         "previewDesc": "完成一次作战，并同时携带携带【环境：专心致志III】 与【环境：狭路相逢】",
@@ -10777,17 +10430,11 @@
                             }
                         ],
                         "requiredSlotCount": 2,
-                        "slotIdList": [
-                            "node_0",
-                            "node_3"
-                        ]
+                        "slotIdList": ["node_0", "node_3"]
                     },
                     "keypoint_3": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_4;node_9;node_10",
-                            "3"
-                        ],
+                        "missionParamList": ["node_4;node_9;node_10", "3"],
                         "slotId": "keypoint_3",
                         "previewTitle": "杀手应对训练",
                         "previewDesc": "完成一次作战，并同时携带【环境：禁闭区】、【环境：越狱】、【杰斯顿：憎恨】",
@@ -10811,11 +10458,7 @@
                             }
                         ],
                         "requiredSlotCount": 3,
-                        "slotIdList": [
-                            "node_4",
-                            "node_9",
-                            "node_10"
-                        ]
+                        "slotIdList": ["node_4", "node_9", "node_10"]
                     }
                 },
                 "groupDescDataMap": {},
@@ -12602,30 +12245,21 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "block_dmgreduce",
-                        "adjacentNodeList": [
-                            "node_0",
-                            "node_4"
-                        ]
+                        "adjacentNodeList": ["node_0", "node_4"]
                     },
                     "node_2": {
                         "runeId": "enemy_block_dmgreduce_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "block_dmgreduce",
-                        "adjacentNodeList": [
-                            "node_0",
-                            "node_4"
-                        ]
+                        "adjacentNodeList": ["node_0", "node_4"]
                     },
                     "node_3": {
                         "runeId": "enemy_block_dmgreduce_3",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "block_dmgreduce",
-                        "adjacentNodeList": [
-                            "node_0",
-                            "node_4"
-                        ]
+                        "adjacentNodeList": ["node_0", "node_4"]
                     },
                     "node_4": {
                         "runeId": "level_hidden_prison",
@@ -12648,40 +12282,28 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "lifbos",
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_6": {
                         "runeId": "enemy_lifbos_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "lifbos",
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_7": {
                         "runeId": "enemy_lifbos_liberty_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "liberty",
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_8": {
                         "runeId": "enemy_lifbos_liberty_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "liberty",
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_9"]
                     },
                     "node_9": {
                         "runeId": "level_hidden_jw",
@@ -12702,40 +12324,28 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_9"]
                     },
                     "node_11": {
                         "runeId": "enemy_attackspeed_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_13",
-                            "node_30"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_13", "node_30"]
                     },
                     "node_12": {
                         "runeId": "enemy_hp_3",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_11",
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_11", "node_14"]
                     },
                     "node_13": {
                         "runeId": "enemy_lidbox_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_11",
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_11", "node_14"]
                     },
                     "node_14": {
                         "runeId": "enemy_vofwiz_tal_1",
@@ -12755,29 +12365,21 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "vofwiz",
-                        "adjacentNodeList": [
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_14"]
                     },
                     "node_16": {
                         "runeId": "enemy_vofwiz_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "vofwiz",
-                        "adjacentNodeList": [
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_14"]
                     },
                     "node_17": {
                         "runeId": "global_lifepoint_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_19",
-                            "node_31"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_19", "node_31"]
                     },
                     "node_18": {
                         "runeId": "global_forbidloc_right",
@@ -12810,121 +12412,91 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "cost",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_19"]
                     },
                     "node_21": {
                         "runeId": "char_guardspecial_cost_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "cost",
-                        "adjacentNodeList": [
-                            "node_19",
-                            "node_18"
-                        ]
+                        "adjacentNodeList": ["node_19", "node_18"]
                     },
                     "node_22": {
                         "runeId": "char_cost_healerdefender_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "cost",
-                        "adjacentNodeList": [
-                            "node_19",
-                            "node_18"
-                        ]
+                        "adjacentNodeList": ["node_19", "node_18"]
                     },
                     "node_23": {
                         "runeId": "char_cost_healerdefender_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "cost",
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_19"]
                     },
                     "node_24": {
                         "runeId": "global_squadnum_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "squad",
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "node_25": {
                         "runeId": "global_squadnum_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "squad",
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "node_26": {
                         "runeId": "global_pcharnum_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "squad",
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "node_27": {
                         "runeId": "global_pcharnum_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "squad",
-                        "adjacentNodeList": [
-                            "node_32"
-                        ]
+                        "adjacentNodeList": ["node_32"]
                     },
                     "keypoint_2": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_9"
-                        ]
+                        "adjacentNodeList": ["node_9"]
                     },
                     "keypoint_3": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_14"]
                     },
                     "node_29": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_0"
-                        ]
+                        "adjacentNodeList": ["node_0"]
                     },
                     "node_30": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_11"]
                     },
                     "node_31": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_17"
-                        ]
+                        "adjacentNodeList": ["node_17"]
                     },
                     "node_32": {
                         "runeId": null,
@@ -12943,9 +12515,7 @@
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4"
-                        ]
+                        "adjacentNodeList": ["node_4"]
                     }
                 },
                 "runeDataMap": {
@@ -14242,10 +13812,7 @@
                 "challengeNodeDataMap": {
                     "keypoint_1": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "200"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "200"],
                         "slotId": "keypoint_1",
                         "previewTitle": "标准能力测试",
                         "previewDesc": "完成一次作战，同时评分大于等于200分",
@@ -14273,10 +13840,7 @@
                     },
                     "keypoint_2": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_7;node_11",
-                            "1"
-                        ],
+                        "missionParamList": ["node_7;node_11", "1"],
                         "slotId": "keypoint_2",
                         "previewTitle": "环境适应训练",
                         "previewDesc": "完成一次作战，并携带【环境：平台拆除】或【目标：深度渗透I】中的任意一个",
@@ -14300,17 +13864,11 @@
                             }
                         ],
                         "requiredSlotCount": 1,
-                        "slotIdList": [
-                            "node_7",
-                            "node_11"
-                        ]
+                        "slotIdList": ["node_7", "node_11"]
                     },
                     "keypoint_3": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_20;node_21",
-                            "2"
-                        ],
+                        "missionParamList": ["node_20;node_21", "2"],
                         "slotId": "keypoint_3",
                         "previewTitle": " 装甲击破训练",
                         "previewDesc": "完成一次作战，并同时携带【游击队盾卫：壁垒之志I】、【游击队盾卫：坚实之躯I】",
@@ -14334,10 +13892,7 @@
                             }
                         ],
                         "requiredSlotCount": 2,
-                        "slotIdList": [
-                            "node_20",
-                            "node_21"
-                        ]
+                        "slotIdList": ["node_20", "node_21"]
                     }
                 },
                 "groupDescDataMap": {},
@@ -15533,20 +15088,14 @@
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_1"
-                        ]
+                        "adjacentNodeList": ["node_1"]
                     },
                     "node_1": {
                         "runeId": "global_pcharnum_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_2",
-                            "node_6",
-                            "node_0"
-                        ]
+                        "adjacentNodeList": ["node_2", "node_6", "node_0"]
                     },
                     "node_2": {
                         "runeId": "global_canoe2",
@@ -15565,30 +15114,21 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_1",
-                        "adjacentNodeList": [
-                            "node_2",
-                            "node_7"
-                        ]
+                        "adjacentNodeList": ["node_2", "node_7"]
                     },
                     "node_4": {
                         "runeId": "char_atk_p1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_1",
-                        "adjacentNodeList": [
-                            "node_2",
-                            "node_7"
-                        ]
+                        "adjacentNodeList": ["node_2", "node_7"]
                     },
                     "node_5": {
                         "runeId": "char_skill_cd_p1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_1",
-                        "adjacentNodeList": [
-                            "node_2",
-                            "node_7"
-                        ]
+                        "adjacentNodeList": ["node_2", "node_7"]
                     },
                     "node_6": {
                         "runeId": "char_cost_sniperguard_2",
@@ -15607,218 +15147,154 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3",
-                            "node_4",
-                            "node_5"
-                        ]
+                        "adjacentNodeList": ["node_3", "node_4", "node_5"]
                     },
                     "node_8": {
                         "runeId": "char_atkspeed_p2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_2",
-                        "adjacentNodeList": [
-                            "node_6",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_6", "node_11"]
                     },
                     "node_9": {
                         "runeId": "char_atk_p2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_2",
-                        "adjacentNodeList": [
-                            "node_6",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_6", "node_11"]
                     },
                     "node_10": {
                         "runeId": "char_respawntime_p1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_2",
-                        "adjacentNodeList": [
-                            "node_6",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_6", "node_11"]
                     },
                     "node_11": {
                         "runeId": "global_costrecovery_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_8",
-                            "node_9",
-                            "node_10"
-                        ]
+                        "adjacentNodeList": ["node_8", "node_9", "node_10"]
                     },
                     "node_12": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_14",
-                            "node_16"
-                        ]
+                        "adjacentNodeList": ["node_14", "node_16"]
                     },
                     "node_13": {
                         "runeId": "level_hidden_sotisd_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_20",
-                            "node_21"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_20", "node_21"]
                     },
                     "node_14": {
                         "runeId": "char_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_12", "keypoint_1"]
                     },
                     "node_15": {
                         "runeId": "char_hp_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_19",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_19", "keypoint_1"]
                     },
                     "node_16": {
                         "runeId": "enemy_atk_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_17"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_17"]
                     },
                     "node_17": {
                         "runeId": "enemy_atk_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_16",
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_16", "node_19"]
                     },
                     "node_18": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_13"]
                     },
                     "node_19": {
                         "runeId": "enemy_mag1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_15",
-                            "node_17",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_15", "node_17", "keypoint_2"]
                     },
                     "keypoint_1": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_15",
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_15", "node_14"]
                     },
                     "keypoint_2": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_19"
-                        ]
+                        "adjacentNodeList": ["node_19"]
                     },
                     "node_20": {
                         "runeId": "sotisd_def1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_13"]
                     },
                     "node_21": {
                         "runeId": "sotisd_hp1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_13"
-                        ]
+                        "adjacentNodeList": ["node_13"]
                     },
                     "node_22": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_23"
-                        ]
+                        "adjacentNodeList": ["node_23"]
                     },
                     "node_23": {
                         "runeId": "sotisp_hp1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_22",
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_22", "node_24"]
                     },
                     "node_24": {
                         "runeId": "sotisp_atk1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_23",
-                            "node_25"
-                        ]
+                        "adjacentNodeList": ["node_23", "node_25"]
                     },
                     "node_25": {
                         "runeId": "sotisp_def1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_24",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_24", "keypoint_3"]
                     },
                     "keypoint_3": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_25"
-                        ]
+                        "adjacentNodeList": ["node_25"]
                     }
                 },
                 "runeDataMap": {
@@ -16709,10 +16185,7 @@
                 "challengeNodeDataMap": {
                     "keypoint_1": {
                         "missionType": "PassWithDimScore",
-                        "missionParamList": [
-                            "0;1;2;3;4;5",
-                            "200"
-                        ],
+                        "missionParamList": ["0;1;2;3;4;5", "200"],
                         "slotId": "keypoint_1",
                         "previewTitle": "标准能力测试",
                         "previewDesc": "完成一次作战，同时评分大于等于200分",
@@ -16740,10 +16213,7 @@
                     },
                     "keypoint_2": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_8;node_11",
-                            "1"
-                        ],
+                        "missionParamList": ["node_8;node_11", "1"],
                         "slotId": "keypoint_2",
                         "previewTitle": "战力规划训练",
                         "previewDesc": "完成一次作战，并携带一个【目标：经费充足I】",
@@ -16767,17 +16237,11 @@
                             }
                         ],
                         "requiredSlotCount": 1,
-                        "slotIdList": [
-                            "node_8",
-                            "node_11"
-                        ]
+                        "slotIdList": ["node_8", "node_11"]
                     },
                     "keypoint_3": {
                         "missionType": "PassWithRunes",
-                        "missionParamList": [
-                            "node_24;node_25;node_26",
-                            "3"
-                        ],
+                        "missionParamList": ["node_24;node_25;node_26", "3"],
                         "slotId": "keypoint_3",
                         "previewTitle": "狂乱平息训练",
                         "previewDesc": "完成一次作战，并同时携带【狂暴宿主投掷手：极度疯狂I】、【狂暴宿主投掷手：异变躯体I】、【狂暴宿主投掷手：骇人怪力I】",
@@ -16801,11 +16265,7 @@
                             }
                         ],
                         "requiredSlotCount": 3,
-                        "slotIdList": [
-                            "node_24",
-                            "node_25",
-                            "node_26"
-                        ]
+                        "slotIdList": ["node_24", "node_25", "node_26"]
                     }
                 },
                 "groupDescDataMap": {},
@@ -17979,29 +17439,21 @@
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_1"
-                        ]
+                        "adjacentNodeList": ["node_1"]
                     },
                     "node_1": {
                         "runeId": "global_nocostrecovery_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_0",
-                            "node_3"
-                        ]
+                        "adjacentNodeList": ["node_0", "node_3"]
                     },
                     "keypoint_2": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_16",
-                            "node_17"
-                        ]
+                        "adjacentNodeList": ["node_16", "node_17"]
                     },
                     "node_3": {
                         "runeId": "cost_battlebegin_1",
@@ -18020,107 +17472,77 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3",
-                            "node_5"
-                        ]
+                        "adjacentNodeList": ["node_3", "node_5"]
                     },
                     "node_5": {
                         "runeId": "char_cost_pioneer_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_4",
-                            "node_6"
-                        ]
+                        "adjacentNodeList": ["node_4", "node_6"]
                     },
                     "node_6": {
                         "runeId": "cost_battlebegin_5",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_5"
-                        ]
+                        "adjacentNodeList": ["node_5"]
                     },
                     "node_7": {
                         "runeId": "trap_wpnsts_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3",
-                            "node_8"
-                        ]
+                        "adjacentNodeList": ["node_3", "node_8"]
                     },
                     "node_8": {
                         "runeId": "cost_battlebegin_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_7"
-                        ]
+                        "adjacentNodeList": ["node_7"]
                     },
                     "node_9": {
                         "runeId": "char_cost_special_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_3",
-                            "node_10"
-                        ]
+                        "adjacentNodeList": ["node_3", "node_10"]
                     },
                     "node_10": {
                         "runeId": "char_cost_warrior_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_9",
-                            "node_11"
-                        ]
+                        "adjacentNodeList": ["node_9", "node_11"]
                     },
                     "node_11": {
                         "runeId": "cost_battlebegin_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_10"
-                        ]
+                        "adjacentNodeList": ["node_10"]
                     },
                     "node_12": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_13",
-                            "node_14"
-                        ]
+                        "adjacentNodeList": ["node_13", "node_14"]
                     },
                     "node_13": {
                         "runeId": "global_forbidloc_low_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_15"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_15"]
                     },
                     "node_14": {
                         "runeId": "global_forbidloc_high_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_12",
-                            "node_15"
-                        ]
+                        "adjacentNodeList": ["node_12", "node_15"]
                     },
                     "node_15": {
                         "runeId": "global_lifepoint_1",
@@ -18139,126 +17561,91 @@
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_1",
-                        "adjacentNodeList": [
-                            "node_15",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_15", "keypoint_2"]
                     },
                     "node_17": {
                         "runeId": "global_pcharnum_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": "exclusion_1",
-                        "adjacentNodeList": [
-                            "node_15",
-                            "keypoint_2"
-                        ]
+                        "adjacentNodeList": ["node_15", "keypoint_2"]
                     },
                     "node_18": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_19",
-                            "node_22"
-                        ]
+                        "adjacentNodeList": ["node_19", "node_22"]
                     },
                     "node_19": {
                         "runeId": "enemy_atk_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_21"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_21"]
                     },
                     "node_20": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "START",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_24"]
                     },
                     "node_21": {
                         "runeId": "enemy_atk_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_19",
-                            "keypoint_1"
-                        ]
+                        "adjacentNodeList": ["node_19", "keypoint_1"]
                     },
                     "node_22": {
                         "runeId": "enemy_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_18",
-                            "node_23"
-                        ]
+                        "adjacentNodeList": ["node_18", "node_23"]
                     },
                     "node_23": {
                         "runeId": "enemy_hp_2",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_22",
-                            "keypoint_3"
-                        ]
+                        "adjacentNodeList": ["node_22", "keypoint_3"]
                     },
                     "node_24": {
                         "runeId": "rageth_atkspeed_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_20",
-                            "node_25",
-                            "node_26"
-                        ]
+                        "adjacentNodeList": ["node_20", "node_25", "node_26"]
                     },
                     "node_25": {
                         "runeId": "rageth_hp_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_24"]
                     },
                     "node_26": {
                         "runeId": "rageth_atk_1",
                         "slotPackId": null,
                         "nodeType": "NORMAL",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_24"
-                        ]
+                        "adjacentNodeList": ["node_24"]
                     },
                     "keypoint_3": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_23"
-                        ]
+                        "adjacentNodeList": ["node_23"]
                     },
                     "keypoint_1": {
                         "runeId": null,
                         "slotPackId": null,
                         "nodeType": "KEYPOINT",
                         "mutualExclusionGroup": null,
-                        "adjacentNodeList": [
-                            "node_21"
-                        ]
+                        "adjacentNodeList": ["node_21"]
                     }
                 },
                 "runeDataMap": {
