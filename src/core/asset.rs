@@ -1,5 +1,3 @@
-use core::str;
-
 use axum::{extract::Path, Json};
 
 use reqwest::RequestBuilder;
@@ -14,6 +12,6 @@ pub struct Asset {
     pub hash: String,
 }
 
-pub async fn get_file(Path(Asset): Path<Asset>) -> JSON {
-    Json(json!({"name": Asset.name, "hash": Asset.hash}))
+pub async fn get_file(Path(asset): Path<Asset>) -> JSON {
+    Json(json!({"name": asset.name, "hash": asset.hash}))
 }

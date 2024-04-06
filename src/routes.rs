@@ -214,7 +214,7 @@ fn misc_routes() -> Router {
         .route("/charm/setSquad", post(charm::charm_set_squad))
         .route("/car/confirmBattleCar", post(quest::confirm_battle_car))
         .route("/templateTrap/setTrapSquad", post(quest::set_trap_squad))
-        .route("/assetbundle/official/Android/assets/:assetsHash/:fileName", get(asset::get_file))
+        .route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
 }
 
 async fn fallback() -> JSON {
