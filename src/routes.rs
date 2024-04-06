@@ -8,14 +8,16 @@ use crate::{
         quest_manager::{bossrush, quest, story_review},
         social,
     },
+    utils::json::JSON,
 };
 use axum::{
     extract::Request,
     http::Uri,
     routing::{get, post},
-    Router,
+    Json, Router,
 };
 use reqwest::StatusCode;
+use serde_json::json;
 use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnResponse, TraceLayer as Tracer};
 use tracing::{debug, Level, Span};
 
@@ -197,6 +199,11 @@ fn misc_routes() -> Router {
         .route("/assetbundle/official/Android/assets/:assetsHash/:fileName", get(asset::get_file))
 }
 
-async fn fallback(uri: Uri) -> (StatusCode, String) {
-    (StatusCode::NOT_FOUND, format!("ERROR: {} not found", uri))
+async fn fallback() -> JSON {
+    Json(json!({
+        "playerDataDelta": {
+            "deleted": {},
+            "modified": {}
+        }
+    }))
 }
