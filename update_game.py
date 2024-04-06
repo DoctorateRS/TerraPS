@@ -7,7 +7,9 @@ with open("config/config.json") as f:
 timeout = config["server"]["timeout"]
 
 try:
-    r = requests.head("https://ak.hypergryph.com/downloads/android_lastest", timeout=timeout)
+    r = requests.head(
+        "https://ak.hypergryph.com/downloads/android_lastest", timeout=timeout
+    )
     location = r.headers.get("location")
 
     if location.endswith(".apk"):  # type: ignore
