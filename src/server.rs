@@ -1,6 +1,5 @@
 mod constants;
 mod core;
-mod debug;
 mod game;
 mod routes;
 mod utils;

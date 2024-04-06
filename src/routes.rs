@@ -48,7 +48,6 @@ pub fn routes() -> Router {
         .nest("/storyreview", story_review_routes())
         .nest("/u8", u8_routes())
         .nest("/user", user_routes())
-        .nest("/debug", debug_routes())
         .merge(misc_routes())
         .fallback(fallback)
         .layer(trace_layer)
@@ -189,10 +188,6 @@ fn misc_routes() -> Router {
         .route("/charm/setSquad", post(charm::charm_set_squad))
         .route("/car/confirmBattleCar", post(quest::confirm_battle_car))
         .route("/templateTrap/setTrapSquad", post(quest::set_trap_squad))
-}
-
-fn debug_routes() -> Router {
-    Router::new().route("/decryptBattleData", post(debug::decrypt_battle_data))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
