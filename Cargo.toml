@@ -7,8 +7,9 @@ authors = ["Rh"]
 publish = false
 
 [dependencies]
+anyhow = "1"
 chrono = "0.4"
-constcat = "*"
+constcat = "0.5"
 md-5 = "0.10"
 libaes = "0.7"
 subtle-encoding = "0.5"
@@ -45,8 +46,8 @@ tracing-subscriber = { version = "0.3", features = [
     "std",
     "registry",
     "tracing",
-    "tracing-log"
-]}
+    "tracing-log",
+] }
 
 # Tower
 tower-http = { version = "0.5", features = ["trace"] }
@@ -60,9 +61,11 @@ name = "doctorate-rs"
 path = "src/server.rs"
 
 [profile.release]
-strip = true            # Automatically strip symbols from the binary.
-lto = true              # Link-time optimization.
-opt-level = 3           # Optimize for speed.
-codegen-units = 1       # Maximum size reduction optimizations.
-debug = false           # Disable debug information.
-rpath = true            # Disable runtime path.
+
+strip = true      # Automatically strip symbols from the binary.
+lto = true        # Link-time optimization.
+opt-level = 3     # Optimize for speed.
+codegen-units = 1 # Maximum size reduction optimizations.
+debug = false     # Disable debug information.
+rpath = true      # Disable runtime path.
+

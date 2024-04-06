@@ -386,7 +386,6 @@ dependencies = [
 name = "doctorate-rs"
 version = "0.2.2"
 dependencies = [
- "aes",
  "anyhow",
  "axum",
  "axum-server",
