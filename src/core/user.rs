@@ -200,6 +200,17 @@ pub async fn user_oauth2_v2_grant() -> JSON {
     }))
 }
 
+pub async fn user_yostar_create_login() -> JSON {
+    Json(json!({
+        "isNew": 0,
+        "result": 0,
+        "token": "1",
+        "uid": "1",
+        "yostar_uid": "1",
+        "yostar_username": "Doctorate@doctorate.com"
+    }))
+}
+
 pub async fn user_need_cloud_auth() -> JSON {
     Json(json!({
         "msg": "OK",

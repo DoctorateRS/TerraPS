@@ -1,12 +1,12 @@
 # LINKS
 
-- [ ] `/app/getSettings`
-- [ ] `/app/getCode`
+- [x] `/app/getSettings`
+- [x] `/app/getCode`
 - [x] `/account/login`
-- [ ] `/account/syncData`
+- [ ] `/account/syncData` **[WIP]**
 - [x] `/account/syncStatus`
-- [ ] `/account/yostar_auth_request`
-- [ ] `/account/yostar_auth_submit`
+- [x] `/account/yostar_auth_request`
+- [x] `/account/yostar_auth_submit`
 - [ ] `/assetbundle/official/Android/assets/<string:assetsHash>/<string:fileName>`
 - [x] `/background/setBackground`
 - [x] `/homeTheme/change`
@@ -126,10 +126,15 @@
 - [x] `/user/changeAvatar`
 - [x] `/user/oauth2/v1/grant`
 - [x] `/user/oauth2/v2/grant`
-- [ ] `/user/info/v1/need_cloud_auth`
-- [ ] `/user/yostar_createlogin`
-- [ ] `/user/changeResume`
-- [ ] `/u8/user/v1/getToken`
+- [x] `/user/info/v1/need_cloud_auth`
+- [x] `/user/yostar_createlogin`
+- [x] `/user/changeResume`
+- [x] `/u8/user/v1/getToken`
+- [x] `/user/auth/v1/token_by_phone_password`
+- [x] `/user/info/v1/basic`
+- [x] `/app/v1/config`
+- [x] `/general/v1/server_time`
+- [x] `/u8/user/auth/v1/agreement_version`
 
 ## SOCIAL
 
@@ -165,9 +170,4 @@
 - [ ] `/gacha/tenAdvancedGacha`
 - [ ] `/gacha/getPoolDetail`
 
-- [x] `/user/auth/v1/token_by_phone_password`
-- [x] `/user/info/v1/basic`
 
-- [x] `/app/v1/config`
-- [x] `/general/v1/server_time`
-- [x] `/u8/user/auth/v1/agreement_version`

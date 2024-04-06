@@ -197,10 +197,12 @@ fn user_routes() -> Router {
         .route("/checkIn", get(user::user_check_in))
         .route("/changeAvatar", post(user::user_change_avatar))
         .route("/changeSecretary", post(user::user_change_secretary))
-        .route("/login", post(user::user_login))
+        .route("/info/v1/need_cloud_auth", post(user::user_need_cloud_auth))
         .route("/info/v1/basic", get(user::info_v1_basic))
+        .route("/login", post(user::user_login))
         .route("/oauth2/v1/grant", post(user::user_oauth2_v1_grant))
         .route("/oauth2/v2/grant", post(user::user_oauth2_v2_grant))
+        .route("/yostar_createlogin", post(user::user_yostar_create_login))
 }
 
 fn misc_routes() -> Router {
