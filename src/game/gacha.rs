@@ -6,6 +6,7 @@ pub mod normal {
         utils::{
             game::update_data,
             json::{get_keys, JSON},
+            random::sample,
         },
     };
 
@@ -18,6 +19,11 @@ pub mod normal {
                 all_tags.push(tag_id);
             }
         }
-        json!({})
+        let tags = sample(all_tags, 5);
+        json!(tags)
+    }
+
+    pub async fn build_tag_char_set(mode: &str) {
+        let mut tag_char_set = json!({});
     }
 }
