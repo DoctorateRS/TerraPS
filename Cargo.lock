@@ -386,6 +386,7 @@ dependencies = [
 name = "doctorate-rs"
 version = "0.2.2"
 dependencies = [
+ "aes",
  "anyhow",
  "axum",
  "axum-server",
@@ -398,6 +399,7 @@ dependencies = [
  "lazy_static",
  "libaes",
  "md-5",
+ "rand",
  "reqwest",
  "ring",
  "serde",

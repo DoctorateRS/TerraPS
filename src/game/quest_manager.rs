@@ -216,5 +216,106 @@ pub mod story_review {
     }
 }
 pub mod april_fools {
-    // TODO: Implement April Fools
+    use axum::Json;
+    use serde_json::json;
+
+    use crate::utils::{
+        battle_data::BattleDataDecoder,
+        enumerate,
+        json::{get_keys, JSON},
+    };
+
+    pub async fn act5_fun_battle_finish(Json(payload): JSON) -> JSON {
+        let decoder = BattleDataDecoder::new();
+        let battle_data = decoder.decrypt_battle_data(payload["data"].as_str().unwrap().to_string()).unwrap();
+        let mut score = 0;
+        for data in get_keys(&battle_data["battleData"]["stats"]["extraBattleInfo"]) {
+            if data.starts_with("SIMPLE,money,") {
+                score = battle_data["battleData"]["stats"]["extraBattleInfo"][data]
+                    .as_str()
+                    .unwrap()
+                    .split(',')
+                    .collect::<Vec<&str>>()
+                    .last()
+                    .unwrap()
+                    .parse()
+                    .unwrap();
+            }
+        }
+        Json(json!({
+            "result": 0,
+            "score": score,
+            "isHighScore": false,
+            "npcResult": {},
+            "playerResult": {
+                "totalWin": 0,
+                "streak": 0,
+                "totalRound": 10
+            },
+            "reward": [],
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn act4_fun_battle_finish() -> JSON {
+        let mut mat_vec = Vec::new();
+        for (id, mat_id) in enumerate(vec![
+            "spLiveMat_tr_1",
+            "spLiveMat_tr_2",
+            "spLiveMat_01_1",
+            "spLiveMat_01_2",
+            "spLiveMat_01_3",
+            "spLiveMat_01_4",
+            "spLiveMat_01_5",
+            "spLiveMat_01_6",
+            "spLiveMat_01_7",
+            "spLiveMat_01_8",
+            "spLiveMat_01_9",
+            "spLiveMat_02_1",
+            "spLiveMat_02_2",
+            "spLiveMat_02_3",
+            "spLiveMat_02_4",
+            "spLiveMat_02_5",
+            "spLiveMat_02_6",
+            "spLiveMat_02_7",
+            "spLiveMat_02_8",
+            "spLiveMat_02_9",
+            "spLiveMat_03_1",
+            "spLiveMat_03_2",
+            "spLiveMat_03_3",
+            "spLiveMat_03_4",
+            "spLiveMat_03_5",
+            "spLiveMat_03_6",
+            "spLiveMat_03_7",
+            "spLiveMat_03_8",
+            "spLiveMat_03_9",
+        ]) {
+            mat_vec.push(json!({
+                "instId": id,
+                "materialId": mat_id,
+                "materialType": 1
+            }));
+        }
+        Json(json!({
+            "materials": mat_vec,
+            "liveId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn act4_fun_live_settle() -> JSON {
+        Json(json!({
+            "ending": "goodending_1",
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
 }

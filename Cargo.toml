@@ -20,6 +20,7 @@ lazy_static = "1.4"
 base64 = "0.22"
 zip = "0.6"
 uuid = { version = "1.8", features = ["v4", "fast-rng", "macro-diagnostics"] }
+rand = { version = "0.8", features = ["std_rng"] }
 
 # Crypto
 aes = "0.8.4"
@@ -51,7 +52,6 @@ tracing-subscriber = { version = "0.3", features = [
 
 # Tower
 tower-http = { version = "0.5", features = ["trace"] }
-anyhow = "1.0.81"
 
 [build-dependencies]
 include_dir = "0.7"
@@ -68,4 +68,3 @@ opt-level = 3     # Optimize for speed.
 codegen-units = 1 # Maximum size reduction optimizations.
 debug = false     # Disable debug information.
 rpath = true      # Disable runtime path.
-
