@@ -186,6 +186,7 @@ fn u8_routes() -> Router {
 fn user_routes() -> Router {
     Router::new()
         .route("/auth", post(user::user_auth))
+        .route("/auth/v1/token_by_phone_password", post(user::auth_v1_token_by_phone_password))
         .route("/agreement", get(user::user_agreement))
         .route("/checkIn", get(user::user_check_in))
         .route("/changeAvatar", post(user::user_change_avatar))

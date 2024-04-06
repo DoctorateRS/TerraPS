@@ -108,7 +108,7 @@ pub async fn user_agreement() -> JSON {
     }))
 }
 
-pub async fn _auth_v1_token_by_phone_password() -> JSON {
+pub async fn auth_v1_token_by_phone_password() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",

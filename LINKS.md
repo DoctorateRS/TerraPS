@@ -1,6 +1,5 @@
 # LINKS
 
-
 - [ ] `/app/getSettings`
 - [ ] `/app/getCode`
 - [ ] `/account/login`
@@ -18,10 +17,10 @@
 - [ ] `/building/assignChar`
 - [ ] `/building/setBuildingAssist`
 - [ ] `/building/getAssistReport`
-- [ ] `/campaignV2/battleStart`
-- [ ] `/campaignV2/battleFinish`
-- [ ] `/campaignV2/battleSweep`
-- [ ] `/char/changeMarkStar`
+- [x] `/campaignV2/battleStart`
+- [x] `/campaignV2/battleFinish`
+- [x] `/campaignV2/battleSweep`
+- [x] `/char/changeMarkStar`
 - [ ] `/charBuild/addonStage/battleStart`
 - [ ] `/charBuild/addonStage/battleFinish`
 - [ ] `/charBuild/addonStory/unlock`
@@ -31,29 +30,29 @@
 - [ ] `/charBuild/changeCharSkin`
 - [ ] `/charBuild/setEquipment`
 - [ ] `/charBuild/changeCharTemplate`
-- [ ] `/charm/setSquad`
-- [ ] `/config/prod/announce_meta/Android/preannouncement.meta.json`
-- [ ] `/config/prod/announce_meta/Android/announcement.meta.json`
-- [ ] `/config/prod/official/Android/version`
-- [ ] `/config/prod/official/network_config`
-- [ ] `/config/prod/official/refresh_config`
-- [ ] `/config/prod/official/remote_config`
+- [x] `/charm/setSquad`
+- [x] `/config/prod/announce_meta/Android/preannouncement.meta.json`
+- [x] `/config/prod/announce_meta/Android/announcement.meta.json`
+- [x] `/config/prod/official/Android/version`
+- [x] `/config/prod/official/network_config`
+- [x] `/config/prod/official/refresh_config`
+- [x] `/config/prod/official/remote_config`
 - [ ] `/crisis/getInfo`
 - [ ] `/crisis/battleStart`
 - [ ] `/crisis/battleFinish`
-- [ ] `/crisisV2/getInfo`
-- [ ] `/crisisV2/battleStart`
-- [ ] `/crisisV2/battleFinish`
-- [ ] `/crisisV2/getSnapshot`
-- [ ] `/deepSea/branch`
-- [ ] `/deepSea/event`
+- [x] `/crisisV2/getInfo`
+- [x] `/crisisV2/battleStart`
+- [x] `/crisisV2/battleFinish`
+- [x] `/crisisV2/getSnapshot`
+- [x] `/deepSea/branch`
+- [x] `/deepSea/event`
 - [ ] `/mail/getMetaInfoList`
 - [ ] `/mail/listMailBox`
 - [ ] `/mail/receiveMail`
 - [ ] `/mail/receiveAllMail`
 - [ ] `/mail/removeAllReceivedMail`
-- [ ] `/online/v1/ping`
-- [ ] `/online/v1/loginout`
+- [x] `/online/v1/ping`
+- [x] `/online/v1/loginout`
 - [ ] `/tower/createGame`
 - [ ] `/tower/initGodCard`
 - [ ] `/tower/initGame`
@@ -63,16 +62,16 @@
 - [ ] `/tower/recruit`
 - [ ] `/tower/chooseSubGodCard`
 - [ ] `/tower/settleGame`
-- [ ] `/pay/getUnconfirmedOrderIdList`
-- [ ] `/u8/pay/getAllProductList`
+- [x] `/pay/getUnconfirmedOrderIdList`
+- [x] `/u8/pay/getAllProductList`
 - [ ] `/quest/battleStart`
 - [ ] `/quest/battleFinish`
 - [ ] `/quest/saveBattleReplay`
 - [ ] `/quest/getBattleReplay`
-- [ ] `/quest/changeSquadName`
-- [ ] `/quest/squadFormation`
-- [ ] `/quest/getAssistList`
-- [ ] `/quest/battleContinue`
+- [x] `/quest/changeSquadName`
+- [x] `/quest/squadFormation`
+- [x] `/quest/getAssistList`
+- [x] `/quest/battleContinue`
 - [ ] `/storyreview/markStoryAcceKnown`
 - [ ] `/storyreview/readStory`
 - [ ] `/act25side/battleStart`
@@ -92,8 +91,8 @@
 - [ ] `/aprilFool/act3fun/battleStart`
 - [ ] `/aprilFool/act3fun/battleFinish`
 - [ ] `/activity/bossRush/relicSelect`
-- [ ] `/retro/typeAct20side/competitionStart`
-- [ ] `/retro/typeAct20side/competitionFinish`
+- [x] `/retro/typeAct20side/competitionStart`
+- [x] `/retro/typeAct20side/competitionFinish`
 - [ ] `/rlv2/giveUpGame`
 - [ ] `/rlv2/createGame`
 - [ ] `/rlv2/chooseInitialRelic`
@@ -110,10 +109,10 @@
 - [ ] `/rlv2/buyGoods`
 - [ ] `/rlv2/leaveShop`
 - [ ] `/rlv2/chooseBattleReward`
-- [ ] `/shop/getSkinGoodList`
-- [ ] `/story/finishStory`
-- [ ] `/quest/finishStoryStage`
-- [ ] `/user/auth`
+- [x] `/shop/getSkinGoodList`
+- [x] `/story/finishStory`
+- [x] `/quest/finishStoryStage`
+- [x] `/user/auth`
 - [ ] `/user/agreement`
 - [ ] `/user/checkIn`
 - [ ] `/user/changeSecretary`
@@ -150,8 +149,8 @@
 - [ ] `/gacha/tenAdvancedGacha`
 - [ ] `/gacha/getPoolDetail`
 - [ ] `/user/auth/v1/token_by_phone_password`
-- [ ] `/user/info/v1/basic`
-- [ ] `/user/oauth2/v2/grant`
-- [ ] `/app/v1/config`
-- [ ] `/general/v1/server_time`
-- [ ] `/u8/user/auth/v1/agreement_version`
+- [x] `/user/info/v1/basic`
+- [x] `/user/oauth2/v2/grant`
+- [x] `/app/v1/config`
+- [x] `/general/v1/server_time`
+- [x] `/u8/user/auth/v1/agreement_version`
