@@ -1,5 +1,8 @@
 use crate::{
-    core::{asset, general_v1_server_time, prod, user},
+    core::{
+        asset, general_v1_server_time, prod,
+        user::{self, app, business_card},
+    },
     game::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
@@ -57,7 +60,10 @@ pub fn routes() -> Router {
 }
 
 fn app_routes() -> Router {
-    Router::new().route("/v1/config", get(user::app_v1_config))
+    Router::new()
+        .route("/v1/config", get(app::app_v1_config))
+        .route("/getSettings", post(app::app_get_settings))
+        .route("/getCode", post(app::app_get_code))
 }
 
 fn account_routes() -> Router {
@@ -86,8 +92,8 @@ fn building_routes() -> Router {
 
 fn business_card_routes() -> Router {
     Router::new()
-        .route("/changeNameCardComponent", post(user::business_card::change_name_component))
-        .route("/changeNameCardSkin", post(user::business_card::change_card_skin))
+        .route("/changeNameCardComponent", post(business_card::change_name_component))
+        .route("/changeNameCardSkin", post(business_card::change_card_skin))
 }
 
 fn campaignv2_routes() -> Router {

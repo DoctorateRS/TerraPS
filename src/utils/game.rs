@@ -1,5 +1,4 @@
-use super::json::read_json;
-use crate::utils::crypto::{hex::from_hex, md5::md5_digest};
+use super::{battle_data::BattleDataDecoder, json::read_json};
 use reqwest::get;
 use serde_json::Value;
 
@@ -24,22 +23,10 @@ pub async fn update_data(url: &str) -> Value {
     }
 }
 
-pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) {
-    const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
-
-    let login_time = login_time.unwrap_or(1672502400);
-    let ptr = &data.len() - 32;
-    let iv = &data[ptr..];
-    let data = &data[..ptr];
-
-    let src = format!("{LOG_TOKEN_KEY}{login_time}");
-    let key = md5_digest(src.as_bytes());
-
-    let battle_data = match from_hex(data) {
-        Ok(data) => match String::from_utf8(data) {
-            Ok(data) => data,
-            Err(e) => panic!("Error parsing UTF-8: {e}"),
-        },
-        Err(e) => panic!("Error parsing Integer:{}", e),
+pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) -> Value {
+    let decryptor = match login_time {
+        Some(time) => BattleDataDecoder::new_with_login_time(time as u32),
+        None => BattleDataDecoder::new(),
     };
+    decryptor.decrypt_battle_data(data.to_string()).unwrap()
 }

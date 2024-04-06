@@ -26,13 +26,18 @@ impl BattleDataDecoder {
         Self::default()
     }
 
+    pub fn new_with_login_time(login_time: u32) -> Self {
+        Self { login_time }
+    }
+
     pub fn login_time(mut self, login_time: u32) -> Self {
         self.login_time = login_time;
         self
     }
 
     pub fn decrypt_battle_data(&self, mut data: String) -> Result<Value> {
-        let data = hex::decode(data.drain(..data.len() - 32))?;
+        let data = data.drain(..data.len() - 32);
+        let data = hex::decode(data)?;
         let mut src = LOG_TOKEN_KEY.to_string();
         src.push_str(&self.login_time.to_string());
         let key = md5_digest(src.as_bytes()).to_vec();
