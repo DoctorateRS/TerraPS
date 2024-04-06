@@ -4,6 +4,7 @@ pub mod crypto;
 pub mod game;
 pub mod json;
 pub mod random;
+pub mod rlutils;
 pub mod server;
 
 pub fn zipper<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
