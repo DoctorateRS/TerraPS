@@ -8,8 +8,7 @@
         "adaptive": true,
         "noProxy": false,
         "gadget": false,
-        "useSu": true,
-        "timeout": 30
+        "useSu": false
     },
     "assets": {
         "autoUpdate": false,
@@ -127,7 +126,7 @@
         "duplicateUnits": []
     },
     "gacha": {
-        "5rarity": 1,
+        "5rarity": 1.0,
         "4rarity": 0,
         "3rarity": 0,
         "2rarity": 0

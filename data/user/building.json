@@ -379,7 +379,9 @@
             "slot_8": {}
         },
         "HIRE": {
-            "slot_23": {}
+            "slot_23": {
+                "refreshCount": 3
+            }
         },
         "MANUFACTURE": {
             "slot_14": {

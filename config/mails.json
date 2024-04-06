@@ -1,5 +1,8 @@
 {
-    "recievedIDs": [1, 2],
+    "recievedIDs": [
+        1,
+        2
+    ],
     "deletedIDs": [],
     "mailList": {
         "1": {

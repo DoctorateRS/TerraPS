@@ -1,6 +1,9 @@
 {
     "mapId": "crisis_v2_02-01",
     "runeSlots": [
+        "node_21",
+        "node_55",
+        "node_57",
         "node_49",
         "node_31",
         "node_32",
@@ -8,9 +11,6 @@
         "node_34",
         "node_44",
         "node_46",
-        "node_21",
-        "node_55",
-        "node_57",
         "node_59",
         "node_24",
         "node_26",
