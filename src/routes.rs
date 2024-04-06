@@ -6,7 +6,7 @@ use crate::{
         crisis_manager::crisis_v2,
         deep_sea, online, pay,
         quest_manager::{bossrush, quest, story_review},
-        social,
+        shop, social, story,
     },
     utils::json::JSON,
 };
@@ -45,7 +45,9 @@ pub fn routes() -> Router {
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
         .nest("/retro", retro_routes())
+        .nest("/shop", shop_routes())
         .nest("/social", social_routes())
+        .nest("/story", story_routes())
         .nest("/storyreview", story_review_routes())
         .nest("/u8", u8_routes())
         .nest("/user", user_routes())
@@ -154,10 +156,18 @@ fn retro_routes() -> Router {
         .route("/typeAct20side/competitionFinish", post(quest::act_20_competition_finish))
 }
 
+fn shop_routes() -> Router {
+    Router::new().route("/getSkinGoodList", post(shop::pay_get_unconfirmed_order_id_list))
+}
+
 fn social_routes() -> Router {
     Router::new()
         .route("/setAssistCharList", post(social::social_set_assist_char_list))
         .route("/setCardShowMedal", post(social::social_set_card_medal))
+}
+
+fn story_routes() -> Router {
+    Router::new().route("/finishStory", post(story::story_finish_story))
 }
 
 fn story_review_routes() -> Router {

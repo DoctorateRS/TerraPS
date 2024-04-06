@@ -10,7 +10,9 @@ pub mod online;
 pub mod quest_manager;
 pub mod rlv2;
 pub mod sandboxv2;
+pub mod shop;
 pub mod social;
+pub mod story;
 pub mod tower;
 
 pub mod pay {
