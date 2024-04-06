@@ -1,3 +1,4 @@
+pub mod battle_record;
 pub mod comp;
 pub mod crypto;
 pub mod game;
