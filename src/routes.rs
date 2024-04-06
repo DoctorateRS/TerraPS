@@ -1,5 +1,5 @@
 use crate::{
-    core::{general_v1_server_time, prod, user},
+    core::{asset, general_v1_server_time, prod, user},
     game::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
@@ -187,6 +187,7 @@ fn misc_routes() -> Router {
         .route("/charm/setSquad", post(charm::charm_set_squad))
         .route("/car/confirmBattleCar", post(quest::confirm_battle_car))
         .route("/templateTrap/setTrapSquad", post(quest::set_trap_squad))
+        .route("/assetbundle/official/Android/assets/:assetsHash/:fileName", get(asset::get_file))
 }
 
 async fn fallback(uri: Uri) -> (StatusCode, String) {
