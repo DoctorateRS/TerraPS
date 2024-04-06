@@ -464,7 +464,7 @@ pub async fn account_sync_data() -> JSON {
     for car_gear in get_keys(&car_table) {
         player_data["user"]["car"]["accessories"][&car_gear] = json!({
             "id": &car_gear,
-            "num": get_lenghth(&car_table[&car_gear]["posList"])
+            "num": get_length(&car_table[&car_gear]["posList"])
         })
     }
 
@@ -477,7 +477,7 @@ pub async fn account_sync_data() -> JSON {
         player_data["user"]["deepSea"]["nodes"][&node] = json!(2);
     }
     for choice_node in get_keys(&act_table["choiceNodeDataMap"]) {
-        let cv_len = get_lenghth(&act_table["choiceNodeDataMap"][&choice_node]["optionList"]);
+        let cv_len = get_length(&act_table["choiceNodeDataMap"][&choice_node]["optionList"]);
         let cv_vec = vec![2; cv_len];
         player_data["user"]["deepSea"]["choices"][&choice_node] = json!(cv_vec);
     }
