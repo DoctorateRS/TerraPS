@@ -4,7 +4,7 @@ use crate::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        online, pay,
+        deep_sea, online, pay,
         quest_manager::{bossrush, quest, story_review},
         social,
     },
@@ -40,6 +40,7 @@ pub fn routes() -> Router {
         .nest("/charBuild", char_build_routes())
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
+        .nest("/deepSea", deep_sea_routes())
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
         .nest("/retro", retro_routes())
@@ -124,6 +125,12 @@ fn crisis_v2_routes() -> Router {
         .route("/battleStart", post(crisis_v2::crisis_v2_battle_start))
         .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
         .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
+}
+
+fn deep_sea_routes() -> Router {
+    Router::new()
+        .route("/branch", post(deep_sea::deep_sea_branch))
+        .route("/event", post(deep_sea::deep_sea_event))
 }
 
 fn online_routes() -> Router {
