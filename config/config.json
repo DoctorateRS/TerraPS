@@ -8,7 +8,8 @@
         "adaptive": true,
         "noProxy": false,
         "gadget": false,
-        "useSu": true
+        "useSu": true,
+        "timeout": 30
     },
     "assets": {
         "autoUpdate": false,
