@@ -5,7 +5,7 @@ use crate::{
         user::USER_JSON_PATH,
     },
     core::time,
-    utils::{comp::max, contains, game::*, json::*, zipper},
+    utils::{comp::max, game::*, json::*, zipper},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -64,7 +64,7 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if !contains(&skin_data["charId"].as_str().unwrap().to_string(), get_keys(&temp_skin_table))
+        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string())
             || skin_data["displaySkin"]["onYear"].as_i64().unwrap()
                 > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
                     .as_i64()
@@ -116,7 +116,7 @@ pub async fn account_sync_data() -> JSON {
         count_inst_id = operator_keys[count].split('_').collect::<Vec<&str>>()[1].parse().unwrap();
         max_inst_id = max(max_inst_id, count_inst_id);
         let mut voice_lan = "JP";
-        if contains(&operator_keys[count], get_keys(&charword_table)) {
+        if get_keys(&charword_table).contains(&operator_keys[count]) {
             voice_lan = charword_table["charDefaultTypeDict"][&operator_keys[count]].as_str().unwrap();
         }
 
@@ -141,21 +141,20 @@ pub async fn account_sync_data() -> JSON {
 
         // Set E2 skin
 
-        if contains(
-            &operator_keys[count],
-            vec![
-                "char_508_aguard".to_string(),
-                "char_509_acast".to_string(),
-                "char_510_amedic".to_string(),
-                "char_511_asnipe".to_string(),
-            ],
-        ) && temp_char_list[count_inst_id.to_string()]["evolvePhase"].as_i64().unwrap() == 2
+        if vec![
+            "char_508_aguard".to_string(),
+            "char_509_acast".to_string(),
+            "char_510_amedic".to_string(),
+            "char_511_asnipe".to_string(),
+        ]
+        .contains(&operator_keys[count])
+            && temp_char_list[count_inst_id.to_string()]["evolvePhase"].as_i64().unwrap() == 2
         {
             temp_char_list[count_inst_id.to_string()]["skin"] = json!(operator_keys[count].clone() + "#2");
         }
 
         // Set skins
-        if contains(&operator_keys[count], get_keys(&temp_skin_table)) {
+        if get_keys(&temp_skin_table).contains(&operator_keys[count]) {
             temp_char_list[count_inst_id.to_string()]["skin"] = json!(temp_skin_table[&operator_keys[count]]);
         }
 
@@ -178,10 +177,13 @@ pub async fn account_sync_data() -> JSON {
         temp_char_list[count_inst_id.to_string()]["skills"] = json!(skill_vec);
 
         // Set modules
-        if contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string(), equip_keys.clone()) {
+        if equip_keys
+            .clone()
+            .contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string())
+        {
             for equip in get_keys(&equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]["charId"].to_string()]) {
                 let mut lvl = 1;
-                if contains(&equip, get_keys(&battleequip_table)) {
+                if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
                 }
                 temp_char_list[count_inst_id.to_string()]["equip"] = json!({
@@ -266,7 +268,7 @@ pub async fn account_sync_data() -> JSON {
             });
             for equip in get_keys(&equip_table["charEquip"]["char_002_amiya"]) {
                 let mut lvl = 1;
-                if contains(&equip, get_keys(&battleequip_table)) {
+                if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
                 }
                 temp_char_list[count_inst_id.to_string()]["tmpl"]["char_002_amiya"]["equip"] = json!({
@@ -504,13 +506,12 @@ pub async fn account_sync_data() -> JSON {
         }
         let chapter = &act_table["archiveItemUnlockDataMap"][&log]["chapterId"].as_str().unwrap();
         let mut story_array = Vec::new();
-        if contains(
-            chapter,
-            get_keys(&player_data["user"]["deepSea"]["logs"])
-                .iter()
-                .map(|s| s.as_str())
-                .collect(),
-        ) {
+        if get_keys(&player_data["user"]["deepSea"]["logs"])
+            .iter()
+            .map(|s| s.as_str())
+            .collect::<Vec<&str>>()
+            .contains(chapter)
+        {
             story_array = player_data["user"]["deepSea"]["logs"][chapter].as_array().unwrap().clone();
             story_array.push(json!("log"));
             player_data["user"]["deepSea"]["logs"][chapter] = json!(story_array);
@@ -533,8 +534,7 @@ pub async fn account_sync_data() -> JSON {
         .map(|id| id.as_u64().unwrap())
         .collect::<Vec<u64>>();
     for mail_id in get_keys(&mail_data["mailList"]) {
-        if !contains(&mail_id.parse::<u64>().unwrap(), received_mails.clone())
-            && !contains(&mail_id.parse::<u64>().unwrap(), deleted_mails.clone())
+        if received_mails.clone().contains(&mail_id.parse::<u64>().unwrap()) && deleted_mails.clone().contains(&mail_id.parse::<u64>().unwrap())
         {
             player_data["user"]["pushFlags"]["hasGifts"] = json!(1);
             break;
