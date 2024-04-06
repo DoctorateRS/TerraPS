@@ -113,16 +113,20 @@
 - [x] `/story/finishStory`
 - [x] `/quest/finishStoryStage`
 - [x] `/user/auth`
-- [ ] `/user/agreement`
-- [ ] `/user/checkIn`
-- [ ] `/user/changeSecretary`
-- [ ] `/user/login`
-- [ ] `/user/changeAvatar`
-- [ ] `/user/oauth2/v1/grant`
+- [x] `/user/agreement`
+- [x] `/user/checkIn`
+- [x] `/user/changeSecretary`
+- [x] `/user/login`
+- [x] `/user/changeAvatar`
+- [x] `/user/oauth2/v1/grant`
+- [x] `/user/oauth2/v2/grant`
 - [ ] `/user/info/v1/need_cloud_auth`
 - [ ] `/user/yostar_createlogin`
-- [ ] `/u8/user/v1/getToken`
 - [ ] `/user/changeResume`
+- [ ] `/u8/user/v1/getToken`
+
+## SOCIAL
+
 - [ ] `/social/getSortListInfo`
 - [ ] `/social/searchPlayer`
 - [ ] `/social/setAssistCharList`
@@ -130,6 +134,9 @@
 - [ ] `/medal/setCustomData`
 - [ ] `/businessCard/changeNameCardComponent`
 - [ ] `/businessCard/changeNameCardSkin`
+
+## SANDBOX
+
 - [ ] `/sandboxPerm/sandboxV2/createGame`
 - [ ] `/sandboxPerm/sandboxV2/battleStart`
 - [ ] `/sandboxPerm/sandboxV2/battleFinish`
@@ -140,6 +147,7 @@
 - [ ] `/sandboxPerm/sandboxV2/monthBattleStart`
 - [ ] `/sandboxPerm/sandboxV2/monthBattleFinish`
 - [ ] `/sandboxPerm/sandboxV2/exploreMode`
+
 - [ ] `/gacha/normalGacha`
 - [ ] `/gacha/boostNormalGacha`
 - [ ] `/gacha/finishNormalGacha`
@@ -148,9 +156,10 @@
 - [ ] `/gacha/advancedGacha`
 - [ ] `/gacha/tenAdvancedGacha`
 - [ ] `/gacha/getPoolDetail`
-- [ ] `/user/auth/v1/token_by_phone_password`
+
+- [x] `/user/auth/v1/token_by_phone_password`
 - [x] `/user/info/v1/basic`
-- [x] `/user/oauth2/v2/grant`
+
 - [x] `/app/v1/config`
 - [x] `/general/v1/server_time`
 - [x] `/u8/user/auth/v1/agreement_version`
