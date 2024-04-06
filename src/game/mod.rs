@@ -4,6 +4,7 @@ pub mod building;
 pub mod campaignv2;
 pub mod char_manager;
 pub mod crisis_manager;
+pub mod gacha;
 pub mod online;
 pub mod quest_manager;
 pub mod rlv2;
