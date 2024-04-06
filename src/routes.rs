@@ -12,11 +12,10 @@ use crate::{
 };
 use axum::{
     extract::Request,
-    http::Uri,
     routing::{get, post},
     Json, Router,
 };
-use reqwest::StatusCode;
+
 use serde_json::json;
 use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnResponse, TraceLayer as Tracer};
 use tracing::{debug, Level, Span};
