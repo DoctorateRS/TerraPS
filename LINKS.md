@@ -2,34 +2,34 @@
 
 - [ ] `/app/getSettings`
 - [ ] `/app/getCode`
-- [ ] `/account/login`
+- [x] `/account/login`
 - [ ] `/account/syncData`
-- [ ] `/account/syncStatus`
+- [x] `/account/syncStatus`
 - [ ] `/account/yostar_auth_request`
 - [ ] `/account/yostar_auth_submit`
 - [ ] `/assetbundle/official/Android/assets/<string:assetsHash>/<string:fileName>`
-- [ ] `/background/setBackground`
-- [ ] `/homeTheme/change`
-- [ ] `/building/sync`
-- [ ] `/building/getRecentVisitors`
-- [ ] `/building/getInfoShareVisitorsNum`
-- [ ] `/building/changeDiySolution`
-- [ ] `/building/assignChar`
-- [ ] `/building/setBuildingAssist`
-- [ ] `/building/getAssistReport`
+- [x] `/background/setBackground`
+- [x] `/homeTheme/change`
+- [x] `/building/sync`
+- [x] `/building/getRecentVisitors`
+- [x] `/building/getInfoShareVisitorsNum`
+- [x] `/building/changeDiySolution`
+- [x] `/building/assignChar`
+- [x] `/building/setBuildingAssist`
+- [x] `/building/getAssistReport`
 - [x] `/campaignV2/battleStart`
 - [x] `/campaignV2/battleFinish`
 - [x] `/campaignV2/battleSweep`
 - [x] `/char/changeMarkStar`
 - [ ] `/charBuild/addonStage/battleStart`
 - [ ] `/charBuild/addonStage/battleFinish`
-- [ ] `/charBuild/addonStory/unlock`
-- [ ] `/charBuild/batchSetCharVoiceLan`
-- [ ] `/charBuild/setCharVoiceLan`
-- [ ] `/charBuild/setDefaultSkill`
-- [ ] `/charBuild/changeCharSkin`
-- [ ] `/charBuild/setEquipment`
-- [ ] `/charBuild/changeCharTemplate`
+- [x] `/charBuild/addonStory/unlock`
+- [x] `/charBuild/batchSetCharVoiceLan`
+- [x] `/charBuild/setCharVoiceLan`
+- [x] `/charBuild/setDefaultSkill`
+- [x] `/charBuild/changeCharSkin`
+- [x] `/charBuild/setEquipment`
+- [x] `/charBuild/changeCharTemplate`
 - [x] `/charm/setSquad`
 - [x] `/config/prod/announce_meta/Android/preannouncement.meta.json`
 - [x] `/config/prod/announce_meta/Android/announcement.meta.json`
@@ -93,6 +93,9 @@
 - [ ] `/activity/bossRush/relicSelect`
 - [x] `/retro/typeAct20side/competitionStart`
 - [x] `/retro/typeAct20side/competitionFinish`
+
+## RLV2
+
 - [ ] `/rlv2/giveUpGame`
 - [ ] `/rlv2/createGame`
 - [ ] `/rlv2/chooseInitialRelic`
@@ -109,6 +112,9 @@
 - [ ] `/rlv2/buyGoods`
 - [ ] `/rlv2/leaveShop`
 - [ ] `/rlv2/chooseBattleReward`
+
+## UN
+
 - [x] `/shop/getSkinGoodList`
 - [x] `/story/finishStory`
 - [x] `/quest/finishStoryStage`
@@ -147,6 +153,8 @@
 - [ ] `/sandboxPerm/sandboxV2/monthBattleStart`
 - [ ] `/sandboxPerm/sandboxV2/monthBattleFinish`
 - [ ] `/sandboxPerm/sandboxV2/exploreMode`
+
+## GACHA
 
 - [ ] `/gacha/normalGacha`
 - [ ] `/gacha/boostNormalGacha`
