@@ -1,6 +1,6 @@
-use core::panic;
 use std::fmt::Display;
 
+use anyhow::Result;
 use base64::{engine::general_purpose::STANDARD, Engine};
 
 pub fn encode<T: Display>(input: T) -> String {
@@ -9,16 +9,6 @@ pub fn encode<T: Display>(input: T) -> String {
     output_buf
 }
 
-pub fn decode<T: Display>(input: T) -> String {
-    let mut output_buf = String::new();
-    match STANDARD.decode(input.to_string()) {
-        Ok(decoded) => match String::from_utf8(decoded) {
-            Ok(s) => &output_buf.push_str(&s),
-            Err(e) => panic!("Error: {}", e),
-        },
-        Err(e) => {
-            panic!("Error: {}", e)
-        }
-    };
-    output_buf
+pub fn decode<T: Display>(input: T) -> Result<String> {
+    Ok(String::from_utf8(STANDARD.decode(input.to_string())?)?)
 }

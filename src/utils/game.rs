@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 use super::{battle_data::BattleDataDecoder, crypto::base64::decode, json::read_json};
 use reqwest::get;
 use serde_json::Value;
@@ -23,7 +25,7 @@ pub async fn update_data(url: &str) -> Value {
     }
 }
 
-pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) -> Value {
+pub fn decrypt_battle_data<T: Display>(data: T, login_time: Option<u64>) -> Value {
     let decryptor = match login_time {
         Some(time) => BattleDataDecoder::new_with_login_time(time as u32),
         None => BattleDataDecoder::new(),
@@ -31,6 +33,6 @@ pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) -> Value {
     decryptor.decrypt_battle_data(data.to_string()).unwrap()
 }
 
-pub fn decode_battle_replay(data: &str) {
-    let data = decode(data).as_bytes();
+pub fn decode_battle_replay(data: &str) -> Result<Value> {
+    let data = decode(data)?.as_bytes();
 }
