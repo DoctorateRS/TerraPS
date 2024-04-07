@@ -40,12 +40,15 @@ pub mod crisis_v2 {
 
     pub async fn crisis_v2_battle_finish() -> JSON {
         let config = read_json(CONFIG_JSON_PATH);
+
         let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap();
         let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
         let battle_data = read_json(RUNE_JSON_PATH).clone();
         let map_id = battle_data["mapId"].as_str().unwrap();
         let rune_slots = battle_data["runeSlots"].clone();
+
         let mut score_current = [0, 0, 0, 0, 0, 0];
+
         let mut nodes = json!({});
         for slot in get_keys(&rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"]) {
             let score;
