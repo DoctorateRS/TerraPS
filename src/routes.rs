@@ -170,8 +170,6 @@ fn quest_routes() -> Router {
         .route("/battleFinish", post(quest::quest_battle_finish))
         .route("/changeSquadName", post(quest::squad_change_name))
         .route("/squadFormation", post(quest::squad_set_formation))
-        .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))
-        .route("/getSnapshot", post(crisis_v2::crisis_v2_get_snapshot))
 }
 
 fn retro_routes() -> Router {
