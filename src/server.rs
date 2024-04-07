@@ -4,13 +4,13 @@ mod game;
 mod routes;
 mod utils;
 
+use anyhow::Result;
 use constants::{ascii::TITLE, config::CONFIG_JSON_PATH};
 use routes::routes;
-use std::io::Error;
 use utils::{json::read_json, server::Server};
 
 #[tokio::main]
-async fn main() -> Result<(), Error> {
+async fn main() -> Result<()> {
     // TITLE
     println!(r#"{}"#, TITLE);
     println!("IN CASE YOU PAID MONEY FOR THIS, YOU'VE BEEN SCAMMED.");
@@ -19,7 +19,7 @@ async fn main() -> Result<(), Error> {
     // SERVER
     let (server_address, server_port) = get_server_address();
     let server = Server::new(server_address, server_port);
-    server.serve(routes()).await
+    Ok(server.serve(routes()).await?)
 }
 
 fn get_server_address() -> (String, u64) {

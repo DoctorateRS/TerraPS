@@ -5,7 +5,7 @@ pub mod config {
     pub const CONFIG_JSON_PATH: &str = "./config/config.json";
     pub const MAILLIST_PATH: &str = "./config/mails.json";
     pub const RLV2_CONFIG_PATH: &str = "./config/rlv2Config.json";
-    pub const ASSIST_JSON_PATH: &str = "./config/assist.json";
+    pub const ASSIST_JSON_PATH: &str = "./config/assists.json";
     pub const SQUADS_PATH: &str = "./config/squads.json";
     pub const SYNC_DATA_TEMPLATE_PATH: &str = "./config/syncData.json";
 }

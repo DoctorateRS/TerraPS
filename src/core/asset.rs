@@ -1,12 +1,6 @@
-use axum::{
-    extract::Path,
-    response::{IntoResponse, Redirect},
-    Json,
-};
-
-use reqwest::RequestBuilder;
+use axum::{extract::Path, response::IntoResponse};
+use reqwest::get;
 use serde::Deserialize;
-use serde_json::json;
 
 use crate::{constants::config::CONFIG_JSON_PATH, utils::json::read_json};
 
@@ -16,7 +10,7 @@ pub struct Asset {
     pub hash: String,
 }
 
-pub async fn get_file(Path(asset): Path<Asset>) {
+pub async fn get_file(Path(asset): Path<Asset>) -> impl IntoResponse {
     let config = read_json(CONFIG_JSON_PATH);
     let mode = config["server"]["mode"].as_str().unwrap();
 
@@ -31,10 +25,16 @@ pub async fn get_file(Path(asset): Path<Asset>) {
     if !config["assets"]["downloadLocally"].as_bool().unwrap() {
         let base_path = format!("./assets/{version}/");
         if &asset.name != "hot_update_list.json" {
+            let name = asset.name;
             if mode == "cn" {
-                let name = asset.name;
+                let url = format!("https://ak.hycdn.cn/assetbundle/official/Android/assets/{version}/{name}");
+                let response = get(url).await.unwrap();
             } else {
+                let url = format!("https://ark-us-static-online.yo-star.com/assetbundle/official/Android/assets/{version}/{name}");
+                let response = get(url).await.unwrap();
             }
         }
+    } else {
+        todo!("Implement this.")
     }
 }
