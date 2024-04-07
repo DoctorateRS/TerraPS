@@ -141,7 +141,7 @@ pub async fn account_sync_data() -> JSON {
 
         // Set E2 skin
 
-        if vec![
+        if [
             "char_508_aguard".to_string(),
             "char_509_acast".to_string(),
             "char_510_amedic".to_string(),

@@ -235,7 +235,7 @@ fn misc_routes() -> Router {
 }
 
 fn debug_routes() -> Router {
-    Router::new().route("/ccv2", get(crisis_v2::ccv2_nodes))
+    Router::new()
 }
 
 async fn fallback() -> JSON {
