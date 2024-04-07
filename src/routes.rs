@@ -8,7 +8,7 @@ use crate::{
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
         deep_sea, online, pay,
-        quest_manager::{bossrush, quest, story_review},
+        quest_manager::{april_fools, bossrush, quest, story_review},
         shop, social, story,
     },
     utils::json::JSON,
@@ -37,6 +37,7 @@ pub fn routes() -> Router {
         .nest("/app", app_routes())
         .nest("/account", account_routes())
         .nest("/activity", activity_routes())
+        .nest("/aprilFool", april_fools_routes())
         .nest("/building", building_routes())
         .nest("/businessCard", business_card_routes())
         .nest("/campaignV2", campaignv2_routes())
@@ -76,7 +77,20 @@ fn account_routes() -> Router {
 }
 
 fn activity_routes() -> Router {
-    Router::new().route("/bossRush/relicSelect", post(bossrush::_relic_select))
+    Router::new()
+        .route("/bossRush/relicSelect", post(bossrush::relic_select))
+        .route("/bossRush/battleStart", post(quest::quest_battle_start))
+}
+
+fn april_fools_routes() -> Router {
+    Router::new()
+        .route("/act5fun/battleStart", post(quest::quest_battle_start))
+        .route("/act5fun/battleFinish", post(april_fools::act5_fun_battle_finish))
+        .route("/act4fun/battleStart", post(quest::quest_battle_start))
+        .route("/act4fun/battleFinish", post(april_fools::act4_fun_battle_finish))
+        .route("/act4fun/liveSettle", post(april_fools::act4_fun_live_settle))
+        .route("/act3fun/battleStart", post(quest::quest_battle_start))
+        .route("/act3fun/battleFinish", post(quest::quest_battle_finish))
 }
 
 fn building_routes() -> Router {
@@ -109,6 +123,8 @@ fn char_routes() -> Router {
 
 fn char_build_routes() -> Router {
     Router::new()
+        .route("/addonStage/battleStart", post(quest::quest_battle_start))
+        .route("/addonStage/battleFinish", post(quest::quest_battle_finish))
         .route("/addonStory/unlock", post(char_build::char_build_addon_story_unlock))
         .route("/batchSetCharVoiceLan", post(char_build::char_build_batch_set_char_voice_lan))
         .route("/setCharVoiceLan", post(char_build::char_build_set_char_voice_lan))
@@ -150,6 +166,8 @@ fn online_routes() -> Router {
 
 fn quest_routes() -> Router {
     Router::new()
+        .route("/battleStart", post(quest::quest_battle_start))
+        .route("/battleFinish", post(quest::quest_battle_finish))
         .route("/changeSquadName", post(quest::squad_change_name))
         .route("/squadFormation", post(quest::squad_set_formation))
         .route("/battleFinish", post(crisis_v2::crisis_v2_battle_finish))

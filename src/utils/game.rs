@@ -1,4 +1,4 @@
-use super::{battle_data::BattleDataDecoder, json::read_json};
+use super::{battle_data::BattleDataDecoder, crypto::base64::decode, json::read_json};
 use reqwest::get;
 use serde_json::Value;
 
@@ -29,4 +29,8 @@ pub fn decrypt_battle_data(data: &str, login_time: Option<u64>) -> Value {
         None => BattleDataDecoder::new(),
     };
     decryptor.decrypt_battle_data(data.to_string()).unwrap()
+}
+
+pub fn decode_battle_replay(data: &str) {
+    let data = decode(data).as_bytes();
 }

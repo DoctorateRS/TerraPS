@@ -3,9 +3,62 @@ pub mod quest {
     use serde_json::json;
 
     use crate::{
-        constants::user::USER_JSON_PATH,
+        constants::user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
         utils::json::{get_keys, read_json, write_json, JSON},
     };
+
+    pub async fn quest_battle_start(Json(payload): JSON) -> JSON {
+        let stage_id = payload["stageId"].as_str().unwrap();
+        let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
+        replay_data["current"] = json!(stage_id);
+        write_json(BATTLE_REPLAY_JSON_PATH, replay_data);
+        Json(json!({
+            "apFailReturn": 0,
+            "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+            "inApProtectPeriod": false,
+            "isApProtect": 0,
+            "notifyPowerScoreNotEnoughIfFailed": false,
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            },
+            "result": 0
+        }))
+    }
+
+    pub async fn quest_battle_finish() -> JSON {
+        Json(json!({
+            "result":0,
+            "apFailReturn": 0,
+            "expScale": 1.2,
+            "goldScale": 1.2,
+            "rewards": [],
+            "firstRewards": [],
+            "unlockStages": [],
+            "unusualRewards": [],
+            "additionalRewards": [],
+            "furnitureRewards": [],
+            "overrideRewards": [],
+            "alert": [],
+            "suggestFriend": false,
+            "pryResult": [],
+            "itemReturn": [],
+            "wave": 0,
+            "milestoneBefore": 0,
+            "milestoneAdd": 0,
+            "isMileStoneMax": false,
+            "tokenAdd": 0,
+            "isTokenMax": false,
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn quest_save_battle_replay() {}
+
+    pub async fn quest_get_battle_replay() {}
 
     pub async fn squad_change_name(Json(payload): JSON) -> JSON {
         let mut data = json!({
@@ -162,7 +215,7 @@ pub mod bossrush {
 
     use crate::utils::json::JSON;
 
-    pub async fn _relic_select(Json(payload): JSON) -> JSON {
+    pub async fn relic_select(Json(payload): JSON) -> JSON {
         let activity_id = payload["activityId"].as_str().unwrap();
         let relic_id = payload["relicId"].clone();
 
