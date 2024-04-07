@@ -88,16 +88,16 @@ pub mod crisis_v2 {
         }
 
         let slots = rune_slots.clone();
-        for (slot_pack_id, _) in nodes.as_object().unwrap() {
+        for slot_pack_id in get_keys(&nodes) {
             let mut flag = true;
-            for mutual_exclusion_group in get_keys(&nodes[slot_pack_id]) {
+            for mutual_exclusion_group in get_keys(&nodes[&slot_pack_id]) {
                 let mut score_max = 0;
-                for slot in get_keys(&nodes[slot_pack_id][&mutual_exclusion_group]) {
-                    score_max = max(score_max, nodes[slot_pack_id][&mutual_exclusion_group][slot].as_i64().unwrap());
+                for slot in get_keys(&nodes[&slot_pack_id][&mutual_exclusion_group]) {
+                    score_max = max(score_max, nodes[&slot_pack_id][&mutual_exclusion_group][slot].as_i64().unwrap());
                 }
                 let mut flag2 = false;
-                for slot in get_keys(&nodes[slot_pack_id][&mutual_exclusion_group]) {
-                    if nodes[slot_pack_id][&mutual_exclusion_group][&slot].as_i64().unwrap() != score_max {
+                for slot in get_keys(&nodes[&slot_pack_id][&mutual_exclusion_group]) {
+                    if nodes[&slot_pack_id][&mutual_exclusion_group][&slot].as_i64().unwrap() != score_max {
                         continue;
                     };
                     if slots.get(slot.as_str()).is_some() {
