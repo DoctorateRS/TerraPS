@@ -7,7 +7,7 @@
 - [x] `/account/syncStatus`
 - [x] `/account/yostar_auth_request`
 - [x] `/account/yostar_auth_submit`
-- [ ] `/assetbundle/official/Android/assets/<string:assetsHash>/<string:fileName>`
+- [ ] `/assetbundle/official/Android/assets/:hash/:name`
 - [x] `/background/setBackground`
 - [x] `/homeTheme/change`
 - [x] `/building/sync`
