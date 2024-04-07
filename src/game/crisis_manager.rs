@@ -120,10 +120,13 @@ pub mod crisis_v2 {
             }
         }
 
+        let mut rune_ids = Vec::new();
+
         for slot in rune_slots.as_array().unwrap() {
             let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot.as_str().unwrap()].clone();
             if node_data.get("runeId").is_some() {
                 let rune_id = node_data["runeId"].clone();
+                rune_ids.push(rune_id.clone());
                 let rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][rune_id.as_str().unwrap()].clone();
                 score_current[rune_data["dimension"].as_u64().unwrap() as usize] += rune_data["score"].as_u64().unwrap();
             }
@@ -133,6 +136,7 @@ pub mod crisis_v2 {
             "result": 0,
             "mapId": map_id,
             "runeSlots": rune_slots,
+            "runeIds": rune_ids,
             "isNewRecord": false,
             "scoreRecord": [0, 0, 0, 0, 0, 0],
             "scoreCurrent": score_current,
