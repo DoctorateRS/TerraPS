@@ -50,6 +50,7 @@ pub mod crisis_v2 {
         let mut score_current = [0, 0, 0, 0, 0, 0];
 
         let mut nodes = json!({});
+
         for slot in get_keys(&rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"]) {
             let score;
             let rune_data;
@@ -62,16 +63,17 @@ pub mod crisis_v2 {
             if slot_pack_id.is_null() {
                 continue;
             }
-            if nodes.get(slot_pack_id.as_str().unwrap()).is_none() {
-                nodes[slot_pack_id.as_str().unwrap()] = json!({});
+            let slot_pack_id = slot_pack_id.as_str().unwrap();
+            if nodes.get(slot_pack_id).is_none() {
+                nodes[&slot_pack_id] = json!({});
             }
             let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() && !node_data["mutualExclusionGroup"].is_null() {
                 node_data["mutualExclusionGroup"].as_str().unwrap()
             } else {
                 &slot
             };
-            if nodes[&slot_id].get("mutualExclusionGroup").is_none() {
-                nodes[&slot_id][mutual_exclusion_group] = json!({})
+            if nodes[&slot_pack_id].get("mutualExclusionGroup").is_none() {
+                nodes[&slot_pack_id][&mutual_exclusion_group] = json!({})
             }
             if node_data.get("runeId").is_some() {
                 let r_id = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot]["runeId"].clone();
@@ -84,10 +86,11 @@ pub mod crisis_v2 {
             } else {
                 score = 0;
             };
-            nodes[slot_pack_id.as_str().unwrap()][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
+            nodes[&slot_pack_id][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
         }
 
         let slots = rune_slots.clone();
+
         for slot_pack_id in get_keys(&nodes) {
             let mut flag = true;
             for mutual_exclusion_group in get_keys(&nodes[&slot_pack_id]) {
@@ -160,5 +163,55 @@ pub mod crisis_v2 {
                 "deleted": {}
             }
         }))
+    }
+
+    pub async fn ccv2_nodes() -> JSON {
+        let config = read_json(CONFIG_JSON_PATH);
+
+        let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap();
+        let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
+        let battle_data = read_json(RUNE_JSON_PATH).clone();
+        let map_id = battle_data["mapId"].as_str().unwrap();
+
+        let mut nodes = json!({});
+
+        for slot in get_keys(&rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"]) {
+            let score;
+            let rune_data;
+            if !slot.starts_with("node_") {
+                continue;
+            }
+            let slot_id = &slot;
+            let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot_id].clone();
+            let slot_pack_id = node_data["slotPackId"].clone();
+            if slot_pack_id.is_null() {
+                continue;
+            }
+            let slot_pack_id = slot_pack_id.as_str().unwrap();
+            if nodes.get(slot_pack_id).is_none() {
+                nodes[&slot_pack_id] = json!({});
+            }
+            let mutual_exclusion_group = if node_data.get("mutualExclusionGroup").is_some() && !node_data["mutualExclusionGroup"].is_null() {
+                node_data["mutualExclusionGroup"].as_str().unwrap()
+            } else {
+                &slot
+            };
+            if nodes[&slot_pack_id].get("mutualExclusionGroup").is_none() {
+                nodes[&slot_pack_id][&mutual_exclusion_group] = json!({})
+            }
+            if node_data.get("runeId").is_some() {
+                let r_id = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot]["runeId"].clone();
+                if !r_id.is_null() {
+                    rune_data = rune["info"]["mapDetailDataMap"][&map_id]["runeDataMap"][r_id.as_str().unwrap()].clone();
+                    score = rune_data["score"].clone().as_i64().unwrap();
+                } else {
+                    score = 0;
+                }
+            } else {
+                score = 0;
+            };
+            nodes[&slot_pack_id][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
+        }
+        Json(nodes)
     }
 }

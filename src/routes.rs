@@ -55,6 +55,7 @@ pub fn routes() -> Router {
         .nest("/storyreview", story_review_routes())
         .nest("/u8", u8_routes())
         .nest("/user", user_routes())
+        .nest("/debug", debug_routes())
         .merge(misc_routes())
         .fallback(fallback)
         .layer(trace_layer)
@@ -231,6 +232,10 @@ fn misc_routes() -> Router {
         .route("/car/confirmBattleCar", post(quest::confirm_battle_car))
         .route("/templateTrap/setTrapSquad", post(quest::set_trap_squad))
         .route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
+}
+
+fn debug_routes() -> Router {
+    Router::new().route("/ccv2", get(crisis_v2::ccv2_nodes))
 }
 
 async fn fallback() -> JSON {
