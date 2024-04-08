@@ -32,7 +32,3 @@ pub fn decrypt_battle_data<T: Display>(data: T, login_time: Option<u64>) -> Valu
     };
     decryptor.decrypt_battle_data(data.to_string()).unwrap()
 }
-
-// pub fn decode_battle_replay(data: &str) -> Result<Value> {
-//     let data = decode(data)?.as_bytes();
-// }

@@ -1,7 +1,8 @@
-use tokio::net::TcpListener;
-
-use axum::{serve, Router};
 use std::io::Error;
+
+use anyhow::Result;
+use axum::{serve, Router};
+use tokio::net::TcpListener;
 use tracing::Level;
 use tracing_subscriber::fmt as subscriber_fmt;
 
@@ -23,12 +24,7 @@ impl Server {
     pub async fn serve(&self, routes: Router) -> Result<(), Error> {
         subscriber_fmt().with_max_level(Level::DEBUG).init();
         let addr = &self.get_address();
-        let listener = match TcpListener::bind(addr).await {
-            Ok(listener) => listener,
-            Err(e) => {
-                panic!("Failed to bind to address: {}", e);
-            }
-        };
+        let listener = TcpListener::bind(addr).await?;
         self.log();
         serve(listener, routes).await
     }

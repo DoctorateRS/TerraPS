@@ -9,6 +9,10 @@ pub fn encode<T: Display>(input: T) -> String {
     output_buf
 }
 
+pub fn encode_bytes(input: Vec<u8>) -> String {
+    STANDARD.encode(input)
+}
+
 pub fn decode<T: Display>(input: T) -> Result<String> {
     Ok(String::from_utf8(STANDARD.decode(input.to_string())?)?)
 }
