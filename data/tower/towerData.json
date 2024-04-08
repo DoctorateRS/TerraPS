@@ -609,6 +609,90 @@
                     ],
                     "skin": "char_124_kroos@witch#1",
                     "type": "CHAR"
+                },
+                "22": {
+                    "charId": "char_433_windft",
+                    "currentEquip": "uniequip_002_windft",
+                    "defaultSkillIndex": 1,
+                    "equip": {
+                        "uniequip_001_windft": {
+                            "hide": 0,
+                            "locked": 0,
+                            "level": 1
+                        },
+                        "uniequip_002_windft": {
+                            "hide": 0,
+                            "locked": 0,
+                            "level": 3
+                        }
+                    },
+                    "evolvePhase": 2,
+                    "favorPoint": 25570,
+                    "instId": "22",
+                    "level": 80,
+                    "mainSkillLvl": 7,
+                    "potentialRank": 5,
+                    "relation": "433",
+                    "skills": [
+                        {
+                            "skillId": "skchr_windft_1",
+                            "unlock": 1,
+                            "state": 0,
+                            "specializeLevel": 3,
+                            "completeUpgradeTime": -1
+                        },
+                        {
+                            "skillId": "skchr_windft_2",
+                            "unlock": 1,
+                            "state": 0,
+                            "specializeLevel": 3,
+                            "completeUpgradeTime": -1
+                        }
+                    ],
+                    "skin": "char_433_windft#2",
+                    "type": "CHAR"
+                },
+                "23": {
+                    "charId": "char_4122_grabds",
+                    "currentEquip": "uniequip_002_grabds",
+                    "defaultSkillIndex": 1,
+                    "equip": {
+                        "uniequip_001_grabds": {
+                            "hide": 0,
+                            "locked": 0,
+                            "level": 1
+                        },
+                        "uniequip_002_grabds": {
+                            "hide": 0,
+                            "locked": 0,
+                            "level": 3
+                        }
+                    },
+                    "evolvePhase": 2,
+                    "favorPoint": 25570,
+                    "instId": "23",
+                    "level": 80,
+                    "mainSkillLvl": 7,
+                    "potentialRank": 5,
+                    "relation": "4122",
+                    "skills": [
+                        {
+                            "skillId": "skchr_grabds_1",
+                            "unlock": 1,
+                            "state": 0,
+                            "specializeLevel": 3,
+                            "completeUpgradeTime": -1
+                        },
+                        {
+                            "skillId": "skchr_grabds_2",
+                            "unlock": 1,
+                            "state": 0,
+                            "specializeLevel": 3,
+                            "completeUpgradeTime": -1
+                        }
+                    ],
+                    "skin": "char_4122_grabds#2",
+                    "type": "CHAR"
                 }
             },
             "godCard": {
@@ -619,248 +703,203 @@
                 "canGiveUp": false,
                 "candidate": [
                     {
-                        "groupId": "char_4015_spuria",
+                        "groupId": "char_376_therex",
                         "type": "CHAR",
                         "cards": [
                             {
                                 "instId": "0",
                                 "type": "CHAR",
-                                "charId": "char_4015_spuria",
-                                "relation": "4015",
-                                "evolvePhase": 2,
-                                "level": 80,
+                                "charId": "char_376_therex",
+                                "relation": "376",
+                                "evolvePhase": 0,
+                                "level": 30,
                                 "favorPoint": 25570,
                                 "potentialRank": 5,
                                 "mainSkillLvl": 7,
-                                "skills": [
-                                    {
-                                        "skillId": "skchr_spuria_1",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    },
-                                    {
-                                        "skillId": "skchr_spuria_2",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    }
-                                ],
-                                "defaultSkillIndex": 1,
-                                "currentEquip": "uniequip_002_spuria",
-                                "equip": {
-                                    "uniequip_001_spuria": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 1
-                                    },
-                                    "uniequip_002_spuria": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 3
-                                    }
-                                },
-                                "skin": "char_4015_spuria#2"
-                            }
-                        ]
-                    },
-                    {
-                        "groupId": "char_433_windft",
-                        "type": "CHAR",
-                        "cards": [
-                            {
-                                "instId": "0",
-                                "type": "CHAR",
-                                "charId": "char_433_windft",
-                                "relation": "433",
-                                "evolvePhase": 2,
-                                "level": 80,
-                                "favorPoint": 25570,
-                                "potentialRank": 5,
-                                "mainSkillLvl": 7,
-                                "skills": [
-                                    {
-                                        "skillId": "skchr_windft_1",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    },
-                                    {
-                                        "skillId": "skchr_windft_2",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    }
-                                ],
-                                "defaultSkillIndex": 1,
-                                "currentEquip": "uniequip_002_windft",
-                                "equip": {
-                                    "uniequip_001_windft": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 1
-                                    },
-                                    "uniequip_002_windft": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 3
-                                    }
-                                },
-                                "skin": "char_433_windft#2"
-                            }
-                        ]
-                    },
-                    {
-                        "groupId": "char_143_ghost",
-                        "type": "CHAR",
-                        "cards": [
-                            {
-                                "instId": "0",
-                                "type": "CHAR",
-                                "charId": "char_143_ghost",
-                                "relation": "143",
-                                "evolvePhase": 2,
-                                "level": 80,
-                                "favorPoint": 25570,
-                                "potentialRank": 5,
-                                "mainSkillLvl": 7,
-                                "skills": [
-                                    {
-                                        "skillId": "skcom_atk_up[3]",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    },
-                                    {
-                                        "skillId": "skchr_ghost_2",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    }
-                                ],
-                                "defaultSkillIndex": 1,
-                                "currentEquip": "uniequip_002_ghost",
-                                "equip": {
-                                    "uniequip_001_ghost": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 1
-                                    },
-                                    "uniequip_002_ghost": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 3
-                                    }
-                                },
-                                "skin": "char_143_ghost@winter#1"
-                            }
-                        ]
-                    },
-                    {
-                        "groupId": "char_4081_warmy",
-                        "type": "CHAR",
-                        "cards": [
-                            {
-                                "instId": "0",
-                                "type": "CHAR",
-                                "charId": "char_4081_warmy",
-                                "relation": "4081",
-                                "evolvePhase": 2,
-                                "level": 80,
-                                "favorPoint": 25570,
-                                "potentialRank": 5,
-                                "mainSkillLvl": 7,
-                                "skills": [
-                                    {
-                                        "skillId": "skchr_warmy_1",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    },
-                                    {
-                                        "skillId": "skchr_warmy_2",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    }
-                                ],
-                                "defaultSkillIndex": 1,
+                                "skills": [],
+                                "defaultSkillIndex": -1,
                                 "currentEquip": null,
                                 "equip": {},
-                                "skin": "char_4081_warmy#2"
+                                "skin": "char_376_therex#1"
                             }
                         ]
                     },
                     {
-                        "groupId": "char_112_siege",
+                        "groupId": "char_301_cutter",
                         "type": "CHAR",
                         "cards": [
                             {
                                 "instId": "0",
                                 "type": "CHAR",
-                                "charId": "char_112_siege",
-                                "relation": "112",
+                                "charId": "char_301_cutter",
+                                "relation": "301",
                                 "evolvePhase": 2,
-                                "level": 90,
+                                "level": 70,
                                 "favorPoint": 25570,
                                 "potentialRank": 5,
                                 "mainSkillLvl": 7,
                                 "skills": [
                                     {
-                                        "skillId": "skcom_charge_cost[3]",
+                                        "skillId": "skchr_cutter_1",
                                         "unlock": 1,
                                         "state": 0,
                                         "specializeLevel": 3,
                                         "completeUpgradeTime": -1
                                     },
                                     {
-                                        "skillId": "skchr_siege_2",
-                                        "unlock": 1,
-                                        "state": 0,
-                                        "specializeLevel": 3,
-                                        "completeUpgradeTime": -1
-                                    },
-                                    {
-                                        "skillId": "skchr_siege_3",
+                                        "skillId": "skchr_cutter_2",
                                         "unlock": 1,
                                         "state": 0,
                                         "specializeLevel": 3,
                                         "completeUpgradeTime": -1
                                     }
                                 ],
-                                "defaultSkillIndex": 2,
-                                "currentEquip": "uniequip_003_siege",
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_cutter",
                                 "equip": {
-                                    "uniequip_001_siege": {
+                                    "uniequip_001_cutter": {
                                         "hide": 0,
                                         "locked": 0,
                                         "level": 1
                                     },
-                                    "uniequip_002_siege": {
-                                        "hide": 0,
-                                        "locked": 0,
-                                        "level": 3
-                                    },
-                                    "uniequip_003_siege": {
+                                    "uniequip_002_cutter": {
                                         "hide": 0,
                                         "locked": 0,
                                         "level": 3
                                     }
                                 },
-                                "skin": "char_112_siege@striker#2"
+                                "skin": "char_301_cutter#2"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_4125_rdoc",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_4125_rdoc",
+                                "relation": "4125",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_rdoc_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_rdoc_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_rdoc",
+                                "equip": {
+                                    "uniequip_001_rdoc": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 1
+                                    },
+                                    "uniequip_002_rdoc": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 3
+                                    }
+                                },
+                                "skin": "char_4125_rdoc@rainbow6#2"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_281_popka",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_281_popka",
+                                "relation": "281",
+                                "evolvePhase": 1,
+                                "level": 55,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skcom_atk_up[1]",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 0,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 0,
+                                "currentEquip": null,
+                                "equip": {},
+                                "skin": "char_281_popka#1"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_173_slchan",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_173_slchan",
+                                "relation": "173",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_slchan_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_slchan_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_slchan",
+                                "equip": {
+                                    "uniequip_001_slchan": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 1
+                                    },
+                                    "uniequip_002_slchan": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 3
+                                    }
+                                },
+                                "skin": "char_173_slchan@wild#1"
                             }
                         ]
                     }
                 ],
-                "count": 1
+                "count": 0
             },
             "layer": [
                 {
@@ -870,7 +909,7 @@
                 },
                 {
                     "id": "lt_11_02",
-                    "try": 0,
+                    "try": 1,
                     "pass": false
                 },
                 {
@@ -902,7 +941,7 @@
                 "coord": 1,
                 "isHard": false,
                 "start": 1712466133,
-                "state": "RECRUIT",
+                "state": "STANDBY",
                 "strategy": "OPTIMIZE",
                 "tactical": {
                     "PIONEER": "tatical_pioneer_01",
@@ -919,5 +958,5 @@
             "trap": []
         }
     },
-    "currentStage": "lt_11_01"
+    "currentStage": "lt_11_02"
 }
