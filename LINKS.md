@@ -169,5 +169,3 @@
 - [ ] `/gacha/advancedGacha`
 - [ ] `/gacha/tenAdvancedGacha`
 - [ ] `/gacha/getPoolDetail`
-
-
