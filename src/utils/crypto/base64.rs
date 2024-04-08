@@ -13,6 +13,7 @@ pub fn encode_bytes(input: Vec<u8>) -> String {
     STANDARD.encode(input)
 }
 
+#[allow(dead_code)]
 pub fn decode<T: Display>(input: T) -> Result<String> {
     Ok(String::from_utf8(STANDARD.decode(input.to_string())?)?)
 }

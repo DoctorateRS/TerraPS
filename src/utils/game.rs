@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-use super::{battle_data::BattleDataDecoder, crypto::base64::decode, json::read_json};
+use super::{battle_data::BattleDataDecoder, json::read_json};
 use reqwest::get;
 use serde_json::Value;
 

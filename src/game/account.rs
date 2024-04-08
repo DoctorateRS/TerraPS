@@ -1,11 +1,17 @@
 use crate::{
     constants::{
-        config::{CONFIG_JSON_PATH, MAILLIST_PATH, SYNC_DATA_TEMPLATE_PATH},
+        config::{CONFIG_JSON_PATH, MAILLIST_PATH, SQUADS_PATH, SYNC_DATA_TEMPLATE_PATH},
         url::*,
-        user::USER_JSON_PATH,
+        user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, game::*, json::*, zipper},
+    utils::{
+        comp::max,
+        crypto::{base64::encode, md5::md5_digest},
+        game::*,
+        json::{self, *},
+        zipper,
+    },
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -505,7 +511,7 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         let chapter = &act_table["archiveItemUnlockDataMap"][&log]["chapterId"].as_str().unwrap();
-        let mut story_array = Vec::new();
+        let mut story_array;
         if get_keys(&player_data["user"]["deepSea"]["logs"])
             .iter()
             .map(|s| s.as_str())
@@ -550,6 +556,82 @@ pub async fn account_sync_data() -> JSON {
     player_data["ts"] = json!(time());
 
     // REPLAY CODES
+    let replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
+
+    // TODO: MAKE THIS DYNAMIC
+    let cur_char_conf = "95cf97c228e6c235cd6503e5eeb1b737";
+    // md5(b64encode(json.dumps(edit_json).encode())).hexdigest()
+
+    if get_keys(&replay_data["saved"]).contains(&cur_char_conf.to_string()) {
+        for replay in get_keys(&replay_data["saved"][&cur_char_conf]) {
+            if get_keys(&player_data["user"]["dungeon"]["stages"]).contains(&replay) {
+                player_data["user"]["dungeon"]["stages"][replay]["hasBattleReplay"] = json!(1);
+            }
+        }
+    }
+
+    let squads = read_json(SQUADS_PATH);
+
+    let mut char_id_map = json!({});
+
+    for char in get_values(&player_data["user"]["troop"]["chars"]) {
+        char_id_map[char["charId"].as_str().unwrap()] = char["instId"].clone();
+    }
+
+    let mut squads_data = json!({});
+    for id in get_keys(&squads) {
+        let mut ct = 0;
+        let mut slots = Vec::new();
+        for (cntr, slot) in squads[id.to_string()]["slots"].as_array().unwrap().iter().enumerate() {
+            let mut slot_data = json!({});
+            if cntr >= 12 {
+                break;
+            }
+            let char_id = slot["charId"].as_str().unwrap();
+            if char_id_map.get(char_id).is_some() {
+                let inst_id = char_id_map[char_id].as_i64().unwrap();
+                slot_data["charInstId"] = json!(inst_id);
+                let current_equip = slot["currentEquip"].as_str();
+                match current_equip {
+                    Some(equip) => {
+                        if get_keys(&player_data["user"]["troop"]["chars"][inst_id.to_string()]["equip"]).contains(&equip.to_string()) {
+                            slot_data["currentEquip"] = json!(equip);
+                        } else {
+                            slot_data["currentEquip"] = Value::Null;
+                        }
+                    }
+                    None => {
+                        slot_data["currentEquip"] = Value::Null;
+                    }
+                }
+                slot_data["skillIndex"] = slot["skillIndex"].clone();
+                slots.push(slot_data);
+                ct += 1;
+            }
+        }
+        for _ in ct..12 {
+            slots.push(Value::Null)
+        }
+        if slots.len() > 12 {
+            slots = slots[..12].to_vec();
+        }
+        squads_data[id.to_string()]["squadId"] = json!(id.to_string());
+        squads_data[id.to_string()]["name"] = squads[id.to_string()]["name"].clone();
+        squads_data[id.to_string()]["slots"] = json!(slots);
+    }
+
+    let secretary = &config["userConfig"]["secretary"];
+    let secretary_skin_id = &config["userConfig"]["secretarySkinId"];
+    let bg = &config["userConfig"]["background"];
+    let theme = &config["userConfig"]["theme"];
+
+    player_data["user"]["status"]["secretary"] = json!(secretary);
+    player_data["user"]["status"]["secretarySkinId"] = json!(secretary_skin_id);
+    player_data["user"]["background"]["selected"] = json!(bg);
+    player_data["user"]["homeTheme"]["selected"] = json!(theme);
+
+    let tower_ss = &config["towerConfig"]["season"];
+    player_data["user"]["tower"]["season"]["id"] = json!(tower_ss);
 
     write_json(USER_JSON_PATH, player_data.clone());
     Json(player_data)

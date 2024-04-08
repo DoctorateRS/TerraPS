@@ -31,6 +31,7 @@ impl BattleDataDecoder {
         Self::default()
     }
 
+    #[allow(dead_code)]
     pub fn new_with_login_time(login_time: u32) -> Self {
         Self { login_time }
     }
