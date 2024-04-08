@@ -1,4 +1,4 @@
-# DoctorateRS
+# TerraPS
 
 - Oxidized.
 - __NOTE:__ Not working yet. Refer to [this](https://github.com/DoctorateRS/DoctorateRS/issues/2).
