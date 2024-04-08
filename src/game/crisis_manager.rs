@@ -117,7 +117,7 @@ pub mod crisis_v2 {
                 }
                 let mut flag2 = false;
                 for slot in get_keys(&nodes[&slot_pk_id][&mutual_exclusion_group]) {
-                    if nodes[&slot_pk_id][&mutual_exclusion_group][&slot].as_u64().unwrap() >= score_max {
+                    if nodes[&slot_pk_id][&mutual_exclusion_group][&slot].as_u64().unwrap() != score_max {
                         continue;
                     }
                     if rune_slots.contains(&slot.as_str()) {
