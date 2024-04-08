@@ -11,6 +11,8 @@ use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
 use uuid::Uuid;
 
+use super::building::building_sync;
+
 pub async fn account_login(header: HeaderMap) -> JSON {
     let fallback_uid = Uuid::new_v4().to_string();
     let uid = match header.get("Uid") {
@@ -45,6 +47,8 @@ pub async fn account_sync_data() -> JSON {
     let story_review_table = update_data(STORY_REVIEW_TABLE_URL).await;
     let story_review_meta_table = update_data(STORY_REVIEW_META_TABLE_URL).await;
     let enemy_handbook_table = update_data(ENEMY_HANDBOOK_TABLE_URL).await;
+    let medal_table = update_data(MEDAL_TABLE_URL).await;
+    let rlv2_table = update_data(RL_TABLE_URL).await;
 
     let mut count = 0;
     let mut count_inst_id;
@@ -657,7 +661,27 @@ pub async fn account_sync_data() -> JSON {
     }
     player_data["user"]["storyreview"]["groups"] = story_review_groups;
 
+    let mut enemies = json!({});
+    for enemy in get_keys(&enemy_handbook_table["enemyData"]) {
+        enemies[&enemy] = json!(1);
+    }
+    player_data["user"]["dexNav"]["enemy"]["enemies"] = enemies;
+
+    for act_id in get_keys(&acitivity_table["activity"]) {
+        if player_data["user"]["activity"].get(&act_id).is_none() {
+            player_data["user"]["activity"][&act_id] = json!({});
+        }
+        for act_data in get_keys(&acitivity_table["activity"][&act_id]) {
+            if player_data["user"]["activity"][&act_id].get(&act_data).is_none() {
+                player_data["user"]["activity"][&act_id] = json!({});
+            }
+        }
+    }
+
     write_json(USER_JSON_PATH, player_data.clone());
+
+    let Json(building) = building_sync().await;
+    player_data["user"]["building"] = json!(building["playerDataDelta"]["modified"]["building"]);
     Json(player_data)
 }
 
