@@ -64,25 +64,25 @@
 - [ ] `/tower/settleGame`
 - [x] `/pay/getUnconfirmedOrderIdList`
 - [x] `/u8/pay/getAllProductList`
-- [ ] `/quest/battleStart`
-- [ ] `/quest/battleFinish`
-- [ ] `/quest/saveBattleReplay`
-- [ ] `/quest/getBattleReplay`
+- [x] `/quest/battleStart`
+- [x] `/quest/battleFinish`
+- [x] `/quest/saveBattleReplay`
+- [x] `/quest/getBattleReplay`
 - [x] `/quest/changeSquadName`
 - [x] `/quest/squadFormation`
 - [x] `/quest/getAssistList`
 - [x] `/quest/battleContinue`
 - [ ] `/storyreview/markStoryAcceKnown`
 - [ ] `/storyreview/readStory`
-- [ ] `/act25side/battleStart`
-- [ ] `/act25side/battleFinish`
+- [x] `/act25side/battleStart`
+- [x] `/act25side/battleFinish`
 - [ ] `/car/confirmBattleCar`
 - [ ] `/templateTrap/setTrapSquad`
-- [ ] `/activity/act24side/battleStart`
-- [ ] `/activity/act24side/battleFinish`
-- [ ] `/activity/act24side/setTool`
-- [ ] `/activity/bossRush/battleStart`
-- [ ] `/activity/bossRush/battleFinish`
+- [x] `/activity/act24side/battleStart`
+- [x] `/activity/act24side/battleFinish`
+- [x] `/activity/act24side/setTool`
+- [x] `/activity/bossRush/battleStart`
+- [x] `/activity/bossRush/battleFinish`
 - [ ] `/aprilFool/act5fun/battleStart`
 - [ ] `/aprilFool/act5fun/battleFinish`
 - [ ] `/aprilFool/act4fun/battleStart`
@@ -90,7 +90,7 @@
 - [ ] `/aprilFool/act4fun/liveSettle`
 - [ ] `/aprilFool/act3fun/battleStart`
 - [ ] `/aprilFool/act3fun/battleFinish`
-- [ ] `/activity/bossRush/relicSelect`
+- [x] `/activity/bossRush/relicSelect`
 - [x] `/retro/typeAct20side/competitionStart`
 - [x] `/retro/typeAct20side/competitionFinish`
 

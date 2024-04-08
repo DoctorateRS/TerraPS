@@ -37,6 +37,7 @@ pub fn routes() -> Router {
         .nest("/app", app_routes())
         .nest("/account", account_routes())
         .nest("/activity", activity_routes())
+        .nest("/act25side", act25side_routes())
         .nest("/aprilFool", april_fools_routes())
         .nest("/building", building_routes())
         .nest("/businessCard", business_card_routes())
@@ -81,6 +82,15 @@ fn activity_routes() -> Router {
     Router::new()
         .route("/bossRush/relicSelect", post(bossrush::relic_select))
         .route("/bossRush/battleStart", post(quest::quest_battle_start))
+        .route("/act24side/battleStart", post(quest::quest_battle_start))
+        .route("/act24side/battleFinish", post(quest::quest_battle_finish))
+        .route("/act24side/setTool", post(quest::set_tool))
+}
+
+fn act25side_routes() -> Router {
+    Router::new()
+        .route("/battleStart", post(quest::quest_battle_start))
+        .route("/battleFinish", post(quest::quest_battle_finish))
 }
 
 fn april_fools_routes() -> Router {

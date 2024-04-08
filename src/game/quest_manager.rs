@@ -1,10 +1,9 @@
 pub mod quest {
     use axum::Json;
-    use serde_json::{json, Value};
+    use serde_json::json;
 
     use crate::{
         constants::{
-            self,
             config::CONFIG_JSON_PATH,
             user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
         },
