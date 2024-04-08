@@ -199,6 +199,8 @@ fn social_routes() -> Router {
     Router::new()
         .route("/setAssistCharList", post(social::social_set_assist_char_list))
         .route("/setCardShowMedal", post(social::social_set_card_medal))
+        .route("/getSortListInfo", post(social::social_get_sort_list_info))
+        .route("/searchPlayer", post(social::social_search_player))
 }
 
 fn story_routes() -> Router {
