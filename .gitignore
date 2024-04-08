@@ -5,3 +5,6 @@
 /.idea
 /case
 /dump
+*.txt
+!game.txt
+*.json
