@@ -23,9 +23,16 @@ fn update_building_char_inst_id_list(building_data: Value) -> Value {
             if key.as_i64().unwrap() == -1 {
                 continue;
             }
-            let key = key.as_str().unwrap();
-            building_data["chars"][key]["roomSlotId"] = Value::String(room_slot.to_string());
-            building_data["chars"][key]["index"] = Value::Number(Number::from(
+            let key_str = match key.as_str() {
+                Some(x) => x.to_string(),
+                None => {
+                    dbg!(key);
+                    let key = key.as_i64().unwrap();
+                    key.to_string()
+                }
+            };
+            building_data["chars"][&key_str]["roomSlotId"] = Value::String(room_slot.to_string());
+            building_data["chars"][&key_str]["index"] = Value::Number(Number::from(
                 building_data["roomSlots"][&room_slot]["charInstIds"]
                     .as_array()
                     .unwrap()

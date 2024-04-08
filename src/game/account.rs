@@ -575,8 +575,15 @@ pub async fn account_sync_data() -> JSON {
 
     let mut char_id_map = json!({});
 
-    for char in get_values(&player_data["user"]["troop"]["chars"]) {
-        char_id_map[char["charId"].as_str().unwrap()] = char["instId"].clone();
+    for (_, char) in player_data["user"]["troop"]["chars"].clone().as_object().unwrap() {
+        let char_id = match char["charId"].as_str() {
+            Some(char_id) => char_id,
+            None => {
+                dbg!(char);
+                continue;
+            }
+        };
+        char_id_map[char_id] = char["instId"].clone();
     }
 
     let mut squads_data = json!({});
