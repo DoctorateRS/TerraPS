@@ -12,3 +12,7 @@ pub fn encode<T: Display>(input: T) -> String {
 pub fn decode<T: Display>(input: T) -> Result<String> {
     Ok(String::from_utf8(STANDARD.decode(input.to_string())?)?)
 }
+
+pub fn decode_bytes<T: Display>(input: T) -> Result<Vec<u8>> {
+    Ok(STANDARD.decode(input.to_string())?)
+}

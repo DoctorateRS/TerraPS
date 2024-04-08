@@ -1,6 +1,6 @@
 [package]
 name = "doctorate-rs"
-version = "0.2.4"
+version = "0.2.5"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh"]
