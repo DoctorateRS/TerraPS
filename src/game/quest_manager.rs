@@ -1,10 +1,17 @@
 pub mod quest {
     use axum::Json;
-    use serde_json::json;
+    use serde_json::{json, Value};
 
     use crate::{
-        constants::user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
-        utils::json::{get_keys, read_json, write_json, JSON},
+        constants::{
+            self,
+            config::CONFIG_JSON_PATH,
+            user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
+        },
+        utils::{
+            battle_replay::{decrypt_battle_replay, encrypt_battle_replay},
+            json::{get_keys, read_json, write_json, JSON},
+        },
     };
 
     pub async fn quest_battle_start(Json(payload): JSON) -> JSON {
@@ -56,9 +63,68 @@ pub mod quest {
         }))
     }
 
-    pub async fn quest_save_battle_replay() {}
+    pub async fn quest_save_battle_replay(Json(payload): JSON) -> JSON {
+        let config = read_json(CONFIG_JSON_PATH);
+        let anon = config["battleReplayConfig"]["anonymous"].as_bool().unwrap();
+        let replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
 
-    pub async fn quest_get_battle_replay() {}
+        let char_config = payload["currentCharConfig"].as_str().unwrap();
+        let current = replay_data["current"].as_str().unwrap();
+
+        let encoded_battle_replay = payload["battleReplay"].as_str().unwrap();
+        let mut decoded_battle_replay = decrypt_battle_replay(encoded_battle_replay.to_string()).unwrap();
+
+        if anon {
+            decoded_battle_replay["campaignOnlyVersion"] = json!(0);
+            decoded_battle_replay["timestamp"] = json!("1700000000");
+            decoded_battle_replay["journal"]["metadata"]["saveTime"] = json!("2023-11-15T06:13:20Z");
+        }
+
+        let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
+        if get_keys(&replay_data["saved"]).contains(&char_config.to_string()) {
+            replay_data["saved"][char_config][current] = decoded_battle_replay;
+        } else {
+            replay_data["saved"][char_config] = json!({
+                current: decoded_battle_replay
+            });
+        }
+        write_json(BATTLE_REPLAY_JSON_PATH, replay_data.clone());
+
+        let current = replay_data["current"].as_str().unwrap();
+        Json(json!({
+            "result": 0,
+            "playerDataDelta": {
+                "modified": {
+                    "dungeon": {
+                        "stages": {
+                            current: {
+                                "hasBattleReplay": 1
+                            }
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn quest_get_battle_replay(Json(payload): JSON) -> JSON {
+        let stage_id = payload["stageId"].as_str().unwrap();
+
+        let replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
+        let current_char_conf = replay_data["currentCharConfig"].as_str().unwrap();
+
+        let decoded_battle_replay = replay_data["saved"][current_char_conf][stage_id].clone();
+        let encoded_battle_replay = encrypt_battle_replay(decoded_battle_replay).unwrap();
+
+        Json(json!({
+            "battleReplay": encoded_battle_replay,
+            "playerDataDelta": {
+                "deleted": {},
+                "modified": {}
+            }
+        }))
+    }
 
     pub async fn squad_change_name(Json(payload): JSON) -> JSON {
         let mut data = json!({

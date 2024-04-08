@@ -171,6 +171,8 @@ fn quest_routes() -> Router {
         .route("/battleFinish", post(quest::quest_battle_finish))
         .route("/changeSquadName", post(quest::squad_change_name))
         .route("/squadFormation", post(quest::squad_set_formation))
+        .route("/saveBattleReplay", post(quest::quest_save_battle_replay))
+        .route("/getBattleReplay", post(quest::quest_get_battle_replay))
 }
 
 fn retro_routes() -> Router {
