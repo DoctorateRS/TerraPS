@@ -19404,48 +19404,35 @@
                 "spst_08-02": {
                     "id": "spst_08-02",
                     "type": "STAGE",
-                    "val": [
-                        true
-                    ],
+                    "val": [true],
                     "fts": 1665223808,
                     "rts": 1665223844
                 },
                 "spst_08-04": {
                     "id": "spst_08-04",
                     "type": "STAGE",
-                    "val": [
-                        true
-                    ],
+                    "val": [true],
                     "fts": 1640364122,
                     "rts": 1640364160
                 },
                 "spst_08-01": {
                     "id": "spst_08-01",
                     "type": "STAGE",
-                    "val": [
-                        true
-                    ],
+                    "val": [true],
                     "fts": 1637386717,
                     "rts": 1637386763
                 },
                 "spst_08-03": {
                     "id": "spst_08-03",
                     "type": "STAGE",
-                    "val": [
-                        true
-                    ],
+                    "val": [true],
                     "fts": 1659777304,
                     "rts": 1659777316
                 },
                 "spst_08-05": {
                     "id": "spst_08-05",
                     "type": "STAGE",
-                    "val": [
-                        [
-                            3,
-                            3
-                        ]
-                    ],
+                    "val": [[3, 3]],
                     "fts": 1665223849,
                     "rts": 1665223886
                 }
@@ -19696,7 +19683,7 @@
                 "act2switch": {},
                 "act1switch": {}
             },
-            "MINISTORY": {
+            "MINI": {
                 "act16mini": {},
                 "act15mini": {},
                 "act14mini": {},
@@ -21373,11 +21360,7 @@
             "globalVoiceLan": "JP"
         },
         "nameCardStyle": {
-            "componentOrder": [
-                "module_sign",
-                "module_assist",
-                "module_medal"
-            ],
+            "componentOrder": ["module_sign", "module_assist", "module_medal"],
             "skin": {
                 "selected": "nc_rhodes_default",
                 "state": {
@@ -41280,11 +41263,7 @@
             }
         },
         "social": {
-            "assistCharList": [
-                null,
-                null,
-                null
-            ]
+            "assistCharList": [null, null, null]
         },
         "dexNav": {
             "character": {
@@ -56857,136 +56836,46 @@
                 "node_ending_5": 2
             },
             "choices": {
-                "node_choice1_1": [
-                    2
-                ],
-                "node_choice1_2": [
-                    2,
-                    2
-                ],
-                "node_choice1_3": [
-                    2
-                ],
-                "node_choice1_4": [
-                    2
-                ],
-                "node_choice1_5": [
-                    2,
-                    2
-                ],
-                "node_choice2_1": [
-                    2,
-                    2
-                ],
-                "node_choice2_2": [
-                    2
-                ],
-                "node_choice2_3": [
-                    2,
-                    2
-                ],
-                "node_choice2_4": [
-                    2,
-                    2
-                ],
-                "node_choice2_5": [
-                    2
-                ],
-                "node_choice2_6": [
-                    2
-                ],
-                "node_choice2_7": [
-                    2,
-                    2
-                ],
-                "node_choice2_8": [
-                    2
-                ],
-                "node_choice2_9": [
-                    2
-                ],
-                "node_choice3_1": [
-                    2
-                ],
-                "node_choice3_2_1": [
-                    2
-                ],
-                "node_choice3_3_1": [
-                    2
-                ],
-                "node_choice3_4_1": [
-                    2
-                ],
-                "node_choice3_4_2": [
-                    2
-                ],
-                "node_choice3_3_2": [
-                    2
-                ],
-                "node_choice3_2_2": [
-                    2
-                ],
-                "node_choice3_3_3": [
-                    2
-                ],
-                "node_choice3_4_3": [
-                    2
-                ],
-                "node_choice3_4_4": [
-                    2
-                ],
-                "node_choice3_3_4": [
-                    2
-                ],
-                "node_choice3_2_3": [
-                    2
-                ],
-                "node_choice3_3_5": [
-                    2
-                ],
-                "node_choice5_1": [
-                    2,
-                    2
-                ],
-                "node_choice5_2": [
-                    2
-                ],
-                "node_choice5_3": [
-                    2
-                ],
-                "node_choice5_4": [
-                    2,
-                    2
-                ],
-                "node_choice5_5": [
-                    2
-                ],
-                "node_choice5_6": [
-                    2
-                ],
-                "node_choice5_7": [
-                    2,
-                    2
-                ],
-                "node_choice5_8": [
-                    2
-                ],
-                "node_choice5_9": [
-                    2
-                ],
-                "node_choice5_10": [
-                    2,
-                    2
-                ],
-                "node_choice5_11": [
-                    2
-                ],
-                "node_choice5_12": [
-                    2
-                ],
-                "node_choice5_13": [
-                    2
-                ]
+                "node_choice1_1": [2],
+                "node_choice1_2": [2, 2],
+                "node_choice1_3": [2],
+                "node_choice1_4": [2],
+                "node_choice1_5": [2, 2],
+                "node_choice2_1": [2, 2],
+                "node_choice2_2": [2],
+                "node_choice2_3": [2, 2],
+                "node_choice2_4": [2, 2],
+                "node_choice2_5": [2],
+                "node_choice2_6": [2],
+                "node_choice2_7": [2, 2],
+                "node_choice2_8": [2],
+                "node_choice2_9": [2],
+                "node_choice3_1": [2],
+                "node_choice3_2_1": [2],
+                "node_choice3_3_1": [2],
+                "node_choice3_4_1": [2],
+                "node_choice3_4_2": [2],
+                "node_choice3_3_2": [2],
+                "node_choice3_2_2": [2],
+                "node_choice3_3_3": [2],
+                "node_choice3_4_3": [2],
+                "node_choice3_4_4": [2],
+                "node_choice3_3_4": [2],
+                "node_choice3_2_3": [2],
+                "node_choice3_3_5": [2],
+                "node_choice5_1": [2, 2],
+                "node_choice5_2": [2],
+                "node_choice5_3": [2],
+                "node_choice5_4": [2, 2],
+                "node_choice5_5": [2],
+                "node_choice5_6": [2],
+                "node_choice5_7": [2, 2],
+                "node_choice5_8": [2],
+                "node_choice5_9": [2],
+                "node_choice5_10": [2, 2],
+                "node_choice5_11": [2],
+                "node_choice5_12": [2],
+                "node_choice5_13": [2]
             },
             "events": {
                 "event1_1": 1,
@@ -57291,10 +57180,7 @@
                 }
             },
             "logs": {
-                "chapter_1": [
-                    "act17side_log_1",
-                    "act17side_log_2"
-                ],
+                "chapter_1": ["act17side_log_1", "act17side_log_2"],
                 "chapter_2": [
                     "act17side_log_3",
                     "act17side_log_4",
@@ -57345,10 +57231,7 @@
                     "act17side_log_35",
                     "act17side_log_36"
                 ],
-                "chapter_10": [
-                    "act17side_log_37",
-                    "act17side_log_38"
-                ],
+                "chapter_10": ["act17side_log_37", "act17side_log_38"],
                 "chapter_11": [
                     "act17side_log_39",
                     "act17side_log_40",
@@ -57358,10 +57241,7 @@
                     "act17side_log_44",
                     "act17side_log_45"
                 ],
-                "chapter_12": [
-                    "act17side_log_46",
-                    "act17side_log_47"
-                ],
+                "chapter_12": ["act17side_log_46", "act17side_log_47"],
                 "chapter_13": [
                     "act17side_log_48",
                     "act17side_log_49",
@@ -57423,12 +57303,8 @@
                     "act17side_log_97",
                     "act17side_log_98"
                 ],
-                "chapter_18": [
-                    "act17side_log_99"
-                ],
-                "chapter_19": [
-                    "act17side_log_100"
-                ],
+                "chapter_18": ["act17side_log_99"],
+                "chapter_19": ["act17side_log_100"],
                 "chapter_20": [
                     "act17side_log_101",
                     "act17side_log_102",
@@ -57573,165 +57449,73 @@
                     },
                     "tower_n_01": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_02": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_03": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_04": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_05": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_06": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_07": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_08": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_09": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_10": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_11": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_12": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     }
@@ -57955,12 +57739,7 @@
                         },
                         "base": {
                             "baseLv": 6,
-                            "upgradeProgress": [
-                                [
-                                    0,
-                                    1
-                                ]
-                            ],
+                            "upgradeProgress": [[0, 1]],
                             "trapLimit": {},
                             "portableUnlock": true,
                             "outpostUnlock": true,
@@ -58009,15 +57788,8 @@
                                         "type": 1,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -140,
-                                                189
-                                            ],
-                                            "adj": [
-                                                "n3259",
-                                                "n8340",
-                                                "n6368"
-                                            ],
+                                            "pos": [-140, 189],
+                                            "adj": ["n3259", "n8340", "n6368"],
                                             "depth": 0
                                         },
                                         "stageId": "sandbox_1_27",
@@ -58028,10 +57800,7 @@
                                         "type": 14,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -102,
-                                                -96
-                                            ],
+                                            "pos": [-102, -96],
                                             "adj": [],
                                             "depth": 0
                                         },
@@ -58043,14 +57812,8 @@
                                         "type": 2,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -283.58728,
-                                                508.190674
-                                            ],
-                                            "adj": [
-                                                "n88A8",
-                                                "nB32E"
-                                            ],
+                                            "pos": [-283.58728, 508.190674],
+                                            "adj": ["n88A8", "nB32E"],
                                             "depth": 1
                                         },
                                         "stageId": "sandbox_1_26",
@@ -58061,14 +57824,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -718,
-                                                452
-                                            ],
-                                            "adj": [
-                                                "n8340",
-                                                "n2259"
-                                            ],
+                                            "pos": [-718, 452],
+                                            "adj": ["n8340", "n2259"],
                                             "depth": 2
                                         },
                                         "stageId": "sandbox_1_01",
@@ -58079,14 +57836,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -751,
-                                                142
-                                            ],
-                                            "adj": [
-                                                "n3259",
-                                                "nCFA1"
-                                            ],
+                                            "pos": [-751, 142],
+                                            "adj": ["n3259", "nCFA1"],
                                             "depth": 2
                                         },
                                         "stageId": "sandbox_1_09",
@@ -58097,14 +57848,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1122,
-                                                181
-                                            ],
-                                            "adj": [
-                                                "n20CB",
-                                                "n88A8"
-                                            ],
+                                            "pos": [-1122, 181],
+                                            "adj": ["n20CB", "n88A8"],
                                             "depth": 3
                                         },
                                         "stageId": "sandbox_1_56",
@@ -58115,15 +57860,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1599,
-                                                -57
-                                            ],
-                                            "adj": [
-                                                "n97C7",
-                                                "n2259",
-                                                "n3740"
-                                            ],
+                                            "pos": [-1599, -57],
+                                            "adj": ["n97C7", "n2259", "n3740"],
                                             "depth": 4
                                         },
                                         "stageId": "sandbox_1_38",
@@ -58134,14 +57872,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1517,
-                                                -299
-                                            ],
-                                            "adj": [
-                                                "n20CB",
-                                                "nD54F"
-                                            ],
+                                            "pos": [-1517, -299],
+                                            "adj": ["n20CB", "nD54F"],
                                             "depth": 5
                                         },
                                         "stageId": "sandbox_1_54",
@@ -58152,15 +57884,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1732,
-                                                -434
-                                            ],
-                                            "adj": [
-                                                "n97C7",
-                                                "n9EF3",
-                                                "nED84"
-                                            ],
+                                            "pos": [-1732, -434],
+                                            "adj": ["n97C7", "n9EF3", "nED84"],
                                             "depth": 6
                                         },
                                         "stageId": "sandbox_1_55",
@@ -58171,15 +57896,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2011,
-                                                -144
-                                            ],
-                                            "adj": [
-                                                "n07D6",
-                                                "nA226",
-                                                "nE038"
-                                            ],
+                                            "pos": [-2011, -144],
+                                            "adj": ["n07D6", "nA226", "nE038"],
                                             "depth": 9
                                         },
                                         "stageId": "sandbox_1_38",
@@ -58190,14 +57908,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2135,
-                                                -442.999969
-                                            ],
-                                            "adj": [
-                                                "nB55F",
-                                                "nED84"
-                                            ],
+                                            "pos": [-2135, -442.999969],
+                                            "adj": ["nB55F", "nED84"],
                                             "depth": 8
                                         },
                                         "stageId": "sandbox_1_72",
@@ -58208,13 +57920,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2274,
-                                                -292
-                                            ],
-                                            "adj": [
-                                                "nB55F"
-                                            ],
+                                            "pos": [-2274, -292],
+                                            "adj": ["nB55F"],
                                             "depth": 10
                                         },
                                         "stageId": "sandbox_1_64",
@@ -58225,13 +57932,8 @@
                                         "type": 8,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2246,
-                                                -1218
-                                            ],
-                                            "adj": [
-                                                "nA659"
-                                            ],
+                                            "pos": [-2246, -1218],
+                                            "adj": ["nA659"],
                                             "depth": 9
                                         },
                                         "stageId": "sandbox_1_28",
@@ -58242,15 +57944,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1970.00012,
-                                                -997.3706
-                                            ],
-                                            "adj": [
-                                                "n0446",
-                                                "nED84",
-                                                "n8375"
-                                            ],
+                                            "pos": [-1970.00012, -997.3706],
+                                            "adj": ["n0446", "nED84", "n8375"],
                                             "depth": 8
                                         },
                                         "stageId": "sandbox_1_39",
@@ -58261,10 +57956,7 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1834.99988,
-                                                -772.000061
-                                            ],
+                                            "pos": [-1834.99988, -772.000061],
                                             "adj": [
                                                 "nA659",
                                                 "nA226",
@@ -58281,14 +57973,8 @@
                                         "type": 10,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1456,
-                                                -1040
-                                            ],
-                                            "adj": [
-                                                "nED84",
-                                                "n81E8"
-                                            ],
+                                            "pos": [-1456, -1040],
+                                            "adj": ["nED84", "n81E8"],
                                             "depth": 7
                                         },
                                         "stageId": "sandbox_1_70",
@@ -58299,14 +57985,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1121,
-                                                -876
-                                            ],
-                                            "adj": [
-                                                "nEFA5",
-                                                "nCA3B"
-                                            ],
+                                            "pos": [-1121, -876],
+                                            "adj": ["nEFA5", "nCA3B"],
                                             "depth": 6
                                         },
                                         "stageId": "sandbox_1_40",
@@ -58317,15 +57997,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1471,
-                                                -582
-                                            ],
-                                            "adj": [
-                                                "n607D",
-                                                "nD54F",
-                                                "n3740"
-                                            ],
+                                            "pos": [-1471, -582],
+                                            "adj": ["n607D", "nD54F", "n3740"],
                                             "depth": 5
                                         },
                                         "stageId": "sandbox_1_40",
@@ -58336,14 +58009,8 @@
                                         "type": 2,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -442.199036,
-                                                12.4334812
-                                            ],
-                                            "adj": [
-                                                "n35C1",
-                                                "nB32E"
-                                            ],
+                                            "pos": [-442.199036, 12.4334812],
+                                            "adj": ["n35C1", "nB32E"],
                                             "depth": 1
                                         },
                                         "stageId": "sandbox_1_24",
@@ -58354,14 +58021,8 @@
                                         "type": 2,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                168.191132,
-                                                23.1137753
-                                            ],
-                                            "adj": [
-                                                "nD7CE",
-                                                "nB32E"
-                                            ],
+                                            "pos": [168.191132, 23.1137753],
+                                            "adj": ["nD7CE", "nB32E"],
                                             "depth": 1
                                         },
                                         "stageId": "sandbox_1_25",
@@ -58372,15 +58033,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                229.000015,
-                                                -248.000031
-                                            ],
-                                            "adj": [
-                                                "n2D12",
-                                                "n6368",
-                                                "n9096"
-                                            ],
+                                            "pos": [229.000015, -248.000031],
+                                            "adj": ["n2D12", "n6368", "n9096"],
                                             "depth": 2
                                         },
                                         "stageId": "sandbox_1_69",
@@ -58391,14 +58045,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -139,
-                                                -311
-                                            ],
-                                            "adj": [
-                                                "nD7CE",
-                                                "nBEB8"
-                                            ],
+                                            "pos": [-139, -311],
+                                            "adj": ["nD7CE", "nBEB8"],
                                             "depth": 3
                                         },
                                         "stageId": "sandbox_1_74",
@@ -58409,13 +58057,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -405.000031,
-                                                -1495.7
-                                            ],
-                                            "adj": [
-                                                "n71D1"
-                                            ],
+                                            "pos": [-405.000031, -1495.7],
+                                            "adj": ["n71D1"],
                                             "depth": 14
                                         },
                                         "stageId": "sandbox_1_70",
@@ -58426,15 +58069,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -28.0000038,
-                                                -628
-                                            ],
-                                            "adj": [
-                                                "n22B0",
-                                                "nD7CE",
-                                                "nD2FB"
-                                            ],
+                                            "pos": [-28.0000038, -628],
+                                            "adj": ["n22B0", "nD7CE", "nD2FB"],
                                             "depth": 3
                                         },
                                         "stageId": "sandbox_1_38",
@@ -58445,10 +58081,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -786,
-                                                -713
-                                            ],
+                                            "pos": [-786, -713],
                                             "adj": [
                                                 "n22B0",
                                                 "nDDDC",
@@ -58465,15 +58098,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -408.939972,
-                                                -738
-                                            ],
-                                            "adj": [
-                                                "n9096",
-                                                "nCA3B",
-                                                "nBEB8"
-                                            ],
+                                            "pos": [-408.939972, -738],
+                                            "adj": ["n9096", "nCA3B", "nBEB8"],
                                             "depth": 4
                                         },
                                         "stageId": "sandbox_1_56",
@@ -58484,14 +58110,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1205.4,
-                                                -713
-                                            ],
-                                            "adj": [
-                                                "n9EF3",
-                                                "n14BC"
-                                            ],
+                                            "pos": [-1205.4, -713],
+                                            "adj": ["n9EF3", "n14BC"],
                                             "depth": 6
                                         },
                                         "stageId": "sandbox_1_71",
@@ -58502,13 +58122,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -976.8,
-                                                -539
-                                            ],
-                                            "adj": [
-                                                "n607D"
-                                            ],
+                                            "pos": [-976.8, -539],
+                                            "adj": ["n607D"],
                                             "depth": 7
                                         },
                                         "stageId": "sandbox_1_62",
@@ -58519,15 +58134,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -387,
-                                                -507.000031
-                                            ],
-                                            "adj": [
-                                                "nF586",
-                                                "n2D12",
-                                                "n22B0"
-                                            ],
+                                            "pos": [-387, -507.000031],
+                                            "adj": ["nF586", "n2D12", "n22B0"],
                                             "depth": 4
                                         },
                                         "stageId": "sandbox_1_69",
@@ -58538,15 +58146,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -500,
-                                                -374
-                                            ],
-                                            "adj": [
-                                                "nBEB8",
-                                                "nDDDC",
-                                                "nCA3B"
-                                            ],
+                                            "pos": [-500, -374],
+                                            "adj": ["nBEB8", "nDDDC", "nCA3B"],
                                             "depth": 5
                                         },
                                         "stageId": "sandbox_1_37",
@@ -58557,10 +58158,7 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1139,
-                                                -358
-                                            ],
+                                            "pos": [-1139, -358],
                                             "adj": [
                                                 "n20CB",
                                                 "nDDDC",
@@ -58577,14 +58175,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -884,
-                                                -101
-                                            ],
-                                            "adj": [
-                                                "n3740",
-                                                "n35C1"
-                                            ],
+                                            "pos": [-884, -101],
+                                            "adj": ["n3740", "n35C1"],
                                             "depth": 3
                                         },
                                         "stageId": "sandbox_1_41",
@@ -58595,15 +58187,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -749,
-                                                -245
-                                            ],
-                                            "adj": [
-                                                "nF586",
-                                                "nCA3B",
-                                                "n3740"
-                                            ],
+                                            "pos": [-749, -245],
+                                            "adj": ["nF586", "nCA3B", "n3740"],
                                             "depth": 5
                                         },
                                         "stageId": "sandbox_1_54",
@@ -58614,15 +58199,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1795.00012,
-                                                328
-                                            ],
-                                            "adj": [
-                                                "nE038",
-                                                "n8667",
-                                                "nFE3F"
-                                            ],
+                                            "pos": [-1795.00012, 328],
+                                            "adj": ["nE038", "n8667", "nFE3F"],
                                             "depth": 11
                                         },
                                         "stageId": "sandbox_1_62",
@@ -58633,14 +58211,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1485,
-                                                197
-                                            ],
-                                            "adj": [
-                                                "n8667",
-                                                "n32FD"
-                                            ],
+                                            "pos": [-1485, 197],
+                                            "adj": ["n8667", "n32FD"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_03",
@@ -58651,15 +58223,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1438,
-                                                507.000031
-                                            ],
-                                            "adj": [
-                                                "nFE3F",
-                                                "n32FD",
-                                                "n4CDF"
-                                            ],
+                                            "pos": [-1438, 507.000031],
+                                            "adj": ["nFE3F", "n32FD", "n4CDF"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_19",
@@ -58670,15 +58235,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1856,
-                                                547
-                                            ],
-                                            "adj": [
-                                                "n8667",
-                                                "nAD10",
-                                                "nAB42"
-                                            ],
+                                            "pos": [-1856, 547],
+                                            "adj": ["n8667", "nAD10", "nAB42"],
                                             "depth": 13
                                         },
                                         "stageId": "sandbox_1_77",
@@ -58689,15 +58247,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1374,
-                                                715
-                                            ],
-                                            "adj": [
-                                                "n4CDF",
-                                                "n6ECA",
-                                                "n8734"
-                                            ],
+                                            "pos": [-1374, 715],
+                                            "adj": ["n4CDF", "n6ECA", "n8734"],
                                             "depth": 14
                                         },
                                         "stageId": "sandbox_1_45",
@@ -58708,10 +58259,7 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2072,
-                                                751
-                                            ],
+                                            "pos": [-2072, 751],
                                             "adj": [
                                                 "n4CDF",
                                                 "n7A2B",
@@ -58728,14 +58276,8 @@
                                         "type": 12,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1908,
-                                                90
-                                            ],
-                                            "adj": [
-                                                "n32FD",
-                                                "nB55F"
-                                            ],
+                                            "pos": [-1908, 90],
+                                            "adj": ["n32FD", "nB55F"],
                                             "depth": 10
                                         },
                                         "stageId": "sandbox_1_14",
@@ -58746,13 +58288,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2187.05347,
-                                                592.5775
-                                            ],
-                                            "adj": [
-                                                "nAB42"
-                                            ],
+                                            "pos": [-2187.05347, 592.5775],
+                                            "adj": ["nAB42"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_04",
@@ -58763,15 +58300,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1596.9989,
-                                                847
-                                            ],
-                                            "adj": [
-                                                "nAB42",
-                                                "nAD10",
-                                                "n7CB1"
-                                            ],
+                                            "pos": [-1596.9989, 847],
+                                            "adj": ["nAB42", "nAD10", "n7CB1"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_03",
@@ -58782,15 +58312,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1219,
-                                                854
-                                            ],
-                                            "adj": [
-                                                "nAD10",
-                                                "n6632",
-                                                "nEE32"
-                                            ],
+                                            "pos": [-1219, 854],
+                                            "adj": ["nAD10", "n6632", "nEE32"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_52",
@@ -58801,15 +58324,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1425,
-                                                1007
-                                            ],
-                                            "adj": [
-                                                "n8734",
-                                                "n7CB1",
-                                                "n663B"
-                                            ],
+                                            "pos": [-1425, 1007],
+                                            "adj": ["n8734", "n7CB1", "n663B"],
                                             "depth": 16
                                         },
                                         "stageId": "sandbox_1_13",
@@ -58820,10 +58336,7 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1882,
-                                                1203
-                                            ],
+                                            "pos": [-1882, 1203],
                                             "adj": [
                                                 "n6632",
                                                 "n6ECA",
@@ -58840,15 +58353,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1999,
-                                                1056
-                                            ],
-                                            "adj": [
-                                                "nAB42",
-                                                "n7CB1",
-                                                "n3DB9"
-                                            ],
+                                            "pos": [-1999, 1056],
+                                            "adj": ["nAB42", "n7CB1", "n3DB9"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_09",
@@ -58859,14 +58365,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1359,
-                                                1332
-                                            ],
-                                            "adj": [
-                                                "n8734",
-                                                "n5D41"
-                                            ],
+                                            "pos": [-1359, 1332],
+                                            "adj": ["n8734", "n5D41"],
                                             "depth": 16
                                         },
                                         "stageId": "sandbox_1_22",
@@ -58877,13 +58377,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1471,
-                                                1159
-                                            ],
-                                            "adj": [
-                                                "n6632"
-                                            ],
+                                            "pos": [-1471, 1159],
+                                            "adj": ["n6632"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_49",
@@ -58894,14 +58389,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1477,
-                                                1459.00012
-                                            ],
-                                            "adj": [
-                                                "nEE32",
-                                                "n3E46"
-                                            ],
+                                            "pos": [-1477, 1459.00012],
+                                            "adj": ["nEE32", "n3E46"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_70",
@@ -58912,10 +58401,7 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1685.00122,
-                                                1639
-                                            ],
+                                            "pos": [-1685.00122, 1639],
                                             "adj": [
                                                 "n7CB1",
                                                 "n5D41",
@@ -58932,14 +58418,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2037.00012,
-                                                1575
-                                            ],
-                                            "adj": [
-                                                "n3E46",
-                                                "n3DB9"
-                                            ],
+                                            "pos": [-2037.00012, 1575],
+                                            "adj": ["n3E46", "n3DB9"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_51",
@@ -58950,14 +58430,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -2114,
-                                                1375
-                                            ],
-                                            "adj": [
-                                                "n542E",
-                                                "n0D60"
-                                            ],
+                                            "pos": [-2114, 1375],
+                                            "adj": ["n542E", "n0D60"],
                                             "depth": 16
                                         },
                                         "stageId": "sandbox_1_67",
@@ -58968,14 +58442,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1765.05359,
-                                                1811.57764
-                                            ],
-                                            "adj": [
-                                                "n3E46",
-                                                "n12CF"
-                                            ],
+                                            "pos": [-1765.05359, 1811.57764],
+                                            "adj": ["n3E46", "n12CF"],
                                             "depth": 18
                                         },
                                         "stageId": "sandbox_1_52",
@@ -58986,13 +58454,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1445.05359,
-                                                2086.57764
-                                            ],
-                                            "adj": [
-                                                "nD5FB"
-                                            ],
+                                            "pos": [-1445.05359, 2086.57764],
+                                            "adj": ["nD5FB"],
                                             "depth": 19
                                         },
                                         "stageId": "sandbox_1_20",
@@ -59003,13 +58466,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1865,
-                                                -1684
-                                            ],
-                                            "adj": [
-                                                "nEA6F"
-                                            ],
+                                            "pos": [-1865, -1684],
+                                            "adj": ["nEA6F"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_65",
@@ -59020,13 +58478,8 @@
                                         "type": 10,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1712.00012,
-                                                -1903.00012
-                                            ],
-                                            "adj": [
-                                                "nEA6F"
-                                            ],
+                                            "pos": [-1712.00012, -1903.00012],
+                                            "adj": ["nEA6F"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_70",
@@ -59037,10 +58490,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1481,
-                                                -1764
-                                            ],
+                                            "pos": [-1481, -1764],
                                             "adj": [
                                                 "n6831",
                                                 "n4121",
@@ -59060,14 +58510,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1740.3833,
-                                                -1453.7428
-                                            ],
-                                            "adj": [
-                                                "n8375",
-                                                "nEA6F"
-                                            ],
+                                            "pos": [-1740.3833, -1453.7428],
+                                            "adj": ["n8375", "nEA6F"],
                                             "depth": 10
                                         },
                                         "stageId": "sandbox_1_02",
@@ -59078,14 +58522,8 @@
                                         "type": 12,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1834.99988,
-                                                -1199.99988
-                                            ],
-                                            "adj": [
-                                                "n4121",
-                                                "nA659"
-                                            ],
+                                            "pos": [-1834.99988, -1199.99988],
+                                            "adj": ["n4121", "nA659"],
                                             "depth": 9
                                         },
                                         "stageId": "sandbox_1_63",
@@ -59096,14 +58534,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1131.4,
-                                                -1103.4
-                                            ],
-                                            "adj": [
-                                                "n3809",
-                                                "n6831"
-                                            ],
+                                            "pos": [-1131.4, -1103.4],
+                                            "adj": ["n3809", "n6831"],
                                             "depth": 13
                                         },
                                         "stageId": "sandbox_1_71",
@@ -59114,14 +58546,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1462,
-                                                -1286
-                                            ],
-                                            "adj": [
-                                                "nEA6F",
-                                                "nE095"
-                                            ],
+                                            "pos": [-1462, -1286],
+                                            "adj": ["nEA6F", "nE095"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_50",
@@ -59132,10 +58558,7 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1019.38336,
-                                                -1481.50134
-                                            ],
+                                            "pos": [-1019.38336, -1481.50134],
                                             "adj": [
                                                 "nEA6F",
                                                 "nE095",
@@ -59152,15 +58575,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1113,
-                                                -1799
-                                            ],
-                                            "adj": [
-                                                "nEA6F",
-                                                "n6829",
-                                                "n1B64"
-                                            ],
+                                            "pos": [-1113, -1799],
+                                            "adj": ["nEA6F", "n6829", "n1B64"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_09",
@@ -59171,14 +58587,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -935.3833,
-                                                -2188.225
-                                            ],
-                                            "adj": [
-                                                "n1B64",
-                                                "n0FB8"
-                                            ],
+                                            "pos": [-935.3833, -2188.225],
+                                            "adj": ["n1B64", "n0FB8"],
                                             "depth": 13
                                         },
                                         "stageId": "sandbox_1_23",
@@ -59189,15 +58599,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -1350,
-                                                -1949
-                                            ],
-                                            "adj": [
-                                                "nEA6F",
-                                                "n2BA6",
-                                                "nA1CE"
-                                            ],
+                                            "pos": [-1350, -1949],
+                                            "adj": ["nEA6F", "n2BA6", "nA1CE"],
                                             "depth": 12
                                         },
                                         "stageId": "sandbox_1_40",
@@ -59208,15 +58611,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -543,
-                                                -1935
-                                            ],
-                                            "adj": [
-                                                "n71D1",
-                                                "nA1CE",
-                                                "n0FB8"
-                                            ],
+                                            "pos": [-543, -1935],
+                                            "adj": ["n71D1", "nA1CE", "n0FB8"],
                                             "depth": 13
                                         },
                                         "stageId": "sandbox_1_42",
@@ -59227,10 +58623,7 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -386,
-                                                -2066
-                                            ],
+                                            "pos": [-386, -2066],
                                             "adj": [
                                                 "n2BA6",
                                                 "n71D1",
@@ -59247,10 +58640,7 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -251.683289,
-                                                -1795.38708
-                                            ],
+                                            "pos": [-251.683289, -1795.38708],
                                             "adj": [
                                                 "n0FB8",
                                                 "n9C6A",
@@ -59267,14 +58657,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                151.58,
-                                                -1967
-                                            ],
-                                            "adj": [
-                                                "nC69C",
-                                                "n6C8E"
-                                            ],
+                                            "pos": [151.58, -1967],
+                                            "adj": ["nC69C", "n6C8E"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_43",
@@ -59285,13 +58669,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                677,
-                                                -1569.7
-                                            ],
-                                            "adj": [
-                                                "n6C8E"
-                                            ],
+                                            "pos": [677, -1569.7],
+                                            "adj": ["n6C8E"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_68",
@@ -59302,14 +58681,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                155.000015,
-                                                -1733
-                                            ],
-                                            "adj": [
-                                                "nC69C",
-                                                "n6C8E"
-                                            ],
+                                            "pos": [155.000015, -1733],
+                                            "adj": ["nC69C", "n6C8E"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_75",
@@ -59320,13 +58693,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                630,
-                                                -1334
-                                            ],
-                                            "adj": [
-                                                "nF294"
-                                            ],
+                                            "pos": [630, -1334],
+                                            "adj": ["nF294"],
                                             "depth": 18
                                         },
                                         "stageId": "sandbox_1_78",
@@ -59337,14 +58705,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                282,
-                                                -1250
-                                            ],
-                                            "adj": [
-                                                "nAB04",
-                                                "nA1AD"
-                                            ],
+                                            "pos": [282, -1250],
+                                            "adj": ["nAB04", "nA1AD"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_57",
@@ -59355,10 +58717,7 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                391,
-                                                -950
-                                            ],
+                                            "pos": [391, -950],
                                             "adj": [
                                                 "n74C3",
                                                 "nF294",
@@ -59375,13 +58734,8 @@
                                         "type": 8,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1005.5,
-                                                -721
-                                            ],
-                                            "adj": [
-                                                "n2D0A"
-                                            ],
+                                            "pos": [1005.5, -721],
+                                            "adj": ["n2D0A"],
                                             "depth": 22
                                         },
                                         "stageId": "sandbox_1_30",
@@ -59392,15 +58746,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -139.982086,
-                                                -1191
-                                            ],
-                                            "adj": [
-                                                "n4244",
-                                                "n9542",
-                                                "nAB04"
-                                            ],
+                                            "pos": [-139.982086, -1191],
+                                            "adj": ["n4244", "n9542", "nAB04"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_76",
@@ -59411,14 +58758,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -90,
-                                                -1318
-                                            ],
-                                            "adj": [
-                                                "nF0F5",
-                                                "n74C3"
-                                            ],
+                                            "pos": [-90, -1318],
+                                            "adj": ["nF0F5", "n74C3"],
                                             "depth": 15
                                         },
                                         "stageId": "sandbox_1_58",
@@ -59429,14 +58770,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -437,
-                                                -1362
-                                            ],
-                                            "adj": [
-                                                "n4B29",
-                                                "n4244"
-                                            ],
+                                            "pos": [-437, -1362],
+                                            "adj": ["n4B29", "n4244"],
                                             "depth": 14
                                         },
                                         "stageId": "sandbox_1_71",
@@ -59447,14 +58782,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -410,
-                                                -900
-                                            ],
-                                            "adj": [
-                                                "n4B29",
-                                                "n74C3"
-                                            ],
+                                            "pos": [-410, -900],
+                                            "adj": ["n4B29", "n74C3"],
                                             "depth": 14
                                         },
                                         "stageId": "sandbox_1_42",
@@ -59465,15 +58794,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -762,
-                                                -999.4
-                                            ],
-                                            "adj": [
-                                                "n3809",
-                                                "n9542",
-                                                "nF0F5"
-                                            ],
+                                            "pos": [-762, -999.4],
+                                            "adj": ["n3809", "n9542", "nF0F5"],
                                             "depth": 13
                                         },
                                         "stageId": "sandbox_1_59",
@@ -59484,13 +58806,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                0,
-                                                -826
-                                            ],
-                                            "adj": [
-                                                "n9096"
-                                            ],
+                                            "pos": [0, -826],
+                                            "adj": ["n9096"],
                                             "depth": 4
                                         },
                                         "stageId": "sandbox_1_64",
@@ -59501,10 +58818,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                -595,
-                                                -1624
-                                            ],
+                                            "pos": [-595, -1624],
                                             "adj": [
                                                 "n3809",
                                                 "n6829",
@@ -59522,15 +58836,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                542.5998,
-                                                -1832
-                                            ],
-                                            "adj": [
-                                                "n9C6A",
-                                                "nF5F6",
-                                                "n98EF"
-                                            ],
+                                            "pos": [542.5998, -1832],
+                                            "adj": ["n9C6A", "nF5F6", "n98EF"],
                                             "depth": 16
                                         },
                                         "stageId": "sandbox_1_69",
@@ -59541,13 +58848,8 @@
                                         "type": 8,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                616.5998,
-                                                -1125.99988
-                                            ],
-                                            "adj": [
-                                                "nAB04"
-                                            ],
+                                            "pos": [616.5998, -1125.99988],
+                                            "adj": ["nAB04"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_29",
@@ -59558,14 +58860,8 @@
                                         "type": 12,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                567,
-                                                -719
-                                            ],
-                                            "adj": [
-                                                "n80F5",
-                                                "nAB04"
-                                            ],
+                                            "pos": [567, -719],
+                                            "adj": ["n80F5", "nAB04"],
                                             "depth": 17
                                         },
                                         "stageId": "sandbox_1_15",
@@ -59576,14 +58872,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                362,
-                                                -586
-                                            ],
-                                            "adj": [
-                                                "n6AB0",
-                                                "n2AF0"
-                                            ],
+                                            "pos": [362, -586],
+                                            "adj": ["n6AB0", "n2AF0"],
                                             "depth": 18
                                         },
                                         "stageId": "sandbox_1_18",
@@ -59594,10 +58884,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                790,
-                                                -535
-                                            ],
+                                            "pos": [790, -535],
                                             "adj": [
                                                 "n80F5",
                                                 "n3899",
@@ -59614,15 +58901,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                780,
-                                                -963
-                                            ],
-                                            "adj": [
-                                                "n2D0A",
-                                                "n6AB0",
-                                                "nB251"
-                                            ],
+                                            "pos": [780, -963],
+                                            "adj": ["n2D0A", "n6AB0", "nB251"],
                                             "depth": 20
                                         },
                                         "stageId": "sandbox_1_48",
@@ -59633,13 +58913,8 @@
                                         "type": 4,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1177,
-                                                -1177.4
-                                            ],
-                                            "adj": [
-                                                "n3899"
-                                            ],
+                                            "pos": [1177, -1177.4],
+                                            "adj": ["n3899"],
                                             "depth": 21
                                         },
                                         "stageId": "sandbox_1_64",
@@ -59650,14 +58925,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1177,
-                                                -888.999939
-                                            ],
-                                            "adj": [
-                                                "n3899",
-                                                "n42D8"
-                                            ],
+                                            "pos": [1177, -888.999939],
+                                            "adj": ["n3899", "n42D8"],
                                             "depth": 21
                                         },
                                         "stageId": "sandbox_1_53",
@@ -59668,14 +58937,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1536,
-                                                -935.999939
-                                            ],
-                                            "adj": [
-                                                "nCC82",
-                                                "nC10F"
-                                            ],
+                                            "pos": [1536, -935.999939],
+                                            "adj": ["nCC82", "nC10F"],
                                             "depth": 26
                                         },
                                         "stageId": "sandbox_1_03",
@@ -59686,14 +58949,8 @@
                                         "type": 8,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1602.05957,
-                                                -1071.37061
-                                            ],
-                                            "adj": [
-                                                "n5536",
-                                                "n740B"
-                                            ],
+                                            "pos": [1602.05957, -1071.37061],
+                                            "adj": ["n5536", "n740B"],
                                             "depth": 27
                                         },
                                         "stageId": "sandbox_1_31",
@@ -59704,13 +58961,8 @@
                                         "type": 10,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1557.97144,
-                                                -1335.89893
-                                            ],
-                                            "adj": [
-                                                "nCF3F"
-                                            ],
+                                            "pos": [1557.97144, -1335.89893],
+                                            "adj": ["nCF3F"],
                                             "depth": 28
                                         },
                                         "stageId": "sandbox_1_69",
@@ -59721,14 +58973,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1919.49353,
-                                                -846.521545
-                                            ],
-                                            "adj": [
-                                                "nCF3F",
-                                                "n9AE0"
-                                            ],
+                                            "pos": [1919.49353, -846.521545],
+                                            "adj": ["nCF3F", "n9AE0"],
                                             "depth": 26
                                         },
                                         "stageId": "sandbox_1_74",
@@ -59739,15 +58985,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                2040,
-                                                -601
-                                            ],
-                                            "adj": [
-                                                "n740B",
-                                                "nDFEC",
-                                                "n1AA7"
-                                            ],
+                                            "pos": [2040, -601],
+                                            "adj": ["n740B", "nDFEC", "n1AA7"],
                                             "depth": 25
                                         },
                                         "stageId": "sandbox_1_46",
@@ -59758,15 +58997,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1879.00012,
-                                                -388
-                                            ],
-                                            "adj": [
-                                                "n9AE0",
-                                                "n1AA7",
-                                                "nCC82"
-                                            ],
+                                            "pos": [1879.00012, -388],
+                                            "adj": ["n9AE0", "n1AA7", "nCC82"],
                                             "depth": 25
                                         },
                                         "stageId": "sandbox_1_58",
@@ -59777,15 +59009,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1698,
-                                                -533.4964
-                                            ],
-                                            "adj": [
-                                                "nDFEC",
-                                                "n6695",
-                                                "nC10F"
-                                            ],
+                                            "pos": [1698, -533.4964],
+                                            "adj": ["nDFEC", "n6695", "nC10F"],
                                             "depth": 26
                                         },
                                         "stageId": "sandbox_1_01",
@@ -59796,15 +59021,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1442,
-                                                -664
-                                            ],
-                                            "adj": [
-                                                "n6695",
-                                                "nA317",
-                                                "nCC82"
-                                            ],
+                                            "pos": [1442, -664],
+                                            "adj": ["n6695", "nA317", "nCC82"],
                                             "depth": 25
                                         },
                                         "stageId": "sandbox_1_71",
@@ -59815,14 +59033,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1489.63513,
-                                                -348.3266
-                                            ],
-                                            "adj": [
-                                                "nC10F",
-                                                "nE57A"
-                                            ],
+                                            "pos": [1489.63513, -348.3266],
+                                            "adj": ["nC10F", "nE57A"],
                                             "depth": 24
                                         },
                                         "stageId": "sandbox_1_48",
@@ -59833,15 +59045,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1897.44946,
-                                                -231.493286
-                                            ],
-                                            "adj": [
-                                                "n9AE0",
-                                                "nDFEC",
-                                                "nE57A"
-                                            ],
+                                            "pos": [1897.44946, -231.493286],
+                                            "adj": ["n9AE0", "nDFEC", "nE57A"],
                                             "depth": 24
                                         },
                                         "stageId": "sandbox_1_66",
@@ -59852,15 +59057,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1529.31409,
-                                                -63.9588356
-                                            ],
-                                            "adj": [
-                                                "n1AA7",
-                                                "nA317",
-                                                "n403F"
-                                            ],
+                                            "pos": [1529.31409, -63.9588356],
+                                            "adj": ["n1AA7", "nA317", "n403F"],
                                             "depth": 23
                                         },
                                         "stageId": "sandbox_1_73",
@@ -59871,10 +59069,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1456,
-                                                171
-                                            ],
+                                            "pos": [1456, 171],
                                             "adj": [
                                                 "n7F77",
                                                 "n8BFF",
@@ -59891,13 +59086,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1177,
-                                                -44
-                                            ],
-                                            "adj": [
-                                                "nBAFC"
-                                            ],
+                                            "pos": [1177, -44],
+                                            "adj": ["nBAFC"],
                                             "depth": 21
                                         },
                                         "stageId": "sandbox_1_47",
@@ -59908,15 +59098,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1027,
-                                                -240.000015
-                                            ],
-                                            "adj": [
-                                                "n427C",
-                                                "n6AB0",
-                                                "n7F77"
-                                            ],
+                                            "pos": [1027, -240.000015],
+                                            "adj": ["n427C", "n6AB0", "n7F77"],
                                             "depth": 20
                                         },
                                         "stageId": "sandbox_1_10",
@@ -59927,14 +59110,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1040,
-                                                -389
-                                            ],
-                                            "adj": [
-                                                "n6AB0",
-                                                "nE03B"
-                                            ],
+                                            "pos": [1040, -389],
+                                            "adj": ["n6AB0", "nE03B"],
                                             "depth": 20
                                         },
                                         "stageId": "sandbox_1_69",
@@ -59945,13 +59122,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1215,
-                                                -523
-                                            ],
-                                            "adj": [
-                                                "n2423"
-                                            ],
+                                            "pos": [1215, -523],
+                                            "adj": ["n2423"],
                                             "depth": 21
                                         },
                                         "stageId": "sandbox_1_03",
@@ -59962,10 +59134,7 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                956.000061,
-                                                79.5
-                                            ],
+                                            "pos": [956.000061, 79.5],
                                             "adj": [
                                                 "nBAFC",
                                                 "n403F",
@@ -59982,15 +59151,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                938.534058,
-                                                308.5852
-                                            ],
-                                            "adj": [
-                                                "n7F77",
-                                                "n4A25",
-                                                "nA6A1"
-                                            ],
+                                            "pos": [938.534058, 308.5852],
+                                            "adj": ["n7F77", "n4A25", "nA6A1"],
                                             "depth": 22
                                         },
                                         "stageId": "sandbox_1_45",
@@ -60001,14 +59163,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1326,
-                                                338
-                                            ],
-                                            "adj": [
-                                                "n403F",
-                                                "n7F77"
-                                            ],
+                                            "pos": [1326, 338],
+                                            "adj": ["n403F", "n7F77"],
                                             "depth": 22
                                         },
                                         "stageId": "sandbox_1_52",
@@ -60019,13 +59175,8 @@
                                         "type": 6,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1640.50012,
-                                                467.999969
-                                            ],
-                                            "adj": [
-                                                "n403F"
-                                            ],
+                                            "pos": [1640.50012, 467.999969],
+                                            "adj": ["n403F"],
                                             "depth": 23
                                         },
                                         "stageId": "sandbox_1_11",
@@ -60036,14 +59187,8 @@
                                         "type": 5,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1582,
-                                                803
-                                            ],
-                                            "adj": [
-                                                "n4A25",
-                                                "n9FD9"
-                                            ],
+                                            "pos": [1582, 803],
+                                            "adj": ["n4A25", "n9FD9"],
                                             "depth": 24
                                         },
                                         "stageId": "sandbox_1_40",
@@ -60054,15 +59199,8 @@
                                         "type": 3,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1284.62524,
-                                                581.9311
-                                            ],
-                                            "adj": [
-                                                "n6828",
-                                                "n6B1D",
-                                                "nA6A1"
-                                            ],
+                                            "pos": [1284.62524, 581.9311],
+                                            "adj": ["n6828", "n6B1D", "nA6A1"],
                                             "depth": 23
                                         },
                                         "stageId": "sandbox_1_79",
@@ -60073,14 +59211,8 @@
                                         "type": 9,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1201,
-                                                868.999939
-                                            ],
-                                            "adj": [
-                                                "n4A25",
-                                                "n6B1D"
-                                            ],
+                                            "pos": [1201, 868.999939],
+                                            "adj": ["n4A25", "n6B1D"],
                                             "depth": 23
                                         },
                                         "stageId": "sandbox_1_69",
@@ -60091,13 +59223,8 @@
                                         "type": 7,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                1169,
-                                                1302
-                                            ],
-                                            "adj": [
-                                                "n6828"
-                                            ],
+                                            "pos": [1169, 1302],
+                                            "adj": ["n6828"],
                                             "depth": 25
                                         },
                                         "stageId": "sandbox_1_21",
@@ -60108,10 +59235,7 @@
                                         "type": 13,
                                         "state": 2,
                                         "relate": {
-                                            "pos": [
-                                                95,
-                                                335
-                                            ],
+                                            "pos": [95, 335],
                                             "adj": [],
                                             "depth": 0
                                         },
@@ -60130,10 +59254,7 @@
                                         "base": [
                                             {
                                                 "key": "trap_446_xbfdtion",
-                                                "pos": [
-                                                    12,
-                                                    14
-                                                ],
+                                                "pos": [12, 14],
                                                 "hpRatio": 10000,
                                                 "isDead": 0
                                             }
@@ -60147,10 +59268,7 @@
                                         "port": [
                                             {
                                                 "key": "trap_447_xbmcv",
-                                                "pos": [
-                                                    7,
-                                                    11
-                                                ],
+                                                "pos": [7, 11],
                                                 "hpRatio": 10000,
                                                 "isDead": 0
                                             }
@@ -70480,21 +69598,15 @@
                 "stages": {
                     "act3fun_01": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_02": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_03": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     }
                 }
             },
@@ -70844,315 +69956,99 @@
             "instances": {
                 "camp_01": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_02": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_03": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_01": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_02": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_03": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_04": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_05": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_06": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_07": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_08": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_09": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_10": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_11": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_12": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_13": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_14": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_15": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_16": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_17": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_18": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_19": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_20": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_21": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 }
             },
             "open": {
@@ -71261,10 +70157,7 @@
                             "count": 1
                         }
                     },
-                    "squad": [
-                        null,
-                        null
-                    ]
+                    "squad": [null, null]
                 }
             }
         },
@@ -71273,10 +70166,7 @@
                 "slots": {
                     "0": {
                         "state": 1,
-                        "tags": [
-                            11,
-                            14
-                        ],
+                        "tags": [11, 14],
                         "selectTags": [],
                         "startTs": -1,
                         "durationInSec": -1,
@@ -71285,10 +70175,7 @@
                     },
                     "1": {
                         "state": 1,
-                        "tags": [
-                            11,
-                            14
-                        ],
+                        "tags": [11, 14],
                         "selectTags": [],
                         "startTs": -1,
                         "durationInSec": -1,
@@ -71297,10 +70184,7 @@
                     },
                     "2": {
                         "state": 1,
-                        "tags": [
-                            11,
-                            14
-                        ],
+                        "tags": [11, 14],
                         "selectTags": [],
                         "startTs": -1,
                         "durationInSec": -1,
@@ -71309,10 +70193,7 @@
                     },
                     "3": {
                         "state": 1,
-                        "tags": [
-                            11,
-                            14
-                        ],
+                        "tags": [11, 14],
                         "selectTags": [],
                         "startTs": -1,
                         "durationInSec": -1,

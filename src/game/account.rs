@@ -5,13 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{
-        comp::max,
-        crypto::{base64::encode, md5::md5_digest},
-        game::*,
-        json::{self, *},
-        zipper,
-    },
+    utils::{comp::max, game::*, json::*, zipper},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -48,6 +42,9 @@ pub async fn account_sync_data() -> JSON {
     let charm_table = update_data(CHARM_TABLE_URL).await;
     let acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
     let charword_table = update_data(CHARWORD_TABLE_URL).await;
+    let story_review_table = update_data(STORY_REVIEW_TABLE_URL).await;
+    let story_review_meta_table = update_data(STORY_REVIEW_META_TABLE_URL).await;
+    let enemy_handbook_table = update_data(ENEMY_HANDBOOK_TABLE_URL).await;
 
     let mut count = 0;
     let mut count_inst_id;
@@ -632,6 +629,33 @@ pub async fn account_sync_data() -> JSON {
 
     let tower_ss = &config["towerConfig"]["season"];
     player_data["user"]["tower"]["season"]["id"] = json!(tower_ss);
+
+    let mut story_review_groups = json!({});
+    for id in get_keys(&story_review_table) {
+        story_review_groups[&id] = json!({
+            "rts": 1700000000,
+        });
+        let mut story_vec = Vec::new();
+        for data in story_review_table[&id]["infoUnlockDatas"].as_array().unwrap() {
+            story_vec.push(json!({
+                "id": data["storyId"],
+                "uts": 1695000000,
+                "rc": 1
+            }));
+        }
+        story_review_groups[&id]["stories"] = json!(story_vec);
+        let mut reward_vec = Vec::new();
+        if get_keys(&story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"]).contains(&id) {
+            for data in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][&id]["rewardList"]
+                .as_array()
+                .unwrap()
+            {
+                reward_vec.push(json!(data["trialRewardId"]))
+            }
+        }
+        story_review_groups[&id]["trailRewards"] = json!(reward_vec);
+    }
+    player_data["user"]["storyreview"]["groups"] = story_review_groups;
 
     write_json(USER_JSON_PATH, player_data.clone());
     Json(player_data)

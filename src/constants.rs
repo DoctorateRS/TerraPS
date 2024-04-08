@@ -61,6 +61,7 @@ pub mod url {
     pub const TOWER_TABLE_URL: &str = concat!(BASE_URL, "/excel/climb_tower_table.json");
     pub const BUILDING_TABLE_URL: &str = concat!(BASE_URL, "/excel/building_data.json");
     pub const STORY_REVIEW_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_table.json");
+    pub const STORY_REVIEW_META_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_meta_table.json");
     pub const ENEMY_HANDBOOK_TABLE_URL: &str = concat!(BASE_URL, "/excel/enemy_handbook_table.json");
     pub const MEDAL_TABLE_URL: &str = concat!(BASE_URL, "/excel/medal_table.json");
     pub const CHARWORD_TABLE_URL: &str = concat!(BASE_URL, "/excel/charword_table.json");
