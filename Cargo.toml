@@ -1,6 +1,6 @@
 [package]
-name = "doctorate-rs"
-version = "0.2.5"
+name = "terra-ps"
+version = "0.2.6"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh"]
@@ -54,7 +54,7 @@ tracing-subscriber = { version = "0.3", features = [
 tower-http = { version = "0.5", features = ["trace"] }
 
 [[bin]]
-name = "doctorate-rs"
+name = "terra-ps"
 path = "src/server.rs"
 
 [profile.release]

@@ -383,39 +383,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "doctorate-rs"
-version = "0.2.5"
-dependencies = [
- "aes",
- "anyhow",
- "axum",
- "axum-server",
- "base64 0.22.0",
- "cbc",
- "chrono",
- "constcat",
- "hex",
- "lazy_static",
- "libaes",
- "md-5",
- "rand",
- "reqwest",
- "ring",
- "serde",
- "serde_json",
- "subtle-encoding",
- "tokio",
- "tokio-util",
- "tower-http",
- "tracing",
- "tracing-futures",
- "tracing-log",
- "tracing-subscriber",
- "uuid",
- "zip",
-]
-
-[[package]]
 name = "encoding_rs"
 version = "0.8.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1531,6 +1498,39 @@ dependencies = [
  "fastrand",
  "rustix",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "terra-ps"
+version = "0.2.6"
+dependencies = [
+ "aes",
+ "anyhow",
+ "axum",
+ "axum-server",
+ "base64 0.22.0",
+ "cbc",
+ "chrono",
+ "constcat",
+ "hex",
+ "lazy_static",
+ "libaes",
+ "md-5",
+ "rand",
+ "reqwest",
+ "ring",
+ "serde",
+ "serde_json",
+ "subtle-encoding",
+ "tokio",
+ "tokio-util",
+ "tower-http",
+ "tracing",
+ "tracing-futures",
+ "tracing-log",
+ "tracing-subscriber",
+ "uuid",
+ "zip",
 ]
 
 [[package]]
