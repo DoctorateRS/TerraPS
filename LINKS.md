@@ -21,8 +21,8 @@
 - [x] `/campaignV2/battleFinish`
 - [x] `/campaignV2/battleSweep`
 - [x] `/char/changeMarkStar`
-- [ ] `/charBuild/addonStage/battleStart`
-- [ ] `/charBuild/addonStage/battleFinish`
+- [x] `/charBuild/addonStage/battleStart`
+- [x] `/charBuild/addonStage/battleFinish`
 - [x] `/charBuild/addonStory/unlock`
 - [x] `/charBuild/batchSetCharVoiceLan`
 - [x] `/charBuild/setCharVoiceLan`
@@ -72,24 +72,24 @@
 - [x] `/quest/squadFormation`
 - [x] `/quest/getAssistList`
 - [x] `/quest/battleContinue`
-- [ ] `/storyreview/markStoryAcceKnown`
-- [ ] `/storyreview/readStory`
+- [x] `/storyreview/markStoryAcceKnown`
+- [x] `/storyreview/readStory`
 - [x] `/act25side/battleStart`
 - [x] `/act25side/battleFinish`
-- [ ] `/car/confirmBattleCar`
-- [ ] `/templateTrap/setTrapSquad`
+- [x] `/car/confirmBattleCar`
+- [x] `/templateTrap/setTrapSquad`
 - [x] `/activity/act24side/battleStart`
 - [x] `/activity/act24side/battleFinish`
 - [x] `/activity/act24side/setTool`
 - [x] `/activity/bossRush/battleStart`
 - [x] `/activity/bossRush/battleFinish`
-- [ ] `/aprilFool/act5fun/battleStart`
-- [ ] `/aprilFool/act5fun/battleFinish`
-- [ ] `/aprilFool/act4fun/battleStart`
-- [ ] `/aprilFool/act4fun/battleFinish`
-- [ ] `/aprilFool/act4fun/liveSettle`
-- [ ] `/aprilFool/act3fun/battleStart`
-- [ ] `/aprilFool/act3fun/battleFinish`
+- [x] `/aprilFool/act5fun/battleStart`
+- [x] `/aprilFool/act5fun/battleFinish`
+- [x] `/aprilFool/act4fun/battleStart`
+- [x] `/aprilFool/act4fun/battleFinish`
+- [x] `/aprilFool/act4fun/liveSettle`
+- [x] `/aprilFool/act3fun/battleStart`
+- [x] `/aprilFool/act3fun/battleFinish`
 - [x] `/activity/bossRush/relicSelect`
 - [x] `/retro/typeAct20side/competitionStart`
 - [x] `/retro/typeAct20side/competitionFinish`
@@ -138,13 +138,13 @@
 
 ## SOCIAL
 
-- [ ] `/social/getSortListInfo`
-- [ ] `/social/searchPlayer`
-- [ ] `/social/setAssistCharList`
-- [ ] `/social/setCardShowMedal`
-- [ ] `/medal/setCustomData`
-- [ ] `/businessCard/changeNameCardComponent`
-- [ ] `/businessCard/changeNameCardSkin`
+- [x] `/social/getSortListInfo`
+- [x] `/social/searchPlayer`
+- [x] `/social/setAssistCharList`
+- [x] `/social/setCardShowMedal`
+- [x] `/medal/setCustomData`
+- [x] `/businessCard/changeNameCardComponent`
+- [x] `/businessCard/changeNameCardSkin`
 
 ## SANDBOX
 
