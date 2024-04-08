@@ -100,7 +100,12 @@ pub mod crisis_v2 {
             nodes[&slot_pack_id][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
         }
 
-        let slots = rune_slots.clone();
+        let rune_slots = rune_slots
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|rune| rune.as_str().unwrap())
+            .collect::<Vec<&str>>();
 
         // FIXME: FIX THIS
         for slot_pk_id in get_keys(&nodes) {
@@ -108,14 +113,14 @@ pub mod crisis_v2 {
             for mutual_exclusion_group in get_keys(&nodes[&slot_pk_id]) {
                 let mut score_max = 0;
                 for slot in get_keys(&nodes[&slot_pk_id][&mutual_exclusion_group]) {
-                    score_max = max(score_max, nodes[&slot_pk_id][&mutual_exclusion_group][&slot].as_i64().unwrap());
+                    score_max = max(score_max, nodes[&slot_pk_id][&mutual_exclusion_group][slot].as_u64().unwrap())
                 }
                 let mut flag2 = false;
                 for slot in get_keys(&nodes[&slot_pk_id][&mutual_exclusion_group]) {
-                    if nodes[&slot_pk_id][&mutual_exclusion_group][&slot].as_i64().unwrap() != score_max {
+                    if nodes[&slot_pk_id][&mutual_exclusion_group][&slot].as_u64().unwrap() >= score_max {
                         continue;
                     }
-                    if slots.get(&slot).is_some() {
+                    if rune_slots.contains(&slot.as_str()) {
                         flag2 = true;
                         break;
                     }
@@ -133,8 +138,8 @@ pub mod crisis_v2 {
 
         let mut rune_ids = Vec::new();
 
-        for slot in rune_slots.as_array().unwrap() {
-            let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot.as_str().unwrap()].clone();
+        for slot in &rune_slots {
+            let node_data = rune["info"]["mapDetailDataMap"][&map_id]["nodeDataMap"][&slot].clone();
             if node_data.get("runeId").is_some() {
                 let rune_id = node_data["runeId"].clone();
                 rune_ids.push(rune_id.clone());
