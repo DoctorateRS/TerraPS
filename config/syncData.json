@@ -134,9 +134,9 @@
             }
         },
         "status": {
-            "nickName": "Doctorate",
+            "nickName": "TerraPS",
             "nickNumber": "1111",
-            "level": 999,
+            "level": 120,
             "exp": 0,
             "socialPoint": 300,
             "gachaTicket": 9999999,
@@ -167,9 +167,9 @@
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "Doctorate",
+            "serverName": "TerraPS",
             "avatarId": "0",
-            "resume": "DoctoratePy",
+            "resume": "TerraPS",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,

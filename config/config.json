@@ -101,6 +101,8 @@
     "anonymous": true
   },
   "userConfig": {
+    "nickName": "Terra",
+    "nickNumber": "1111",
     "restorePreviousStates": {
       "is2": false,
       "squadsAndFavs": false,

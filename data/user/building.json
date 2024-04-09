@@ -5497,8 +5497,8 @@
       "charId": "char_291_aglina",
       "lastApAddTime": 1695000000,
       "ap": 8640000,
-      "roomSlotId": "",
-      "index": -1,
+      "roomSlotId": "slot_36",
+      "index": 0,
       "changeScale": 0,
       "bubble": {
         "normal": {
@@ -6105,8 +6105,8 @@
       "charId": "char_4065_judge",
       "lastApAddTime": 1695000000,
       "ap": 8640000,
-      "roomSlotId": "",
-      "index": -1,
+      "roomSlotId": "slot_23",
+      "index": 0,
       "changeScale": 0,
       "bubble": {
         "normal": {

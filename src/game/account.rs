@@ -49,6 +49,8 @@ pub async fn account_sync_data() -> JSON {
     let enemy_handbook_table = update_data(ENEMY_HANDBOOK_TABLE_URL).await;
     let medal_table = update_data(MEDAL_TABLE_URL).await;
     let rlv2_table = update_data(RL_TABLE_URL).await;
+    let stage_table = update_data(STAGE_TABLE_URL).await;
+    let story_table = update_data(STORY_TABLE_URL).await;
 
     let mut count = 0;
     let mut count_inst_id;
@@ -62,22 +64,28 @@ pub async fn account_sync_data() -> JSON {
     let mut building_chars = json!({});
 
     // Skin
-    let skin_keys = get_keys(&skin_table);
+    let skin_keys = get_keys(&skin_table["charSkins"]);
     player_data["user"]["skin"]["characterSkins"] = json!({});
 
-    for skin_data in get_values(&skin_table) {
+    for skin_data in get_values(&skin_table["charSkins"]) {
         if !&skin_keys[count].contains('@') {
             count += 1;
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string())
-            || skin_data["displaySkin"]["onYear"].as_i64().unwrap()
-                > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
-                    .as_i64()
-                    .unwrap()
-        {
-            temp_skin_table[&skin_data["charId"].as_str().unwrap()] = json!(skin_keys[count].clone());
+        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string()) {
+            if temp_skin_table.get(skin_data["charId"].as_str().unwrap()).is_some() {
+                if skin_data["displaySkin"]["onYear"].as_u64().unwrap()
+                    > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]
+                        ["onYear"]
+                        .as_u64()
+                        .unwrap_or(0)
+                {
+                    temp_skin_table[&skin_data["charId"].as_str().unwrap()] = json!(&skin_keys[count]);
+                }
+            } else {
+                println!("Skipped.")
+            }
         }
         count += 1;
     }
@@ -327,7 +335,6 @@ pub async fn account_sync_data() -> JSON {
 
     // Story
     let mut story_list = json!({"init": 1});
-    let story_table = update_data(STORY_TABLE_URL).await;
     for story in get_keys(&story_table) {
         story_list[story] = json!(1);
     }
@@ -336,8 +343,7 @@ pub async fn account_sync_data() -> JSON {
 
     // Stages
     let mut stage_list = json!({});
-    let stage_table = update_data(STORY_TABLE_URL).await;
-    for stage in get_keys(&stage_table) {
+    for stage in get_keys(&stage_table["stages"]) {
         stage_list[&stage] = json!({
             "completeTimes": 1,
             "hasBattleReplay": 0,
@@ -348,8 +354,7 @@ pub async fn account_sync_data() -> JSON {
             "state": 3
         });
     }
-
-    player_data["user"]["status"]["stages"] = stage_list;
+    player_data["user"]["dungeon"]["stages"] = json!(stage_list);
 
     // Addons
     let mut addon_list = json!({});
@@ -575,7 +580,7 @@ pub async fn account_sync_data() -> JSON {
 
     let mut char_id_map = json!({});
 
-    for (_, char) in player_data["user"]["troop"]["chars"].clone().as_object().unwrap() {
+    for char in get_values(&player_data["user"]["troop"]["chars"]) {
         let char_id = match char["charId"].as_str() {
             Some(char_id) => char_id,
             None => {
