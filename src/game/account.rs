@@ -222,10 +222,36 @@ pub async fn account_sync_data() -> JSON {
             "count": 6
         });
 
+        // FIXME: This is a temporary fix for Amiya
         if operator_keys[count] == "char_002_amiya" {
             temp_char_list[count_inst_id.to_string()] = json!({
+                "instId": 2,
+                "charId": "char_002_amiya",
+                "favorPoint": 25570,
+                "potentialRank": 5,
+                "mainSkillLvl": 7,
+                "skin": "char_1001_amiya2@casc#1",
+                "level": 80,
+                "exp": 0,
+                "evolvePhase": 2,
                 "defaultSkillIndex": -1,
+                "gainTime": 1712627499,
                 "skills": [],
+                "voiceLan": "JP",
+                "currentEquip": "uniequip_002_amiya",
+                "equip": {
+                    "uniequip_001_amiya": {
+                        "hide": 0,
+                        "locked": 0,
+                        "level": 1
+                    },
+                    "uniequip_002_amiya": {
+                        "hide": 0,
+                        "locked": 0,
+                        "level": 3
+                    }
+                },
+                "starMark": 0,
                 "currentTmpl": "char_002_amiya",
                 "tmpl": {
                     "char_002_amiya": {
@@ -233,29 +259,40 @@ pub async fn account_sync_data() -> JSON {
                         "defaultSkillIndex": 2,
                         "skills": [
                             {
-                                "skillId": "skchr_amiya_3",
+                                "skillId": "skcom_magic_rage[3]",
                                 "unlock": 1,
                                 "state": 0,
-                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "specializeLevel": 3,
                                 "completeUpgradeTime": -1
                             },
                             {
                                 "skillId": "skchr_amiya_2",
                                 "unlock": 1,
                                 "state": 0,
-                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "specializeLevel": 3,
                                 "completeUpgradeTime": -1
                             },
                             {
-                                "skillId": "skcom_magic_rage[3]",
+                                "skillId": "skchr_amiya_3",
                                 "unlock": 1,
                                 "state": 0,
-                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "specializeLevel": 3,
                                 "completeUpgradeTime": -1
                             }
                         ],
-                        "currentEquip": Value::Null,
-                        "equip": {},
+                        "currentEquip": "uniequip_002_amiya",
+                        "equip": {
+                            "uniequip_001_amiya": {
+                                "hide": 0,
+                                "locked": 0,
+                                "level": 1
+                            },
+                            "uniequip_002_amiya": {
+                                "hide": 0,
+                                "locked": 0,
+                                "level": 3
+                            }
+                        }
                     },
                     "char_1001_amiya2": {
                         "skinId": "char_1001_amiya2@casc#1",
@@ -265,19 +302,19 @@ pub async fn account_sync_data() -> JSON {
                                 "skillId": "skchr_amiya2_1",
                                 "unlock": 1,
                                 "state": 0,
-                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "specializeLevel": 3,
                                 "completeUpgradeTime": -1
                             },
                             {
                                 "skillId": "skchr_amiya2_2",
                                 "unlock": 1,
                                 "state": 0,
-                                "specializeLevel": operator_template["skillsSpecializeLevel"],
+                                "specializeLevel": 3,
                                 "completeUpgradeTime": -1
                             }
                         ],
-                        "currentEquip": Value::Null,
-                        "equip": {},
+                        "currentEquip": null,
+                        "equip": {}
                     }
                 }
             });
@@ -581,13 +618,7 @@ pub async fn account_sync_data() -> JSON {
     let mut char_id_map = json!({});
 
     for char in get_values(&player_data["user"]["troop"]["chars"]) {
-        let char_id = match char["charId"].as_str() {
-            Some(char_id) => char_id,
-            None => {
-                dbg!(char);
-                continue;
-            }
-        };
+        let char_id = char["charId"].as_str().unwrap();
         char_id_map[char_id] = char["instId"].clone();
     }
 

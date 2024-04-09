@@ -3100,7 +3100,7 @@
       "workTime": 0
     },
     "2": {
-      "charId": null,
+      "charId": "char_002_amiya",
       "lastApAddTime": 1695000000,
       "ap": 8640000,
       "roomSlotId": "",
