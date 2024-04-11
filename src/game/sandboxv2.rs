@@ -6,7 +6,7 @@ use crate::{
         sandbox::{SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
         templates::SANDBOX_TEMPLATE,
     },
-    utils::json::{read_json, write_json, JSON},
+    utils::json::{get_keys, read_json, write_json, JSON},
 };
 
 pub async fn create_game() -> JSON {
@@ -47,7 +47,7 @@ pub async fn set_squad(Json(payload): JSON) -> JSON {
     }))
 }
 
-pub async fn battle_start(Json(payload): JSON) -> JSON {
+pub async fn sandbox_battle_start(Json(payload): JSON) -> JSON {
     let mut sandbox_temp = read_json(SANDBOX_TEMP_JSON_PATH);
     sandbox_temp["currentNodeId"] = payload["nodeId"].clone();
     write_json(SANDBOX_TEMP_JSON_PATH, &sandbox_temp);
@@ -62,4 +62,12 @@ pub async fn battle_start(Json(payload): JSON) -> JSON {
     }))
 }
 
-// pub async fn battle_finish(Json(payload): JSON) -> JSON {}
+pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
+    let sandbox_temp = read_json(SANDBOX_TEMP_JSON_PATH);
+    let mut sandbox_data = read_json(SANDBOX_JSON_PATH);
+    let node_id = sandbox_temp["currentNodeId"].as_str().unwrap();
+    if !get_keys(&sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]).contains(&String::from("building")) {
+        sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"] = json!([]);
+    }
+    for keys in get_keys(&payload["sandboxV2Data"]["placedItems"]) {}
+}
