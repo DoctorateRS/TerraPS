@@ -40,6 +40,17 @@ pub mod tower {
 }
 
 #[allow(dead_code)]
+pub mod templates {
+    pub const SANDBOX_TEMPLATE: &str = "./data/sandbox/sandbox.json";
+}
+
+#[allow(dead_code)]
+pub mod sandbox {
+    pub const SANDBOX_JSON_PATH: &str = "./data/user/sandbox.json";
+    pub const SANDBOX_TEMP_JSON_PATH: &str = "./data/user/sandboxTemp.json";
+}
+
+#[allow(dead_code)]
 pub mod url {
     use constcat::concat;
     // BASE_URL

@@ -17,7 +17,7 @@ pub fn read_json(path: &str) -> Value {
     }
 }
 
-pub fn write_json(path: &str, value: Value) {
+pub fn write_json<T: Serialize>(path: &str, value: T) {
     let file = File::create(path).unwrap();
     let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
