@@ -1,136 +1,136 @@
 {
-  "server": {
-    "host": "127.0.0.1",
-    "port": 8443,
-    "enableServer": true,
-    "maintenanceMsg": "Server is currently under maintenance!",
-    "mode": "cn",
-    "adaptive": true,
-    "noProxy": false,
-    "gadget": false,
-    "useSu": false
-  },
-  "assets": {
-    "autoUpdate": false,
-    "downloadLocally": true,
-    "enableMods": false,
-    "skipModCacheValidation": false
-  },
-  "version": {
-    "android": {
-      "resVersion": "24-03-29-14-33-44-5002d2",
-      "clientVersion": "2.2.21"
-    }
-  },
-  "versionGlobal": {
-    "android": {
-      "resVersion": "24-03-22-10-13-05-158013",
-      "clientVersion": "21.1.01"
-    }
-  },
-  "remote": {},
-  "networkConfig": {
-    "cn": {
-      "sign": "sign",
-      "content": {
-        "configVer": "5",
-        "funcVer": "V048",
-        "configs": {
-          "V048": {
-            "override": true,
-            "network": {
-              "gs": "{server}",
-              "as": "{server}",
-              "u8": "{server}/u8",
-              "hu": "{server}/assetbundle/official",
-              "hv": "{server}/config/prod/official/{0}/version",
-              "rc": "{server}/config/prod/official/remote_config",
-              "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
-              "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
-              "sl": "https://ak.hypergryph.com/protocol/service",
-              "of": "https://ak.hypergryph.com/index.html",
-              "pkgAd": null,
-              "pkgIOS": null,
-              "secure": false
-            }
-          }
-        }
-      }
+    "server": {
+        "host": "127.0.0.1",
+        "port": 8443,
+        "enableServer": true,
+        "maintenanceMsg": "Server is currently under maintenance!",
+        "mode": "cn",
+        "adaptive": true,
+        "noProxy": false,
+        "gadget": false,
+        "useSu": false
     },
-    "global": {
-      "sign": "sign",
-      "content": {
-        "configVer": "1",
-        "funcVer": "V043",
-        "configs": {
-          "V043": {
-            "override": true,
-            "network": {
-              "gs": "{server}",
-              "as": "{server}",
-              "u8": "{server}/u8",
-              "hu": "{server}/assetbundle/official",
-              "hv": "{server}/config/prod/official/{0}/version",
-              "rc": "{server}/config/prod/official/remote_config",
-              "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
-              "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
-              "sl": "https://www.arknights.global/terms_of_service",
-              "of": "https://www.arknights.global",
-              "pkgAd": null,
-              "pkgIOS": null,
-              "secure": false
-            }
-          }
-        }
-      }
-    }
-  },
-  "crisisConfig": {
-    "selectedCrisis": "cc12"
-  },
-  "crisisV2Config": {
-    "selectedCrisis": "cc2"
-  },
-  "towerConfig": {
-    "season": "tower_season_4"
-  },
-  "rlv2Config": {
-    "allChars": true
-  },
-  "battleReplayConfig": {
-    "anonymous": true
-  },
-  "userConfig": {
-    "nickName": "Terra",
-    "nickNumber": "1111",
-    "restorePreviousStates": {
-      "is2": false,
-      "squadsAndFavs": false,
-      "ui": false
+    "assets": {
+        "autoUpdate": false,
+        "downloadLocally": true,
+        "enableMods": false,
+        "skipModCacheValidation": false
     },
-    "activityMinStartTs": 1709179200,
-    "activityMaxStartTs": 1711569599,
-    "secretary": "char_4123_ela",
-    "secretarySkinId": "char_4123_ela@rainbow6#2",
-    "background": "bg_rainbowsix_1",
-    "theme": "tm_rainbowsix_1",
-    "fakeTime": -1,
-    "vision": true
-  },
-  "charConfig": {
-    "favorPoint": 25570,
-    "potentialRank": 5,
-    "mainSkillLvl": 7,
-    "level": -1,
-    "evolvePhase": -1,
-    "skillsSpecializeLevel": 3,
-    "customUnitInfo": {},
-    "duplicateUnits": []
-  },
-  "gacha": {
-    "5rarity": 1.0,
-    "4rarity": 0,
-    "3rarity": 0,
-    "2rarity": 0
-  }
+    "version": {
+        "android": {
+            "resVersion": "24-04-09-18-51-30-130d51",
+            "clientVersion": "2.2.41"
+        }
+    },
+    "versionGlobal": {
+        "android": {
+            "resVersion": "24-03-22-10-13-05-158013",
+            "clientVersion": "21.1.01"
+        }
+    },
+    "remote": {},
+    "networkConfig": {
+        "cn": {
+            "sign": "sign",
+            "content": {
+                "configVer": "5",
+                "funcVer": "V049",
+                "configs": {
+                    "V049": {
+                        "override": true,
+                        "network": {
+                            "gs": "{server}",
+                            "as": "{server}",
+                            "u8": "{server}/u8",
+                            "hu": "{server}/assetbundle/official",
+                            "hv": "{server}/config/prod/official/{0}/version",
+                            "rc": "{server}/config/prod/official/remote_config",
+                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+                            "sl": "https://ak.hypergryph.com/protocol/service",
+                            "of": "https://ak.hypergryph.com/index.html",
+                            "pkgAd": null,
+                            "pkgIOS": null,
+                            "secure": false
+                        }
+                    }
+                }
+            }
+        },
+        "global": {
+            "sign": "sign",
+            "content": {
+                "configVer": "1",
+                "funcVer": "V043",
+                "configs": {
+                    "V043": {
+                        "override": true,
+                        "network": {
+                            "gs": "{server}",
+                            "as": "{server}",
+                            "u8": "{server}/u8",
+                            "hu": "{server}/assetbundle/official",
+                            "hv": "{server}/config/prod/official/{0}/version",
+                            "rc": "{server}/config/prod/official/remote_config",
+                            "an": "{server}/config/prod/announce_meta/{0}/announcement.meta.json",
+                            "prean": "{server}/config/prod/announce_meta/{0}/preannouncement.meta.json",
+                            "sl": "https://www.arknights.global/terms_of_service",
+                            "of": "https://www.arknights.global",
+                            "pkgAd": null,
+                            "pkgIOS": null,
+                            "secure": false
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "crisisConfig": {
+        "selectedCrisis": "cc12"
+    },
+    "crisisV2Config": {
+        "selectedCrisis": "cc2"
+    },
+    "towerConfig": {
+        "season": "tower_season_4"
+    },
+    "rlv2Config": {
+        "allChars": true
+    },
+    "battleReplayConfig": {
+        "anonymous": true
+    },
+    "userConfig": {
+        "nickName": "Terra",
+        "nickNumber": "1111",
+        "restorePreviousStates": {
+            "is2": false,
+            "squadsAndFavs": false,
+            "ui": false
+        },
+        "activityMinStartTs": 1709179200,
+        "activityMaxStartTs": 1711569599,
+        "secretary": "char_4123_ela",
+        "secretarySkinId": "char_4123_ela@rainbow6#2",
+        "background": "bg_rainbowsix_1",
+        "theme": "tm_rainbowsix_1",
+        "fakeTime": -1,
+        "vision": true
+    },
+    "charConfig": {
+        "favorPoint": 25570,
+        "potentialRank": 5,
+        "mainSkillLvl": 7,
+        "level": -1,
+        "evolvePhase": -1,
+        "skillsSpecializeLevel": 3,
+        "customUnitInfo": {},
+        "duplicateUnits": []
+    },
+    "gacha": {
+        "5rarity": 1.0,
+        "4rarity": 0,
+        "3rarity": 0,
+        "2rarity": 0
+    }
 }
