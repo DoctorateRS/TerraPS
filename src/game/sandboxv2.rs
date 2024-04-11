@@ -5,8 +5,12 @@ use crate::{
     constants::{
         sandbox::{SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
         templates::SANDBOX_TEMPLATE,
+        url::SANDBOX_TABLE_URL,
     },
-    utils::json::{get_keys, read_json, write_json, JSON},
+    utils::{
+        game::update_data,
+        json::{get_keys, read_json, write_json, JSON},
+    },
 };
 
 pub async fn create_game() -> JSON {
@@ -69,5 +73,55 @@ pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
     if !get_keys(&sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]).contains(&String::from("building")) {
         sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"] = json!([]);
     }
-    for keys in get_keys(&payload["sandboxV2Data"]["placedItems"]) {}
+    let mut building = sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"]
+        .as_array()
+        .unwrap()
+        .clone();
+    let placed_items = payload["sandboxV2Data"]["placedItems"].clone();
+    for keys in get_keys(&placed_items) {
+        if placed_items[&keys]["value"].get("hpRatio").is_some() {
+            building.push(json!({
+                "key": &placed_items[&keys]["key"]["itemId"],
+                "pos": [
+                    &placed_items[&keys]["key"]["position"]["row"],
+                    &placed_items[&keys]["key"]["position"]["col"]
+                ],
+                "hpRatio": 10000,
+                "dir": &placed_items[&keys]["value"]["direction"]
+            }))
+        } else {
+            for building_data in &building {
+                if building_data["pos"].as_array().unwrap()[0].as_i64().unwrap()
+                    == placed_items[&keys]["key"]["position"]["row"].as_i64().unwrap()
+                    && building_data["pos"].as_array().unwrap()[1].as_i64().unwrap()
+                        == placed_items[&keys]["key"]["position"]["col"].as_i64().unwrap()
+                {
+                    building.pop();
+                    break;
+                }
+            }
+        }
+    }
+    sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"] = json!(building);
+    write_json(SANDBOX_JSON_PATH, &sandbox_data);
+    Json(json!({
+        "success": true,
+        "rewards": [],
+        "randomRewards": [],
+        "costItems": [],
+        "isEnemyRush": false,
+        "enemyRushCount": [],
+        "playerDataDelta": {
+            "modified": {
+                "sandboxPerm": &sandbox_data
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn home_build_save(Json(payload): JSON) -> JSON {
+    let sandbox_table = update_data(SANDBOX_TABLE_URL).await;
+
+    Json(json!({}))
 }

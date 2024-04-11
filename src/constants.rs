@@ -71,6 +71,7 @@ pub mod url {
     pub const HANDBOOK_INFO_TABLE_URL: &str = concat!(BASE_URL, "/excel/handbook_info_table.json");
     pub const TOWER_TABLE_URL: &str = concat!(BASE_URL, "/excel/climb_tower_table.json");
     pub const BUILDING_TABLE_URL: &str = concat!(BASE_URL, "/excel/building_data.json");
+    pub const SANDBOX_TABLE_URL: &str = concat!(BASE_URL, "/excel/sandbox_perm_table.json");
     pub const STORY_REVIEW_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_table.json");
     pub const STORY_REVIEW_META_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_meta_table.json");
     pub const ENEMY_HANDBOOK_TABLE_URL: &str = concat!(BASE_URL, "/excel/enemy_handbook_table.json");
