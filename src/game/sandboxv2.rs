@@ -2,7 +2,10 @@ use axum::Json;
 use serde_json::{json, Value};
 
 use crate::{
-    constants::{sandbox::SANDBOX_JSON_PATH, templates::SANDBOX_TEMPLATE},
+    constants::{
+        sandbox::{SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
+        templates::SANDBOX_TEMPLATE,
+    },
     utils::json::{read_json, write_json, JSON},
 };
 
@@ -43,3 +46,20 @@ pub async fn set_squad(Json(payload): JSON) -> JSON {
         }
     }))
 }
+
+pub async fn battle_start(Json(payload): JSON) -> JSON {
+    let mut sandbox_temp = read_json(SANDBOX_TEMP_JSON_PATH);
+    sandbox_temp["currentNodeId"] = payload["nodeId"].clone();
+    write_json(SANDBOX_TEMP_JSON_PATH, &sandbox_temp);
+    Json(json!({
+        "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+        "isEnemyRush": false,
+        "shinyAnimal": {},
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
+}
+
+// pub async fn battle_finish(Json(payload): JSON) -> JSON {}
