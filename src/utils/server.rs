@@ -22,14 +22,14 @@ impl Server {
     fn get_address(&self) -> String {
         format!("{}:{}", self.ip, self.port)
     }
-    fn log(&self) {
+    fn log_begin(&self) {
         println!("Server started at: {}", self.get_address());
     }
     pub async fn serve(&self, routes: Router) -> Result<(), Error> {
         subscriber_fmt().with_max_level(Level::DEBUG).init();
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
-        self.log();
+        self.log_begin();
         serve(listener, routes).await
     }
 }
