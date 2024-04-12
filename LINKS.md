@@ -37,31 +37,20 @@
 - [x] `/config/prod/official/network_config`
 - [x] `/config/prod/official/refresh_config`
 - [x] `/config/prod/official/remote_config`
-- [ ] `/crisis/getInfo`
-- [ ] `/crisis/battleStart`
-- [ ] `/crisis/battleFinish`
 - [x] `/crisisV2/getInfo`
 - [x] `/crisisV2/battleStart`
 - [x] `/crisisV2/battleFinish`
 - [x] `/crisisV2/getSnapshot`
 - [x] `/deepSea/branch`
 - [x] `/deepSea/event`
-- [ ] `/mail/getMetaInfoList`
-- [ ] `/mail/listMailBox`
-- [ ] `/mail/receiveMail`
-- [ ] `/mail/receiveAllMail`
-- [ ] `/mail/removeAllReceivedMail`
+- [x] `/mail/getMetaInfoList`
+- [x] `/mail/listMailBox`
+- [x] `/mail/receiveMail`
+- [x] `/mail/receiveAllMail`
+- [x] `/mail/removeAllReceivedMail`
 - [x] `/online/v1/ping`
 - [x] `/online/v1/loginout`
-- [ ] `/tower/createGame`
-- [ ] `/tower/initGodCard`
-- [ ] `/tower/initGame`
-- [ ] `/tower/initCard`
-- [ ] `/tower/battleStart`
-- [ ] `/tower/battleFinish`
-- [ ] `/tower/recruit`
-- [ ] `/tower/chooseSubGodCard`
-- [ ] `/tower/settleGame`
+
 - [x] `/pay/getUnconfirmedOrderIdList`
 - [x] `/u8/pay/getAllProductList`
 - [x] `/quest/battleStart`
@@ -93,6 +82,18 @@
 - [x] `/activity/bossRush/relicSelect`
 - [x] `/retro/typeAct20side/competitionStart`
 - [x] `/retro/typeAct20side/competitionFinish`
+
+## TOWER
+
+- [ ] `/tower/createGame`
+- [ ] `/tower/initGodCard`
+- [ ] `/tower/initGame`
+- [ ] `/tower/initCard`
+- [ ] `/tower/battleStart`
+- [ ] `/tower/battleFinish`
+- [ ] `/tower/recruit`
+- [ ] `/tower/chooseSubGodCard`
+- [ ] `/tower/settleGame`
 
 ## RLV2
 
