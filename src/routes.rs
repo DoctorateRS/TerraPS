@@ -226,6 +226,7 @@ fn user_routes() -> Router {
         .route("/auth/v1/token_by_phone_password", post(user::auth_v1_token_by_phone_password))
         .route("/agreement", get(user::user_agreement))
         .route("/checkIn", get(user::user_check_in))
+        .route("/changeResume", post(user::user_change_resume))
         .route("/changeAvatar", post(user::user_change_avatar))
         .route("/changeSecretary", post(user::user_change_secretary))
         .route("/info/v1/need_cloud_auth", post(user::user_need_cloud_auth))
