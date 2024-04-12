@@ -4,7 +4,10 @@ use serde_json::json;
 use crate::{
     constants::config::MAILLIST_PATH,
     core::time,
-    utils::json::{get_keys, read_json, JSON},
+    utils::{
+        json::{get_keys, read_json, write_json, JSON},
+        mail::get_item,
+    },
 };
 
 pub async fn mail_get_meta_info_list() -> JSON {
@@ -90,6 +93,69 @@ pub async fn mail_list_mail_box() -> JSON {
                     "hasGifts": has_gift
                 }
             },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn mail_receive_mail(Json(payload): JSON) -> JSON {
+    let result = get_item(payload, "mailId");
+    Json(json!({
+        "items": result.0,
+        "playerDataDelta": {
+            "modified": {
+                "consumable": {},
+                "inventory":{},
+                "pushFlags": {
+                    "hasGifts": result.1
+                },
+                "status": {}
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn mail_receive_all_mail(Json(payload): JSON) -> JSON {
+    let (result, _) = get_item(payload, "sysMailIdList");
+    Json(json!({
+        "items": result,
+        "playerDataDelta": {
+            "modified": {
+                "consumable": {},
+                "inventory":{},
+                "pushFlags": {
+                    "hasGifts": 0
+                },
+                "status": {}
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn mail_delete_all_received_mails(Json(payload): JSON) -> JSON {
+    let mut mail_data = read_json(MAILLIST_PATH);
+    let mut deleted_ids = mail_data["deletedIds"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|x| x.as_u64().unwrap())
+        .collect::<Vec<u64>>();
+
+    for mail in payload["sysMailIdList"].as_array().unwrap() {
+        if !deleted_ids.contains(&mail.as_str().unwrap().parse().unwrap()) {
+            deleted_ids.push(mail.as_str().unwrap().parse().unwrap());
+        }
+    }
+
+    mail_data["deletedIds"] = json!(deleted_ids);
+    write_json(MAILLIST_PATH, mail_data);
+
+    Json(json!({
+        "result": {},
+        "playerDataDelta": {
+            "modified": {},
             "deleted": {}
         }
     }))

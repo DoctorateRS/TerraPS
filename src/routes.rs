@@ -7,7 +7,7 @@ use crate::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        deep_sea, online, pay,
+        deep_sea, mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
         shop, social, story,
     },
@@ -47,6 +47,7 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/deepSea", deep_sea_routes())
+        .nest("/mail", mail_routes())
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
         .nest("/retro", retro_routes())
@@ -167,6 +168,15 @@ fn deep_sea_routes() -> Router {
     Router::new()
         .route("/branch", post(deep_sea::deep_sea_branch))
         .route("/event", post(deep_sea::deep_sea_event))
+}
+
+fn mail_routes() -> Router {
+    Router::new()
+        .route("/getMetaInfoList", post(mail::mail_get_meta_info_list))
+        .route("/listMailBox", post(mail::mail_list_mail_box))
+        .route("/receiveMail", post(mail::mail_receive_mail))
+        .route("/receiveAllMail", post(mail::mail_receive_all_mail))
+        .route("/removeAllReceivedMail", post(mail::mail_delete_all_received_mails))
 }
 
 fn online_routes() -> Router {
