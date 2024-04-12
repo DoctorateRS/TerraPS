@@ -338,14 +338,13 @@ pub mod april_fools {
     use serde_json::json;
 
     use crate::utils::{
-        battle_data::BattleDataDecoder,
         enumerate,
+        game::decrypt_battle_data,
         json::{get_keys, JSON},
     };
 
     pub async fn act5_fun_battle_finish(Json(payload): JSON) -> JSON {
-        let decoder = BattleDataDecoder::new();
-        let battle_data = decoder.decrypt_battle_data(payload["data"].as_str().unwrap().to_string()).unwrap();
+        let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap().to_string(), None);
         let mut score = 0;
         for data in get_keys(&battle_data["battleData"]["stats"]["extraBattleInfo"]) {
             if data.starts_with("SIMPLE,money,") {
