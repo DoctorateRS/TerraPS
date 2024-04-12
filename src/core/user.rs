@@ -2,7 +2,7 @@ use axum::Json;
 use serde_json::{json, Value};
 
 use crate::{
-    constants::{self, config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
+    constants::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
     utils::json::{read_json, write_json, JSON},
 };
 

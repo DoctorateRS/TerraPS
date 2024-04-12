@@ -44,7 +44,13 @@ pub async fn social_search_player(Json(payload): JSON) -> JSON {
 }
 
 pub async fn social_get_sort_list_info() -> JSON {
-    Json(json!({"result": [], "playerDataDelta": {"modified": {}, "deleted": {}}}))
+    Json(json!({
+        "result": [],
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
 }
 
 pub async fn social_set_assist_char_list(Json(payload): JSON) -> JSON {

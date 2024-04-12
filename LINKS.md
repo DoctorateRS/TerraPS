@@ -148,10 +148,10 @@
 
 ## SANDBOX
 
-- [ ] `/sandboxPerm/sandboxV2/createGame`
-- [ ] `/sandboxPerm/sandboxV2/battleStart`
-- [ ] `/sandboxPerm/sandboxV2/battleFinish`
-- [ ] `/sandboxPerm/sandboxV2/setSquad`
+- [x] `/sandboxPerm/sandboxV2/createGame`
+- [x] `/sandboxPerm/sandboxV2/battleStart`
+- [x] `/sandboxPerm/sandboxV2/battleFinish`
+- [x] `/sandboxPerm/sandboxV2/setSquad`
 - [ ] `/sandboxPerm/sandboxV2/homeBuildSave`
 - [ ] `/sandboxPerm/sandboxV2/settleGame`
 - [ ] `/sandboxPerm/sandboxV2/eatFood`

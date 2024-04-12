@@ -178,6 +178,7 @@ fn online_routes() -> Router {
 fn quest_routes() -> Router {
     Router::new()
         .route("/battleStart", post(quest::quest_battle_start))
+        .route("/battleContinue", post(quest::quest_battle_continue))
         .route("/battleFinish", post(quest::quest_battle_finish))
         .route("/changeSquadName", post(quest::squad_change_name))
         .route("/squadFormation", post(quest::squad_set_formation))
