@@ -716,7 +716,7 @@ pub async fn account_sync_data() -> JSON {
         }
         for act_data in get_keys(&acitivity_table["activity"][&act_id]) {
             if player_data["user"]["activity"][&act_id].get(&act_data).is_none() {
-                player_data["user"]["activity"][&act_id] = json!({});
+                player_data["user"]["activity"][&act_id][&act_data] = json!({});
             }
         }
     }
