@@ -91,7 +91,7 @@ pub async fn account_sync_data() -> JSON {
     }
 
     // Operators
-    let operator_template = config["charConfig"].clone();
+    let operator_template = &config["charConfig"];
 
     let mut count = 0;
     let operator_keys = get_keys(&char_table);
@@ -601,9 +601,7 @@ pub async fn account_sync_data() -> JSON {
     // REPLAY CODES
     let replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
 
-    // TODO: MAKE THIS DYNAMIC
-    let cur_char_conf = "95cf97c228e6c235cd6503e5eeb1b737";
-    // md5(b64encode(json.dumps(edit_json).encode())).hexdigest()
+    let cur_char_conf = encrypt(operator_template);
 
     if get_keys(&replay_data["saved"]).contains(&cur_char_conf.to_string()) {
         for replay in get_keys(&replay_data["saved"][&cur_char_conf]) {

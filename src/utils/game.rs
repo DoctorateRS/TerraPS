@@ -1,6 +1,10 @@
 use std::fmt::Display;
 
-use super::{battle_data::BattleDataDecoder, json::read_json};
+use super::{
+    battle_data::BattleDataDecoder,
+    crypto::{base64::encode, md5::md5_hexdigest},
+    json::read_json,
+};
 use reqwest::get;
 use serde_json::Value;
 
@@ -31,4 +35,10 @@ pub fn decrypt_battle_data<T: Display>(data: T, login_time: Option<u64>) -> Valu
         None => BattleDataDecoder::new(),
     };
     decryptor.decrypt_battle_data(data.to_string()).unwrap()
+}
+
+pub fn encrypt<T: Display>(data: T) -> String {
+    let data = data.to_string();
+    let data = encode(data);
+    md5_hexdigest(data.as_bytes())
 }

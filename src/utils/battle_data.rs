@@ -5,7 +5,7 @@ use aes::{
 use anyhow::Result;
 use cbc::Decryptor;
 use hex::decode;
-use serde_json::Value;
+use serde_json::{from_str, Value};
 
 use super::crypto::md5::md5_digest;
 
@@ -46,6 +46,6 @@ impl BattleDataDecoder {
         let aes = Aes128CbcDec::new(key.as_slice().into(), iv.as_slice().into());
         let res = aes.decrypt_padded_vec_mut::<NoPadding>(data.as_slice())?;
         let json_string = String::from_utf8(res)?;
-        Ok(serde_json::from_str(json_string.trim())?)
+        Ok(from_str(json_string.trim())?)
     }
 }
