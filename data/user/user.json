@@ -1,6 +1,6 @@
 {
   "result": 0,
-  "ts": 1712628583,
+  "ts": 1712935065,
   "user": {
     "dungeon": {
       "stages": {
@@ -5842,6 +5842,132 @@
           "noCostCnt": 0,
           "practiceTimes": 0,
           "stageId": "pro_d_2",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_st01": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_st01",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_01": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_01",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_tr01": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_tr01",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_02": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_02",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_03": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_03",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_st02": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_st02",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_04": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_04",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_05": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_05",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_06": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_06",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_07": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_07",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_08": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_08",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_09": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_09",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_10": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_10",
+          "startTimes": 1,
+          "state": 3
+        },
+        "act33side_st03": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "act33side_st03",
           "startTimes": 1,
           "state": 3
         },
@@ -19111,6 +19237,222 @@
           "startTimes": 1,
           "state": 3
         },
+        "lt_13_01": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_01",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_02": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_02",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_03": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_03",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_04": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_04",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_05": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_05",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_06": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_06",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_01_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_01_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_02_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_02_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_03_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_03_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_04_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_04_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_05_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_05_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_13_06_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_13_06_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_01": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_01",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_02": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_02",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_03": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_03",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_04": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_04",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_05": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_05",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_06": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_06",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_01_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_01_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_02_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_02_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_03_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_03_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_04_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_04_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_05_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_05_ex",
+          "startTimes": 1,
+          "state": 3
+        },
+        "lt_14_06_ex": {
+          "completeTimes": 1,
+          "hasBattleReplay": 0,
+          "noCostCnt": 0,
+          "practiceTimes": 0,
+          "stageId": "lt_14_06_ex",
+          "startTimes": 1,
+          "state": 3
+        },
         "lt_01_01": {
           "completeTimes": 1,
           "hasBattleReplay": 0,
@@ -20010,6 +20352,29 @@
         "obt/tutorial/level/main_08-14": 1,
         "obt/tutorial/level/main_08-17": 1,
         "activities/act1lock/level_act1lock_entry": 1,
+        "activities/act33side/level_act33side_st01": 1,
+        "activities/act33side/level_act33side_01_beg": 1,
+        "activities/act33side/level_act33side_01_end": 1,
+        "activities/act33side/level_act33side_02_beg": 1,
+        "activities/act33side/level_act33side_02_end": 1,
+        "activities/act33side/level_act33side_03_beg": 1,
+        "activities/act33side/level_act33side_03_end": 1,
+        "activities/act33side/level_act33side_st02": 1,
+        "activities/act33side/level_act33side_04_beg": 1,
+        "activities/act33side/level_act33side_04_end": 1,
+        "activities/act33side/level_act33side_05_beg": 1,
+        "activities/act33side/level_act33side_05_end": 1,
+        "activities/act33side/level_act33side_06_beg": 1,
+        "activities/act33side/level_act33side_06_end": 1,
+        "activities/act33side/level_act33side_07_beg": 1,
+        "activities/act33side/level_act33side_07_end": 1,
+        "activities/act33side/level_act33side_08_beg": 1,
+        "activities/act33side/level_act33side_08_end": 1,
+        "activities/act33side/level_act33side_09_beg": 1,
+        "activities/act33side/level_act33side_09_end": 1,
+        "activities/act33side/level_act33side_10_beg": 1,
+        "activities/act33side/level_act33side_10_end": 1,
+        "activities/act33side/level_act33side_st03": 1,
         "activities/act5fun/level_act5fun_entry": 1,
         "activities/act5fun/level_act5fun_01_end": 1,
         "activities/act32side/level_act32side_st01": 1,
@@ -21127,6 +21492,10 @@
         "obt/memory/story_iana_1_1": 1,
         "obt/memory/story_fuze_1_1": 1,
         "obt/memory/story_rdoc_1_1": 1,
+        "obt/memory/story_judge_1_1": 1,
+        "obt/memory/story_spuria_1_1": 1,
+        "obt/memory/story_lunacu_1_1": 1,
+        "obt/memory/story_vrdant_1_1": 1,
         "Obt/Guide/LEGION/legion_tr01_intro": 1,
         "Obt/Guide/LEGION/legion_tr02_intro": 1,
         "Obt/Guide/LEGION/legion_tr03_intro": 1,
@@ -21183,11 +21552,11 @@
       "diamondShard": 9999999,
       "gold": 9999999,
       "practiceTicket": 999,
-      "lastRefreshTs": 1712628583,
-      "lastApAddTime": 1712628583,
+      "lastRefreshTs": 1712935065,
+      "lastApAddTime": 1712935065,
       "mainStageProgress": null,
-      "registerTs": 1712628583,
-      "lastOnlineTs": 1712628583,
+      "registerTs": 1712935065,
+      "lastOnlineTs": 1712935065,
       "serverName": "TerraPS",
       "avatarId": "0",
       "resume": "TerraPS",
@@ -21312,7 +21681,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21330,7 +21699,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21348,7 +21717,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21366,7 +21735,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21384,7 +21753,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21402,7 +21771,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21420,7 +21789,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21438,7 +21807,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21456,7 +21825,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21474,7 +21843,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21492,7 +21861,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21510,7 +21879,7 @@
           "exp": 0,
           "evolvePhase": 0,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21528,7 +21897,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[1]",
@@ -21554,7 +21923,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_wyvern_1",
@@ -21580,7 +21949,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21598,7 +21967,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[1]",
@@ -21624,7 +21993,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[1]",
@@ -21650,7 +22019,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[1]",
@@ -21676,7 +22045,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_self[1]",
@@ -21702,7 +22071,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[1]",
@@ -21728,7 +22097,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21746,7 +22115,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_spot_1",
@@ -21772,7 +22141,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kroos_1",
@@ -21798,7 +22167,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[1]",
@@ -21824,7 +22193,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21842,7 +22211,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[1]",
@@ -21868,7 +22237,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[1]",
@@ -21894,7 +22263,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_range_extend",
@@ -21920,7 +22289,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21938,7 +22307,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_stward_1",
@@ -21964,7 +22333,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": -1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [],
           "voiceLan": "JP",
           "currentEquip": null,
@@ -21982,7 +22351,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[1]",
@@ -22008,7 +22377,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -22041,7 +22410,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[2]",
@@ -22074,7 +22443,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[2]",
@@ -22107,7 +22476,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -22140,7 +22509,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_indigo_1",
@@ -22173,7 +22542,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[2]",
@@ -22206,7 +22575,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_jesica_1",
@@ -22239,7 +22608,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_shotst_1",
@@ -22272,7 +22641,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -22305,7 +22674,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mm_1",
@@ -22338,7 +22707,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_yuki_1",
@@ -22371,7 +22740,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_pinecn_1",
@@ -22404,7 +22773,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_glaze_1",
@@ -22437,7 +22806,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_acdrop_1",
@@ -22470,7 +22839,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_totter_1",
@@ -22503,7 +22872,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_caper_1",
@@ -22536,7 +22905,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[2]",
@@ -22569,7 +22938,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[2]",
@@ -22602,7 +22971,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_vigna_1",
@@ -22635,7 +23004,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_assist_cost[2]",
@@ -22668,7 +23037,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bstalk_1",
@@ -22701,7 +23070,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_doberm_1",
@@ -22734,7 +23103,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_self[2]",
@@ -22767,7 +23136,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_peacok_1",
@@ -22800,7 +23169,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_frostl_1",
@@ -22833,7 +23202,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -22866,7 +23235,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_frncat_1",
@@ -22899,7 +23268,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_cutter_1",
@@ -22932,7 +23301,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_utage_1",
@@ -22965,7 +23334,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_spikes_1",
@@ -22998,7 +23367,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lolxh_1",
@@ -23031,7 +23400,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -23064,7 +23433,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_humus_1",
@@ -23097,7 +23466,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_gravel_1",
@@ -23130,7 +23499,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_strong_1",
@@ -23163,7 +23532,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_rope_1",
@@ -23196,7 +23565,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_myrrh_1",
@@ -23229,7 +23598,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ccheal_1",
@@ -23262,7 +23631,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[2]",
@@ -23295,7 +23664,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[2]",
@@ -23328,7 +23697,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_finlpp_1",
@@ -23361,7 +23730,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_chnut_1",
@@ -23394,7 +23763,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_yak_1",
@@ -23427,7 +23796,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[2]",
@@ -23460,7 +23829,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[2]",
@@ -23471,6 +23840,39 @@
             },
             {
               "skillId": "skchr_bubble_2",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            }
+          ],
+          "voiceLan": "JP",
+          "currentEquip": null,
+          "equip": {},
+          "starMark": 0
+        },
+        "4130": {
+          "instId": 4130,
+          "charId": "char_4130_luton",
+          "favorPoint": 25570,
+          "potentialRank": 5,
+          "mainSkillLvl": 7,
+          "skin": "char_4130_luton#1",
+          "level": 70,
+          "exp": 0,
+          "evolvePhase": 2,
+          "defaultSkillIndex": 1,
+          "gainTime": 1712935064,
+          "skills": [
+            {
+              "skillId": "skchr_luton_1",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            },
+            {
+              "skillId": "skchr_luton_2",
               "unlock": 1,
               "state": 0,
               "specializeLevel": 3,
@@ -23493,7 +23895,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_sunbr_1",
@@ -23526,7 +23928,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -23559,7 +23961,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_deepcl_1",
@@ -23592,7 +23994,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[2]",
@@ -23625,7 +24027,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_podego_1",
@@ -23658,7 +24060,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_robrta_1",
@@ -23691,7 +24093,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ethan_1",
@@ -23724,7 +24126,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_sqrrel_1",
@@ -23757,7 +24159,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_vrdant_1",
@@ -23790,7 +24192,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[3]",
@@ -23823,7 +24225,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_breeze_1",
@@ -23856,7 +24258,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -23889,7 +24291,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -23922,7 +24324,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -23955,7 +24357,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -23988,7 +24390,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_apionr_1",
@@ -24014,7 +24416,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -24047,7 +24449,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -24080,7 +24482,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_wildmn_1",
@@ -24113,7 +24515,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_assist_cost[3]",
@@ -24146,7 +24548,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_assist_cost[3]",
@@ -24179,7 +24581,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_blkngt_1",
@@ -24212,7 +24614,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ctable_1",
@@ -24245,7 +24647,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_puzzle_1",
@@ -24278,7 +24680,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_swire_1",
@@ -24311,7 +24713,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_sophia_1",
@@ -24344,7 +24746,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bryota_1",
@@ -24377,7 +24779,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_rdoc_1",
@@ -24410,7 +24812,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -24443,7 +24845,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_flameb_1",
@@ -24476,7 +24878,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_morgan_1",
@@ -24509,7 +24911,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aguard_1",
@@ -24535,7 +24937,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_tiger_1",
@@ -24568,7 +24970,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_flint_1",
@@ -24601,7 +25003,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_dagda_1",
@@ -24634,7 +25036,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_whitew_1",
@@ -24667,7 +25069,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ayer_1",
@@ -24700,7 +25102,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -24733,7 +25135,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -24766,7 +25168,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bibeak_1",
@@ -24799,7 +25201,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_tachak_1",
@@ -24832,7 +25234,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -24865,7 +25267,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_broca_1",
@@ -24898,7 +25300,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_fuze_1",
@@ -24931,7 +25333,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_astesi_1",
@@ -24964,7 +25366,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_self[3]",
@@ -24997,7 +25399,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_akafyu_1",
@@ -25030,7 +25432,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_noirc2_1",
@@ -25063,7 +25465,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_crow_1",
@@ -25096,7 +25498,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_highmo_1",
@@ -25129,7 +25531,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_takila_1",
@@ -25140,6 +25542,39 @@
             },
             {
               "skillId": "skchr_takila_2",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            }
+          ],
+          "voiceLan": "JP",
+          "currentEquip": null,
+          "equip": {},
+          "starMark": 0
+        },
+        "4131": {
+          "instId": 4131,
+          "charId": "char_4131_odda",
+          "favorPoint": 25570,
+          "potentialRank": 5,
+          "mainSkillLvl": 7,
+          "skin": "char_4131_odda#1",
+          "level": 80,
+          "exp": 0,
+          "evolvePhase": 2,
+          "defaultSkillIndex": 1,
+          "gainTime": 1712935064,
+          "skills": [
+            {
+              "skillId": "skchr_odda_1",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            },
+            {
+              "skillId": "skchr_odda_2",
               "unlock": 1,
               "state": 0,
               "specializeLevel": 3,
@@ -25162,7 +25597,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bluep_1",
@@ -25195,7 +25630,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -25228,7 +25663,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_swllow_1",
@@ -25261,7 +25696,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_asnipe_1",
@@ -25287,7 +25722,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aprl_1",
@@ -25320,7 +25755,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kroos2_1",
@@ -25353,7 +25788,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_inside_1",
@@ -25386,7 +25821,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_meteo_1",
@@ -25419,7 +25854,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -25452,7 +25887,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bdhkgt_1",
@@ -25485,7 +25920,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_excu_1",
@@ -25518,7 +25953,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -25645,7 +26080,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_absin_1",
@@ -25678,7 +26113,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_tomimi_1",
@@ -25711,7 +26146,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_qanik_1",
@@ -25744,7 +26179,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -25777,7 +26212,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_acast_1",
@@ -25803,7 +26238,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -25836,7 +26271,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_halo_1",
@@ -25869,7 +26304,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_beewax_1",
@@ -25902,7 +26337,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -25935,7 +26370,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -25968,7 +26403,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mint_1",
@@ -26001,7 +26436,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_iris_1",
@@ -26034,7 +26469,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_hamoni_1",
@@ -26067,7 +26502,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_delphn_1",
@@ -26100,7 +26535,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lava2_1",
@@ -26133,7 +26568,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_serum_1",
@@ -26144,6 +26579,39 @@
             },
             {
               "skillId": "skchr_serum_2",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            }
+          ],
+          "voiceLan": "JP",
+          "currentEquip": null,
+          "equip": {},
+          "starMark": 0
+        },
+        "446": {
+          "instId": 446,
+          "charId": "char_446_aroma",
+          "favorPoint": 25570,
+          "potentialRank": 5,
+          "mainSkillLvl": 7,
+          "skin": "char_446_aroma#1",
+          "level": 80,
+          "exp": 0,
+          "evolvePhase": 2,
+          "defaultSkillIndex": 1,
+          "gainTime": 1712935064,
+          "skills": [
+            {
+              "skillId": "skchr_aroma_1",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            },
+            {
+              "skillId": "skchr_aroma_2",
               "unlock": 1,
               "state": 0,
               "specializeLevel": 3,
@@ -26166,7 +26634,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -26199,7 +26667,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[3]",
@@ -26232,7 +26700,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -26265,7 +26733,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kaitou_1",
@@ -26298,7 +26766,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_warmy_1",
@@ -26331,7 +26799,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_otter_1",
@@ -26364,7 +26832,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_folivo_1",
@@ -26397,7 +26865,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[3]",
@@ -26430,7 +26898,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bldsk_1",
@@ -26463,7 +26931,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_folnic_1",
@@ -26496,7 +26964,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_amedic_1",
@@ -26522,7 +26990,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ceylon_1",
@@ -26555,7 +27023,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_whispr_1",
@@ -26588,7 +27056,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_tuye_1",
@@ -26621,7 +27089,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mberry_1",
@@ -26654,7 +27122,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_glider_1",
@@ -26687,7 +27155,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[3]",
@@ -26720,7 +27188,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -26753,7 +27221,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_magic_rage[3]",
@@ -26786,7 +27254,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_rage[3]",
@@ -26819,7 +27287,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_nearl_1",
@@ -26852,7 +27320,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_hmau_1",
@@ -26885,7 +27353,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_baslin_1",
@@ -26918,7 +27386,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_red_1",
@@ -26951,7 +27419,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_waaifu_1",
@@ -26984,7 +27452,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kafka_1",
@@ -27017,7 +27485,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_nothin_1",
@@ -27050,7 +27518,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_liskam_1",
@@ -27083,7 +27551,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_moeshd_1",
@@ -27116,7 +27584,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[3]",
@@ -27149,7 +27617,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_hpsts_1",
@@ -27182,7 +27650,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_asbest_1",
@@ -27215,7 +27683,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aprot_1",
@@ -27241,7 +27709,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aprot2_1",
@@ -27274,7 +27742,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_pianst_1",
@@ -27307,7 +27775,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_blitz_1",
@@ -27340,7 +27808,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_zebra_1",
@@ -27373,7 +27841,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -27406,7 +27874,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_firwhl_1",
@@ -27439,7 +27907,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aurora_1",
@@ -27472,7 +27940,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_cement_1",
@@ -27505,7 +27973,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_prove_1",
@@ -27538,7 +28006,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_melnte_1",
@@ -27571,7 +28039,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_milu_1",
@@ -27604,7 +28072,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -27637,7 +28105,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lunacu_1",
@@ -27670,7 +28138,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_toddi_1",
@@ -27703,7 +28171,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_erato_1",
@@ -27736,7 +28204,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -27769,7 +28237,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -27802,7 +28270,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_spuria_1",
@@ -27835,7 +28303,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_slchan_1",
@@ -27868,7 +28336,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_snsant_1",
@@ -27901,7 +28369,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_almond_1",
@@ -27934,7 +28402,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_slbell_1",
@@ -27967,7 +28435,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_vodfox_1",
@@ -28000,7 +28468,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_glassb_1",
@@ -28033,7 +28501,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_glacus_1",
@@ -28066,7 +28534,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_provs_1",
@@ -28099,7 +28567,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_grabds_1",
@@ -28132,7 +28600,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_windft_1",
@@ -28165,7 +28633,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_sora_1",
@@ -28198,7 +28666,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_heidi_1",
@@ -28231,7 +28699,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_tknogi_1",
@@ -28264,7 +28732,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ncdeer_1",
@@ -28297,7 +28765,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_quercu_1",
@@ -28330,7 +28798,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_threye_1",
@@ -28363,7 +28831,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mantic_1",
@@ -28396,7 +28864,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kirara_1",
@@ -28429,7 +28897,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_panda_1",
@@ -28462,7 +28930,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_forcer_1",
@@ -28495,7 +28963,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_robin_1",
@@ -28528,7 +28996,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_rfrost_1",
@@ -28561,7 +29029,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bena_1",
@@ -28594,7 +29062,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kazema_1",
@@ -28627,7 +29095,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_iana_1",
@@ -28660,7 +29128,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_angel_1",
@@ -28700,7 +29168,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_archet_1",
@@ -28740,7 +29208,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ash_1",
@@ -28780,7 +29248,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_shwaz_1",
@@ -28820,7 +29288,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_bgsnow_1",
@@ -28860,7 +29328,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -28900,7 +29368,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_cqbw_1",
@@ -28940,7 +29408,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_phenxi_1",
@@ -28980,7 +29448,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -29020,7 +29488,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -29060,7 +29528,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_rosmon_1",
@@ -29100,7 +29568,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_chen2_1",
@@ -29140,7 +29608,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ray_1",
@@ -29180,7 +29648,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -29220,7 +29688,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -29260,7 +29728,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_charge_cost[3]",
@@ -29300,7 +29768,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_assist_cost[3]",
@@ -29340,7 +29808,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_flamtl_1",
@@ -29380,7 +29848,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_vigil_1",
@@ -29420,7 +29888,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mlyss_1",
@@ -29460,7 +29928,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ines_1",
@@ -29500,7 +29968,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ifrit_1",
@@ -29540,7 +30008,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -29580,7 +30048,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_amgoat_1",
@@ -29620,7 +30088,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_cerber_1",
@@ -29660,7 +30128,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_heyak_1",
@@ -29700,7 +30168,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_dusk_1",
@@ -29740,7 +30208,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_pasngr_1",
@@ -29780,7 +30248,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_billro_1",
@@ -29820,7 +30288,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lin_1",
@@ -29860,7 +30328,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_gdglow_1",
@@ -29900,7 +30368,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ebnhlz_1",
@@ -29940,7 +30408,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_gnosis_1",
@@ -29980,7 +30448,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_aglina_1",
@@ -30020,7 +30488,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lisa_1",
@@ -30060,7 +30528,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mgllan_1",
@@ -30100,7 +30568,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_skadi2_1",
@@ -30140,7 +30608,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_slent2_1",
@@ -30180,7 +30648,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ling_1",
@@ -30220,7 +30688,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ironmn_1",
@@ -30260,7 +30728,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_cello_1",
@@ -30300,7 +30768,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_phatom_1",
@@ -30340,7 +30808,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_texas2_1",
@@ -30380,7 +30848,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_yato2_1",
@@ -30420,7 +30888,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lmlee_1",
@@ -30460,7 +30928,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_swire2_1",
@@ -30500,7 +30968,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_weedy_1",
@@ -30540,7 +31008,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_haak_1",
@@ -30580,7 +31048,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_glady_1",
@@ -30620,7 +31088,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mizuki_1",
@@ -30649,6 +31117,46 @@
           "equip": {},
           "starMark": 0
         },
+        "4132": {
+          "instId": 4132,
+          "charId": "char_4132_ascln",
+          "favorPoint": 25570,
+          "potentialRank": 5,
+          "mainSkillLvl": 7,
+          "skin": "char_4132_ascln#1",
+          "level": 90,
+          "exp": 0,
+          "evolvePhase": 2,
+          "defaultSkillIndex": 2,
+          "gainTime": 1712935064,
+          "skills": [
+            {
+              "skillId": "skchr_ascln_1",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            },
+            {
+              "skillId": "skchr_ascln_2",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            },
+            {
+              "skillId": "skchr_ascln_3",
+              "unlock": 1,
+              "state": 0,
+              "specializeLevel": 3,
+              "completeUpgradeTime": -1
+            }
+          ],
+          "voiceLan": "JP",
+          "currentEquip": null,
+          "equip": {},
+          "starMark": 0
+        },
         "1023": {
           "instId": 1023,
           "charId": "char_1023_ghost2",
@@ -30660,7 +31168,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ghost2_1",
@@ -30700,7 +31208,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_doroth_1",
@@ -30740,7 +31248,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_ela_1",
@@ -30780,7 +31288,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_shining_1",
@@ -30820,7 +31328,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_heal_up[3]",
@@ -30860,7 +31368,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_kalts_1",
@@ -30900,7 +31408,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lumen_1",
@@ -30940,7 +31448,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_agoat2_1",
@@ -30980,7 +31488,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -31020,7 +31528,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_hsguma_1",
@@ -31060,7 +31568,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_demkni_1",
@@ -31100,7 +31608,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_blemsh_1",
@@ -31140,7 +31648,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_shu_1",
@@ -31180,7 +31688,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_nian_1",
@@ -31220,7 +31728,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[3]",
@@ -31260,7 +31768,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_judge_1",
@@ -31300,7 +31808,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_zumama_1",
@@ -31340,7 +31848,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_horn_1",
@@ -31380,7 +31888,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_jesca2_1",
@@ -31420,7 +31928,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_f12yin_1",
@@ -31460,7 +31968,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_chyue_1",
@@ -31500,7 +32008,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_svrash_1",
@@ -31540,7 +32048,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_atk_up[3]",
@@ -31580,7 +32088,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_qiubai_1",
@@ -31620,7 +32128,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_hodrer_1",
@@ -31660,7 +32168,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_chen_1",
@@ -31700,7 +32208,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_irene_1",
@@ -31740,7 +32248,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_blkkgt_1",
@@ -31780,7 +32288,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_huang_1",
@@ -31820,7 +32328,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_gvial2_1",
@@ -31860,7 +32368,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_surtr_1",
@@ -31900,7 +32408,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_vvana_1",
@@ -31940,7 +32448,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_helage_1",
@@ -31980,7 +32488,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_zuole_1",
@@ -32020,7 +32528,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_pallas_1",
@@ -32060,7 +32568,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_nearl2_1",
@@ -32100,7 +32608,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_lessng_1",
@@ -32140,7 +32648,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_excu2_1",
@@ -32180,7 +32688,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_mlynar_1",
@@ -32220,7 +32728,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_savage_1",
@@ -32253,7 +32761,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_catap_1",
@@ -32279,7 +32787,7 @@
           "exp": 0,
           "evolvePhase": 1,
           "defaultSkillIndex": 0,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_midn_1",
@@ -32305,7 +32813,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_brownb_1",
@@ -32338,7 +32846,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_jaksel_1",
@@ -32371,7 +32879,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skchr_nightm_1",
@@ -32404,7 +32912,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 1,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_def_up[3]",
@@ -32437,7 +32945,7 @@
           "exp": 0,
           "evolvePhase": 2,
           "defaultSkillIndex": 2,
-          "gainTime": 1712628583,
+          "gainTime": 1712935064,
           "skills": [
             {
               "skillId": "skcom_quickattack[3]",
@@ -32699,6 +33207,9 @@
         "char_381_bubble": {
           "favorPoint": 25570
         },
+        "char_4130_luton": {
+          "favorPoint": 25570
+        },
         "char_196_sunbr": {
           "favorPoint": 25570
         },
@@ -32852,6 +33363,9 @@
         "char_486_takila": {
           "favorPoint": 25570
         },
+        "char_4131_odda": {
+          "favorPoint": 25570
+        },
         "char_129_bluep": {
           "favorPoint": 25570
         },
@@ -32937,6 +33451,9 @@
           "favorPoint": 25570
         },
         "char_489_serum": {
+          "favorPoint": 25570
+        },
+        "char_446_aroma": {
           "favorPoint": 25570
         },
         "char_4013_kjera": {
@@ -33315,6 +33832,9 @@
           "favorPoint": 25570
         },
         "char_437_mizuki": {
+          "favorPoint": 25570
+        },
+        "char_4132_ascln": {
           "favorPoint": 25570
         },
         "char_1023_ghost2": {
@@ -35784,7 +36304,16 @@
           "story": {}
         },
         "char_4009_irene": {
-          "story": {}
+          "stage": {
+            "mem_irene_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_4042_lumen": {
           "stage": {
@@ -36030,7 +36559,16 @@
           }
         },
         "char_4014_lunacu": {
-          "story": {}
+          "stage": {
+            "mem_lunacu_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_466_qanik": {
           "stage": {
@@ -36057,7 +36595,16 @@
           }
         },
         "char_4065_judge": {
-          "story": {}
+          "stage": {
+            "mem_judge_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_1028_texas2": {
           "story": {}
@@ -36159,7 +36706,16 @@
           }
         },
         "char_154_morgan": {
-          "story": {}
+          "stage": {
+            "mem_morgan_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_464_cement": {
           "story": {}
@@ -36201,7 +36757,16 @@
           "story": {}
         },
         "char_4015_spuria": {
-          "story": {}
+          "stage": {
+            "mem_spuria_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_1032_excu2": {
           "stage": {
@@ -36276,7 +36841,16 @@
           "story": {}
         },
         "char_4107_vrdant": {
-          "story": {}
+          "stage": {
+            "mem_vrdant_1": {
+              "startTimes": 0,
+              "completeTimes": 1,
+              "state": 3,
+              "fts": 1624284657,
+              "rts": 1624284657,
+              "startTime": 2
+            }
+          }
         },
         "char_494_vendla": {
           "story": {}
@@ -36345,6 +36919,18 @@
           "story": {}
         },
         "char_4126_fuze": {
+          "story": {}
+        },
+        "char_4131_odda": {
+          "story": {}
+        },
+        "char_4130_luton": {
+          "story": {}
+        },
+        "char_4132_ascln": {
+          "story": {}
+        },
+        "char_446_aroma": {
           "story": {}
         }
       }
@@ -36451,6 +37037,10 @@
         "char_1020_reed2@epoque#30": 1,
         "char_388_mint@epoque#30": 1,
         "char_183_skgoat@epoque#30": 1,
+        "char_4082_qiubai@epoque#31": 1,
+        "char_489_serum@epoque#31": 1,
+        "char_464_cement@epoque#31": 1,
+        "char_440_pinecn@epoque#31": 1,
         "char_120_hibisc@nian#1": 1,
         "char_010_chen@nian#2": 1,
         "char_308_swire@nian#2": 1,
@@ -37004,6 +37594,10 @@
           "charInstId": 381,
           "count": 6
         },
+        "char_4130_luton": {
+          "charInstId": 4130,
+          "count": 6
+        },
         "char_196_sunbr": {
           "charInstId": 196,
           "count": 6
@@ -37208,6 +37802,10 @@
           "charInstId": 486,
           "count": 6
         },
+        "char_4131_odda": {
+          "charInstId": 4131,
+          "count": 6
+        },
         "char_129_bluep": {
           "charInstId": 129,
           "count": 6
@@ -37322,6 +37920,10 @@
         },
         "char_489_serum": {
           "charInstId": 489,
+          "count": 6
+        },
+        "char_446_aroma": {
+          "charInstId": 446,
           "count": 6
         },
         "char_4013_kjera": {
@@ -37826,6 +38428,10 @@
         },
         "char_437_mizuki": {
           "charInstId": 437,
+          "count": 6
+        },
+        "char_4132_ascln": {
+          "charInstId": 4132,
           "count": 6
         },
         "char_1023_ghost2": {
@@ -38806,6 +39412,26 @@
           "enemy_1409_bdguad": 1,
           "enemy_1409_bdguad_2": 1,
           "enemy_1409_bdguad_3": 1,
+          "enemy_1410_mmelee": 1,
+          "enemy_1410_mmelee_2": 1,
+          "enemy_1411_mmrnge": 1,
+          "enemy_1411_mmrnge_2": 1,
+          "enemy_1412_mmjump": 1,
+          "enemy_1412_mmjump_2": 1,
+          "enemy_1413_mmstck": 1,
+          "enemy_1413_mmstck_2": 1,
+          "enemy_1414_mmleak": 1,
+          "enemy_1414_mmleak_2": 1,
+          "enemy_1415_mmkabi": 1,
+          "enemy_1415_mmkabi_2": 1,
+          "enemy_1416_mmfarm": 1,
+          "enemy_1416_mmfarm_2": 1,
+          "enemy_1417_mmdudu": 1,
+          "enemy_1417_mmdudu_2": 1,
+          "enemy_1418_mmkonm": 1,
+          "enemy_1418_mmkonm_2": 1,
+          "enemy_1419_mmcike": 1,
+          "enemy_3006_tersia": 1,
           "enemy_2001_duckmi": 1,
           "enemy_2002_bearmi": 1,
           "enemy_2034_sythef": 1,
@@ -38889,6 +39515,7 @@
           "enemy_1549_windoc": 1,
           "enemy_1550_dhnzzh": 1,
           "enemy_1551_bolicp": 1,
+          "enemy_1552_mmamiy": 1,
           "enemy_2003_rockman": 1,
           "enemy_2004_balloon": 1,
           "enemy_2005_axetro": 1,
@@ -38950,6 +39577,9 @@
           "enemy_6019_escort": 1,
           "enemy_6020_orang": 1,
           "enemy_6021_cask": 1,
+          "enemy_6022_m2cnt": 1,
+          "enemy_6023_crane": 1,
+          "enemy_6024_crnbug": 1,
           "enemy_7001_blwzad": 1,
           "enemy_7001_blwzad_2": 1,
           "enemy_7002_veingd": 1,
@@ -38997,8 +39627,8 @@
       "teamV2": {}
     },
     "crisis": {
-      "lst": 1712628583,
-      "nst": 1712632183
+      "lst": 1712935065,
+      "nst": 1712938665
     },
     "crisisV2": {
       "current": "crisis_v2_season_1_1",
@@ -39198,299 +39828,299 @@
     "avatar": {
       "avatar_icon": {
         "avatar_ass_01": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_01": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_02": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_03": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_04": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_05": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_06": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_07": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_08": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_09": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_10": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_11": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_12": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_13": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_14": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_15": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_special_16": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_OF": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_GK": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_OI": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_CB": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_AF": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL1_1": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL1_2": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_SA": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_EP10_1": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_EP10_2": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_SV": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_BN": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_TW": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_FA": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RI": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_BH": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_EP11": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_MN": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL2_1": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL2_2": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_PL": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_MB": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_WR": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_VI": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_HLL": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_EP12": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_WD": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_PS": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_UT": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL3_1": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_RL3_2": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_DH": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_TB": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_NL": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_EP13": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_BI": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_TC": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_IW": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_AW": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_GA": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_XB1_1": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_activity_CR": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "other"
         },
         "avatar_def_01": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_02": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_03": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_04": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_05": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_06": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_07": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_08": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_09": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_10": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_11": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_12": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_13": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_14": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         },
         "avatar_def_15": {
-          "ts": 1712628583,
+          "ts": 1712935065,
           "src": "initial"
         }
       }
@@ -39499,52 +40129,52 @@
       "selected": "bg_rainbowsix_1",
       "bgs": {
         "bg_rhodes_day": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rhodes_night": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_main_victoria_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_siesta_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_kazimierz_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_ursus_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_yan_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_iberia_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_anniversary_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rogue_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rogue_2": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_laterano_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rhine_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_kalts_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rogue_3": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "bg_rainbowsix_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         }
       }
     },
@@ -39560,19 +40190,19 @@
       "selected": "tm_rainbowsix_1",
       "themes": {
         "tm_rhodes_day": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "tm_rhodes_night": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "tm_rogue_3": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "tm_mainline_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         },
         "tm_rainbowsix_1": {
-          "unlock": 1712628583
+          "unlock": 1712935065
         }
       }
     },
@@ -50812,6 +51442,127 @@
           ],
           "trailRewards": []
         },
+        "act33side": {
+          "rts": 1700000000,
+          "stories": [
+            {
+              "id": "act33side_level_act33side_st01",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_01_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_01_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_02_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_02_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_03_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_03_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_st02",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_04_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_04_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_05_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_05_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_06_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_06_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_07_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_07_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_08_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_08_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_09_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_09_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_10_beg",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_10_end",
+              "uts": 1695000000,
+              "rc": 1
+            },
+            {
+              "id": "act33side_level_act33side_st03",
+              "uts": 1695000000,
+              "rc": 1
+            }
+          ],
+          "trailRewards": []
+        },
         "act4d0": {
           "rts": 1700000000,
           "stories": [
@@ -56049,6 +56800,50 @@
             }
           ],
           "trailRewards": []
+        },
+        "story_judge_set_1": {
+          "rts": 1700000000,
+          "stories": [
+            {
+              "id": "story_judge_set_1_story_1",
+              "uts": 1695000000,
+              "rc": 1
+            }
+          ],
+          "trailRewards": []
+        },
+        "story_spuria_set_1": {
+          "rts": 1700000000,
+          "stories": [
+            {
+              "id": "story_spuria_set_1_story_1",
+              "uts": 1695000000,
+              "rc": 1
+            }
+          ],
+          "trailRewards": []
+        },
+        "story_lunacu_set_1": {
+          "rts": 1700000000,
+          "stories": [
+            {
+              "id": "story_lunacu_set_1_story_1",
+              "uts": 1695000000,
+              "rc": 1
+            }
+          ],
+          "trailRewards": []
+        },
+        "story_vrdant_set_1": {
+          "rts": 1700000000,
+          "stories": [
+            {
+              "id": "story_vrdant_set_1_story_1",
+              "uts": 1695000000,
+              "rc": 1
+            }
+          ],
+          "trailRewards": []
         }
       }
     },
@@ -56291,6 +57086,14 @@
           "trailReward_sub_3_3": 1,
           "trailReward_sub_3_4": 1,
           "trailReward_sub_3_5": 1
+        },
+        "permanent_sub_4_Stultifera_Navis": {
+          "trailReward_sub_4_1": 1,
+          "trailReward_sub_4_2": 1,
+          "trailReward_sub_4_3": 1,
+          "trailReward_sub_4_4": 1,
+          "trailReward_sub_4_5": 1,
+          "trailReward_sub_4_6": 1
         },
         "permanent_sidestory_1_Grani_And_The_Treasure_Of_Knights": {
           "trailReward_sidestory_1_1": 1,

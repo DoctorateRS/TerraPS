@@ -1902,6 +1902,25 @@
       },
       "workTime": 0
     },
+    "4130": {
+      "charId": "char_4130_luton",
+      "lastApAddTime": 1695000000,
+      "ap": 8640000,
+      "roomSlotId": "",
+      "index": -1,
+      "changeScale": 0,
+      "bubble": {
+        "normal": {
+          "add": -1,
+          "ts": 0
+        },
+        "assist": {
+          "add": -1,
+          "ts": 0
+        }
+      },
+      "workTime": 0
+    },
     "196": {
       "charId": "char_196_sunbr",
       "lastApAddTime": 1695000000,
@@ -2871,6 +2890,25 @@
       },
       "workTime": 0
     },
+    "4131": {
+      "charId": "char_4131_odda",
+      "lastApAddTime": 1695000000,
+      "ap": 8640000,
+      "roomSlotId": "",
+      "index": -1,
+      "changeScale": 0,
+      "bubble": {
+        "normal": {
+          "add": -1,
+          "ts": 0
+        },
+        "assist": {
+          "add": -1,
+          "ts": 0
+        }
+      },
+      "workTime": 0
+    },
     "129": {
       "charId": "char_129_bluep",
       "lastApAddTime": 1695000000,
@@ -3405,6 +3443,25 @@
     },
     "489": {
       "charId": "char_489_serum",
+      "lastApAddTime": 1695000000,
+      "ap": 8640000,
+      "roomSlotId": "",
+      "index": -1,
+      "changeScale": 0,
+      "bubble": {
+        "normal": {
+          "add": -1,
+          "ts": 0
+        },
+        "assist": {
+          "add": -1,
+          "ts": 0
+        }
+      },
+      "workTime": 0
+    },
+    "446": {
+      "charId": "char_446_aroma",
       "lastApAddTime": 1695000000,
       "ap": 8640000,
       "roomSlotId": "",
@@ -5799,6 +5856,25 @@
     },
     "437": {
       "charId": "char_437_mizuki",
+      "lastApAddTime": 1695000000,
+      "ap": 8640000,
+      "roomSlotId": "",
+      "index": -1,
+      "changeScale": 0,
+      "bubble": {
+        "normal": {
+          "add": -1,
+          "ts": 0
+        },
+        "assist": {
+          "add": -1,
+          "ts": 0
+        }
+      },
+      "workTime": 0
+    },
+    "4132": {
+      "charId": "char_4132_ascln",
       "lastApAddTime": 1695000000,
       "ap": 8640000,
       "roomSlotId": "",
@@ -12903,6 +12979,94 @@
       "count": 9999,
       "inUse": 0
     },
+    "furni_ScarMarket_shortstick_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_ironbasket_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_storagetable_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_longstick_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_collectioncabinet_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_ironbox_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_partitionwall_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_storagewall_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_roundtable_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_ceilinglamp_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_storagecabinet_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_stovetable_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_shortstick_02": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_table_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_carbonfirebox_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_ironcabinet_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_bench_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_stool_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_carpet_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_shoerack_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_wallpaper_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_ScarMarket_floor_01": {
+      "count": 9999,
+      "inUse": 0
+    },
     "furni_oct1st_deckChair_01": {
       "count": 9999,
       "inUse": 0
@@ -13592,6 +13756,10 @@
       "inUse": 0
     },
     "furni_terratimes_Yan_01": {
+      "count": 9999,
+      "inUse": 0
+    },
+    "furni_terracommericials_CoffeePlainsCoffeeCandy_01": {
       "count": 9999,
       "inUse": 0
     },
