@@ -16,3 +16,16 @@
     - A text editor is also recommended.
 - Python (for updating the project.)
 - Nushell.
+
+### Building from source
+
+- Run `envsetup.nu` to setup the environment.
+    - Ensure your Python installation is available in `$PATH`.
+        - This can be achieved if you installed Python through [scoop](https://scoop.sh/).
+- Run `build.nu`.
+
+### Usage
+
+- The compiled binaries would be available under the `packaged/` directory as an `.7z` file for ease of distribution.
+    - Simply extract the `.7z` archive and execute the `.exe` file.
+    - Any errors reports would be appreciated.
