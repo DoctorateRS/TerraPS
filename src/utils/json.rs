@@ -49,16 +49,6 @@ pub fn get_values(value: &Value) -> Vec<Value> {
     values
 }
 
-pub fn get_map(value: &Value) -> Vec<(String, Value)> {
-    let mut map = Vec::new();
-    if let Value::Object(obj) = value {
-        for (key, value) in obj.iter() {
-            map.push((key.to_string(), value.clone()));
-        }
-    }
-    map
-}
-
 pub fn get_length(value: &Value) -> usize {
     if let Value::Array(array) = value {
         array.len()
