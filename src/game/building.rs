@@ -31,7 +31,7 @@ fn update_building_char_inst_id_list(building_data: Value) -> Value {
                     key.to_string()
                 }
             };
-            building_data["chars"][&key_str]["roomSlotId"] = Value::String(room_slot.to_string());
+            building_data["chars"][&key_str]["roomSlotId"] = json!(&room_slot);
             building_data["chars"][&key_str]["index"] = Value::Number(Number::from(
                 building_data["roomSlots"][&room_slot]["charInstIds"]
                     .as_array()
@@ -80,7 +80,7 @@ pub async fn building_sync() -> JSON {
         })
     }
     building_data["furniture"] = furniture;
-    write_json(BUILDING_JSON_PATH, building_data.clone());
+    write_json(BUILDING_JSON_PATH, &building_data);
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -105,7 +105,7 @@ pub async fn building_change_diy_solution(Json(payload): JSON) -> JSON {
 
     let mut building_data = read_json(BUILDING_JSON_PATH);
     building_data["rooms"]["DORMITORY"][room_slot_id]["diySolution"] = diy_solution;
-    write_json(BUILDING_JSON_PATH, building_data.clone());
+    write_json(BUILDING_JSON_PATH, &building_data);
     Json(json!({
         "playerDataDelta": {
             "modified": {

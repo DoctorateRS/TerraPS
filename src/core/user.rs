@@ -2,7 +2,7 @@ use axum::Json;
 use serde_json::{json, Value};
 
 use crate::{
-    constants,
+    constants::{self, config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
     utils::json::{read_json, write_json, JSON},
 };
 
@@ -244,19 +244,19 @@ pub async fn user_change_resume(Json(payload): JSON) -> JSON {
 }
 
 pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
-    let mut config = read_json(constants::config::CONFIG_JSON_PATH).clone();
-    let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
+    let mut config = read_json(CONFIG_JSON_PATH);
+    let mut user_data = read_json(USER_JSON_PATH);
     let skin_id = payload["skinId"].as_str().unwrap();
     let secretary = match skin_id.find('@') {
         Some(_) => skin_id.split('@').collect::<Vec<&str>>()[0],
         None => skin_id.split('#').collect::<Vec<&str>>()[0],
     };
-    config["userConfig"]["secretary"] = Value::String(secretary.to_string());
-    config["userConfig"]["secretarySkinId"] = Value::String(skin_id.to_string());
-    user_data["user"]["status"]["secretarySkinId"] = Value::String(skin_id.to_string());
-    user_data["user"]["status"]["secretary"] = Value::String(secretary.to_string());
-    write_json(constants::config::CONFIG_JSON_PATH, config);
-    write_json(constants::user::USER_JSON_PATH, user_data);
+    config["userConfig"]["secretary"] = json!(&secretary);
+    config["userConfig"]["secretarySkinId"] = json!(&skin_id);
+    user_data["user"]["status"]["secretarySkinId"] = json!(&skin_id);
+    user_data["user"]["status"]["secretary"] = json!(&skin_id);
+    write_json(CONFIG_JSON_PATH, config);
+    write_json(USER_JSON_PATH, user_data);
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -272,9 +272,9 @@ pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
 
 pub async fn user_change_avatar(Json(payload): JSON) -> JSON {
     let avatar = payload;
-    let mut user_data = read_json(constants::user::USER_JSON_PATH).clone();
+    let mut user_data = read_json(USER_JSON_PATH).clone();
     user_data["user"]["status"]["avatarId"] = avatar.clone();
-    write_json(constants::user::USER_JSON_PATH, user_data);
+    write_json(USER_JSON_PATH, user_data);
     Json(json!({
         "playerDataDelta": {
             "modified": {

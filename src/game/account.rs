@@ -721,7 +721,7 @@ pub async fn account_sync_data() -> JSON {
         }
     }
 
-    write_json(USER_JSON_PATH, player_data.clone());
+    write_json(USER_JSON_PATH, &player_data);
 
     let Json(building) = building_sync().await;
     player_data["user"]["building"] = json!(building["playerDataDelta"]["modified"]["building"]);
