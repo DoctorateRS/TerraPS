@@ -10,7 +10,7 @@ use crate::{
 pub async fn mail_get_meta_info_list() -> JSON {
     let mut result = Vec::new();
     let mail_data = read_json(MAILLIST_PATH);
-    let received_ids = &mail_data["receivedIds"]
+    let received_ids = &mail_data["recievedIDs"]
         .as_array()
         .unwrap()
         .iter()
@@ -49,7 +49,7 @@ pub async fn mail_get_meta_info_list() -> JSON {
 pub async fn mail_list_mail_box() -> JSON {
     let mut result = Vec::new();
     let mail_data = read_json(MAILLIST_PATH);
-    let received_ids = &mail_data["receivedIds"]
+    let received_ids = &mail_data["recievedIDs"]
         .as_array()
         .unwrap()
         .iter()
