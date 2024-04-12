@@ -5,6 +5,7 @@
 /.idea
 /case
 /dump
+/packaged
 *.txt
 !game.txt
 *.json
