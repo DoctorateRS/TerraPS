@@ -6,6 +6,7 @@ pub mod char_manager;
 pub mod crisis_manager;
 pub mod deep_sea;
 pub mod gacha;
+pub mod mail;
 pub mod online;
 pub mod quest_manager;
 pub mod rlv2;
