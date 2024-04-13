@@ -12,7 +12,7 @@
     },
     "assets": {
         "autoUpdate": false,
-        "downloadLocally": false
+        "downloadLocally": true
     },
     "version": {
         "android": {
