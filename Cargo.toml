@@ -1,6 +1,6 @@
 [package]
 name = "terra-ps"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh"]
