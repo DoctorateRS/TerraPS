@@ -39,8 +39,11 @@ pub async fn get_file(Path(asset): Path<Asset>) {
     let hash = &asset.hash;
     let config = read_json(CONFIG_JSON_PATH);
     let mode = config["server"]["mode"].as_str().unwrap();
-    asset
-        .download_file(mode, &format!("./assets/{hash}/redirect/{name}"))
-        .await
-        .unwrap();
+
+    if config["assets"]["downloadLocally"].as_bool().unwrap() {
+        asset
+            .download_file(mode, &format!("./assets/{hash}/redirect/{name}"))
+            .await
+            .unwrap();
+    }
 }
