@@ -11,3 +11,4 @@
 !game.txt
 *.json
 !requirements.txt
+*.log
