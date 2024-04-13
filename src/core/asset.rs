@@ -2,8 +2,10 @@ use anyhow::Result;
 use axum::extract::Path;
 use reqwest::get;
 use serde::Deserialize;
-use std::io::Cursor;
+use std::{fmt::Display, io::Cursor, path::Path as StdPath};
 use tokio::{fs::File, io::copy};
+
+use crate::{constants::config::CONFIG_JSON_PATH, utils::json::read_json};
 
 #[derive(Deserialize)]
 pub struct Asset {
@@ -12,7 +14,7 @@ pub struct Asset {
 }
 
 impl Asset {
-    async fn download_file(&self, mode: &str, path: &str) -> Result<()> {
+    async fn download_file<T: Display + PartialEq<&'static str> + AsRef<StdPath>>(&self, mode: T, path: T) -> Result<()> {
         let url = if mode == "cn" {
             format!(
                 "https://ak.hycdn.cn/assetbundle/official/Android/assets/{}/{}",
@@ -32,4 +34,13 @@ impl Asset {
     }
 }
 
-pub async fn get_file(Path(asset): Path<Asset>) {}
+pub async fn get_file(Path(asset): Path<Asset>) {
+    let name = &asset.name;
+    let hash = &asset.hash;
+    let config = read_json(CONFIG_JSON_PATH);
+    let mode = config["server"]["mode"].as_str().unwrap();
+    asset
+        .download_file(mode, &format!("./assets/{hash}/redirect/{name}"))
+        .await
+        .unwrap();
+}
