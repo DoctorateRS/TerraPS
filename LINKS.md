@@ -3,11 +3,11 @@
 - [x] `/app/getSettings`
 - [x] `/app/getCode`
 - [x] `/account/login`
-- [ ] `/account/syncData` **[WIP]**
+- [x] `/account/syncData` **[WIP]**
 - [x] `/account/syncStatus`
 - [x] `/account/yostar_auth_request`
 - [x] `/account/yostar_auth_submit`
-- [ ] `/assetbundle/official/Android/assets/:hash/:name`
+- [x] `/assetbundle/official/Android/assets/:hash/:name`
 - [x] `/background/setBackground`
 - [x] `/homeTheme/change`
 - [x] `/building/sync`
