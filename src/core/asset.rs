@@ -1,5 +1,6 @@
+use anyhow::Result;
 use axum::extract::Path;
-use reqwest::{get, Error};
+use reqwest::get;
 use serde::Deserialize;
 use std::io::Cursor;
 use tokio::{fs::File, io::copy};
@@ -11,7 +12,7 @@ pub struct Asset {
 }
 
 impl Asset {
-    async fn download_file(&self, mode: &str, path: &str) -> Result<(), Error> {
+    async fn download_file(&self, mode: &str, path: &str) -> Result<()> {
         let url = if mode == "cn" {
             format!(
                 "https://ak.hycdn.cn/assetbundle/official/Android/assets/{}/{}",
@@ -24,9 +25,9 @@ impl Asset {
             )
         };
         let response = get(&url).await?;
-        let mut file = File::create(path).await.unwrap();
-        let mut cursor = Cursor::new(response.bytes().await.unwrap());
-        copy(&mut cursor, &mut file).await.unwrap();
+        let mut file = File::create(path).await?;
+        let mut cursor = Cursor::new(response.bytes().await?);
+        copy(&mut cursor, &mut file).await?;
         Ok(())
     }
 }

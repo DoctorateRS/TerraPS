@@ -12,9 +12,7 @@
     },
     "assets": {
         "autoUpdate": false,
-        "downloadLocally": false,
-        "enableMods": false,
-        "skipModCacheValidation": false
+        "downloadLocally": false
     },
     "version": {
         "android": {
