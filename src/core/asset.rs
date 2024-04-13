@@ -2,7 +2,7 @@ use anyhow::Result;
 use axum::extract::Path;
 use reqwest::get;
 use serde::Deserialize;
-use std::{fmt::Display, io::Cursor, path::Path as StdPath};
+use std::{fmt::Display, fs::create_dir_all, io::Cursor, path::Path as StdPath};
 use tokio::{fs::File, io::copy};
 
 use crate::{constants::config::CONFIG_JSON_PATH, utils::json::read_json};
@@ -27,7 +27,7 @@ impl Asset {
             )
         };
         let response = get(&url).await?;
-        let mut file = File::create(path).await?;
+        let mut file = File::create(&path).await?;
         let mut cursor = Cursor::new(response.bytes().await?);
         copy(&mut cursor, &mut file).await?;
         Ok(())
@@ -41,6 +41,9 @@ pub async fn get_file(Path(asset): Path<Asset>) {
     let mode = config["server"]["mode"].as_str().unwrap();
 
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
+        if StdPath::new(&format!("./assets/{hash}/redirect/{name}")).exists() {
+            create_dir_all(format!("./assets/{hash}/redirect/{name}")).unwrap();
+        }
         asset
             .download_file(mode, &format!("./assets/{hash}/redirect/{name}"))
             .await
