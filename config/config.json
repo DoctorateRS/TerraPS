@@ -12,7 +12,7 @@
     },
     "assets": {
         "autoUpdate": false,
-        "downloadLocally": true,
+        "downloadLocally": false,
         "enableMods": false,
         "skipModCacheValidation": false
     },
