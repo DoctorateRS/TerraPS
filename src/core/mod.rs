@@ -1,13 +1,17 @@
 use axum::Json;
-use serde_json::{json, Value};
+use chrono::Utc;
+use serde_json::json;
 
-use crate::{constants, utils::json::read_json};
+use crate::{
+    constants::config::CONFIG_JSON_PATH,
+    utils::json::{read_json, JSON},
+};
 
 pub mod asset;
 pub mod prod;
 pub mod user;
 
-pub async fn general_v1_server_time() -> Json<Value> {
+pub async fn general_v1_server_time() -> JSON {
     Json(json!({
         "status": 0,
         "msg": "OK",
@@ -19,11 +23,9 @@ pub async fn general_v1_server_time() -> Json<Value> {
 }
 
 pub fn time() -> u64 {
-    let faketime_enabled = read_json(constants::config::CONFIG_JSON_PATH).clone()["userConfig"]["faketime"]
-        .as_i64()
-        .unwrap_or(-1);
+    let faketime_enabled = read_json(CONFIG_JSON_PATH)["userConfig"]["faketime"].as_i64().unwrap_or(-1);
     if faketime_enabled == -1 {
-        chrono::Utc::now().timestamp() as u64
+        Utc::now().timestamp() as u64
     } else {
         faketime_enabled as u64
     }
