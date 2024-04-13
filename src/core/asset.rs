@@ -41,7 +41,7 @@ pub async fn get_file(Path(asset): Path<Asset>) {
     let mode = config["server"]["mode"].as_str().unwrap();
 
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
-        if StdPath::new(&format!("./assets/{hash}/redirect/{name}")).exists() {
+        if StdPath::new(&format!("./assets/{hash}/redirect/")).exists() {
             create_dir_all(format!("./assets/{hash}/redirect/{name}")).unwrap();
         }
         asset
