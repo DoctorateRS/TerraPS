@@ -6,6 +6,7 @@
 /case
 /dump
 /packaged
+/assets
 *.txt
 !game.txt
 *.json
