@@ -162,7 +162,7 @@ pub mod quest {
         });
 
         if payload.get("squadId").is_some() && payload.get("slots").is_some() {
-            let squad_id = payload["squadId"].as_u64().unwrap().to_string();
+            let squad_id = payload["squadId"].as_str().unwrap();
             let slots = payload["slots"].clone();
             data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["slots"] = slots.clone();
             let mut user_data = read_json(USER_JSON_PATH);
