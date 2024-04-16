@@ -1503,7 +1503,7 @@ dependencies = [
 
 [[package]]
 name = "terra-ps"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "aes",
  "anyhow",
@@ -1514,7 +1514,6 @@ dependencies = [
  "chrono",
  "constcat",
  "hex",
- "lazy_static",
  "libaes",
  "md-5",
  "rand",
