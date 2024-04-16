@@ -173,8 +173,8 @@
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
-            "secretary": "",
-            "secretarySkinId": "",
+            "secretary": "char_4123_ela",
+            "secretarySkinId": "char_4123_ela@rainbow6#2",
             "tipMonthlyCardExpireTs": 0,
             "avatar": {
                 "type": "ICON",
