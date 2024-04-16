@@ -14,22 +14,19 @@ use crate::{
     utils::json::JSON,
 };
 use axum::{
-    extract::Request,
     routing::{get, post},
     Json, Router,
 };
 
 use serde_json::json;
-use tower_http::trace::{DefaultMakeSpan as DefMakeSpan, DefaultOnResponse, TraceLayer as Tracer};
-use tracing::{debug, Level, Span};
+use tower_http::trace::{DefaultMakeSpan, DefaultOnRequest, DefaultOnResponse, TraceLayer as Tracer};
+use tracing::Level;
 
 pub fn routes() -> Router {
     let trace_layer = Tracer::new_for_http()
-        .make_span_with(DefMakeSpan::default())
-        .on_request(|req: &Request<_>, _span: &Span| {
-            debug!("Received request: {:?}", req.uri());
-        })
-        .on_response(DefaultOnResponse::default().level(Level::DEBUG))
+        .make_span_with(DefaultMakeSpan::default())
+        .on_request(DefaultOnRequest::default().level(Level::INFO))
+        .on_response(DefaultOnResponse::default().level(Level::INFO))
         .on_failure(())
         .on_eos(());
 
