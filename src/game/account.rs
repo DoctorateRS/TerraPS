@@ -33,6 +33,9 @@ pub async fn account_sync_data() -> JSON {
     let mut player_data = read_json(SYNC_DATA_TEMPLATE_PATH);
     let config = read_json(CONFIG_JSON_PATH);
 
+    let nick_name = config["userConfig"]["nickName"].as_str().unwrap();
+    let nick_id = config["userConfig"]["nickNumber"].as_str().unwrap();
+
     // Loading latest data
 
     let skin_table = update_data(SKIN_TABLE_URL).await;
@@ -594,6 +597,8 @@ pub async fn account_sync_data() -> JSON {
     player_data["user"]["status"]["lastApAddTime"] = json!(time());
     player_data["user"]["status"]["registerTs"] = json!(time());
     player_data["user"]["status"]["lastOnlineTs"] = json!(time());
+    player_data["user"]["status"]["nickName"] = json!(nick_name);
+    player_data["user"]["status"]["nickNumber"] = json!(nick_id);
     player_data["user"]["crisis"]["lst"] = json!(time());
     player_data["user"]["crisis"]["nst"] = json!(time() + 3600);
     player_data["ts"] = json!(time());

@@ -134,8 +134,8 @@
             }
         },
         "status": {
-            "nickName": "TerraPS",
-            "nickNumber": "1111",
+            "nickName": "",
+            "nickNumber": "",
             "level": 120,
             "exp": 0,
             "socialPoint": 300,
@@ -173,8 +173,8 @@
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
-            "secretary": "char_4055_bgsnow",
-            "secretarySkinId": "char_4055_bgsnow#2",
+            "secretary": "",
+            "secretarySkinId": "",
             "tipMonthlyCardExpireTs": 0,
             "avatar": {
                 "type": "ICON",
