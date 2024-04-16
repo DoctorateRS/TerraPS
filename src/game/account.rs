@@ -117,7 +117,7 @@ pub async fn account_sync_data() -> JSON {
 
         let evolve_phase = match operator_template["evolvePhase"].as_i64() {
             Some(evolve_phase) => match evolve_phase {
-                ..=0 => char_table[&operator]["phases"].as_array().unwrap().len() as i64 - 1,
+                -1 => char_table[&operator]["phases"].as_array().unwrap().len() as i64 - 1,
                 _ => evolve_phase,
             },
             None => panic!("Invalid elite status."),

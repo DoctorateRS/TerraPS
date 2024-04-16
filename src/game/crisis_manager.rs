@@ -18,7 +18,7 @@ pub mod crisis_v2 {
     };
     pub async fn crisis_v2_get_info() -> JSON {
         let config = read_json(CONFIG_JSON_PATH);
-        let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap_or("cc2");
+        let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap();
         Json(read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str()))
     }
 
@@ -107,7 +107,6 @@ pub mod crisis_v2 {
             .map(|rune| rune.as_str().unwrap())
             .collect::<Vec<&str>>();
 
-        // FIXME: FIX THIS
         for slot_pk_id in get_keys(&nodes) {
             let mut flag = true;
             for mutual_exclusion_group in get_keys(&nodes[&slot_pk_id]) {
