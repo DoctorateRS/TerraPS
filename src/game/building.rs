@@ -26,7 +26,6 @@ fn update_building_char_inst_id_list(building_data: Value) -> Value {
             let key_str = match key.as_str() {
                 Some(x) => x.to_string(),
                 None => {
-                    dbg!(key);
                     let key = key.as_i64().unwrap();
                     key.to_string()
                 }
