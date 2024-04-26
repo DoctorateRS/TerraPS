@@ -1,7 +1,7 @@
 use axum::Json;
 use serde::Serialize;
-use serde_json::{from_reader, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
-use std::{fs::File, io::BufReader};
+use serde_json::{from_reader, json, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
+use std::{fs::File, io::BufReader, path::PathBuf};
 
 #[allow(clippy::upper_case_acronyms)]
 pub(crate) type JSON = Json<Value>;
@@ -9,16 +9,27 @@ pub(crate) type JSON = Json<Value>;
 pub fn read_json(path: &str) -> Value {
     let json_reader = BufReader::new(match File::open(path) {
         Ok(file) => file,
-        Err(_) => panic!("Path {} not found.", path),
+        Err(_) => match File::create(path) {
+            Ok(_) => {
+                let sample = json!({});
+                write_json(path, &sample);
+                return sample;
+            }
+            Err(_) => panic!("Unable to create JSON."),
+        },
     });
-    match from_reader(json_reader) {
-        Ok(value) => value,
-        Err(_) => panic!("Unable to read JSON."),
+    match from_reader(json_reader).ok() {
+        Some(value) => value,
+        None => panic!("Unable to read JSON."),
     }
 }
 
 pub fn write_json<T: Serialize>(path: &str, value: T) {
-    let file = File::create(path).unwrap();
+    let file = if !PathBuf::from(path).exists() {
+        File::create(path).unwrap()
+    } else {
+        File::open(path).unwrap()
+    };
     let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
     let mut ser = Serializer::with_formatter(&mut buf, fmt);
