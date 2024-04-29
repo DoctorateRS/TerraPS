@@ -33488,6 +33488,259 @@
               }
             ]
           },
+          "sandbox_1_monthly_3": {
+            "id": "sandbox_1_monthly_3",
+            "points": 0.0,
+            "mutexGroupKey": null,
+            "description": "我方战术道具的技力消耗减少；高能源石虫，冰爆源石虫和辐能源石虫的自爆系数上升",
+            "runes": [
+              {
+                "key": "char_skill_cd_mul",
+                "selector": {
+                  "professionMask": "TRAP",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "scale",
+                    "value": 0.8,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "char",
+                    "value": 0.0,
+                    "valueStr": "trap_424_pushtw|trap_423_bondtw|trap_417_shielder"
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1021_bslime"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1021_bslime_2"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1067_snslime"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1067_snslime_2"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1352_eslime"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "enemy_talent_blackb_mul",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "enemy",
+                    "value": 0.0,
+                    "valueStr": "enemy_1352_eslime_2"
+                  },
+                  {
+                    "key": "boom.atk_scale",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              }
+            ]
+          },
           "sandbox_1_warrior_lv01": {
             "id": "sandbox_1_warrior_lv01",
             "points": 0.0,
@@ -49399,6 +49652,47 @@
                 "type": "GOLD"
               }
             ]
+          },
+          {
+            "monthlyRushId": "sandbox_1_challenge_03",
+            "startTime": 1714507200,
+            "endTime": 1717185599,
+            "isLast": false,
+            "sortId": 3,
+            "rushGroupKey": "monthly_3",
+            "monthlyRushName": "连环爆炸",
+            "monthlyRushDes": "在荒地上源石虫无处不在，是我们不得不面对的邻居。坏消息是，当这些邻居热衷扩张时，我们就要倒霉了。",
+            "weatherId": "weather_sandstorm",
+            "nodeId": "n12B9",
+            "conditionGroup": "server_sandbox_1_monthly_3",
+            "conditionDesc": "喷拒器、缚网发射台和护盾遥控器技力消耗降低\n高能源石虫、冰爆源石虫和辐能源石虫死亡后造成的伤害上升",
+            "rewardItemList": [
+              {
+                "id": "mod_unlock_token",
+                "count": 1,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "32001",
+                "count": 1,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "2004",
+                "count": 20,
+                "type": "CARD_EXP"
+              },
+              {
+                "id": "3303",
+                "count": 20,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "4001",
+                "count": 30000,
+                "type": "GOLD"
+              }
+            ]
           }
         ],
         "riftTerrainParamData": {
@@ -53341,7 +53635,7 @@
             "enemy_7501_rmhslm": {
               "racerId": "enemy_7501_rmhslm",
               "sortId": 20,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "灼热源石虫",
+              "racerName": "灼热源石虫",
               "itemId": "sandbox_1_insect_1",
               "attributeMaxValue": [
                 32,
@@ -53354,7 +53648,7 @@
             "enemy_7501_rmhslm_2": {
               "racerId": "enemy_7501_rmhslm_2",
               "sortId": 19,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "炽焰源石虫",
+              "racerName": "炽焰源石虫",
               "itemId": "sandbox_1_insect_2",
               "attributeMaxValue": [
                 32,
@@ -53367,7 +53661,7 @@
             "enemy_7502_rslm": {
               "racerId": "enemy_7502_rslm",
               "sortId": 18,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "源石虫",
+              "racerName": "源石虫",
               "itemId": "sandbox_1_insect_3",
               "attributeMaxValue": [
                 38,
@@ -53380,7 +53674,7 @@
             "enemy_7502_rslm_2": {
               "racerId": "enemy_7502_rslm_2",
               "sortId": 17,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "源石虫·α",
+              "racerName": "源石虫·α",
               "itemId": "sandbox_1_insect_4",
               "attributeMaxValue": [
                 38,
@@ -53393,7 +53687,7 @@
             "enemy_7503_rsrchn": {
               "racerId": "enemy_7503_rsrchn",
               "sortId": 16,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "变异岩蛛",
+              "racerName": "变异岩蛛",
               "itemId": "sandbox_1_insect_5",
               "attributeMaxValue": [
                 33,
@@ -53406,7 +53700,7 @@
             "enemy_7503_rsrchn_2": {
               "racerId": "enemy_7503_rsrchn_2",
               "sortId": 15,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "变异岩蛛·α",
+              "racerName": "变异岩蛛·α",
               "itemId": "sandbox_1_insect_6",
               "attributeMaxValue": [
                 33,
@@ -53419,7 +53713,7 @@
             "enemy_7504_rmslm": {
               "racerId": "enemy_7504_rmslm",
               "sortId": 14,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "酸液源石虫",
+              "racerName": "酸液源石虫",
               "itemId": "sandbox_1_insect_7",
               "attributeMaxValue": [
                 65,
@@ -53432,7 +53726,7 @@
             "enemy_7504_rmslm_2": {
               "racerId": "enemy_7504_rmslm_2",
               "sortId": 13,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "酸液源石虫·α",
+              "racerName": "酸液源石虫·α",
               "itemId": "sandbox_1_insect_8",
               "attributeMaxValue": [
                 65,
@@ -53445,7 +53739,7 @@
             "enemy_7505_rbslm": {
               "racerId": "enemy_7505_rbslm",
               "sortId": 12,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "高能源石虫",
+              "racerName": "高能源石虫",
               "itemId": "sandbox_1_insect_9",
               "attributeMaxValue": [
                 43,
@@ -53458,7 +53752,7 @@
             "enemy_7505_rbslm_2": {
               "racerId": "enemy_7505_rbslm_2",
               "sortId": 11,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "高能源石虫·α",
+              "racerName": "高能源石虫·α",
               "itemId": "sandbox_1_insect_10",
               "attributeMaxValue": [
                 43,
@@ -53471,7 +53765,7 @@
             "enemy_7506_rscrab": {
               "racerId": "enemy_7506_rscrab",
               "sortId": 6,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "爆裂源石虫",
+              "racerName": "爆裂源石虫",
               "itemId": "sandbox_1_insect_11",
               "attributeMaxValue": [
                 40,
@@ -53484,7 +53778,7 @@
             "enemy_7507_rhrchn": {
               "racerId": "enemy_7507_rhrchn",
               "sortId": 10,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "变异巨岩蛛",
+              "racerName": "变异巨岩蛛",
               "itemId": "sandbox_1_insect_12",
               "attributeMaxValue": [
                 31,
@@ -53497,7 +53791,7 @@
             "enemy_7507_rhrchn_2": {
               "racerId": "enemy_7507_rhrchn_2",
               "sortId": 9,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "变异巨岩蛛·α",
+              "racerName": "变异巨岩蛛·α",
               "itemId": "sandbox_1_insect_13",
               "attributeMaxValue": [
                 31,
@@ -53510,7 +53804,7 @@
             "enemy_7508_raslm": {
               "racerId": "enemy_7508_raslm",
               "sortId": 8,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "黑水源石虫",
+              "racerName": "黑水源石虫",
               "itemId": "sandbox_1_insect_14",
               "attributeMaxValue": [
                 63,
@@ -53523,7 +53817,7 @@
             "enemy_7508_raslm_2": {
               "racerId": "enemy_7508_raslm_2",
               "sortId": 7,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "黑水源石虫·α",
+              "racerName": "黑水源石虫·α",
               "itemId": "sandbox_1_insect_15",
               "attributeMaxValue": [
                 63,
@@ -53536,7 +53830,7 @@
             "enemy_7509_rtrslm": {
               "racerId": "enemy_7509_rtrslm",
               "sortId": 5,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "“闪亮噗噜”",
+              "racerName": "“闪亮噗噜”",
               "itemId": "sandbox_1_insect_16",
               "attributeMaxValue": [
                 32,
@@ -53549,7 +53843,7 @@
             "enemy_7510_rlslm": {
               "racerId": "enemy_7510_rlslm",
               "sortId": 2,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "\"庞贝\"",
+              "racerName": "\"庞贝\"",
               "itemId": "sandbox_1_insect_17",
               "attributeMaxValue": [
                 32,
@@ -53562,7 +53856,7 @@
             "enemy_7511_rxbl": {
               "racerId": "enemy_7511_rxbl",
               "sortId": 3,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "振翅源石虫",
+              "racerName": "振翅源石虫",
               "itemId": "sandbox_1_insect_18",
               "attributeMaxValue": [
                 39,
@@ -53575,7 +53869,7 @@
             "enemy_7512_rxbtd": {
               "racerId": "enemy_7512_rxbtd",
               "sortId": 1,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "冲锋源石虫",
+              "racerName": "冲锋源石虫",
               "itemId": "sandbox_1_insect_19",
               "attributeMaxValue": [
                 70,
@@ -53588,7 +53882,7 @@
             "enemy_7513_rxbslg": {
               "racerId": "enemy_7513_rxbslg",
               "sortId": 4,
-              "prts____check_required____clz_Torappu_SandboxV2RacerBasicInfo____racerTypeName": "披甲源石虫",
+              "racerName": "披甲源石虫",
               "itemId": "sandbox_1_insect_20",
               "attributeMaxValue": [
                 31,
