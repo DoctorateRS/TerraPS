@@ -1,9 +1,9 @@
 use axum::Json;
 use serde::Serialize;
-use serde_json::{from_reader, json, ser::PrettyFormatter, to_writer_pretty, Serializer, Value};
+use serde_json::{from_slice, json, ser::PrettyFormatter, Serializer, Value};
 use std::{
-    fs::{read, File, OpenOptions},
-    io::BufReader,
+    fs::{read, DirBuilder, File, OpenOptions},
+    io::Write,
     path::PathBuf,
 };
 
@@ -11,26 +11,27 @@ use std::{
 pub(crate) type JSON = Json<Value>;
 
 pub fn read_json(path: &str) -> Value {
-    let json_reader = BufReader::new(match File::open(path) {
+    let val = match read(path) {
         Ok(file) => file,
-        Err(_) => match File::create(path) {
-            Ok(_) => {
-                let sample = json!({});
-                write_json(path, &sample);
-                return sample;
-            }
-            Err(_) => panic!("Unable to create JSON."),
-        },
-    });
-    match from_reader(json_reader).ok() {
-        Some(value) => value,
-        None => panic!("Unable to read JSON."),
+        Err(_) => {
+            let dir = PathBuf::from(path);
+            let dir = dir.parent().unwrap();
+            DirBuilder::new().recursive(true).create(dir).unwrap();
+            return json!({});
+        }
+    };
+    match from_slice(&val) {
+        Ok(value) => value,
+        Err(_) => json!({}),
     }
 }
 
 pub fn write_json<T: Serialize>(path: &str, value: T) {
-    let file = if !PathBuf::from(path).exists() {
-        File::create(path).unwrap()
+    let mut file = if !PathBuf::from(path).exists() {
+        let dir = PathBuf::from(path);
+        let dir = dir.parent().unwrap();
+        DirBuilder::new().recursive(true).create(dir).unwrap();
+        OpenOptions::new().write(true).create(true).truncate(false).open(path).unwrap()
     } else {
         File::open(path).unwrap()
     };
@@ -38,10 +39,7 @@ pub fn write_json<T: Serialize>(path: &str, value: T) {
     let mut buf = Vec::new();
     let mut ser = Serializer::with_formatter(&mut buf, fmt);
     value.serialize(&mut ser).unwrap();
-    match to_writer_pretty(file, &value) {
-        Ok(_) => (),
-        Err(_) => panic!("Unable to write JSON."),
-    }
+    file.write_all(&buf).unwrap();
 }
 
 pub fn get_keys(value: &Value) -> Vec<String> {
