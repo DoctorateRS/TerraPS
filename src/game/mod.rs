@@ -15,7 +15,6 @@ pub mod shop;
 pub mod social;
 pub mod story;
 pub mod tower;
-pub mod models;
 
 pub mod pay {
     use axum::Json;
