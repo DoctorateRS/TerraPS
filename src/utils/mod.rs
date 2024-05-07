@@ -8,6 +8,7 @@ pub mod battle_data;
 pub mod battle_replay;
 pub mod comp;
 pub mod crypto;
+pub mod debug;
 pub mod game;
 pub mod json;
 pub mod mail;

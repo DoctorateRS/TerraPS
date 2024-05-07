@@ -5,7 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, game::*, get_nickname_config, json::*, zip},
+    utils::{comp::max, debug::debug, game::*, get_nickname_config, json::*},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -106,7 +106,6 @@ pub async fn account_sync_data() -> JSON {
             count += 1;
             continue;
         }
-
         // Add all operators to the player data
 
         let evolve_phase = match operator_template["evolvePhase"].as_i64() {
@@ -150,6 +149,8 @@ pub async fn account_sync_data() -> JSON {
             "equip": {},
             "starMark": 0
         });
+
+        debug(&operator_keys, "opkeys.txt");
 
         // Set E2 skin
         // FIXME: BROKEN

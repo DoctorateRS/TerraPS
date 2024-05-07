@@ -90,3 +90,7 @@ pub mod ascii {
   █   █████ █   █ █   █ █   █   █     ████
 "#;
 }
+
+pub mod debug {
+    pub const DEBUG: &str = "./debug/";
+}
