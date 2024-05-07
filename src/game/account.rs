@@ -5,7 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, game::*, get_nickname_config, json::*, zipper},
+    utils::{comp::max, game::*, get_nickname_config, json::*, zip},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -416,34 +416,26 @@ pub async fn account_sync_data() -> JSON {
     let addon_table = update_data(HANDBOOK_INFO_TABLE_URL).await;
     for char_id in get_keys(&addon_table["handbookDict"]) {
         addon_list[&char_id] = json!({"story":{}});
-        let story = addon_table["handbookDict"][&char_id]["handbookAvgList"].clone();
-        for (story_keys, id) in zipper(get_keys(&story), 0..story.as_array().unwrap().len()) {
-            if story_keys.contains("storySetId") {
-                let story_set_id = addon_table["handbookDict"][&char_id]["handbookAvgList"].as_array().unwrap()[id]["storySetId"]
-                    .as_str()
-                    .unwrap();
-                addon_list[&char_id]["story"] = json!({
-                    story_set_id: {
-                        "fts": 1649232340,
-                        "rts": 1649232340
-                    }
+        let story = addon_table["handbookDict"][&char_id]["handbookAvgList"].as_array().unwrap();
+        for st in story {
+            if st.get("storySetId").is_some() {
+                let st_set_id = st["storySetId"].as_str().unwrap();
+                addon_list[&char_id]["story"][st_set_id] = json!({
+                    "fts": 1649232340,
+                    "rts": 1649232340
                 });
             }
         }
     }
-    for stage in get_keys(&addon_table["handbookStageData"]) {
-        let stage_id = addon_table["handbookStageData"][&stage]["stageId"].as_str().unwrap();
-        addon_list[&stage] = json!({
-            "stage": {
-                stage_id: {
-                    "startTimes": 0,
-                    "completeTimes": 1,
-                    "state": 3,
-                    "fts": 1624284657,
-                    "rts": 1624284657,
-                    "startTime": 2
-                }
-            }
+    for char in get_keys(&addon_table["handbookStageData"]) {
+        let stage_id = addon_table["handbookStageData"][&char]["stageId"].as_str().unwrap();
+        addon_list[&char]["stage"][&stage_id] = json!({
+            "startTimes": 0,
+            "completeTimes": 1,
+            "state": 3,
+            "fts": 1624284657,
+            "rts": 1624284657,
+            "startTime": 2
         });
     }
 
