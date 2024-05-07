@@ -3,7 +3,7 @@ use serde_json::{json, Value};
 
 use crate::{
     constants::{
-        config::CONFIG_JSON_PATH,
+        config::{self, CONFIG_JSON_PATH},
         user::{RLV2_JSON_PATH, RLV2_USER_SETTINGS_PATH, USER_JSON_PATH},
     },
     utils::{
@@ -311,6 +311,61 @@ pub async fn rlv2_choose_init_relic(Json(payload): JSON) -> JSON {
 pub async fn rlv2_choice_select() -> JSON {
     let rlv2 = read_json(RLV2_JSON_PATH);
     write_json(RLV2_JSON_PATH, &rlv2);
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+fn add_ticket(rlv2: &mut Value, ticket_id: &str) {
+    let theme = rlv2["game"]["theme"].as_str().unwrap();
+    let ticket = match theme {
+        "rogue_1" => "rogue_1_recruit_ticket_all",
+        "rogue_2" => "rogue_2_recruit_ticket_all",
+        "rogue_3" => "rogue_3_recruit_ticket_all",
+        _ => "",
+    };
+    rlv2["inventory"]["recruit"][ticket_id] = json!({
+        "index": ticket_id,
+        "id": ticket,
+        "state": 0,
+        "list": [],
+        "result": Value::Null,
+        "ts": 1695000000,
+        "from": "initial",
+        "mustExtra": 0,
+        "needAssist": true,
+    });
+}
+
+fn get_next_tkt(rlv2: Value) -> String {
+    let mut v = vec![];
+    for mut tkt in get_keys(&rlv2["inventory"]["recruit"]) {
+        v.push(tkt.split_off(2).parse::<usize>().unwrap_or(0));
+    }
+    let config = read_json(CONFIG_JSON_PATH);
+    let mut index = if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
+        0
+    } else {
+        10000 - 1
+    };
+    while v.contains(&index) {
+        index += 1;
+    }
+    format!("t_{}", index)
+}
+
+pub async fn rlv2_choose_init_recruit() -> JSON {
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
     Json(json!({
         "playerDataDelta": {
             "modified": {

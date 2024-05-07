@@ -9,7 +9,7 @@ use crate::{
         crisis_manager::crisis_v2,
         deep_sea, mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
-        shop, social, story,
+        rlv2, shop, social, story,
     },
     utils::json::JSON,
 };
@@ -20,7 +20,7 @@ use axum::{
 
 use serde_json::json;
 use tower_http::trace::{DefaultMakeSpan, DefaultOnRequest, DefaultOnResponse, TraceLayer as Tracer};
-use tracing::Level;
+use tracing::Level; // Import the missing function from the rlv2 module
 
 #[tracing::instrument]
 pub fn routes() -> Router {
@@ -49,6 +49,7 @@ pub fn routes() -> Router {
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
         .nest("/retro", retro_routes())
+        .nest("/rlv2", rlv2_routes())
         .nest("/shop", shop_routes())
         .nest("/social", social_routes())
         .nest("/story", story_routes())
@@ -198,6 +199,13 @@ fn retro_routes() -> Router {
     Router::new()
         .route("/typeAct20side/competitionStart", post(quest::act_20_competition_start))
         .route("/typeAct20side/competitionFinish", post(quest::act_20_competition_finish))
+}
+
+fn rlv2_routes() -> Router {
+    Router::new()
+        .route("/createGame", post(rlv2::rlv2_create_game))
+        .route("/giveUpGame", post(rlv2::rlv2_give_up_game))
+        .route("/selectChoice", post(rlv2::rlv2_choice_select))
 }
 
 fn shop_routes() -> Router {

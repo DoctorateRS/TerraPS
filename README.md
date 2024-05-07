@@ -31,3 +31,4 @@
 - The compiled binaries would be available under the `packaged/` directory as an `.7z` file for ease of distribution.
     - Simply extract the `.7z` archive and execute the `.exe` file.
     - Any errors reports would be appreciated.
+- No redirector provided. You ship it yourself.
