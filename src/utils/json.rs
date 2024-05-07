@@ -2,7 +2,7 @@ use axum::Json;
 use serde::Serialize;
 use serde_json::{from_slice, json, ser::PrettyFormatter, Serializer, Value};
 use std::{
-    fs::{read, DirBuilder, File, OpenOptions},
+    fs::{read, DirBuilder, OpenOptions},
     io::Write,
     path::PathBuf,
 };
@@ -33,7 +33,7 @@ pub fn write_json<T: Serialize>(path: &str, value: T) {
         DirBuilder::new().recursive(true).create(dir).unwrap();
         OpenOptions::new().write(true).create(true).truncate(false).open(path).unwrap()
     } else {
-        File::open(path).unwrap()
+        OpenOptions::new().write(true).truncate(true).open(path).unwrap()
     };
     let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
