@@ -569,23 +569,22 @@ pub async fn account_sync_data() -> JSON {
             "branch": branch
         });
     }
-    for log in get_keys(&act_table["logDataMap"]) {
+    for log in get_keys(&act_table["archiveItemUnlockDataMap"]) {
         if !log.starts_with("act17side_log_") {
             continue;
         }
         let chapter = &act_table["archiveItemUnlockDataMap"][&log]["chapterId"].as_str().unwrap();
-        let mut story_array;
         if get_keys(&player_data["user"]["deepSea"]["logs"])
             .iter()
             .map(|s| s.as_str())
             .collect::<Vec<&str>>()
             .contains(chapter)
         {
-            story_array = player_data["user"]["deepSea"]["logs"][chapter].as_array().unwrap().clone();
-            story_array.push(json!("log"));
-            player_data["user"]["deepSea"]["logs"][chapter] = json!(story_array);
+            let sv = player_data["user"]["deepSea"]["logs"][&chapter].as_array_mut().unwrap();
+            sv.push(json!(log));
+            player_data["user"]["deepSea"]["logs"][&chapter] = json!(sv);
         } else {
-            player_data["user"]["deepSea"]["logs"][chapter] = json!([log]);
+            player_data["user"]["deepSea"]["logs"][&chapter] = json!([log]);
         }
     }
 
