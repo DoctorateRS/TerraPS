@@ -10,7 +10,7 @@ pub fn excel_fmt() -> Result<()> {
         let entry = entry?;
         let path = entry.path();
 
-        if path.is_file() {
+        if path.is_file() && path.extension().unwrap() == "json" {
             let v = read_json(path.to_str().unwrap());
             write_json(path.to_str().unwrap(), v);
         }
