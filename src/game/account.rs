@@ -5,13 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{
-        comp::max,
-        debug::{dbg, dbg_loop},
-        game::*,
-        get_nickname_config,
-        json::*,
-    },
+    utils::{comp::max, game::*, get_nickname_config, json::*},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -162,8 +156,6 @@ pub async fn account_sync_data() -> JSON {
             "equip": {},
             "starMark": 0
         });
-
-        dbg(&operator_keys, "opkeys.txt");
 
         // Set E2 skin
         if {
