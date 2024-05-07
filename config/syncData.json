@@ -5,40 +5,47 @@
         "dungeon": {
             "stages": {},
             "cowLevel": {
-                "spst_08-02": {
-                    "id": "spst_08-02",
-                    "type": "STAGE",
-                    "val": [true],
-                    "fts": 1665223808,
-                    "rts": 1665223844
-                },
-                "spst_08-04": {
-                    "id": "spst_08-04",
-                    "type": "STAGE",
-                    "val": [true],
-                    "fts": 1640364122,
-                    "rts": 1640364160
-                },
                 "spst_08-01": {
                     "id": "spst_08-01",
                     "type": "STAGE",
-                    "val": [true],
-                    "fts": 1637386717,
-                    "rts": 1637386763
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
+                },
+                "spst_08-02": {
+                    "id": "spst_08-02",
+                    "type": "STAGE",
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
                 },
                 "spst_08-03": {
                     "id": "spst_08-03",
                     "type": "STAGE",
-                    "val": [true],
-                    "fts": 1659777304,
-                    "rts": 1659777316
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
+                },
+                "spst_08-04": {
+                    "id": "spst_08-04",
+                    "type": "STAGE",
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
                 },
                 "spst_08-05": {
                     "id": "spst_08-05",
                     "type": "STAGE",
-                    "val": [[3, 3]],
-                    "fts": 1665223849,
-                    "rts": 1665223886
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
+                },
+                "spst_14-01": {
+                    "id": "spst_14-01",
+                    "type": "STAGE",
+                    "val": [],
+                    "fts": 1600000000,
+                    "rts": 1600000000
                 }
             },
             "hideStages": {
@@ -134,9 +141,9 @@
             }
         },
         "status": {
-            "nickName": "",
-            "nickNumber": "",
-            "level": 120,
+            "nickName": "Doctorate",
+            "nickNumber": "1111",
+            "level": 999,
             "exp": 0,
             "socialPoint": 300,
             "gachaTicket": 9999999,
@@ -167,14 +174,14 @@
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "TerraPS",
+            "serverName": "Doctorate",
             "avatarId": "0",
-            "resume": "TerraPS",
+            "resume": "DoctoratePy",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
-            "secretary": "char_4123_ela",
-            "secretarySkinId": "char_4123_ela@rainbow6#2",
+            "secretary": "char_4055_bgsnow",
+            "secretarySkinId": "char_4055_bgsnow#2",
             "tipMonthlyCardExpireTs": 0,
             "avatar": {
                 "type": "ICON",

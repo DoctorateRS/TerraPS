@@ -12,7 +12,9 @@
     },
     "assets": {
         "autoUpdate": false,
-        "downloadLocally": true
+        "downloadLocally": true,
+        "enableMods": false,
+        "skipModCacheValidation": false
     },
     "version": {
         "android": {
@@ -22,8 +24,8 @@
     },
     "versionGlobal": {
         "android": {
-            "resVersion": "24-03-22-10-13-05-158013",
-            "clientVersion": "21.1.01"
+            "resVersion": "24-04-26-14-20-27-ffbadc",
+            "clientVersion": "22.1.21"
         }
     },
     "remote": {},
@@ -59,9 +61,9 @@
             "sign": "sign",
             "content": {
                 "configVer": "1",
-                "funcVer": "V043",
+                "funcVer": "V044",
                 "configs": {
-                    "V043": {
+                    "V044": {
                         "override": true,
                         "network": {
                             "gs": "{server}",
@@ -90,7 +92,7 @@
         "selectedCrisis": "cc2"
     },
     "towerConfig": {
-        "season": "tower_season_4"
+        "season": "tower_season_5"
     },
     "rlv2Config": {
         "allChars": true
@@ -99,20 +101,19 @@
         "anonymous": true
     },
     "userConfig": {
-        "nickName": "Terra",
-        "nickNumber": "1111",
         "restorePreviousStates": {
             "is2": false,
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1709179200,
-        "activityMaxStartTs": 1711569599,
+        "activityMinStartTs": 1712203200,
+        "activityMaxStartTs": 1715284799,
         "secretary": "char_1035_wisdel",
         "secretarySkinId": "char_1035_wisdel#2",
-        "background": "bg_rainbowsix_1",
+        "background": "bg_laterano_1",
         "theme": "tm_rainbowsix_1",
-        "fakeTime": -1
+        "fakeTime": -1,
+        "vision": true
     },
     "charConfig": {
         "favorPoint": 25570,

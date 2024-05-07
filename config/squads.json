@@ -75,9 +75,9 @@
                 "currentEquip": null
             },
             {
-                "charId": "char_151_myrtle",
-                "skillIndex": 0,
-                "currentEquip": "uniequip_002_myrtle"
+                "charId": "char_4064_mlynar",
+                "skillIndex": 2,
+                "currentEquip": null
             },
             {
                 "charId": "char_1016_agoat2",
@@ -105,9 +105,9 @@
                 "currentEquip": "uniequip_002_glady"
             },
             {
-                "charId": "char_1023_ghost2",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_003_ghost2"
+                "charId": "char_264_f12yin",
+                "skillIndex": 1,
+                "currentEquip": "uniequip_002_f12yin"
             },
             {
                 "charId": "char_4072_ironmn",
@@ -132,28 +132,13 @@
         ]
     },
     "2": {
-        "squadId": "1",
-        "name": "Antimony",
+        "squadId": "2",
+        "name": "Arsene",
         "slots": [
             {
-                "charId": "char_286_cast3",
-                "skillIndex": -1,
-                "currentEquip": null
-            },
-            {
-                "charId": "char_151_myrtle",
-                "skillIndex": 0,
-                "currentEquip": "uniequip_002_myrtle"
-            },
-            {
-                "charId": "char_1016_agoat2",
+                "charId": "char_003_kalts",
                 "skillIndex": 2,
-                "currentEquip": null
-            },
-            {
-                "charId": "char_225_haak",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_haak"
+                "currentEquip": "uniequip_003_kalts"
             },
             {
                 "charId": "char_4123_ela",
@@ -161,105 +146,65 @@
                 "currentEquip": "uniequip_002_ela"
             },
             {
-                "charId": "char_4121_zuole",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_zuole"
-            },
-            {
-                "charId": "char_474_glady",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_glady"
-            },
-            {
-                "charId": "char_1023_ghost2",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_003_ghost2"
-            },
-            {
-                "charId": "char_4072_ironmn",
-                "skillIndex": 0,
-                "currentEquip": "uniequip_002_ironmn"
-            },
-            {
-                "charId": "char_1012_skadi2",
+                "charId": "char_1016_agoat2",
                 "skillIndex": 2,
                 "currentEquip": null
             },
             {
-                "charId": "char_254_vodfox",
-                "skillIndex": 1,
-                "currentEquip": "uniequip_002_vodfox"
+                "charId": "char_358_lisa",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_003_lisa"
             },
             {
-                "charId": "char_171_bldsk",
+                "charId": "char_2012_typhon",
                 "skillIndex": 1,
-                "currentEquip": "uniequip_002_bldsk"
+                "currentEquip": "uniequip_002_typhon"
+            },
+            {
+                "charId": "char_4117_ray",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_264_f12yin",
+                "skillIndex": 1,
+                "currentEquip": "uniequip_002_f12yin"
+            },
+            {
+                "charId": "char_4087_ines",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_1032_excu2",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_excu2"
+            },
+            {
+                "charId": "char_4064_mlynar",
+                "skillIndex": 2,
+                "currentEquip": null
+            },
+            {
+                "charId": "char_180_amgoat",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_amgoat"
+            },
+            {
+                "charId": "char_4080_lin",
+                "skillIndex": 2,
+                "currentEquip": "uniequip_002_lin"
             }
         ]
     },
     "3": {
-        "squadId": "1",
-        "name": "Antimony",
+        "squadId": "3",
+        "name": "Ashcone",
         "slots": [
             {
-                "charId": "char_286_cast3",
-                "skillIndex": -1,
-                "currentEquip": null
-            },
-            {
-                "charId": "char_151_myrtle",
-                "skillIndex": 0,
-                "currentEquip": "uniequip_002_myrtle"
-            },
-            {
-                "charId": "char_1016_agoat2",
+                "charId": "char_4132_ascln",
                 "skillIndex": 2,
-                "currentEquip": null
-            },
-            {
-                "charId": "char_225_haak",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_haak"
-            },
-            {
-                "charId": "char_4123_ela",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_ela"
-            },
-            {
-                "charId": "char_4121_zuole",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_zuole"
-            },
-            {
-                "charId": "char_474_glady",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_002_glady"
-            },
-            {
-                "charId": "char_1023_ghost2",
-                "skillIndex": 2,
-                "currentEquip": "uniequip_003_ghost2"
-            },
-            {
-                "charId": "char_4072_ironmn",
-                "skillIndex": 0,
-                "currentEquip": "uniequip_002_ironmn"
-            },
-            {
-                "charId": "char_1012_skadi2",
-                "skillIndex": 2,
-                "currentEquip": null
-            },
-            {
-                "charId": "char_254_vodfox",
-                "skillIndex": 1,
-                "currentEquip": "uniequip_002_vodfox"
-            },
-            {
-                "charId": "char_171_bldsk",
-                "skillIndex": 1,
-                "currentEquip": "uniequip_002_bldsk"
+                "currentEquip": "uniequip_002_ascln"
             }
         ]
     }
