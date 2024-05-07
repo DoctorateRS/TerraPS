@@ -13,7 +13,6 @@ pub mod game;
 pub mod json;
 pub mod mail;
 pub mod random;
-pub mod rlutils;
 pub mod server;
 
 pub fn zip<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {

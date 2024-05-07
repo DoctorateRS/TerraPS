@@ -28,7 +28,6 @@ pub mod user {
 // RLV2 Options
 #[allow(dead_code)]
 pub mod rlv2 {
-    pub const RLV2_JSON: &str = "./data/rlv2/rlv2.json";
     pub const RLV2_STATIC_JSON: &str = "./data/rlv2/rlv2Static.json";
     pub const RLV2_TEMPBUFFS: &str = "./data/rlv2/tempBuffs.json";
     pub const RLV2_CHOICEBUFFS: &str = "./data/rlv2/choiceBuffs.json";
