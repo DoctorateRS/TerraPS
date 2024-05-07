@@ -108,12 +108,11 @@
         },
         "activityMinStartTs": 1709179200,
         "activityMaxStartTs": 1711569599,
-        "secretary": "char_4123_ela",
-        "secretarySkinId": "char_4123_ela@rainbow6#2",
+        "secretary": "char_1035_wisdel",
+        "secretarySkinId": "char_1035_wisdel#2",
         "background": "bg_rainbowsix_1",
         "theme": "tm_rainbowsix_1",
-        "fakeTime": -1,
-        "vision": true
+        "fakeTime": -1
     },
     "charConfig": {
         "favorPoint": 25570,
