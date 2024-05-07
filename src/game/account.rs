@@ -76,19 +76,14 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string()) {
-            if temp_skin_table.get(skin_data["charId"].as_str().unwrap()).is_some() {
-                if skin_data["displaySkin"]["onYear"].as_u64().unwrap()
-                    > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]
-                        ["onYear"]
-                        .as_u64()
-                        .unwrap_or(0)
-                {
-                    temp_skin_table[&skin_data["charId"].as_str().unwrap()] = json!(&skin_keys[count]);
-                }
-            } else {
-                println!("Skipped.")
-            }
+        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string())
+            && temp_skin_table.get(skin_data["charId"].as_str().unwrap()).is_some()
+            && skin_data["displaySkin"]["onYear"].as_u64().unwrap()
+                > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
+                    .as_u64()
+                    .unwrap_or(0)
+        {
+            temp_skin_table[&skin_data["charId"].as_str().unwrap()] = json!(&skin_keys[count]);
         }
         count += 1;
     }
@@ -117,7 +112,7 @@ pub async fn account_sync_data() -> JSON {
 
         let evolve_phase = match operator_template["evolvePhase"].as_i64() {
             Some(evolve_phase) => match evolve_phase {
-                -1 => char_table[&operator]["phases"].as_array().unwrap().len() as i64 - 1,
+                ..=0 => char_table[&operator]["phases"].as_array().unwrap().len() as i64 - 1,
                 _ => evolve_phase,
             },
             None => panic!("Invalid elite status."),
@@ -196,11 +191,9 @@ pub async fn account_sync_data() -> JSON {
 
         // Set modules
         // FIXME: BROKEN
-        if equip_keys
-            .clone()
-            .contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string())
-        {
+        if equip_keys.contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string()) {
             for equip in get_keys(&equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]["charId"].to_string()]) {
+                println!("EQUIP: {}", equip);
                 let mut lvl = 1;
                 if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
