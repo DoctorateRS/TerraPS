@@ -318,6 +318,28 @@ pub async fn account_sync_data() -> JSON {
                         ],
                         "currentEquip": null,
                         "equip": {}
+                    },
+                    "char_1037_amiya3": {
+                        "skinId": "char_1037_amiya3#2",
+                        "defaultSkillIndex": 1,
+                        "skills": [
+                            {
+                                "skillId": "skchr_amiya3_1",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": 3,
+                                "completeUpgradeTime": -1
+                            },
+                            {
+                                "skillId": "skchr_amiya3_2",
+                                "unlock": 1,
+                                "state": 0,
+                                "specializeLevel": 3,
+                                "completeUpgradeTime": -1
+                            }
+                        ],
+                        "currentEquip": Value::Null,
+                        "equip": {},
                     }
                 }
             });
