@@ -5,7 +5,13 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, debug::debug, game::*, get_nickname_config, json::*},
+    utils::{
+        comp::max,
+        debug::{dbg, dbg_loop},
+        game::*,
+        get_nickname_config,
+        json::*,
+    },
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -157,7 +163,7 @@ pub async fn account_sync_data() -> JSON {
             "starMark": 0
         });
 
-        debug(&operator_keys, "opkeys.txt");
+        dbg(&operator_keys, "opkeys.txt");
 
         // Set E2 skin
         if {
@@ -197,9 +203,14 @@ pub async fn account_sync_data() -> JSON {
         temp_char_list[&cid]["skills"] = json!(skill_vec);
 
         // Set modules
-        // FIXME: BROKEN
         if equip_keys.contains(&temp_char_list[&cid]["charId"].as_str().unwrap().to_string()) {
-            for equip in get_keys(&equip_table["charEquip"][&temp_char_list[&cid]["charId"].as_str().unwrap()]) {
+            let equip_vec = equip_table["charEquip"][temp_char_list[&cid]["charId"].as_str().unwrap()]
+                .as_array()
+                .unwrap()
+                .iter()
+                .map(|x| x.as_str().unwrap().to_string())
+                .collect::<Vec<String>>();
+            for equip in equip_vec {
                 let mut lvl = 1;
                 if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
@@ -210,7 +221,13 @@ pub async fn account_sync_data() -> JSON {
                     "level": lvl
                 });
             }
+            temp_char_list[&cid]["currentEquip"] = json!(&equip_table["charEquip"][temp_char_list[&cid]["charId"].as_str().unwrap()]
+                .as_array()
+                .unwrap()
+                .last()
+                .unwrap());
         }
+
         player_data["user"]["dexNav"]["character"][&operator_keys[count]] = json!({
             "charInstId": count_inst_id,
             "count": 6
