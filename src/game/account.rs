@@ -55,7 +55,7 @@ pub async fn account_sync_data() -> JSON {
     let story_table = update_data(STORY_TABLE_URL).await;
 
     let mut count = 0;
-    let mut count_inst_id;
+    let mut count_inst_id: usize;
     let mut max_inst_id = 1;
 
     // Generics
