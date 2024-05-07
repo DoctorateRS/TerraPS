@@ -136,7 +136,9 @@ pub async fn account_sync_data() -> JSON {
             voice_lan = charword_table["charDefaultTypeDict"][&operator_keys[count]].as_str().unwrap();
         }
 
-        temp_char_list[count_inst_id.to_string()] = json!({
+        let cid = count_inst_id.to_string();
+
+        temp_char_list[&cid] = json!({
             "instId": count_inst_id,
             "charId": operator_keys[count],
             "favorPoint": operator_template["favorPoint"],
@@ -158,26 +160,26 @@ pub async fn account_sync_data() -> JSON {
         debug(&operator_keys, "opkeys.txt");
 
         // Set E2 skin
-        // FIXME: BROKEN
-        if [
-            "char_508_aguard".to_string(),
-            "char_509_acast".to_string(),
-            "char_510_amedic".to_string(),
-            "char_511_asnipe".to_string(),
-        ]
-        .contains(&operator_keys[count])
-            && temp_char_list[count_inst_id.to_string()]["evolvePhase"].as_i64().unwrap() == 2
+        if {
+            ![
+                "char_508_aguard".to_string(),
+                "char_509_acast".to_string(),
+                "char_510_amedic".to_string(),
+                "char_511_asnipe".to_string(),
+            ]
+            .contains(&operator_keys[count])
+        } && { temp_char_list[&cid]["evolvePhase"].as_u64().unwrap() == 2 }
         {
-            temp_char_list[count_inst_id.to_string()]["skin"] = json!(operator_keys[count].clone() + "#2");
+            temp_char_list[&cid]["skin"] = json!(operator_keys[count].clone() + "#2");
         }
 
         // Set skins
         if get_keys(&temp_skin_table).contains(&operator_keys[count]) {
-            temp_char_list[count_inst_id.to_string()]["skin"] = json!(temp_skin_table[&operator_keys[count]]);
+            temp_char_list[&cid]["skin"] = json!(temp_skin_table[&operator_keys[count]]);
         }
 
-        let mut skill_vec = Vec::new();
         // Set skills
+        let mut skill_vec = Vec::new();
         for skill in char_table[&operator]["skills"].as_array().unwrap() {
             let specialization_level = if !skill["levelUpCostCond"].as_array().unwrap().is_empty() {
                 operator_template["skillsSpecializeLevel"].as_u64().unwrap()
@@ -192,31 +194,22 @@ pub async fn account_sync_data() -> JSON {
                 "completeUpgradeTime": -1
             }));
         }
-        temp_char_list[count_inst_id.to_string()]["skills"] = json!(skill_vec);
+        temp_char_list[&cid]["skills"] = json!(skill_vec);
 
         // Set modules
         // FIXME: BROKEN
-        if equip_keys.contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string()) {
-            for equip in get_keys(&equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]["charId"].to_string()]) {
+        if equip_keys.contains(&temp_char_list[&cid]["charId"].as_str().unwrap().to_string()) {
+            for equip in get_keys(&equip_table["charEquip"][&temp_char_list[&cid]["charId"].as_str().unwrap()]) {
                 let mut lvl = 1;
                 if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
                 }
-                temp_char_list[count_inst_id.to_string()]["equip"] = json!({
-                    equip: {
-                        "hide": 0,
-                        "locked": 0,
-                        "level": lvl
-                    }
+                temp_char_list[&cid]["equip"][&equip] = json!({
+                    "hide": 0,
+                    "locked": 0,
+                    "level": lvl
                 });
             }
-            temp_char_list[count_inst_id.to_string()]["currentEquip"] = equip_table["charEquip"]
-                [temp_char_list[count_inst_id.to_string()]["charId"].to_string()]
-            .as_array()
-            .unwrap()
-            .last()
-            .unwrap()
-            .clone();
         }
         player_data["user"]["dexNav"]["character"][&operator_keys[count]] = json!({
             "charInstId": count_inst_id,
@@ -224,7 +217,7 @@ pub async fn account_sync_data() -> JSON {
         });
 
         if operator_keys[count] == "char_002_amiya" {
-            temp_char_list[count_inst_id.to_string()] = json!({
+            temp_char_list[&cid] = json!({
                 "instId": 2,
                 "charId": "char_002_amiya",
                 "favorPoint": 25570,
@@ -345,7 +338,7 @@ pub async fn account_sync_data() -> JSON {
                 if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
                 }
-                temp_char_list[count_inst_id.to_string()]["tmpl"]["char_002_amiya"]["equip"] = json!({
+                temp_char_list[&cid]["tmpl"]["char_002_amiya"]["equip"] = json!({
                     equip: {
                         "hide": 0,
                         "locked": 0,
@@ -353,17 +346,17 @@ pub async fn account_sync_data() -> JSON {
                     }
                 });
             }
-            temp_char_list[count_inst_id.to_string()]["tmpl"]["char_002_amiya"]["currentEquip"] = equip_table["charEquip"]["char_002_amiya"]
+            temp_char_list[&cid]["tmpl"]["char_002_amiya"]["currentEquip"] = equip_table["charEquip"]["char_002_amiya"]
                 .as_array()
                 .unwrap()
                 .last()
                 .unwrap()
                 .clone();
         } else if operator_keys[count] == "char_512_aprot" {
-            temp_char_list[count_inst_id.to_string()]["skin"] = json!("char_512_aprot#1");
+            temp_char_list[&cid]["skin"] = json!("char_512_aprot#1");
         }
 
-        building_chars[count_inst_id.to_string()] = json!({
+        building_chars[&cid] = json!({
             "charId": operator_keys[count],
             "lastApAddTime": time() - 3600,
             "ap": 8640000,
