@@ -75,22 +75,25 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if get_keys(&temp_skin_table).contains(&skin_data["charId"].as_str().unwrap().to_string())
-            && temp_skin_table.get(skin_data["charId"].as_str().unwrap()).is_some()
-            && skin_data["displaySkin"]["onYear"].as_u64().unwrap()
+        if {
+            !get_keys(&temp_skin_table)
+                .iter()
+                .map(|x| x.as_str())
+                .collect::<Vec<&str>>()
+                .contains(&skin_data["charId"].as_str().unwrap())
+        } || {
+            skin_data["displaySkin"]["onYear"].as_u64().unwrap()
                 > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
                     .as_u64()
-                    .unwrap_or(0)
-        {
-            temp_skin_table[&skin_data["charId"].as_str().unwrap()] = json!(&skin_keys[count]);
+                    .unwrap()
+        } {
+            temp_skin_table[skin_data["charId"].as_str().unwrap()] = skin_data["skinId"].clone();
         }
         count += 1;
     }
 
     // Operators
     let operator_template = &config["charConfig"];
-
-    let mut count = 0;
     let operator_keys = get_keys(&char_table);
     let equip_keys = get_keys(&equip_table["charEquip"]);
 
@@ -100,6 +103,8 @@ pub async fn account_sync_data() -> JSON {
         }
         char_group[operator] = json!({"favorPoint": 25570})
     }
+
+    let mut count = 0;
 
     for operator in get_keys(&char_table) {
         if !operator_keys[count].contains("char") {
