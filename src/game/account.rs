@@ -152,7 +152,7 @@ pub async fn account_sync_data() -> JSON {
         });
 
         // Set E2 skin
-
+        // FIXME: BROKEN
         if [
             "char_508_aguard".to_string(),
             "char_509_acast".to_string(),
@@ -192,7 +192,6 @@ pub async fn account_sync_data() -> JSON {
         // FIXME: BROKEN
         if equip_keys.contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string()) {
             for equip in get_keys(&equip_table["charEquip"][temp_char_list[count_inst_id.to_string()]["charId"].to_string()]) {
-                println!("EQUIP: {}", equip);
                 let mut lvl = 1;
                 if get_keys(&battleequip_table).contains(&equip) {
                     lvl = battleequip_table[&equip]["phases"].as_array().unwrap().len();
@@ -218,7 +217,6 @@ pub async fn account_sync_data() -> JSON {
             "count": 6
         });
 
-        // FIXME: This is a temporary fix for Amiya
         if operator_keys[count] == "char_002_amiya" {
             temp_char_list[count_inst_id.to_string()] = json!({
                 "instId": 2,
