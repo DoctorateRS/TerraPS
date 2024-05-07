@@ -538,7 +538,6 @@ pub async fn account_sync_data() -> JSON {
         })
     }
 
-    // STULTIFERA NAVIS HAND OF SAINT
     let act_table = acitivity_table["activity"]["TYPE_ACT17SIDE"]["act17side"].clone();
     for place in get_keys(&act_table["placeDataMap"]) {
         player_data["user"]["deepSea"]["places"][&place] = json!(2);
@@ -547,9 +546,11 @@ pub async fn account_sync_data() -> JSON {
         player_data["user"]["deepSea"]["nodes"][&node] = json!(2);
     }
     for choice_node in get_keys(&act_table["choiceNodeDataMap"]) {
-        let cv_len = get_length(&act_table["choiceNodeDataMap"][&choice_node]["optionList"]);
-        let cv_vec = vec![2; cv_len];
-        player_data["user"]["deepSea"]["choices"][&choice_node] = json!(cv_vec);
+        let mut cv = Vec::new();
+        for _ in act_table["choiceNodeDataMap"][&choice_node]["optionList"].as_array().unwrap() {
+            cv.push(json!(2));
+        }
+        player_data["user"]["deepSea"]["choices"][&choice_node] = json!(cv);
     }
     for event in get_keys(&act_table["eventDataMap"]) {
         player_data["user"]["deepSea"]["events"][&event] = json!(1);
