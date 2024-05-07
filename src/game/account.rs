@@ -195,6 +195,7 @@ pub async fn account_sync_data() -> JSON {
         temp_char_list[count_inst_id.to_string()]["skills"] = json!(skill_vec);
 
         // Set modules
+        // FIXME: BROKEN
         if equip_keys
             .clone()
             .contains(&temp_char_list[count_inst_id.to_string()]["charId"].to_string())
