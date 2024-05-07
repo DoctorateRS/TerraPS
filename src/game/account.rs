@@ -5,7 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, game::*, json::*, zipper},
+    utils::{comp::max, game::*, get_nickname_config, json::*, zipper},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::{json, Value};
@@ -28,13 +28,12 @@ pub async fn account_login(header: HeaderMap) -> JSON {
 }
 
 pub async fn account_sync_data() -> JSON {
-    let user_data = read_json(USER_JSON_PATH);
+    // let user_data = read_json(USER_JSON_PATH);
     let mail_data = read_json(MAILLIST_PATH);
     let mut player_data = read_json(SYNC_DATA_TEMPLATE_PATH);
     let config = read_json(CONFIG_JSON_PATH);
 
-    let nick_name = config["userConfig"]["nickName"].as_str().unwrap();
-    let nick_id = config["userConfig"]["nickNumber"].as_str().unwrap();
+    let (nick_name, nick_id) = get_nickname_config();
 
     // Loading latest data
 

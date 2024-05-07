@@ -113,7 +113,9 @@
         "background": "bg_laterano_1",
         "theme": "tm_rainbowsix_1",
         "fakeTime": -1,
-        "vision": true
+        "vision": true,
+        "nickName": "Terra",
+        "nickNumber": "1111"
     },
     "charConfig": {
         "favorPoint": 25570,
