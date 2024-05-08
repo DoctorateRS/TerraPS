@@ -749,3 +749,24 @@ async fn get_buffs(rlv2: &Value, stage_id: &str) -> Vec<Value> {
     }
     buffs
 }
+
+pub async fn rlve2_mv_n_battle_start(Json(payload): JSON) -> JSON {
+    let stage_id = payload["stageId"].as_str().unwrap();
+    let x = payload["to"]["x"].as_u64().unwrap();
+    let y = payload["to"]["y"].as_u64().unwrap();
+
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    rlv2["player"]["state"] = json!("PENDING");
+    rlv2["player"]["cursor"]["position"] = json!({"x": x, "y": y});
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
