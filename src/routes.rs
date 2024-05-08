@@ -212,6 +212,7 @@ fn rlv2_routes() -> Router {
         .route("/recruitChar", post(rlv2::rlv2_recruit_char))
         .route("/closeRecruitTicket", post(rlv2::rlv2_close_tkt))
         .route("/finishEvent", post(rlv2::rlv2_finish_event))
+        .route("/moveAndBattleStart", post(rlv2::rlv2_mv_n_battle_start))
 }
 
 fn shop_routes() -> Router {

@@ -3,11 +3,12 @@ use rand::{thread_rng, Rng};
 use serde_json::{json, Value};
 
 use crate::{
-    constants::{config::CONFIG_JSON_PATH, user::RLV2_JSON_PATH},
+    constants::{config::CONFIG_JSON_PATH, rlv2, user::RLV2_JSON_PATH},
     utils::{
         enumerate,
         json::{get_keys, read_json, write_json, JSON},
         rlv2::{activate_tkt, add_ticket, get_buffs, get_chars, get_map, get_next_char_id, get_next_pending, get_next_tkt},
+        TRng,
     },
 };
 
@@ -413,8 +414,8 @@ pub async fn rlv2_finish_event() -> JSON {
     }))
 }
 
-async fn mv_n_battle_start(payload: Value) {
-    let mut rng = thread_rng();
+async fn mv_n_battle_start(payload: Value) -> Value {
+    let mut rng = TRng::new();
     let mut hf = vec![];
     let stage_id = payload["stageId"].as_str().unwrap();
     let x = payload["to"]["x"].as_u64().unwrap();
@@ -438,11 +439,11 @@ async fn mv_n_battle_start(payload: Value) {
     let box_info = match theme {
         "rogue_1" => json!({}),
         "rogue_2" => {
-            let trap = ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"][rng.gen_range(0..3) as usize];
+            let trap = ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"][rng.0.gen_range(0..3) as usize];
             json!({trap: 100})
         }
         "rogue_3" => {
-            let trap = ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"][rng.gen_range(0..3) as usize];
+            let trap = ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"][rng.0.gen_range(0..3) as usize];
             json!({trap: 100})
         }
         _ => json!({}),
@@ -467,7 +468,7 @@ async fn mv_n_battle_start(payload: Value) {
             _ => (12, "trap_089_dice3"),
         };
         for _ in 0..100 {
-            dice_roll.push(rng.gen_range(1_usize..dice_fcnt + 1));
+            dice_roll.push(rng.0.gen_range(1_usize..dice_fcnt + 1));
         }
         buffs.push(json!({
             "key": "misc_insert_token_card",
@@ -505,15 +506,17 @@ async fn mv_n_battle_start(payload: Value) {
     };
 
     write_json(RLV2_JSON_PATH, &rlv2);
+    rlv2
 }
 
 pub async fn rlv2_mv_n_battle_start(Json(payload): JSON) -> JSON {
-    mv_n_battle_start(payload).await;
+    let rlv2 = mv_n_battle_start(payload).await;
+
     Json(json!({
         "playerDataDelta": {
             "modified": {
                 "rlv2": {
-                    "current": read_json(RLV2_JSON_PATH),
+                    "current": rlv2,
                 }
             },
             "deleted": {},

@@ -2,6 +2,7 @@ use crate::constants::config::CONFIG_JSON_PATH;
 
 use self::json::{read_json, write_json};
 
+use rand::{rngs::ThreadRng, thread_rng};
 use serde_json::json;
 
 pub mod battle_data;
@@ -45,3 +46,12 @@ pub fn get_nickname_config() -> (String, String) {
     };
     (nick_name.to_string(), nick_id.to_string())
 }
+
+pub struct TRng(pub ThreadRng);
+impl TRng {
+    pub fn new() -> Self {
+        Self(thread_rng())
+    }
+}
+
+unsafe impl Send for TRng {}
