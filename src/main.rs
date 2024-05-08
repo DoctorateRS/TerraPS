@@ -7,13 +7,18 @@ mod utils;
 use anyhow::Result;
 use constants::ascii::TITLE;
 use routes::routes;
-use utils::{fmt::excel_fmt, server::Server};
-
-use crate::utils::server::get_server_address;
+use utils::{
+    fmt::{ccv2_fmt, cfg_fmt, excel_fmt},
+    server::{get_server_address, Server},
+    update::update_config,
+};
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    update_config().await?;
     excel_fmt()?;
+    cfg_fmt()?;
+    ccv2_fmt()?;
 
     // TITLE
     println!(r#"{}"#, TITLE);
