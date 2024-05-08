@@ -346,3 +346,79 @@ pub async fn get_buffs(rlv2: &Value, stage_id: &str) -> Vec<Value> {
     }
     buffs
 }
+
+pub async fn get_goods(theme: &str) -> Vec<Value> {
+    let (ticket, price_id) = match theme {
+        "rogue_1" => ("rogue_1_recruit_ticket_all", "rogue_1_gold"),
+        "rogue_2" => ("rogue_2_recruit_ticket_all", "rogue_2_gold"),
+        "rogue_3" => ("rogue_3_recruit_ticket_all", "rogue_3_gold"),
+        _ => ("", ""),
+    };
+    let mut goods = vec![json!({
+        "index": "0",
+        "itemId": ticket,
+        "count": 1,
+        "priceId": price_id,
+        "priceCount": 0,
+        "origCost": 0,
+        "displayPriceChg": false,
+        "_retainDiscount": 1,
+    })];
+    let mut id = 1;
+    let rl_table = update_data(RL_TABLE_URL).await;
+    for item in get_keys(&rl_table["details"][theme]["archiveComp"]["relic"]["relic"]) {
+        goods.push(json!({
+            "index": id.to_string(),
+            "itemId": item,
+            "count": 1,
+            "priceId": price_id,
+            "priceCount": 0,
+            "origCost": 0,
+            "displayPriceChg": false,
+            "_retainDiscount": 1,
+        }));
+        id += 1;
+    }
+    for item in get_keys(&rl_table["details"][theme]["difficultyUpgradeRelicGroups"]) {
+        for relic in get_keys(&rl_table["details"][theme]["difficultyUpgradeRelicGroups"][&item]["relicData"]) {
+            let relic = rl_table["details"][theme]["difficultyUpgradeRelicGroups"][&item]["relicData"][relic].clone();
+            goods.push(json!({
+                "index": id.to_string(),
+                "itemId": relic["relicId"],
+                "count": 1,
+                "priceId": price_id,
+                "priceCount": 0,
+                "origCost": 0,
+                "displayPriceChg": false,
+                "_retainDiscount": 1,
+            }));
+            id += 1;
+        }
+    }
+    for trap in get_keys(&rl_table["details"][theme]["archiveComp"]["trap"]["trap"]) {
+        goods.push(json!({
+            "index": id.to_string(),
+            "itemId": trap,
+            "count": 1,
+            "priceId": price_id,
+            "priceCount": 0,
+            "origCost": 0,
+            "displayPriceChg": false,
+            "_retainDiscount": 1,
+        }));
+        id += 1;
+    }
+    goods
+}
+
+pub fn get_next_relic_id(rlv2: &Value) -> String {
+    let mut v = vec![];
+    for p in rlv2["inventory"]["relic"].as_array().unwrap() {
+        v.push(p["index"].as_str().unwrap().split_at(1).1.parse::<usize>().unwrap_or(0));
+    }
+    let mut i = 0;
+    while v.contains(&i) {
+        i += 1;
+    }
+    format!("e_{}", i)
+}

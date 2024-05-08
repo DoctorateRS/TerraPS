@@ -1,4 +1,5 @@
 use axum::Json;
+use base64::write;
 use rand::{thread_rng, Rng};
 use serde_json::{json, Value};
 
@@ -6,8 +7,9 @@ use crate::{
     constants::{config::CONFIG_JSON_PATH, rlv2, user::RLV2_JSON_PATH},
     utils::{
         enumerate,
+        game::decrypt_battle_data,
         json::{get_keys, read_json, write_json, JSON},
-        rlv2::{activate_tkt, add_ticket, get_buffs, get_chars, get_map, get_next_char_id, get_next_pending, get_next_tkt},
+        rlv2::{activate_tkt, add_ticket, get_buffs, get_chars, get_goods, get_map, get_next_char_id, get_next_pending, get_next_tkt},
         TRng,
     },
 };
@@ -511,6 +513,141 @@ async fn mv_n_battle_start(payload: Value) -> Value {
 
 pub async fn rlv2_mv_n_battle_start(Json(payload): JSON) -> JSON {
     let rlv2 = mv_n_battle_start(payload).await;
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_battle_finish(Json(payload): JSON) -> JSON {
+    let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap(), None);
+
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    if battle_data["completeState"].as_i64().unwrap() != 1 {
+        rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
+        let theme = rlv2["game"]["theme"].as_str().unwrap();
+        let tkt = match theme {
+            "rogue_1" => "rogue_1_recruit_ticket_all",
+            "rogue_2" => "rogue_2_recruit_ticket_all",
+            "rogue_3" => "rogue_3_recruit_ticket_all",
+            _ => "",
+        };
+        let pending_index = get_next_pending(&rlv2);
+        rlv2["player"]["pending"].as_array_mut().unwrap().insert(
+            0,
+            json!({
+                "index": pending_index,
+                "type": "BATTLE_REWARD",
+                "content": {
+                    "battleReward": {
+                        "earn": {
+                            "damage": 0,
+                            "hp": 0,
+                            "shield": 0,
+                            "exp": 0,
+                            "populationMax": 0,
+                            "squadCapacity": 0,
+                            "maxHpUp": 0,
+                        },
+                        "rewards": [
+                            {
+                                "index": 0,
+                                "items": [{"sub": 0, "id": tkt, "count": 1}],
+                                "done": 0,
+                            }
+                        ],
+                        "show": "1",
+                    }
+                },
+            }),
+        )
+    } else {
+        rlv2["player"]["state"] = json!("WAIT_MOVE");
+        rlv2["player"]["pending"].as_array_mut().unwrap().clear();
+        rlv2["player"]["cursor"]["position"]["x"] = json!(0);
+        rlv2["player"]["cursor"]["position"]["y"] = json!(0);
+        rlv2["player"]["trace"].as_array_mut().unwrap().pop();
+    }
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_finish_battle_reward() -> JSON {
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+
+    rlv2["player"]["state"] = json!("WAIT_MOVE");
+    rlv2["player"]["pending"].as_array_mut().unwrap().clear();
+    rlv2["player"]["cursor"]["position"]["x"] = json!(0);
+    rlv2["player"]["cursor"]["position"]["y"] = json!(0);
+    rlv2["player"]["trace"].as_array_mut().unwrap().pop();
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_mv_to(Json(payload): JSON) -> JSON {
+    let x = payload["to"]["x"].clone();
+    let y = payload["to"]["y"].clone();
+
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    rlv2["player"]["state"] = json!("PENDING");
+    rlv2["player"]["cursor"]["position"] = json!({"x": x, "y": y});
+    let theme = rlv2["game"]["theme"].as_str().unwrap();
+    let goods = get_goods(theme).await;
+    let cursor = rlv2["player"]["cursor"].clone();
+    rlv2["player"]["trace"].as_array_mut().unwrap().push(cursor);
+    let pending_index = get_next_pending(&rlv2);
+    rlv2["player"]["pending"].as_array_mut().unwrap().insert(
+        0,
+        json!({
+            "index": pending_index,
+            "type": "SHOP",
+            "content": {
+                "shop": {
+                    "bank": {
+                        "open": false,
+                        "canPut": false,
+                        "canWithdraw": false,
+                        "withdraw": 0,
+                        "cost": 1,
+                    },
+                    "id": "just_a_shop",
+                    "goods": goods,
+                    "_done": false,
+                }
+            },
+        }),
+    );
+
+    write_json(RLV2_JSON_PATH, &rlv2);
 
     Json(json!({
         "playerDataDelta": {
