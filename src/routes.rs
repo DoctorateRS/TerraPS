@@ -213,6 +213,12 @@ fn rlv2_routes() -> Router {
         .route("/closeRecruitTicket", post(rlv2::rlv2_close_tkt))
         .route("/finishEvent", post(rlv2::rlv2_finish_event))
         .route("/moveAndBattleStart", post(rlv2::rlv2_mv_n_battle_start))
+        .route("/battleFinish", post(rlv2::rlv2_battle_finish))
+        .route("/finishBattleReward", post(rlv2::rlv2_finish_battle_reward))
+        .route("/moveTo", post(rlv2::rlv2_mv_to))
+        .route("/buyGoods", post(rlv2::rlv2_buy_good))
+        .route("/leaveShop", post(rlv2::rlv2_leave_shop))
+        .route("/chooseBattleReward", post(rlv2::rlv2_choose_battle_reward))
 }
 
 fn shop_routes() -> Router {

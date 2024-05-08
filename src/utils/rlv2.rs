@@ -420,5 +420,17 @@ pub fn get_next_relic_id(rlv2: &Value) -> String {
     while v.contains(&i) {
         i += 1;
     }
+    format!("r_{}", i)
+}
+
+pub fn get_next_explore_tool_id(rlv2: &Value) -> String {
+    let mut v = vec![];
+    for p in rlv2["inventory"]["exploreTool"].as_array().unwrap() {
+        v.push(p["index"].as_str().unwrap().split_at(1).1.parse::<usize>().unwrap_or(0));
+    }
+    let mut i = 0;
+    while v.contains(&i) {
+        i += 1;
+    }
     format!("e_{}", i)
 }

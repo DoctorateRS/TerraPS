@@ -9,7 +9,10 @@ use crate::{
         enumerate,
         game::decrypt_battle_data,
         json::{get_keys, read_json, write_json, JSON},
-        rlv2::{activate_tkt, add_ticket, get_buffs, get_chars, get_goods, get_map, get_next_char_id, get_next_pending, get_next_tkt},
+        rlv2::{
+            activate_tkt, add_ticket, get_buffs, get_chars, get_goods, get_map, get_next_char_id, get_next_pending, get_next_relic_id,
+            get_next_tkt,
+        },
         TRng,
     },
 };
@@ -646,6 +649,112 @@ pub async fn rlv2_mv_to(Json(payload): JSON) -> JSON {
             },
         }),
     );
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_buy_good(Json(payload): JSON) -> JSON {
+    let select = payload["select"][0].as_str().unwrap();
+
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    let item_id = rlv2["player"]["pending"][0]["content"]["shop"]["goods"][select]["itemId"]
+        .as_str()
+        .unwrap();
+    if item_id.contains("_recruit_ticket_") {
+        let tkt_id = get_next_tkt(&rlv2);
+        add_ticket(&mut rlv2, &tkt_id);
+        activate_tkt(&mut rlv2, &tkt_id);
+    } else if item_id.contains("_relic_") {
+        let relic_id = get_next_relic_id(&rlv2);
+        rlv2["inventory"]["relic"][relic_id] = json!({
+            "index": relic_id,
+            "id": item_id,
+            "count": 1,
+            "ts": 1695000000,
+        });
+    } else if item_id.contains("_active_tool_") {
+        rlv2["inventory"]["trap"] = json!({
+            "index": item_id,
+            "id": item_id,
+            "count": 1,
+            "ts": 1695000000,
+        });
+    } else if item_id.contains("_explore_tool_") {
+        let explore_tool_id = get_next_relic_id(&rlv2);
+        rlv2["inventory"]["exploreTool"][&explore_tool_id] = json!({
+            "index": explore_tool_id,
+            "id": item_id,
+            "count": 1,
+            "ts": 1695000000,
+        });
+    }
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_leave_shop() -> JSON {
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    rlv2["player"]["state"] = json!("WAIT_MOVE");
+    rlv2["player"]["pending"].as_array_mut().unwrap().clear();
+
+    match rlv2["player"]["cursor"]["position"]["x"].as_i64().unwrap() {
+        1 => {
+            rlv2["player"]["cursor"]["position"]["x"] = json!(0);
+            rlv2["player"]["cursor"]["position"]["y"] = json!(0);
+            rlv2["player"]["trace"].as_array_mut().unwrap().pop();
+        }
+        _ => {
+            let zone = rlv2["player"]["cursor"]["zone"].as_i64().unwrap();
+            let zone = zone + 1;
+            rlv2["player"]["cursor"]["zone"] = json!(zone);
+            rlv2["player"]["cursor"]["position"] = Value::Null;
+        }
+    };
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+pub async fn rlv2_choose_battle_reward(Json(payload): JSON) -> JSON {
+    let index = payload["index"].as_i64().unwrap();
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+
+    if index == 0 {
+        let tkt = get_next_tkt(&rlv2);
+        add_ticket(&mut rlv2, &tkt);
+        activate_tkt(&mut rlv2, &tkt);
+    }
 
     write_json(RLV2_JSON_PATH, &rlv2);
 
