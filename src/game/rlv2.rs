@@ -1,18 +1,14 @@
 use axum::Json;
-use base64::write;
-use rand::{thread_rng, Rng};
+use rand::Rng;
 use serde_json::{json, Value};
 
 use crate::{
-    constants::{config::CONFIG_JSON_PATH, rlv2, user::RLV2_JSON_PATH},
+    constants::{config::CONFIG_JSON_PATH, user::RLV2_JSON_PATH},
     utils::{
         enumerate,
         game::decrypt_battle_data,
         json::{get_keys, read_json, write_json, JSON},
-        rlv2::{
-            activate_tkt, add_ticket, get_buffs, get_chars, get_goods, get_map, get_next_char_id, get_next_pending, get_next_relic_id,
-            get_next_tkt,
-        },
+        rlv2::*,
         TRng,
     },
 };
@@ -691,7 +687,7 @@ pub async fn rlv2_buy_good(Json(payload): JSON) -> JSON {
             "ts": 1695000000,
         });
     } else if item_id.contains("_explore_tool_") {
-        let explore_tool_id = get_next_relic_id(&rlv2);
+        let explore_tool_id = get_next_explore_tool_id(&rlv2);
         rlv2["inventory"]["exploreTool"][&explore_tool_id] = json!({
             "index": explore_tool_id,
             "id": item_id,
