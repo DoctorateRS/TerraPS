@@ -44,4 +44,44 @@ pub async fn update_config() -> Result<()> {
     Ok(())
 }
 
-pub async fn excel_update() {}
+pub async fn excel_update() -> Result<()> {
+    let list = vec![
+        ACTIVITY_TABLE_URL,
+        CHARM_TABLE_URL,
+        SKIN_TABLE_URL,
+        CHARACTER_TABLE_URL,
+        BATTLEEQUIP_TABLE_URL,
+        EQUIP_TABLE_URL,
+        STORY_TABLE_URL,
+        STAGE_TABLE_URL,
+        RL_TABLE_URL,
+        DM_TABLE_URL,
+        RETRO_TABLE_URL,
+        HANDBOOK_INFO_TABLE_URL,
+        TOWER_TABLE_URL,
+        BUILDING_TABLE_URL,
+        SANDBOX_TABLE_URL,
+        STORY_REVIEW_TABLE_URL,
+        STORY_REVIEW_META_TABLE_URL,
+        ENEMY_HANDBOOK_TABLE_URL,
+        MEDAL_TABLE_URL,
+        CHARWORD_TABLE_URL,
+        GACHA_TABLE_URL,
+        GAMEDATA_CONST_URL,
+    ];
+
+    for url in list {
+        let path = url
+            .replace(
+                "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
+                "./data",
+            )
+            .replace(
+                "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
+                "./data/announce",
+            );
+        let json = get(url).await?.json::<Value>().await?;
+        write_json(&path, json);
+    }
+    Ok(())
+}
