@@ -3,7 +3,7 @@ use serde_json::{json, Value};
 
 use crate::{
     constants::{
-        config::{self, CONFIG_JSON_PATH},
+        config::CONFIG_JSON_PATH,
         user::{RLV2_JSON_PATH, RLV2_USER_SETTINGS_PATH, USER_JSON_PATH},
     },
     utils::{
@@ -344,10 +344,10 @@ fn add_ticket(rlv2: &mut Value, ticket_id: &str) {
     });
 }
 
-fn get_next_tkt(rlv2: Value) -> String {
+fn get_next_tkt(rlv2: &Value) -> String {
     let mut v = vec![];
     for mut tkt in get_keys(&rlv2["inventory"]["recruit"]) {
-        v.push(tkt.split_off(2).parse::<usize>().unwrap_or(0));
+        v.push(tkt.split_off(1).parse::<usize>().unwrap_or(0));
     }
     let config = read_json(CONFIG_JSON_PATH);
     let mut index = if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
@@ -361,8 +361,136 @@ fn get_next_tkt(rlv2: Value) -> String {
     format!("t_{}", index)
 }
 
-pub async fn rlv2_choose_init_recruit() -> JSON {
+pub async fn rlv2_choose_init_recruit_set() -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
+
+    let pending = rlv2["player"]["pending"].as_array_mut().unwrap();
+    pending.remove(0);
+
+    let config = read_json(CONFIG_JSON_PATH);
+
+    if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
+        let mut tkts = vec![];
+        for _ in 0..3 {
+            let ticket_id = get_next_tkt(&rlv2);
+            add_ticket(&mut rlv2, &ticket_id);
+            tkts.push(ticket_id);
+        }
+        rlv2["player"]["pending"][0]["content"]["initRecruit"]["tickets"] = json!(tkts);
+    }
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+fn get_next_pending(rlv2: &Value) -> String {
+    let mut v = vec![];
+    for p in rlv2["player"]["pending"].as_array().unwrap() {
+        v.push(p["index"].as_str().unwrap().split_at(1).1.parse::<usize>().unwrap_or(0));
+    }
+    let mut i = 0;
+    while v.contains(&i) {
+        i += 1;
+    }
+    format!("e_{}", i)
+}
+
+fn activate_tkt(rlv2: &mut Value, tkt_id: &str) {
+    let pending_index = get_next_pending(rlv2);
+    let pending_arr = rlv2["player"]["pending"].as_array_mut().unwrap();
+    pending_arr.insert(
+        0,
+        json!({
+            "index": pending_index,
+            "type": "RECRUIT",
+            "content": {"recruit": {"ticket": tkt_id}},
+        }),
+    );
+    let chars = get_chars(false);
+    rlv2["inventory"]["recruit"][tkt_id]["state"] = json!(1);
+    rlv2["inventory"]["recruit"][tkt_id]["list"] = json!(chars);
+}
+
+pub async fn rlv2_activate_recruit_tkt(Json(payload): JSON) -> JSON {
+    let tkt_id = payload["id"].as_str().unwrap();
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    activate_tkt(&mut rlv2, tkt_id);
+    write_json(RLV2_JSON_PATH, &rlv2);
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        }
+    }))
+}
+
+fn get_next_char_id(rlv2: &Value) -> String {
+    let config = read_json(CONFIG_JSON_PATH);
+    let mut i = if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
+        1
+    } else {
+        10000
+    };
+    while get_keys(&rlv2["troop"]["chars"]).contains(&i.to_string()) {
+        i += 1;
+    }
+    i.to_string()
+}
+
+pub async fn rlv2_recruit_char(Json(payload): JSON) -> JSON {
+    let tkt_id = payload["ticketIndex"].as_str().unwrap();
+    let opt_id = payload["optionId"].as_str().unwrap().parse::<usize>().unwrap();
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    let rlv2_pending = rlv2["player"]["pending"].as_array_mut().unwrap();
+    rlv2_pending.remove(0);
+    rlv2["player"]["pending"] = json!(rlv2_pending);
+
+    let char_id = get_next_char_id(&rlv2);
+    let mut char = rlv2["inventory"]["recruit"][tkt_id]["list"][opt_id].clone();
+    char["instId"] = json!(char_id);
+    rlv2["inventory"]["recruit"][tkt_id]["state"] = json!(2);
+    rlv2["inventory"]["recruit"][tkt_id]["list"] = json!([]);
+    rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(&char);
+    rlv2["troop"]["chars"][char_id] = json!(&char);
+
+    write_json(RLV2_JSON_PATH, &rlv2);
+
+    Json(json!({
+        "chars": [char],
+        "playerDataDelta": {
+            "modified": {
+                "rlv2": {
+                    "current": rlv2,
+                }
+            },
+            "deleted": {},
+        },
+    }))
+}
+
+pub async fn rlv2_close_tkt(Json(payload): JSON) -> JSON {
+    let tkt_id = payload["id"].as_str().unwrap();
+    let mut rlv2 = read_json(RLV2_JSON_PATH);
+    let rlv2_pending = rlv2["player"]["pending"].as_array_mut().unwrap();
+    rlv2_pending.remove(0);
+    rlv2["player"]["pending"] = json!(rlv2_pending);
+    rlv2["inventory"]["recruit"][tkt_id]["state"] = json!(2);
+    rlv2["inventory"]["recruit"][tkt_id]["list"] = json!([]);
+    rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(Value::Null);
 
     write_json(RLV2_JSON_PATH, &rlv2);
 

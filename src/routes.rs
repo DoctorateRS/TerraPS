@@ -206,6 +206,11 @@ fn rlv2_routes() -> Router {
         .route("/createGame", post(rlv2::rlv2_create_game))
         .route("/giveUpGame", post(rlv2::rlv2_give_up_game))
         .route("/selectChoice", post(rlv2::rlv2_choice_select))
+        .route("/chooseInitialRelic", post(rlv2::rlv2_choose_init_relic))
+        .route("/chooseInitialRecruitSet", post(rlv2::rlv2_choose_init_recruit_set))
+        .route("/activeRecruitTicket", post(rlv2::rlv2_activate_recruit_tkt))
+        .route("/recruitChar", post(rlv2::rlv2_recruit_char))
+        .route("/closeRecruitTicket", post(rlv2::rlv2_close_tkt))
 }
 
 fn shop_routes() -> Router {
