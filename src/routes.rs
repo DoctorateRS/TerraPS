@@ -211,6 +211,7 @@ fn rlv2_routes() -> Router {
         .route("/activeRecruitTicket", post(rlv2::rlv2_activate_recruit_tkt))
         .route("/recruitChar", post(rlv2::rlv2_recruit_char))
         .route("/closeRecruitTicket", post(rlv2::rlv2_close_tkt))
+        .route("/finishEvent", post(rlv2::rlv2_finish_event))
 }
 
 fn shop_routes() -> Router {
