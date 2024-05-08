@@ -1,4 +1,5 @@
 use axum::Json;
+use rand::{thread_rng, Rng};
 use serde_json::{json, Value};
 
 use crate::{
@@ -750,7 +751,10 @@ async fn get_buffs(rlv2: &Value, stage_id: &str) -> Vec<Value> {
     buffs
 }
 
-pub async fn rlve2_mv_n_battle_start(Json(payload): JSON) -> JSON {
+pub async fn rlv2_mv_n_battle_start(Json(payload): JSON) -> JSON {
+    const ITEM: u16 = 100;
+    let mut rng = thread_rng();
+    let mut hf = vec![];
     let stage_id = payload["stageId"].as_str().unwrap();
     let x = payload["to"]["x"].as_u64().unwrap();
     let y = payload["to"]["y"].as_u64().unwrap();
@@ -758,6 +762,88 @@ pub async fn rlve2_mv_n_battle_start(Json(payload): JSON) -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
     rlv2["player"]["state"] = json!("PENDING");
     rlv2["player"]["cursor"]["position"] = json!({"x": x, "y": y});
+    let trace_loc = rlv2["player"]["cursor"].clone();
+    let trace = match rlv2["player"]["trace"].as_array_mut() {
+        Some(trace) => trace,
+        None => &mut hf,
+    };
+    trace.push(trace_loc);
+    rlv2["player"]["trace"] = json!(trace);
+
+    let p_index = get_next_pending(&rlv2);
+    let mut buffs = get_buffs(&rlv2, stage_id).await;
+    let theme = rlv2["game"]["theme"].as_str().unwrap();
+
+    let box_info = match theme {
+        "rogue_1" => json!({}),
+        "rogue_2" => {
+            let trap = ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"][rng.gen_range(0..3) as usize];
+            json!({trap: ITEM})
+        }
+        "rogue_3" => {
+            let trap = ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"][rng.gen_range(0..3) as usize];
+            json!({trap: ITEM})
+        }
+        _ => json!({}),
+    };
+
+    let mut dice_roll = vec![];
+
+    if theme == "rogue_2" {
+        let mut dice_upgrade = 0;
+        let band = rlv2["inventory"]["relic"]["r_0"]["id"].as_str().unwrap();
+        if band == "rogue_2_band_16" || band == "rogue_2_band_17" || band == "rogue_2_band_18" {
+            dice_upgrade += 1;
+        }
+        for relic in get_keys(&rlv2["inventory"]["relic"]) {
+            if rlv2["inventory"]["relic"][&relic]["id"].as_str().unwrap() == "rogue_2_relic_1" {
+                dice_upgrade += 1;
+            }
+        }
+        let (dice_fcnt, dice_id) = match dice_upgrade {
+            0 => (6, "trap_067_dice1"),
+            1 => (8, "trap_088_dice2"),
+            _ => (12, "trap_089_dice3"),
+        };
+        for _ in 0..100 {
+            dice_roll.push(rng.gen_range(1_usize..dice_fcnt + 1));
+        }
+        buffs.push(json!({
+            "key": "misc_insert_token_card",
+            "blackboard": [
+                {"key": "token_key", "value": 0, "valueStr": dice_id},
+                {"key": "level", "value": 1, "valueStr": Value::Null},
+                {"key": "skill", "value": 0, "valueStr": Value::Null},
+                {"key": "cnt", "value": 100, "valueStr": Value::Null},
+            ],
+        }));
+    }
+
+    rlv2["player"]["pending"].as_array_mut().unwrap_or(&mut hf).insert(
+        0,
+        json!({
+            "index": p_index,
+            "type": "BATTLE",
+            "content": {
+                "battle": {
+                    "state": 1,
+                    "chestCnt": 100,
+                    "goldTrapCnt": 100,
+                    "diceRoll": dice_roll,
+                    "boxInfo": box_info,
+                    "tmpChar": [],
+                    "sanity": 0,
+                    "unKeepBuff": buffs,
+                }
+            },
+        }),
+    );
+
+    if rlv2["player"]["pending"].is_array() {
+        rlv2["player"]["pending"] = json!(hf);
+    };
+
+    write_json(RLV2_JSON_PATH, &rlv2);
 
     Json(json!({
         "playerDataDelta": {
