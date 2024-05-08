@@ -4,7 +4,7 @@ pub mod quest {
 
     use crate::{
         constants::{
-            config::CONFIG_JSON_PATH,
+            config::{CONFIG_JSON_PATH, SYNC_DATA_TEMPLATE_PATH},
             user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
         },
         utils::{
@@ -67,7 +67,7 @@ pub mod quest {
         let anon = config["battleReplayConfig"]["anonymous"].as_bool().unwrap();
         let replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
 
-        let char_config = payload["currentCharConfig"].as_str().unwrap();
+        let char_config = replay_data["currentCharConfig"].as_str().unwrap();
         let current = replay_data["current"].as_str().unwrap();
 
         let encoded_battle_replay = payload["battleReplay"].as_str().unwrap();
@@ -126,6 +126,7 @@ pub mod quest {
     }
 
     pub async fn squad_change_name(Json(payload): JSON) -> JSON {
+        let mut sync_data = read_json(SYNC_DATA_TEMPLATE_PATH);
         let mut data = json!({
             "playerDataDelta":{
                 "modified":{
@@ -138,18 +139,21 @@ pub mod quest {
         });
 
         if payload.get("squadId").is_some() && payload.get("name").is_some() {
-            let squad_id = payload["squadId"].as_u64().unwrap().to_string();
+            let squad_id = payload["squadId"].as_str().unwrap();
             let name = payload["name"].clone();
             data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["name"] = name.clone();
             let mut user_data = read_json(USER_JSON_PATH);
-            user_data["user"]["troop"]["squads"][&squad_id]["name"] = name;
+            user_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
+            sync_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
             write_json(USER_JSON_PATH, user_data);
+            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data);
         }
 
         Json(data)
     }
 
     pub async fn squad_set_formation(Json(payload): JSON) -> JSON {
+        let mut sync_data = read_json(SYNC_DATA_TEMPLATE_PATH);
         let mut data = json!({
             "playerDataDelta":{
                 "modified":{
@@ -162,12 +166,14 @@ pub mod quest {
         });
 
         if payload.get("squadId").is_some() && payload.get("slots").is_some() {
-            let squad_id = payload["squadId"].as_u64().unwrap().to_string();
+            let squad_id = payload["squadId"].as_str().unwrap();
             let slots = payload["slots"].clone();
             data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["slots"] = slots.clone();
             let mut user_data = read_json(USER_JSON_PATH);
-            user_data["user"]["troop"]["squads"][&squad_id]["slots"] = slots;
+            user_data["user"]["troop"]["squads"][&squad_id]["slots"] = json!(slots);
+            sync_data["user"]["troop"]["squads"][&squad_id]["slots"] = json!(slots);
             write_json(USER_JSON_PATH, user_data);
+            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data);
         }
 
         Json(data)
