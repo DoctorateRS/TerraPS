@@ -9,7 +9,8 @@ use serde_json::{from_str, json, Value};
 const VER_AK_CONF: &str = "https://ak-conf.hypergryph.com/config/prod/official/Android/version";
 const NW_AK_CONF: &str = "https://ak-conf.hypergryph.com/config/prod/official/network_config";
 
-pub async fn update_config() -> Result<()> {
+pub async fn update_config() -> Result<bool> {
+    let mut excel_update = false;
     let stcf = read_json(CONFIG_JSON_PATH);
     let mut config = stcf.clone();
 
@@ -21,15 +22,18 @@ pub async fn update_config() -> Result<()> {
     let new_nw_config = get(NW_AK_CONF).await?.json::<Value>().await?;
 
     if old_res_version != &new_ver_config["resVersion"] {
+        excel_update = true;
         config["version"]["android"]["resVersion"] = json!(new_ver_config["resVersion"]);
     }
     if old_client_version != &new_ver_config["clientVersion"] {
+        excel_update = true;
         config["version"]["android"]["clientVersion"] = json!(new_ver_config["clientVersion"]);
     }
 
     let content = from_str::<Value>(new_nw_config["content"].as_str().unwrap())?;
     let func_ver = &content["funcVer"];
     if old_func_ver != func_ver {
+        excel_update = true;
         config["networkConfig"]["cn"]["content"]["funcVer"] = json!(func_ver);
         config["networkConfig"]["cn"]["content"]["configs"][func_ver.as_str().unwrap()] =
             config["networkConfig"]["cn"]["content"]["configs"][old_func_ver.as_str().unwrap()].clone();
@@ -41,7 +45,7 @@ pub async fn update_config() -> Result<()> {
 
     write_json(CONFIG_JSON_PATH, config);
 
-    Ok(())
+    Ok(excel_update)
 }
 
 pub async fn excel_update() -> Result<()> {

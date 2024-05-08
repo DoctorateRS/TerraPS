@@ -1,7 +1,12 @@
 use crate::constants::config::CONFIG_JSON_PATH;
 
-use self::json::{read_json, write_json};
+use self::{
+    fmt::{ccv2_fmt, cfg_fmt, excel_fmt},
+    json::{read_json, write_json},
+    update::{excel_update, update_config},
+};
 
+use anyhow::Result;
 use rand::{rngs::ThreadRng, thread_rng};
 use serde_json::json;
 
@@ -17,6 +22,14 @@ pub mod random;
 pub mod rlv2;
 pub mod server;
 pub mod update;
+pub struct TRng(pub ThreadRng);
+impl TRng {
+    pub fn new() -> Self {
+        Self(thread_rng())
+    }
+}
+
+unsafe impl Send for TRng {}
 
 pub fn zip<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
     a.into_iter().zip(b).collect()
@@ -48,11 +61,15 @@ pub fn get_nickname_config() -> (String, String) {
     (nick_name.to_string(), nick_id.to_string())
 }
 
-pub struct TRng(pub ThreadRng);
-impl TRng {
-    pub fn new() -> Self {
-        Self(thread_rng())
+pub async fn upgrade() -> Result<()> {
+    let excel = update_config().await?;
+    if excel {
+        excel_update().await?;
     }
-}
 
-unsafe impl Send for TRng {}
+    excel_fmt()?;
+    cfg_fmt()?;
+    ccv2_fmt()?;
+
+    Ok(())
+}
