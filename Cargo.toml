@@ -28,10 +28,10 @@ ring = "0.17"
 md-5 = "0.10"
 
 # HTTP
-reqwest = { version = "0.12.3", features = ["json"] }
+reqwest = { version = "0.12", features = ["json"] }
 
 # Tokio
-tokio = { version = "1.37.0", features = ["full"] }
+tokio = { version = "1.37", features = ["full"] }
 tokio-util = { version = "0.7", features = ["io"] }
 
 # Data serialization
@@ -39,9 +39,9 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["preserve_order"] }
 
 # Tracings
-tracing = "0.1.40"
-tracing-futures = "0.2.5"
-tracing-log = { version = "0.2.0", features = ["log-tracer", "std"] }
+tracing = "0.1"
+tracing-futures = "0.2"
+tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
 tracing-subscriber = { version = "0.3", features = [
     "env-filter",
     "std",

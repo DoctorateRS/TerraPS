@@ -97,22 +97,22 @@
 
 ## RLV2
 
-- [ ] `/rlv2/giveUpGame`
-- [ ] `/rlv2/createGame`
-- [ ] `/rlv2/chooseInitialRelic`
-- [ ] `/rlv2/selectChoice`
-- [ ] `/rlv2/chooseInitialRecruitSet`
-- [ ] `/rlv2/activeRecruitTicket`
-- [ ] `/rlv2/recruitChar`
-- [ ] `/rlv2/closeRecruitTicket`
-- [ ] `/rlv2/finishEvent`
-- [ ] `/rlv2/moveAndBattleStart`
-- [ ] `/rlv2/battleFinish`
-- [ ] `/rlv2/finishBattleReward`
-- [ ] `/rlv2/moveTo`
-- [ ] `/rlv2/buyGoods`
-- [ ] `/rlv2/leaveShop`
-- [ ] `/rlv2/chooseBattleReward`
+- [x] `/rlv2/giveUpGame`
+- [x] `/rlv2/createGame`
+- [x] `/rlv2/chooseInitialRelic`
+- [x] `/rlv2/selectChoice`
+- [x] `/rlv2/chooseInitialRecruitSet`
+- [x] `/rlv2/activeRecruitTicket`
+- [x] `/rlv2/recruitChar`
+- [x] `/rlv2/closeRecruitTicket`
+- [x] `/rlv2/finishEvent`
+- [x] `/rlv2/moveAndBattleStart`
+- [x] `/rlv2/battleFinish`
+- [x] `/rlv2/finishBattleReward`
+- [x] `/rlv2/moveTo`
+- [x] `/rlv2/buyGoods`
+- [x] `/rlv2/leaveShop`
+- [x] `/rlv2/chooseBattleReward`
 
 ## UN
 
