@@ -2,7 +2,7 @@ use crate::{
     constants::{
         config::{CONFIG_JSON_PATH, MAILLIST_PATH, SQUADS_PATH, SYNC_DATA_TEMPLATE_PATH},
         url::*,
-        user::{BATTLE_REPLAY_JSON_PATH, USER_JSON_PATH},
+        user::{BATTLE_REPLAY_JSON_PATH, CRISIS_V2_JSON_BASE_PATH, USER_JSON_PATH},
     },
     core::time,
     utils::{comp::max, game::*, get_nickname_config, json::*},
@@ -739,7 +739,33 @@ pub async fn account_sync_data() -> JSON {
         }
     }
 
+    player_data["user"]["medal"] = json!({"medals": {}});
+    for medal in medal_table["medalList"].as_array().unwrap() {
+        let medal_id = medal["medalId"].as_str().unwrap();
+        player_data["user"]["medal"]["medals"][medal_id] = json!({
+            "id": medal_id,
+            "val": [],
+            "fts": 1695000000,
+            "rts": 1695000000,
+        });
+    }
+
     write_json(USER_JSON_PATH, &player_data);
+    for theme in get_keys(&player_data["user"]["rlv2"]["outer"]) {
+        if get_keys(&rlv2_table["details"]).contains(&theme) {
+            for stg in get_keys(&rlv2_table["details"][&theme]["stages"]) {
+                player_data["user"]["rlv2"]["outer"][&theme]["record"]["stageCnt"][&stg] = json!(1);
+            }
+        }
+    }
+
+    let crisis_v2 = config["crisisV2Config"]["selectedCrisis"].as_str();
+
+    if let Some(ccv2) = crisis_v2 {
+        let rune = read_json(&format!("{CRISIS_V2_JSON_BASE_PATH}{ccv2}.json"));
+        let ss = rune["info"]["seasonId"].as_str().unwrap();
+        player_data["user"]["crisisV2"]["current"] = json!(ss);
+    }
 
     let Json(building) = building_sync().await;
     player_data["user"]["building"] = json!(building["playerDataDelta"]["modified"]["building"]);
