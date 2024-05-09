@@ -3,7 +3,7 @@ use serde_json::{json, Value};
 
 use crate::{
     constants::{
-        sandbox::{self, SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
+        sandbox::{SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
         templates::SANDBOX_TEMPLATE,
         url::SANDBOX_TABLE_URL,
     },
