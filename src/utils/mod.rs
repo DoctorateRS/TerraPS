@@ -31,6 +31,7 @@ impl TRng {
 
 unsafe impl Send for TRng {}
 
+#[allow(dead_code)]
 pub fn zip<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
     a.into_iter().zip(b).collect()
 }
@@ -63,7 +64,9 @@ pub fn get_nickname_config() -> (String, String) {
 
 pub async fn upgrade() -> Result<()> {
     let excel = update_config().await?;
-    if excel {
+    let config = read_json(CONFIG_JSON_PATH);
+    let force_update = config["server"]["forceUpdateExcel"].as_bool().unwrap_or(false);
+    if excel || force_update {
         excel_update().await?;
     }
 

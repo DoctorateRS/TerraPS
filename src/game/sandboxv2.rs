@@ -29,11 +29,7 @@ pub async fn create_game() -> JSON {
 pub async fn set_squad(Json(payload): JSON) -> JSON {
     let mut sandbox_data = read_json(SANDBOX_JSON_PATH);
 
-    let index = match &payload["index"] {
-        Value::Number(index) => index.as_u64().unwrap().to_string(),
-        Value::String(index) => index.as_str().to_string(),
-        _ => panic!("Invalid index"),
-    };
+    let index = payload["index"].as_u64().unwrap() as usize;
 
     sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["troop"]["squad"][&index] = json!({
         "slots": payload["slots"],
@@ -53,7 +49,9 @@ pub async fn set_squad(Json(payload): JSON) -> JSON {
 
 pub async fn sandbox_battle_start(Json(payload): JSON) -> JSON {
     let mut sandbox_temp = read_json(SANDBOX_TEMP_JSON_PATH);
-    sandbox_temp["currentNodeId"] = payload["nodeId"].clone();
+
+    sandbox_temp["currentNodeId"] = json!(payload["nodeId"]);
+
     write_json(SANDBOX_TEMP_JSON_PATH, &sandbox_temp);
     Json(json!({
         "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
@@ -121,7 +119,334 @@ pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
 }
 
 pub async fn home_build_save(Json(payload): JSON) -> JSON {
+    let mut sandbox = read_json(SANDBOX_JSON_PATH);
+    let node_id = payload["nodeId"].as_str().unwrap();
+
+    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]
+        .get("building")
+        .is_none()
+    {
+        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"] = json!([]);
+    }
+
+    for op in payload["operation"].as_array().unwrap() {
+        match op["type"].as_i64().unwrap() {
+            1 => sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                .as_array_mut()
+                .unwrap()
+                .push(json!({
+                    "key": op["buildingId"],
+                    "pos": [op["pos"]["row"], op["pos"]["col"]],
+                    "hpRatio": 10000,
+                    "dir": op["dir"],
+                })),
+            3 => {
+                for build in sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                    .as_array()
+                    .unwrap()
+                {
+                    if build["pos"][0] == op["pos"]["row"] && build["pos"][1] == op["pos"]["col"] {
+                        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                            .as_array_mut()
+                            .unwrap()
+                            .remove(0);
+                        break;
+                    }
+                }
+            }
+            _ => (),
+        }
+    }
+
+    write_json(SANDBOX_JSON_PATH, &sandbox);
+
+    Json(json!({"playerDataDelta": {
+            "modified": {
+                "sandboxPerm": sandbox
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn settle_game() -> JSON {
+    let sandbox = read_json(SANDBOX_JSON_PATH);
+
+    let mut data = json!({
+        "playerDataDelta": {
+            "modified": {
+                "sandboxPerm": {
+                    "template": {
+                        "SANDBOX_V2": {
+                            "sandbox_1": {
+                                "base": {
+                                    "baseLv": 0,
+                                    "upgradeProgress": [],
+                                    "trapLimit": {},
+                                    "portableUnlock": false,
+                                    "outpostUnlock": false,
+                                    "repairDiscount": 0,
+                                    "bossKill": [],
+                                },
+                                "main": {
+                                    "game": {
+                                        "mapId": "",
+                                        "day": 0,
+                                        "maxDay": 0,
+                                        "ap": 0,
+                                        "maxAp": 0,
+                                    },
+                                    "map": {"season": {"type": 0, "remain": 0, "total": 0}},
+                                    "report": {"settle": null, "daily": null},
+                                    "event": {"node": {}, "effect": []},
+                                },
+                                "buff": {"rune": {"global": [], "node": {}, "char": {}}},
+                                "riftInfo": {
+                                    "isUnlocked": false,
+                                    "randomRemain": 0,
+                                    "difficultyLvMax": -1,
+                                    "teamLv": 0,
+                                    "fixFinish": [],
+                                    "reservation": null,
+                                    "gameInfo": null,
+                                    "settleInfo": null,
+                                },
+                                "quest": {"pending": [], "complete": []},
+                                "mission": {"squad": []},
+                                "troop": {
+                                    "food": {},
+                                    "squad": [
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                        {"slots": [], "tools": []},
+                                    ],
+                                    "usedChar": [],
+                                },
+                                "cook": {
+                                    "drink": 0,
+                                    "extraDrink": 0,
+                                    "book": {},
+                                    "food": {},
+                                },
+                                "bag": {"material": {}, "craft": []},
+                                "tech": {"token": 8, "cent": 0, "unlock": []},
+                                "bank": {"book": [], "coin": {}},
+                                "archive": {
+                                    "save": [],
+                                    "nextLoadTs": 0,
+                                    "loadTimes": 0,
+                                    "loadTs": 0,
+                                },
+                                "supply": {
+                                    "unlock": false,
+                                    "enable": false,
+                                    "slotCnt": 0,
+                                    "char": [],
+                                },
+                                "shop": {"unlock": false, "day": 0, "slots": []},
+                                "status": {
+                                    "ver": 1,
+                                    "state": 0,
+                                    "ts": 0,
+                                    "isRift": false,
+                                    "isGuide": false,
+                                    "exploreMode": false,
+                                },
+                            }
+                        }
+                    }
+                }
+            },
+            "deleted": {
+                "sandboxPerm": {
+                    "template": {
+                        "SANDBOX_V2": {
+                            "sandbox_1": {
+                                "main": {
+                                    "map": {"node": []},
+                                    "stage": {"node": []},
+                                    "enemy": {"enemyRush": []},
+                                },
+                                "buff": {
+                                    "rune": {
+                                        "node": [],
+                                        "char": [],
+                                    }
+                                },
+                                "troop": {"food": []},
+                            }
+                        }
+                    }
+                }
+            },
+        }
+    });
+
+    for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["map"]["node"]) {
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["map"]["node"]
+            .as_array_mut()
+            .unwrap()
+            .push(json!(node));
+    }
+    for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"]) {
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"]
+            .as_array_mut()
+            .unwrap()
+            .push(json!(node));
+    }
+    for rush in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["enemy"]["enemyRush"]) {
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["enemy"]["enemyRush"]
+            .as_array_mut()
+            .unwrap()
+            .push(json!(rush));
+    }
+    for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["node"]) {
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["node"]
+            .as_array_mut()
+            .unwrap()
+            .push(json!(node));
+    }
+    for food in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"]) {
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"]
+            .as_array_mut()
+            .unwrap()
+            .push(json!(food));
+    }
+
+    let json = json!({
+        "template": {
+            "SANDBOX_V2": {
+                "sandbox_1": {
+                    "status": {
+                        "ver": 1,
+                        "state": 0,
+                        "ts": 0,
+                        "isRift": false,
+                        "isGuide": false,
+                        "exploreMode": false,
+                    },
+                    "base": {
+                        "baseLv": 0,
+                        "upgradeProgress": [],
+                        "trapLimit": {},
+                        "portableUnlock": false,
+                        "outpostUnlock": false,
+                        "repairDiscount": 0,
+                        "bossKill": [],
+                    },
+                    "main": {
+                        "game": {
+                            "mapId": "",
+                            "day": 0,
+                            "maxDay": 0,
+                            "ap": 0,
+                            "maxAp": 0,
+                        },
+                        "map": {
+                            "season": {"type": 0, "remain": 0, "total": 0},
+                            "zone": {},
+                            "node": {},
+                        },
+                        "stage": {"node": {}},
+                        "enemy": {"enemyRush": {}, "rareAnimal": {}},
+                        "npc": {"node": {}, "favor": {}},
+                        "report": {"settle": Value::Null, "daily": Value::Null},
+                        "event": {"node": {}, "effect": []},
+                    },
+                    "rift": Value::Null,
+                    "riftInfo": {
+                        "isUnlocked": false,
+                        "randomRemain": 0,
+                        "difficultyLvMax": -1,
+                        "teamLv": 0,
+                        "fixFinish": [],
+                        "reservation": Value::Null,
+                        "gameInfo": Value::Null,
+                        "settleInfo": Value::Null,
+                    },
+                    "quest": {"pending": [], "complete": []},
+                    "mission": {"squad": []},
+                    "troop": {
+                        "food": {},
+                        "squad": [
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                            {"slots": [], "tools": []},
+                        ],
+                        "usedChar": [],
+                    },
+                    "cook": {"drink": 0, "extraDrink": 0, "book": {}, "food": {}},
+                    "build": {"book": {}, "building": {}, "tactical": {}, "animal": {}},
+                    "bag": {"material": {}, "craft": []},
+                    "tech": {"token": 6, "cent": 0, "unlock": []},
+                    "bank": {"book": [], "coin": {}},
+                    "buff": {"rune": {"global": [], "node": {}, "char": {}}},
+                    "archive": {
+                        "save": [],
+                        "nextLoadTs": 0,
+                        "loadTimes": 0,
+                        "loadTs": 0,
+                    },
+                    "supply": {
+                        "unlock": false,
+                        "enable": false,
+                        "slotCnt": 0,
+                        "char": [],
+                    },
+                    "shop": {"unlock": false, "day": 0, "slots": []},
+                    "month": {"rushPass": []},
+                }
+            }
+        }
+    });
+    write_json(SANDBOX_JSON_PATH, json);
+
+    Json(sandbox)
+}
+
+pub async fn eat_food(Json(payload): JSON) -> JSON {
+    let mut sandbox = read_json(SANDBOX_JSON_PATH);
+    let char_inst_id = payload["charInstId"].as_u64().unwrap();
+    let food_inst_id = payload["foodInstId"].as_str().unwrap();
+
+    let food = sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["cook"]["food"][food_inst_id].clone();
+    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"][char_inst_id.to_string()] = json!({
+        "id": food["id"],
+        "sub": food["sub"],
+        "day": 6
+    });
+
+    let buff = food["id"].as_str().unwrap();
     let sandbox_table = update_data(SANDBOX_TABLE_URL).await;
 
-    Json(json!({}))
+    let buff = if food["sub"].as_array().unwrap().contains(&json!("sandbox_1_condiment"))
+        && get_keys(&sandbox_table["detail"]["SANDBOX_V2"]["sandbox_1"]["runeDatas"]).contains(&format!("{}_x", buff))
+    {
+        format!("{}_x", buff)
+    } else {
+        buff.to_string()
+    };
+
+    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["char"][char_inst_id.to_string()] = json!([buff]);
+
+    write_json(SANDBOX_JSON_PATH, &sandbox);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "sandboxPerm": sandbox
+            },
+            "deleted": {}
+        }
+    }))
 }

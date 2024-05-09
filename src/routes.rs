@@ -9,7 +9,7 @@ use crate::{
         crisis_manager::crisis_v2,
         deep_sea, mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
-        rlv2, shop, social, story,
+        rlv2, sandboxv2, shop, social, story,
     },
     utils::json::JSON,
 };
@@ -19,15 +19,14 @@ use axum::{
 };
 
 use serde_json::json;
-use tower_http::trace::{DefaultMakeSpan, DefaultOnRequest, DefaultOnResponse, TraceLayer as Tracer};
-use tracing::Level; // Import the missing function from the rlv2 module
+use tower_http::trace::{DefaultMakeSpan, DefaultOnRequest, TraceLayer as Tracer};
+use tracing::Level;
 
 #[tracing::instrument]
 pub fn routes() -> Router {
     let trace_layer = Tracer::new_for_http()
         .make_span_with(DefaultMakeSpan::default())
         .on_request(DefaultOnRequest::default().level(Level::INFO))
-        .on_response(DefaultOnResponse::default().level(Level::INFO))
         .on_failure(())
         .on_eos(());
 
@@ -50,6 +49,7 @@ pub fn routes() -> Router {
         .nest("/quest", quest_routes())
         .nest("/retro", retro_routes())
         .nest("/rlv2", rlv2_routes())
+        .nest("/sandboxPerm/sandboxV2", sandbox_routes())
         .nest("/shop", shop_routes())
         .nest("/social", social_routes())
         .nest("/story", story_routes())
@@ -219,6 +219,15 @@ fn rlv2_routes() -> Router {
         .route("/buyGoods", post(rlv2::rlv2_buy_good))
         .route("/leaveShop", post(rlv2::rlv2_leave_shop))
         .route("/chooseBattleReward", post(rlv2::rlv2_choose_battle_reward))
+}
+
+fn sandbox_routes() -> Router {
+    Router::new()
+        .route("/createGame", post(sandboxv2::create_game))
+        .route("/battleStart", post(sandboxv2::sandbox_battle_start))
+        .route("/battleFinish", post(sandboxv2::sandbox_battle_finish))
+        .route("/setSquad", post(sandboxv2::set_squad))
+        .route("/homeBuildSave", post(sandboxv2::home_build_save))
 }
 
 fn shop_routes() -> Router {
