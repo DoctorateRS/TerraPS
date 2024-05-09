@@ -3,7 +3,7 @@ use serde_json::{json, Value};
 
 use crate::{
     constants::{
-        sandbox::{SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
+        sandbox::{self, SANDBOX_JSON_PATH, SANDBOX_TEMP_JSON_PATH},
         templates::SANDBOX_TEMPLATE,
         url::SANDBOX_TABLE_URL,
     },
@@ -438,6 +438,115 @@ pub async fn eat_food(Json(payload): JSON) -> JSON {
     };
 
     sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["char"][char_inst_id.to_string()] = json!([buff]);
+
+    write_json(SANDBOX_JSON_PATH, &sandbox);
+
+    Json(json!({
+        "playerDataDelta": {
+            "modified": {
+                "sandboxPerm": sandbox
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn month_battle_start() -> JSON {
+    Json(json!({
+        "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
+        "extraRunes": [],
+        "playerDataDelta": {
+            "modified": {},
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn month_battle_finish(Json(payload): JSON) -> JSON {
+    let mut sandbox = read_json(SANDBOX_JSON_PATH);
+
+    let node_id = "n12B9";
+
+    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]
+        .get("building")
+        .is_none()
+    {
+        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"] = json!([]);
+    }
+
+    for item in payload["sandboxV2Data"]["placedItems"].as_array().unwrap() {
+        if item["value"].get("hpRatio").is_some() {
+            sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                .as_array_mut()
+                .unwrap()
+                .push(json!({
+                    "key": item["key"]["itemId"],
+                    "pos": [item["key"]["position"]["row"], item["key"]["position"]["col"]],
+                    "hpRatio": 10000,
+                    "dir": item["value"]["direction"]
+                }))
+        } else {
+            for bid in 0..sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                .as_array()
+                .unwrap()
+                .len()
+            {
+                let build = &sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"][bid];
+                if build["pos"][0] == item["key"]["position"]["row"] && build["pos"][1] == item["key"]["position"]["col"] {
+                    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
+                        .as_array_mut()
+                        .unwrap()
+                        .remove(bid);
+                    break;
+                }
+            }
+        }
+    }
+
+    write_json(SANDBOX_JSON_PATH, &sandbox);
+
+    Json(json!({
+        "success": true,
+        "firstPass": false,
+        "enemyRushCount": [0, 0],
+        "playerDataDelta": {
+            "modified": {
+                "sandboxPerm": sandbox
+            },
+            "deleted": {}
+        }
+    }))
+}
+
+pub async fn explore_mode(Json(payload): JSON) -> JSON {
+    let explore_mode = payload["open"].as_bool().unwrap();
+    let mut sandbox = read_json(SANDBOX_JSON_PATH);
+
+    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["status"]["exploreMode"] = json!(explore_mode);
+    let mut explore_mode_buffs = vec![json!("normal_mode_buff1"), json!("normal_mode_buff3")];
+
+    if explore_mode {
+        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
+            .as_array_mut()
+            .unwrap()
+            .append(&mut explore_mode_buffs);
+    } else {
+        for buff in explore_mode_buffs {
+            if let Value::String(buff) = buff {
+                if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
+                    .as_array()
+                    .unwrap()
+                    .contains(&json!(buff))
+                {
+                    let v = sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
+                        .as_array_mut()
+                        .unwrap();
+                    let i = v.iter().position(|x| x == &json!(buff)).unwrap();
+                    v.remove(i);
+                }
+            }
+        }
+    }
 
     write_json(SANDBOX_JSON_PATH, &sandbox);
 

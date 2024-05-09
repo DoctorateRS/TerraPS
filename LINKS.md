@@ -153,12 +153,12 @@
 - [x] `/sandboxPerm/sandboxV2/battleStart`
 - [x] `/sandboxPerm/sandboxV2/battleFinish`
 - [x] `/sandboxPerm/sandboxV2/setSquad`
-- [ ] `/sandboxPerm/sandboxV2/homeBuildSave`
-- [ ] `/sandboxPerm/sandboxV2/settleGame`
-- [ ] `/sandboxPerm/sandboxV2/eatFood`
-- [ ] `/sandboxPerm/sandboxV2/monthBattleStart`
-- [ ] `/sandboxPerm/sandboxV2/monthBattleFinish`
-- [ ] `/sandboxPerm/sandboxV2/exploreMode`
+- [x] `/sandboxPerm/sandboxV2/homeBuildSave`
+- [x] `/sandboxPerm/sandboxV2/settleGame`
+- [x] `/sandboxPerm/sandboxV2/eatFood`
+- [x] `/sandboxPerm/sandboxV2/monthBattleStart`
+- [x] `/sandboxPerm/sandboxV2/monthBattleFinish`
+- [x] `/sandboxPerm/sandboxV2/exploreMode`
 
 ## GACHA
 

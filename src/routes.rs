@@ -230,6 +230,9 @@ fn sandbox_routes() -> Router {
         .route("/homeBuildSave", post(sandboxv2::home_build_save))
         .route("/settleGame", post(sandboxv2::settle_game))
         .route("/eatFood", post(sandboxv2::eat_food))
+        .route("/exploreMode", post(sandboxv2::explore_mode))
+        .route("/monthBattleStart", post(sandboxv2::month_battle_start))
+        .route("/monthBattleFinish", post(sandboxv2::month_battle_finish))
 }
 
 fn shop_routes() -> Router {
