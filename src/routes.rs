@@ -176,6 +176,9 @@ fn gacha_routes() -> Router {
         .route("/syncNormalGacha", post(gacha::normal::sync_normal_gacha))
         .route("/boostNormalGacha", post(gacha::normal::boost_normal_gacha))
         .route("/finishNormalGacha", post(gacha::normal::finish_normal_gacha))
+        .route("/getPoolDetail", post(gacha::advanced::get_pool_detail))
+        .route("/advancedGacha", post(gacha::advanced::advanced_gacha))
+        .route("/tenAdvancedGacha", post(gacha::advanced::ten_advanced_gacha))
 }
 
 fn mail_routes() -> Router {

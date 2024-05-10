@@ -150,18 +150,87 @@ pub mod normal {
 
 pub mod advanced {
     use axum::Json;
-    use serde_json::{json, Value};
+    use rand::prelude::*;
+    use serde_json::json;
 
     use crate::{
         constants::user::{GACHA_TEMPLATE_JSON_PATH, USER_GACHA_PATH},
-        utils::json::{read_json, JSON},
+        utils::{
+            json::{read_json, JSON},
+            TRng,
+        },
     };
 
     pub async fn get_pool_detail() -> JSON {
         Json(read_json(GACHA_TEMPLATE_JSON_PATH))
     }
 
-    // pub async fn advanced_gacha() -> JSON {
-    //     let gacha = read_json(USER_GACHA_PATH);
-    // }
+    pub async fn advanced_gacha() -> JSON {
+        let gacha = read_json(USER_GACHA_PATH);
+        let pool_len = gacha["advanced"].as_array().unwrap().len();
+
+        let mut gacha_rng = TRng::new();
+        let res = gacha_rng.0.gen_range(0..pool_len);
+
+        let gacha_res = gacha["advanced"][res].clone();
+        let char_id = gacha_res["charId"].as_str().unwrap();
+        let is_new = gacha_res["isNew"].as_bool().unwrap();
+        let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
+
+        Json(json!({
+            "result": 0,
+            "charGet": {
+                "charInstId": char_inst_id,
+                "charId": char_id,
+                "isNew": is_new,
+                "itemGet": [
+                    {"type": "HGG_SHD", "id": "4004", "count": 999},
+                    {"type": "LGG_SHD", "id": "4005", "count": 999},
+                    {"type": "MATERIAL", "id": format!("p_{char_id}"), "count": 999},
+                ],
+                "logInfo": {},
+            },
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            },
+        }))
+    }
+
+    pub async fn ten_advanced_gacha() -> JSON {
+        let gacha = read_json(USER_GACHA_PATH);
+        let pool_len = gacha["advanced"].as_array().unwrap().len();
+
+        let mut gacha_rng = TRng::new();
+        let mut gacha_res_vec = vec![];
+
+        for _ in 0..10 {
+            let res = gacha_rng.0.gen_range(0..pool_len);
+            let gacha_res = gacha["advanced"][res].clone();
+            let char_id = gacha_res["charId"].as_str().unwrap();
+            let is_new = gacha_res["isNew"].as_bool().unwrap();
+            let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
+
+            gacha_res_vec.push(json!({
+                "charInstId": char_inst_id,
+                "charId": char_id,
+                "isNew": is_new,
+                "itemGet": [
+                    {"type": "HGG_SHD", "id": "4004", "count": 999},
+                    {"type": "LGG_SHD", "id": "4005", "count": 999},
+                    {"type": "MATERIAL", "id": format!("p_{char_id}"), "count": 999},
+                ],
+                "logInfo": {},
+            }))
+        }
+
+        Json(json!({
+            "result": 0,
+            "gachaResultList": gacha_res_vec,
+            "playerDataDelta": {
+                "modified": {},
+                "deleted": {}
+            },
+        }))
+    }
 }
