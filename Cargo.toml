@@ -17,7 +17,6 @@ base64 = "0.22"
 zip = "1"
 uuid = { version = "1.8", features = ["v4", "fast-rng", "macro-diagnostics"] }
 rand = { version = "0.8", features = ["std_rng"] }
-paste = "1"
 
 # Crypto
 aes = "0.8"

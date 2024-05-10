@@ -9,7 +9,7 @@
         "noProxy": false,
         "gadget": false,
         "useSu": false,
-        "forceUpdateExcel": true
+        "forceUpdateExcel": false
     },
     "assets": {
         "autoUpdate": false,

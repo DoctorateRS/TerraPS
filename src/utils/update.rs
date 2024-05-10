@@ -109,8 +109,18 @@ pub async fn update_gacha() -> Result<()> {
     println!("Generating Gacha...");
     let mut gacha = read_json(USER_GACHA_PATH);
     let char_table = update_data(CHARACTER_TABLE_URL).await;
+    let gacha_advanced = gacha["advanced"].clone();
+    let gacha_preloaded = gacha_advanced
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|x| x["charId"].as_str().unwrap())
+        .collect::<Vec<&str>>();
     for char in get_keys(&char_table) {
-        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6" && !WELFARE_CHAR_LIST.contains(&char.as_str()) && char.starts_with("char_")
+        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6"
+            && !WELFARE_CHAR_LIST.contains(&char.as_str())
+            && char.starts_with("char_")
+            && gacha_preloaded.contains(&char.as_str())
         {
             gacha["advanced"].as_array_mut().unwrap().push(json!({
                 "charId": char,
