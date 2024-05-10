@@ -53,6 +53,10 @@
             "isNew": 1
         },
         {
+            "charId": "char_1035_wisdel",
+            "isNew": 1
+        },
+        {
             "charId": "char_1013_chen2",
             "isNew": 1
         },
@@ -81,10 +85,6 @@
             "isNew": 1
         },
         {
-            "charId": "char_427_vigil",
-            "isNew": 1
-        },
-        {
             "charId": "char_249_mlyss",
             "isNew": 1
         },
@@ -110,6 +110,10 @@
         },
         {
             "charId": "char_4027_heyak",
+            "isNew": 1
+        },
+        {
+            "charId": "char_4133_logos",
             "isNew": 1
         },
         {
@@ -157,10 +161,6 @@
             "isNew": 1
         },
         {
-            "charId": "char_1031_slent2",
-            "isNew": 1
-        },
-        {
             "charId": "char_2023_ling",
             "isNew": 1
         },
@@ -201,11 +201,11 @@
             "isNew": 1
         },
         {
-            "charId": "char_474_glady",
+            "charId": "char_437_mizuki",
             "isNew": 1
         },
         {
-            "charId": "char_437_mizuki",
+            "charId": "char_4132_ascln",
             "isNew": 1
         },
         {
@@ -230,10 +230,6 @@
         },
         {
             "charId": "char_003_kalts",
-            "isNew": 1
-        },
-        {
-            "charId": "char_4042_lumen",
             "isNew": 1
         },
         {
@@ -350,10 +346,6 @@
         },
         {
             "charId": "char_1014_nearl2",
-            "isNew": 1
-        },
-        {
-            "charId": "char_4011_lessng",
             "isNew": 1
         },
         {

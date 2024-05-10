@@ -1,6 +1,5 @@
 use crate::{
     constants::{config::CONFIG_JSON_PATH, url::*, user::USER_GACHA_PATH},
-    game::gacha,
     utils::json::get_keys,
 };
 
@@ -111,7 +110,8 @@ pub async fn update_gacha() -> Result<()> {
     let mut gacha = read_json(USER_GACHA_PATH);
     let char_table = update_data(CHARACTER_TABLE_URL).await;
     for char in get_keys(&char_table) {
-        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6" && WELFARE_CHAR_LIST.contains(&char.as_str()) {
+        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6" && !WELFARE_CHAR_LIST.contains(&char.as_str()) && char.starts_with("char_")
+        {
             gacha["advanced"].as_array_mut().unwrap().push(json!({
                 "charId": char,
                 "isNew": 1
