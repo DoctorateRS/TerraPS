@@ -2194,6 +2194,143 @@
                                         "hpRatio": 10000,
                                         "isDead": 0
                                     }
+                                ],
+                                "building": [
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            10,
+                                            11
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            9,
+                                            12
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            8,
+                                            13
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            8,
+                                            15
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            9,
+                                            16
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            10,
+                                            17
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            11,
+                                            17
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            12,
+                                            16
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            11,
+                                            11
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            12,
+                                            12
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            13,
+                                            12
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            14,
+                                            13
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            14,
+                                            14
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            14,
+                                            15
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            13,
+                                            16
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    }
                                 ]
                             },
                             "n12B9": {
@@ -2929,85 +3066,20 @@
                     "squad": []
                 },
                 "troop": {
-                    "food": {},
+                    "food": {
+                        "172": {
+                            "id": "sandbox_1_food_38",
+                            "sub": [
+                                "sandbox_1_condiment",
+                                "sandbox_1_condiment"
+                            ],
+                            "day": 6
+                        }
+                    },
                     "squad": [
                         {
-                            "slots": [
-                                {
-                                    "charInstId": 3,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_003_kalts"
-                                },
-                                {
-                                    "charInstId": 197,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_poca"
-                                },
-                                {
-                                    "charInstId": 213,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_mostma"
-                                },
-                                {
-                                    "charInstId": 250,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_003_phatom"
-                                },
-                                {
-                                    "charInstId": 377,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_gdglow"
-                                },
-                                {
-                                    "charInstId": 350,
-                                    "skillIndex": 2,
-                                    "currentEquip": null
-                                },
-                                {
-                                    "charInstId": 1013,
-                                    "skillIndex": 2,
-                                    "currentEquip": null
-                                },
-                                {
-                                    "charInstId": 1016,
-                                    "skillIndex": 2,
-                                    "currentEquip": null
-                                },
-                                {
-                                    "charInstId": 1023,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_003_ghost2"
-                                },
-                                {
-                                    "charInstId": 1029,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_yato2"
-                                },
-                                {
-                                    "charInstId": 1028,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_texas2"
-                                },
-                                {
-                                    "charInstId": 1032,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_excu2"
-                                }
-                            ],
-                            "tools": [
-                                "sandbox_1_tactical_30",
-                                "sandbox_1_tactical_6",
-                                "sandbox_1_tactical_10",
-                                "sandbox_1_building_35",
-                                "sandbox_1_building_36",
-                                "sandbox_1_building_33",
-                                "sandbox_1_building_34",
-                                "sandbox_1_building_7",
-                                "sandbox_1_building_12",
-                                "sandbox_1_tactical_16",
-                                "sandbox_1_tactical_5",
-                                "sandbox_1_tactical_1"
-                            ]
+                            "slots": [],
+                            "tools": []
                         },
                         {
                             "slots": [],
@@ -3739,7 +3811,11 @@
                             "sandbox_1_tech_show_enemy"
                         ],
                         "node": {},
-                        "char": {}
+                        "char": {
+                            "172": [
+                                "sandbox_1_food_38_x"
+                            ]
+                        }
                     }
                 },
                 "archive": {

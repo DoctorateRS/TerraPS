@@ -89,6 +89,36 @@
                         }
                     }
                 }
+            },
+            {
+                "index": "e_1",
+                "type": "GAME_INIT_RECRUIT_SET",
+                "content": {
+                    "initRecruitSet": {
+                        "step": [
+                            2,
+                            3
+                        ],
+                        "option": [
+                            "recruit_group_1"
+                        ]
+                    }
+                }
+            },
+            {
+                "index": "e_2",
+                "type": "GAME_INIT_RECRUIT",
+                "content": {
+                    "initRecruit": {
+                        "step": [
+                            3,
+                            3
+                        ],
+                        "tickets": [],
+                        "showChar": [],
+                        "team": null
+                    }
+                }
             }
         ],
         "status": {
@@ -110,14 +140,7 @@
         "hasExpeditionReturn": false
     },
     "inventory": {
-        "relic": {
-            "r_0": {
-                "index": "r_0",
-                "id": "rogue_3_band_2",
-                "count": 1,
-                "ts": 1695000000
-            }
-        },
+        "relic": {},
         "recruit": {},
         "trap": null,
         "consumable": {},

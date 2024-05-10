@@ -218,44 +218,9 @@
                     "name": "Ashcone",
                     "slots": [
                         {
-                            "charInstId": 1035,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_wisdel"
-                        },
-                        {
-                            "charInstId": 171,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_bldsk"
-                        },
-                        {
-                            "charInstId": 4123,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_ela"
-                        },
-                        {
-                            "charInstId": 254,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_vodfox"
-                        },
-                        {
-                            "charInstId": 1012,
-                            "skillIndex": 2,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 4072,
-                            "skillIndex": 0,
-                            "currentEquip": "uniequip_002_ironmn"
-                        },
-                        {
                             "charInstId": 293,
                             "skillIndex": 2,
                             "currentEquip": "uniequip_002_thorns"
-                        },
-                        {
-                            "charInstId": 4134,
-                            "skillIndex": 0,
-                            "currentEquip": null
                         },
                         {
                             "charInstId": 264,
@@ -263,15 +228,46 @@
                             "currentEquip": "uniequip_002_f12yin"
                         },
                         {
+                            "charInstId": 2012,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_typhon"
+                        },
+                        {
+                            "charInstId": 488,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_buildr"
+                        },
+                        {
+                            "charInstId": 4017,
+                            "skillIndex": 0,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 4072,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_ironmn"
+                        },
+                        {
+                            "charInstId": 1016,
+                            "skillIndex": 0,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 1012,
+                            "skillIndex": 1,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 245,
+                            "skillIndex": 0,
+                            "currentEquip": null
+                        },
+                        {
                             "charInstId": 1029,
                             "skillIndex": 2,
                             "currentEquip": "uniequip_002_yato2"
                         },
-                        {
-                            "charInstId": 1028,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_texas2"
-                        },
+                        null,
                         null
                     ]
                 },

@@ -245,11 +245,9 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
 pub async fn rlv2_choose_init_relic(Json(payload): JSON) -> JSON {
     let select = payload["select"].as_str().unwrap();
     let mut rlv2 = read_json(RLV2_JSON_PATH);
-    rlv2["player"]["pending"].as_array_mut().unwrap().pop();
 
-    let band = rlv2["player"]["pending"][0]["content"]["initRelic"]["items"][select]["id"]
-        .as_str()
-        .unwrap();
+    let band = rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
+    let band = band["content"]["initRelic"]["items"][select]["id"].as_str().unwrap();
 
     rlv2["inventory"]["relic"]["r_0"] = json!({
         "index": "r_0",
@@ -290,7 +288,7 @@ pub async fn rlv2_choice_select() -> JSON {
 pub async fn rlv2_choose_init_recruit_set() -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
 
-    rlv2["player"]["pending"].as_array_mut().unwrap().pop();
+    rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
 
     let config = read_json(CONFIG_JSON_PATH);
 
@@ -339,7 +337,7 @@ pub async fn rlv2_recruit_char(Json(payload): JSON) -> JSON {
     let tkt_id = payload["ticketIndex"].as_str().unwrap();
     let opt_id = payload["optionId"].as_str().unwrap().parse::<usize>().unwrap();
     let mut rlv2 = read_json(RLV2_JSON_PATH);
-    rlv2["player"]["pending"].as_array_mut().unwrap().pop();
+    rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
 
     let char_id = get_next_char_id(&rlv2);
     let mut char = rlv2["inventory"]["recruit"][tkt_id]["list"][opt_id].clone();

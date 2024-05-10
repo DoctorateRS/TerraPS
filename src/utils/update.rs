@@ -120,7 +120,7 @@ pub async fn update_gacha() -> Result<()> {
         if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6"
             && !WELFARE_CHAR_LIST.contains(&char.as_str())
             && char.starts_with("char_")
-            && gacha_preloaded.contains(&char.as_str())
+            && !gacha_preloaded.contains(&char.as_str())
         {
             gacha["advanced"].as_array_mut().unwrap().push(json!({
                 "charId": char,

@@ -110,7 +110,7 @@ pub mod normal {
         };
         let char_id = gacha["normal"]["charId"].as_str().unwrap();
         let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
-        let is_new = gacha["normal"]["isNew"].as_bool().unwrap();
+        let is_new = gacha["normal"]["isNew"].as_i64().unwrap();
         let char_id = format!("p_{}", char_id);
         Json(json!({
             "result": 0,
@@ -174,7 +174,7 @@ pub mod advanced {
 
         let gacha_res = gacha["advanced"][res].clone();
         let char_id = gacha_res["charId"].as_str().unwrap();
-        let is_new = gacha_res["isNew"].as_bool().unwrap();
+        let is_new = gacha_res["isNew"].as_i64().unwrap();
         let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
 
         Json(json!({
@@ -208,7 +208,7 @@ pub mod advanced {
             let res = gacha_rng.0.gen_range(0..pool_len);
             let gacha_res = gacha["advanced"][res].clone();
             let char_id = gacha_res["charId"].as_str().unwrap();
-            let is_new = gacha_res["isNew"].as_bool().unwrap();
+            let is_new = gacha_res["isNew"].as_i64().unwrap();
             let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
 
             gacha_res_vec.push(json!({
