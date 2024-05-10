@@ -13,6 +13,7 @@ pub mod config {
 // User Data
 #[allow(dead_code)]
 pub mod user {
+    pub const USER_GACHA_PATH: &str = "./data/user/gacha.json";
     pub const USER_JSON_PATH: &str = "./data/user/user.json";
     pub const BATTLE_REPLAY_JSON_PATH: &str = "./data/user/battleReplays.json";
     pub const RLV2_JSON_PATH: &str = "./data/user/rlv2.json";

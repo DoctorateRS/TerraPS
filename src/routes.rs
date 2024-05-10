@@ -7,7 +7,7 @@ use crate::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        deep_sea, mail, online, pay,
+        deep_sea, gacha, mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
         rlv2, sandboxv2, shop, social, story,
     },
@@ -44,6 +44,7 @@ pub fn routes() -> Router {
         .nest("/config/prod", config_routes())
         .nest("/crisisV2", crisis_v2_routes())
         .nest("/deepSea", deep_sea_routes())
+        .nest("/gacha", gacha_routes())
         .nest("/mail", mail_routes())
         .nest("/online", online_routes())
         .nest("/quest", quest_routes())
@@ -167,6 +168,14 @@ fn deep_sea_routes() -> Router {
     Router::new()
         .route("/branch", post(deep_sea::deep_sea_branch))
         .route("/event", post(deep_sea::deep_sea_event))
+}
+
+fn gacha_routes() -> Router {
+    Router::new()
+        .route("/normalGacha", post(gacha::normal::normal_gacha))
+        .route("/syncNormalGacha", post(gacha::normal::sync_normal_gacha))
+        .route("/boostNormalGacha", post(gacha::normal::boost_normal_gacha))
+        .route("/finishNormalGacha", post(gacha::normal::finish_normal_gacha))
 }
 
 fn mail_routes() -> Router {

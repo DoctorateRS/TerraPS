@@ -3,7 +3,7 @@ use crate::constants::config::CONFIG_JSON_PATH;
 use self::{
     fmt::{ccv2_fmt, cfg_fmt, excel_fmt},
     json::{read_json, write_json},
-    update::{excel_update, update_config},
+    update::{excel_update, update_config, update_gacha},
 };
 
 use anyhow::Result;
@@ -18,7 +18,6 @@ pub mod fmt;
 pub mod game;
 pub mod json;
 pub mod mail;
-pub mod random;
 pub mod rlv2;
 pub mod server;
 pub mod update;
@@ -70,6 +69,7 @@ pub async fn upgrade() -> Result<()> {
         excel_update().await?;
     }
 
+    update_gacha().await?;
     excel_fmt()?;
     cfg_fmt()?;
     ccv2_fmt()?;
