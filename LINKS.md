@@ -162,11 +162,11 @@
 
 ## GACHA
 
-- [ ] `/gacha/normalGacha`
-- [ ] `/gacha/boostNormalGacha`
-- [ ] `/gacha/finishNormalGacha`
-- [ ] `/gacha/syncNormalGacha`
-- [ ] `/gacha/refreshTags`
-- [ ] `/gacha/advancedGacha`
-- [ ] `/gacha/tenAdvancedGacha`
-- [ ] `/gacha/getPoolDetail`
+- [x] `/gacha/normalGacha`
+- [x] `/gacha/boostNormalGacha`
+- [x] `/gacha/finishNormalGacha`
+- [x] `/gacha/syncNormalGacha`
+- [x] `/gacha/refreshTags`
+- [x] `/gacha/advancedGacha`
+- [x] `/gacha/tenAdvancedGacha`
+- [x] `/gacha/getPoolDetail`
