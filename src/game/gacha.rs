@@ -157,7 +157,7 @@ pub mod advanced {
         constants::user::{GACHA_TEMPLATE_JSON_PATH, USER_GACHA_PATH},
         utils::{
             json::{read_json, JSON},
-            TRng,
+            random::TRng,
         },
     };
 

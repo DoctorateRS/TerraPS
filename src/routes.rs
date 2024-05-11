@@ -11,7 +11,7 @@ use crate::{
         gacha::{advanced, normal},
         mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
-        rlv2, sandboxv2, shop, social, story,
+        rlv2, sandboxv2, shop, social, story, tower,
     },
     utils::json::JSON,
 };
@@ -57,6 +57,7 @@ pub fn routes() -> Router {
         .nest("/social", social_routes())
         .nest("/story", story_routes())
         .nest("/storyreview", story_review_routes())
+        .nest("/tower", tower_routes())
         .nest("/u8", u8_routes())
         .nest("/user", user_routes())
         .nest("/debug", debug_routes())
@@ -269,6 +270,19 @@ fn story_review_routes() -> Router {
     Router::new()
         .route("/markStoryAcceKnown", post(story_review::mark_story_acce_known))
         .route("/readStory", post(story_review::read_story))
+}
+
+fn tower_routes() -> Router {
+    Router::new()
+        .route("/createGame", post(tower::tower_create_game))
+        .route("/initGodCard", post(tower::tower_init_godcard))
+        .route("/initGame", post(tower::tower_init_game))
+        .route("/initCard", post(tower::tower_init_card))
+        .route("/battleStart", post(tower::tower_battle_start))
+        .route("/battleFinish", post(tower::tower_battle_finish))
+        .route("/recruit", post(tower::tower_recruit))
+        .route("/chooseSubGodCard", post(tower::tower_choose_sub_godcard))
+        .route("/settleGame", post(tower::tower_settle_game))
 }
 
 fn u8_routes() -> Router {

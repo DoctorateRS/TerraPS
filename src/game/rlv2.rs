@@ -8,8 +8,8 @@ use crate::{
         enumerate,
         game::decrypt_battle_data,
         json::{get_keys, read_json, write_json, JSON},
+        random::TRng,
         rlv2::*,
-        TRng,
     },
 };
 

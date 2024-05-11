@@ -85,15 +85,15 @@
 
 ## TOWER
 
-- [ ] `/tower/createGame`
-- [ ] `/tower/initGodCard`
-- [ ] `/tower/initGame`
-- [ ] `/tower/initCard`
-- [ ] `/tower/battleStart`
-- [ ] `/tower/battleFinish`
-- [ ] `/tower/recruit`
-- [ ] `/tower/chooseSubGodCard`
-- [ ] `/tower/settleGame`
+- [x] `/tower/createGame`
+- [x] `/tower/initGodCard`
+- [x] `/tower/initGame`
+- [x] `/tower/initCard`
+- [x] `/tower/battleStart`
+- [x] `/tower/battleFinish`
+- [x] `/tower/recruit`
+- [x] `/tower/chooseSubGodCard`
+- [x] `/tower/settleGame`
 
 ## RLV2
 

@@ -7,8 +7,7 @@ use self::{
 };
 
 use anyhow::Result;
-use rand::{rngs::ThreadRng, thread_rng};
-use serde_json::json;
+use serde_json::{json, Value};
 
 pub mod battle_data;
 pub mod battle_replay;
@@ -18,17 +17,10 @@ pub mod fmt;
 pub mod game;
 pub mod json;
 pub mod mail;
+pub mod random;
 pub mod rlv2;
 pub mod server;
 pub mod update;
-pub struct TRng(pub ThreadRng);
-impl TRng {
-    pub fn new() -> Self {
-        Self(thread_rng())
-    }
-}
-
-unsafe impl Send for TRng {}
 
 #[allow(dead_code)]
 pub fn zip<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
@@ -75,4 +67,12 @@ pub async fn upgrade() -> Result<()> {
     ccv2_fmt()?;
 
     Ok(())
+}
+
+pub fn str(v: &Value) -> String {
+    match v {
+        Value::String(s) => s.clone(),
+        Value::Number(n) => n.to_string(),
+        _ => String::from(""),
+    }
 }
