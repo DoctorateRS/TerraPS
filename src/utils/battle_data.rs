@@ -41,7 +41,7 @@ impl BattleDataDecoder {
         let data = decode(data)?;
         let mut src = LOG_TOKEN_KEY.to_string();
         src.push_str(&self.login_time.to_string());
-        let key = md5_digest(src.as_bytes()).to_vec();
+        let key = md5_digest(src.as_bytes());
         let iv = decode(iv)?;
         let aes = Aes128CbcDec::new(key.as_slice().into(), iv.as_slice().into());
         let res = aes.decrypt_padded_vec_mut::<NoPadding>(data.as_slice())?;

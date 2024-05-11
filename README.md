@@ -3,7 +3,12 @@
 ## Status: Not actively maintained. (I have special circumstances)
 
 - Oxidized.
-- __NOTE:__ Not working yet. Refer to [this](https://github.com/DoctorateRS/DoctorateRS/issues/2).
+- __NOTE:__ Not working yet.
+
+- The following functionality are broken:
+    - `rlv2`
+    - `sandboxv2`
+    - `tower`
 
 ## Big thanks
 
@@ -21,10 +26,20 @@
 
 ### Building from source
 
+#### Windows
+
 - Run `envsetup.nu` to setup the environment.
     - Ensure your Python installation is available in `$PATH`.
         - This can be achieved if you installed Python through [scoop](https://scoop.sh/).
 - Run `build.nu`.
+
+#### Linux
+
+TBA
+
+#### macOS
+
+TBA
 
 ### Usage
 
