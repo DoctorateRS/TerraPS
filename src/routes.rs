@@ -7,7 +7,9 @@ use crate::{
         account, background, building, campaignv2,
         char_manager::{char, char_build, charm},
         crisis_manager::crisis_v2,
-        deep_sea, gacha, mail, online, pay,
+        deep_sea,
+        gacha::{advanced, normal},
+        mail, online, pay,
         quest_manager::{april_fools, bossrush, quest, story_review},
         rlv2, sandboxv2, shop, social, story,
     },
@@ -172,13 +174,13 @@ fn deep_sea_routes() -> Router {
 
 fn gacha_routes() -> Router {
     Router::new()
-        .route("/normalGacha", post(gacha::normal::normal_gacha))
-        .route("/syncNormalGacha", post(gacha::normal::sync_normal_gacha))
-        .route("/boostNormalGacha", post(gacha::normal::boost_normal_gacha))
-        .route("/finishNormalGacha", post(gacha::normal::finish_normal_gacha))
-        .route("/getPoolDetail", post(gacha::advanced::get_pool_detail))
-        .route("/advancedGacha", post(gacha::advanced::advanced_gacha))
-        .route("/tenAdvancedGacha", post(gacha::advanced::ten_advanced_gacha))
+        .route("/normalGacha", post(normal::normal_gacha))
+        .route("/syncNormalGacha", post(normal::sync_normal_gacha))
+        .route("/boostNormalGacha", post(normal::boost_normal_gacha))
+        .route("/finishNormalGacha", post(normal::finish_normal_gacha))
+        .route("/getPoolDetail", post(advanced::get_pool_detail))
+        .route("/advancedGacha", post(advanced::advanced_gacha))
+        .route("/tenAdvancedGacha", post(advanced::ten_advanced_gacha))
 }
 
 fn mail_routes() -> Router {
