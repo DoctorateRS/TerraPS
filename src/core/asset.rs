@@ -56,13 +56,14 @@ impl Asset {
 pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     let name = &asset.name;
     let hash = &asset.hash;
+    let path = format!("./assets/{hash}/redirect/");
     let config = read_json(CONFIG_JSON_PATH);
     let mode = config["server"]["mode"].as_str().unwrap();
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
-        if !StdPath::new(&format!("./assets/{hash}/redirect/")).exists() {
-            create_dir_all(format!("./assets/{hash}/redirect/")).unwrap();
+        if !StdPath::new(&path).exists() {
+            create_dir_all(&path).unwrap();
         }
-        asset.download_file(mode, &format!("./assets/{hash}/redirect/")).await.unwrap();
+        asset.download_file(mode, &path).await.unwrap();
     } else {
         todo!("Redirect not supported yet.");
     }
@@ -73,7 +74,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
             .json::<Value>()
             .await
             .unwrap();
-        write_json(&format!("./assets/{hash}/redirect/hot_update_list.json"), &hot_update_list);
+        write_json(&format!("{path}hot_update_list.json"), &hot_update_list);
         asset.query_hot_update_list().await.into_response()
     } else {
         asset.query_local().await.into_response()
