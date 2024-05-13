@@ -623,7 +623,9 @@ pub async fn account_sync_data() -> JSON {
 
     let cur_char_conf = encrypt(operator_template);
 
-    if get_keys(&replay_data["saved"]).contains(&cur_char_conf.to_string()) {
+    let force_battle_replay = config["userConfig"]["forceEnableBattleReplay"].as_bool().unwrap();
+
+    if get_keys(&replay_data["saved"]).contains(&cur_char_conf) || force_battle_replay {
         for replay in get_keys(&replay_data["saved"][&cur_char_conf]) {
             if get_keys(&player_data["user"]["dungeon"]["stages"]).contains(&replay) {
                 player_data["user"]["dungeon"]["stages"][replay]["hasBattleReplay"] = json!(1);
