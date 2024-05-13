@@ -80,13 +80,7 @@ pub mod quest {
         }
 
         let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
-        if get_keys(&replay_data["saved"]).contains(&char_config.to_string()) {
-            replay_data["saved"][char_config][current] = decoded_battle_replay;
-        } else {
-            replay_data["saved"][char_config] = json!({
-                current: decoded_battle_replay
-            });
-        }
+        replay_data["saved"][char_config][current] = decoded_battle_replay;
         write_json(BATTLE_REPLAY_JSON_PATH, replay_data.clone());
 
         let current = replay_data["current"].as_str().unwrap();
@@ -140,8 +134,8 @@ pub mod quest {
 
         if payload.get("squadId").is_some() && payload.get("name").is_some() {
             let squad_id = payload["squadId"].as_str().unwrap();
-            let name = payload["name"].clone();
-            data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["name"] = name.clone();
+            let name = json!(payload["name"]);
+            data["playerDataDelta"]["modified"]["troop"]["squads"][&squad_id]["name"] = json!(name);
             let mut user_data = read_json(USER_JSON_PATH);
             user_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
             sync_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
