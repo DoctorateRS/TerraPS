@@ -5,7 +5,6 @@ mod routes;
 mod utils;
 
 use anyhow::Result;
-use constants::ascii::TITLE;
 use routes::routes;
 use utils::{
     server::{get_server_address, Server},
@@ -18,7 +17,6 @@ async fn main() -> Result<()> {
     upgrade().await?;
 
     // TITLE
-    println!(r#"{}"#, TITLE);
     println!("IN CASE YOU PAID MONEY FOR THIS, YOU'VE BEEN SCAMMED.");
     println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
 

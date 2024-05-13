@@ -84,13 +84,3 @@ pub mod url {
     pub const GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
     pub const GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
 }
-
-pub mod ascii {
-    pub const TITLE: &str = r#"
-█████ █████ ████  ████   ███    ████   ████
-  █   █     █   █ █   █ █   █   █   █ █
-  █   █████ ████  ████  █████   ████   ███
-  █   █     █   █ █   █ █   █   █         █
-  █   █████ █   █ █   █ █   █   █     ████
-"#;
-}
