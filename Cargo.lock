@@ -601,12 +601,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 
 [[package]]
-name = "hex"
-version = "0.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
-
-[[package]]
 name = "hmac"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1591,7 +1585,7 @@ dependencies = [
 
 [[package]]
 name = "terra-ps"
-version = "0.5.0-alpha1"
+version = "0.5.0-alpha2"
 dependencies = [
  "aes",
  "anyhow",
@@ -1601,7 +1595,6 @@ dependencies = [
  "cbc",
  "chrono",
  "constcat",
- "hex",
  "libaes",
  "md-5",
  "rand",

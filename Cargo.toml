@@ -1,6 +1,6 @@
 [package]
 name = "terra-ps"
-version = "0.5.0-alpha1"
+version = "0.5.0-alpha2"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh", "EnokiUN", "UPON"]
@@ -21,7 +21,6 @@ rand = { version = "0.8", features = ["std_rng"] }
 # Crypto
 aes = "0.8"
 cbc = { version = "0.1", features = ["std"] }
-hex = "0.4"
 libaes = "0.7"
 ring = "0.17"
 md-5 = "0.10"
