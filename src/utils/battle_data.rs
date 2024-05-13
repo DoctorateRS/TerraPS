@@ -11,6 +11,7 @@ use super::crypto::md5::md5_digest;
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
+const CHAR_LIST: [char; 3] = ['\u{8}', '(', ')'];
 
 type Aes128CbcDec = Decryptor<Aes128>;
 
@@ -49,13 +50,16 @@ impl BattleDataDecoder {
                 return Ok(from_str("{}")?);
             }
         };
-        let res = match String::from_utf8(res) {
+        let mut res = match String::from_utf8(res) {
             Ok(res) => res,
             Err(_) => {
                 return Ok(from_str("{}")?);
             }
         };
-        let res = res.replace('\u{8}', "");
+        for char in CHAR_LIST {
+            res = res.replace(char, "");
+        }
+
         Ok(from_str(&res).unwrap_or(json!({})))
     }
 }
