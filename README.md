@@ -6,9 +6,9 @@
 - __NOTE:__ Not working yet.
 
 - The following functionality are broken:
-    - `rlv2`
-    - `sandboxv2`
-    - `tower`
+    - [x] `rlv2`
+    - [ ] `sandboxv2`
+    - [ ] `tower`
 
 ## Big thanks
 
