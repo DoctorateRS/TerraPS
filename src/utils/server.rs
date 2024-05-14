@@ -30,7 +30,7 @@ impl Server {
             .with_max_level(Level::INFO)
             .with_ansi(true)
             .with_file(false)
-            .with_line_number(true)
+            .with_line_number(false)
             .with_timer(Time)
             .compact()
             .init();
