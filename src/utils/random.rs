@@ -5,7 +5,6 @@ impl TRng {
         Self(thread_rng())
     }
 }
-
 unsafe impl Send for TRng {}
 
 pub fn sample<T: PartialEq + Clone>(vec: Vec<T>, n: usize) -> Vec<T> {

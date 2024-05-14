@@ -1,6 +1,6 @@
 [package]
 name = "terra-ps"
-version = "0.5.0-alpha4"
+version = "0.5.0-alpha5"
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh", "EnokiUN", "UPON"]
@@ -10,7 +10,6 @@ publish = false
 anyhow = "1"
 chrono = "0.4"
 constcat = "0.5"
-subtle-encoding = "0.5"
 axum = "0.7"
 axum-server = "0.6"
 base64 = "0.22"
@@ -41,9 +40,7 @@ tracing = "0.1"
 tracing-futures = "0.2"
 tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
 tracing-subscriber = { version = "0.3", features = [
-    "env-filter",
     "std",
-    "registry",
     "tracing",
     "tracing-log",
 ] }

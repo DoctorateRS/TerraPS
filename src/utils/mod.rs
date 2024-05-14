@@ -58,11 +58,12 @@ pub async fn upgrade() -> Result<()> {
     let excel = update_config().await?;
     let config = read_json(CONFIG_JSON_PATH);
     let force_update = config["server"]["forceUpdateExcel"].as_bool().unwrap_or(false);
+
     if excel || force_update {
         excel_update().await?;
+        update_gacha().await?;
     }
 
-    update_gacha().await?;
     excel_fmt()?;
     cfg_fmt()?;
     ccv2_fmt()?;

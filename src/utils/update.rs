@@ -105,8 +105,6 @@ pub async fn update_gacha() -> Result<()> {
         "char_4011_lessng",
         "char_4134_cetsyr",
     ];
-
-    println!("Generating Gacha...");
     let mut gacha = read_json(USER_GACHA_PATH);
     let char_table = update_data(CHARACTER_TABLE_URL).await;
     let gacha_advanced = gacha["advanced"].clone();
