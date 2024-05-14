@@ -21,15 +21,15 @@ use axum::{
 };
 
 use serde_json::json;
-use tower_http::trace::{DefaultMakeSpan, DefaultOnFailure, DefaultOnRequest, TraceLayer as Tracer};
+use tower_http::trace::{DefaultMakeSpan, DefaultOnFailure, DefaultOnResponse, TraceLayer};
 use tracing::Level;
 
 #[tracing::instrument]
 pub fn routes() -> Router {
-    let trace_layer = Tracer::new_for_http()
+    let trace_layer = TraceLayer::new_for_http()
         .make_span_with(DefaultMakeSpan::default())
-        .on_response(())
-        .on_request(DefaultOnRequest::default().level(Level::INFO))
+        .on_response(DefaultOnResponse::default().level(Level::INFO))
+        .on_request(())
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
         .on_eos(());
 

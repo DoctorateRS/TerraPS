@@ -7,7 +7,7 @@ pub struct Time;
 
 impl Time {
     pub fn fmt(&self) -> String {
-        format!("{}", Local::now().format("[%d/%m/%Y - %H:%M:%S]"))
+        format!("{}", Local::now().format("[ %d/%m/%Y - %X ] : "))
     }
 }
 
