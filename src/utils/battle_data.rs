@@ -5,13 +5,23 @@ use aes::{
 use anyhow::Result;
 use cbc::Decryptor;
 use ring::test::from_hex;
-use serde_json::{from_str, json, Value};
+use serde_json::{from_str, Value};
 
 use super::crypto::md5::md5_digest;
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
 const CHAR_LIST: [char; 3] = ['\u{8}', '(', ')'];
+const DUMMY_BATTLE_DATA: &str = r#"
+{
+    "completeState": 0,
+    "battleData": {
+        "stats": {
+            "extraBattleInfo": {}
+        }
+    }
+}
+"#;
 
 type Aes128CbcDec = Decryptor<Aes128>;
 
@@ -38,6 +48,7 @@ impl BattleDataDecoder {
     }
 
     pub fn decrypt_battle_data(&self, data: String) -> Result<Value> {
+        let fallback = from_str(DUMMY_BATTLE_DATA)?;
         // CREDIT TO ENOKI
         // FIXME: BROKE AGAIN. TOO UNSTABLE IN RUST :(
         let (data, iv) = data.split_at(data.len() - 32);
@@ -49,7 +60,7 @@ impl BattleDataDecoder {
         let res = match aes.decrypt_padded_vec_mut::<NoPadding>(&data) {
             Ok(res) => res,
             Err(_) => {
-                return Ok(from_str("{}")?);
+                return Ok(from_str(DUMMY_BATTLE_DATA)?);
             }
         };
         let mut res = String::from_utf8(res)?;
@@ -57,6 +68,6 @@ impl BattleDataDecoder {
             res = res.replace(char, "");
         }
 
-        Ok(from_str(&res).unwrap_or(json!({})))
+        Ok(from_str(&res).unwrap_or(fallback))
     }
 }
