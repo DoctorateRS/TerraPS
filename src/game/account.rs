@@ -390,8 +390,6 @@ pub async fn account_sync_data() -> JSON {
 
     let count_inst_id = 10000;
 
-    write_json("./debug/chars.json", &temp_char_list);
-
     player_data["user"]["troop"]["chars"] = temp_char_list;
     player_data["user"]["troop"]["charGroup"] = char_group;
     player_data["user"]["troop"]["curCharInstId"] = json!(count_inst_id);
