@@ -4,11 +4,11 @@ use anyhow::Result;
 use axum::{serve, Router};
 use tokio::net::TcpListener;
 use tracing::Level;
-use tracing_subscriber::fmt as subscriber_fmt;
+use tracing_subscriber::fmt::fmt as subscriber_fmt;
 
 use crate::constants::config::CONFIG_JSON_PATH;
 
-use super::json::read_json;
+use super::{json::read_json, time::Time};
 
 pub struct Server {
     pub ip: String,
@@ -27,10 +27,11 @@ impl Server {
     }
     pub async fn serve(&self, routes: Router) -> Result<(), Error> {
         subscriber_fmt()
-            .with_max_level(Level::DEBUG)
+            .with_max_level(Level::INFO)
             .with_ansi(true)
-            .with_file(true)
+            .with_file(false)
             .with_line_number(true)
+            .with_timer(Time)
             .compact()
             .init();
         let addr = &self.get_address();
@@ -45,5 +46,5 @@ pub fn get_server_address() -> (String, u64) {
     let server_config = &config["server"];
     let host = server_config["host"].as_str().unwrap();
     let port = server_config["port"].as_u64().unwrap();
-    (host.to_string(), port)
+    (host.to_owned(), port)
 }

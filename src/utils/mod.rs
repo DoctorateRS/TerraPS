@@ -20,6 +20,7 @@ pub mod mail;
 pub mod random;
 pub mod rlv2;
 pub mod server;
+pub mod time;
 pub mod update;
 
 #[allow(dead_code)]
