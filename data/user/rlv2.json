@@ -25,72 +25,6 @@
         "trace": [],
         "pending": [
             {
-                "index": "e_0",
-                "type": "GAME_INIT_RELIC",
-                "content": {
-                    "initRelic": {
-                        "step": [
-                            1,
-                            3
-                        ],
-                        "items": {
-                            "0": {
-                                "id": "rogue_3_band_1",
-                                "count": 1
-                            },
-                            "1": {
-                                "id": "rogue_3_band_2",
-                                "count": 1
-                            },
-                            "2": {
-                                "id": "rogue_3_band_3",
-                                "count": 1
-                            },
-                            "3": {
-                                "id": "rogue_3_band_4",
-                                "count": 1
-                            },
-                            "4": {
-                                "id": "rogue_3_band_5",
-                                "count": 1
-                            },
-                            "5": {
-                                "id": "rogue_3_band_6",
-                                "count": 1
-                            },
-                            "6": {
-                                "id": "rogue_3_band_7",
-                                "count": 1
-                            },
-                            "7": {
-                                "id": "rogue_3_band_8",
-                                "count": 1
-                            },
-                            "8": {
-                                "id": "rogue_3_band_9",
-                                "count": 1
-                            },
-                            "9": {
-                                "id": "rogue_3_band_10",
-                                "count": 1
-                            },
-                            "10": {
-                                "id": "rogue_3_band_11",
-                                "count": 1
-                            },
-                            "11": {
-                                "id": "rogue_3_band_12",
-                                "count": 1
-                            },
-                            "12": {
-                                "id": "rogue_3_band_13",
-                                "count": 1
-                            }
-                        }
-                    }
-                }
-            },
-            {
                 "index": "e_1",
                 "type": "GAME_INIT_RECRUIT_SET",
                 "content": {
@@ -102,21 +36,6 @@
                         "option": [
                             "recruit_group_1"
                         ]
-                    }
-                }
-            },
-            {
-                "index": "e_2",
-                "type": "GAME_INIT_RECRUIT",
-                "content": {
-                    "initRecruit": {
-                        "step": [
-                            3,
-                            3
-                        ],
-                        "tickets": [],
-                        "showChar": [],
-                        "team": null
                     }
                 }
             }
@@ -140,7 +59,14 @@
         "hasExpeditionReturn": false
     },
     "inventory": {
-        "relic": {},
+        "relic": {
+            "r_0": {
+                "index": "r_0",
+                "id": "rogue_3_band_7",
+                "count": 1,
+                "ts": 1695000000
+            }
+        },
         "recruit": {},
         "trap": null,
         "consumable": {},

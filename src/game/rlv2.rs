@@ -293,7 +293,11 @@ pub async fn rlv2_choose_init_recruit_set() -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
 
     let vec = rlv2_static["player"]["pending"].as_array().unwrap();
-    let vec = vec[1..{ vec.len() - 1 }].to_vec();
+    let vec = if vec.is_empty() {
+        vec[1..{ vec.len() - 1 }].to_vec()
+    } else {
+        vec![]
+    };
     rlv2["player"]["pending"] = json!(vec);
 
     let config = read_json(CONFIG_JSON_PATH);

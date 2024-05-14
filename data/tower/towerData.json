@@ -3,7 +3,7 @@
         "current": {
             "cards": {},
             "godCard": {
-                "id": "card_tower_14",
+                "id": "card_06",
                 "subGodCardId": ""
             },
             "halftime": {
@@ -13,32 +13,32 @@
             },
             "layer": [
                 {
-                    "id": "lt_14_01",
+                    "id": "lt_13_01",
                     "try": 1,
                     "pass": false
                 },
                 {
-                    "id": "lt_14_02",
+                    "id": "lt_13_02",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_14_03",
+                    "id": "lt_13_03",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_14_04",
+                    "id": "lt_13_04",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_14_05",
+                    "id": "lt_13_05",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_14_06",
+                    "id": "lt_13_06",
                     "try": 0,
                     "pass": false
                 }
@@ -50,7 +50,7 @@
             "status": {
                 "coord": 0,
                 "isHard": false,
-                "start": 1715403704,
+                "start": 1715675811,
                 "state": "INIT_CARD",
                 "strategy": "OPTIMIZE",
                 "tactical": {
@@ -63,10 +63,10 @@
                     "MEDIC": "tatical_medic_01",
                     "SPECIAL": "tatical_special_01"
                 },
-                "tower": "tower_n_14"
+                "tower": "tower_n_13"
             },
             "trap": []
         }
     },
-    "currentStage": "lt_14_01"
+    "currentStage": "lt_13_01"
 }

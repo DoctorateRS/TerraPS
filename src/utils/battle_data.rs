@@ -38,6 +38,7 @@ impl BattleDataDecoder {
     }
 
     pub fn decrypt_battle_data(&self, data: String) -> Result<Value> {
+        // CREDIT TO ENOKI
         let (data, iv) = data.split_at(data.len() - 32);
         let src = LOG_TOKEN_KEY.to_string() + &self.login_time.to_string();
         let data = from_hex(data).unwrap();
