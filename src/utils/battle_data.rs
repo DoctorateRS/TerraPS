@@ -39,6 +39,7 @@ impl BattleDataDecoder {
 
     pub fn decrypt_battle_data(&self, data: String) -> Result<Value> {
         // CREDIT TO ENOKI
+        // FIXME: BROKE AGAIN. TOO UNSTABLE IN RUST :(
         let (data, iv) = data.split_at(data.len() - 32);
         let src = LOG_TOKEN_KEY.to_string() + &self.login_time.to_string();
         let data = from_hex(data).unwrap();
@@ -51,12 +52,7 @@ impl BattleDataDecoder {
                 return Ok(from_str("{}")?);
             }
         };
-        let mut res = match String::from_utf8(res) {
-            Ok(res) => res,
-            Err(_) => {
-                return Ok(from_str("{}")?);
-            }
-        };
+        let mut res = String::from_utf8(res)?;
         for char in CHAR_LIST {
             res = res.replace(char, "");
         }
