@@ -245,14 +245,10 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
 
 pub async fn rlv2_choose_init_relic(Json(payload): JSON) -> JSON {
     let select = payload["select"].as_str().unwrap();
-    let rlv2_static = read_json(RLV2_JSON_PATH);
     let mut rlv2 = read_json(RLV2_JSON_PATH);
 
-    let band = rlv2_static["player"]["pending"].as_array().unwrap();
-    let vec = band[1..{ band.len() - 1 }].to_vec();
-    let band = band[0]["content"]["initRelic"]["items"][select]["id"].as_str().unwrap();
-    rlv2["player"]["pending"] = json!(vec);
-
+    let band = rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
+    let band = band["content"]["initRelic"]["items"][select]["id"].clone();
     rlv2["inventory"]["relic"]["r_0"] = json!({
         "index": "r_0",
         "id": band,
@@ -290,16 +286,10 @@ pub async fn rlv2_choice_select() -> JSON {
 }
 
 pub async fn rlv2_choose_init_recruit_set() -> JSON {
-    let rlv2_static = read_json(RLV2_JSON_PATH);
     let mut rlv2 = read_json(RLV2_JSON_PATH);
 
-    let vec = rlv2_static["player"]["pending"].as_array().unwrap();
-    let vec = if !vec.is_empty() {
-        vec[1..{ vec.len() - 1 }].to_vec()
-    } else {
-        vec![]
-    };
-    rlv2["player"]["pending"] = json!(vec);
+    let vec = rlv2["player"]["pending"].as_array_mut().unwrap();
+    vec.remove(0);
 
     let config = read_json(CONFIG_JSON_PATH);
 
