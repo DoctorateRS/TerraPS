@@ -26,7 +26,13 @@ impl Server {
         println!("Server started at: {}", self.get_address());
     }
     pub async fn serve(&self, routes: Router) -> Result<(), Error> {
-        subscriber_fmt().with_max_level(Level::DEBUG).init();
+        subscriber_fmt()
+            .with_max_level(Level::DEBUG)
+            .with_ansi(true)
+            .with_file(true)
+            .with_line_number(true)
+            .compact()
+            .init();
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
         self.log_begin();
