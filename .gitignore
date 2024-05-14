@@ -4,7 +4,7 @@
 /.venv
 /.idea
 /case
-/debug
+/dbg
 /dump
 /packaged
 /assets
