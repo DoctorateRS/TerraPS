@@ -349,15 +349,7 @@ pub mod april_fools {
         let mut score = 0;
         for data in get_keys(&battle_data["battleData"]["stats"]["extraBattleInfo"]) {
             if data.starts_with("SIMPLE,money,") {
-                score = battle_data["battleData"]["stats"]["extraBattleInfo"][data]
-                    .as_str()
-                    .unwrap()
-                    .split(',')
-                    .collect::<Vec<&str>>()
-                    .last()
-                    .unwrap()
-                    .parse()
-                    .unwrap();
+                score = data.split(',').last().unwrap_or("0").parse::<u64>().unwrap_or(0);
             }
         }
         Json(json!({
