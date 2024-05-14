@@ -5,6 +5,7 @@ use serde_json::{json, Value};
 use crate::{
     constants::{config::CONFIG_JSON_PATH, user::RLV2_JSON_PATH},
     utils::{
+        battle_data::FallbackMode,
         enumerate,
         game::decrypt_battle_data,
         json::{get_keys, read_json, write_json, JSON},
@@ -527,7 +528,7 @@ pub async fn rlv2_mv_n_battle_start(Json(payload): JSON) -> JSON {
 }
 
 pub async fn rlv2_battle_finish(Json(payload): JSON) -> JSON {
-    let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap(), None);
+    let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap(), None, FallbackMode::Rlv2);
 
     let mut rlv2 = read_json(RLV2_JSON_PATH);
     if battle_data["completeState"].as_i64().unwrap() != 1 {

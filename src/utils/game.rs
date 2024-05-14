@@ -1,7 +1,7 @@
 use std::fmt::Display;
 
 use super::{
-    battle_data::BattleDataDecoder,
+    battle_data::{BattleDataDecoder, FallbackMode},
     crypto::{base64::encode, md5::md5_hexdigest},
     json::read_json,
 };
@@ -29,12 +29,12 @@ pub async fn update_data(url: &str) -> Value {
     }
 }
 
-pub fn decrypt_battle_data<T: Display>(data: T, login_time: Option<u64>) -> Value {
+pub fn decrypt_battle_data<T: Display>(data: T, login_time: Option<u64>, mode: FallbackMode) -> Value {
     let decryptor = match login_time {
         Some(time) => BattleDataDecoder::new_with_login_time(time as u32),
         None => BattleDataDecoder::new(),
     };
-    decryptor.decrypt_battle_data(data.to_string()).unwrap()
+    decryptor.decrypt_battle_data(data.to_string(), mode)
 }
 
 pub fn encrypt<T: Display>(data: T) -> String {

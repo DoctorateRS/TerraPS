@@ -7,6 +7,7 @@ use crate::{
     constants::{tower::TOWERDATA_PATH, url::TOWER_TABLE_URL, user::USER_JSON_PATH},
     core::time,
     utils::{
+        battle_data::FallbackMode,
         enumerate,
         game::{decrypt_battle_data, update_data},
         json::{get_keys, get_length, read_json, write_json, JSON},
@@ -250,7 +251,7 @@ pub async fn tower_battle_start(Json(payload): JSON) -> JSON {
 
 pub async fn tower_battle_finish(Json(payload): JSON) -> JSON {
     let mut tower = read_json(TOWERDATA_PATH);
-    let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap(), None);
+    let battle_data = decrypt_battle_data(payload["data"].as_str().unwrap(), None, FallbackMode::Tower);
     let mut trap = Vec::new();
 
     let len = tower["tower"]["current"]["layer"].as_array().unwrap().len();
