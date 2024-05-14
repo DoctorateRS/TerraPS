@@ -16,7 +16,7 @@ const DUMMY_BATTLE_DATA_TOWER: &str = r#"
     "completeState": 0,
     "battleData": {
         "stats": {
-            "extraBattleInfo": []
+            "extraBattleInfo": {}
         }
     }
 }
@@ -33,7 +33,7 @@ const DUMMY_BATTLE_DATA_APRILFOOLS: &str = r#"
     "completeState": 0,
     "battleData": {
         "stats": {
-            "extraBattleInfo": []
+            "extraBattleInfo": {}
         }
     }
 }
