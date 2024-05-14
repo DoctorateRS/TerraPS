@@ -2,7 +2,6 @@ use aes::{
     cipher::{block_padding::NoPadding, BlockDecryptMut, KeyIvInit},
     Aes128,
 };
-use anyhow::Result;
 use cbc::Decryptor;
 use ring::test::from_hex;
 use serde_json::{from_str, Value};
