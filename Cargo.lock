@@ -1524,6 +1524,7 @@ dependencies = [
  "cbc",
  "chrono",
  "constcat",
+ "h2",
  "libaes",
  "md-5",
  "rand",
