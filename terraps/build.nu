@@ -1,1 +1,0 @@
-cargo build -r -v | save -f build.log
