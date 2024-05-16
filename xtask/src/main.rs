@@ -29,6 +29,8 @@ fn start_server(rel: bool) -> Result<()> {
     let handle = spawn(move || {
         let mut server = Command::new("cargo")
             .arg("run")
+            .arg("--bin")
+            .arg("terra-ps")
             .args(if rel { vec!["--release"] } else { vec![] })
             .spawn()
             .expect("Failed to start server.");
