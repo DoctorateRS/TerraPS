@@ -12,11 +12,11 @@ pub async fn update_data(url: &str) -> Value {
     let local_path = url
         .replace(
             "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-            "./data",
+            "./terraps/data",
         )
         .replace(
             "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-            "./data/announce",
+            "./terraps/data/announce",
         );
 
     if url.contains("Android/version") {
