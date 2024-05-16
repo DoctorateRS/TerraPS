@@ -1,12 +1,12 @@
-[package]
-name = "terra-ps"
-version = "0.5.0-alpha5"
-edition = "2021"
-description = "Server implementations for a certain Gacha Tower Defense game."
-authors = ["Rh", "EnokiUN", "UPON"]
-publish = false
+[workspace]
+members = ["terraps", "xtask"]
+resolver = "2"
 
-[dependencies]
+[workspace.package]
+name = "terraps"
+version = "0.5.1-alpha1"
+
+[workspace.dependencies]
 anyhow = "1"
 chrono = "0.4"
 constcat = "0.5"
@@ -48,10 +48,6 @@ tracing-subscriber = { version = "0.3", features = [
 
 # Tower
 tower-http = { version = "0.5", features = ["trace"] }
-
-[[bin]]
-name = "terra-ps"
-path = "src/main.rs"
 
 [profile.release]
 
