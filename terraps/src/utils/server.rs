@@ -42,8 +42,7 @@ impl Server {
 
 pub fn get_server_address() -> (String, u64) {
     let config = read_json(CONFIG_JSON_PATH);
-    let server_config = &config["server"];
-    let host = server_config["host"].as_str().unwrap();
-    let port = server_config["port"].as_u64().unwrap();
+    let host = config["server"]["host"].as_str().unwrap();
+    let port = config["server"]["port"].as_u64().unwrap();
     (host.to_owned(), port)
 }
