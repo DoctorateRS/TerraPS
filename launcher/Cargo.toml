@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-frida.workspace = true
-anyhow.workspace = true
-terraps = { path = "../terraps" }
 mozdevice = "0.5"
+frida.workspace = true
+common_utils = { path = "../common" }
+anyhow.workspace = true
