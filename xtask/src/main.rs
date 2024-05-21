@@ -65,7 +65,7 @@ fn main() -> Result<()> {
         print_help();
         exit(0);
     };
-    let release = args().any(|arg| arg == "--release");
+    let release = args().any(|arg| arg == "--release" || arg == "-r");
 
     match task.as_str() {
         "run" => start_server(release)?,
