@@ -1,10 +1,8 @@
 [package]
-name = "launcher"
+name = "rust-launcher"
 version = "0.1.0"
 edition = "2021"
-description = ""
-authors = ["Rhelvetican", "Sasha"]
 
 [dependencies]
-frida.workspace = true
-anyhow.workspace = true
+mozdevice = "*"
+frida = "*"
