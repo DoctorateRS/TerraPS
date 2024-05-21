@@ -7,4 +7,4 @@ edition = "2021"
 frida.workspace = true
 anyhow.workspace = true
 terraps = { path = "../terraps" }
-mozdevice = "*"
+mozdevice = "0.5"

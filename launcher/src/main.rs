@@ -1,7 +1,8 @@
+use anyhow::Result;
 use frida::{DeviceManager, Frida, SpawnOptions};
 use std::process::Command;
 
-fn main() {
+fn main() -> Result<()> {
     let mut cmd_terminal = Command::new("cmd");
 
     let cmds = vec![
@@ -30,4 +31,5 @@ fn main() {
         }
         Err(e) => println!("Error: {}", e),
     }
+    Ok(())
 }
