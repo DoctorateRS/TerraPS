@@ -1,7 +1,7 @@
 use anyhow::{Ok, Result};
 use std::fs::read_dir;
 
-use super::json::{read_json, write_json};
+use common_utils::{read_json, write_json};
 
 pub fn excel_fmt() -> Result<()> {
     let dir = read_dir("./data/excel")?;

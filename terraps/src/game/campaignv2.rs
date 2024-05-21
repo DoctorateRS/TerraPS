@@ -1,10 +1,8 @@
 use axum::Json;
 use serde_json::json;
 
-use crate::{
-    constants::user::BATTLE_REPLAY_JSON_PATH,
-    utils::json::{read_json, write_json, JSON},
-};
+use crate::{constants::user::BATTLE_REPLAY_JSON_PATH, utils::json::JSON};
+use common_utils::{read_json, write_json};
 
 pub async fn campaignv2_battle_start(Json(payload): JSON) -> JSON {
     let stage_id = payload["stageId"].as_str().unwrap();

@@ -9,10 +9,9 @@ use crate::{
     utils::game::update_data,
 };
 
-use super::{
-    enumerate,
-    json::{get_keys, read_json},
-};
+use super::{enumerate, json::get_keys};
+
+use common_utils::read_json;
 
 pub fn get_chars(default: bool) -> Vec<Value> {
     let user_data = read_json(USER_JSON_PATH);

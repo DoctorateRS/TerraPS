@@ -5,10 +5,12 @@ use crate::{
     constants::config::MAILLIST_PATH,
     core::time,
     utils::{
-        json::{get_keys, read_json, write_json, JSON},
+        json::{get_keys, JSON},
         mail::get_item,
     },
 };
+
+use common_utils::{read_json, write_json};
 
 pub async fn mail_get_meta_info_list() -> JSON {
     let mut result = Vec::new();

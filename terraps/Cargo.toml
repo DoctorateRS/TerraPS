@@ -1,5 +1,5 @@
 [package]
-name = "terra-ps"
+name = "terraps"
 version.workspace = true
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
@@ -40,6 +40,8 @@ tracing-futures.workspace = true
 tracing-subscriber.workspace = true
 
 tower-http.workspace = true
+
+common_utils = { path = "../common" }
 
 [[bin]]
 name = "terra-ps"

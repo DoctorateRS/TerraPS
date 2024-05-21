@@ -8,7 +8,8 @@ use tracing_subscriber::fmt::fmt as subscriber_fmt;
 
 use crate::constants::config::CONFIG_JSON_PATH;
 
-use super::{json::read_json, time::Time};
+use super::time::Time;
+use common_utils::read_json;
 
 pub struct Server {
     pub ip: String,

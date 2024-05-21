@@ -3,12 +3,10 @@ use crate::{
     utils::json::get_keys,
 };
 
-use super::{
-    game::update_data,
-    json::{read_json, write_json},
-};
+use super::game::update_data;
 
 use anyhow::Result;
+use common_utils::{read_json, write_json};
 use reqwest::get;
 use serde_json::{from_str, json, Value};
 

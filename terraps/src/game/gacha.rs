@@ -2,11 +2,8 @@ pub mod normal {
     use axum::Json;
     use serde_json::{json, Value};
 
-    use crate::{
-        constants::user::USER_GACHA_PATH,
-        core::time,
-        utils::json::{read_json, JSON},
-    };
+    use crate::{constants::user::USER_GACHA_PATH, core::time, utils::json::JSON};
+    use common_utils::read_json;
 
     pub async fn sync_normal_gacha() -> JSON {
         Json(json!({
@@ -155,11 +152,9 @@ pub mod advanced {
 
     use crate::{
         constants::user::{GACHA_TEMPLATE_JSON_PATH, USER_GACHA_PATH},
-        utils::{
-            json::{read_json, JSON},
-            random::TRng,
-        },
+        utils::{json::JSON, random::TRng},
     };
+    use common_utils::read_json;
 
     pub async fn get_pool_detail() -> JSON {
         Json(read_json(GACHA_TEMPLATE_JSON_PATH))

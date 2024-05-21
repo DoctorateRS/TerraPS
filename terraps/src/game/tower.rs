@@ -10,11 +10,13 @@ use crate::{
         battle_data::FallbackMode,
         enumerate,
         game::{decrypt_battle_data, update_data},
-        json::{get_keys, get_length, read_json, write_json, JSON},
+        json::{get_keys, get_length, JSON},
         random::sample,
         str,
     },
 };
+
+use common_utils::{read_json, write_json};
 
 fn current_coord(id: &str) -> usize {
     let tower = read_json(TOWERDATA_PATH);

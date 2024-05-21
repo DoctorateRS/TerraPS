@@ -9,9 +9,11 @@ pub mod quest {
         },
         utils::{
             battle_replay::{decrypt_battle_replay, encrypt_battle_replay},
-            json::{get_keys, read_json, write_json, JSON},
+            json::{get_keys, JSON},
         },
     };
+
+    use common_utils::{read_json, write_json};
 
     pub async fn quest_battle_start(Json(payload): JSON) -> JSON {
         let stage_id = payload["stageId"].as_str().unwrap();

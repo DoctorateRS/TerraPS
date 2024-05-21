@@ -2,9 +2,10 @@ use crate::constants::config::CONFIG_JSON_PATH;
 
 use self::{
     fmt::{ccv2_fmt, cfg_fmt, excel_fmt},
-    json::{read_json, write_json},
     update::{excel_update, update_config, update_gacha},
 };
+
+use common_utils::{read_json, write_json};
 
 use anyhow::Result;
 use serde_json::{json, Value};

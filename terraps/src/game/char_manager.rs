@@ -1,9 +1,10 @@
 pub mod char {
     use crate::{
         constants::user::USER_JSON_PATH,
-        utils::json::{get_keys, read_json, write_json, JSON},
+        utils::json::{get_keys, JSON},
     };
     use axum::Json;
+    use common_utils::{read_json, write_json};
     use serde_json::json;
 
     pub async fn char_change_mark_star(Json(payload): JSON) -> JSON {
@@ -49,9 +50,10 @@ pub mod char_build {
     use crate::{
         constants::user::USER_JSON_PATH,
         core::time,
-        utils::json::{get_keys, read_json, write_json, JSON},
+        utils::json::{get_keys, JSON},
     };
     use axum::Json;
+    use common_utils::{read_json, write_json};
     use serde_json::json;
 
     pub async fn char_build_batch_set_char_voice_lan() -> JSON {
@@ -261,10 +263,8 @@ pub mod charm {
     use axum::Json;
     use serde_json::json;
 
-    use crate::{
-        constants::user::USER_JSON_PATH,
-        utils::json::{read_json, write_json, JSON},
-    };
+    use crate::{constants::user::USER_JSON_PATH, utils::json::JSON};
+    use common_utils::{read_json, write_json};
 
     pub async fn charm_set_squad(Json(payload): JSON) -> JSON {
         let charm_squad = payload["squad"].clone();

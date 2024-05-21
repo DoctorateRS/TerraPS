@@ -2,7 +2,8 @@ use serde_json::{json, Value};
 
 use crate::constants::config::MAILLIST_PATH;
 
-use super::json::{get_keys, read_json, write_json};
+use super::json::get_keys;
+use common_utils::{read_json, write_json};
 
 pub fn get_item(payload: Value, key: &str) -> (Vec<Value>, i32) {
     let mut items = Vec::new();

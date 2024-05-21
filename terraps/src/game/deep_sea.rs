@@ -1,10 +1,8 @@
 use axum::Json;
 use serde_json::json;
 
-use crate::{
-    constants::user::USER_JSON_PATH,
-    utils::json::{read_json, write_json, JSON},
-};
+use crate::{constants::user::USER_JSON_PATH, utils::json::JSON};
+use common_utils::{read_json, write_json};
 
 pub async fn deep_sea_branch(Json(payload): JSON) -> JSON {
     let branches = payload["branches"].clone();

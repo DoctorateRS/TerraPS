@@ -2,10 +2,8 @@ use axum::Json;
 use chrono::Utc;
 use serde_json::json;
 
-use crate::{
-    constants::config::CONFIG_JSON_PATH,
-    utils::json::{read_json, JSON},
-};
+use crate::{constants::config::CONFIG_JSON_PATH, utils::json::JSON};
+use common_utils::read_json;
 
 pub mod asset;
 pub mod prod;

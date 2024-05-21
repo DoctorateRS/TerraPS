@@ -351,6 +351,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "common_utils"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "constant_time_eq"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -946,6 +954,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "frida",
+ "terraps",
 ]
 
 [[package]]
@@ -1790,7 +1799,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "terra-ps"
+name = "terraps"
 version = "0.6.0"
 dependencies = [
  "aes",
@@ -1800,6 +1809,7 @@ dependencies = [
  "base64",
  "cbc",
  "chrono",
+ "common_utils",
  "constcat",
  "h2",
  "libaes",

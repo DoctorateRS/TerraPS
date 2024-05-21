@@ -3,8 +3,10 @@ use serde_json::{json, Value};
 
 use crate::{
     constants::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
-    utils::json::{read_json, write_json, JSON},
+    utils::json::JSON,
 };
+
+use common_utils::{read_json, write_json};
 
 pub mod app {
     use axum::Json;

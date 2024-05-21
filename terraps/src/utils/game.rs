@@ -3,8 +3,8 @@ use std::fmt::Display;
 use super::{
     battle_data::{BattleDataDecoder, FallbackMode},
     crypto::{base64::encode, md5::md5_hexdigest},
-    json::read_json,
 };
+use common_utils::read_json;
 use reqwest::get;
 use serde_json::Value;
 

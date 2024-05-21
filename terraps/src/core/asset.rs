@@ -12,10 +12,8 @@ use std::{fmt::Display, fs::create_dir_all, io::Cursor, path::Path as StdPath};
 use tokio::{fs::File, io::copy};
 use tokio_util::io::ReaderStream;
 
-use crate::{
-    constants::config::CONFIG_JSON_PATH,
-    utils::json::{read_json, write_json},
-};
+use crate::constants::config::CONFIG_JSON_PATH;
+use common_utils::{read_json, write_json};
 
 const BASE_PATH_CN: &str = "https://ak.hycdn.cn/assetbundle/official/Android/assets/";
 const BASE_PATH_GL: &str = "https://ark-us-static-online.yo-star.com/assetbundle/official/Android/assets/";

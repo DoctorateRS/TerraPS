@@ -3,8 +3,9 @@ use serde_json::json;
 
 use crate::{
     constants::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
-    utils::json::{read_json, write_json, JSON},
+    utils::json::JSON,
 };
+use common_utils::{read_json, write_json};
 
 pub async fn background_set_bg(Json(payload): JSON) -> JSON {
     let bg_id = payload["bgId"].as_str().unwrap();

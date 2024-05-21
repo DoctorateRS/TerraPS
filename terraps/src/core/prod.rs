@@ -1,11 +1,9 @@
 use crate::{
     constants::config::CONFIG_JSON_PATH,
-    utils::{
-        game::update_data,
-        json::{read_json, write_json, JSON},
-    },
+    utils::{game::update_data, json::JSON},
 };
 use axum::response::Json;
+use common_utils::{read_json, write_json};
 
 use serde_json::{json, Value};
 

@@ -6,11 +6,9 @@ use crate::{
         url::BUILDING_TABLE_URL,
         user::{BUILDING_JSON_PATH, USER_JSON_PATH},
     },
-    utils::{
-        game::update_data,
-        json::{read_json, write_json, JSON},
-    },
+    utils::{game::update_data, json::JSON},
 };
+use common_utils::{read_json, write_json};
 
 fn update_building_char_inst_id_list(building_data: Value) -> Value {
     let mut building_data = building_data.clone();

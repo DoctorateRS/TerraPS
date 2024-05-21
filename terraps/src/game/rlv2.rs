@@ -8,11 +8,13 @@ use crate::{
         battle_data::FallbackMode,
         enumerate,
         game::decrypt_battle_data,
-        json::{get_keys, read_json, write_json, JSON},
+        json::{get_keys, JSON},
         random::TRng,
         rlv2::*,
     },
 };
+
+use common_utils::{read_json, write_json};
 
 pub async fn rlv2_give_up_game() -> JSON {
     Json(json!({
