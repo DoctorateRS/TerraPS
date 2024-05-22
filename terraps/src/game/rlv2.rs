@@ -292,11 +292,11 @@ pub async fn rlv2_choose_init_recruit_set() -> JSON {
 
     let vec = rlv2["player"]["pending"].as_array_mut().unwrap();
     vec.remove(0);
-
+    
+    let mut tkts = vec![];
     let config = read_json(CONFIG_JSON_PATH);
 
     if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
-        let mut tkts = vec![];
         for _ in 0..3 {
             let ticket_id = get_next_tkt(&rlv2);
             add_ticket(&mut rlv2, &ticket_id);
