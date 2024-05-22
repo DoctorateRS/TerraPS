@@ -26,7 +26,9 @@ Tasks:
 
 fn start_server(rel: bool) -> Result<()> {
     let (send, receive) = channel();
-    let handle = spawn(move || {
+
+    let send_1 = send.clone();
+    let handle_1 = spawn(move || {
         let mut server = Command::new("cargo")
             .arg("run")
             .arg("--bin")
@@ -36,13 +38,32 @@ fn start_server(rel: bool) -> Result<()> {
             .expect("Failed to start server.");
 
         server.wait()?;
-        send.send(()).expect("Failed to send signal.");
+        send_1.send(()).expect("Failed to send signal.");
+
+        Ok::<(), IoError>(())
+    });
+
+    let send_2 = send.clone();
+    let handle_2 = spawn(move || {
+        let mut launcher = Command::new("cargo")
+            .arg("run")
+            .arg("--bin")
+            .arg("rust-launcher")
+            .args(if rel { vec!["--release"] } else { vec![] })
+            .spawn()
+            .expect("Failed to start launcher.");
+
+        launcher.wait()?;
+
+        send_2.send(()).expect("Failed to send signal.");
 
         Ok::<(), IoError>(())
     });
 
     receive.recv().expect("Failed to receive signal.");
-    handle.join().expect("Failed to join thread.")?;
+
+    handle_1.join().expect("Failed to join thread.")?;
+    handle_2.join().expect("Failed to join thread.")?;
 
     Ok(())
 }
