@@ -84,3 +84,34 @@ pub mod url {
     pub const GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
     pub const GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
 }
+
+#[allow(dead_code)]
+pub mod global_url {
+    use constcat::concat;
+    // BASE_URL
+    pub const BASE_URL: &str = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/";
+
+    // TABLE Urls
+    pub const ACTIVITY_TABLE_URL: &str = concat!(BASE_URL, "/excel/activity_table.json");
+    pub const CHARM_TABLE_URL: &str = concat!(BASE_URL, "/excel/charm_table.json");
+    pub const SKIN_TABLE_URL: &str = concat!(BASE_URL, "/excel/skin_table.json");
+    pub const CHARACTER_TABLE_URL: &str = concat!(BASE_URL, "/excel/character_table.json");
+    pub const BATTLEEQUIP_TABLE_URL: &str = concat!(BASE_URL, "/excel/battle_equip_table.json");
+    pub const EQUIP_TABLE_URL: &str = concat!(BASE_URL, "/excel/uniequip_table.json");
+    pub const STORY_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_table.json");
+    pub const STAGE_TABLE_URL: &str = concat!(BASE_URL, "/excel/stage_table.json");
+    pub const RL_TABLE_URL: &str = concat!(BASE_URL, "/excel/roguelike_topic_table.json");
+    pub const DM_TABLE_URL: &str = concat!(BASE_URL, "/excel/display_meta_table.json");
+    pub const RETRO_TABLE_URL: &str = concat!(BASE_URL, "/excel/retro_table.json");
+    pub const HANDBOOK_INFO_TABLE_URL: &str = concat!(BASE_URL, "/excel/handbook_info_table.json");
+    pub const TOWER_TABLE_URL: &str = concat!(BASE_URL, "/excel/climb_tower_table.json");
+    pub const BUILDING_TABLE_URL: &str = concat!(BASE_URL, "/excel/building_data.json");
+    pub const SANDBOX_TABLE_URL: &str = concat!(BASE_URL, "/excel/sandbox_perm_table.json");
+    pub const STORY_REVIEW_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_table.json");
+    pub const STORY_REVIEW_META_TABLE_URL: &str = concat!(BASE_URL, "/excel/story_review_meta_table.json");
+    pub const ENEMY_HANDBOOK_TABLE_URL: &str = concat!(BASE_URL, "/excel/enemy_handbook_table.json");
+    pub const MEDAL_TABLE_URL: &str = concat!(BASE_URL, "/excel/medal_table.json");
+    pub const CHARWORD_TABLE_URL: &str = concat!(BASE_URL, "/excel/charword_table.json");
+    pub const GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
+    pub const GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
+}
