@@ -17,14 +17,16 @@ Usage: `cargo xtask <task>`
 
 Tasks:
     run
-        Start the server.
+        Start the server and the Launcher.
     watch
         Watch for changes in the project and restart the servers if any file changes.
+    server
+        Start only server.
 "#
     );
 }
 
-fn start_server(rel: bool) -> Result<()> {
+fn run(rel: bool) -> Result<()> {
     let (send, receive) = channel();
 
     let send_1 = send.clone();
@@ -68,6 +70,30 @@ fn start_server(rel: bool) -> Result<()> {
     Ok(())
 }
 
+fn server(rel: bool) -> Result<()> {
+    let (send, receive) = channel();
+
+    let handle = spawn(move || {
+        let mut server = Command::new("cargo")
+            .arg("run")
+            .arg("--bin")
+            .arg("terra-ps")
+            .args(if rel { vec!["--release"] } else { vec![] })
+            .spawn()
+            .expect("Failed to start server.");
+
+        server.wait()?;
+        send.send(()).expect("Failed to send signal.");
+
+        Ok::<(), IoError>(())
+    });
+
+    receive.recv().expect("Failed to receive signal.");
+    handle.join().expect("Failed to join thread.")?;
+
+    Ok(())
+}
+
 fn watch(rel: bool) -> Result<()> {
     let mut cmd = Command::new("cargo");
     cmd.arg("watch")
@@ -89,8 +115,9 @@ fn main() -> Result<()> {
     let release = args().any(|arg| arg == "--release" || arg == "-r");
 
     match task.as_str() {
-        "run" => start_server(release)?,
+        "run" => run(release)?,
         "watch" => watch(release)?,
+        "server" => server(release)?,
         _ => {
             println!("invalid task: `{task}`, run `cargo xtask` for a list of tasks");
             exit(1);
