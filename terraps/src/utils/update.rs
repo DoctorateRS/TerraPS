@@ -1,3 +1,5 @@
+use tokio::spawn;
+
 use crate::{
     constants::{config::CONFIG_JSON_PATH, url::*, user::USER_GACHA_PATH},
     utils::json::get_keys,
@@ -53,7 +55,7 @@ pub async fn update_config() -> Result<bool> {
 }
 
 pub async fn excel_update() -> Result<()> {
-    let list = vec![
+    let list: Vec<&'static str> = vec![
         ACTIVITY_TABLE_URL,
         CHARM_TABLE_URL,
         SKIN_TABLE_URL,
@@ -78,19 +80,40 @@ pub async fn excel_update() -> Result<()> {
         GAMEDATA_CONST_URL,
     ];
 
-    for url in list {
-        let path = url
-            .replace(
-                "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-                "./data",
-            )
-            .replace(
-                "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-                "./data/announce",
-            );
-        let json = get(url).await?.json::<Value>().await?;
-        write_json(&path, json);
+    let index = list.len() / 2;
+
+    let (t1, t2) = list.split_at(index);
+
+    if t1.len() != t2.len() {
+        for link in t1 {
+            update_excel(link).await?;
+        }
+    } else {
+        let mut tasks = Vec::with_capacity(t1.len());
+        for (link1, link2) in t1.iter().zip(t2.iter()) {
+            tasks.push(spawn(update_excel(link1)));
+            tasks.push(spawn(update_excel(link2)));
+        }
+        for task in tasks {
+            task.await??;
+        }
     }
+
+    Ok(())
+}
+
+async fn update_excel(link: &str) -> Result<()> {
+    let path = link
+        .replace(
+            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
+            "./data",
+        )
+        .replace(
+            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
+            "./data/announce",
+        );
+    let json = get(link).await?.json::<Value>().await?;
+    write_json(&path, json);
     Ok(())
 }
 
