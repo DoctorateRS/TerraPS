@@ -6,8 +6,6 @@ description = "Server implementations for a certain Gacha Tower Defense game."
 authors = ["Rh", "EnokiUN", "UPON"]
 publish = false
 
-
-# .workspace = true
 [dependencies]
 anyhow.workspace = true
 chrono.workspace = true
@@ -46,3 +44,8 @@ common_utils = { path = "../common" }
 [[bin]]
 name = "terra-ps"
 path = "src/main.rs"
+
+[features]
+default = ["server", "update"]
+server = []
+update = []
