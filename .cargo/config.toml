@@ -1,2 +1,6 @@
 [alias]
 xtask = "run --package xtask --"
+rr = "run --release"
+r = "run"
+br = "build --release"
+b = "build"
