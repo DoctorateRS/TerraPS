@@ -51,8 +51,13 @@ tower-http = { version = "0.5", features = ["trace"] }
 # Frida
 frida = { version = "0.13", features = ["auto-download"] }
 
-[profile.release]
+[profile.dev]
+strip = false
+lto = false
+opt-level = 0
+codegen-units = 16
 
+[profile.release]
 strip = true      # Automatically strip symbols from the binary.
 lto = true        # Link-time optimization.
 opt-level = 3     # Optimize for speed.
