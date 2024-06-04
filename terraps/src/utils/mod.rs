@@ -56,18 +56,17 @@ pub fn get_nickname_config() -> (String, String) {
 }
 
 pub async fn upgrade() -> Result<()> {
-    let excel = update_config().await?;
+    let update_required = update_config().await?;
     let config = read_json(CONFIG_JSON_PATH);
     let force_update = config["server"]["forceUpdateExcel"].as_bool().unwrap_or(false);
 
-    if excel || force_update {
+    if update_required || force_update {
         excel_update().await?;
         update_gacha().await?;
+        excel_fmt()?;
+        cfg_fmt()?;
+        ccv2_fmt()?;
     }
-
-    excel_fmt()?;
-    cfg_fmt()?;
-    ccv2_fmt()?;
 
     Ok(())
 }

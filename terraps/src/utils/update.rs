@@ -39,6 +39,8 @@ pub async fn update_config() -> Result<bool> {
     let content = from_str::<Value>(new_nw_config["content"].as_str().unwrap())?;
     let func_ver = &content["funcVer"];
     if old_func_ver != func_ver {
+        println!("Update detected. Updating config...");
+
         excel_update = true;
         config["networkConfig"]["cn"]["content"]["funcVer"] = json!(func_ver);
         config["networkConfig"]["cn"]["content"]["configs"][func_ver.as_str().unwrap()] =
@@ -86,13 +88,13 @@ pub async fn excel_update() -> Result<()> {
 
     if t1.len() != t2.len() {
         for link in t1 {
-            update_excel(link).await?;
+            update_excel_data(link).await?;
         }
     } else {
         let mut tasks = Vec::with_capacity(t1.len());
         for (link1, link2) in t1.iter().zip(t2.iter()) {
-            tasks.push(spawn(update_excel(link1)));
-            tasks.push(spawn(update_excel(link2)));
+            tasks.push(spawn(update_excel_data(link1)));
+            tasks.push(spawn(update_excel_data(link2)));
         }
         for task in tasks {
             task.await??;
@@ -102,7 +104,7 @@ pub async fn excel_update() -> Result<()> {
     Ok(())
 }
 
-async fn update_excel(link: &str) -> Result<()> {
+async fn update_excel_data(link: &str) -> Result<()> {
     let path = link
         .replace(
             "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
@@ -114,6 +116,7 @@ async fn update_excel(link: &str) -> Result<()> {
         );
     let json = get(link).await?.json::<Value>().await?;
     write_json(&path, json);
+    println!("Updated: {}", path.replace("./data/announce", "").replace("./data", ""));
     Ok(())
 }
 

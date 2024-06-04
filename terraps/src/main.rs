@@ -5,19 +5,16 @@ mod routes;
 mod utils;
 
 use anyhow::Result;
-use routes::routes;
 
-#[cfg(feature = "server")]
-use utils::server::{get_server_address, Server};
-#[cfg(feature = "update")]
-use utils::upgrade;
+use routes::routes;
+use utils::{
+    server::{get_server_address, Server},
+    upgrade,
+};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    #[cfg(feature = "update")]
     upgrade().await?;
-
-    #[cfg(feature = "server")]
     {
         println!("IN CASE YOU PAID MONEY FOR THIS, YOU'VE BEEN SCAMMED.");
         println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
