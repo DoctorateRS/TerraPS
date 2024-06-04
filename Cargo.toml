@@ -10,7 +10,6 @@ anyhow = "1"
 chrono = "0.4"
 constcat = "0.5"
 axum = "0.7"
-axum-server = "0.6"
 base64 = "0.22"
 zip = "2"
 uuid = { version = "1", features = ["v4", "fast-rng", "macro-diagnostics"] }
