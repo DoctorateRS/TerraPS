@@ -22,8 +22,7 @@ fn main() -> Result<()> {
     ];
 
     for cmd in cmds {
-        let output = cmd_terminal.args([cmd]);
-        println!("Result: {:?}", output);
+        cmd_terminal.args([cmd]);
     }
 
     let frida = unsafe { Frida::obtain() };
@@ -39,12 +38,6 @@ fn main() -> Result<()> {
     } else {
         B64Decoder::new(GLOBAL).decode()?
     };
-    match device.spawn(game, &def) {
-        Ok(result) => {
-            println!("PID: {result}");
-            device.resume(result)?;
-        }
-        Err(e) => println!("Error: {}", e),
-    }
+    device.spawn(game, &def)?;
     Ok(())
 }
