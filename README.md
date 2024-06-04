@@ -3,7 +3,7 @@
 ## Status: Not actively maintained. (I have special circumstances)
 
 - Oxidized.
-- __NOTE:__ Not working yet.
+- __NOTE:__ Only semi-functional for now. If you have an idea on how to fix stuffs, please make a PR. If you face an issue, make a Github issue.
 
 - The following functionality are broken:
     - [ ] `rlv2`
