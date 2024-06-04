@@ -3,8 +3,11 @@ use common_utils::read_json;
 use frida::{DeviceManager, Frida, SpawnOptions};
 use std::process::Command;
 
-const GLOBAL: &str = "global";
-const CN: &str = "cn";
+mod b64;
+use crate::b64::B64Decoder;
+
+const GLOBAL: &str = "Y29tLllvU3RhckVOLkFya25pZ2h0cw==";
+const CN: &str = "Y29tLmh5cGVyZ3J5cGguYXJrbmlnaHRz";
 
 fn main() -> Result<()> {
     let config = read_json("./config/config.json");
@@ -32,13 +35,13 @@ fn main() -> Result<()> {
         .unwrap();
     let def = SpawnOptions::default();
     let game = if config["server"]["mode"].as_str().unwrap() == "cn" {
-        CN
+        B64Decoder::new(CN).decode()?
     } else {
-        GLOBAL
+        B64Decoder::new(GLOBAL).decode()?
     };
     match device.spawn(game, &def) {
         Ok(result) => {
-            println!("PID: {}", result);
+            println!("PID: {result}");
             device.resume(result)?;
         }
         Err(e) => println!("Error: {}", e),

@@ -1481,6 +1481,7 @@ name = "rust-launcher"
 version = "0.6.0"
 dependencies = [
  "anyhow",
+ "base64",
  "common_utils",
  "frida",
  "mozdevice",
