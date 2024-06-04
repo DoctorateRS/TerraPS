@@ -113,6 +113,24 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
             ],
             "ro3_ending_1",
         ),
+        "rogue_4" => (
+            vec![
+                // "rogue_4_band_1",
+                // "rogue_4_band_2",
+                // "rogue_4_band_3",
+                // "rogue_4_band_4",
+                // "rogue_4_band_5",
+                // "rogue_4_band_6",
+                // "rogue_4_band_7",
+                // "rogue_4_band_8",
+                // "rogue_4_band_9",
+                // "rogue_4_band_10",
+                // "rogue_4_band_11",
+                // "rogue_4_band_12",
+                // "rogue_4_band_13",
+            ],
+            "ro4_ending_1",
+        ),
         _ => (vec![], ""),
     };
 
@@ -292,7 +310,7 @@ pub async fn rlv2_choose_init_recruit_set() -> JSON {
 
     let vec = rlv2["player"]["pending"].as_array_mut().unwrap();
     vec.remove(0);
-    
+
     let mut tkts = vec![];
     let config = read_json(CONFIG_JSON_PATH);
 
