@@ -63,7 +63,12 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
         }
         asset.download_file(mode, &path).await.unwrap();
     } else {
-        todo!("Redirect not supported yet.");
+        println!("Redirect not supported yet.");
+        println!("Defaulting to download locally.");
+        if !StdPath::new(&path).exists() {
+            create_dir_all(&path).unwrap();
+        }
+        asset.download_file(mode, &path).await.unwrap();
     }
     if name == "hot_update_list.json" {
         let hot_update_list = get(format!("{BASE_PATH_CN}{hash}/hot_update_list.json", hash = &hash))
