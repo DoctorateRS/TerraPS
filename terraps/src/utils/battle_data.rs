@@ -10,7 +10,8 @@ use super::crypto::md5::md5_digest;
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
-const CHAR_LIST: [char; 3] = ['\u{8}', '(', ')'];
+const FILTER: [char; 3] = ['\u{8}', '(', ')'];
+
 const DUMMY_BATTLE_DATA_TOWER: &str = r#"
 {
     "completeState": 0,
@@ -89,7 +90,7 @@ impl BattleDataDecoder {
             }
         };
         let mut res = String::from_utf8(res).unwrap();
-        for char in CHAR_LIST {
+        for char in FILTER {
             res = res.replace(char, "");
         }
         let res = res.trim();

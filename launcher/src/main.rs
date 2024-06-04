@@ -1,8 +1,14 @@
 use anyhow::Result;
+use common_utils::read_json;
 use frida::{DeviceManager, Frida, SpawnOptions};
 use std::process::Command;
 
+const GLOBAL: &str = "global";
+const CN: &str = "cn";
+
 fn main() -> Result<()> {
+    let config = read_json("./config/config.json");
+
     let mut cmd_terminal = Command::new("cmd");
 
     let cmds = vec![
@@ -24,10 +30,16 @@ fn main() -> Result<()> {
         .into_iter()
         .find(|device| device.get_id() == "127.0.0.1:7555")
         .unwrap();
-    match device.spawn("com.hypergryph.arknights", &SpawnOptions::default()) {
+    let def = SpawnOptions::default();
+    let game = if config["server"]["mode"].as_str().unwrap() == "cn" {
+        CN
+    } else {
+        GLOBAL
+    };
+    match device.spawn(game, &def) {
         Ok(result) => {
             println!("PID: {}", result);
-            device.resume(result).unwrap();
+            device.resume(result)?;
         }
         Err(e) => println!("Error: {}", e),
     }
