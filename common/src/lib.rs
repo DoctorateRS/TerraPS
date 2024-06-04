@@ -27,7 +27,7 @@ pub fn write_json<T: Serialize>(path: &str, value: T) {
     let mut file = if !PathBuf::from(path).exists() {
         let dir = PathBuf::from(path);
         let dir = dir.parent().unwrap();
-        DirBuilder::new().recursive(true).create(dir).unwrap();
+        DirBuilder::new().recursive(true).create(dir).unwrap_or(());
         OpenOptions::new()
             .write(true)
             .create(true)
