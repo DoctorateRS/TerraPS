@@ -288,7 +288,7 @@ fn tower_routes() -> Router {
 
 fn u8_routes() -> Router {
     Router::new()
-        .route("/user/auth/v1/agreement_version", get(user::agreement_version))
+        .route("/user/auth/v1/agreement_version", get(user::misc::agreement_version))
         .route("/user/v1/getToken", post(user::user_v1_get_token))
         .route("/pay/getAllProductList", post(pay::pay_get_all_prod_list))
 }
@@ -303,7 +303,7 @@ fn user_routes() -> Router {
         .route("/changeAvatar", post(user::user_change_avatar))
         .route("/changeSecretary", post(user::user_change_secretary))
         .route("/info/v1/need_cloud_auth", post(user::user_need_cloud_auth))
-        .route("/info/v1/basic", get(user::info_v1_basic))
+        .route("/info/v1/basic", get(user::misc::info_v1_basic))
         .route("/login", post(user::user_login))
         .route("/oauth2/v1/grant", post(user::user_oauth2_v1_grant))
         .route("/oauth2/v2/grant", post(user::user_oauth2_v2_grant))
