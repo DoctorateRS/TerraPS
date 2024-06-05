@@ -101,15 +101,15 @@ pub async fn mail_list_mail_box() -> JSON {
 }
 
 pub async fn mail_receive_mail(Json(payload): JSON) -> JSON {
-    let result = get_item(payload, "mailId");
+    let (result, has_gift) = get_item(payload, "mailId");
     Json(json!({
-        "items": result.0,
+        "items": result,
         "playerDataDelta": {
             "modified": {
                 "consumable": {},
                 "inventory":{},
                 "pushFlags": {
-                    "hasGifts": result.1
+                    "hasGifts": has_gift as i8
                 },
                 "status": {}
             },
