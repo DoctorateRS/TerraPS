@@ -1,5 +1,5 @@
 use axum::Json;
-use serde_json::{json, Value};
+use serde_json::json;
 
 use crate::{
     constants::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
@@ -153,7 +153,7 @@ pub async fn auth_v1_token_by_phone_password() -> JSON {
 pub async fn user_login() -> JSON {
     Json(json!({
         "accessToken": "1",
-        "birth": Value::Null,
+        "birth": null,
         "channelId": "",
         "isAuthenticate": true,
         "isLatestUserAgreement": true,

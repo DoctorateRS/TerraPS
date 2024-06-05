@@ -23,14 +23,14 @@ pub async fn rlv2_give_up_game() -> JSON {
                 "modified": {
                     "rlv2": {
                         "current": {
-                            "player": Value::Null,
-                            "record": Value::Null,
-                            "map": Value::Null,
-                            "troop": Value::Null,
-                            "inventory": Value::Null,
-                            "game": Value::Null,
-                            "buff": Value::Null,
-                            "module": Value::Null
+                            "player": null,
+                            "record": null,
+                            "map": null,
+                            "troop": null,
+                            "inventory": null,
+                            "game": null,
+                            "buff": null,
+                            "module": null
                         }
                     }
                 },
@@ -148,7 +148,7 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
                 "population": {"cost": 0, "max": 6},
                 "conPerfectBattle": 0,
             },
-            "cursor": {"zone": 0, "position": Value::Null},
+            "cursor": {"zone": 0, "position": null},
             "trace": [],
             "pending": [
                 {
@@ -179,7 +179,7 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
                             "step": [3, 3],
                             "tickets": [],
                             "showChar": [],
-                            "team": Value::Null,
+                            "team": null,
                         }
                     },
                 },
@@ -188,31 +188,31 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
             "toEnding": ending,
             "chgEnding": false,
         },
-        "record": {"brief": Value::Null},
+        "record": {"brief": null},
         "map": {"zones": {}},
         "troop": {
             "chars": {},
             "expedition": [],
-            "expeditionReturn": Value::Null,
+            "expeditionReturn": null,
             "hasExpeditionReturn": false,
         },
         "inventory": {
             "relic": {},
             "recruit": {},
-            "trap": Value::Null,
+            "trap": null,
             "consumable": {},
             "exploreTool": {},
         },
         "game": {
             "mode": mode,
-            "predefined": Value::Null,
+            "predefined": null,
             "theme": theme,
             "outer": {"support": false},
             "start": 1695000000,
             "modeGrade": mode_grade,
             "equivalentGrade": mode_grade,
         },
-        "buff": {"tmpHP": 0, "capsule": Value::Null, "squadBuff": []},
+        "buff": {"tmpHP": 0, "capsule": null, "squadBuff": []},
         "module": {},
     });
 
@@ -389,7 +389,7 @@ pub async fn rlv2_close_tkt(Json(payload): JSON) -> JSON {
     rlv2["player"]["pending"].as_array_mut().unwrap().pop();
     rlv2["inventory"]["recruit"][tkt_id]["state"] = json!(2);
     rlv2["inventory"]["recruit"][tkt_id]["list"] = json!([]);
-    rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(Value::Null);
+    rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(null);
 
     write_json(RLV2_JSON_PATH, &rlv2);
 
@@ -487,9 +487,9 @@ async fn mv_n_battle_start(payload: Value) -> Value {
             "key": "misc_insert_token_card",
             "blackboard": [
                 {"key": "token_key", "value": 0, "valueStr": dice_id},
-                {"key": "level", "value": 1, "valueStr": Value::Null},
-                {"key": "skill", "value": 0, "valueStr": Value::Null},
-                {"key": "cnt", "value": 100, "valueStr": Value::Null},
+                {"key": "level", "value": 1, "valueStr": null},
+                {"key": "skill", "value": 0, "valueStr": null},
+                {"key": "cnt", "value": 100, "valueStr": null},
             ],
         }));
     }
@@ -736,7 +736,7 @@ pub async fn rlv2_leave_shop() -> JSON {
             let zone = rlv2["player"]["cursor"]["zone"].as_i64().unwrap();
             let zone = zone + 1;
             rlv2["player"]["cursor"]["zone"] = json!(zone);
-            rlv2["player"]["cursor"]["position"] = Value::Null;
+            rlv2["player"]["cursor"]["position"] = json!(null);
         }
     };
 

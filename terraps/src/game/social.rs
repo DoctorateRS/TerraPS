@@ -1,6 +1,6 @@
 use crate::utils::json::JSON;
 use axum::Json;
-use serde_json::{json, Value};
+use serde_json::json;
 
 pub async fn social_search_player(Json(payload): JSON) -> JSON {
     let username = payload["idList"].as_array().unwrap()[0].clone();
@@ -16,13 +16,13 @@ pub async fn social_search_player(Json(payload): JSON) -> JSON {
                 "avatarId": "0",
                 "avatar": {},
                 "assistCharList": [
-                    Value::Null
+                    null
                 ],
                 "lastOnlineTime": 0,
                 "medalBoard": {
                     "type": "EMPTY",
-                    "custom": Value::Null,
-                    "template": Value::Null
+                    "custom": null,
+                    "template": null
                 },
                 "skin": {
                     "selected": "nc_rhodes_default",

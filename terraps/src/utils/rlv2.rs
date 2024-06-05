@@ -61,7 +61,7 @@ pub fn add_ticket(rlv2: &mut Value, ticket_id: &str) {
         "id": ticket,
         "state": 0,
         "list": [],
-        "result": Value::Null,
+        "result": null,
         "ts": 1695000000,
         "from": "initial",
         "mustExtra": 0,

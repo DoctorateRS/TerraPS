@@ -7,13 +7,6 @@ use common_utils::{read_json, write_json};
 
 use serde_json::{json, Value};
 
-// fn random_hash() -> String {
-//     let mut pool = "abcdef".chars().collect::<Vec<char>>();
-//     let mut rng = rand::thread_rng();
-//     pool.shuffle(&mut rng);
-//     pool.iter().collect::<String>()
-// }
-
 pub async fn prod_android_version() -> JSON {
     let server_config = read_json(CONFIG_JSON_PATH);
     let mode = server_config["server"]["mode"].as_str().unwrap_or("cn");
@@ -25,7 +18,7 @@ pub async fn prod_android_version() -> JSON {
 }
 
 pub async fn prod_refresh_config() -> JSON {
-    Json(json!({"resVersion": Value::Null}))
+    Json(json!({"resVersion": null}))
 }
 
 pub async fn prod_network_config() -> JSON {

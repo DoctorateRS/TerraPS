@@ -8,7 +8,7 @@ use crate::{
     utils::{comp::max, game::*, get_nickname_config, json::*},
 };
 use axum::{http::HeaderMap, Json};
-use serde_json::{json, Value};
+use serde_json::json;
 use uuid::Uuid;
 
 use common_utils::{read_json, write_json};
@@ -154,7 +154,7 @@ pub async fn account_sync_data() -> JSON {
             "gainTime": time(),
             "skills": [],
             "voiceLan": voice_lan,
-            "currentEquip": Value::Null,
+            "currentEquip": null,
             "equip": {},
             "starMark": 0
         });
@@ -339,7 +339,7 @@ pub async fn account_sync_data() -> JSON {
                                 "completeUpgradeTime": -1
                             }
                         ],
-                        "currentEquip": Value::Null,
+                        "currentEquip": null,
                         "equip": {},
                     }
                 }
@@ -661,11 +661,11 @@ pub async fn account_sync_data() -> JSON {
                         if get_keys(&player_data["user"]["troop"]["chars"][inst_id.to_string()]["equip"]).contains(&equip.to_string()) {
                             slot_data["currentEquip"] = json!(equip);
                         } else {
-                            slot_data["currentEquip"] = Value::Null;
+                            slot_data["currentEquip"] = json!(null);
                         }
                     }
                     None => {
-                        slot_data["currentEquip"] = Value::Null;
+                        slot_data["currentEquip"] = json!(null);
                     }
                 }
                 slot_data["skillIndex"] = slot["skillIndex"].clone();
@@ -674,7 +674,7 @@ pub async fn account_sync_data() -> JSON {
             }
         }
         for _ in ct..12 {
-            slots.push(Value::Null)
+            slots.push(json!(null))
         }
         if slots.len() > 12 {
             slots = slots[..12].to_vec();
