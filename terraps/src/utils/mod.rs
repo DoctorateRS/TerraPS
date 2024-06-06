@@ -24,11 +24,6 @@ pub mod server;
 pub mod time;
 pub mod update;
 
-#[allow(dead_code)]
-pub fn zip<T: IntoIterator, U: IntoIterator>(a: T, b: U) -> Vec<(T::Item, U::Item)> {
-    a.into_iter().zip(b).collect()
-}
-
 pub fn enumerate<T: IntoIterator>(a: T) -> Vec<(usize, T::Item)> {
     a.into_iter().enumerate().collect()
 }
