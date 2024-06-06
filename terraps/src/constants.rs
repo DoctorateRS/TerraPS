@@ -18,7 +18,7 @@ pub mod user {
     pub const BATTLE_REPLAY_JSON_PATH: &str = "./data/user/battleReplays.json";
     pub const RLV2_JSON_PATH: &str = "./data/user/rlv2.json";
     pub const RLV2_TEMPBUFF_JSON_PATH: &str = "./data/user/rlv2TempBuffs.json";
-    pub const RLV2_USER_SETTINGS_PATH: &str = "data/user/rlv2UserSettings.json";
+    pub const RLV2_USER_SETTINGS_PATH: &str = "./data/user/rlv2UserSettings.json";
     pub const CRISIS_JSON_BASE_PATH: &str = "./data/crisis/";
     pub const CRISIS_V2_JSON_BASE_PATH: &str = "./data/crisisV2/";
     pub const RUNE_JSON_PATH: &str = "./data/user/rune.json";
