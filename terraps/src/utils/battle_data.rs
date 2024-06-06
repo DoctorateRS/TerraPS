@@ -8,7 +8,8 @@ use ring::test::from_hex;
 use serde_json::{from_str, Value};
 use std::io::Write;
 
-use super::{crypto::md5::md5_digest, fs::mkfile};
+use super::crypto::md5::md5_digest;
+use common_utils::mkfile;
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";

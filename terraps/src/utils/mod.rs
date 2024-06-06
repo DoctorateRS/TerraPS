@@ -15,7 +15,6 @@ pub mod battle_replay;
 pub mod comp;
 pub mod crypto;
 pub mod fmt;
-pub mod fs;
 pub mod game;
 pub mod json;
 pub mod mail;
