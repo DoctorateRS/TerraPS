@@ -19,8 +19,8 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-05-22-06-44-01-4a3244",
-            "clientVersion": "2.2.61"
+            "resVersion": "24-05-28-13-45-33-2fd577",
+            "clientVersion": "2.2.81"
         }
     },
     "versionGlobal": {
@@ -35,9 +35,9 @@
             "sign": "sign",
             "content": {
                 "configVer": "5",
-                "funcVer": "V050",
+                "funcVer": "V051",
                 "configs": {
-                    "V050": {
+                    "V051": {
                         "override": true,
                         "network": {
                             "gs": "{server}",

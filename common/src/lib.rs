@@ -7,6 +7,9 @@ use std::{
 use serde::Serialize;
 use serde_json::{from_slice, json, ser::PrettyFormatter, Serializer, Value};
 
+mod fs;
+mod json;
+
 pub fn read_json(path: &str) -> Value {
     let val = match read(path) {
         Ok(file) => file,

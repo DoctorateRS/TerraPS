@@ -1,5 +1,5 @@
 [package]
-name = "terra-ps-server"
+name = "terra-ps"
 version.workspace = true
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game."
