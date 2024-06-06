@@ -3,10 +3,12 @@ use aes::{
     Aes128,
 };
 use cbc::Decryptor;
+use rand::{thread_rng, Rng};
 use ring::test::from_hex;
 use serde_json::{from_str, Value};
+use std::io::Write;
 
-use super::crypto::md5::md5_digest;
+use super::{crypto::md5::md5_digest, fs::mkfile};
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
@@ -60,6 +62,16 @@ impl Default for BattleDataDecoder {
     }
 }
 
+fn rand_hash(len: usize) -> String {
+    let mut hash = String::new();
+    let mut rng = thread_rng();
+    for _ in 0..len {
+        let c = rng.gen_range(u8::MIN..u8::MAX);
+        hash.push_str(&format!("{:x}", c));
+    }
+    hash
+}
+
 impl BattleDataDecoder {
     pub fn new() -> Self {
         Self::default()
@@ -95,6 +107,14 @@ impl BattleDataDecoder {
         }
         let res = res.trim();
 
-        from_str(res).unwrap_or(fallback)
+        let res_val = from_str::<Value>(res);
+        match res_val {
+            Ok(res) => res,
+            Err(_) => {
+                let mut dump = mkfile(format!("./dump/{}.txt", rand_hash(8))).unwrap();
+                dump.write_all(res.as_bytes()).unwrap();
+                fallback
+            }
+        }
     }
 }
