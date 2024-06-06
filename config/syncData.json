@@ -218,16 +218,6 @@
                     "name": "Ashcone",
                     "slots": [
                         {
-                            "charInstId": 1035,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_wisdel"
-                        },
-                        {
-                            "charInstId": 1016,
-                            "skillIndex": 2,
-                            "currentEquip": null
-                        },
-                        {
                             "charInstId": 474,
                             "skillIndex": 2,
                             "currentEquip": "uniequip_002_glady"
@@ -253,21 +243,35 @@
                             "currentEquip": "uniequip_002_cuttle"
                         },
                         {
-                            "charInstId": 2012,
+                            "charInstId": 102,
                             "skillIndex": 1,
-                            "currentEquip": "uniequip_002_typhon"
+                            "currentEquip": "uniequip_002_texas"
                         },
                         {
-                            "charInstId": 1029,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_yato2"
+                            "charInstId": 4133,
+                            "skillIndex": 0,
+                            "currentEquip": "uniequip_002_logos"
                         },
                         {
-                            "charInstId": 1028,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_texas2"
+                            "charInstId": 497,
+                            "skillIndex": 1,
+                            "currentEquip": null
                         },
-                        null,
+                        {
+                            "charInstId": 222,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_bpipe"
+                        },
+                        {
+                            "charInstId": 4087,
+                            "skillIndex": 1,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 128,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_plosis"
+                        },
                         null
                     ]
                 },
