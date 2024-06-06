@@ -4049,6 +4049,25 @@
             },
             "workTime": 0
         },
+        "4137": {
+            "charId": "char_4137_udflow",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
         "201": {
             "charId": "char_201_moeshd",
             "lastApAddTime": 1695000000,
@@ -4564,6 +4583,25 @@
         },
         "254": {
             "charId": "char_254_vodfox",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4079": {
+            "charId": "char_4079_haini",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -6445,6 +6483,25 @@
         },
         "4088": {
             "charId": "char_4088_hodrer",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4145": {
+            "charId": "char_4145_ulpia",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -13306,6 +13363,86 @@
             "count": 9999,
             "inUse": 0
         },
+        "furni_HunterInstitute_samplecabinet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_circularspecimenrack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_suspendedspecimenrack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_backrestchair_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_liftplatform_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_mirrorspecimenrack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_chandelier_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_projectionequipment_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_specimentable_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_barstool_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_carpet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_spikedspecimenrack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_largespecimen_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_pendantlight_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_rectangularspecimenrack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_waterbed_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_littlehelper_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_nightstand_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_wallpaper_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_HunterInstitute_floor_01": {
+            "count": 9999,
+            "inUse": 0
+        },
         "furni_oct1st_deckChair_01": {
             "count": 9999,
             "inUse": 0
@@ -13670,6 +13807,14 @@
             "count": 9999,
             "inUse": 0
         },
+        "furni_duanwu2024_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_duanwu2024_02": {
+            "count": 9999,
+            "inUse": 0
+        },
         "furni_dropS001_theLittleMermaid_01": {
             "count": 9999,
             "inUse": 0
@@ -14007,6 +14152,10 @@
             "inUse": 0
         },
         "furni_terracommericials_WrankwoodFilmFestival_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_terratimes_AbyssalHunters_01": {
             "count": 9999,
             "inUse": 0
         },
