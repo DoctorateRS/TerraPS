@@ -1,11 +1,12 @@
-use anyhow::{Ok, Result};
+use anyhow::Result;
 use axum::{
     body::Body,
     extract::Path,
+    http::{HeaderName, HeaderValue},
     response::{IntoResponse, Response},
     Json,
 };
-use reqwest::get;
+use reqwest::{get, StatusCode};
 use serde::Deserialize;
 use serde_json::Value;
 use std::{fmt::Display, fs::create_dir_all, io::Cursor, path::Path as StdPath};
@@ -26,17 +27,20 @@ pub struct Asset {
 
 impl Asset {
     async fn download_file<T: Display + PartialEq<&'static str> + AsRef<StdPath>>(&self, mode: T, path: T) -> Result<()> {
-        let url = if mode == "cn" {
-            format!("{BASE_PATH_CN}{}/{}", self.hash, self.name)
-        } else {
-            format!("{BASE_PATH_GL}/{}/{}", self.hash, self.name)
-        };
+        let url = self.get_url(mode);
         let response = get(&url).await?;
         let path = format!("{}/{}", path, self.name);
         let mut file = File::create(&path).await?;
         let mut cursor = Cursor::new(response.bytes().await?);
         copy(&mut cursor, &mut file).await?;
         Ok(())
+    }
+    fn get_url<T: PartialEq<&'static str>>(&self, mode: T) -> String {
+        if mode == "cn" {
+            format!("{BASE_PATH_CN}{}/{}", self.hash, self.name)
+        } else {
+            format!("{BASE_PATH_GL}/{}/{}", self.hash, self.name)
+        }
     }
     async fn query_local(&self) -> impl IntoResponse {
         let path = format!("./assets/{hash}/redirect/{name}", hash = &self.hash, name = &self.name);
@@ -63,12 +67,24 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
         }
         asset.download_file(mode, &path).await.unwrap();
     } else {
-        println!("Redirect not supported yet.");
-        println!("Defaulting to download locally.");
-        if !StdPath::new(&path).exists() {
-            create_dir_all(&path).unwrap();
+        let res = match get(asset.get_url(mode)).await {
+            Ok(res) => res,
+            Err(_) => return (StatusCode::BAD_REQUEST, Body::empty()).into_response(),
+        };
+        let mut builder = Response::builder().status(res.status().as_u16());
+        let headers = res
+            .headers()
+            .into_iter()
+            .map(|(n, v)| {
+                let name = HeaderName::from_bytes(n.as_ref()).unwrap();
+                let val = HeaderValue::from_bytes(v.as_bytes()).unwrap();
+                (name, val)
+            })
+            .collect::<Vec<_>>();
+        for (name, val) in headers {
+            builder = builder.header(name, val);
         }
-        asset.download_file(mode, &path).await.unwrap();
+        return builder.body(Body::from_stream(res.bytes_stream())).unwrap();
     }
     if name == "hot_update_list.json" {
         let hot_update_list = get(format!("{BASE_PATH_CN}{hash}/hot_update_list.json", hash = &hash))
