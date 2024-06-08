@@ -5,7 +5,7 @@ use crate::{
 use axum::response::Json;
 use common_utils::{read_json, write_json};
 
-use serde_json::{json, Value};
+use serde_json::json;
 
 pub async fn prod_android_version() -> JSON {
     let server_config = read_json(CONFIG_JSON_PATH);
@@ -50,14 +50,12 @@ pub async fn prod_network_config() -> JSON {
             network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
         }
     }
-    Json(config_sanitize(network_config))
-}
-
-fn config_sanitize(config: Value) -> Value {
-    let content = config["content"].to_string();
-    json!({
-        "sign": "sign",
-        "content": content,
+    Json({
+        let content = network_config["content"].to_string();
+        json!({
+            "sign": "sign",
+            "content": content,
+        })
     })
 }
 

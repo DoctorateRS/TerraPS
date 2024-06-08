@@ -452,11 +452,11 @@ async fn mv_n_battle_start(payload: Value) -> Value {
     let box_info = match theme {
         "rogue_1" => json!({}),
         "rogue_2" => {
-            let trap = ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"][rng.0.gen_range(0..3) as usize];
+            let trap = ["trap_065_normbox", "trap_066_rarebox", "trap_068_badbox"][rng.gen_range(0..3) as usize];
             json!({trap: 100})
         }
         "rogue_3" => {
-            let trap = ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"][rng.0.gen_range(0..3) as usize];
+            let trap = ["trap_108_smbox", "trap_109_smrbox", "trap_110_smbbox"][rng.gen_range(0..3) as usize];
             json!({trap: 100})
         }
         _ => json!({}),

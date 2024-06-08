@@ -1,8 +1,16 @@
-use rand::{rngs::ThreadRng, thread_rng, Rng};
+use rand::{
+    distributions::uniform::{SampleRange, SampleUniform},
+    rngs::ThreadRng,
+    thread_rng, Rng,
+};
+
 pub struct TRng(pub ThreadRng);
 impl TRng {
     pub fn new() -> Self {
         Self(thread_rng())
+    }
+    pub fn gen_range<T: SampleUniform>(&mut self, range: impl SampleRange<T>) -> T {
+        self.0.gen_range(range)
     }
 }
 unsafe impl Send for TRng {}

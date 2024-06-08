@@ -147,7 +147,6 @@ pub mod normal {
 
 pub mod advanced {
     use axum::Json;
-    use rand::prelude::*;
     use serde_json::json;
 
     use crate::{
@@ -165,7 +164,7 @@ pub mod advanced {
         let pool_len = gacha["advanced"].as_array().unwrap().len();
 
         let mut gacha_rng = TRng::new();
-        let res = gacha_rng.0.gen_range(0..pool_len);
+        let res = gacha_rng.gen_range(0..pool_len);
 
         let gacha_res = gacha["advanced"][res].clone();
         let char_id = gacha_res["charId"].as_str().unwrap();
@@ -200,7 +199,7 @@ pub mod advanced {
         let mut gacha_res_vec = vec![];
 
         for _ in 0..10 {
-            let res = gacha_rng.0.gen_range(0..pool_len);
+            let res = gacha_rng.gen_range(0..pool_len);
             let gacha_res = gacha["advanced"][res].clone();
             let char_id = gacha_res["charId"].as_str().unwrap();
             let is_new = gacha_res["isNew"].as_i64().unwrap();
