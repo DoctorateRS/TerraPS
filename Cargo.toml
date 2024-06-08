@@ -29,6 +29,7 @@ reqwest = { version = "0.12", features = ["json", "stream"] }
 h2 = "0.4"
 tokio = { version = "1", default-features = false, features = [
     "fs",
+    "macros",
     "io-std",
     "rt-multi-thread",
 ] }
