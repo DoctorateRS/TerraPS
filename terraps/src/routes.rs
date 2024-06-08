@@ -25,7 +25,7 @@ use tower_http::trace::{DefaultMakeSpan, DefaultOnFailure, DefaultOnResponse, Tr
 use tracing::Level;
 
 #[tracing::instrument]
-pub fn routes() -> Router {
+pub fn app() -> Router {
     let trace_layer = TraceLayer::new_for_http()
         .make_span_with(DefaultMakeSpan::default())
         .on_response(DefaultOnResponse::default().level(Level::INFO))

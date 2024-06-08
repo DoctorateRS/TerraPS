@@ -6,7 +6,7 @@ mod utils;
 
 use anyhow::Result;
 
-use routes::routes;
+use routes::app;
 use utils::{
     server::{get_server_address, Server},
     upgrade,
@@ -20,6 +20,6 @@ async fn main() -> Result<()> {
         println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
         let (server_address, server_port) = get_server_address();
         let server = Server::new(server_address, server_port);
-        Ok(server.serve(routes()).await?)
+        server.serve(app()).await
     }
 }

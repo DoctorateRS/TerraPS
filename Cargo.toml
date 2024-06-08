@@ -6,6 +6,8 @@ resolver = "2"
 version = "0.6.3"
 
 [workspace.dependencies]
+ansi_term = "0.12"
+env_logger = "0.11"
 anyhow = "1"
 chrono = "0.4"
 constcat = "0.5"
@@ -45,6 +47,7 @@ tracing-futures = "0.2"
 tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
 tracing-subscriber = { version = "0.3", features = [
     "std",
+    "env-filter",
     "tracing",
     "tracing-log",
 ] }
