@@ -8,7 +8,7 @@ use axum::{
 };
 use reqwest::{get, StatusCode};
 use serde::Deserialize;
-use serde_json::Value;
+use serde_json::{json, Value};
 use std::{fmt::Display, fs::create_dir_all, io::Cursor, path::Path as StdPath};
 use tokio::{fs::File, io::copy};
 use tokio_util::io::ReaderStream;
@@ -18,6 +18,7 @@ use common_utils::{read_json, write_json};
 
 const BASE_PATH_CN: &str = "https://ak.hycdn.cn/assetbundle/official/Android/assets/";
 const BASE_PATH_GL: &str = "https://ark-us-static-online.yo-star.com/assetbundle/official/Android/assets/";
+const ASSETS_JSON: &str = "./assets/assets.json";
 
 #[derive(Deserialize)]
 pub struct Asset {
@@ -61,6 +62,13 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     let path = format!("./assets/{hash}/redirect/");
     let config = read_json(CONFIG_JSON_PATH);
     let mode = config["server"]["mode"].as_str().unwrap();
+    let mut assets_list = if !StdPath::new(ASSETS_JSON).exists() {
+        json!({hash: []})
+    } else {
+        read_json(ASSETS_JSON)
+    };
+    assets_list[hash].as_array_mut().unwrap().push(json!(name));
+    write_json(ASSETS_JSON, &assets_list);
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
         if !StdPath::new(&path).exists() {
             create_dir_all(&path).unwrap();
