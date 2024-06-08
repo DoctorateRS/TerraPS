@@ -22,7 +22,7 @@ pub mod random;
 pub mod rlv2;
 pub mod server;
 pub mod time;
-pub mod tracing;
+pub mod trace;
 pub mod update;
 
 pub fn enumerate<T: IntoIterator>(a: T) -> Vec<(usize, T::Item)> {

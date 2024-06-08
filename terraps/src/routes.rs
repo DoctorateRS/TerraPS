@@ -28,7 +28,7 @@ use tracing::Level;
 pub fn app() -> Router {
     let trace_layer = TraceLayer::new_for_http()
         .make_span_with(DefaultMakeSpan::default())
-        .on_response(DefaultOnResponse::default().level(Level::INFO))
+        .on_response(DefaultOnResponse::default().include_headers(false).level(Level::INFO))
         .on_request(())
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
         .on_eos(());
