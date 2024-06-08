@@ -1,10 +1,12 @@
+use std::str::from_utf8;
+
 use anyhow::Result;
 use axum::{serve, Router};
 use tokio::net::TcpListener;
 
 use crate::constants::config::CONFIG_JSON_PATH;
 
-use super::tracing::init_tracing;
+use super::{crypto::base64::decrypt, tracing::init_tracing};
 use common_utils::read_json;
 
 pub struct Server {
@@ -19,6 +21,14 @@ impl Server {
     fn get_address(&self) -> String {
         format!("{}:{}", self.ip, self.port)
     }
+    fn log_something(&self) {
+        let binding = decrypt(b"SU4gQ0FTRSBZT1UgUEFJRCBNT05FWSBGT1IgVEhJUywgWU9VJ1ZFIEJFRU4gU0NBTU1FRC4=").unwrap();
+        let str = from_utf8(binding.as_slice()).unwrap();
+        println!("{}", str);
+        let binding = decrypt(b"ICAgICAgIFRISVMgSVMgQSBGUkVFIEFORCBPUEVOIFNPVVJDRSBQUk9KRUNULiAgICAgICA=").unwrap();
+        let str = from_utf8(binding.as_slice()).unwrap();
+        println!("{}", str);
+    }
     fn log_begin(&self) {
         println!("Server started at: {}", self.get_address());
     }
@@ -26,6 +36,7 @@ impl Server {
         init_tracing()?;
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
+        self.log_something();
         self.log_begin();
         match serve(listener, routes).await {
             Ok(_) => Ok(()),

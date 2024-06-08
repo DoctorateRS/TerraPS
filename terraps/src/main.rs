@@ -15,11 +15,7 @@ use utils::{
 #[tokio::main]
 async fn main() -> Result<()> {
     upgrade().await?;
-    {
-        println!("IN CASE YOU PAID MONEY FOR THIS, YOU'VE BEEN SCAMMED.");
-        println!("       THIS IS A FREE AND OPEN SOURCE PROJECT.       ");
-        let (server_address, server_port) = get_server_address();
-        let server = Server::new(server_address, server_port);
-        server.serve(app()).await
-    }
+    let (server_address, server_port) = get_server_address();
+    let server = Server::new(server_address, server_port);
+    server.serve(app()).await
 }

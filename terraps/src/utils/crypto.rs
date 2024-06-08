@@ -22,6 +22,18 @@ pub mod base64 {
     pub fn decode_bytes<T: Display>(input: T) -> Result<Vec<u8>> {
         Ok(STANDARD.decode(input.to_string())?)
     }
+
+    /// Encrypts the given data using the `base64` algorithm.
+    #[allow(dead_code)]
+    pub fn encrypt<T: AsRef<[u8]>>(data: T) -> String {
+        STANDARD.encode(data)
+    }
+
+    /// Decrypts the given data using the `base64` algorithm.
+    #[allow(dead_code)]
+    pub fn decrypt<T: AsRef<[u8]>>(data: T) -> Result<Vec<u8>> {
+        Ok(STANDARD.decode(data)?)
+    }
 }
 
 pub mod md5 {

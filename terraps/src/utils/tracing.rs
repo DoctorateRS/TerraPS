@@ -6,7 +6,9 @@ use tracing_subscriber::{fmt::Layer, layer::SubscriberExt, EnvFilter, Registry};
 
 pub fn init_tracing() -> Result<()> {
     #[cfg(target_os = "windows")]
-    let _ = enable_ansi_support().unwrap_err();
+    if let Err(i) = enable_ansi_support() {
+        eprintln!("Failed to enable ANSI support: {}", i);
+    };
     init_from_env(Env::new().default_filter_or("info"));
 
     let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::try_new("info").unwrap());
