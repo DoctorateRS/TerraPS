@@ -3,7 +3,7 @@ members = ["terraps", "common", "launcher", "xtask"]
 resolver = "2"
 
 [workspace.package]
-version = "0.6.2"
+version = "0.6.3"
 
 [workspace.dependencies]
 anyhow = "1"

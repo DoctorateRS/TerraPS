@@ -1479,7 +1479,7 @@ dependencies = [
 
 [[package]]
 name = "rust-launcher"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "anyhow",
  "base64",
@@ -1814,7 +1814,7 @@ dependencies = [
 
 [[package]]
 name = "terra-ps"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "aes",
  "anyhow",
@@ -2528,7 +2528,7 @@ dependencies = [
 
 [[package]]
 name = "xtask"
-version = "0.6.2"
+version = "0.6.3"
 dependencies = [
  "anyhow",
 ]
