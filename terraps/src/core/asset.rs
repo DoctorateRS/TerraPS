@@ -67,7 +67,10 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     } else {
         read_json(ASSETS_JSON)
     };
-    assets_list[hash].as_array_mut().unwrap().push(json!(name));
+    let contains_asset = assets_list[hash].as_array().unwrap().contains(&json!(name));
+    if !contains_asset {
+        assets_list[hash].as_array_mut().unwrap().push(json!(name));
+    }
     write_json(ASSETS_JSON, &assets_list);
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
         if !StdPath::new(&path).exists() {
