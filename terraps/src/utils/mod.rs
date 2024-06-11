@@ -1,14 +1,17 @@
+use std::str::FromStr;
+
 use crate::constants::config::CONFIG_JSON_PATH;
 
 use self::{
     fmt::{ccv2_fmt, cfg_fmt, excel_fmt},
-    update::{excel_update, update_config, update_gacha},
+    update::{excel_update, update_cn_config, update_gacha},
 };
 
 use common_utils::{read_json, write_json};
 
 use anyhow::Result;
 use serde_json::{json, Value};
+use update::Mode;
 
 pub mod battle_data;
 pub mod battle_replay;
@@ -51,12 +54,14 @@ pub fn get_nickname_config() -> (String, String) {
 }
 
 pub async fn upgrade() -> Result<()> {
-    let update_required = update_config().await?;
     let config = read_json(CONFIG_JSON_PATH);
+    let update_required = update_cn_config().await?;
+
     let force_update = config["server"]["forceUpdateExcel"].as_bool().unwrap_or(false);
+    let mode = Mode::from_str(config["server"]["mode"].as_str().unwrap_or("cn")).unwrap();
 
     if update_required || force_update {
-        excel_update().await?;
+        excel_update(mode).await?;
         update_gacha().await?;
         excel_fmt()?;
         cfg_fmt()?;
