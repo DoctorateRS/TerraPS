@@ -34,7 +34,7 @@ impl Server {
     fn log_begin(&self) {
         println!("Server started at: {}", self.get_address());
     }
-    pub async fn serve(&self, routes: Router) -> Result<()> {
+    pub async fn serve<T: FnOnce() -> Router>(&self, routes: T) -> Result<()> {
         subfmt()
             .with_max_level(Level::DEBUG)
             .with_timer(Time)
@@ -46,7 +46,7 @@ impl Server {
         let listener = TcpListener::bind(addr).await?;
         self.log_something();
         self.log_begin();
-        match serve(listener, routes).await {
+        match serve(listener, routes()).await {
             Ok(_) => Ok(()),
             Err(e) => Err(e.into()),
         }
