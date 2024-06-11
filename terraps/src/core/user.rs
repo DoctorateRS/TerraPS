@@ -128,6 +128,41 @@ pub mod misc {
     }
 }
 
+pub mod business_card {
+    use axum::Json;
+    use serde_json::json;
+
+    use crate::utils::json::JSON;
+
+    pub async fn change_name_component(Json(payload): JSON) -> JSON {
+        Json(json!({
+            "playerDataDelta": {
+                "modified": {
+                    "nameCardStyle": {
+                        "componentOrder": payload["component"]
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+
+    pub async fn change_card_skin(Json(payload): JSON) -> JSON {
+        Json(json!({
+            "playerDataDelta": {
+                "modified": {
+                    "nameCardStyle": {
+                        "skin": {
+                            "selected": payload["skinId"]
+                        }
+                    }
+                },
+                "deleted": {}
+            }
+        }))
+    }
+}
+
 pub async fn user_check_in() -> JSON {
     Json(json!({
         "JSONult": 0,
@@ -294,41 +329,4 @@ pub async fn user_change_avatar(Json(payload): JSON) -> JSON {
             "deleted": {}
         }
     }))
-}
-
-pub mod business_card {
-    use axum::Json;
-    use serde_json::json;
-
-    use crate::utils::json::JSON;
-
-    pub async fn change_name_component(Json(payload): JSON) -> JSON {
-        let component = payload["component"].clone();
-        Json(json!({
-            "playerDataDelta": {
-                "modified": {
-                    "nameCardStyle": {
-                        "componentOrder": component
-                    }
-                },
-                "deleted": {}
-            }
-        }))
-    }
-
-    pub async fn change_card_skin(Json(payload): JSON) -> JSON {
-        let skin_id = payload["skinId"].clone();
-        Json(json!({
-            "playerDataDelta": {
-                "modified": {
-                    "nameCardStyle": {
-                        "skin": {
-                            "selected": skin_id
-                        }
-                    }
-                },
-                "deleted": {}
-            }
-        }))
-    }
 }
