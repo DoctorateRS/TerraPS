@@ -14,4 +14,4 @@ pub async fn pay_get_unconfirmed_order_id_list() -> JSON {
 }
 
 // FOR LATER USE
-pub async fn _template_shop() {}
+pub async fn __template_shop() {}
