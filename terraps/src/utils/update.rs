@@ -1,3 +1,5 @@
+use std::str::from_utf8;
+
 use tokio::spawn;
 
 use crate::{
@@ -5,15 +7,15 @@ use crate::{
     utils::json::get_keys,
 };
 
-use super::game::update_data;
+use super::{crypto::base64::decrypt, game::update_data};
 
 use anyhow::Result;
 use common_utils::{read_json, write_json};
 use reqwest::get;
 use serde_json::{from_str, json, Value};
 
-const VER_AK_CONF: &str = "https://ak-conf.hypergryph.com/config/prod/official/Android/version";
-const NW_AK_CONF: &str = "https://ak-conf.hypergryph.com/config/prod/official/network_config";
+const VER_CONF: &str = "aHR0cHM6Ly9hay1jb25mLmh5cGVyZ3J5cGguY29tL2NvbmZpZy9wcm9kL29mZmljaWFsL0FuZHJvaWQvdmVyc2lvbg==";
+const NW_CONF: &str = "aHR0cHM6Ly9hay1jb25mLmh5cGVyZ3J5cGguY29tL2NvbmZpZy9wcm9kL29mZmljaWFsL25ldHdvcmtfY29uZmln";
 
 pub async fn update_config() -> Result<bool> {
     let mut excel_update = false;
@@ -24,8 +26,8 @@ pub async fn update_config() -> Result<bool> {
     let old_client_version = &stcf["version"]["android"]["clientVersion"];
     let old_func_ver = &stcf["networkConfig"]["cn"]["content"]["funcVer"];
 
-    let new_ver_config = get(VER_AK_CONF).await?.json::<Value>().await?;
-    let new_nw_config = get(NW_AK_CONF).await?.json::<Value>().await?;
+    let new_ver_config = get(from_utf8(decrypt(VER_CONF)?.as_slice())?).await?.json::<Value>().await?;
+    let new_nw_config = get(from_utf8(decrypt(NW_CONF)?.as_slice())?).await?.json::<Value>().await?;
 
     if old_res_version != &new_ver_config["resVersion"] {
         excel_update = true;
