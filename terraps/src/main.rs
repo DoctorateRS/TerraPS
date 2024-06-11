@@ -17,7 +17,7 @@ use utils::{
 async fn main() -> Result<()> {
     let version = env!("CARGO_PKG_VERSION");
     upgrade().await?;
-    info!("TerraPS v{} is starting...", version);
+    info!("TerraPS {} is starting...", version);
     let (server_address, server_port) = get_server_address();
     let server = Server::new(server_address, server_port);
     server.serve(app()).await
