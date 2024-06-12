@@ -24,14 +24,14 @@ use serde_json::json;
 use tower_http::trace::{DefaultMakeSpan, DefaultOnFailure, DefaultOnResponse, TraceLayer};
 use tracing::Level;
 
-#[tracing::instrument]
+#[traceon::instrument]
 pub fn app() -> Router {
-    let trace_layer = TraceLayer::new_for_http()
+    let trace = TraceLayer::new_for_http()
         .make_span_with(DefaultMakeSpan::default())
-        .on_response(DefaultOnResponse::default().level(Level::DEBUG))
+        .on_eos(())
         .on_request(())
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
-        .on_eos(());
+        .on_response(DefaultOnResponse::default().level(Level::INFO));
 
     Router::new()
         .nest("/app", app_routes())
@@ -64,7 +64,7 @@ pub fn app() -> Router {
         .nest("/debug", debug_routes())
         .merge(misc_routes())
         .fallback(fallback)
-        .layer(trace_layer)
+        .layer(trace)
 }
 
 fn app_routes() -> Router {

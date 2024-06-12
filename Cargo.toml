@@ -42,18 +42,14 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1", features = ["preserve_order"] }
 
 # Tracings
+traceon = "0.3"
 tracing = "0.1"
 tracing-futures = "0.2"
-tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
 tracing-subscriber = { version = "0.3", features = [
     "std",
-    "env-filter",
     "tracing",
     "tracing-log",
 ] }
-
-# Tower
-tower-http = { version = "0.5", features = ["trace"] }
 
 # Frida
 frida = { version = "0.13", features = ["auto-download"] }
