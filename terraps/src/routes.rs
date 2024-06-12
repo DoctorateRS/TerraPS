@@ -27,11 +27,11 @@ use tracing::Level;
 #[traceon::instrument]
 pub fn app() -> Router {
     let trace = TraceLayer::new_for_http()
-        .make_span_with(DefaultMakeSpan::default())
+        .make_span_with(DefaultMakeSpan::default().level(Level::INFO))
         .on_eos(())
         .on_request(())
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
-        .on_response(DefaultOnResponse::default().level(Level::INFO));
+        .on_response(DefaultOnResponse::default().level(Level::DEBUG));
 
     Router::new()
         .nest("/app", app_routes())

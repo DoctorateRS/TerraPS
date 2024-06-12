@@ -35,7 +35,7 @@ impl Server {
     }
     pub async fn serve<T: FnOnce() -> Router>(&self, routes: T) -> Result<()> {
         builder()
-            .level(LevelFormat::Lowercase)
+            .level(LevelFormat::Uppercase)
             .time(TimeFormat::PrettyTime)
             .case(Case::Pascal)
             .writer(stdout())

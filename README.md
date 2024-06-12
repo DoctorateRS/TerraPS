@@ -37,3 +37,7 @@ TBA
 #### macOS
 
 TBA
+
+### Launching the game
+
+TBA
