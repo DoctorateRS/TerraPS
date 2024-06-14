@@ -307,9 +307,7 @@ pub async fn rlv2_choice_select() -> JSON {
 
 pub async fn rlv2_choose_init_recruit_set() -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
-
-    let vec = rlv2["player"]["pending"].as_array_mut().unwrap();
-    vec.remove(0);
+    rlv2["player"]["pending"].as_array_mut().unwrap().remove(0);
 
     let mut tkts = vec![];
     let config = read_json(CONFIG_JSON_PATH);
