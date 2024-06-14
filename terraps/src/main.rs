@@ -7,7 +7,7 @@ mod utils;
 use anyhow::Result;
 
 use routes::app;
-use traceon::info;
+use tracing::info;
 use utils::{
     server::{get_server_address, Server},
     upgrade,

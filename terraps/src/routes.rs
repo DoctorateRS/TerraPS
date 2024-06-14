@@ -24,7 +24,7 @@ use serde_json::json;
 use tower_http::trace::{DefaultMakeSpan, DefaultOnFailure, DefaultOnResponse, TraceLayer};
 use tracing::Level;
 
-#[traceon::instrument]
+#[tracing::instrument]
 pub fn app() -> Router {
     let trace = TraceLayer::new_for_http()
         .make_span_with(DefaultMakeSpan::default().level(Level::INFO))

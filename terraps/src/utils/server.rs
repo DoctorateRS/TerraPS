@@ -1,9 +1,10 @@
-use std::{io::stdout, str::from_utf8};
+use std::str::from_utf8;
 
 use anyhow::Result;
 use axum::{serve, Router};
 use tokio::net::TcpListener;
-use traceon::{builder, Case, LevelFormat, TimeFormat};
+use tracing::Level;
+use tracing_subscriber::fmt::fmt as subfmt;
 
 use crate::constants::config::CONFIG_JSON_PATH;
 
@@ -34,12 +35,12 @@ impl Server {
         println!("Server started at: {}", self.get_address());
     }
     pub async fn serve<T: FnOnce() -> Router>(&self, routes: T) -> Result<()> {
-        builder()
-            .level(LevelFormat::Uppercase)
-            .time(TimeFormat::PrettyTime)
-            .case(Case::Pascal)
-            .writer(stdout())
-            .on();
+        subfmt()
+            .with_max_level(Level::DEBUG)
+            .with_file(false)
+            .with_line_number(false)
+            .compact()
+            .init();
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
         self.log_something();
