@@ -10,6 +10,13 @@
     - [ ] `sandboxv2`
     - [ ] `tower`
 
+## Future
+
+- This project follows the "Make it works, make it right, make it fast" principle. Currently:
+    - [x] Works
+    - [ ] Right
+    - [ ] Fast
+
 ## Big thanks
 
 - [DICE_LAB](https://github.com/DICE-LAB-SYX) for DocPy.
