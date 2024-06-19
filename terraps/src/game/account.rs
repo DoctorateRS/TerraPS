@@ -390,7 +390,22 @@ pub async fn account_sync_data() -> JSON {
         count += 1;
     }
 
-    let count_inst_id = 10000;
+    let mut count_inst_id = 10000usize;
+
+    let dupes = config["charConfig"]["duplicateUnits"].as_array().unwrap().clone();
+    for dupe in dupes {
+        let dupe = dupe.as_str().unwrap();
+        let mut new_char = json!({});
+        for char_key in get_keys(&temp_char_list) {
+            if temp_char_list[&char_key]["charId"].as_str().unwrap() == dupe {
+                new_char = temp_char_list[&char_key].clone();
+                break;
+            }
+        }
+        new_char["instId"] = json!(count_inst_id);
+        temp_char_list[count_inst_id.to_string()] = new_char;
+        count_inst_id += 1;
+    }
 
     player_data["user"]["troop"]["chars"] = temp_char_list;
     player_data["user"]["troop"]["charGroup"] = char_group;
