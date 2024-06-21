@@ -1,5 +1,6 @@
 use std::str::{from_utf8, FromStr};
 
+use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use tokio::spawn;
 
 use crate::{
@@ -126,23 +127,9 @@ pub async fn excel_update(mode: Mode) -> Result<()> {
         ],
     };
 
-    let index = list.len() / 2;
-
-    let (t1, t2) = list.split_at(index);
-
-    if t1.len() != t2.len() {
-        for link in t1 {
-            update_excel_data(link).await?;
-        }
-    } else {
-        let mut tasks = Vec::with_capacity(t1.len());
-        for (link1, link2) in t1.iter().zip(t2.iter()) {
-            tasks.push(spawn(update_excel_data(link1)));
-            tasks.push(spawn(update_excel_data(link2)));
-        }
-        for task in tasks {
-            task.await??;
-        }
+    let handles = list.par_iter().map(|link| spawn(update_excel_data(link))).collect::<Vec<_>>();
+    for handle in handles {
+        handle.await??;
     }
 
     Ok(())

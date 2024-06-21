@@ -39,6 +39,7 @@ tracing-futures.workspace = true
 tracing-subscriber.workspace = true
 
 tower-http = { version = "0.5", features = ["trace"] }
+rayon = "1"
 
 common_utils = { path = "../common" }
 
