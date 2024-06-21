@@ -20,5 +20,5 @@ async fn main() -> Result<()> {
     info!("TerraPS {} is starting...", version);
     let (server_address, server_port) = get_server_address();
     let server = Server::new(server_address, server_port);
-    server.serve(app).await
+    server.serve(app()).await
 }
