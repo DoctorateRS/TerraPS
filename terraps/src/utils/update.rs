@@ -1,6 +1,5 @@
 use std::str::{from_utf8, FromStr};
 
-use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use tokio::spawn;
 
 use crate::{
@@ -127,7 +126,7 @@ pub async fn excel_update(mode: Mode) -> Result<()> {
         ],
     };
 
-    let handles = list.par_iter().map(|link| spawn(update_excel_data(link))).collect::<Vec<_>>();
+    let handles = list.iter().map(|link| spawn(update_excel_data(link))).collect::<Vec<_>>();
     for handle in handles {
         handle.await??;
     }
