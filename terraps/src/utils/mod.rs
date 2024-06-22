@@ -63,12 +63,12 @@ pub async fn upgrade() -> Result<()> {
     if update_required || force_update {
         excel_update(mode).await?;
         update_gacha().await?;
+        update_event()?;
         excel_fmt()?;
         cfg_fmt()?;
         ccv2_fmt()?;
     }
 
-    update_event()?;
     Ok(())
 }
 
