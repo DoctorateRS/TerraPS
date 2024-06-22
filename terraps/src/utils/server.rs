@@ -1,4 +1,4 @@
-use std::str::from_utf8;
+use std::{io::stdout, str::from_utf8};
 
 use anyhow::{Error, Result};
 use axum::{serve, Router};
@@ -40,6 +40,7 @@ impl Server {
             .with_timer(Time)
             .with_file(false)
             .with_line_number(false)
+            .with_writer(stdout)
             .compact()
             .init();
         let addr = &self.get_address();
