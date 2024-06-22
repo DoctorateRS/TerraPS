@@ -179,9 +179,9 @@ pub async fn get_map(theme: &str) -> Value {
                 y = 0;
             }
             let mut node_type = 1;
-            if rl_table["details"][theme]["stages"][stage]["isElite"].as_bool().unwrap() {
+            if rl_table["details"][theme]["stages"][stage]["isElite"].as_i64().unwrap() != 0 {
                 node_type = 2;
-            } else if rl_table["details"][theme]["stages"][stage]["isBoss"].as_bool().unwrap() {
+            } else if rl_table["details"][theme]["stages"][stage]["isBoss"].as_i64().unwrap() != 0 {
                 node_type = 4;
             }
             node_list.push(json!({

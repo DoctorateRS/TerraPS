@@ -1,6 +1,6 @@
 {
     "player": {
-        "state": "INIT",
+        "state": "WAIT_MOVE",
         "property": {
             "exp": 0,
             "level": 10,
@@ -19,27 +19,11 @@
             "conPerfectBattle": 0
         },
         "cursor": {
-            "zone": 0,
+            "zone": 1,
             "position": null
         },
         "trace": [],
-        "pending": [
-            {
-                "index": "e_1",
-                "type": "GAME_INIT_RECRUIT_SET",
-                "content": {
-                    "initRecruitSet": {
-                        "step": [
-                            2,
-                            3
-                        ],
-                        "option": [
-                            "recruit_group_1"
-                        ]
-                    }
-                }
-            }
-        ],
+        "pending": [],
         "status": {
             "bankPut": 0
         },
@@ -62,7 +46,7 @@
         "relic": {
             "r_0": {
                 "index": "r_0",
-                "id": "rogue_3_band_7",
+                "id": "rogue_3_band_2",
                 "count": 1,
                 "ts": 1695000000
             }
