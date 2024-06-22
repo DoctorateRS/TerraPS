@@ -130,7 +130,6 @@ pub async fn excel_update(mode: Mode) -> Result<()> {
     for handle in handles {
         handle.await??;
     }
-
     Ok(())
 }
 
