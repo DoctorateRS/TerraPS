@@ -11,7 +11,7 @@ use common_utils::{read_json, write_json};
 
 use anyhow::Result;
 use serde_json::{json, Value};
-use update::Mode;
+use update::{update_event, Mode};
 
 pub mod battle_data;
 pub mod battle_replay;
@@ -68,6 +68,7 @@ pub async fn upgrade() -> Result<()> {
         ccv2_fmt()?;
     }
 
+    update_event()?;
     Ok(())
 }
 

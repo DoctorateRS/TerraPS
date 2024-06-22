@@ -8,12 +8,12 @@ use crate::{
 use common_utils::{read_json, write_json};
 
 pub async fn background_set_bg(Json(payload): JSON) -> JSON {
-    let bg_id = payload["bgId"].as_str().unwrap();
+    let bg_id = payload["bgId"].clone();
     let mut config = read_json(CONFIG_JSON_PATH);
-    config["userConfig"]["background"] = bg_id.into();
+    config["userConfig"]["background"] = bg_id.clone();
     write_json(CONFIG_JSON_PATH, config);
     let mut user_data = read_json(USER_JSON_PATH);
-    user_data["user"]["background"]["selected"] = bg_id.into();
+    user_data["user"]["background"]["selected"] = bg_id.clone();
     write_json(USER_JSON_PATH, user_data);
     Json(json!({
         "playerDataDelta": {

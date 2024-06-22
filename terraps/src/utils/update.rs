@@ -149,6 +149,33 @@ async fn update_excel_data(link: &str) -> Result<()> {
     Ok(())
 }
 
+pub fn update_event() -> Result<()> {
+    let activity_table = read_json("./data/excel/activity_table.json");
+    let mut act_start_time_list = Vec::new();
+    let mut act_end_time_list = Vec::new();
+    for act in get_keys(&activity_table["basicInfo"]) {
+        if act.ends_with("side") || act.ends_with("sre") || act.ends_with("fun") {
+            let start_time = activity_table["basicInfo"][&act]["startTime"].as_u64().unwrap_or(0);
+            let end_time = activity_table["basicInfo"][&act]["endTime"].as_u64().unwrap_or(0);
+            if start_time > 0 && end_time > 0 {
+                act_start_time_list.push(start_time);
+                act_end_time_list.push(end_time);
+            }
+        }
+    }
+    let max_start = act_start_time_list.iter().max().unwrap_or(&0);
+    let max_end = act_end_time_list.iter().max().unwrap_or(&0);
+
+    let mut config = read_json(CONFIG_JSON_PATH);
+    let st = max_start - (7 * 24 * 60 * 60);
+    let et = max_end + (7 * 24 * 60 * 60);
+    config["userConfig"]["activityMinStartTs"] = json!(st);
+    config["userConfig"]["activityMaxStartTs"] = json!(et);
+
+    write_json(CONFIG_JSON_PATH, config);
+    Ok(())
+}
+
 pub async fn update_gacha() -> Result<()> {
     const WELFARE_CHAR_LIST: [&str; 6] = [
         "char_474_glady",
