@@ -407,11 +407,12 @@ pub async fn rlv2_finish_event() -> JSON {
     let mut rlv2 = read_json(RLV2_JSON_PATH);
     rlv2["player"]["state"] = json!("WAIT_MOVE");
     rlv2["player"]["cursor"]["zone"] = json!(1);
-    rlv2["player"]["pending"].as_array_mut().unwrap().clear();
-    write_json(RLV2_JSON_PATH, &rlv2);
-    let theme = rlv2["game"]["theme"].as_str().unwrap();
+    rlv2["player"]["pending"] = json!([]);
 
+    let theme = rlv2["game"]["theme"].as_str().unwrap();
     rlv2["map"]["zones"] = get_map(theme).await;
+
+    write_json(RLV2_JSON_PATH, &rlv2);
 
     Json(json!({
         "playerDataDelta": {

@@ -27,7 +27,7 @@
         "status": {
             "bankPut": 0
         },
-        "toEnding": "ro3_ending_1",
+        "toEnding": "ro_ending_1",
         "chgEnding": false
     },
     "record": {
@@ -46,7 +46,7 @@
         "relic": {
             "r_0": {
                 "index": "r_0",
-                "id": "rogue_3_band_2",
+                "id": "rogue_1_band_9",
                 "count": 1,
                 "ts": 1695000000
             }
@@ -59,7 +59,7 @@
     "game": {
         "mode": "NORMAL",
         "predefined": null,
-        "theme": "rogue_3",
+        "theme": "rogue_1",
         "outer": {
             "support": false
         },

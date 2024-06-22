@@ -138,8 +138,7 @@ pub async fn get_map(theme: &str) -> Value {
     }
     let shop = match theme {
         "rogue_1" => 8,
-        "rogue_2" => 4096,
-        "rogue_3" => 4096,
+        "rogue_2" | "rogue_3" => 4096,
         _ => 0,
     };
     let mut map = json!({});
