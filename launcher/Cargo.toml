@@ -3,6 +3,12 @@ name = "rust-launcher"
 version.workspace = true
 edition = "2021"
 
+[package.metadata.wix]
+upgrade-guid = "7C893359-56BA-4346-87DB-9ECAED74F5B6"
+path-guid = "538C1BA8-39B4-4EEE-A6BF-F026F107E916"
+license = false
+eula = false
+
 [dependencies]
 mozdevice = "0.5"
 frida.workspace = true
