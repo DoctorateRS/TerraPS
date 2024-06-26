@@ -3,7 +3,7 @@ use anyhow::Result;
 use std::{fs::File, io::Read};
 
 pub fn get_script() -> Result<String> {
-    let mut script = File::open("./scripts/_.js")?;
+    let mut script = File::open("./scripts/mumu6/_.js")?;
     let mut sc_buf = String::new();
     let server = ServerConfig::load()?;
     let usr_conf = UserConfig::load()?;
@@ -29,7 +29,7 @@ pub fn get_script() -> Result<String> {
 pub fn get_vision() -> Result<String> {
     let usr_conf = UserConfig::load()?;
     if usr_conf.vision {
-        let mut vision = File::open("./scripts/vision.js")?;
+        let mut vision = File::open("./scripts/mumu6/vision.js")?;
         let mut vi_buf = String::new();
         vision.read_to_string(&mut vi_buf)?;
         Ok(vi_buf)
