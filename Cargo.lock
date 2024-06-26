@@ -1616,8 +1616,11 @@ dependencies = [
  "common_utils",
  "frida",
  "mozdevice",
+ "reqwest",
  "serde",
  "serde_json",
+ "tokio",
+ "zip",
 ]
 
 [[package]]

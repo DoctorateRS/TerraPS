@@ -1,9 +1,11 @@
+use adb::Os;
 use anyhow::Result;
-use common_utils::read_json;
+use config::ServerConfig;
 use frida::{DeviceManager, Frida, ScriptOption, ScriptRuntime, Session, SpawnOptions};
 use scripts::{get_script, get_vision};
 use std::process::Command;
 
+mod adb;
 mod b64;
 mod config;
 mod scripts;
@@ -12,8 +14,12 @@ use crate::b64::B64Decoder;
 const GLOBAL: &str = "Y29tLllvU3RhckVOLkFya25pZ2h0cw==";
 const CN: &str = "Y29tLmh5cGVyZ3J5cGguYXJrbmlnaHRz";
 
-fn main() -> Result<()> {
-    let config = read_json("./config/config.json");
+#[tokio::main]
+async fn main() -> Result<()> {
+    let os = Os::new();
+    os.install_adb().await?;
+
+    let server_conf = ServerConfig::load()?;
 
     let mut cmd_terminal = Command::new("cmd");
 
@@ -38,7 +44,7 @@ fn main() -> Result<()> {
 
     let def = SpawnOptions::default();
 
-    let game = if config["server"]["mode"].as_str().unwrap() == "cn" {
+    let game = if &server_conf.mode == "cn" {
         B64Decoder::new(CN).decode()?
     } else {
         B64Decoder::new(GLOBAL).decode()?
