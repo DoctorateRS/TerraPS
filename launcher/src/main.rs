@@ -24,10 +24,10 @@ async fn main() -> Result<()> {
     let mut cmd_terminal = Command::new("cmd");
 
     let cmds = vec![
-        "/C adb.exe root",
-        "/C adb.exe connect 127.0.0.1:7555",
-        "/C adb.exe reverse tcp:8443 tcp:8443",
-        "/C adb.exe shell /data/local/tmp/frida-server &",
+        "/C ./platform-tools/adb.exe root",
+        "/C ./platform-tools/adb.exe connect 127.0.0.1:7555",
+        "/C ./platform-tools/adb.exe reverse tcp:8443 tcp:8443",
+        "/C ./platform-tools/adb.exe shell /data/local/tmp/frida-server &",
     ];
 
     for cmd in cmds {

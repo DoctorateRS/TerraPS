@@ -38,9 +38,8 @@ impl Os {
         }
 
         fn extract_adb() -> Result<()> {
-            let install_dir = Path::new("./platform_tools");
             let mut zipfile = ZipArchive::new(File::open("./tmp/adb.zip")?)?;
-            zipfile.extract(install_dir)?;
+            zipfile.extract("./")?;
             Ok(())
         }
 
