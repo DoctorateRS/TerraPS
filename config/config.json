@@ -19,7 +19,7 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-06-17-14-03-22-a1d97a",
+            "resVersion": "24-06-21-09-33-59-503529",
             "clientVersion": "2.2.81"
         }
     },
@@ -107,8 +107,8 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1716955200,
-        "activityMaxStartTs": 1719345599,
+        "activityMinStartTs": 1718697600,
+        "activityMaxStartTs": 1720727999,
         "secretary": "char_377_gdglow",
         "secretarySkinId": "char_377_gdglow@sanrio#1",
         "background": null,
