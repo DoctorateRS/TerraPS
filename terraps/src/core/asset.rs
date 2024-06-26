@@ -27,10 +27,10 @@ pub struct Asset {
 }
 
 impl Asset {
-    async fn download_file<T: Display + PartialEq<&'static str> + AsRef<StdPath>>(&self, mode: T, path: T) -> Result<()> {
+    async fn download_file<T: Display + PartialEq<&'static str>, P: AsRef<StdPath>>(&self, mode: T, path: P) -> Result<()> {
         let url = self.get_url(mode);
         let response = get(&url).await?;
-        let path = format!("{}/{}", path, self.name);
+        let path = format!("{}/{}", path.as_ref().to_str().unwrap_or(""), self.name);
         let mut file = File::create(&path).await?;
         let mut cursor = Cursor::new(response.bytes().await?);
         copy(&mut cursor, &mut file).await?;
@@ -67,6 +67,9 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     } else {
         read_json(ASSETS_JSON)
     };
+    if assets_list.get(hash).is_none() {
+        assets_list[hash] = json!([]);
+    }
     let contains_asset = assets_list[hash].as_array().unwrap().contains(&json!(name));
     if !contains_asset {
         assets_list[hash].as_array_mut().unwrap().push(json!(name));
