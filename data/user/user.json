@@ -23086,11 +23086,7 @@
             "globalVoiceLan": "JP"
         },
         "nameCardStyle": {
-            "componentOrder": [
-                "module_sign",
-                "module_assist",
-                "module_medal"
-            ],
+            "componentOrder": ["module_sign", "module_assist", "module_medal"],
             "skin": {
                 "selected": "nc_rhodes_default",
                 "state": {
@@ -43957,11 +43953,7 @@
             }
         },
         "social": {
-            "assistCharList": [
-                null,
-                null,
-                null
-            ]
+            "assistCharList": [null, null, null]
         },
         "dexNav": {
             "character": {
@@ -46955,7 +46947,7 @@
             }
         },
         "background": {
-            "selected": null,
+            "selected": "bg_sanrio_1",
             "bgs": {
                 "bg_rhodes_day": {
                     "unlock": 1719038871
@@ -60108,136 +60100,46 @@
                 "node_ending_5": 2
             },
             "choices": {
-                "node_choice1_1": [
-                    2
-                ],
-                "node_choice1_2": [
-                    2,
-                    2
-                ],
-                "node_choice1_3": [
-                    2
-                ],
-                "node_choice1_4": [
-                    2
-                ],
-                "node_choice1_5": [
-                    2,
-                    2
-                ],
-                "node_choice2_1": [
-                    2,
-                    2
-                ],
-                "node_choice2_2": [
-                    2
-                ],
-                "node_choice2_3": [
-                    2,
-                    2
-                ],
-                "node_choice2_4": [
-                    2,
-                    2
-                ],
-                "node_choice2_5": [
-                    2
-                ],
-                "node_choice2_6": [
-                    2
-                ],
-                "node_choice2_7": [
-                    2,
-                    2
-                ],
-                "node_choice2_8": [
-                    2
-                ],
-                "node_choice2_9": [
-                    2
-                ],
-                "node_choice3_1": [
-                    2
-                ],
-                "node_choice3_2_1": [
-                    2
-                ],
-                "node_choice3_3_1": [
-                    2
-                ],
-                "node_choice3_4_1": [
-                    2
-                ],
-                "node_choice3_4_2": [
-                    2
-                ],
-                "node_choice3_3_2": [
-                    2
-                ],
-                "node_choice3_2_2": [
-                    2
-                ],
-                "node_choice3_3_3": [
-                    2
-                ],
-                "node_choice3_4_3": [
-                    2
-                ],
-                "node_choice3_4_4": [
-                    2
-                ],
-                "node_choice3_3_4": [
-                    2
-                ],
-                "node_choice3_2_3": [
-                    2
-                ],
-                "node_choice3_3_5": [
-                    2
-                ],
-                "node_choice5_1": [
-                    2,
-                    2
-                ],
-                "node_choice5_2": [
-                    2
-                ],
-                "node_choice5_3": [
-                    2
-                ],
-                "node_choice5_4": [
-                    2,
-                    2
-                ],
-                "node_choice5_5": [
-                    2
-                ],
-                "node_choice5_6": [
-                    2
-                ],
-                "node_choice5_7": [
-                    2,
-                    2
-                ],
-                "node_choice5_8": [
-                    2
-                ],
-                "node_choice5_9": [
-                    2
-                ],
-                "node_choice5_10": [
-                    2,
-                    2
-                ],
-                "node_choice5_11": [
-                    2
-                ],
-                "node_choice5_12": [
-                    2
-                ],
-                "node_choice5_13": [
-                    2
-                ]
+                "node_choice1_1": [2],
+                "node_choice1_2": [2, 2],
+                "node_choice1_3": [2],
+                "node_choice1_4": [2],
+                "node_choice1_5": [2, 2],
+                "node_choice2_1": [2, 2],
+                "node_choice2_2": [2],
+                "node_choice2_3": [2, 2],
+                "node_choice2_4": [2, 2],
+                "node_choice2_5": [2],
+                "node_choice2_6": [2],
+                "node_choice2_7": [2, 2],
+                "node_choice2_8": [2],
+                "node_choice2_9": [2],
+                "node_choice3_1": [2],
+                "node_choice3_2_1": [2],
+                "node_choice3_3_1": [2],
+                "node_choice3_4_1": [2],
+                "node_choice3_4_2": [2],
+                "node_choice3_3_2": [2],
+                "node_choice3_2_2": [2],
+                "node_choice3_3_3": [2],
+                "node_choice3_4_3": [2],
+                "node_choice3_4_4": [2],
+                "node_choice3_3_4": [2],
+                "node_choice3_2_3": [2],
+                "node_choice3_3_5": [2],
+                "node_choice5_1": [2, 2],
+                "node_choice5_2": [2],
+                "node_choice5_3": [2],
+                "node_choice5_4": [2, 2],
+                "node_choice5_5": [2],
+                "node_choice5_6": [2],
+                "node_choice5_7": [2, 2],
+                "node_choice5_8": [2],
+                "node_choice5_9": [2],
+                "node_choice5_10": [2, 2],
+                "node_choice5_11": [2],
+                "node_choice5_12": [2],
+                "node_choice5_13": [2]
             },
             "events": {
                 "event1_1": 1,
@@ -60542,10 +60444,7 @@
                 }
             },
             "logs": {
-                "chapter_1": [
-                    "act17side_log_1",
-                    "act17side_log_2"
-                ],
+                "chapter_1": ["act17side_log_1", "act17side_log_2"],
                 "chapter_2": [
                     "act17side_log_3",
                     "act17side_log_4",
@@ -60596,10 +60495,7 @@
                     "act17side_log_35",
                     "act17side_log_36"
                 ],
-                "chapter_10": [
-                    "act17side_log_37",
-                    "act17side_log_38"
-                ],
+                "chapter_10": ["act17side_log_37", "act17side_log_38"],
                 "chapter_11": [
                     "act17side_log_39",
                     "act17side_log_40",
@@ -60609,10 +60505,7 @@
                     "act17side_log_44",
                     "act17side_log_45"
                 ],
-                "chapter_12": [
-                    "act17side_log_46",
-                    "act17side_log_47"
-                ],
+                "chapter_12": ["act17side_log_46", "act17side_log_47"],
                 "chapter_13": [
                     "act17side_log_48",
                     "act17side_log_49",
@@ -60674,12 +60567,8 @@
                     "act17side_log_97",
                     "act17side_log_98"
                 ],
-                "chapter_18": [
-                    "act17side_log_99"
-                ],
-                "chapter_19": [
-                    "act17side_log_100"
-                ],
+                "chapter_18": ["act17side_log_99"],
+                "chapter_19": ["act17side_log_100"],
                 "chapter_20": [
                     "act17side_log_101",
                     "act17side_log_102",
@@ -60824,165 +60713,73 @@
                     },
                     "tower_n_01": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_02": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_03": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_04": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_05": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_06": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_07": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_08": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_09": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_10": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_11": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_12": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     }
@@ -70709,21 +70506,15 @@
                 "stages": {
                     "act3fun_01": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_02": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_03": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     }
                 }
             },
@@ -71092,328 +70883,103 @@
             "instances": {
                 "camp_01": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_02": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_03": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_01": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_02": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_03": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_04": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_05": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_06": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_07": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_08": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_09": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_10": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_11": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_12": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_13": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_14": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_15": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_16": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_17": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_18": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_19": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_20": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_21": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 },
                 "camp_r_22": {
                     "maxKills": 400,
-                    "rewardStatus": [
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1,
-                        1
-                    ]
+                    "rewardStatus": [1, 1, 1, 1, 1, 1, 1, 1]
                 }
             },
             "open": {
@@ -71525,10 +71091,7 @@
                             "count": 1
                         }
                     },
-                    "squad": [
-                        null,
-                        null
-                    ]
+                    "squad": [null, null]
                 }
             }
         },

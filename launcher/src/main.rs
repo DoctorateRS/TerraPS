@@ -1,10 +1,12 @@
 use anyhow::Result;
 use common_utils::read_json;
 use frida::{DeviceManager, Frida, ScriptOption, ScriptRuntime, Session, SpawnOptions};
-use std::{fs::File, io::Read, process::Command};
+use scripts::{get_script, get_vision};
+use std::process::Command;
 
 mod b64;
-mod init;
+mod config;
+mod scripts;
 use crate::b64::B64Decoder;
 
 const GLOBAL: &str = "Y29tLllvU3RhckVOLkFya25pZ2h0cw==";
@@ -57,13 +59,9 @@ fn inject_script(session: &Session) -> Result<()> {
     let mut vision_option = ScriptOption::new()
         .set_runtime(ScriptRuntime::Default)
         .set_name("vision.js");
-    let mut script = File::open("./scripts/_.js")?;
-    let mut sc_buf = String::new();
-    script.read_to_string(&mut sc_buf)?;
-    let mut vision = File::open("./scripts/vision.js")?;
-    let mut vi_buf = String::new();
-    vision.read_to_string(&mut vi_buf)?;
-    session.create_script(&sc_buf, &mut script_option)?;
-    session.create_script(&vi_buf, &mut vision_option)?;
+    let script = get_script()?;
+    let vision = get_vision()?;
+    session.create_script(&script, &mut script_option)?;
+    session.create_script(&vision, &mut vision_option)?;
     Ok(())
 }

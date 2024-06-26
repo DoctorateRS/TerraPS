@@ -111,7 +111,7 @@
         "activityMaxStartTs": 1720727999,
         "secretary": "char_377_gdglow",
         "secretarySkinId": "char_377_gdglow@sanrio#1",
-        "background": null,
+        "background": "bg_sanrio_1",
         "theme": "tm_rainbowsix_1",
         "fakeTime": -1,
         "vision": true,

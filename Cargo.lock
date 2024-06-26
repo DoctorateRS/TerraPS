@@ -1616,6 +1616,8 @@ dependencies = [
  "common_utils",
  "frida",
  "mozdevice",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
