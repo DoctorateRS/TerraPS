@@ -1,11 +1,10 @@
-use axum::Json;
-use serde_json::json;
-
 use crate::{
     constants::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
     utils::json::JSON,
 };
+use axum::Json;
 use common_utils::{read_json, write_json};
+use serde_json::json;
 
 pub async fn background_set_bg(Json(payload): JSON) -> JSON {
     let bg_id = payload["bgId"].clone();

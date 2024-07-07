@@ -1,5 +1,5 @@
-use crate::config::{ServerConfig, UserConfig};
 use anyhow::Result;
+use common_utils::{ServerConfig, UserConfig};
 use std::{fs::File, io::Read};
 
 pub fn get_script() -> Result<String> {

@@ -1,6 +1,6 @@
 use adb::Os;
 use anyhow::Result;
-use config::ServerConfig;
+use common_utils::ServerConfig;
 use frida::{DeviceManager, Frida, ScriptOption, ScriptRuntime, Session, SpawnOptions};
 use scripts::{get_script, get_vision};
 use std::process::Command;
