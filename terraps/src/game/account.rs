@@ -5,7 +5,7 @@ use crate::{
         user::{BATTLE_REPLAY_JSON_PATH, CRISIS_V2_JSON_BASE_PATH, USER_JSON_PATH},
     },
     core::time,
-    utils::{comp::max, game::*, get_nickname_config, json::*},
+    utils::{game::*, get_nickname_config, json::*},
 };
 use axum::{http::HeaderMap, Json};
 use serde_json::json;
@@ -132,7 +132,7 @@ pub async fn account_sync_data() -> JSON {
         };
 
         count_inst_id = operator_keys[count].split('_').collect::<Vec<&str>>()[1].parse().unwrap();
-        max_inst_id = max(max_inst_id, count_inst_id);
+        max_inst_id = max_inst_id.max(count_inst_id);
         let mut voice_lan = "JP";
         if get_keys(&charword_table).contains(&operator_keys[count]) {
             voice_lan = charword_table["charDefaultTypeDict"][&operator_keys[count]].as_str().unwrap();

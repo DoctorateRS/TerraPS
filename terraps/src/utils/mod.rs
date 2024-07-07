@@ -15,7 +15,6 @@ use update::{update_event, Mode};
 
 pub mod battle_data;
 pub mod battle_replay;
-pub mod comp;
 pub mod crypto;
 pub mod fmt;
 pub mod game;
