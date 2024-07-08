@@ -5,10 +5,19 @@
 - Oxidized.
 - __NOTE:__ Only semi-functional for now. If you have an idea on how to fix stuffs, please make a PR. If you face an issue, make a Github issue.
 
-- The following functionality are broken:
+- The following functionality are working:
     - [ ] `rlv2`
+        - [ ] Map generation
+        - [ ] Node traversal
+        - [ ] Battles 
     - [ ] `sandboxv2`
+        - [x] Building
+        - [ ] Day progressing
+        - [ ] Raids
+        - [ ] ???
     - [ ] `tower`
+        - [ ] Fix broken battle data decryption
+        - [ ] ???
 
 ## Future
 
