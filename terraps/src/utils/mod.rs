@@ -49,7 +49,7 @@ pub fn get_nickname_config() -> (String, String) {
             "1111"
         }
     };
-    (nick_name.to_string(), nick_id.to_string())
+    (nick_name.into(), nick_id.into())
 }
 
 pub async fn upgrade() -> Result<()> {
