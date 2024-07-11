@@ -23,6 +23,7 @@ pub mod mail;
 pub mod random;
 pub mod rlv2;
 pub mod server;
+pub mod time;
 pub mod update;
 
 pub fn enumerate<T: IntoIterator>(a: T) -> Vec<(usize, T::Item)> {
@@ -48,7 +49,7 @@ pub fn get_nickname_config() -> (String, String) {
             "1111"
         }
     };
-    (nick_name.to_string(), nick_id.to_string())
+    (nick_name.into(), nick_id.into())
 }
 
 pub async fn upgrade() -> Result<()> {
