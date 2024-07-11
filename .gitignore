@@ -1,10 +1,10 @@
 /target
 /.vscode
-/patches
 /.venv
 /.idea
-/dbg
 /assets
+/platform-tools
+
 *.txt
 *.log
-/dump
+*.zip
