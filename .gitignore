@@ -3,8 +3,6 @@
 /patches
 /.venv
 /.idea
-/tmp
-/platform-tools
 /dbg
 /assets
 *.txt

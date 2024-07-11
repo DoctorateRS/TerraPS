@@ -11,7 +11,10 @@ pub mod crisis_v2 {
             config::CONFIG_JSON_PATH,
             user::{CRISIS_V2_JSON_BASE_PATH, RUNE_JSON_PATH},
         },
-        utils::json::{get_keys, JSON},
+        utils::{
+            comp::max,
+            json::{get_keys, JSON},
+        },
     };
     use common_utils::{read_json, write_json};
 
@@ -111,7 +114,7 @@ pub mod crisis_v2 {
             for mutual_exclusion_group in get_keys(&nodes[&slot_pk_id]) {
                 let mut score_max = 0;
                 for slot in get_keys(&nodes[&slot_pk_id][&mutual_exclusion_group]) {
-                    score_max = score_max.max(nodes[&slot_pk_id][&mutual_exclusion_group][slot].as_u64().unwrap())
+                    score_max = max(score_max, nodes[&slot_pk_id][&mutual_exclusion_group][slot].as_u64().unwrap())
                 }
                 let mut flag2 = false;
                 for slot in get_keys(&nodes[&slot_pk_id][&mutual_exclusion_group]) {

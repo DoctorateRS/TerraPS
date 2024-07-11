@@ -7,6 +7,7 @@ authors = ["Rh", "EnokiUN", "UPON"]
 publish = false
 
 [dependencies]
+ansi_term.workspace = true
 env_logger.workspace = true
 anyhow.workspace = true
 chrono.workspace = true

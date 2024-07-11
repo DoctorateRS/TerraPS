@@ -275,7 +275,7 @@ pub async fn tower_battle_finish(Json(payload): JSON) -> JSON {
 
             for battle_info in get_keys(&battle_data["battleData"]["stats"]["extraBattleInfo"]) {
                 if battle_info.starts_with("DETAILED") && battle_info.ends_with("legion_gain_reward_trap") {
-                    let infos = battle_info.split(',').collect::<Vec<_>>();
+                    let infos = battle_info.split(',').collect::<Vec<&str>>();
                     trap.push(json!({
                         "id": infos[1],
                         "alias": infos[2],
@@ -436,11 +436,7 @@ pub async fn tower_settle_game() -> JSON {
                             "id": "",
                             "subGodCardId": "",
                         },
-                        "halftime": {
-                            "count": 0,
-                            "candidate": [],
-                            "canGiveUp": false
-                        },
+                        "halftime": {"count": 0, "candidate": [], "canGiveUp": false},
                         "trap": [],
                         "raward": {},
                     }

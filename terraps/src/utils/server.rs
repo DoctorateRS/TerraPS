@@ -1,14 +1,14 @@
-use std::{io::stdout, str::from_utf8};
+use std::str::from_utf8;
 
-use anyhow::{Error, Result};
+use anyhow::Result;
 use axum::{serve, Router};
 use tokio::net::TcpListener;
 use tracing::Level;
-use tracing_subscriber::fmt::fmt as subscriber_fmt;
+use tracing_subscriber::fmt::fmt as subfmt;
 
 use crate::constants::config::CONFIG_JSON_PATH;
 
-use super::{crypto::base64::decrypt, time::Time};
+use super::crypto::base64::decrypt;
 use common_utils::read_json;
 
 pub struct Server {
@@ -34,22 +34,20 @@ impl Server {
     fn log_begin(&self) {
         println!("Server started at: {}", self.get_address());
     }
-    pub async fn serve(&self, routes: Router) -> Result<()> {
-        subscriber_fmt()
+    pub async fn serve<T: FnOnce() -> Router>(&self, routes: T) -> Result<()> {
+        subfmt()
             .with_max_level(Level::DEBUG)
-            .with_timer(Time)
             .with_file(false)
             .with_line_number(false)
-            .with_writer(stdout)
             .compact()
             .init();
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
-        self.log_begin();
         self.log_something();
-        match serve(listener, routes).await {
+        self.log_begin();
+        match serve(listener, routes()).await {
             Ok(_) => Ok(()),
-            Err(e) => Err(Error::new(e)),
+            Err(e) => Err(e.into()),
         }
     }
 }

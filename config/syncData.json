@@ -218,29 +218,9 @@
                     "name": "Ashcone",
                     "slots": [
                         {
-                            "charInstId": 4072,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_ironmn"
-                        },
-                        {
-                            "charInstId": 4017,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 263,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_skadi"
-                        },
-                        {
-                            "charInstId": 4145,
-                            "skillIndex": 1,
-                            "currentEquip": null
-                        },
-                        {
                             "charInstId": 474,
-                            "skillIndex": 0,
-                            "currentEquip": "uniequip_003_glady"
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_glady"
                         },
                         {
                             "charInstId": 1023,
@@ -248,9 +228,24 @@
                             "currentEquip": "uniequip_003_ghost2"
                         },
                         {
-                            "charInstId": 377,
+                            "charInstId": 263,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_skadi"
+                        },
+                        {
+                            "charInstId": 4145,
                             "skillIndex": 1,
-                            "currentEquip": "uniequip_002_gdglow"
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 218,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_cuttle"
+                        },
+                        {
+                            "charInstId": 102,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_texas"
                         },
                         {
                             "charInstId": 4133,
@@ -258,25 +253,26 @@
                             "currentEquip": "uniequip_002_logos"
                         },
                         {
-                            "charInstId": 245,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 1016,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 4042,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_lumen"
-                        },
-                        {
-                            "charInstId": 147,
+                            "charInstId": 497,
                             "skillIndex": 1,
-                            "currentEquip": "uniequip_003_shining"
-                        }
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 222,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_bpipe"
+                        },
+                        {
+                            "charInstId": 4087,
+                            "skillIndex": 1,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 128,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_plosis"
+                        },
+                        null
                     ]
                 },
                 "1": {

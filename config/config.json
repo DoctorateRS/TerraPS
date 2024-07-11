@@ -19,8 +19,8 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-07-09-15-29-50-f0a675",
-            "clientVersion": "2.3.01"
+            "resVersion": "24-06-17-14-03-22-a1d97a",
+            "clientVersion": "2.2.81"
         }
     },
     "versionGlobal": {
@@ -35,9 +35,9 @@
             "sign": "sign",
             "content": {
                 "configVer": "5",
-                "funcVer": "V052",
+                "funcVer": "V051",
                 "configs": {
-                    "V052": {
+                    "V051": {
                         "override": true,
                         "network": {
                             "gs": "{server}",
@@ -107,11 +107,11 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1718697600,
-        "activityMaxStartTs": 1720727999,
-        "secretary": "char_377_gdglow",
-        "secretarySkinId": "char_377_gdglow@sanrio#1",
-        "background": "bg_sanrio_1",
+        "activityMinStartTs": 1712203200,
+        "activityMaxStartTs": 1715284799,
+        "secretary": "char_1035_wisdel",
+        "secretarySkinId": "char_1035_wisdel#2",
+        "background": "bg_laterano_1",
         "theme": "tm_rainbowsix_1",
         "fakeTime": -1,
         "vision": true,

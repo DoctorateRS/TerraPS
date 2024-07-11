@@ -2197,100 +2197,10 @@
                                 ],
                                 "building": [
                                     {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            10,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            11,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            13,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            14,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_31",
-                                        "pos": [
-                                            14,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_31",
-                                        "pos": [
-                                            12,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_31",
-                                        "pos": [
-                                            12,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_3",
-                                        "pos": [
-                                            11,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            11,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            13,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
                                         "key": "sandbox_1_building_33",
                                         "pos": [
                                             10,
-                                            12
+                                            11
                                         ],
                                         "hpRatio": 10000,
                                         "dir": 2
@@ -2299,7 +2209,61 @@
                                         "key": "sandbox_1_building_33",
                                         "pos": [
                                             9,
+                                            12
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            8,
                                             13
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            8,
+                                            15
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            9,
+                                            16
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            10,
+                                            17
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            11,
+                                            17
+                                        ],
+                                        "hpRatio": 10000,
+                                        "dir": 2
+                                    },
+                                    {
+                                        "key": "sandbox_1_building_33",
+                                        "pos": [
+                                            12,
+                                            16
                                         ],
                                         "hpRatio": 10000,
                                         "dir": 2
@@ -2317,7 +2281,7 @@
                                         "key": "sandbox_1_building_33",
                                         "pos": [
                                             12,
-                                            11
+                                            12
                                         ],
                                         "hpRatio": 10000,
                                         "dir": 2
@@ -2326,24 +2290,6 @@
                                         "key": "sandbox_1_building_33",
                                         "pos": [
                                             13,
-                                            11
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_4",
-                                        "pos": [
-                                            14,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            14,
                                             12
                                         ],
                                         "hpRatio": 10000,
@@ -2352,7 +2298,7 @@
                                     {
                                         "key": "sandbox_1_building_33",
                                         "pos": [
-                                            15,
+                                            14,
                                             13
                                         ],
                                         "hpRatio": 10000,
@@ -2361,371 +2307,29 @@
                                     {
                                         "key": "sandbox_1_building_33",
                                         "pos": [
-                                            15,
+                                            14,
                                             14
                                         ],
                                         "hpRatio": 10000,
                                         "dir": 2
                                     },
                                     {
-                                        "key": "sandbox_1_building_4",
+                                        "key": "sandbox_1_building_33",
                                         "pos": [
-                                            10,
+                                            14,
                                             15
                                         ],
                                         "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            9,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            10,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            11,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            12,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
+                                        "dir": 2
                                     },
                                     {
                                         "key": "sandbox_1_building_33",
                                         "pos": [
                                             13,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            14,
                                             16
                                         ],
                                         "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_33",
-                                        "pos": [
-                                            15,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_25",
-                                        "pos": [
-                                            10,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
                                         "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            9,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            8,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            7,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            6,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            5,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_35",
-                                        "pos": [
-                                            4,
-                                            11
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            8,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            6,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            7,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 3
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            11
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            5,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 1
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            6,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            7,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_12",
-                                        "pos": [
-                                            8,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 2
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            14
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            15
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            16
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            17
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            13
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            12
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
-                                    },
-                                    {
-                                        "key": "sandbox_1_building_36",
-                                        "pos": [
-                                            1,
-                                            11
-                                        ],
-                                        "hpRatio": 10000,
-                                        "dir": 0
                                     }
                                 ]
                             },
@@ -2972,8 +2576,7 @@
                                 "id": "sandbox_1_14",
                                 "state": 0,
                                 "view": "",
-                                "action": [],
-                                "building": []
+                                "action": []
                             },
                             "n7A2B": {
                                 "id": "sandbox_1_04",
@@ -3464,40 +3067,8 @@
                 },
                 "troop": {
                     "food": {
-                        "1029": {
-                            "id": "sandbox_1_food_36",
-                            "sub": [
-                                "sandbox_1_condiment",
-                                "sandbox_1_condiment"
-                            ],
-                            "day": 6
-                        },
-                        "1028": {
-                            "id": "sandbox_1_food_37",
-                            "sub": [
-                                "sandbox_1_condiment",
-                                "sandbox_1_condiment"
-                            ],
-                            "day": 6
-                        },
-                        "250": {
-                            "id": "sandbox_1_food_36",
-                            "sub": [
-                                "sandbox_1_condiment",
-                                "sandbox_1_condiment"
-                            ],
-                            "day": 6
-                        },
-                        "1023": {
-                            "id": "sandbox_1_food_40",
-                            "sub": [
-                                "sandbox_1_condiment",
-                                "sandbox_1_condiment"
-                            ],
-                            "day": 6
-                        },
-                        "474": {
-                            "id": "sandbox_1_food_40",
+                        "172": {
+                            "id": "sandbox_1_food_38",
                             "sub": [
                                 "sandbox_1_condiment",
                                 "sandbox_1_condiment"
@@ -3507,33 +3078,7 @@
                     },
                     "squad": [
                         {
-                            "slots": [
-                                {
-                                    "charInstId": 250,
-                                    "skillIndex": 1,
-                                    "currentEquip": "uniequip_003_phatom"
-                                },
-                                {
-                                    "charInstId": 1028,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_002_texas2"
-                                },
-                                {
-                                    "charInstId": 1029,
-                                    "skillIndex": 1,
-                                    "currentEquip": "uniequip_002_yato2"
-                                },
-                                {
-                                    "charInstId": 1023,
-                                    "skillIndex": 1,
-                                    "currentEquip": "uniequip_003_ghost2"
-                                },
-                                {
-                                    "charInstId": 474,
-                                    "skillIndex": 2,
-                                    "currentEquip": "uniequip_003_glady"
-                                }
-                            ],
+                            "slots": [],
                             "tools": []
                         },
                         {
@@ -4267,20 +3812,8 @@
                         ],
                         "node": {},
                         "char": {
-                            "1029": [
-                                "sandbox_1_food_36_x"
-                            ],
-                            "1028": [
-                                "sandbox_1_food_37_x"
-                            ],
-                            "250": [
-                                "sandbox_1_food_36_x"
-                            ],
-                            "1023": [
-                                "sandbox_1_food_40_x"
-                            ],
-                            "474": [
-                                "sandbox_1_food_40_x"
+                            "172": [
+                                "sandbox_1_food_38_x"
                             ]
                         }
                     }

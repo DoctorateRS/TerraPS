@@ -11,10 +11,11 @@ use common_utils::{read_json, write_json};
 
 use anyhow::Result;
 use serde_json::{json, Value};
-use update::{update_event, Mode};
+use update::Mode;
 
 pub mod battle_data;
 pub mod battle_replay;
+pub mod comp;
 pub mod crypto;
 pub mod fmt;
 pub mod game;
@@ -23,7 +24,6 @@ pub mod mail;
 pub mod random;
 pub mod rlv2;
 pub mod server;
-pub mod time;
 pub mod update;
 
 pub fn enumerate<T: IntoIterator>(a: T) -> Vec<(usize, T::Item)> {
@@ -49,7 +49,7 @@ pub fn get_nickname_config() -> (String, String) {
             "1111"
         }
     };
-    (nick_name.into(), nick_id.into())
+    (nick_name.to_string(), nick_id.to_string())
 }
 
 pub async fn upgrade() -> Result<()> {
@@ -62,7 +62,6 @@ pub async fn upgrade() -> Result<()> {
     if update_required || force_update {
         excel_update(mode).await?;
         update_gacha().await?;
-        update_event()?;
         excel_fmt()?;
         cfg_fmt()?;
         ccv2_fmt()?;

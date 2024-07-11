@@ -2377,25 +2377,6 @@
             },
             "workTime": 0
         },
-        "4147": {
-            "charId": "char_4147_mitm",
-            "lastApAddTime": 1695000000,
-            "ap": 8640000,
-            "roomSlotId": "",
-            "index": -1,
-            "changeScale": 0,
-            "bubble": {
-                "normal": {
-                    "add": -1,
-                    "ts": 0
-                },
-                "assist": {
-                    "add": -1,
-                    "ts": 0
-                }
-            },
-            "workTime": 0
-        },
         "497": {
             "charId": "char_497_ctable",
             "lastApAddTime": 1695000000,
@@ -5647,25 +5628,6 @@
         },
         "4046": {
             "charId": "char_4046_ebnhlz",
-            "lastApAddTime": 1695000000,
-            "ap": 8640000,
-            "roomSlotId": "",
-            "index": -1,
-            "changeScale": 0,
-            "bubble": {
-                "normal": {
-                    "add": -1,
-                    "ts": 0
-                },
-                "assist": {
-                    "add": -1,
-                    "ts": 0
-                }
-            },
-            "workTime": 0
-        },
-        "4146": {
-            "charId": "char_4146_nymph",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -13481,74 +13443,6 @@
             "count": 9999,
             "inUse": 0
         },
-        "furni_mindsanctum_corner_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_locket_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_chandelier_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_display_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_light_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_table_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_carpet_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_key_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_chair_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_mirror_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_column_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_ornament_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_cabinet_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_sofa_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_lamp_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_wallpaper_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_mindsanctum_floor_01": {
-            "count": 9999,
-            "inUse": 0
-        },
         "furni_oct1st_deckChair_01": {
             "count": 9999,
             "inUse": 0
@@ -13913,14 +13807,6 @@
             "count": 9999,
             "inUse": 0
         },
-        "furni_sanrio_cinnamoroll_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_sanrio_melody_01": {
-            "count": 9999,
-            "inUse": 0
-        },
         "furni_duanwu2024_01": {
             "count": 9999,
             "inUse": 0
@@ -14273,10 +14159,6 @@
             "count": 9999,
             "inUse": 0
         },
-        "furni_terracommericials_DreamingEssence_01": {
-            "count": 9999,
-            "inUse": 0
-        },
         "furni_contract_s0_01": {
             "count": 9999,
             "inUse": 0
@@ -14418,10 +14300,6 @@
             "inUse": 0
         },
         "furni_annihilation_s22_01": {
-            "count": 9999,
-            "inUse": 0
-        },
-        "furni_annihilation_s23_01": {
             "count": 9999,
             "inUse": 0
         },
