@@ -24,7 +24,7 @@ pub struct ServerConfig {
 
 impl ServerConfig {
     pub fn load() -> Result<Self> {
-        let value = read_json("./config/server.json")["server"].clone();
+        let value = read_json("./config/config.json")["server"].clone();
         Ok(from_value(value)?)
     }
 }
@@ -80,7 +80,7 @@ pub struct UserConfig {
 
 impl UserConfig {
     pub fn load() -> Result<Self> {
-        let value = read_json("./config/server.json")["userConfig"].clone();
+        let value = read_json("./config/config.json")["userConfig"].clone();
         Ok(from_value(value)?)
     }
 }

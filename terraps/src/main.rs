@@ -19,6 +19,7 @@ use utils::{
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    println!("TerraPS is starting...");
     init().await?;
     let arg_vec = args().collect::<Vec<_>>();
     let version = env!("CARGO_PKG_VERSION");

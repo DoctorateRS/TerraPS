@@ -6,10 +6,8 @@ use tokio::net::TcpListener;
 use tracing::Level;
 use tracing_subscriber::fmt::fmt as subscriber_fmt;
 
-use crate::constants::config::CONFIG_JSON_PATH;
-
 use super::{crypto::base64::decrypt, time::Time};
-use common_utils::read_json;
+use common_utils::ServerConfig;
 
 pub struct Server {
     pub ip: String,
@@ -55,8 +53,8 @@ impl Server {
 }
 
 pub fn get_server_address() -> (String, u64) {
-    let config = read_json(CONFIG_JSON_PATH);
-    let host = config["server"]["host"].as_str().unwrap_or("127.0.0.1");
-    let port = config["server"]["port"].as_u64().unwrap_or(8443);
+    let config = ServerConfig::load().unwrap();
+    let host = config.host;
+    let port = config.port as u64;
     (host.to_owned(), port)
 }
