@@ -339,8 +339,19 @@ pub async fn account_sync_data() -> JSON {
                                 "completeUpgradeTime": -1
                             }
                         ],
-                        "currentEquip": null,
-                        "equip": {},
+                        "currentEquip": "uniequip_002_amiya3",
+                        "equip": {
+                            "uniequip_001_amiya3": {
+                                "hide": 0,
+                                "locked": 0,
+                                "level": 1
+                            },
+                            "uniequip_002_amiya3": {
+                                "hide": 0,
+                                "locked": 0,
+                                "level": 3
+                            }
+                        },
                     }
                 }
             });
