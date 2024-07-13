@@ -9,6 +9,7 @@ use std::env::args;
 
 use anyhow::Result;
 
+use init::init;
 use routes::app;
 use utils::{
     server::{get_server_address, Server},
@@ -17,6 +18,7 @@ use utils::{
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    init()?;
     let arg_vec = args().collect::<Vec<_>>();
     let version = env!("CARGO_PKG_VERSION");
     upgrade().await?;
