@@ -9,7 +9,7 @@ pub async fn campaignv2_battle_start(Json(payload): JSON) -> JSON {
 
     let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
     replay_data["current"] = json!(stage_id);
-    write_json(BATTLE_REPLAY_JSON_PATH, replay_data);
+    write_json(BATTLE_REPLAY_JSON_PATH, replay_data).unwrap_or(());
 
     Json(json!({
         "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",

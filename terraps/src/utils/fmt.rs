@@ -12,7 +12,7 @@ pub fn excel_fmt() -> Result<()> {
 
         if path.is_file() && path.extension().unwrap() == "json" {
             let v = read_json(path.to_str().unwrap());
-            write_json(path.to_str().unwrap(), v);
+            write_json(path.to_str().unwrap(), v).unwrap_or(());
         }
     }
 
@@ -28,7 +28,7 @@ pub fn cfg_fmt() -> Result<()> {
 
         if path.is_file() && path.extension().unwrap() == "json" {
             let v = read_json(path.to_str().unwrap());
-            write_json(path.to_str().unwrap(), v);
+            write_json(path.to_str().unwrap(), v).unwrap_or(());
         }
     }
 
@@ -44,7 +44,7 @@ pub fn ccv2_fmt() -> Result<()> {
 
         if path.is_file() && path.extension().unwrap() == "json" {
             let v = read_json(path.to_str().unwrap());
-            write_json(path.to_str().unwrap(), v);
+            write_json(path.to_str().unwrap(), v).unwrap_or(());
         }
     }
 

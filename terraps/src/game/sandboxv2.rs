@@ -17,7 +17,7 @@ use common_utils::{read_json, write_json};
 
 pub async fn create_game() -> JSON {
     let sandbox = read_json(SANDBOX_TEMPLATE);
-    write_json(SANDBOX_JSON_PATH, &sandbox);
+    write_json(SANDBOX_JSON_PATH, &sandbox).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -38,7 +38,7 @@ pub async fn set_squad(Json(payload): JSON) -> JSON {
         "tools": payload["tools"]
     });
 
-    write_json(SANDBOX_JSON_PATH, &sandbox_data);
+    write_json(SANDBOX_JSON_PATH, &sandbox_data).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -54,7 +54,7 @@ pub async fn sandbox_battle_start(Json(payload): JSON) -> JSON {
 
     sandbox_temp["currentNodeId"] = json!(payload["nodeId"]);
 
-    write_json(SANDBOX_TEMP_JSON_PATH, &sandbox_temp);
+    write_json(SANDBOX_TEMP_JSON_PATH, &sandbox_temp).unwrap_or(());
     Json(json!({
         "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
         "isEnemyRush": false,
@@ -103,7 +103,7 @@ pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
         }
     }
     sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"] = json!(building);
-    write_json(SANDBOX_JSON_PATH, &sandbox_data);
+    write_json(SANDBOX_JSON_PATH, &sandbox_data).unwrap_or(());
     Json(json!({
         "success": true,
         "rewards": [],
@@ -160,7 +160,7 @@ pub async fn home_build_save(Json(payload): JSON) -> JSON {
         }
     }
 
-    write_json(SANDBOX_JSON_PATH, &sandbox);
+    write_json(SANDBOX_JSON_PATH, &sandbox).unwrap_or(());
 
     Json(json!({"playerDataDelta": {
             "modified": {
@@ -411,7 +411,7 @@ pub async fn settle_game() -> JSON {
             }
         }
     });
-    write_json(SANDBOX_JSON_PATH, json);
+    write_json(SANDBOX_JSON_PATH, json).unwrap_or(());
 
     Json(sandbox)
 }
@@ -441,7 +441,7 @@ pub async fn eat_food(Json(payload): JSON) -> JSON {
 
     sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["char"][char_inst_id.to_string()] = json!([buff]);
 
-    write_json(SANDBOX_JSON_PATH, &sandbox);
+    write_json(SANDBOX_JSON_PATH, &sandbox).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -505,7 +505,7 @@ pub async fn month_battle_finish(Json(payload): JSON) -> JSON {
         }
     }
 
-    write_json(SANDBOX_JSON_PATH, &sandbox);
+    write_json(SANDBOX_JSON_PATH, &sandbox).unwrap_or(());
 
     Json(json!({
         "success": true,
@@ -550,7 +550,7 @@ pub async fn explore_mode(Json(payload): JSON) -> JSON {
         }
     }
 
-    write_json(SANDBOX_JSON_PATH, &sandbox);
+    write_json(SANDBOX_JSON_PATH, &sandbox).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {

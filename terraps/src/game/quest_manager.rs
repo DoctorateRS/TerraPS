@@ -19,7 +19,7 @@ pub mod quest {
         let stage_id = payload["stageId"].as_str().unwrap();
         let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
         replay_data["current"] = json!(stage_id);
-        write_json(BATTLE_REPLAY_JSON_PATH, replay_data);
+        write_json(BATTLE_REPLAY_JSON_PATH, replay_data).unwrap_or(());
         Json(json!({
             "apFailReturn": 0,
             "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",
@@ -83,7 +83,7 @@ pub mod quest {
 
         let mut replay_data = read_json(BATTLE_REPLAY_JSON_PATH);
         replay_data["saved"][char_config][current] = decoded_battle_replay;
-        write_json(BATTLE_REPLAY_JSON_PATH, replay_data.clone());
+        write_json(BATTLE_REPLAY_JSON_PATH, &replay_data).unwrap_or(());
 
         let current = replay_data["current"].as_str().unwrap();
         Json(json!({
@@ -141,8 +141,8 @@ pub mod quest {
             let mut user_data = read_json(USER_JSON_PATH);
             user_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
             sync_data["user"]["troop"]["squads"][&squad_id]["name"] = json!(name);
-            write_json(USER_JSON_PATH, user_data);
-            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data);
+            write_json(USER_JSON_PATH, user_data).unwrap_or(());
+            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data).unwrap_or(());
         }
 
         Json(data)
@@ -168,8 +168,8 @@ pub mod quest {
             let mut user_data = read_json(USER_JSON_PATH);
             user_data["user"]["troop"]["squads"][&squad_id]["slots"] = json!(slots);
             sync_data["user"]["troop"]["squads"][&squad_id]["slots"] = json!(slots);
-            write_json(USER_JSON_PATH, user_data);
-            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data);
+            write_json(USER_JSON_PATH, user_data).unwrap_or(());
+            write_json(SYNC_DATA_TEMPLATE_PATH, sync_data).unwrap_or(());
         }
 
         Json(data)

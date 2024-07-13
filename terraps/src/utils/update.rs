@@ -69,7 +69,7 @@ pub async fn update_cn_config() -> Result<bool> {
             .remove(old_func_ver.as_str().unwrap());
     }
 
-    write_json(CONFIG_JSON_PATH, config);
+    write_json(CONFIG_JSON_PATH, config).unwrap_or(());
 
     Ok(excel_update)
 }
@@ -144,7 +144,7 @@ async fn update_excel_data(link: &str) -> Result<()> {
             "./data/announce",
         );
     let json = get(link).await?.json::<Value>().await?;
-    write_json(&path, json);
+    write_json(&path, json).unwrap_or(());
     println!("Updated: {}", path.replace("./data/announce", "").replace("./data", ""));
     Ok(())
 }
@@ -172,7 +172,7 @@ pub fn update_event() -> Result<()> {
     config["userConfig"]["activityMinStartTs"] = json!(st);
     config["userConfig"]["activityMaxStartTs"] = json!(et);
 
-    write_json(CONFIG_JSON_PATH, config);
+    write_json(CONFIG_JSON_PATH, config).unwrap_or(());
     Ok(())
 }
 
@@ -206,6 +206,6 @@ pub async fn update_gacha() -> Result<()> {
             }));
         }
     }
-    write_json(USER_GACHA_PATH, &gacha);
+    write_json(USER_GACHA_PATH, &gacha).unwrap_or(());
     Ok(())
 }

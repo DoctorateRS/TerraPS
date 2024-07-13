@@ -55,7 +55,7 @@ pub fn get_item(payload: Value, key: &str) -> (Vec<Value>, HasGift) {
         has_gift = HasGift::No;
     }
 
-    write_json(MAILLIST_PATH, mail_data);
+    write_json(MAILLIST_PATH, mail_data).unwrap_or(());
 
     (items, has_gift)
 }

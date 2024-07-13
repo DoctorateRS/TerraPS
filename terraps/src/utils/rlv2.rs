@@ -262,7 +262,7 @@ pub async fn get_buffs(rlv2: &Value, stage_id: &str) -> Vec<Value> {
     let mode_grade = rlv2["game"]["modeGrade"].as_i64().unwrap();
 
     let mut theme_buffs = match theme {
-        "rogue_1" | "rogue_2" | "rogue_3" => read_json(&format!("./data/rlv2/themeBuffs/buffs_{theme}.json")),
+        "rogue_1" | "rogue_2" | "rogue_3" => read_json(format!("./data/rlv2/themeBuffs/buffs_{theme}.json")),
         _ => json!([]),
     };
     for i in 0..theme_buffs.as_array().unwrap().len() {

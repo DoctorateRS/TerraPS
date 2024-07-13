@@ -41,7 +41,7 @@ pub mod char {
             }
         }
 
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
         Json(data)
     }
 }
@@ -94,7 +94,7 @@ pub mod char_build {
         let mut user_data = read_json(USER_JSON_PATH);
         user_data["user"]["troop"]["addon"] = char_data.clone();
         data["playerDataDelta"]["modified"]["troop"]["addon"] = char_data;
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
         Json(data)
     }
 
@@ -154,7 +154,7 @@ pub mod char_build {
         });
 
         user_data["user"]["troop"]["chars"][char_inst_id]["defaultSkillIndex"] = default_skill_index;
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
 
         Json(data)
     }
@@ -188,7 +188,7 @@ pub mod char_build {
         });
 
         user_data["user"]["troop"]["chars"][char_inst_id]["skinId"] = skin_id;
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
 
         Json(data)
     }
@@ -222,7 +222,7 @@ pub mod char_build {
         });
 
         user_data["user"]["troop"]["chars"][char_inst_id]["currentEquip"] = equip_id;
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
 
         Json(data)
     }
@@ -254,7 +254,7 @@ pub mod char_build {
         let mut user_data = read_json(USER_JSON_PATH);
         user_data["user"]["troop"]["chars"][char_inst_id]["currentTmpl"] = template_id;
 
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
         Json(data)
     }
 }
@@ -270,7 +270,7 @@ pub mod charm {
         let charm_squad = payload["squad"].clone();
         let mut user_data = read_json(USER_JSON_PATH);
         user_data["user"]["charm"]["squad"] = charm_squad.clone();
-        write_json(USER_JSON_PATH, user_data);
+        write_json(USER_JSON_PATH, user_data).unwrap_or(());
 
         Json(json!({
             "playerDataDelta": {

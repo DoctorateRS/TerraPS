@@ -51,7 +51,7 @@ impl Asset {
     }
     async fn query_hot_update_list(&self) -> impl IntoResponse {
         let path = format!("./assets/{hash}/redirect/{name}", hash = &self.hash, name = &self.name);
-        let hot_update = read_json(&path);
+        let hot_update = read_json(path);
         Json(hot_update)
     }
 }
@@ -74,7 +74,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     if !contains_asset {
         assets_list[hash].as_array_mut().unwrap().push(json!(name));
     }
-    write_json(ASSETS_JSON, &assets_list);
+    write_json(ASSETS_JSON, &assets_list).unwrap_or(());
     if config["assets"]["downloadLocally"].as_bool().unwrap() {
         if !StdPath::new(&path).exists() {
             create_dir_all(&path).unwrap();
@@ -107,7 +107,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
             .json::<Value>()
             .await
             .unwrap();
-        write_json(&format!("{path}hot_update_list.json"), &hot_update_list);
+        write_json(&format!("{path}hot_update_list.json"), &hot_update_list).unwrap_or(());
         asset.query_hot_update_list().await.into_response()
     } else {
         asset.query_local().await.into_response()

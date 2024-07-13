@@ -778,7 +778,7 @@ pub async fn account_sync_data() -> JSON {
         });
     }
 
-    write_json(USER_JSON_PATH, &player_data);
+    write_json(USER_JSON_PATH, &player_data).unwrap_or(());
     for theme in get_keys(&player_data["user"]["rlv2"]["outer"]) {
         if get_keys(&rlv2_table["details"]).contains(&theme) {
             for stg in get_keys(&rlv2_table["details"][&theme]["stages"]) {
@@ -790,7 +790,7 @@ pub async fn account_sync_data() -> JSON {
     let crisis_v2 = config["crisisV2Config"]["selectedCrisis"].as_str();
 
     if let Some(ccv2) = crisis_v2 {
-        let rune = read_json(&format!("{CRISIS_V2_JSON_BASE_PATH}{ccv2}.json"));
+        let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{ccv2}.json"));
         let ss = rune["info"]["seasonId"].as_str().unwrap();
         player_data["user"]["crisisV2"]["current"] = json!(ss);
     }

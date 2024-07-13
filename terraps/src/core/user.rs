@@ -299,8 +299,8 @@ pub async fn user_change_secretary(Json(payload): JSON) -> JSON {
     config["userConfig"]["secretarySkinId"] = json!(&skin_id);
     user_data["user"]["status"]["secretarySkinId"] = json!(&skin_id);
     user_data["user"]["status"]["secretary"] = json!(&skin_id);
-    write_json(CONFIG_JSON_PATH, config);
-    write_json(USER_JSON_PATH, user_data);
+    write_json(CONFIG_JSON_PATH, config).unwrap_or(());
+    write_json(USER_JSON_PATH, user_data).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -318,7 +318,7 @@ pub async fn user_change_avatar(Json(payload): JSON) -> JSON {
     let avatar = payload;
     let mut user_data = read_json(USER_JSON_PATH).clone();
     user_data["user"]["status"]["avatarId"] = avatar.clone();
-    write_json(USER_JSON_PATH, user_data);
+    write_json(USER_JSON_PATH, user_data).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {

@@ -37,7 +37,7 @@ pub mod crisis_v2 {
             "mapId": payload["mapId"],
             "runeSlots": payload["runeSlots"]
         });
-        write_json(RUNE_JSON_PATH, battle_data);
+        write_json(RUNE_JSON_PATH, battle_data).unwrap_or(());
         Json(json!({
             "result": 0,
             "battleId": "abcdefgh-1234-5678-a1b2c3d4e5f6",

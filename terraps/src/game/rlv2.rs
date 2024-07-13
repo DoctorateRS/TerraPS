@@ -220,7 +220,7 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
         rlv2["player"]["pending"][0]["content"]["initRelic"]["items"][id.to_string()] = json!({"id": band, "count": 1});
     }
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     let config = read_json(CONFIG_JSON_PATH);
 
@@ -276,7 +276,7 @@ pub async fn rlv2_choose_init_relic(Json(payload): JSON) -> JSON {
         "ts": 1695000000,
     });
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -292,7 +292,7 @@ pub async fn rlv2_choose_init_relic(Json(payload): JSON) -> JSON {
 
 pub async fn rlv2_choice_select() -> JSON {
     let rlv2 = read_json(RLV2_JSON_PATH);
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -321,7 +321,7 @@ pub async fn rlv2_choose_init_recruit_set() -> JSON {
         rlv2["player"]["pending"][0]["content"]["initRecruit"]["tickets"] = json!(tkts);
     }
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -339,7 +339,7 @@ pub async fn rlv2_activate_recruit_tkt(Json(payload): JSON) -> JSON {
     let tkt_id = payload["id"].as_str().unwrap();
     let mut rlv2 = read_json(RLV2_JSON_PATH);
     activate_tkt(&mut rlv2, tkt_id);
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -366,7 +366,7 @@ pub async fn rlv2_recruit_char(Json(payload): JSON) -> JSON {
     rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(&char);
     rlv2["troop"]["chars"][char_id] = json!(&char);
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "chars": [char],
@@ -389,7 +389,7 @@ pub async fn rlv2_close_tkt(Json(payload): JSON) -> JSON {
     rlv2["inventory"]["recruit"][tkt_id]["list"] = json!([]);
     rlv2["inventory"]["recruit"][tkt_id]["result"] = json!(null);
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -412,7 +412,7 @@ pub async fn rlv2_finish_event() -> JSON {
     let theme = rlv2["game"]["theme"].as_str().unwrap();
     rlv2["map"]["zones"] = get_map(theme).await;
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -517,7 +517,7 @@ async fn mv_n_battle_start(payload: Value) -> Value {
         rlv2["player"]["pending"] = json!(hf);
     };
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
     rlv2
 }
 
@@ -586,7 +586,7 @@ pub async fn rlv2_battle_finish(Json(payload): JSON) -> JSON {
         rlv2["player"]["trace"].as_array_mut().unwrap().pop();
     }
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -609,7 +609,7 @@ pub async fn rlv2_finish_battle_reward() -> JSON {
     rlv2["player"]["cursor"]["position"]["y"] = json!(0);
     rlv2["player"]["trace"].as_array_mut().unwrap().pop();
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -657,7 +657,7 @@ pub async fn rlv2_mv_to(Json(payload): JSON) -> JSON {
         }),
     );
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -706,7 +706,7 @@ pub async fn rlv2_buy_good(Json(payload): JSON) -> JSON {
             "ts": 1695000000,
         });
     }
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -739,7 +739,7 @@ pub async fn rlv2_leave_shop() -> JSON {
         }
     };
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -763,7 +763,7 @@ pub async fn rlv2_choose_battle_reward(Json(payload): JSON) -> JSON {
         activate_tkt(&mut rlv2, &tkt);
     }
 
-    write_json(RLV2_JSON_PATH, &rlv2);
+    write_json(RLV2_JSON_PATH, &rlv2).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {

@@ -34,7 +34,7 @@ pub async fn prod_network_config() -> JSON {
         server_config["version"]["android"] = version;
     };
 
-    write_json(CONFIG_JSON_PATH, server_config);
+    write_json(CONFIG_JSON_PATH, server_config).unwrap_or(());
     let server_config = read_json(CONFIG_JSON_PATH);
     let mode = server_config["server"]["mode"].as_str().unwrap();
     let host = server_config["server"]["host"].as_str().unwrap();

@@ -77,7 +77,7 @@ pub async fn building_sync() -> JSON {
         })
     }
     building_data["furniture"] = furniture;
-    write_json(BUILDING_JSON_PATH, &building_data);
+    write_json(BUILDING_JSON_PATH, &building_data).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -102,7 +102,7 @@ pub async fn building_change_diy_solution(Json(payload): JSON) -> JSON {
 
     let mut building_data = read_json(BUILDING_JSON_PATH);
     building_data["rooms"]["DORMITORY"][room_slot_id]["diySolution"] = diy_solution;
-    write_json(BUILDING_JSON_PATH, &building_data);
+    write_json(BUILDING_JSON_PATH, &building_data).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -133,7 +133,7 @@ pub async fn building_assign_char(Json(payload): JSON) -> JSON {
     }
     building_data["roomSlots"][room_slot_id]["charInstIds"] = json!(char_inst_id_list);
     building_data = update_building_char_inst_id_list(building_data);
-    write_json(BUILDING_JSON_PATH, building_data.clone());
+    write_json(BUILDING_JSON_PATH, building_data.clone()).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {
@@ -149,7 +149,7 @@ pub async fn building_set_building_assist(Json(payload): JSON) -> JSON {
     let char_inst_id = payload["charInstId"].clone();
     let mut building_data = read_json(BUILDING_JSON_PATH);
     building_data["assist"][&assist_type]["charInstId"] = char_inst_id;
-    write_json(BUILDING_JSON_PATH, building_data.clone());
+    write_json(BUILDING_JSON_PATH, building_data.clone()).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {

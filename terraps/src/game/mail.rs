@@ -152,7 +152,7 @@ pub async fn mail_delete_all_received_mails(Json(payload): JSON) -> JSON {
     }
 
     mail_data["deletedIds"] = json!(deleted_ids);
-    write_json(MAILLIST_PATH, mail_data);
+    write_json(MAILLIST_PATH, mail_data).unwrap_or(());
 
     Json(json!({
         "result": {},

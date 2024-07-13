@@ -81,7 +81,7 @@ fn create_recruit_list() {
     }
 
     tower["tower"]["current"]["halftime"]["candidate"] = json!(candidates);
-    write_json(TOWERDATA_PATH, tower);
+    write_json(TOWERDATA_PATH, tower).unwrap_or(());
 }
 
 pub async fn tower_create_game(Json(payload): JSON) -> JSON {
@@ -148,7 +148,7 @@ pub async fn tower_create_game(Json(payload): JSON) -> JSON {
         "currentStage": "",
     });
 
-    write_json(TOWERDATA_PATH, &tower_data);
+    write_json(TOWERDATA_PATH, &tower_data).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -166,7 +166,7 @@ pub async fn tower_init_godcard(Json(payload): JSON) -> JSON {
     tower["tower"]["current"]["status"]["state"] = json!("INIT_BUFF");
     tower["tower"]["current"]["godCard"]["id"] = json!(payload["godCardId"]);
 
-    write_json(TOWERDATA_PATH, &tower);
+    write_json(TOWERDATA_PATH, &tower).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {"tower": tower["tower"]},
@@ -180,7 +180,7 @@ pub async fn tower_init_game(Json(payload): JSON) -> JSON {
     tower["tower"]["current"]["status"]["state"] = json!("INIT_CARD");
     tower["tower"]["current"]["status"]["strategy"] = json!(payload["strategy"]);
     tower["tower"]["current"]["status"]["tactical"] = json!(payload["tactical"]);
-    write_json(TOWERDATA_PATH, &tower);
+    write_json(TOWERDATA_PATH, &tower).unwrap_or(());
     Json(json!({
         "playerDataDelta": {
             "modified": {"tower": tower["tower"]},
@@ -239,7 +239,7 @@ pub async fn tower_battle_start(Json(payload): JSON) -> JSON {
         }
     }
 
-    write_json(TOWERDATA_PATH, &tower);
+    write_json(TOWERDATA_PATH, &tower).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
@@ -305,7 +305,7 @@ pub async fn tower_battle_finish(Json(payload): JSON) -> JSON {
         tower["tower"]["current"]["status"]["coord"] = json!(coord + 1);
         tower["tower"]["current"]["halftime"]["count"] = json!(cnt + 1);
 
-        write_json(TOWERDATA_PATH, &tower);
+        write_json(TOWERDATA_PATH, &tower).unwrap_or(());
         create_recruit_list();
         let tower = read_json(TOWERDATA_PATH);
         json!({
@@ -358,7 +358,7 @@ pub async fn tower_recruit(Json(payload): JSON) -> JSON {
             "relation": char_inst_id
         });
     }
-    write_json(TOWERDATA_PATH, &tower);
+    write_json(TOWERDATA_PATH, &tower).unwrap_or(());
     create_recruit_list();
     let tower = read_json(TOWERDATA_PATH);
 
@@ -377,7 +377,7 @@ pub async fn tower_choose_sub_godcard(Json(payload): JSON) -> JSON {
 
     tower["tower"]["current"]["status"]["state"] = json!("STANDBY");
     tower["tower"]["current"]["godCard"]["subGodCardId"] = json!(payload["subGodCardId"]);
-    write_json(TOWERDATA_PATH, &tower);
+    write_json(TOWERDATA_PATH, &tower).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {

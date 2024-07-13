@@ -17,7 +17,7 @@ pub async fn deep_sea_branch(Json(payload): JSON) -> JSON {
 
     let mut user_data = read_json(USER_JSON_PATH);
     user_data["user"]["deepSea"]["techTrees"] = tech_tree.clone();
-    write_json(USER_JSON_PATH, user_data);
+    write_json(USER_JSON_PATH, user_data).unwrap_or(());
 
     Json(json!({
         "playerDataDelta": {
