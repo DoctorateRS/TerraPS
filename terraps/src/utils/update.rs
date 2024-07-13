@@ -142,7 +142,12 @@ async fn update_excel_data(link: &str) -> Result<()> {
         .replace(
             "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
             "./data/announce",
-        );
+        )
+        .replace(
+            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/",
+            "./dataGB/",
+        )
+        .replace("| GLOBAL AK ANNOUNCE |", "./dataGB/announce");
     let json = get(link).await?.json::<Value>().await?;
     write_json(&path, json).unwrap_or(());
     println!("Updated: {}", path.replace("./data/announce", "").replace("./data", ""));
