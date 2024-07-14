@@ -3,42 +3,254 @@
         "current": {
             "cards": {},
             "godCard": {
-                "id": "card_06",
+                "id": "card_tower_14",
                 "subGodCardId": ""
             },
             "halftime": {
                 "canGiveUp": false,
-                "candidate": [],
-                "count": 0
+                "candidate": [
+                    {
+                        "groupId": "char_219_meteo",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_219_meteo",
+                                "relation": "219",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_meteo_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_meteo_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_meteo",
+                                "equip": {
+                                    "uniequip_001_meteo": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 1
+                                    },
+                                    "uniequip_002_meteo": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 3
+                                    }
+                                },
+                                "skin": "char_219_meteo@sweep#1"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_210_stward",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_210_stward",
+                                "relation": "210",
+                                "evolvePhase": 1,
+                                "level": 55,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_stward_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 0,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 0,
+                                "currentEquip": null,
+                                "equip": {},
+                                "skin": "char_210_stward@sale#6"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_129_bluep",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_129_bluep",
+                                "relation": "129",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_bluep_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_bluep_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_bluep",
+                                "equip": {
+                                    "uniequip_001_bluep": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 1
+                                    },
+                                    "uniequip_002_bluep": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 3
+                                    }
+                                },
+                                "skin": "char_129_bluep@iteration#2"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_4045_heidi",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_4045_heidi",
+                                "relation": "4045",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_heidi_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_heidi_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": null,
+                                "equip": {},
+                                "skin": "char_4045_heidi@epoque#24"
+                            }
+                        ]
+                    },
+                    {
+                        "groupId": "char_163_hpsts",
+                        "type": "CHAR",
+                        "cards": [
+                            {
+                                "instId": "0",
+                                "type": "CHAR",
+                                "charId": "char_163_hpsts",
+                                "relation": "163",
+                                "evolvePhase": 2,
+                                "level": 80,
+                                "favorPoint": 25570,
+                                "potentialRank": 5,
+                                "mainSkillLvl": 7,
+                                "skills": [
+                                    {
+                                        "skillId": "skchr_hpsts_1",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    },
+                                    {
+                                        "skillId": "skchr_hpsts_2",
+                                        "unlock": 1,
+                                        "state": 0,
+                                        "specializeLevel": 3,
+                                        "completeUpgradeTime": -1
+                                    }
+                                ],
+                                "defaultSkillIndex": 1,
+                                "currentEquip": "uniequip_002_hpsts",
+                                "equip": {
+                                    "uniequip_001_hpsts": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 1
+                                    },
+                                    "uniequip_002_hpsts": {
+                                        "hide": 0,
+                                        "locked": 0,
+                                        "level": 3
+                                    }
+                                },
+                                "skin": "char_163_hpsts#2"
+                            }
+                        ]
+                    }
+                ],
+                "count": 1
             },
             "layer": [
                 {
-                    "id": "lt_13_01",
-                    "try": 1,
+                    "id": "lt_14_01",
+                    "try": 2,
                     "pass": false
                 },
                 {
-                    "id": "lt_13_02",
+                    "id": "lt_14_02",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_13_03",
+                    "id": "lt_14_03",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_13_04",
+                    "id": "lt_14_04",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_13_05",
+                    "id": "lt_14_05",
                     "try": 0,
                     "pass": false
                 },
                 {
-                    "id": "lt_13_06",
+                    "id": "lt_14_06",
                     "try": 0,
                     "pass": false
                 }
@@ -48,9 +260,9 @@
                 "low": 0
             },
             "status": {
-                "coord": 0,
+                "coord": 1,
                 "isHard": false,
-                "start": 1715675811,
+                "start": 1720940680,
                 "state": "INIT_CARD",
                 "strategy": "OPTIMIZE",
                 "tactical": {
@@ -63,10 +275,10 @@
                     "MEDIC": "tatical_medic_01",
                     "SPECIAL": "tatical_special_01"
                 },
-                "tower": "tower_n_13"
+                "tower": "tower_n_14"
             },
             "trap": []
         }
     },
-    "currentStage": "lt_13_01"
+    "currentStage": "lt_14_01"
 }

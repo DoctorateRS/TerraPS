@@ -174,9 +174,9 @@
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "Doctorate",
+            "serverName": "TerraPS",
             "avatarId": "0",
-            "resume": "DoctoratePy",
+            "resume": "Terra",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
@@ -190,11 +190,7 @@
             "globalVoiceLan": "JP"
         },
         "nameCardStyle": {
-            "componentOrder": [
-                "module_sign",
-                "module_assist",
-                "module_medal"
-            ],
+            "componentOrder": ["module_sign", "module_assist", "module_medal"],
             "skin": {
                 "selected": "nc_rhodes_default",
                 "state": {
@@ -301,18 +297,66 @@
                     "squadId": "2",
                     "name": "Squad 3",
                     "slots": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        {
+                            "charInstId": 4087,
+                            "skillIndex": 1,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 222,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_bpipe"
+                        },
+                        {
+                            "charInstId": 1028,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_texas2"
+                        },
+                        {
+                            "charInstId": 1029,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_yato2"
+                        },
+                        {
+                            "charInstId": 1023,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_ghost2"
+                        },
+                        {
+                            "charInstId": 474,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_glady"
+                        },
+                        {
+                            "charInstId": 263,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_skadi"
+                        },
+                        {
+                            "charInstId": 4145,
+                            "skillIndex": 1,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 4064,
+                            "skillIndex": 2,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 264,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_f12yin"
+                        },
+                        {
+                            "charInstId": 4132,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_ascln"
+                        },
+                        {
+                            "charInstId": 4123,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_ela"
+                        }
                     ]
                 },
                 "3": {
@@ -371,11 +415,7 @@
             }
         },
         "social": {
-            "assistCharList": [
-                null,
-                null,
-                null
-            ]
+            "assistCharList": [null, null, null]
         },
         "dexNav": {
             "character": {},
@@ -7031,165 +7071,73 @@
                     },
                     "tower_n_01": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_02": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_03": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_04": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_05": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_06": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_07": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_08": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_09": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_10": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_11": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_12": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     }
@@ -7658,21 +7606,15 @@
                 "stages": {
                     "act3fun_01": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_02": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_03": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     }
                 }
             },
@@ -7838,10 +7780,7 @@
                             "count": 1
                         }
                     },
-                    "squad": [
-                        null,
-                        null
-                    ]
+                    "squad": [null, null]
                 }
             }
         },

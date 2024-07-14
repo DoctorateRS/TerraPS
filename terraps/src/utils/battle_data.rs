@@ -6,10 +6,9 @@ use cbc::Decryptor;
 use rand::{thread_rng, Rng};
 use ring::test::from_hex;
 use serde_json::{from_str, Value};
-use std::io::Write;
+use std::fs::write;
 
 use super::crypto::md5::md5_digest;
-use common_utils::mkfile;
 
 const DEFAULT_LOGIN_TIME: u32 = 1672502400;
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
@@ -107,13 +106,29 @@ impl BattleDataDecoder {
             res = res.replace(char, "");
         }
         let res = res.trim();
+        let mut res_filtered = String::new();
+        for c in res.chars() {
+            if c.is_alphanumeric()
+                || c == '"'
+                || c == ':'
+                || c == ','
+                || c == '.'
+                || c == '-'
+                || c == ' '
+                || c == '['
+                || c == ']'
+                || c == '{'
+                || c == '}'
+            {
+                res_filtered.push(c);
+            }
+        }
 
-        let res_val = from_str::<Value>(res);
+        let res_val = from_str::<Value>(&res_filtered);
         match res_val {
             Ok(res) => res,
             Err(_) => {
-                let mut dump = mkfile(format!("./dump/{}.txt", rand_hash(8))).unwrap();
-                dump.write_all(res.as_bytes()).unwrap();
+                write(format!("./dump/{}.json", rand_hash(8)), res).unwrap_or(());
                 fallback
             }
         }
