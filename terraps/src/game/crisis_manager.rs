@@ -52,7 +52,7 @@ pub mod crisis_v2 {
         let config = read_json(CONFIG_JSON_PATH);
 
         let selected_crisis = config["crisisV2Config"]["selectedCrisis"].as_str().unwrap();
-        let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json").as_str());
+        let rune = read_json(format!("{CRISIS_V2_JSON_BASE_PATH}{selected_crisis}.json"));
         let battle_data = read_json(RUNE_JSON_PATH).clone();
         let map_id = battle_data["mapId"].as_str().unwrap();
         let rune_slots = battle_data["runeSlots"].clone();
