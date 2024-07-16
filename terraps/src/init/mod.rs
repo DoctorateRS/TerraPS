@@ -32,6 +32,8 @@ pub async fn init() -> Result<()> {
 fn init_cfg() -> Result<()> {
     if !Path::new("./config/").exists() {
         mkdir("./config/")?;
+    } else {
+        return Ok(());
     }
     let cfg = include_str!("../../../config/config.json");
     write(CONFIG_JSON_PATH, cfg)?;
