@@ -146,14 +146,72 @@ pub mod normal {
 }
 
 pub mod advanced {
+    use std::collections::HashMap;
+
     use axum::Json;
-    use serde_json::json;
+    use serde::{Deserialize, Serialize};
+    use serde_json::{from_value, json, Value};
 
     use crate::{
         constants::user::{GACHA_TEMPLATE_JSON_PATH, USER_GACHA_PATH},
         utils::{json::JSON, random::TRng},
     };
     use common_utils::read_json;
+
+    #[derive(Serialize)]
+    struct ItemGet {
+        r#type: String,
+        id: String,
+        count: i64,
+    }
+
+    impl ItemGet {
+        fn new<T: ToString>(r#type: T, id: T, count: i64) -> Self {
+            Self {
+                r#type: r#type.to_string(),
+                id: id.to_string(),
+                count,
+            }
+        }
+    }
+
+    #[derive(Deserialize, Default)]
+    struct GachaResultInternal {
+        pub cid: String,
+        pub is_new: i64,
+    }
+
+    #[derive(Serialize)]
+    struct GachaResult {
+        #[serde(rename = "charInstId")]
+        char_inst_id: usize,
+        #[serde(rename = "charId")]
+        char_id: String,
+        #[serde(rename = "isNew")]
+        is_new: i64,
+        #[serde(rename = "itemGet")]
+        item_get: Vec<ItemGet>,
+        #[serde(rename = "logInfo")]
+        log_info: HashMap<String, String>,
+    }
+
+    impl GachaResult {
+        fn new(res: usize, pool: &[Value]) -> Self {
+            let res: GachaResultInternal = from_value(pool[res].clone()).unwrap_or_default();
+            let char_inst_id = res.cid.split('_').nth(1).unwrap_or("").parse::<usize>().unwrap_or(0);
+            let char_id = res.cid;
+            let is_new = res.is_new;
+            let item_get = vec![ItemGet::new("HGG_SHD", "4004", 999), ItemGet::new("LGG_SHD", "4005", 999), ItemGet::new("MATERIAL", &format!("p_{}", char_id), 999)];
+            let log_info = HashMap::new();
+            Self {
+                char_inst_id,
+                char_id,
+                is_new,
+                item_get,
+                log_info,
+            }
+        }
+    }
 
     pub async fn get_pool_detail() -> JSON {
         Json(read_json(GACHA_TEMPLATE_JSON_PATH))
@@ -166,24 +224,11 @@ pub mod advanced {
         let mut gacha_rng = TRng::new();
         let res = gacha_rng.gen_range(0..pool_len);
 
-        let gacha_res = gacha["advanced"][res].clone();
-        let char_id = gacha_res["charId"].as_str().unwrap();
-        let is_new = gacha_res["isNew"].as_i64().unwrap();
-        let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
+        let res = GachaResult::new(res, gacha["advanced"].as_array().unwrap());
 
         Json(json!({
             "result": 0,
-            "charGet": {
-                "charInstId": char_inst_id,
-                "charId": char_id,
-                "isNew": is_new,
-                "itemGet": [
-                    {"type": "HGG_SHD", "id": "4004", "count": 999},
-                    {"type": "LGG_SHD", "id": "4005", "count": 999},
-                    {"type": "MATERIAL", "id": format!("p_{char_id}"), "count": 999},
-                ],
-                "logInfo": {},
-            },
+            "charGet": res,
             "playerDataDelta": {
                 "modified": {},
                 "deleted": {}
@@ -200,22 +245,10 @@ pub mod advanced {
 
         for _ in 0..10 {
             let res = gacha_rng.gen_range(0..pool_len);
-            let gacha_res = gacha["advanced"][res].clone();
-            let char_id = gacha_res["charId"].as_str().unwrap();
-            let is_new = gacha_res["isNew"].as_i64().unwrap();
-            let char_inst_id = char_id.split('_').collect::<Vec<&str>>()[1].parse::<usize>().unwrap();
 
-            gacha_res_vec.push(json!({
-                "charInstId": char_inst_id,
-                "charId": char_id,
-                "isNew": is_new,
-                "itemGet": [
-                    {"type": "HGG_SHD", "id": "4004", "count": 999},
-                    {"type": "LGG_SHD", "id": "4005", "count": 999},
-                    {"type": "MATERIAL", "id": format!("p_{char_id}"), "count": 999},
-                ],
-                "logInfo": {},
-            }))
+            let res = GachaResult::new(res, gacha["advanced"].as_array().unwrap());
+
+            gacha_res_vec.push(res);
         }
 
         Json(json!({
