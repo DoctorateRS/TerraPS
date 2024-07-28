@@ -9,13 +9,14 @@
     - [ ] `rlv2`
         - [ ] Map generation
         - [ ] Node traversal
-        - [ ] Battles 
+        - [ ] Battles
     - [ ] `sandboxv2`
         - [x] Building
         - [ ] Day progressing
         - [ ] Raids
         - [ ] ???
     - [ ] `tower`
+        - [ ] Gamemode is playable but can only be played continuously. This issue is being investigated.
         - [ ] Fix broken battle data decryption
         - [ ] ???
 
