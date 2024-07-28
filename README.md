@@ -1,5 +1,7 @@
 # TerraPS
 
+- This is written for educational purposes. If you try to make money off this, don't.
+
 ## Status: Not actively maintained. (I have special circumstances)
 
 - Oxidized.
@@ -45,7 +47,7 @@
 #### Windows
 
 - Run `envsetup.nu` to setup the environment.
-- Just run `cargo build --release`.
+- Just run `cargo br`.
 
 #### Linux
 
@@ -57,4 +59,4 @@ TBA
 
 ### Launching the game
 
-TBA
+- Currently there's a plan for using `frida-gadget`. Will be reported further next time.

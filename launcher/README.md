@@ -1,3 +1,4 @@
-# Technical Launcher 01
+# TBR [TO BE REMOVED]
 
-Status: `F_02`.
+Status: `R_01_AB`.
+OpenCitadel: `RF_1_CN`.
