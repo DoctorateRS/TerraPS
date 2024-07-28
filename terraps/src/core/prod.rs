@@ -42,10 +42,7 @@ pub async fn prod_network_config() -> JSON {
     let server = format!("http://{}:{}", host, port);
     let func_ver = server_config["networkConfig"][&mode]["content"]["funcVer"].as_str().unwrap();
     let mut network_config = server_config["networkConfig"][&mode].clone();
-    for (index, url) in server_config["networkConfig"][&mode]["content"]["configs"][&func_ver]["network"]
-        .as_object()
-        .unwrap()
-    {
+    for (index, url) in server_config["networkConfig"][&mode]["content"]["configs"][&func_ver]["network"].as_object().unwrap() {
         if url.is_string() && url.as_str().unwrap().contains("{server}") {
             network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
         }
