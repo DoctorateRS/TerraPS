@@ -190,11 +190,7 @@
             "globalVoiceLan": "JP"
         },
         "nameCardStyle": {
-            "componentOrder": [
-                "module_sign",
-                "module_assist",
-                "module_medal"
-            ],
+            "componentOrder": ["module_sign", "module_assist", "module_medal"],
             "skin": {
                 "selected": "nc_rhodes_default",
                 "state": {
@@ -419,11 +415,7 @@
             }
         },
         "social": {
-            "assistCharList": [
-                null,
-                null,
-                null
-            ]
+            "assistCharList": [null, null, null]
         },
         "dexNav": {
             "character": {},
@@ -7002,6 +6994,179 @@
                             }
                         }
                     }
+                },
+                "rogue_4": {
+                    "bank": {
+                        "show": true,
+                        "current": 999,
+                        "record": 999,
+                        "reward": {
+                            "bank_reward_1": 1,
+                            "bank_reward_2": 1,
+                            "bank_reward_3": 1,
+                            "bank_reward_4": 1,
+                            "bank_reward_5": 1
+                        },
+                        "totalPut": 999
+                    },
+                    "bp": {
+                        "point": 55000,
+                        "reward": {
+                            "bp_level_1": 1,
+                            "bp_level_2": 1,
+                            "bp_level_3": 1,
+                            "bp_level_4": 1,
+                            "bp_level_5": 1,
+                            "bp_level_6": 1,
+                            "bp_level_7": 1,
+                            "bp_level_8": 1,
+                            "bp_level_9": 1,
+                            "bp_level_10": 1,
+                            "bp_level_11": 1,
+                            "bp_level_12": 1,
+                            "bp_level_13": 1,
+                            "bp_level_14": 1,
+                            "bp_level_15": 1,
+                            "bp_level_16": 1,
+                            "bp_level_17": 1,
+                            "bp_level_18": 1,
+                            "bp_level_19": 1,
+                            "bp_level_20": 1,
+                            "bp_level_21": 1,
+                            "bp_level_22": 1,
+                            "bp_level_23": 1,
+                            "bp_level_24": 1,
+                            "bp_level_25": 1,
+                            "bp_level_26": 1,
+                            "bp_level_27": 1,
+                            "bp_level_28": 1,
+                            "bp_level_29": 1,
+                            "bp_level_30": 1,
+                            "bp_level_31": 1,
+                            "bp_level_32": 1,
+                            "bp_level_33": 1,
+                            "bp_level_34": 1,
+                            "bp_level_35": 1,
+                            "bp_level_36": 1,
+                            "bp_level_37": 1,
+                            "bp_level_38": 1,
+                            "bp_level_39": 1,
+                            "bp_level_40": 1,
+                            "bp_level_41": 1,
+                            "bp_level_42": 1,
+                            "bp_level_43": 1,
+                            "bp_level_44": 1,
+                            "bp_level_45": 1,
+                            "bp_level_46": 1,
+                            "bp_level_47": 1,
+                            "bp_level_48": 1,
+                            "bp_level_49": 1,
+                            "bp_level_50": 1,
+                            "bp_level_51": 1,
+                            "bp_level_52": 1,
+                            "bp_level_53": 1,
+                            "bp_level_54": 1,
+                            "bp_level_55": 1,
+                            "bp_level_56": 1,
+                            "bp_level_57": 1,
+                            "bp_level_58": 1,
+                            "bp_level_59": 1,
+                            "bp_level_60": 1,
+                            "bp_level_61": 1,
+                            "bp_level_62": 1,
+                            "bp_level_63": 1,
+                            "bp_level_64": 1,
+                            "bp_level_65": 1
+                        }
+                    },
+                    "monthTeam": {
+                        "valid": ["month_team_1", "month_team_2"],
+                        "reward": {
+                            "month_team_1": 1,
+                            "month_team_2": 1
+                        },
+                        "mission": {}
+                    },
+                    "modeGrade": {
+                        "NORMAL": {
+                            "0": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "11": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "12": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "13": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "14": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "15": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "MONTH_TEAM": {
+                            "0": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "CHALLENGE": {
+                            "0": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -7079,165 +7244,73 @@
                     },
                     "tower_n_01": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_02": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_03": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_04": {
                         "best": 8,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6,
-                            7,
-                            8
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6, 7, 8],
                         "unlockHard": false,
                         "hardBest": 0
                     },
                     "tower_n_05": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_06": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_07": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_08": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_09": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_10": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_11": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     },
                     "tower_n_12": {
                         "best": 6,
-                        "reward": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        ],
+                        "reward": [1, 2, 3, 4, 5, 6],
                         "unlockHard": true,
                         "hardBest": 0
                     }
@@ -7706,21 +7779,15 @@
                 "stages": {
                     "act3fun_01": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_02": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     },
                     "act3fun_03": {
                         "state": 3,
-                        "scores": [
-                            0
-                        ]
+                        "scores": [0]
                     }
                 }
             },
@@ -7886,10 +7953,7 @@
                             "count": 1
                         }
                     },
-                    "squad": [
-                        null,
-                        null
-                    ]
+                    "squad": [null, null]
                 }
             }
         },
