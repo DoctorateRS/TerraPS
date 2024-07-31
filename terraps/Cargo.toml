@@ -1,45 +1,45 @@
 [package]
-name = "terra-ps"
-version.workspace = true
-edition = "2021"
-description = "Server implementations for a certain Gacha Tower Defense game."
-authors = ["Rh", "EnokiUN", "UPON"]
-publish = false
+    name              = "terra-ps"
+    version.workspace = true
+    edition           = "2021"
+    description       = "Server implementations for a certain Gacha Tower Defense game."
+    authors           = [ "EnokiUN", "Rh", "UPON" ]
+    publish           = false
 
 [dependencies]
-env_logger.workspace = true
-anyhow.workspace = true
-chrono.workspace = true
-constcat.workspace = true
-axum.workspace = true
-base64.workspace = true
-zip.workspace = true
-uuid.workspace = true
-rand.workspace = true
+    env_logger.workspace = true
+    anyhow.workspace     = true
+    chrono.workspace     = true
+    constcat.workspace   = true
+    axum.workspace       = true
+    base64.workspace     = true
+    zip.workspace        = true
+    uuid.workspace       = true
+    rand.workspace       = true
 
-aes.workspace = true
-cbc.workspace = true
-libaes.workspace = true
-ring.workspace = true
-md-5.workspace = true
+    aes.workspace    = true
+    cbc.workspace    = true
+    libaes.workspace = true
+    ring.workspace   = true
+    md-5.workspace   = true
 
-reqwest.workspace = true
+    reqwest.workspace = true
 
-h2.workspace = true
-tokio.workspace = true
-tokio-util.workspace = true
+    h2.workspace         = true
+    tokio.workspace      = true
+    tokio-util.workspace = true
 
-serde.workspace = true
-serde_json.workspace = true
+    serde.workspace      = true
+    serde_json.workspace = true
 
-tracing.workspace = true
-tracing-log.workspace = true
-tracing-futures.workspace = true
-tracing-subscriber.workspace = true
+    tracing.workspace            = true
+    tracing-log.workspace        = true
+    tracing-futures.workspace    = true
+    tracing-subscriber.workspace = true
 
-tower-http = { version = "0.5", features = ["trace"] }
-common_utils = { path = "../common" }
+    tower-http   = { version = "0.5", features = [ "trace" ] }
+    common_utils = { path = "../common" }
 
 [[bin]]
-name = "terra-ps"
-path = "src/main.rs"
+    name = "terra-ps"
+    path = "src/main.rs"

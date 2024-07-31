@@ -1,9 +1,9 @@
 [package]
-name = "common_utils"
-version.workspace = true
-edition = "2021"
+    name              = "common_utils"
+    version.workspace = true
+    edition           = "2021"
 
 [dependencies]
-serde.workspace = true
-serde_json.workspace = true
-anyhow.workspace = true
+    serde.workspace      = true
+    serde_json.workspace = true
+    anyhow.workspace     = true
