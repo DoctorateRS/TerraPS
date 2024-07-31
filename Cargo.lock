@@ -1945,6 +1945,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "terra-ps-2"
+version = "0.6.9"
+dependencies = [
+ "aes",
+ "anyhow",
+ "axum",
+ "base64",
+ "cbc",
+ "chrono",
+ "common_utils",
+ "constcat",
+ "env_logger",
+ "h2",
+ "libaes",
+ "md-5",
+ "rand",
+ "reqwest",
+ "ring",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-util",
+ "tower-http",
+ "tracing",
+ "tracing-futures",
+ "tracing-log",
+ "tracing-subscriber",
+ "uuid",
+ "zip",
+]
+
+[[package]]
 name = "thiserror"
 version = "1.0.63"
 source = "registry+https://github.com/rust-lang/crates.io-index"

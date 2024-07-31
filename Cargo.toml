@@ -1,5 +1,5 @@
 [workspace]
-    members  = [ "common", "launcher", "terraps", "xtask" ]
+    members  = [ "common", "launcher", "terraps", "terraps2", "xtask" ]
     resolver = "2"
 
     [workspace.package]
