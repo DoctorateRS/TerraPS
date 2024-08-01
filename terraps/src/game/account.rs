@@ -77,17 +77,8 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         player_data["user"]["skin"]["characterSkins"][&skin_keys[count]] = json!(1);
-        if {
-            !get_keys(&temp_skin_table)
-                .iter()
-                .map(|x| x.as_str())
-                .collect::<Vec<&str>>()
-                .contains(&skin_data["charId"].as_str().unwrap())
-        } || {
-            skin_data["displaySkin"]["onYear"].as_u64().unwrap()
-                > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"]
-                    .as_u64()
-                    .unwrap()
+        if { !get_keys(&temp_skin_table).iter().map(|x| x.as_str()).collect::<Vec<&str>>().contains(&skin_data["charId"].as_str().unwrap()) } || {
+            skin_data["displaySkin"]["onYear"].as_u64().unwrap() > skin_table["charSkins"][&temp_skin_table[&skin_data["charId"].as_str().unwrap()].as_str().unwrap()]["displaySkin"]["onYear"].as_u64().unwrap()
         } {
             temp_skin_table[skin_data["charId"].as_str().unwrap()] = skin_data["skinId"].clone();
         }
@@ -160,16 +151,7 @@ pub async fn account_sync_data() -> JSON {
         });
 
         // Set E2 skin
-        if {
-            ![
-                "char_508_aguard".to_string(),
-                "char_509_acast".to_string(),
-                "char_510_amedic".to_string(),
-                "char_511_asnipe".to_string(),
-            ]
-            .contains(&operator_keys[count])
-        } && { temp_char_list[&cid]["evolvePhase"].as_u64().unwrap() == 2 }
-        {
+        if { !["char_508_aguard", "char_509_acast", "char_510_amedic", "char_511_asnipe"].contains(&operator_keys[count].as_str()) } && { temp_char_list[&cid]["evolvePhase"].as_u64().unwrap() == 2 } {
             temp_char_list[&cid]["skin"] = json!(operator_keys[count].clone() + "#2");
         }
 
@@ -215,11 +197,7 @@ pub async fn account_sync_data() -> JSON {
                     "level": lvl
                 });
             }
-            temp_char_list[&cid]["currentEquip"] = json!(&equip_table["charEquip"][temp_char_list[&cid]["charId"].as_str().unwrap()]
-                .as_array()
-                .unwrap()
-                .last()
-                .unwrap());
+            temp_char_list[&cid]["currentEquip"] = json!(&equip_table["charEquip"][temp_char_list[&cid]["charId"].as_str().unwrap()].as_array().unwrap().last().unwrap());
         }
 
         player_data["user"]["dexNav"]["character"][&operator_keys[count]] = json!({
@@ -368,12 +346,7 @@ pub async fn account_sync_data() -> JSON {
                     }
                 });
             }
-            temp_char_list[&cid]["tmpl"]["char_002_amiya"]["currentEquip"] = equip_table["charEquip"]["char_002_amiya"]
-                .as_array()
-                .unwrap()
-                .last()
-                .unwrap()
-                .clone();
+            temp_char_list[&cid]["tmpl"]["char_002_amiya"]["currentEquip"] = equip_table["charEquip"]["char_002_amiya"].as_array().unwrap().last().unwrap().clone();
         } else if operator_keys[count] == "char_512_aprot" {
             temp_char_list[&cid]["skin"] = json!("char_512_aprot#1");
         }
@@ -599,12 +572,7 @@ pub async fn account_sync_data() -> JSON {
             continue;
         }
         let chapter = &act_table["archiveItemUnlockDataMap"][&log]["chapterId"].as_str().unwrap();
-        if get_keys(&player_data["user"]["deepSea"]["logs"])
-            .iter()
-            .map(|s| s.as_str())
-            .collect::<Vec<&str>>()
-            .contains(chapter)
-        {
+        if get_keys(&player_data["user"]["deepSea"]["logs"]).iter().map(|s| s.as_str()).collect::<Vec<&str>>().contains(chapter) {
             let sv = player_data["user"]["deepSea"]["logs"][&chapter].as_array_mut().unwrap();
             sv.push(json!(log));
             player_data["user"]["deepSea"]["logs"][&chapter] = json!(sv);
@@ -614,21 +582,10 @@ pub async fn account_sync_data() -> JSON {
     }
 
     // Mails
-    let received_mails = mail_data["recievedIDs"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|id| id.as_u64().unwrap())
-        .collect::<Vec<u64>>();
-    let deleted_mails = mail_data["deletedIDs"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|id| id.as_u64().unwrap())
-        .collect::<Vec<u64>>();
+    let received_mails = mail_data["recievedIDs"].as_array().unwrap().iter().map(|id| id.as_u64().unwrap()).collect::<Vec<u64>>();
+    let deleted_mails = mail_data["deletedIDs"].as_array().unwrap().iter().map(|id| id.as_u64().unwrap()).collect::<Vec<u64>>();
     for mail_id in get_keys(&mail_data["mailList"]) {
-        if received_mails.clone().contains(&mail_id.parse::<u64>().unwrap()) && deleted_mails.clone().contains(&mail_id.parse::<u64>().unwrap())
-        {
+        if received_mails.clone().contains(&mail_id.parse::<u64>().unwrap()) && deleted_mails.clone().contains(&mail_id.parse::<u64>().unwrap()) {
             player_data["user"]["pushFlags"]["hasGifts"] = json!(1);
             break;
         }
@@ -739,10 +696,7 @@ pub async fn account_sync_data() -> JSON {
         story_review_groups[&id]["stories"] = json!(story_vec);
         let mut reward_vec = Vec::new();
         if get_keys(&story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"]).contains(&id) {
-            for data in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][&id]["rewardList"]
-                .as_array()
-                .unwrap()
-            {
+            for data in story_review_meta_table["miniActTrialData"]["miniActTrialDataMap"][&id]["rewardList"].as_array().unwrap() {
                 reward_vec.push(json!(data["trialRewardId"]))
             }
         }
@@ -779,6 +733,7 @@ pub async fn account_sync_data() -> JSON {
     }
 
     write_json(USER_JSON_PATH, &player_data).unwrap_or(());
+
     for theme in get_keys(&player_data["user"]["rlv2"]["outer"]) {
         if get_keys(&rlv2_table["details"]).contains(&theme) {
             for stg in get_keys(&rlv2_table["details"][&theme]["stages"]) {
@@ -818,7 +773,7 @@ pub async fn account_yostar_auth_req() -> JSON {
 pub async fn account_yostar_auth_submit() -> JSON {
     Json(json!({
         "result": 0,
-        "yostar_account": "Doctorate@doctorate.com",
+        "yostar_account": "terraps@xcode.com",
         "yostar_token": "a",
         "yostar_uid": "1"
     }))
