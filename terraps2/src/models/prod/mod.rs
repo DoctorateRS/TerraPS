@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+pub mod network;
 
 use common_utils::read_json;
 use serde::{Deserialize, Serialize};
@@ -27,46 +27,14 @@ impl ProdAndroidVersion {
 #[derive(Serialize, Deserialize)]
 pub struct ProdAndroidRefresh {
     #[serde(rename = "resVersion")]
-    res_ver: HashMap<(), ()>,
+    res_ver: (),
 }
 
 impl ProdAndroidRefresh {
     pub fn default() -> Self {
-        Self { res_ver: HashMap::default() }
+        Self { res_ver: () }
     }
 }
-
-#[derive(Serialize, Deserialize)]
-pub struct ProdAndroidNetwork {
-    sign: String,
-    content: String,
-}
-
-impl ProdAndroidNetwork {
-    pub fn load() -> Self {
-        let mode = &SERVER_CONFIG.mode;
-        let host = &SERVER_CONFIG.host;
-        let port = SERVER_CONFIG.port;
-
-        let cfg = read_json(CONFIG_PATH);
-
-        let server = format!("http://{}:{}", host, port);
-        let func_ver = cfg["networkConfig"][&mode]["content"]["funcVer"].as_str().unwrap_or("");
-
-        let mut network_config = cfg["networkConfig"][&mode].clone();
-        for (index, url) in cfg["networkConfig"][&mode]["content"]["configs"][&func_ver]["network"].as_object().unwrap() {
-            if url.is_string() && url.as_str().unwrap().contains("{server}") {
-                network_config["content"]["configs"][&func_ver]["network"][index] = url.as_str().unwrap().replace("{server}", &server).into();
-            }
-        }
-
-        let content = network_config["content"].to_string();
-
-        Self { sign: String::from("sign"), content }
-    }
-}
-
-pub type ProdAndroidRemote = HashMap<(), ()>;
 
 #[derive(Serialize, Deserialize)]
 struct Announce {

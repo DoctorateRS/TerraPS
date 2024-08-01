@@ -16,10 +16,10 @@ pub struct AccountLogin {
 }
 
 impl AccountLogin {
-    pub fn new(uid: &str) -> Self {
+    pub fn new(uid: String) -> Self {
         Self {
             result: 0,
-            uid: String::from(uid),
+            uid,
             secret: "yostar",
             service_license_version: 0,
         }
@@ -53,7 +53,7 @@ pub struct AccountYostarAuthSubmit {
 }
 
 impl AccountYostarAuthSubmit {
-    pub fn default() -> Self {
+    pub const fn default() -> Self {
         Self {
             result: 0,
             yostar_uid: "terraps@rustlang.com",
