@@ -61,12 +61,8 @@ pub async fn update_cn_config() -> Result<bool> {
 
         excel_update = true;
         config["networkConfig"]["cn"]["content"]["funcVer"] = json!(func_ver);
-        config["networkConfig"]["cn"]["content"]["configs"][func_ver.as_str().unwrap()] =
-            config["networkConfig"]["cn"]["content"]["configs"][old_func_ver.as_str().unwrap()].clone();
-        config["networkConfig"]["cn"]["content"]["configs"]
-            .as_object_mut()
-            .unwrap()
-            .remove(old_func_ver.as_str().unwrap());
+        config["networkConfig"]["cn"]["content"]["configs"][func_ver.as_str().unwrap()] = config["networkConfig"]["cn"]["content"]["configs"][old_func_ver.as_str().unwrap()].clone();
+        config["networkConfig"]["cn"]["content"]["configs"].as_object_mut().unwrap().remove(old_func_ver.as_str().unwrap());
     }
 
     write_json(CONFIG_JSON_PATH, config).unwrap_or(());
@@ -135,18 +131,9 @@ pub async fn excel_update(mode: Mode) -> Result<()> {
 
 async fn update_excel_data(link: &str) -> Result<()> {
     let path = link
-        .replace(
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata",
-            "./data",
-        )
-        .replace(
-            "https://ak-conf.hypergryph.com/config/prod/announce_meta/Android",
-            "./data/announce",
-        )
-        .replace(
-            "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/",
-            "./dataGB/",
-        )
+        .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data")
+        .replace("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android", "./data/announce")
+        .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/", "./dataGB/")
         .replace("| GLOBAL AK ANNOUNCE |", "./dataGB/announce");
     let json = get(link).await?.json::<Value>().await?;
     write_json(&path, json).unwrap_or(());
@@ -182,29 +169,13 @@ pub fn update_event() -> Result<()> {
 }
 
 pub async fn update_gacha() -> Result<()> {
-    const WELFARE_CHAR_LIST: [&str; 6] = [
-        "char_474_glady",
-        "char_4042_lumen",
-        "char_427_vigil",
-        "char_1031_slent2",
-        "char_4011_lessng",
-        "char_4134_cetsyr",
-    ];
+    const WELFARE_CHAR_LIST: [&str; 6] = ["char_474_glady", "char_4042_lumen", "char_427_vigil", "char_1031_slent2", "char_4011_lessng", "char_4134_cetsyr"];
     let mut gacha = read_json(USER_GACHA_PATH);
     let char_table = update_data(CHARACTER_TABLE_URL).await;
     let gacha_advanced = gacha["advanced"].clone();
-    let gacha_preloaded = gacha_advanced
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x["charId"].as_str().unwrap())
-        .collect::<Vec<&str>>();
+    let gacha_preloaded = gacha_advanced.as_array().unwrap().iter().map(|x| x["charId"].as_str().unwrap()).collect::<Vec<&str>>();
     for char in get_keys(&char_table) {
-        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6"
-            && !WELFARE_CHAR_LIST.contains(&char.as_str())
-            && char.starts_with("char_")
-            && !gacha_preloaded.contains(&char.as_str())
-        {
+        if char_table[&char]["rarity"].as_str().unwrap() == "TIER_6" && !WELFARE_CHAR_LIST.contains(&char.as_str()) && char.starts_with("char_") && !gacha_preloaded.contains(&char.as_str()) {
             gacha["advanced"].as_array_mut().unwrap().push(json!({
                 "charId": char,
                 "isNew": 1

@@ -19,9 +19,7 @@ use crate::{
 
 mod file;
 
-const DATA_DIRS: [&str; 9] = [
-    "announce", "crisis", "crisisv2", "excel", "gacha", "rlv2", "sandbox", "tower", "user",
-];
+const DATA_DIRS: [&str; 9] = ["announce", "crisis", "crisisv2", "excel", "gacha", "rlv2", "sandbox", "tower", "user"];
 
 pub async fn init() -> Result<()> {
     init_cfg()?;

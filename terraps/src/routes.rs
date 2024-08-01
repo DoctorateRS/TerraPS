@@ -68,10 +68,7 @@ pub fn app() -> Router {
 }
 
 fn app_routes() -> Router {
-    Router::new()
-        .route("/v1/config", get(app::app_v1_config))
-        .route("/getSettings", post(app::app_get_settings))
-        .route("/getCode", post(app::app_get_code))
+    Router::new().route("/v1/config", get(app::app_v1_config)).route("/getSettings", post(app::app_get_settings)).route("/getCode", post(app::app_get_code))
 }
 
 fn account_routes() -> Router {
@@ -93,9 +90,7 @@ fn activity_routes() -> Router {
 }
 
 fn act25side_routes() -> Router {
-    Router::new()
-        .route("/battleStart", post(quest::quest_battle_start))
-        .route("/battleFinish", post(quest::quest_battle_finish))
+    Router::new().route("/battleStart", post(quest::quest_battle_start)).route("/battleFinish", post(quest::quest_battle_finish))
 }
 
 fn april_fools_routes() -> Router {
@@ -169,9 +164,7 @@ fn crisis_v2_routes() -> Router {
 }
 
 fn deep_sea_routes() -> Router {
-    Router::new()
-        .route("/branch", post(deep_sea::deep_sea_branch))
-        .route("/event", post(deep_sea::deep_sea_event))
+    Router::new().route("/branch", post(deep_sea::deep_sea_branch)).route("/event", post(deep_sea::deep_sea_event))
 }
 
 fn gacha_routes() -> Router {
@@ -195,9 +188,7 @@ fn mail_routes() -> Router {
 }
 
 fn online_routes() -> Router {
-    Router::new()
-        .route("/v1/ping", post(online::online_v1_ping))
-        .route("/v1/loginout", post(online::online_v1_login_out))
+    Router::new().route("/v1/ping", post(online::online_v1_ping)).route("/v1/loginout", post(online::online_v1_login_out))
 }
 
 fn quest_routes() -> Router {
@@ -268,9 +259,7 @@ fn story_routes() -> Router {
 }
 
 fn story_review_routes() -> Router {
-    Router::new()
-        .route("/markStoryAcceKnown", post(story_review::mark_story_acce_known))
-        .route("/readStory", post(story_review::read_story))
+    Router::new().route("/markStoryAcceKnown", post(story_review::mark_story_acce_known)).route("/readStory", post(story_review::read_story))
 }
 
 fn tower_routes() -> Router {

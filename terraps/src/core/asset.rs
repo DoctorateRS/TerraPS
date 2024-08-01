@@ -62,11 +62,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     let path = format!("./assets/{hash}/redirect/");
     let config = read_json(CONFIG_JSON_PATH);
     let mode = config["server"]["mode"].as_str().unwrap();
-    let mut assets_list = if !StdPath::new(ASSETS_JSON).exists() {
-        json!({hash: []})
-    } else {
-        read_json(ASSETS_JSON)
-    };
+    let mut assets_list = if !StdPath::new(ASSETS_JSON).exists() { json!({hash: []}) } else { read_json(ASSETS_JSON) };
     if assets_list.get(hash).is_none() {
         assets_list[hash] = json!([]);
     }
@@ -101,12 +97,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
         return builder.body(Body::from_stream(res.bytes_stream())).unwrap();
     }
     if name == "hot_update_list.json" {
-        let hot_update_list = get(format!("{BASE_PATH_CN}{hash}/hot_update_list.json", hash = &hash))
-            .await
-            .unwrap()
-            .json::<Value>()
-            .await
-            .unwrap();
+        let hot_update_list = get(format!("{BASE_PATH_CN}{hash}/hot_update_list.json", hash = &hash)).await.unwrap().json::<Value>().await.unwrap();
         write_json(&format!("{path}hot_update_list.json"), &hot_update_list).unwrap_or(());
         asset.query_hot_update_list().await.into_response()
     } else {

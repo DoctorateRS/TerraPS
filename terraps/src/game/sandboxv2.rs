@@ -73,10 +73,7 @@ pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
     if !get_keys(&sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]).contains(&String::from("building")) {
         sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"] = json!([]);
     }
-    let mut building = sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"]
-        .as_array()
-        .unwrap()
-        .clone();
+    let mut building = sandbox_data["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][&node_id]["building"].as_array().unwrap().clone();
     let placed_items = payload["sandboxV2Data"]["placedItems"].clone();
     for keys in get_keys(&placed_items) {
         if placed_items[&keys]["value"].get("hpRatio").is_some() {
@@ -91,10 +88,8 @@ pub async fn sandbox_battle_finish(Json(payload): JSON) -> JSON {
             }))
         } else {
             for building_data in &building {
-                if building_data["pos"].as_array().unwrap()[0].as_i64().unwrap()
-                    == placed_items[&keys]["key"]["position"]["row"].as_i64().unwrap()
-                    && building_data["pos"].as_array().unwrap()[1].as_i64().unwrap()
-                        == placed_items[&keys]["key"]["position"]["col"].as_i64().unwrap()
+                if building_data["pos"].as_array().unwrap()[0].as_i64().unwrap() == placed_items[&keys]["key"]["position"]["row"].as_i64().unwrap()
+                    && building_data["pos"].as_array().unwrap()[1].as_i64().unwrap() == placed_items[&keys]["key"]["position"]["col"].as_i64().unwrap()
                 {
                     building.pop();
                     break;
@@ -124,34 +119,22 @@ pub async fn home_build_save(Json(payload): JSON) -> JSON {
     let mut sandbox = read_json(SANDBOX_JSON_PATH);
     let node_id = payload["nodeId"].as_str().unwrap();
 
-    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]
-        .get("building")
-        .is_none()
-    {
+    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id].get("building").is_none() {
         sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"] = json!([]);
     }
 
     for op in payload["operation"].as_array().unwrap() {
         match op["type"].as_i64().unwrap() {
-            1 => sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                .as_array_mut()
-                .unwrap()
-                .push(json!({
-                    "key": op["buildingId"],
-                    "pos": [op["pos"]["row"], op["pos"]["col"]],
-                    "hpRatio": 10000,
-                    "dir": op["dir"],
-                })),
+            1 => sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array_mut().unwrap().push(json!({
+                "key": op["buildingId"],
+                "pos": [op["pos"]["row"], op["pos"]["col"]],
+                "hpRatio": 10000,
+                "dir": op["dir"],
+            })),
             3 => {
-                for build in sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                    .as_array()
-                    .unwrap()
-                {
+                for build in sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array().unwrap() {
                     if build["pos"][0] == op["pos"]["row"] && build["pos"][1] == op["pos"]["col"] {
-                        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                            .as_array_mut()
-                            .unwrap()
-                            .remove(0);
+                        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array_mut().unwrap().remove(0);
                         break;
                     }
                 }
@@ -290,34 +273,19 @@ pub async fn settle_game() -> JSON {
     });
 
     for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["map"]["node"]) {
-        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["map"]["node"]
-            .as_array_mut()
-            .unwrap()
-            .push(json!(node));
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["map"]["node"].as_array_mut().unwrap().push(json!(node));
     }
     for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"]) {
-        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"]
-            .as_array_mut()
-            .unwrap()
-            .push(json!(node));
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"].as_array_mut().unwrap().push(json!(node));
     }
     for rush in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["enemy"]["enemyRush"]) {
-        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["enemy"]["enemyRush"]
-            .as_array_mut()
-            .unwrap()
-            .push(json!(rush));
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["main"]["enemy"]["enemyRush"].as_array_mut().unwrap().push(json!(rush));
     }
     for node in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["node"]) {
-        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["node"]
-            .as_array_mut()
-            .unwrap()
-            .push(json!(node));
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["node"].as_array_mut().unwrap().push(json!(node));
     }
     for food in get_keys(&sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"]) {
-        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"]
-            .as_array_mut()
-            .unwrap()
-            .push(json!(food));
+        data["playerDataDelta"]["deleted"]["sandboxPerm"]["SANDBOX_V2"]["sandbox_1"]["troop"]["food"].as_array_mut().unwrap().push(json!(food));
     }
 
     let json = json!({
@@ -431,9 +399,7 @@ pub async fn eat_food(Json(payload): JSON) -> JSON {
     let buff = food["id"].as_str().unwrap();
     let sandbox_table = update_data(SANDBOX_TABLE_URL).await;
 
-    let buff = if food["sub"].as_array().unwrap().contains(&json!("sandbox_1_condiment"))
-        && get_keys(&sandbox_table["detail"]["SANDBOX_V2"]["sandbox_1"]["runeDatas"]).contains(&format!("{}_x", buff))
-    {
+    let buff = if food["sub"].as_array().unwrap().contains(&json!("sandbox_1_condiment")) && get_keys(&sandbox_table["detail"]["SANDBOX_V2"]["sandbox_1"]["runeDatas"]).contains(&format!("{}_x", buff)) {
         format!("{}_x", buff)
     } else {
         buff.to_string()
@@ -469,36 +435,23 @@ pub async fn month_battle_finish(Json(payload): JSON) -> JSON {
 
     let node_id = "n12B9";
 
-    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]
-        .get("building")
-        .is_none()
-    {
+    if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id].get("building").is_none() {
         sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"] = json!([]);
     }
 
     for item in payload["sandboxV2Data"]["placedItems"].as_array().unwrap() {
         if item["value"].get("hpRatio").is_some() {
-            sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                .as_array_mut()
-                .unwrap()
-                .push(json!({
-                    "key": item["key"]["itemId"],
-                    "pos": [item["key"]["position"]["row"], item["key"]["position"]["col"]],
-                    "hpRatio": 10000,
-                    "dir": item["value"]["direction"]
-                }))
+            sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array_mut().unwrap().push(json!({
+                "key": item["key"]["itemId"],
+                "pos": [item["key"]["position"]["row"], item["key"]["position"]["col"]],
+                "hpRatio": 10000,
+                "dir": item["value"]["direction"]
+            }))
         } else {
-            for bid in 0..sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                .as_array()
-                .unwrap()
-                .len()
-            {
+            for bid in 0..sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array().unwrap().len() {
                 let build = &sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"][bid];
                 if build["pos"][0] == item["key"]["position"]["row"] && build["pos"][1] == item["key"]["position"]["col"] {
-                    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"]
-                        .as_array_mut()
-                        .unwrap()
-                        .remove(bid);
+                    sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["main"]["stage"]["node"][node_id]["building"].as_array_mut().unwrap().remove(bid);
                     break;
                 }
             }
@@ -528,21 +481,12 @@ pub async fn explore_mode(Json(payload): JSON) -> JSON {
     let mut explore_mode_buffs = vec![json!("normal_mode_buff1"), json!("normal_mode_buff3")];
 
     if explore_mode {
-        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
-            .as_array_mut()
-            .unwrap()
-            .append(&mut explore_mode_buffs);
+        sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"].as_array_mut().unwrap().append(&mut explore_mode_buffs);
     } else {
         for buff in explore_mode_buffs {
             if let Value::String(buff) = buff {
-                if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
-                    .as_array()
-                    .unwrap()
-                    .contains(&json!(buff))
-                {
-                    let v = sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"]
-                        .as_array_mut()
-                        .unwrap();
+                if sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"].as_array().unwrap().contains(&json!(buff)) {
+                    let v = sandbox["template"]["SANDBOX_V2"]["sandbox_1"]["buff"]["rune"]["global"].as_array_mut().unwrap();
                     let i = v.iter().position(|x| x == &json!(buff)).unwrap();
                     v.remove(i);
                 }

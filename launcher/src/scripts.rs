@@ -15,14 +15,8 @@ pub fn get_script() -> Result<String> {
     };
     let sc_buf = sc_buf
         .replace("@@@DOCTORATE_PORT@@@", &server.port.to_string())
-        .replace(
-            "@@@DOCTORATE_ACTIVITY_MIN_START_TS@@@",
-            &usr_conf.act_min_start_ts.to_string(),
-        )
-        .replace(
-            "@@@DOCTORATE_ACTIVITY_MAX_START_TS@@@",
-            &usr_conf.act_max_start_ts.to_string(),
-        );
+        .replace("@@@DOCTORATE_ACTIVITY_MIN_START_TS@@@", &usr_conf.act_min_start_ts.to_string())
+        .replace("@@@DOCTORATE_ACTIVITY_MAX_START_TS@@@", &usr_conf.act_max_start_ts.to_string());
     Ok(sc_buf)
 }
 

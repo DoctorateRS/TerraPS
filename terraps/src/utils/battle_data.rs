@@ -56,9 +56,7 @@ pub struct BattleDataDecoder {
 
 impl Default for BattleDataDecoder {
     fn default() -> Self {
-        Self {
-            login_time: DEFAULT_LOGIN_TIME,
-        }
+        Self { login_time: DEFAULT_LOGIN_TIME }
     }
 }
 
@@ -108,18 +106,7 @@ impl BattleDataDecoder {
         let res = res.trim();
         let mut res_filtered = String::new();
         for c in res.chars() {
-            if c.is_alphanumeric()
-                || c == '"'
-                || c == ':'
-                || c == ','
-                || c == '.'
-                || c == '-'
-                || c == ' '
-                || c == '['
-                || c == ']'
-                || c == '{'
-                || c == '}'
-            {
+            if c.is_alphanumeric() || c == '"' || c == ':' || c == ',' || c == '.' || c == '-' || c == ' ' || c == '[' || c == ']' || c == '{' || c == '}' {
                 res_filtered.push(c);
             }
         }

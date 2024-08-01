@@ -44,11 +44,7 @@ pub async fn rlv2_create_game(Json(payload): JSON) -> JSON {
     let theme = payload["theme"].as_str().unwrap();
     let mode = payload["mode"].as_str().unwrap();
 
-    let mode = if mode == "MONTH_TEAM" || mode == "CHALLENGE" {
-        "NORMAL"
-    } else {
-        mode
-    };
+    let mode = if mode == "MONTH_TEAM" || mode == "CHALLENGE" { "NORMAL" } else { mode };
 
     let mode_grade = payload["modeGrade"].clone();
 
@@ -675,9 +671,7 @@ pub async fn rlv2_buy_good(Json(payload): JSON) -> JSON {
     let select = payload["select"][0].as_str().unwrap();
 
     let mut rlv2 = read_json(RLV2_JSON_PATH);
-    let item_id = rlv2["player"]["pending"][0]["content"]["shop"]["goods"][select]["itemId"]
-        .as_str()
-        .unwrap();
+    let item_id = rlv2["player"]["pending"][0]["content"]["shop"]["goods"][select]["itemId"].as_str().unwrap();
     if item_id.contains("_recruit_ticket_") {
         let tkt_id = get_next_tkt(&rlv2);
         add_ticket(&mut rlv2, &tkt_id);

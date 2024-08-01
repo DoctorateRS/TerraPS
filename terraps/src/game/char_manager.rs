@@ -126,11 +126,7 @@ pub mod char_build {
 
     pub async fn char_build_set_char_default_skill(Json(payload): JSON) -> JSON {
         let char_inst_id = payload["charInstId"].clone();
-        let char_inst_id = if char_inst_id.is_string() {
-            char_inst_id.as_str().unwrap().to_string()
-        } else {
-            char_inst_id.as_u64().unwrap().to_string()
-        };
+        let char_inst_id = if char_inst_id.is_string() { char_inst_id.as_str().unwrap().to_string() } else { char_inst_id.as_u64().unwrap().to_string() };
 
         let default_skill_index = payload["defaultSkillIndex"].clone();
 
@@ -161,11 +157,7 @@ pub mod char_build {
 
     pub async fn char_build_change_char_skin(Json(payload): JSON) -> JSON {
         let char_inst_id = payload["charInstId"].clone();
-        let char_inst_id = if char_inst_id.is_string() {
-            char_inst_id.as_str().unwrap().to_string()
-        } else {
-            char_inst_id.as_u64().unwrap().to_string()
-        };
+        let char_inst_id = if char_inst_id.is_string() { char_inst_id.as_str().unwrap().to_string() } else { char_inst_id.as_u64().unwrap().to_string() };
         let skin_id = payload["skinId"].clone();
 
         let mut data = json!({
@@ -195,11 +187,7 @@ pub mod char_build {
 
     pub async fn char_build_set_char_equipment(Json(payload): JSON) -> JSON {
         let char_inst_id = payload["charInstId"].clone();
-        let char_inst_id = if char_inst_id.is_string() {
-            char_inst_id.as_str().unwrap().to_string()
-        } else {
-            char_inst_id.as_u64().unwrap().to_string()
-        };
+        let char_inst_id = if char_inst_id.is_string() { char_inst_id.as_str().unwrap().to_string() } else { char_inst_id.as_u64().unwrap().to_string() };
         let equip_id = payload["equipId"].clone();
 
         let mut data = json!({
@@ -229,11 +217,7 @@ pub mod char_build {
 
     pub async fn char_build_change_char_template(Json(payload): JSON) -> JSON {
         let char_inst_id = payload["charInstId"].clone();
-        let char_inst_id = if char_inst_id.is_string() {
-            char_inst_id.as_str().unwrap().to_string()
-        } else {
-            char_inst_id.as_u64().unwrap().to_string()
-        };
+        let char_inst_id = if char_inst_id.is_string() { char_inst_id.as_str().unwrap().to_string() } else { char_inst_id.as_u64().unwrap().to_string() };
         let template_id = payload["templateId"].clone();
 
         let data = json!({

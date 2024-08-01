@@ -66,25 +66,11 @@ pub mod app {
     }
 
     pub async fn app_get_settings() -> JSON {
-        Json(
-            reqget("https://passport.arknights.global/app/getSettings")
-                .await
-                .unwrap()
-                .json::<Value>()
-                .await
-                .unwrap(),
-        )
+        Json(reqget("https://passport.arknights.global/app/getSettings").await.unwrap().json::<Value>().await.unwrap())
     }
 
     pub async fn app_get_code() -> JSON {
-        Json(
-            reqget("https://passport.arknights.global/app/getCode")
-                .await
-                .unwrap()
-                .json::<Value>()
-                .await
-                .unwrap(),
-        )
+        Json(reqget("https://passport.arknights.global/app/getCode").await.unwrap().json::<Value>().await.unwrap())
     }
 }
 

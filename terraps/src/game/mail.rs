@@ -15,18 +15,8 @@ use common_utils::{read_json, write_json};
 pub async fn mail_get_meta_info_list() -> JSON {
     let mut result = Vec::new();
     let mail_data = read_json(MAILLIST_PATH);
-    let received_ids = &mail_data["recievedIDs"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x.as_u64().unwrap())
-        .collect::<Vec<u64>>();
-    let deleted_ids = &mail_data["deletedIds"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x.as_u64().unwrap())
-        .collect::<Vec<u64>>();
+    let received_ids = &mail_data["recievedIDs"].as_array().unwrap().iter().map(|x| x.as_u64().unwrap()).collect::<Vec<u64>>();
+    let deleted_ids = &mail_data["deletedIds"].as_array().unwrap().iter().map(|x| x.as_u64().unwrap()).collect::<Vec<u64>>();
     for mail in get_keys(&mail_data["mailList"]) {
         if deleted_ids.contains(&mail.parse().unwrap()) {
             continue;
@@ -54,18 +44,8 @@ pub async fn mail_get_meta_info_list() -> JSON {
 pub async fn mail_list_mail_box() -> JSON {
     let mut result = Vec::new();
     let mail_data = read_json(MAILLIST_PATH);
-    let received_ids = &mail_data["recievedIDs"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x.as_u64().unwrap())
-        .collect::<Vec<u64>>();
-    let deleted_ids = &mail_data["deletedIds"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x.as_u64().unwrap())
-        .collect::<Vec<u64>>();
+    let received_ids = &mail_data["recievedIDs"].as_array().unwrap().iter().map(|x| x.as_u64().unwrap()).collect::<Vec<u64>>();
+    let deleted_ids = &mail_data["deletedIds"].as_array().unwrap().iter().map(|x| x.as_u64().unwrap()).collect::<Vec<u64>>();
     let mut has_gift = 0;
     for mail in get_keys(&mail_data["mailList"]) {
         if deleted_ids.contains(&mail.parse().unwrap()) {
@@ -138,12 +118,7 @@ pub async fn mail_receive_all_mail(Json(payload): JSON) -> JSON {
 
 pub async fn mail_delete_all_received_mails(Json(payload): JSON) -> JSON {
     let mut mail_data = read_json(MAILLIST_PATH);
-    let mut deleted_ids = mail_data["deletedIds"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .map(|x| x.as_u64().unwrap())
-        .collect::<Vec<u64>>();
+    let mut deleted_ids = mail_data["deletedIds"].as_array().unwrap().iter().map(|x| x.as_u64().unwrap()).collect::<Vec<u64>>();
 
     for mail in payload["sysMailIdList"].as_array().unwrap() {
         if !deleted_ids.contains(&mail.as_str().unwrap().parse().unwrap()) {

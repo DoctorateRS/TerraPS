@@ -22,11 +22,7 @@ pub fn get_chars(default: bool) -> Vec<Value> {
     if default {
         let rlv2_user_settings = read_json(RLV2_USER_SETTINGS_PATH);
         let init_chars = rlv2_user_settings["initialChars"].as_array().unwrap();
-        let _ = chars
-            .iter()
-            .filter(|char| (init_chars.contains(char)))
-            .cloned()
-            .collect::<Vec<Value>>();
+        let _ = chars.iter().filter(|char| (init_chars.contains(char))).cloned().collect::<Vec<Value>>();
     }
 
     let mut res = vec![];
@@ -75,11 +71,7 @@ pub fn get_next_tkt(rlv2: &Value) -> String {
         v.push(tkt.split_off(1).parse::<usize>().unwrap_or(0));
     }
     let config = read_json(CONFIG_JSON_PATH);
-    let mut index = if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
-        0
-    } else {
-        10000 - 1
-    };
+    let mut index = if !config["rlv2Config"]["allChars"].as_bool().unwrap() { 0 } else { 10000 - 1 };
     while v.contains(&index) {
         index += 1;
     }
@@ -116,11 +108,7 @@ pub fn activate_tkt(rlv2: &mut Value, tkt_id: &str) {
 
 pub fn get_next_char_id(rlv2: &Value) -> String {
     let config = read_json(CONFIG_JSON_PATH);
-    let mut i = if !config["rlv2Config"]["allChars"].as_bool().unwrap() {
-        1
-    } else {
-        10000
-    };
+    let mut i = if !config["rlv2Config"]["allChars"].as_bool().unwrap() { 1 } else { 10000 };
     while get_keys(&rlv2["troop"]["chars"]).contains(&i.to_string()) {
         i += 1;
     }
@@ -269,13 +257,7 @@ pub async fn get_buffs(rlv2: &Value, stage_id: &str) -> Vec<Value> {
         if mode_grade < i as i64 {
             break;
         }
-        for j in theme_buffs[i][0]
-            .clone()
-            .as_array()
-            .unwrap()
-            .iter()
-            .map(|x| x.as_u64().unwrap_or(0) as usize)
-        {
+        for j in theme_buffs[i][0].clone().as_array().unwrap().iter().map(|x| x.as_u64().unwrap_or(0) as usize) {
             theme_buffs[j] = json!([[], []]);
         }
     }

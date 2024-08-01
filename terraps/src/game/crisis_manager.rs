@@ -99,12 +99,7 @@ pub mod crisis_v2 {
             nodes[&slot_pack_id][mutual_exclusion_group][slot] = Value::Number(Number::from(score));
         }
 
-        let rune_slots = rune_slots
-            .as_array()
-            .unwrap()
-            .iter()
-            .map(|rune| rune.as_str().unwrap())
-            .collect::<Vec<&str>>();
+        let rune_slots = rune_slots.as_array().unwrap().iter().map(|rune| rune.as_str().unwrap()).collect::<Vec<&str>>();
 
         for slot_pk_id in get_keys(&nodes) {
             let mut flag = true;

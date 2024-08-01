@@ -29,14 +29,7 @@ fn update_building_char_inst_id_list(building_data: Value) -> Value {
                 }
             };
             building_data["chars"][&key_str]["roomSlotId"] = json!(&room_slot);
-            building_data["chars"][&key_str]["index"] = Value::Number(Number::from(
-                building_data["roomSlots"][&room_slot]["charInstIds"]
-                    .as_array()
-                    .unwrap()
-                    .iter()
-                    .position(|x| x == key)
-                    .unwrap() as i64,
-            ));
+            building_data["chars"][&key_str]["index"] = Value::Number(Number::from(building_data["roomSlots"][&room_slot]["charInstIds"].as_array().unwrap().iter().position(|x| x == key).unwrap() as i64));
         }
     }
     building_data

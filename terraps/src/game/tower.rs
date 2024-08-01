@@ -337,10 +337,7 @@ pub async fn tower_recruit(Json(payload): JSON) -> JSON {
     if payload["giveUp"].as_i64().unwrap() != 1 {
         let cnt = get_length(&tower["tower"]["current"]["cards"]) + 2;
         let char_id = payload["charId"].as_str().unwrap();
-        let char_inst_id = user_data["user"]["dexNav"]["character"][char_id]["charInstId"]
-            .as_u64()
-            .unwrap()
-            .to_string();
+        let char_inst_id = user_data["user"]["dexNav"]["character"][char_id]["charInstId"].as_u64().unwrap().to_string();
         tower["tower"]["current"]["cards"][cnt.to_string()] = json!({
             "charId": char_id,
             "currentEquip": user_data["user"]["troop"]["chars"][&char_inst_id]["currentEquip"],

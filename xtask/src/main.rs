@@ -31,13 +31,7 @@ fn run(rel: bool) -> Result<()> {
 
     let send_1 = send.clone();
     let handle_1 = spawn(move || {
-        let mut server = Command::new("cargo")
-            .arg("run")
-            .arg("--bin")
-            .arg("terra-ps")
-            .args(if rel { vec!["--release"] } else { vec![] })
-            .spawn()
-            .expect("Failed to start server.");
+        let mut server = Command::new("cargo").arg("run").arg("--bin").arg("terra-ps").args(if rel { vec!["--release"] } else { vec![] }).spawn().expect("Failed to start server.");
 
         server.wait()?;
         send_1.send(()).expect("Failed to send signal.");
@@ -74,13 +68,7 @@ fn server(rel: bool) -> Result<()> {
     let (send, receive) = channel();
 
     let handle = spawn(move || {
-        let mut server = Command::new("cargo")
-            .arg("run")
-            .arg("--bin")
-            .arg("terra-ps")
-            .args(if rel { vec!["--release"] } else { vec![] })
-            .spawn()
-            .expect("Failed to start server.");
+        let mut server = Command::new("cargo").arg("run").arg("--bin").arg("terra-ps").args(if rel { vec!["--release"] } else { vec![] }).spawn().expect("Failed to start server.");
 
         server.wait()?;
         send.send(()).expect("Failed to send signal.");
@@ -96,9 +84,7 @@ fn server(rel: bool) -> Result<()> {
 
 fn watch(rel: bool) -> Result<()> {
     let mut cmd = Command::new("cargo");
-    cmd.arg("watch")
-        .arg("-x")
-        .arg(format!("xtask run {}", if rel { "--release" } else { "" }));
+    cmd.arg("watch").arg("-x").arg(format!("xtask run {}", if rel { "--release" } else { "" }));
 
     let mut child = cmd.spawn()?;
 

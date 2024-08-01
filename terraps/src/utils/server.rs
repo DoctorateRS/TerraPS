@@ -33,14 +33,7 @@ impl Server {
         println!("Server started at: {}", self.get_address());
     }
     pub async fn serve(&self, routes: Router) -> Result<()> {
-        subscriber_fmt()
-            .with_max_level(Level::DEBUG)
-            .with_timer(Time)
-            .with_file(false)
-            .with_line_number(false)
-            .with_writer(stdout)
-            .compact()
-            .init();
+        subscriber_fmt().with_max_level(Level::DEBUG).with_timer(Time).with_file(false).with_line_number(false).with_writer(stdout).compact().init();
         let addr = &self.get_address();
         let listener = TcpListener::bind(addr).await?;
         self.log_begin();
