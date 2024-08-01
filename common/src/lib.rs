@@ -3,7 +3,7 @@ mod fs;
 mod json;
 
 pub use self::{
-    cfg::{RestorePrevState, ServerConfig, UserConfig},
+    cfg::*,
     fs::mkfile,
     json::{read_json, write_json},
 };

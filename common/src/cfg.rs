@@ -95,15 +95,41 @@ impl Default for UserConfig {
             force_battle_replay: false,
             name: String::from("Terra"),
             number: String::from("1111"),
-            restore_prev_state: RestorePrevState {
-                is2: false,
-                sq_n_fav: false,
-                ui: false,
-            },
+            restore_prev_state: RestorePrevState { is2: false, sq_n_fav: false, ui: false },
             secretary: String::from("char_377_gdglow"),
             secretary_skin: String::from("char_377_gdglow@sanrio#1"),
             theme: String::from("tm_rainbowsix_1"),
             vision: true,
+        }
+    }
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct AssetConfig {
+    #[serde(rename = "autoUpdate")]
+    auto_update: bool,
+    #[serde(rename = "downloadLocally")]
+    dl_local: bool,
+    #[serde(rename = "enableMods")]
+    mods: bool,
+    #[serde(rename = "skipModCacheValidation")]
+    skip_mod_validation: bool,
+}
+
+impl AssetConfig {
+    pub fn load() -> Result<Self> {
+        let value = read_json("./config/config.json")["assets"].clone();
+        Ok(from_value(value)?)
+    }
+}
+
+impl Default for AssetConfig {
+    fn default() -> Self {
+        Self {
+            auto_update: true,
+            dl_local: true,
+            mods: false,
+            skip_mod_validation: true,
         }
     }
 }

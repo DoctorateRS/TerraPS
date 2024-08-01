@@ -89,7 +89,7 @@ pub mod url {
 pub mod global_url {
     use constcat::concat;
     // BASE_URL
-    pub const BASE_URL: &str = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/";
+    pub const BASE_URL: &str = "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata";
 
     // TABLE Urls
     pub const GLOBAL_ACTIVITY_TABLE_URL: &str = concat!(BASE_URL, "/excel/activity_table.json");

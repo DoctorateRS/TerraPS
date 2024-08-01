@@ -1,72 +1,87 @@
 [workspace]
-    members  = [ "common", "launcher", "terraps", "terraps2", "xtask" ]
-    resolver = "2"
+members = ["common", "launcher", "terraps", "terraps2", "xtask"]
+resolver = "2"
 
-    [workspace.package]
-        version = "0.6.9"
+[workspace.package]
+version = "0.6.9"
 
-    [workspace.dependencies]
-        env_logger = "0.11"
-        anyhow     = "1"
-        chrono     = "0.4"
-        constcat   = "0.5"
-        axum       = "0.7"
-        base64     = "0.22"
-        zip        = "2"
-        uuid       = { version = "1", features = [ "fast-rng", "macro-diagnostics", "v4" ] }
-        rand       = { version = "0.8", features = [ "std_rng" ] }
+[workspace.dependencies]
+openssl = "0.10.66"
+env_logger = "0.11"
+anyhow = "1"
+chrono = "0.4"
+constcat = "0.5"
+axum = "0.7"
+base64 = "0.22"
+zip = "2"
+uuid = { version = "1", features = ["fast-rng", "macro-diagnostics", "v4"] }
+rand = { version = "0.8", features = ["std_rng"] }
 
-        # Crypto
-        aes    = "0.8"
-        cbc    = { version = "0.1", features = [ "std" ] }
-        libaes = "0.7"
-        ring   = "0.17"
-        md-5   = "0.10"
+# Crypto
+aes = "0.8"
+cbc = { version = "0.1", features = ["std"] }
+libaes = "0.7"
+ring = "0.17"
+md-5 = "0.10"
 
-        # HTTP
-        reqwest = { version = "0.12", features = [ "json", "stream" ] }
+# HTTP
+reqwest = { version = "0.12", features = ["json", "stream"] }
 
-        # Tokio
-        h2         = "0.4"
-        tokio      = { version = "1", default-features = false, features = [ "fs", "io-std", "macros", "rt-multi-thread" ] }
-        tokio-util = { version = "0.7", features = [ "io" ] }
+# Tokio
+h2 = "0.4"
+tokio = { version = "1", default-features = false, features = [
+    "fs",
+    "io-std",
+    "macros",
+    "rt-multi-thread",
+] }
+tokio-util = { version = "0.7", features = ["io"] }
 
-        # Data Serialization
-        serde      = { version = "1", features = [ "derive" ] }
-        serde_json = { version = "1", features = [ "preserve_order" ] }
+# Data Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
 
-        # Tracings
-        tracing            = "0.1"
-        tracing-futures    = "0.2"
-        tracing-log        = { version = "0.2", features = [ "log-tracer", "std" ] }
-        tracing-subscriber = { version = "0.3", features = [ "env-filter", "std", "tracing", "tracing-log" ] }
+# Tracings
+tracing = "0.1"
+tracing-futures = "0.2"
+tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
+tracing-subscriber = { version = "0.3", features = [
+    "env-filter",
+    "std",
+    "tracing",
+    "tracing-log",
+] }
 
-        # Frida
+# Frida
 
 [profile.dev]
-    strip         = false
-    lto           = false
-    opt-level     = 0
-    codegen-units = 16
+strip = false
+lto = false
+opt-level = 0
+codegen-units = 16
 
 [profile.release]
-    strip         = true  # Automatically strip symbols from the binary.
-    lto           = true  # Link-time optimization.
-    opt-level     = 3     # Optimize for speed.
-    codegen-units = 1     # Maximum size reduction optimizations.
-    debug         = false # Disable debug information.
-    rpath         = true  # Disable runtime path.
+strip = true      # Automatically strip symbols from the binary.
+lto = true        # Link-time optimization.
+opt-level = 3     # Optimize for speed.
+codegen-units = 1 # Maximum size reduction optimizations.
+debug = false     # Disable debug information.
+rpath = true      # Disable runtime path.
 
 # The profile that 'cargo dist' will build with
 [profile.dist]
-    inherits = "release"
-    lto      = "thin"
+inherits = "release"
+lto = "thin"
 
 # Config for 'cargo dist'
 [workspace.metadata.dist]
-    # The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
-    cargo-dist-version = "0.16"
-    # The installers to generate for each app
-    installers = [ "msi" ]
-    # Target platforms to build apps for (Rust target-triple syntax)
-    targets = [ "x86_64-pc-windows-msvc", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl" ]
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.16"
+# The installers to generate for each app
+installers = ["msi"]
+# Target platforms to build apps for (Rust target-triple syntax)
+targets = [
+    "x86_64-pc-windows-msvc",
+    "x86_64-unknown-linux-gnu",
+    "x86_64-unknown-linux-musl",
+]
