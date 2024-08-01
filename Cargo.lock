@@ -1182,6 +1182,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "narantuya"
+version = "0.6.9"
+dependencies = [
+ "anyhow",
+ "base64",
+ "common_utils",
+ "frida",
+ "mozdevice",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "zip",
+]
+
+[[package]]
 name = "native-tls"
 version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1381,6 +1397,38 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "prts-server"
+version = "0.6.9"
+dependencies = [
+ "aes",
+ "anyhow",
+ "axum",
+ "base64",
+ "cbc",
+ "chrono",
+ "common_utils",
+ "constcat",
+ "env_logger",
+ "h2",
+ "libaes",
+ "md-5",
+ "rand",
+ "reqwest",
+ "ring",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-util",
+ "tower-http",
+ "tracing",
+ "tracing-futures",
+ "tracing-log",
+ "tracing-subscriber",
+ "uuid",
+ "zip",
 ]
 
 [[package]]
@@ -1585,22 +1633,6 @@ dependencies = [
  "spin",
  "untrusted",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "rust-launcher"
-version = "0.6.9"
-dependencies = [
- "anyhow",
- "base64",
- "common_utils",
- "frida",
- "mozdevice",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "zip",
 ]
 
 [[package]]
@@ -1914,38 +1946,6 @@ dependencies = [
 
 [[package]]
 name = "terra-ps"
-version = "0.6.9"
-dependencies = [
- "aes",
- "anyhow",
- "axum",
- "base64",
- "cbc",
- "chrono",
- "common_utils",
- "constcat",
- "env_logger",
- "h2",
- "libaes",
- "md-5",
- "rand",
- "reqwest",
- "ring",
- "serde",
- "serde_json",
- "tokio",
- "tokio-util",
- "tower-http",
- "tracing",
- "tracing-futures",
- "tracing-log",
- "tracing-subscriber",
- "uuid",
- "zip",
-]
-
-[[package]]
-name = "terra-ps-2"
 version = "0.6.9"
 dependencies = [
  "aes",
