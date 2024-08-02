@@ -22,7 +22,7 @@ pub fn read_json_to_struct<P: AsRef<Path>, T: for<'de> Deserialize<'de>>(path: P
     Ok(from_value(val)?)
 }
 
-pub fn write_json<T: Serialize>(path: &str, value: T) -> Result<()> {
+pub fn write_json<P: AsRef<Path>, T: Serialize>(path: P, value: T) -> Result<()> {
     let fmt = PrettyFormatter::with_indent(b"    ");
     let mut buf = Vec::new();
     let mut ser = Serializer::with_formatter(&mut buf, fmt);

@@ -107,13 +107,13 @@ impl Default for UserConfig {
 #[derive(Serialize, Deserialize)]
 pub struct AssetConfig {
     #[serde(rename = "autoUpdate")]
-    auto_update: bool,
+    pub auto_update: bool,
     #[serde(rename = "downloadLocally")]
-    dl_local: bool,
+    pub dl_local: bool,
     #[serde(rename = "enableMods")]
-    mods: bool,
+    pub mods: bool,
     #[serde(rename = "skipModCacheValidation")]
-    skip_mod_validation: bool,
+    pub skip_mod_validation: bool,
 }
 
 impl AssetConfig {
