@@ -196,13 +196,37 @@
                 "module_medal"
             ],
             "skin": {
-                "selected": "nc_rhodes_default",
+                "selected": "nc_as2024_pilgrim",
                 "state": {
                     "nc_rhodes_default": {
                         "unlock": true,
                         "progress": null
                     },
                     "nc_rhodes_light": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_sports_1": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_sandbox_1": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_as2024_dreamer": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_as2024_pilgrim": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_as2024_throne": {
+                        "unlock": true,
+                        "progress": null
+                    },
+                    "nc_as2024_novafive": {
                         "unlock": true,
                         "progress": null
                     }

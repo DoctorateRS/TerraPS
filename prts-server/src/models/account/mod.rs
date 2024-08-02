@@ -1,5 +1,7 @@
 mod activity;
 mod dungeon;
+mod namecard;
+mod status;
 
 use std::collections::HashMap;
 

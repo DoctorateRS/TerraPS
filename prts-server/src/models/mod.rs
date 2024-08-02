@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use serde::{Deserialize, Serialize};
 
 pub mod account;
@@ -9,6 +7,15 @@ pub mod prod;
 pub mod social;
 
 #[derive(Serialize, Deserialize)]
+pub struct EmptyMap {}
+
+impl EmptyMap {
+    pub const fn new() -> Self {
+        Self {}
+    }
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct PlayerDataDeltaStatic {
     #[serde(rename = "playerDataDelta")]
     pdt: PddInner,
@@ -16,17 +23,14 @@ pub struct PlayerDataDeltaStatic {
 
 #[derive(Serialize, Deserialize)]
 struct PddInner {
-    modified: HashMap<(), ()>,
-    deleted: HashMap<(), ()>,
+    modified: EmptyMap,
+    deleted: EmptyMap,
 }
 
 impl PlayerDataDeltaStatic {
     pub fn default() -> Self {
         Self {
-            pdt: PddInner {
-                modified: HashMap::<(), ()>::default(),
-                deleted: HashMap::<(), ()>::default(),
-            },
+            pdt: PddInner { modified: EmptyMap {}, deleted: EmptyMap {} },
         }
     }
 }

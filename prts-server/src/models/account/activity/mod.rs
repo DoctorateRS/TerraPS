@@ -1,6 +1,12 @@
+use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
 
+use crate::models::EmptyMap;
+
 pub mod bossrush;
+
+pub type VoidMap<K> = HashMap<K, EmptyMap>;
 
 #[derive(Serialize, Deserialize)]
 pub struct TypeAct24Side {
@@ -49,5 +55,17 @@ struct AprilFoolData {
 impl AprilFool {
     pub const fn default() -> Self {
         Self { act5fun: AprilFoolData { is_open: true } }
+    }
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct DefaultObject {
+    #[serde(rename = "1stact")]
+    first_act: EmptyMap,
+}
+
+impl DefaultObject {
+    pub const fn default() -> Self {
+        Self { first_act: EmptyMap::new() }
     }
 }
