@@ -1,3 +1,6 @@
+mod activity;
+mod dungeon;
+
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
@@ -61,4 +64,9 @@ impl AccountYostarAuthSubmit {
             yostar_account: "1",
         }
     }
+}
+
+pub struct AccountSyncData {
+    result: u8,
+    ts: u64,
 }

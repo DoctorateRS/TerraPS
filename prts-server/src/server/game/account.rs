@@ -8,3 +8,5 @@ pub async fn login(header: HeaderMap) -> Json<AccountLogin> {
 
     Json(AccountLogin::new(uid))
 }
+
+pub async fn sync_data() {}
