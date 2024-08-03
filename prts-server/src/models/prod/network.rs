@@ -35,4 +35,11 @@ impl ProdAndroidNetwork {
     }
 }
 
-pub type ProdAndroidRemote = HashMap<(), ()>;
+#[derive(Serialize, Deserialize)]
+pub struct ProdAndroidRemote {}
+
+impl ProdAndroidRemote {
+    pub fn default() -> Self {
+        Self {}
+    }
+}

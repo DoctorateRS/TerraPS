@@ -3,20 +3,20 @@ pub mod game;
 pub mod routes;
 
 use anyhow::{Error, Result};
-use axum::{serve, Router};
+use axum::serve;
 use tokio::net::TcpListener;
 use tracing::Level;
 use tracing_subscriber::fmt::fmt as subscriber_fmt;
 
 use routes::app;
 
-pub struct Server<'s> {
-    pub host: &'s String,
+pub struct Server<'server> {
+    pub host: &'server String,
     pub port: u16,
 }
 
-impl<'s> Server<'s> {
-    pub fn new(host: &'s String, port: u16) -> Self {
+impl<'server> Server<'server> {
+    pub fn new(host: &'server String, port: u16) -> Self {
         Self { host, port }
     }
 

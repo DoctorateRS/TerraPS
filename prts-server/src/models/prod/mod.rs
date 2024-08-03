@@ -1,10 +1,11 @@
-pub mod network;
+mod network;
 
 use common_utils::read_json;
 use serde::{Deserialize, Serialize};
 use serde_json::from_value;
 
 use crate::{cnst::config::CONFIG_PATH, SERVER_CONFIG};
+pub use network::{ProdAndroidNetwork, ProdAndroidRemote};
 
 #[derive(Serialize, Deserialize)]
 pub struct ProdAndroidVersion {
@@ -24,16 +25,10 @@ impl ProdAndroidVersion {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct ProdAndroidRefresh {
     #[serde(rename = "resVersion")]
     res_ver: (),
-}
-
-impl ProdAndroidRefresh {
-    pub fn default() -> Self {
-        Self { res_ver: () }
-    }
 }
 
 #[derive(Serialize, Deserialize)]

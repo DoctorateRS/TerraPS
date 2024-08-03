@@ -4,7 +4,7 @@ use common_utils::{AssetConfig, ServerConfig, UserConfig};
 use server::Server;
 
 mod cnst;
-mod models;
+pub mod models;
 mod server;
 mod utils;
 

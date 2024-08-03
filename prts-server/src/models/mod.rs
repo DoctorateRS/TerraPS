@@ -6,7 +6,7 @@ pub mod payload;
 pub mod prod;
 pub mod social;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct EmptyMap {}
 
 impl EmptyMap {
@@ -15,20 +15,20 @@ impl EmptyMap {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct PlayerDataDeltaStatic {
     #[serde(rename = "playerDataDelta")]
     pdt: PddInner,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 struct PddInner {
     modified: EmptyMap,
     deleted: EmptyMap,
 }
 
 impl PlayerDataDeltaStatic {
-    pub fn default() -> Self {
+    pub const fn default() -> Self {
         Self {
             pdt: PddInner { modified: EmptyMap {}, deleted: EmptyMap {} },
         }
