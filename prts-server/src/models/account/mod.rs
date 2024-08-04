@@ -1,5 +1,7 @@
 pub mod activity;
 pub mod character;
+pub mod crisis;
+pub mod dexnav;
 pub mod dungeon;
 pub mod flag;
 pub mod mission;

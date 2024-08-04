@@ -1,5 +1,6 @@
 use crate::utils::json::JSON;
 use axum::Json;
+use common_utils::write_json;
 use serde_json::json;
 
 pub async fn social_search_player(Json(payload): JSON) -> JSON {
@@ -54,6 +55,7 @@ pub async fn social_get_sort_list_info() -> JSON {
 }
 
 pub async fn social_set_assist_char_list(Json(payload): JSON) -> JSON {
+    write_json("./dump/social_assist.json", &payload);
     Json(json!({
         "playerDataDelta": {
             "modified": {

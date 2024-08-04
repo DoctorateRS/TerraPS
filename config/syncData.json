@@ -262,12 +262,36 @@
                     "squadId": "2",
                     "name": "Squad 3",
                     "slots": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
+                        {
+                            "charInstId": 264,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_f12yin"
+                        },
+                        {
+                            "charInstId": 2025,
+                            "skillIndex": 0,
+                            "currentEquip": "uniequip_002_shu"
+                        },
+                        {
+                            "charInstId": 171,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_bldsk"
+                        },
+                        {
+                            "charInstId": 4138,
+                            "skillIndex": 2,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 225,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_haak"
+                        },
+                        {
+                            "charInstId": 4087,
+                            "skillIndex": 2,
+                            "currentEquip": null
+                        },
                         null,
                         null,
                         null,

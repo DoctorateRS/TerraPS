@@ -7,14 +7,8 @@ pub struct Mission {
     missions: Missions,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
+#[serde(rename_all = "UPPERCASE")]
 struct Missions {
-    #[serde(rename = "ACTIVITY")]
-    act: EmptyMap,
-}
-
-impl Mission {
-    pub fn new() -> Self {
-        Self { missions: Missions { act: EmptyMap {} } }
-    }
+    activity: EmptyMap,
 }

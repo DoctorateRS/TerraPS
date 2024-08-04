@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use serde::{Deserialize, Serialize};
 
 use crate::{cnst::config::CONFIG_PATH, SERVER_CONFIG};

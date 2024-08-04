@@ -1,20 +1,14 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Stage {
-    #[serde(rename = "completeTimes")]
     complete_times: u16,
-    #[serde(rename = "hasBattleReplay")]
     has_battle_replay: u16,
-    #[serde(rename = "noCostCnt")]
     no_cost_cnt: u16,
-    #[serde(rename = "practiceTimes")]
     practice_times: u16,
-    #[serde(rename = "stageId")]
     stage_id: String,
-    #[serde(rename = "startTimes")]
     start_times: u16,
-    #[serde(rename = "state")]
     state: u8,
 }
 
@@ -33,21 +27,33 @@ impl Stage {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct CowLevel<'a> {
+enum CowLevelValue {
+    Bool(bool),
+    Arr([u8; 2]),
+}
+
+impl CowLevelValue {
+    pub fn default() -> Self {
+        Self::Bool(true)
+    }
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct CowLevel {
     id: String,
     #[serde(rename = "type")]
-    t: &'a str,
-    val: [u8; 0],
+    t: String,
+    val: [CowLevelValue; 1],
     fts: u64,
     rts: u64,
 }
 
-impl<'a> CowLevel<'a> {
+impl CowLevel {
     pub fn new(id: String) -> Self {
         Self {
             id,
-            t: "STAGE",
-            val: [],
+            t: String::from("STAGE"),
+            val: [CowLevelValue::default()],
             fts: 1600000000,
             rts: 1600000000,
         }

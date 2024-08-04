@@ -19,12 +19,21 @@ use utils::{
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    println!("TerraPS is starting...");
-    init().await?;
-    let arg_vec = args().collect::<Vec<_>>();
+    let args = args().collect::<Vec<_>>();
     let version = env!("CARGO_PKG_VERSION");
+    println!("TerraPS is starting...");
+
+    if args.contains(&String::from("--help")) {
+        print_help();
+        return Ok(());
+    }
+
+    if args.contains(&String::from("--init")) {
+        init().await?;
+    }
+
     upgrade().await?;
-    if !arg_vec.contains(&"--upgrade".to_string()) {
+    if !args.contains(&String::from("--upgrade")) {
         println!("TerraPS {} is starting...", version);
         let (server_address, server_port) = get_server_address();
         let server = Server::new(server_address, server_port);
@@ -33,4 +42,8 @@ async fn main() -> Result<()> {
         println!("TerraPS {} has been upgraded!", version);
         Ok(())
     }
+}
+
+fn print_help() {
+    println!("Help.")
 }
