@@ -1,28 +1,10 @@
 {
     "result": 0,
-    "ts": 1712822401,
+    "ts": 0,
     "user": {
         "dungeon": {
             "stages": {},
             "cowLevel": {
-                "spst_08-02": {
-                    "id": "spst_08-02",
-                    "type": "STAGE",
-                    "val": [
-                        true
-                    ],
-                    "fts": 1665223808,
-                    "rts": 1665223844
-                },
-                "spst_08-04": {
-                    "id": "spst_08-04",
-                    "type": "STAGE",
-                    "val": [
-                        true
-                    ],
-                    "fts": 1640364122,
-                    "rts": 1640364160
-                },
                 "spst_08-01": {
                     "id": "spst_08-01",
                     "type": "STAGE",
@@ -32,6 +14,15 @@
                     "fts": 1637386717,
                     "rts": 1637386763
                 },
+                "spst_08-02": {
+                    "id": "spst_08-02",
+                    "type": "STAGE",
+                    "val": [
+                        true
+                    ],
+                    "fts": 1665223808,
+                    "rts": 1665223844
+                },
                 "spst_08-03": {
                     "id": "spst_08-03",
                     "type": "STAGE",
@@ -40,6 +31,15 @@
                     ],
                     "fts": 1659777304,
                     "rts": 1659777316
+                },
+                "spst_08-04": {
+                    "id": "spst_08-04",
+                    "type": "STAGE",
+                    "val": [
+                        true
+                    ],
+                    "fts": 1640364122,
+                    "rts": 1640364160
                 },
                 "spst_08-05": {
                     "id": "spst_08-05",
@@ -146,12 +146,11 @@
                 }
             },
             "TYPE_ACT35SIDE": {
-                "act35side": {
-                }
+                "act35side": {}
             }
         },
         "status": {
-            "nickName": "破碎大道爱好者",
+            "nickName": "TerraPS",
             "nickNumber": "0400",
             "level": 120,
             "exp": 0,
@@ -184,9 +183,9 @@
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "Doctorate",
+            "serverName": "TerraPS",
             "avatarId": "0",
-            "resume": "DoctoratePy",
+            "resume": "Terra",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
