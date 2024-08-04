@@ -180,3 +180,14 @@ impl Equip {
         Self { hide: 0, locked: 0, level }
     }
 }
+
+#[derive(Deserialize, Serialize)]
+pub struct CharGroupComponent {
+    favor_point: u16,
+}
+
+impl Default for CharGroupComponent {
+    fn default() -> Self {
+        Self { favor_point: 25570 }
+    }
+}

@@ -15,15 +15,13 @@ impl CharAddon {
         Self::default()
     }
 
-    pub fn default_story() -> CharStoryAddon {
-        CharStoryAddon::default()
+    pub fn add_story(&mut self, id: String) {
+        self.story.insert(id, CharStoryAddon::default());
     }
 
-    pub fn default_stage() -> CharStageAddon {
-        CharStageAddon::default()
+    pub fn add_stage(&mut self, id: String) {
+        self.stage.insert(id, CharStageAddon::default());
     }
-
-    pub fn add_story(&mut self, id: String) {}
 }
 
 #[derive(Deserialize, Serialize)]
