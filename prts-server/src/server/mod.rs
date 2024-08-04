@@ -2,6 +2,9 @@ pub mod core;
 pub mod game;
 pub mod routes;
 
+#[macro_use]
+mod r#macro;
+
 use anyhow::{Error, Result};
 use axum::serve;
 use tokio::net::TcpListener;
@@ -12,11 +15,11 @@ use routes::app;
 
 pub struct Server<'server> {
     pub host: &'server String,
-    pub port: u16,
+    pub port: i64,
 }
 
 impl<'server> Server<'server> {
-    pub fn new(host: &'server String, port: u16) -> Self {
+    pub fn new(host: &'server String, port: i64) -> Self {
         Self { host, port }
     }
 

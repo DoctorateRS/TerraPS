@@ -1,12 +1,8 @@
-use std::collections::HashMap;
-
 use serde::{Deserialize, Serialize};
 
 use crate::models::EmptyMap;
 
 pub mod bossrush;
-
-pub type VoidMap<K> = HashMap<K, EmptyMap>;
 
 #[derive(Serialize, Deserialize)]
 pub struct TypeAct24Side {
