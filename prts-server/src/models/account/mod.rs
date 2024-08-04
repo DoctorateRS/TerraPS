@@ -1,6 +1,7 @@
 pub mod activity;
 pub mod character;
 pub mod dungeon;
+pub mod flag;
 pub mod namecard;
 pub mod status;
 

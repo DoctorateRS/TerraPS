@@ -4,6 +4,8 @@ use serde::{Deserialize, Serialize};
 
 mod addon;
 mod squad;
+
+pub use addon::*;
 pub use squad::*;
 
 use crate::utils::time::time;

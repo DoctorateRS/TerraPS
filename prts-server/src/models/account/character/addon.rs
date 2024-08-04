@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, default, mem::replace};
 
 use serde::{Deserialize, Serialize};
 
@@ -7,6 +7,8 @@ use crate::utils::time::time;
 #[derive(Deserialize, Serialize, Default)]
 pub struct CharAddon {
     pub story: HashMap<String, CharStoryAddon>,
+    #[serde(skip_serializing_if = "HashMap::is_empty")]
+    #[serde(default)]
     pub stage: HashMap<String, CharStageAddon>,
 }
 
