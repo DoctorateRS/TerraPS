@@ -1,51 +1,57 @@
 {
     "result": 0,
-    "ts": 0,
+    "ts": 1712822401,
     "user": {
         "dungeon": {
             "stages": {},
             "cowLevel": {
-                "spst_08-01": {
-                    "id": "spst_08-01",
-                    "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
-                },
                 "spst_08-02": {
                     "id": "spst_08-02",
                     "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
-                },
-                "spst_08-03": {
-                    "id": "spst_08-03",
-                    "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
+                    "val": [
+                        true
+                    ],
+                    "fts": 1665223808,
+                    "rts": 1665223844
                 },
                 "spst_08-04": {
                     "id": "spst_08-04",
                     "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
+                    "val": [
+                        true
+                    ],
+                    "fts": 1640364122,
+                    "rts": 1640364160
+                },
+                "spst_08-01": {
+                    "id": "spst_08-01",
+                    "type": "STAGE",
+                    "val": [
+                        true
+                    ],
+                    "fts": 1637386717,
+                    "rts": 1637386763
+                },
+                "spst_08-03": {
+                    "id": "spst_08-03",
+                    "type": "STAGE",
+                    "val": [
+                        true
+                    ],
+                    "fts": 1659777304,
+                    "rts": 1659777316
                 },
                 "spst_08-05": {
                     "id": "spst_08-05",
                     "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
-                },
-                "spst_14-01": {
-                    "id": "spst_14-01",
-                    "type": "STAGE",
-                    "val": [],
-                    "fts": 1600000000,
-                    "rts": 1600000000
+                    "val": [
+                        [
+                            3,
+                            3
+                        ]
+                    ],
+                    "fts": 1665223849,
+                    "rts": 1665223886
                 }
             },
             "hideStages": {
@@ -138,12 +144,16 @@
                 "act5fun": {
                     "isOpen": true
                 }
+            },
+            "TYPE_ACT35SIDE": {
+                "act35side": {
+                }
             }
         },
         "status": {
-            "nickName": "Doctorate",
-            "nickNumber": "1111",
-            "level": 999,
+            "nickName": "破碎大道爱好者",
+            "nickNumber": "0400",
+            "level": 120,
             "exp": 0,
             "socialPoint": 300,
             "gachaTicket": 9999999,
@@ -151,8 +161,8 @@
             "tenGachaTicket": 9999999,
             "classicTenGachaTicket": 9999999,
             "instantFinishTicket": 9999999,
-            "hggShard": 9999999,
-            "lggShard": 9999999,
+            "hggShard": 1800,
+            "lggShard": 1800,
             "classicShard": 9999999,
             "recruitLicense": 9999999,
             "progress": 30000,
@@ -160,23 +170,23 @@
             "apLimitUpFlag": 0,
             "uid": "1",
             "flags": {},
-            "ap": 999,
-            "maxAp": 999,
-            "androidDiamond": 9999999,
-            "iosDiamond": 999,
-            "payDiamond": 9999999,
+            "ap": 135,
+            "maxAp": 135,
+            "androidDiamond": 114514,
+            "iosDiamond": 0,
+            "payDiamond": 114514,
             "freeDiamond": 0,
-            "diamondShard": 9999999,
-            "gold": 9999999,
-            "practiceTicket": 999,
+            "diamondShard": 1919810,
+            "gold": 1234567890,
+            "practiceTicket": 30,
             "lastRefreshTs": 0,
             "lastApAddTime": 0,
             "mainStageProgress": null,
             "registerTs": 0,
             "lastOnlineTs": 0,
-            "serverName": "TerraPS",
+            "serverName": "Doctorate",
             "avatarId": "0",
-            "resume": "Terra",
+            "resume": "DoctoratePy",
             "friendNumLimit": 999,
             "monthlySubscriptionStartTime": 0,
             "monthlySubscriptionEndTime": 0,
@@ -196,37 +206,13 @@
                 "module_medal"
             ],
             "skin": {
-                "selected": "nc_as2024_pilgrim",
+                "selected": "nc_rhodes_default",
                 "state": {
                     "nc_rhodes_default": {
                         "unlock": true,
                         "progress": null
                     },
                     "nc_rhodes_light": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_sports_1": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_sandbox_1": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_as2024_dreamer": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_as2024_pilgrim": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_as2024_throne": {
-                        "unlock": true,
-                        "progress": null
-                    },
-                    "nc_as2024_novafive": {
                         "unlock": true,
                         "progress": null
                     }
@@ -239,73 +225,25 @@
             "squads": {
                 "0": {
                     "squadId": "0",
-                    "name": "Ashcone",
+                    "name": "Squad 1",
                     "slots": [
-                        {
-                            "charInstId": 4072,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_ironmn"
-                        },
-                        {
-                            "charInstId": 4017,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 263,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_skadi"
-                        },
-                        {
-                            "charInstId": 4145,
-                            "skillIndex": 1,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 474,
-                            "skillIndex": 0,
-                            "currentEquip": "uniequip_003_glady"
-                        },
-                        {
-                            "charInstId": 1023,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_ghost2"
-                        },
-                        {
-                            "charInstId": 377,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_gdglow"
-                        },
-                        {
-                            "charInstId": 4133,
-                            "skillIndex": 0,
-                            "currentEquip": "uniequip_002_logos"
-                        },
-                        {
-                            "charInstId": 245,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 1016,
-                            "skillIndex": 0,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 4042,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_lumen"
-                        },
-                        {
-                            "charInstId": 147,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_003_shining"
-                        }
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
                     ]
                 },
                 "1": {
                     "squadId": "1",
-                    "name": "Stormwell",
+                    "name": "Squad 2",
                     "slots": [
                         null,
                         null,
@@ -325,66 +263,18 @@
                     "squadId": "2",
                     "name": "Squad 3",
                     "slots": [
-                        {
-                            "charInstId": 4087,
-                            "skillIndex": 1,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 222,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_bpipe"
-                        },
-                        {
-                            "charInstId": 1028,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_texas2"
-                        },
-                        {
-                            "charInstId": 1029,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_yato2"
-                        },
-                        {
-                            "charInstId": 1023,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_003_ghost2"
-                        },
-                        {
-                            "charInstId": 474,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_glady"
-                        },
-                        {
-                            "charInstId": 263,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_skadi"
-                        },
-                        {
-                            "charInstId": 4145,
-                            "skillIndex": 1,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 4064,
-                            "skillIndex": 2,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 264,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_f12yin"
-                        },
-                        {
-                            "charInstId": 4132,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_ascln"
-                        },
-                        {
-                            "charInstId": 4123,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_ela"
-                        }
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
                     ]
                 },
                 "3": {
@@ -7108,97 +6998,2430 @@
                             "bp_level_62": 1,
                             "bp_level_63": 1,
                             "bp_level_64": 1,
-                            "bp_level_65": 1
+                            "bp_level_65": 1,
+                            "bp_level_66": 1,
+                            "bp_level_67": 1,
+                            "bp_level_68": 1,
+                            "bp_level_69": 1,
+                            "bp_level_70": 1,
+                            "bp_level_71": 1,
+                            "bp_level_72": 1,
+                            "bp_level_73": 1,
+                            "bp_level_74": 1,
+                            "bp_level_75": 1,
+                            "bp_level_76": 1,
+                            "bp_level_77": 1,
+                            "bp_level_78": 1,
+                            "bp_level_79": 1,
+                            "bp_level_80": 1,
+                            "bp_level_81": 1,
+                            "bp_level_82": 1,
+                            "bp_level_83": 1,
+                            "bp_level_84": 1,
+                            "bp_level_85": 1,
+                            "bp_level_86": 1,
+                            "bp_level_87": 1,
+                            "bp_level_88": 1,
+                            "bp_level_89": 1,
+                            "bp_level_90": 1,
+                            "bp_level_91": 1,
+                            "bp_level_92": 1,
+                            "bp_level_93": 1,
+                            "bp_level_94": 1,
+                            "bp_level_95": 1,
+                            "bp_level_96": 1,
+                            "bp_level_97": 1,
+                            "bp_level_98": 1,
+                            "bp_level_99": 1,
+                            "bp_level_100": 1,
+                            "bp_level_101": 1,
+                            "bp_level_102": 1,
+                            "bp_level_103": 1,
+                            "bp_level_104": 1,
+                            "bp_level_105": 1,
+                            "bp_level_106": 1,
+                            "bp_level_107": 1,
+                            "bp_level_108": 1,
+                            "bp_level_109": 1,
+                            "bp_level_110": 1,
+                            "bp_level_111": 1,
+                            "bp_level_112": 1,
+                            "bp_level_113": 1,
+                            "bp_level_114": 1,
+                            "bp_level_115": 1,
+                            "bp_level_116": 1,
+                            "bp_level_117": 1,
+                            "bp_level_118": 1,
+                            "bp_level_119": 1,
+                            "bp_level_120": 1,
+                            "bp_level_121": 1,
+                            "bp_level_122": 1,
+                            "bp_level_123": 1,
+                            "bp_level_124": 1,
+                            "bp_level_125": 1,
+                            "bp_level_126": 1,
+                            "bp_level_127": 1,
+                            "bp_level_128": 1,
+                            "bp_level_129": 1,
+                            "bp_level_130": 1,
+                            "bp_level_131": 1,
+                            "bp_level_132": 1,
+                            "bp_level_133": 1,
+                            "bp_level_134": 1,
+                            "bp_level_135": 1,
+                            "bp_level_136": 1,
+                            "bp_level_137": 1,
+                            "bp_level_138": 1,
+                            "bp_level_139": 1,
+                            "bp_level_140": 1,
+                            "bp_level_141": 1,
+                            "bp_level_142": 1,
+                            "bp_level_143": 1,
+                            "bp_level_144": 1,
+                            "bp_level_145": 1,
+                            "bp_level_146": 1,
+                            "bp_level_147": 1,
+                            "bp_level_148": 1,
+                            "bp_level_149": 1,
+                            "bp_level_150": 1,
+                            "bp_level_151": 1,
+                            "bp_level_152": 1,
+                            "bp_level_153": 1,
+                            "bp_level_154": 1,
+                            "bp_level_155": 1
+                        }
+                    },
+                    "buff": {
+                        "pointOwned": 100,
+                        "pointCost": 100,
+                        "unlocked": {
+                            "rogue_4_outbuff_1": 1,
+                            "rogue_4_outbuff_2": 1,
+                            "rogue_4_outbuff_3": 1,
+                            "rogue_4_outbuff_4": 1,
+                            "rogue_4_outbuff_5": 1,
+                            "rogue_4_outbuff_6": 1,
+                            "rogue_4_outbuff_7": 1,
+                            "rogue_4_outbuff_8": 1,
+                            "rogue_4_outbuff_9": 1,
+                            "rogue_4_outbuff_10": 1,
+                            "rogue_4_outbuff_11": 1,
+                            "rogue_4_outbuff_12": 1,
+                            "rogue_4_difficulty_1": 1,
+                            "rogue_4_outbuff_13": 1,
+                            "rogue_4_outbuff_14": 1,
+                            "rogue_4_outbuff_15": 1,
+                            "rogue_4_outbuff_16": 1,
+                            "rogue_4_outbuff_17": 1,
+                            "rogue_4_outbuff_18": 1,
+                            "rogue_4_outbuff_19": 1,
+                            "rogue_4_outbuff_20": 1,
+                            "rogue_4_outbuff_21": 1,
+                            "rogue_4_outbuff_22": 1,
+                            "rogue_4_outbuff_23": 1,
+                            "rogue_4_outbuff_24": 1,
+                            "rogue_4_outbuff_25": 1,
+                            "rogue_4_outbuff_26": 1,
+                            "rogue_4_difficulty_2": 1,
+                            "rogue_4_outbuff_27": 1,
+                            "rogue_4_outbuff_28": 1,
+                            "rogue_4_outbuff_29": 1,
+                            "rogue_4_outbuff_30": 1,
+                            "rogue_4_outbuff_31": 1,
+                            "rogue_4_outbuff_32": 1,
+                            "rogue_4_outbuff_33": 1,
+                            "rogue_4_outbuff_34": 1,
+                            "rogue_4_outbuff_35": 1,
+                            "rogue_4_outbuff_36": 1,
+                            "rogue_4_outbuff_37": 1,
+                            "rogue_4_outbuff_38": 1,
+                            "rogue_4_outbuff_39": 1,
+                            "rogue_4_outbuff_40": 1,
+                            "rogue_4_outbuff_41": 1,
+                            "rogue_4_outbuff_42": 1,
+                            "rogue_4_outbuff_43": 1,
+                            "rogue_4_outbuff_44": 1,
+                            "rogue_4_difficulty_3": 1,
+                            "rogue_4_outbuff_45": 1,
+                            "rogue_4_outbuff_46": 1,
+                            "rogue_4_outbuff_47": 1,
+                            "rogue_4_outbuff_48": 1,
+                            "rogue_4_outbuff_49": 1,
+                            "rogue_4_outbuff_50": 1,
+                            "rogue_4_outbuff_51": 1,
+                            "rogue_4_outbuff_52": 1,
+                            "rogue_4_outbuff_53": 1,
+                            "rogue_4_outbuff_54": 1,
+                            "rogue_4_outbuff_55": 1,
+                            "rogue_4_outbuff_56": 1,
+                            "rogue_4_outbuff_57": 1,
+                            "rogue_4_outbuff_58": 1,
+                            "rogue_4_outbuff_59": 1,
+                            "rogue_4_outbuff_60": 1,
+                            "rogue_4_outbuff_61": 1,
+                            "rogue_4_outbuff_62": 1,
+                            "rogue_4_outbuff_63": 1
+                        },
+                        "score": 0
+                    },
+                    "collect": {
+                        "relic": {
+                            "rogue_4_relic_legacy_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_11": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_12": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_13": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_14": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_15": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_16": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_16_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_16_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_16_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_17": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_17_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_17_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_17_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_18": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_18_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_18_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_18_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_19": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_19_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_19_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_19_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_20": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_21": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_22": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_22_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_22_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_22_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_23": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_23_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_23_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_23_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_24": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_25": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_26": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_27": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_28": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_29": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_30": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_31": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_32": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_33": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_34": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_35": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_35_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_35_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_35_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_36": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_36_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_36_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_36_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_37": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_37_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_37_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_37_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_38": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_38_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_38_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_38_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_39": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_40": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_40_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_40_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_40_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_41": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_41_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_41_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_41_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_42": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_43": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_43_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_43_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_43_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_44": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_44_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_44_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_44_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_45": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_46": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_47": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_48": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_49": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_50": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_51": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_52": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_53": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_54": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_54_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_54_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_54_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_55": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_55_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_55_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_55_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_56": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_56_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_56_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_56_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_57": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_58": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_59": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_59_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_59_b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_59_c": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_60": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_61": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_62": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_63": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_64": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_65": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_66": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_67": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_68": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_69": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_70": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_71": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_72": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_73": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_74": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_75": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_76": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_77": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_78": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_79": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_80": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_81": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_82": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_83": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_84": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_85": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_86": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_87": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_88": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_89": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_90": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_91": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_92": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_93": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_94": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_95": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_96": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_97": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_98": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_99": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_100": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_101": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_102": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_103": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_104": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_105": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_106": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_107": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_108": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_109": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_110": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_111": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_112": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_113": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_114": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_115": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_116": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_117": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_118": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_119": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_120": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_121": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_122": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_123": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_124": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_125": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_126": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_127": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_128": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_129": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_130": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_131": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_132": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_133": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_134": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_135": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_136": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_137": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_138": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_139": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_140": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_141": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_142": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_143": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_144": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_145": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_146": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_147": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_148": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_149": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_150": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_151": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_152": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_153": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_154": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_155": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_156": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_157": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_158": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_159": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_160": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_161": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_162": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_163": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_164": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_165": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_166": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_167": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_168": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_169": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_170": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_171": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_172": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_hand_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_hand_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_hand_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_11": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_res_12": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_11": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_12": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_13": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_14": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_15": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_16": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_17": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_18": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_19": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_20": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_21": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_22": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_23": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_24": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_25": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_26": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_explore_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_boss_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_boss_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_boss_2b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_boss_4a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_boss_4b": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_curse_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_curse_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_curse_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_173": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_174": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_legacy_175": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_hand_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_hand_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_book_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_27": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_28": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_29": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_30": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_31": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_32": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_33": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_34": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_relic_fight_35": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "capsule": {},
+                        "activeTool": {
+                            "rogue_4_active_tool_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_active_tool_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_active_tool_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_active_tool_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_active_tool_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_active_tool_6": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "bgm": {
+                            "music_rogue_4_1": 1,
+                            "music_rogue_4_2": 1,
+                            "music_rogue_4_3": 1,
+                            "music_rogue_4_4": 1,
+                            "music_rogue_4_5": 1,
+                            "music_rogue_4_6": 1,
+                            "music_rogue_4_7": 1,
+                            "music_rogue_4_8": 1,
+                            "music_rogue_4_9": 1,
+                            "music_rogue_4_10": 1,
+                            "music_rogue_4_11": 1,
+                            "music_rogue_4_12": 1
+                        },
+                        "pic": {
+                            "pic_rogue_4_KV1": 1,
+                            "pic_rogue_4_KV2": 1,
+                            "pic_rogue_4_1": 1,
+                            "pic_rogue_4_2": 1,
+                            "pic_rogue_4_3": 1,
+                            "pic_rogue_4_4": 1,
+                            "pic_rogue_4_5": 1,
+                            "pic_rogue_4_6": 1,
+                            "pic_rogue_4_7": 1,
+                            "pic_rogue_4_8": 1,
+                            "pic_rogue_4_9": 1,
+                            "pic_rogue_4_10": 1,
+                            "pic_rogue_4_12": 1,
+                            "pic_rogue_4_13": 1,
+                            "pic_rogue_4_14": 1,
+                            "pic_rogue_4_15": 1,
+                            "pic_rogue_4_16": 1,
+                            "pic_rogue_4_17": 1,
+                            "pic_rogue_4_18": 1,
+                            "pic_rogue_4_19": 1,
+                            "pic_rogue_4_20": 1,
+                            "pic_rogue_4_21": 1,
+                            "pic_rogue_4_22": 1,
+                            "pic_rogue_4_23": 1,
+                            "pic_rogue_4_24": 1,
+                            "pic_rogue_4_25": 1,
+                            "pic_rogue_4_26": 1,
+                            "pic_rogue_4_27": 1,
+                            "pic_rogue_4_28": 1,
+                            "pic_rogue_4_29": 1,
+                            "pic_rogue_4_30": 1,
+                            "pic_rogue_4_31": 1,
+                            "pic_rogue_4_32": 1,
+                            "pic_rogue_4_33": 1,
+                            "pic_rogue_4_34": 1,
+                            "pic_rogue_4_35": 1,
+                            "pic_rogue_4_36": 1,
+                            "pic_rogue_4_37": 1,
+                            "pic_rogue_4_38": 1,
+                            "pic_rogue_4_39": 1,
+                            "pic_rogue_4_40": 1,
+                            "pic_rogue_4_41": 1,
+                            "pic_rogue_4_42": 1,
+                            "pic_rogue_4_43": 1,
+                            "pic_rogue_4_44": 1,
+                            "pic_rogue_4_45": 1,
+                            "pic_rogue_4_46": 1,
+                            "pic_rogue_4_47": 1
+                        },
+                        "chat": {
+                            "month_chat_rogue_4_1": 5,
+                            "month_chat_rogue_4_2": 5,
+                            "month_chat_rogue_4_3": 5,
+                            "month_chat_rogue_4_4": 5,
+                            "month_chat_rogue_4_5": 5,
+                            "month_chat_rogue_4_6": 5,
+                            "month_chat_rogue_4_7": 5,
+                            "month_chat_rogue_4_8": 5
+                        },
+                        "band": {
+                            "rogue_4_band_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_5": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_6": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_7": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_8": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_9": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_10": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_11": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_12": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "rogue_4_band_13": {
+                                "state": 1,
+                                "progress": null
+                            }
+                        },
+                        "buff": {
+                            "variation_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_shop": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "variation_shelter": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "endBook": {
+                            "endbook_rogue_4_1_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_1_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_1_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_2_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_2_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_2_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_3_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_3_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_3_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_1_4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_2_4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_3_4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_4_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_4_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_4_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "endbook_rogue_4_4_4": {
+                                "state": 1,
+                                "progress": null
+                            }
+                        },
+                        "mode": {
+                            "NORMAL": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "MONTH_TEAM": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "CHALLENGE": {
+                                "state": 1,
+                                "progress": null
+                            }
+                        },
+                        "recruitSet": {
+                            "recruit_group_random": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_c4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_c5": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m1": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m2": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m3": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m4": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m5": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m6": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m7": {
+                                "state": 1,
+                                "progress": null
+                            },
+                            "recruit_group_m8": {
+                                "state": 1,
+                                "progress": null
+                            }
+                        },
+                        "modeGrade": {
+                            "NORMAL": {
+                                "0": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "7": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "8": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "9": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "10": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "11": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "12": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "13": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "14": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "15": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            },
+                            "MONTH_TEAM": {
+                                "0": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            },
+                            "CHALLENGE": {
+                                "0": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            }
+                        },
+                        "chaos": {
+                            "rogue_4_chaos_1": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_1_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_2": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_2_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_3": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_3_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_4": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_4_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_5": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_5_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_6": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_6_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_7": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_7_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_8": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_8_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_9": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_9_a": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_10": {
+                                "state": 2,
+                                "progress": null
+                            },
+                            "rogue_4_chaos_10_a": {
+                                "state": 2,
+                                "progress": null
+                            }
+                        },
+                        "totem": {
+                            "totem": {
+                                "rogue_4_totem_R_L1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_L2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_L3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_L4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_L5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_L6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_L6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_L6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E6": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_boss2_a": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_boss2_b": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_A_L1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_A_L2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_R_E7": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_G_E7": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_B_E7": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            },
+                            "affix": {
+                                "rogue_4_totem_enchant_1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_enchant_2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_enchant_3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_totem_enchant_4": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            }
+                        }
+                    },
+                    "mission": {
+                        "updateId": "",
+                        "refresh": 0,
+                        "list": []
+                    },
+                    "challenge": {
+                        "reward": {
+                            "rogue_4_challenge_01": 1,
+                            "rogue_4_challenge_02": 1,
+                            "rogue_4_challenge_03": 1,
+                            "rogue_4_challenge_04": 1,
+                            "rogue_4_challenge_05": 1,
+                            "rogue_4_challenge_06": 1,
+                            "rogue_4_challenge_07": 1,
+                            "rogue_4_challenge_08": 1,
+                            "rogue_4_challenge_09": 1,
+                            "rogue_4_challenge_10": 1,
+                            "rogue_4_challenge_11": 1,
+                            "rogue_4_challenge_12": 1,
+                            "rogue_4_challenge_13": 1
+                        },
+                        "grade": {
+                            "rogue_4_challenge_01": 2,
+                            "rogue_4_challenge_02": 2,
+                            "rogue_4_challenge_03": 2,
+                            "rogue_4_challenge_04": 2,
+                            "rogue_4_challenge_05": 2,
+                            "rogue_4_challenge_06": 2,
+                            "rogue_4_challenge_07": 2,
+                            "rogue_4_challenge_08": 2,
+                            "rogue_4_challenge_09": 2,
+                            "rogue_4_challenge_10": 2,
+                            "rogue_4_challenge_11": 2,
+                            "rogue_4_challenge_12": 2,
+                            "rogue_4_challenge_13": 2
+                        },
+                        "collect": {
+                            "exploreTool": {
+                                "rogue_4_explore_tool_1": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_explore_tool_2": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_explore_tool_3": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_explore_tool_4": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_explore_tool_5": {
+                                    "state": 2,
+                                    "progress": null
+                                },
+                                "rogue_4_explore_tool_6": {
+                                    "state": 2,
+                                    "progress": null
+                                }
+                            }
                         }
                     },
                     "monthTeam": {
                         "valid": [
                             "month_team_1",
-                            "month_team_2"
+                            "month_team_2",
+                            "month_team_3",
+                            "month_team_4",
+                            "month_team_5",
+                            "month_team_6",
+                            "month_team_7",
+                            "month_team_8"
                         ],
                         "reward": {
                             "month_team_1": 1,
-                            "month_team_2": 1
+                            "month_team_2": 1,
+                            "month_team_3": 1,
+                            "month_team_4": 1,
+                            "month_team_5": 1,
+                            "month_team_6": 1,
+                            "month_team_7": 1,
+                            "month_team_8": 1
                         },
                         "mission": {}
                     },
-                    "modeGrade": {
-                        "NORMAL": {
-                            "0": {
-                                "state": 2,
-                                "progress": null
+                    "record": {
+                        "last": 0,
+                        "modeCnt": {},
+                        "endingCnt": {},
+                        "stageCnt": {
+                            "ro4_n_1_1": 1,
+                            "ro4_n_1_2": 1,
+                            "ro4_n_1_3": 1,
+                            "ro4_n_1_4": 1,
+                            "ro4_n_1_5": 1,
+                            "ro4_n_2_1": 1,
+                            "ro4_n_2_2": 1,
+                            "ro4_n_2_3": 1,
+                            "ro4_n_2_4": 1,
+                            "ro4_n_2_5": 1,
+                            "ro4_n_2_6": 1,
+                            "ro4_n_3_1": 1,
+                            "ro4_n_3_2": 1,
+                            "ro4_n_3_3": 1,
+                            "ro4_n_3_4": 1,
+                            "ro4_n_3_5": 1,
+                            "ro4_n_3_6": 1,
+                            "ro4_n_3_7": 1,
+                            "ro4_n_4_1": 1,
+                            "ro4_n_4_2": 1,
+                            "ro4_n_4_3": 1,
+                            "ro4_n_4_4": 1,
+                            "ro4_n_4_5": 1,
+                            "ro4_n_4_6": 1,
+                            "ro4_n_4_7": 1,
+                            "ro4_n_4_8": 1,
+                            "ro4_n_5_1": 1,
+                            "ro4_n_5_2": 1,
+                            "ro4_n_5_3": 1,
+                            "ro4_n_5_4": 1,
+                            "ro4_n_5_5": 1,
+                            "ro4_n_5_6": 1,
+                            "ro4_n_5_7": 1,
+                            "ro4_n_5_8": 1,
+                            "ro4_n_6_1": 1,
+                            "ro4_n_6_2": 1,
+                            "ro4_b_1": 1,
+                            "ro4_b_1_b": 1,
+                            "ro4_b_2": 1,
+                            "ro4_b_2_b": 1,
+                            "ro4_b_3": 1,
+                            "ro4_b_3_b": 1,
+                            "ro4_b_4": 1,
+                            "ro4_b_4_b": 1,
+                            "ro4_b_5": 1,
+                            "ro4_b_5_b": 1,
+                            "ro4_b_6": 1,
+                            "ro4_b_6_b": 1,
+                            "ro4_b_7": 1,
+                            "ro4_b_7_b": 1,
+                            "ro4_t_1": 1,
+                            "ro4_t_2": 1,
+                            "ro4_t_3": 1,
+                            "ro4_t_4": 1,
+                            "ro4_ev_1": 1,
+                            "ro4_ev_2": 1,
+                            "ro4_ev_3": 1,
+                            "ro4_ev_4": 1,
+                            "ro4_ev_5": 1,
+                            "ro4_ev_6": 1,
+                            "ro4_ev_7": 1,
+                            "ro4_ev_8": 1,
+                            "ro4_ev_9": 1,
+                            "ro4_e_1_1": 1,
+                            "ro4_e_1_2": 1,
+                            "ro4_e_1_3": 1,
+                            "ro4_e_1_4": 1,
+                            "ro4_e_1_5": 1,
+                            "ro4_e_2_1": 1,
+                            "ro4_e_2_2": 1,
+                            "ro4_e_2_3": 1,
+                            "ro4_e_2_4": 1,
+                            "ro4_e_2_5": 1,
+                            "ro4_e_2_6": 1,
+                            "ro4_e_3_1": 1,
+                            "ro4_e_3_2": 1,
+                            "ro4_e_3_3": 1,
+                            "ro4_e_3_4": 1,
+                            "ro4_e_3_5": 1,
+                            "ro4_e_3_6": 1,
+                            "ro4_e_3_7": 1,
+                            "ro4_e_4_1": 1,
+                            "ro4_e_4_2": 1,
+                            "ro4_e_4_3": 1,
+                            "ro4_e_4_4": 1,
+                            "ro4_e_4_5": 1,
+                            "ro4_e_4_6": 1,
+                            "ro4_e_4_7": 1,
+                            "ro4_e_4_8": 1,
+                            "ro4_e_5_1": 1,
+                            "ro4_e_5_2": 1,
+                            "ro4_e_5_3": 1,
+                            "ro4_e_5_4": 1,
+                            "ro4_e_5_5": 1,
+                            "ro4_e_5_6": 1,
+                            "ro4_e_5_7": 1,
+                            "ro4_e_5_8": 1,
+                            "ro4_e_6_1": 1,
+                            "ro4_e_6_2": 1
+                        },
+                        "bandCnt": {
+                            "rogue_4_band_1": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "1": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_2": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "2": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_3": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "3": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_4": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "4": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_5": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "5": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_6": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "6": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_7": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "7": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_8": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "8": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_9": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "9": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_10": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "10": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_11": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "11": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_12": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             },
-                            "12": {
-                                "state": 2,
-                                "progress": null
-                            },
-                            "13": {
-                                "state": 2,
-                                "progress": null
-                            },
-                            "14": {
-                                "state": 2,
-                                "progress": null
-                            },
-                            "15": {
-                                "state": 2,
-                                "progress": null
+                            "rogue_4_band_13": {
+                                "ro4_ending_1": 1,
+                                "ro4_ending_2": 1,
+                                "ro4_ending_3": 1,
+                                "ro4_ending_4": 1
                             }
                         },
-                        "MONTH_TEAM": {
-                            "0": {
-                                "state": 2,
-                                "progress": null
-                            }
-                        },
-                        "CHALLENGE": {
-                            "0": {
-                                "state": 2,
-                                "progress": null
+                        "bandGrade": {
+                            "rogue_4_band_1": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_2": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_3": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_4": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_5": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_6": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_7": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_8": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_9": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_10": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_11": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_12": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
+                            },
+                            "rogue_4_band_13": {
+                                "ro4_ending_1": 15,
+                                "ro4_ending_2": 15,
+                                "ro4_ending_3": 15,
+                                "ro4_ending_4": 15
                             }
                         }
                     }
@@ -7709,7 +9932,7 @@
                         "riftInfo": {
                             "isUnlocked": false,
                             "randomRemain": 0,
-                            "difficultyLvMax": -1,
+                            "difficultyLvMax": {},
                             "teamLv": 0,
                             "fixFinish": [],
                             "reservation": null,
@@ -8051,8 +10274,8 @@
             }
         },
         "campaignsV2": {
-            "campaignCurrentFee": 0,
-            "campaignTotalFee": 9999,
+            "campaignCurrentFee": 1800,
+            "campaignTotalFee": 1800,
             "lastRefreshTs": 0,
             "instances": {},
             "open": {
