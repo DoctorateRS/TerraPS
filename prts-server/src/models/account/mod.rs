@@ -2,8 +2,10 @@ pub mod activity;
 pub mod character;
 pub mod dungeon;
 pub mod flag;
+pub mod mission;
 pub mod namecard;
 pub mod skin;
+pub mod social;
 pub mod status;
 pub mod sync;
 
