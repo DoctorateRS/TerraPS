@@ -25,8 +25,8 @@ pub struct CrisisV2 {
 
 #[derive(Deserialize, Serialize)]
 pub struct CrisisV2Season {
-    current: String,
-    seasons: HashMap<String, ()>,
+    permanent: String,
+    temporary: HashMap<String, ()>,
 }
 
 #[derive(Deserialize, Serialize, Default)]
