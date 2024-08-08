@@ -2,7 +2,10 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::{models::EmptyMap, utils::time::time};
+use crate::{
+    models::{EmptyMap, NullVec},
+    utils::time::time,
+};
 
 #[derive(Deserialize, Serialize)]
 pub struct Crisis {
@@ -21,6 +24,7 @@ impl Default for Crisis {
 pub struct CrisisV2 {
     current: String,
     seasons: HashMap<String, CrisisV2Season>,
+    shop: CrisisV2Shop,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -29,8 +33,6 @@ pub struct CrisisV2Season {
     temporary: HashMap<String, CrisisV2SeasonTemporary>,
     social: CrisisV2SeasonSocial,
 }
-
-type NullVec = [u8; 0];
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
@@ -61,4 +63,12 @@ pub struct CrisisV2SeasonSocial {
     assist_cnt: u8,
     max_pnt: i8,
     chars: NullVec,
+}
+
+#[derive(Deserialize, Serialize, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct CrisisV2Shop {
+    coin: u16,
+    info: NullVec,
+    progress_info: EmptyMap,
 }

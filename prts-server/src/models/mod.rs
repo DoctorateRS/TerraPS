@@ -6,8 +6,11 @@ pub mod payload;
 pub mod prod;
 pub mod social;
 
+/// Represent an empty Object.
 #[derive(Serialize, Deserialize, Default)]
 pub struct EmptyMap {}
+/// Represent an empty Array.
+type NullVec = [u8; 0];
 
 impl EmptyMap {
     pub const fn new() -> Self {
