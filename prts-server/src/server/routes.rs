@@ -8,7 +8,10 @@ use tracing::Level;
 
 use crate::{models::PlayerDataDeltaStatic, route};
 
-use super::core::{asset, prod_cfg};
+use super::{
+    core::{asset, prod_cfg},
+    game::{account, misc},
+};
 
 pub fn app() -> Router {
     let trace = TraceLayer::new_for_http()
@@ -18,7 +21,11 @@ pub fn app() -> Router {
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
         .on_response(DefaultOnResponse::default().level(Level::DEBUG));
 
-    Router::new().nest("/config/prod", prod_config_routes()).merge(misc_routes()).layer(trace).fallback(fallback)
+    Router::new().nest("/config/prod", prod_config_routes()).nest("/account", account_routes()).merge(misc_routes()).layer(trace).fallback(fallback)
+}
+
+fn account_routes() -> Router {
+    Router::new().route("/syncPushMessage", post(account::sync_push_data))
 }
 
 fn prod_config_routes() -> Router {
@@ -32,7 +39,11 @@ fn prod_config_routes() -> Router {
 }
 
 fn misc_routes() -> Router {
-    Router::new().route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
+    Router::new()
+        .route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
+        .route("/event", post(misc::event))
+        .route("/batch_event", post(misc::batch_event))
+        .route("/beat", post(misc::beat))
 }
 
 async fn fallback() -> Json<PlayerDataDeltaStatic> {
