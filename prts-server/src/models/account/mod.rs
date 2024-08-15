@@ -14,6 +14,7 @@ pub mod skin;
 pub mod social;
 pub mod status;
 pub mod sync;
+pub mod theme;
 
 pub use sync::*;
 
