@@ -4,11 +4,11 @@ use crate::utils::time::time;
 
 #[derive(Deserialize, Serialize)]
 pub struct PushFlags {
-    has_gifts: u8,
-    has_friend_request: u8,
-    has_clues: u8,
-    has_free_level_gp: u8,
-    status: u64,
+    pub has_gifts: u8,
+    pub has_friend_request: u8,
+    pub has_clues: u8,
+    pub has_free_level_gp: u8,
+    pub status: u64,
 }
 
 impl Default for PushFlags {

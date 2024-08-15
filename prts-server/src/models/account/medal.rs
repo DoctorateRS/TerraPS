@@ -6,10 +6,10 @@ use crate::models::NullVec;
 
 #[derive(Deserialize, Serialize)]
 pub struct MedalData {
-    id: String,
-    val: NullVec,
-    fts: u64,
-    rts: u64,
+    pub id: String,
+    pub val: NullVec,
+    pub fts: u64,
+    pub rts: u64,
 }
 
 impl MedalData {
@@ -20,7 +20,7 @@ impl MedalData {
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct Medal {
-    medals: HashMap<String, MedalData>,
+    pub medals: HashMap<String, MedalData>,
 }
 
 impl Medal {

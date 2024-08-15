@@ -18,9 +18,13 @@ pub mod status;
 pub mod sync;
 pub mod theme;
 
+use campaignv2::CampaignV2;
+use dungeon::Dungeon;
 pub use sync::*;
 
 use serde::{Deserialize, Serialize};
+
+use super::EmptyMap;
 
 #[derive(Serialize, Deserialize)]
 pub struct AccountSyncData {
@@ -31,4 +35,10 @@ pub struct AccountSyncData {
 
 /// Userdata.
 #[derive(Serialize, Deserialize)]
-pub struct User {}
+#[serde(rename_all = "camelCase")]
+pub struct User {
+    dungeon: Dungeon,
+
+    campaign_v2: CampaignV2,
+    inventory: EmptyMap,
+}

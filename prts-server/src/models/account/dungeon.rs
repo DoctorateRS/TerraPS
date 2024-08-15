@@ -1,15 +1,47 @@
+use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct Dungeon {
+    pub stages: HashMap<String, Stage>,
+    pub cow_level: HashMap<String, CowLevel>,
+    pub hide_stages: HashMap<String, HideStage>,
+}
+
+impl Dungeon {
+    pub fn new() -> Self {
+        Self {
+            stages: HashMap::new(),
+            cow_level: HashMap::new(),
+            hide_stages: HashMap::new(),
+        }
+    }
+
+    pub fn set_stage(&mut self, stage_id: String) {
+        self.stages.insert(stage_id.clone(), Stage::new(stage_id));
+    }
+
+    pub fn set_cow_level(&mut self, stage_id: String) {
+        self.cow_level.insert(stage_id.clone(), CowLevel::new(stage_id));
+    }
+
+    pub fn set_hide_stage(&mut self, hide_id: String) {
+        self.hide_stages.insert(hide_id, HideStage::default());
+    }
+}
+
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Stage {
-    complete_times: u16,
-    has_battle_replay: u16,
-    no_cost_cnt: u16,
-    practice_times: u16,
-    stage_id: String,
-    start_times: u16,
-    state: u8,
+    pub complete_times: u16,
+    pub has_battle_replay: u16,
+    pub no_cost_cnt: u16,
+    pub practice_times: u16,
+    pub stage_id: String,
+    pub start_times: u16,
+    pub state: u8,
 }
 
 impl Stage {
@@ -27,13 +59,14 @@ impl Stage {
 }
 
 #[derive(Serialize, Deserialize)]
+#[serde(untagged)]
 enum CowLevelValue {
     Bool(bool),
     Arr([u8; 2]),
 }
 
-impl CowLevelValue {
-    pub fn default() -> Self {
+impl Default for CowLevelValue {
+    fn default() -> Self {
         Self::Bool(true)
     }
 }
@@ -72,8 +105,8 @@ pub struct HideStage {
     unlock: u8,
 }
 
-impl HideStage {
-    pub const fn default() -> Self {
+impl Default for HideStage {
+    fn default() -> Self {
         Self {
             missions: [HideStageMission { value: 1, target: 1 }; 2],
             unlock: 1,

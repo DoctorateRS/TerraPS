@@ -6,9 +6,9 @@ use crate::models::NullVec;
 
 #[derive(Deserialize, Serialize)]
 pub struct Mainline {
-    record: HashMap<String, u8>,
-    cache: NullVec,
-    version: u8,
+    pub record: HashMap<String, u8>,
+    pub cache: NullVec,
+    pub version: u8,
 }
 
 impl Default for Mainline {
