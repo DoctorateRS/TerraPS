@@ -33,6 +33,7 @@ async fn main() -> Result<()> {
     }
 
     upgrade().await?;
+
     if !args.contains(&String::from("--upgrade")) {
         println!("TerraPS {} is starting...", version);
         let (server_address, server_port) = get_server_address();

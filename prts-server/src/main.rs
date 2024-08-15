@@ -5,8 +5,9 @@ use common_utils::{AssetConfig, ServerConfig, UserConfig};
 use server::Server;
 
 mod cnst;
-pub mod models;
+mod models;
 mod server;
+mod update;
 mod utils;
 
 static USER_CONFIG: LazyLock<UserConfig> = LazyLock::new(|| UserConfig::load().unwrap_or_default());

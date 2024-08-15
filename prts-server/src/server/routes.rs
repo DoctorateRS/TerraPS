@@ -21,11 +21,21 @@ pub fn app() -> Router {
         .on_failure(DefaultOnFailure::default().level(Level::ERROR))
         .on_response(DefaultOnResponse::default().level(Level::DEBUG));
 
-    Router::new().nest("/config/prod", prod_config_routes()).nest("/account", account_routes()).merge(misc_routes()).layer(trace).fallback(fallback)
+    Router::new()
+        .nest("/config/prod", prod_config_routes())
+        .nest("/crisisV2", crisis_v2_routes())
+        .nest("/account", account_routes())
+        .merge(misc_routes())
+        .layer(trace)
+        .fallback(fallback)
 }
 
 fn account_routes() -> Router {
     Router::new().route("/syncPushMessage", post(account::sync_push_data))
+}
+
+fn crisis_v2_routes() -> Router {
+    Router::new()
 }
 
 fn prod_config_routes() -> Router {

@@ -55,7 +55,7 @@ pub async fn social_get_sort_list_info() -> JSON {
 }
 
 pub async fn social_set_assist_char_list(Json(payload): JSON) -> JSON {
-    write_json("./dump/social_assist.json", &payload);
+    write_json("./dump/social_assist.json", &payload).unwrap();
     Json(json!({
         "playerDataDelta": {
             "modified": {
