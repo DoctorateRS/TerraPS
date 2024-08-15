@@ -1,11 +1,13 @@
 pub mod activity;
 pub mod avatar;
 pub mod background;
+pub mod campaignv2;
 pub mod character;
 pub mod crisis;
 pub mod dexnav;
 pub mod dungeon;
 pub mod flag;
+pub mod gamemode;
 pub mod mainline;
 pub mod medal;
 pub mod mission;
