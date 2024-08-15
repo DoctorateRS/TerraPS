@@ -1,9 +1,13 @@
 pub mod activity;
+pub mod avatar;
+pub mod background;
 pub mod character;
 pub mod crisis;
 pub mod dexnav;
 pub mod dungeon;
 pub mod flag;
+pub mod mainline;
+pub mod medal;
 pub mod mission;
 pub mod namecard;
 pub mod skin;
@@ -22,6 +26,6 @@ pub struct AccountSyncData {
     user: User,
 }
 
-/// The Big Data
+/// Userdata.
 #[derive(Serialize, Deserialize)]
 pub struct User {}
