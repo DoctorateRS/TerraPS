@@ -4,24 +4,24 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct NameCardStyle {
-    component_order: Vec<String>,
-    skin: NameCardSkin,
+    pub component_order: Vec<String>,
+    pub skin: NameCardSkin,
 }
 
 #[derive(Serialize, Deserialize)]
-struct NameCardSkin {
-    selected: String,
-    state: HashMap<String, NameCardSkinState>,
+pub struct NameCardSkin {
+    pub selected: String,
+    pub state: HashMap<String, NameCardSkinState>,
 }
 
 #[derive(Serialize, Deserialize)]
-struct NameCardSkinState {
-    unlock: bool,
-    progress: (),
+pub struct NameCardSkinState {
+    pub unlock: bool,
+    pub progress: (),
 }
 
-impl NameCardSkinState {
-    pub const fn default() -> Self {
+impl Default for NameCardSkinState {
+    fn default() -> Self {
         Self { unlock: true, progress: () }
     }
 }

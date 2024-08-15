@@ -6,8 +6,8 @@ use crate::utils::time::time;
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct HomeTheme {
-    selected: String,
-    themes: HashMap<String, Theme>,
+    pub selected: String,
+    pub themes: HashMap<String, Theme>,
 }
 
 impl HomeTheme {

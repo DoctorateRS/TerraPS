@@ -7,9 +7,9 @@ use crate::models::EmptyMap;
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DexNav {
-    character: HashMap<String, CharDexNav>,
+    pub character: HashMap<String, CharDexNav>,
     formula: EmptyMap,
-    enemy: EnemyDexNav,
+    pub enemy: EnemyDexNav,
     team_v2: EmptyMap,
 }
 
@@ -28,8 +28,8 @@ impl DexNav {
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CharDexNav {
-    char_inst_id: u32,
-    count: u8,
+    pub char_inst_id: u32,
+    pub count: u8,
 }
 
 impl CharDexNav {
@@ -40,7 +40,7 @@ impl CharDexNav {
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct EnemyDexNav {
-    enemies: HashMap<String, u8>,
+    pub enemies: HashMap<String, u8>,
 }
 
 impl EnemyDexNav {

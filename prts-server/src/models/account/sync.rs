@@ -4,11 +4,11 @@ use std::collections::HashMap;
 
 #[derive(Serialize, Deserialize)]
 pub struct AccountLogin {
-    result: u8,
-    uid: String,
-    secret: &'static str,
+    pub result: u8,
+    pub uid: String,
+    pub secret: &'static str,
     #[serde(rename = "serviceLicenseVersion")]
-    service_license_version: u8,
+    pub service_license_version: u8,
 }
 
 impl AccountLogin {
@@ -24,14 +24,14 @@ impl AccountLogin {
 
 #[derive(Serialize, Deserialize)]
 pub struct AccountSyncStatus {
-    ts: u64,
-    result: HashMap<(), ()>,
+    pub ts: u64,
+    pub result: HashMap<(), ()>,
     #[serde(rename = "playerDataDelta")]
-    pdd: PlayerDataDeltaStatic,
+    pub pdd: PlayerDataDeltaStatic,
 }
 
 impl AccountSyncStatus {
-    pub fn default() -> Self {
+    pub fn new() -> Self {
         Self {
             ts: time(),
             result: HashMap::default(),
@@ -41,20 +41,16 @@ impl AccountSyncStatus {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct AccountYostarAuthSubmit {
+pub struct AccountYostarAuthSubmit<'a> {
     result: u8,
-    yostar_account: &'static str,
-    yostar_token: &'static str,
-    yostar_uid: &'static str,
+    yostar_account: &'a str,
+    yostar_token: &'a str,
+    yostar_uid: &'a str,
 }
 
-impl AccountYostarAuthSubmit {
-    pub const fn default() -> Self {
-        Self {
-            result: 0,
-            yostar_uid: "terraps@rustlang.com",
-            yostar_token: "a",
-            yostar_account: "1",
-        }
-    }
-}
+pub const ACC_YOSTAR_AUTH_SUB: AccountYostarAuthSubmit = AccountYostarAuthSubmit {
+    result: 0,
+    yostar_uid: "terraps@rustlang.com",
+    yostar_token: "a",
+    yostar_account: "1",
+};

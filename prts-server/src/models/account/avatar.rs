@@ -6,8 +6,8 @@ use crate::utils::time::time;
 
 #[derive(Deserialize, Serialize)]
 pub struct AvatarIcon {
-    ts: u64,
-    src: String,
+    pub ts: u64,
+    pub src: String,
 }
 
 impl AvatarIcon {
@@ -21,7 +21,7 @@ impl AvatarIcon {
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct Avatar {
-    avatar_icon: HashMap<String, AvatarIcon>,
+    pub avatar_icon: HashMap<String, AvatarIcon>,
 }
 
 impl Avatar {

@@ -6,8 +6,8 @@ use crate::utils::time::time;
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct Background {
-    selected: String,
-    bgs: HashMap<String, Bg>,
+    pub selected: String,
+    pub bgs: HashMap<String, Bg>,
 }
 
 impl Background {
@@ -26,7 +26,7 @@ impl Background {
 
 #[derive(Deserialize, Serialize)]
 pub struct Bg {
-    unlock: u64,
+    pub unlock: u64,
 }
 
 impl Default for Bg {

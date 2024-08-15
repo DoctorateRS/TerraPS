@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Deserialize, Serialize, Default)]
 pub struct Skin {
     #[serde(rename = "characterSkins")]
-    char_skins: HashMap<String, u8>,
+    pub char_skins: HashMap<String, u8>,
 }
 
 impl Skin {

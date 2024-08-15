@@ -9,8 +9,8 @@ use crate::{
 
 #[derive(Deserialize, Serialize)]
 pub struct Crisis {
-    lst: u64,
-    nst: u64,
+    pub lst: u64,
+    pub nst: u64,
 }
 
 impl Default for Crisis {
@@ -22,22 +22,22 @@ impl Default for Crisis {
 
 #[derive(Deserialize, Serialize)]
 pub struct CrisisV2 {
-    current: String,
-    seasons: HashMap<String, CrisisV2Season>,
-    shop: CrisisV2Shop,
+    pub current: String,
+    pub seasons: HashMap<String, CrisisV2Season>,
+    pub shop: CrisisV2Shop,
 }
 
 #[derive(Deserialize, Serialize)]
 pub struct CrisisV2Season {
-    permanent: CrisisV2SeasonPermanent,
-    temporary: HashMap<String, CrisisV2SeasonTemporary>,
-    social: CrisisV2SeasonSocial,
+    pub permanent: CrisisV2SeasonPermanent,
+    pub temporary: HashMap<String, CrisisV2SeasonTemporary>,
+    pub social: CrisisV2SeasonSocial,
 }
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CrisisV2SeasonPermanent {
-    state: u8,
+    pub state: u8,
     pub score_total: Vec<u16>,
     pub score_single: Vec<u16>,
     comment: NullVec,
@@ -51,7 +51,7 @@ pub struct CrisisV2SeasonPermanent {
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CrisisV2SeasonTemporary {
-    state: u8,
+    pub state: u8,
     pub score_total: Vec<u16>,
     rune: EmptyMap,
     challenge: EmptyMap,
@@ -60,15 +60,15 @@ pub struct CrisisV2SeasonTemporary {
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CrisisV2SeasonSocial {
-    assist_cnt: u8,
-    max_pnt: i8,
+    pub assist_cnt: u8,
+    pub max_pnt: i8,
     chars: NullVec,
 }
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct CrisisV2Shop {
-    coin: u16,
+    pub coin: u16,
     info: NullVec,
     progress_info: EmptyMap,
 }
