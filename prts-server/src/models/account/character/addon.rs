@@ -1,4 +1,4 @@
-use std::{collections::HashMap, default, mem::replace};
+use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
@@ -40,15 +40,13 @@ impl Default for CharStoryAddon {
 }
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct CharStageAddon {
-    #[serde(rename = "startTimes")]
     start_times: u8,
-    #[serde(rename = "completeTimes")]
     complete_time: u8,
     state: u8,
     fts: u64,
     rts: u64,
-    #[serde(rename = "startTime")]
     start_time: u8,
 }
 
