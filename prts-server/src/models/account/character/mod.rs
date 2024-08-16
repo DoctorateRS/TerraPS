@@ -1,6 +1,6 @@
 use std::{collections::HashMap, default};
 
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize};
 
 mod addon;
 mod squad;
@@ -11,6 +11,7 @@ pub use squad::*;
 use crate::utils::time::time;
 
 #[derive(Deserialize, Default)]
+#[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum VoiceLan {
     #[default]
     Jp,
@@ -34,34 +35,24 @@ impl Serialize for VoiceLan {
 }
 
 #[derive(Deserialize, Serialize, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct Char {
-    #[serde(rename = "instId")]
     inst_id: u32,
-    #[serde(rename = "charId")]
     char_id: String,
-    #[serde(rename = "favorPoint")]
     favor_point: u16,
-    #[serde(rename = "potentialRank")]
     potential_rank: u8,
-    #[serde(rename = "mainSkillLvl")]
-    pub main_skill_level: u8,
+    pub main_skill_lvl: u8,
     skin: String,
     pub level: u8,
     exp: u32,
-    #[serde(rename = "evolvePhase")]
     pub evolve_phase: u8,
-    #[serde(rename = "defaultSkillIndex")]
-    default_skill_index: i8,
-    #[serde(rename = "gainTime")]
+    pub default_skill_index: i8,
     gain_time: u64,
     pub skills: Vec<Skill>,
-    #[serde(rename = "voiceLan")]
     pub voice_lan: VoiceLan,
-    #[serde(rename = "currentEquip")]
     pub current_equip: Option<String>,
-    equip: HashMap<String, Equip>,
-    #[serde(rename = "starMark")]
-    star_mark: u8,
+    pub equip: HashMap<String, Equip>,
+    pub star_mark: u8,
 }
 
 impl Char {
@@ -73,7 +64,7 @@ impl Char {
             char_id,
             favor_point: 25570,
             potential_rank: 5,
-            main_skill_level: 7,
+            main_skill_lvl: 7,
             skin,
             level: 0,
             exp: 0,
@@ -136,14 +127,12 @@ impl Char {
 }
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Skill {
-    #[serde(rename = "skillId")]
     id: String,
     unlock: u8,
     state: u8,
-    #[serde(rename = "specializeLevel")]
     level: u8,
-    #[serde(rename = "completeUpgradeTime")]
     complete_time: i8,
 }
 

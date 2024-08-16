@@ -4,13 +4,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct Bossrush {
-    relic: Relic,
+    pub relic: Relic,
 }
 
 #[derive(Serialize, Deserialize)]
-struct Relic {
-    level: HashMap<String, u8>,
-    select: String,
+pub struct Relic {
+    pub level: HashMap<String, u8>,
+    pub select: String,
 }
 
 impl Bossrush {

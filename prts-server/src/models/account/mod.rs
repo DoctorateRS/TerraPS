@@ -18,8 +18,13 @@ pub mod status;
 pub mod sync;
 pub mod theme;
 
+use std::collections::HashMap;
+
+use activity::ActivityEnum;
 use campaignv2::CampaignV2;
 use dungeon::Dungeon;
+use namecard::NameCardStyle;
+use status::PlayerStatus;
 pub use sync::*;
 
 use serde::{Deserialize, Serialize};
@@ -37,8 +42,10 @@ pub struct AccountSyncData {
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct User {
-    dungeon: Dungeon,
-
-    campaign_v2: CampaignV2,
-    inventory: EmptyMap,
+    pub dungeon: Dungeon,
+    pub activity: HashMap<String, ActivityEnum>,
+    pub status: PlayerStatus,
+    pub name_card_style: NameCardStyle,
+    pub campaign_v2: CampaignV2,
+    pub inventory: EmptyMap,
 }
