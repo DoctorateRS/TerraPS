@@ -1,13 +1,11 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct SquadSlot {
-    #[serde(rename = "charInstId")]
-    char_inst_id: u32,
-    #[serde(rename = "skillIndex")]
-    skill_index: u8,
-    #[serde(rename = "currentEquip")]
-    current_equip: Option<String>,
+    pub char_inst_id: u32,
+    pub skill_index: u8,
+    pub current_equip: Option<String>,
 }
 
 impl SquadSlot {
@@ -17,11 +15,11 @@ impl SquadSlot {
 }
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Squad {
-    #[serde(rename = "squadId")]
-    squad_id: String,
-    name: String,
-    slots: [Option<SquadSlot>; 12],
+    pub squad_id: String,
+    pub name: String,
+    pub slots: [Option<SquadSlot>; 12],
 }
 
 impl Squad {
