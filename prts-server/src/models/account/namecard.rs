@@ -8,6 +8,15 @@ pub struct NameCardStyle {
     pub skin: NameCardSkin,
 }
 
+impl NameCardStyle {
+    pub fn new() -> Self {
+        Self {
+            component_order: Vec::new(),
+            skin: NameCardSkin { selected: String::new(), state: HashMap::new() },
+        }
+    }
+}
+
 #[derive(Serialize, Deserialize)]
 pub struct NameCardSkin {
     pub selected: String,

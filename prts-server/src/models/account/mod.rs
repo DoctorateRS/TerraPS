@@ -22,17 +22,19 @@ pub mod theme;
 use std::collections::HashMap;
 
 use activity::ActivityEnum;
+use avatar::Avatar;
 use campaignv2::CampaignV2;
 use character::Troop;
 use crisis::{Crisis, CrisisV2};
 use dexnav::DexNav;
 use dungeon::Dungeon;
 use flag::PushFlags;
-use mission::Mission;
+use mainline::Mainline;
+use mission::{Mission, STATIC_MISSION};
 use namecard::NameCardStyle;
 use npc::NpcAudio;
 use skin::Skin;
-use social::Social;
+use social::{Social, SOCIAL_STATIC};
 use status::PlayerStatus;
 pub use sync::*;
 
@@ -47,6 +49,14 @@ pub struct AccountSyncData {
     user: User,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct Backflow {
+    open: bool,
+    current: Option<String>,
+}
+
+const BACKFLOW: Backflow = Backflow { open: true, current: None };
+
 /// Userdata.
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -58,13 +68,42 @@ pub struct User {
     pub troop: Troop,
     pub npc_audio: HashMap<String, NpcAudio>,
     pub push_flags: PushFlags,
-    pub equipment: EmptyMap,
+    equipment: EmptyMap,
     pub skin: Skin,
     pub mission: Mission,
     pub social: Social,
     pub dex_nav: DexNav,
     pub crisis: Crisis,
     pub crisis_v2: CrisisV2,
+    backflow: Backflow,
+    pub mainline: Mainline,
+    pub avatar: Avatar,
     pub campaign_v2: CampaignV2,
     pub inventory: EmptyMap,
+}
+
+impl Default for User {
+    fn default() -> Self {
+        Self {
+            dungeon: Dungeon::new(),
+            activity: HashMap::new(),
+            status: PlayerStatus::new(),
+            name_card_style: NameCardStyle::new(),
+            troop: Troop::default(),
+            npc_audio: HashMap::new(),
+            push_flags: PushFlags::default(),
+            equipment: EmptyMap {},
+            skin: Skin::default(),
+            mission: STATIC_MISSION,
+            social: SOCIAL_STATIC,
+            dex_nav: DexNav::default(),
+            crisis: Crisis::default(),
+            crisis_v2: CrisisV2::default(),
+            backflow: BACKFLOW,
+            mainline: Mainline::new(),
+            avatar: Avatar::new(),
+            campaign_v2: CampaignV2::new(),
+            inventory: EmptyMap {},
+        }
+    }
 }

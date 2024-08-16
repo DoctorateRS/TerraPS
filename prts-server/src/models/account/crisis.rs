@@ -20,7 +20,7 @@ impl Default for Crisis {
     }
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Default)]
 pub struct CrisisV2 {
     pub current: String,
     pub seasons: HashMap<String, CrisisV2Season>,
@@ -41,10 +41,10 @@ pub struct CrisisV2SeasonPermanent {
     pub score_total: Vec<u16>,
     pub score_single: Vec<u16>,
     comment: NullVec,
-    rune: EmptyMap,
+    rune: HashMap<String, u8>,
     ex_runes: HashMap<String, u8>,
-    rune_pack: EmptyMap,
-    challenge: EmptyMap,
+    rune_pack: HashMap<String, u8>,
+    challenge: HashMap<String, u8>,
     reward: EmptyMap,
 }
 

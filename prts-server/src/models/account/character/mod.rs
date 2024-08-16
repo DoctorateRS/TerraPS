@@ -10,7 +10,7 @@ pub mod addon;
 pub mod chara;
 pub mod squad;
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Troop {
     cur_char_inst_id: u32,
