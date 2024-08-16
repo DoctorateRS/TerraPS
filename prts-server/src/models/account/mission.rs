@@ -12,3 +12,5 @@ pub struct Mission {
 pub struct Missions {
     pub activity: EmptyMap,
 }
+
+pub const STATIC_MISSION: Mission = Mission { missions: Missions { activity: EmptyMap {} } };

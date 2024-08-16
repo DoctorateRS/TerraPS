@@ -12,17 +12,19 @@ pub enum VoiceLan {
     En,
     Cn,
     Kr,
+    #[serde(untagged)]
+    Other(String),
 }
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct Char {
-    inst_id: u32,
-    char_id: String,
+    pub inst_id: u32,
+    pub char_id: String,
     favor_point: u16,
     potential_rank: u8,
     pub main_skill_lvl: u8,
-    skin: String,
+    pub skin: String,
     pub level: u8,
     exp: u32,
     pub evolve_phase: u8,

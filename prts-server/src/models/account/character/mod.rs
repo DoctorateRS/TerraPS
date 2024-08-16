@@ -3,11 +3,12 @@ use std::collections::HashMap;
 use addon::CharAddon;
 use chara::Char;
 use serde::{Deserialize, Serialize};
+use serde_repr::{Deserialize_repr, Serialize_repr};
 use squad::Squad;
 
-mod addon;
-mod chara;
-mod squad;
+pub mod addon;
+pub mod chara;
+pub mod squad;
 
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -21,7 +22,8 @@ pub struct Troop {
     addon: HashMap<String, CharAddon>,
 }
 
-#[derive(Deserialize, Serialize)]
+#[derive(Deserialize_repr, Serialize_repr)]
+#[repr(u8)]
 pub enum CharMissionState {
     Uncompleted = 0,
     Fulfilled = 1,
