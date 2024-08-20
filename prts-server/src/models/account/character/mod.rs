@@ -7,6 +7,7 @@ use serde_repr::{Deserialize_repr, Serialize_repr};
 use squad::Squad;
 
 pub mod addon;
+pub mod char_tmpl;
 pub mod chara;
 pub mod squad;
 

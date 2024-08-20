@@ -6,6 +6,7 @@ pub mod online;
 pub mod payload;
 pub mod prod;
 pub mod social;
+pub mod tables;
 
 pub use account::*;
 

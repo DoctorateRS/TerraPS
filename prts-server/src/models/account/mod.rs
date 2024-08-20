@@ -23,6 +23,7 @@ use std::collections::HashMap;
 
 use activity::ActivityEnum;
 use avatar::Avatar;
+use background::Background;
 use campaignv2::CampaignV2;
 use character::Troop;
 use crisis::{Crisis, CrisisV2};
@@ -30,6 +31,7 @@ use dexnav::DexNav;
 use dungeon::Dungeon;
 use flag::PushFlags;
 use mainline::Mainline;
+use medal::Medal;
 use mission::{Mission, STATIC_MISSION};
 use namecard::NameCardStyle;
 use npc::NpcAudio;
@@ -39,6 +41,7 @@ use status::PlayerStatus;
 pub use sync::*;
 
 use serde::{Deserialize, Serialize};
+use theme::HomeTheme;
 
 use super::EmptyMap;
 
@@ -78,6 +81,9 @@ pub struct User {
     backflow: Backflow,
     pub mainline: Mainline,
     pub avatar: Avatar,
+    pub background: Background,
+    pub medal: Medal,
+    pub home_theme: HomeTheme,
     pub campaign_v2: CampaignV2,
     pub inventory: EmptyMap,
 }
@@ -102,6 +108,9 @@ impl Default for User {
             backflow: BACKFLOW,
             mainline: Mainline::new(),
             avatar: Avatar::new(),
+            background: Background::new(),
+            medal: Medal::new(),
+            home_theme: HomeTheme::new(),
             campaign_v2: CampaignV2::new(),
             inventory: EmptyMap {},
         }

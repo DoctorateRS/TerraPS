@@ -4,6 +4,8 @@ use serde::{Deserialize, Serialize};
 
 use crate::utils::time::time;
 
+use super::char_tmpl::CharTmpl;
+
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum VoiceLan {
@@ -35,6 +37,12 @@ pub struct Char {
     pub current_equip: Option<String>,
     pub equip: HashMap<String, Equip>,
     pub star_mark: u8,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(default)]
+    current_tmpl: Option<String>,
+    #[serde(skip_serializing_if = "HashMap::is_empty")]
+    #[serde(default)]
+    tmpl: HashMap<String, CharTmpl>,
 }
 
 impl Char {
@@ -59,6 +67,8 @@ impl Char {
             current_equip: None,
             equip: HashMap::new(),
             star_mark: 0,
+            current_tmpl: None,
+            tmpl: HashMap::new(),
         }
     }
 
@@ -120,8 +130,8 @@ pub struct Skill {
 }
 
 impl Skill {
-    pub fn new(id: String, is_three_star: bool) -> Self {
-        if !is_three_star {
+    pub fn new(id: String, specializable: bool) -> Self {
+        if !specializable {
             Self {
                 id,
                 unlock: 1,
