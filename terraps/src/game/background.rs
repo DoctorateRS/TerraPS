@@ -29,7 +29,7 @@ pub async fn background_set_bg(Json(payload): JSON) -> JSON {
 pub async fn home_theme_change(Json(payload): JSON) -> JSON {
     let theme_id = payload["themeId"].as_str().unwrap();
     let mut config = read_json(CONFIG_JSON_PATH);
-    config["userConfig"]["background"] = theme_id.into();
+    config["userConfig"]["theme"] = theme_id.into();
     write_json(CONFIG_JSON_PATH, config).unwrap_or(());
     let mut user_data = read_json(USER_JSON_PATH);
     user_data["user"]["background"]["selected"] = theme_id.into();
