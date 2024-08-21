@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 
 use crate::{
-    models::{EmptyMap, NullVec},
+    models::{NullObj, NullVec},
     utils::time::time,
 };
 
@@ -45,7 +45,7 @@ pub struct CrisisV2SeasonPermanent {
     ex_runes: HashMap<String, u8>,
     rune_pack: HashMap<String, u8>,
     challenge: HashMap<String, u8>,
-    reward: EmptyMap,
+    reward: NullObj,
 }
 
 #[derive(Deserialize, Serialize, Default)]
@@ -53,8 +53,8 @@ pub struct CrisisV2SeasonPermanent {
 pub struct CrisisV2SeasonTemporary {
     pub state: u8,
     pub score_total: Vec<u16>,
-    rune: EmptyMap,
-    challenge: EmptyMap,
+    rune: NullObj,
+    challenge: NullObj,
 }
 
 #[derive(Deserialize, Serialize, Default)]
@@ -70,5 +70,5 @@ pub struct CrisisV2SeasonSocial {
 pub struct CrisisV2Shop {
     pub coin: u16,
     info: NullVec,
-    progress_info: EmptyMap,
+    progress_info: NullObj,
 }

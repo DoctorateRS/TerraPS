@@ -2,15 +2,15 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::EmptyMap;
+use crate::models::NullObj;
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct DexNav {
     pub character: HashMap<String, CharDexNav>,
-    formula: EmptyMap,
+    formula: NullObj,
     pub enemy: EnemyDexNav,
-    team_v2: EmptyMap,
+    team_v2: NullObj,
 }
 
 impl DexNav {

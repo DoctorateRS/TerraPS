@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::EmptyMap;
+use crate::models::NullObj;
 
 #[derive(Serialize, Deserialize)]
 pub struct Mission {
@@ -10,7 +10,7 @@ pub struct Mission {
 #[derive(Serialize, Deserialize, Default)]
 #[serde(rename_all = "UPPERCASE")]
 pub struct Missions {
-    pub activity: EmptyMap,
+    pub activity: NullObj,
 }
 
-pub const STATIC_MISSION: Mission = Mission { missions: Missions { activity: EmptyMap {} } };
+pub const STATIC_MISSION: Mission = Mission { missions: Missions { activity: NullObj {} } };

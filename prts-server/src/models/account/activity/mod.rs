@@ -2,12 +2,12 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::EmptyMap;
+use crate::models::NullObj;
 
 mod bossrush;
 pub use bossrush::*;
 
-pub type MappingObject = HashMap<String, EmptyMap>;
+pub type MappingObject = HashMap<String, NullObj>;
 
 #[derive(Serialize, Deserialize)]
 #[serde(untagged)]

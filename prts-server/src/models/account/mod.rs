@@ -43,7 +43,7 @@ pub use sync::*;
 use serde::{Deserialize, Serialize};
 use theme::HomeTheme;
 
-use super::EmptyMap;
+use super::NullObj;
 
 #[derive(Serialize, Deserialize)]
 pub struct AccountSyncData {
@@ -71,7 +71,7 @@ pub struct User {
     pub troop: Troop,
     pub npc_audio: HashMap<String, NpcAudio>,
     pub push_flags: PushFlags,
-    equipment: EmptyMap,
+    equipment: NullObj,
     pub skin: Skin,
     pub mission: Mission,
     pub social: Social,
@@ -85,7 +85,7 @@ pub struct User {
     pub medal: Medal,
     pub home_theme: HomeTheme,
     pub campaign_v2: CampaignV2,
-    pub inventory: EmptyMap,
+    pub inventory: NullObj,
 }
 
 impl Default for User {
@@ -98,7 +98,7 @@ impl Default for User {
             troop: Troop::default(),
             npc_audio: HashMap::new(),
             push_flags: PushFlags::default(),
-            equipment: EmptyMap {},
+            equipment: NullObj {},
             skin: Skin::default(),
             mission: STATIC_MISSION,
             social: SOCIAL_STATIC,
@@ -112,7 +112,7 @@ impl Default for User {
             medal: Medal::new(),
             home_theme: HomeTheme::new(),
             campaign_v2: CampaignV2::new(),
-            inventory: EmptyMap {},
+            inventory: NullObj {},
         }
     }
 }

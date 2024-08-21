@@ -13,11 +13,11 @@ pub use misc::*;
 
 /// Represent an empty Object.
 #[derive(Serialize, Deserialize, Default)]
-pub struct EmptyMap {}
+pub struct NullObj {}
 /// Represent an empty Array.
 type NullVec = [u8; 0];
 
-impl EmptyMap {
+impl NullObj {
     pub const fn new() -> Self {
         Self {}
     }
@@ -31,14 +31,14 @@ pub struct PlayerDataDeltaStatic {
 
 #[derive(Serialize, Deserialize, Default)]
 struct PddInner {
-    modified: EmptyMap,
-    deleted: EmptyMap,
+    modified: NullObj,
+    deleted: NullObj,
 }
 
 impl PlayerDataDeltaStatic {
     pub const fn default() -> Self {
         Self {
-            pdt: PddInner { modified: EmptyMap {}, deleted: EmptyMap {} },
+            pdt: PddInner { modified: NullObj {}, deleted: NullObj {} },
         }
     }
 }
