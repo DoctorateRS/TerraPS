@@ -10,6 +10,8 @@ pub struct CrisisInfoDetailData {
     pub comment_data_map: HashMap<String, CrisisInfoDetailDataComment>,
     pub challenge_node_data_map: HashMap<String, CrisisInfoDetailDataChallengeNodeKeypoint>,
     pub group_desc_data_map: HashMap<String, CrisisInfoDetailGroupDescData>,
+    pub road_relation_data_map: HashMap<String, CrisisInfoDetailRoadRelation>,
+    pub bag_road_data_map: HashMap<String, CrisisInfoDetailBagRoadData>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -27,4 +29,25 @@ pub struct CrisisInfoDetailDataComment {
 pub struct CrisisInfoDetailGroupDescData {
     pub desc: String,
     pub sort_id: u32,
+}
+
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CrisisInfoDetailRoadRelation {
+    pub start: CrisisInfoDetailRoadRelationData,
+    pub end: CrisisInfoDetailRoadRelationData,
+}
+
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CrisisInfoDetailRoadRelationData {
+    #[serde(rename = "type")]
+    pub t: String,
+    pub id: String,
+}
+
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CrisisInfoDetailBagRoadData {
+    pub node_road_list: Vec<String>,
 }
