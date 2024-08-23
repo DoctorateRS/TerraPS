@@ -1,5 +1,5 @@
 [package]
-name = "prts-server"
+name = "surtr-ps"
 version.workspace = true
 edition = "2021"
 description = "Server implementations for a certain Gacha Tower Defense game. V2"
@@ -42,5 +42,5 @@ tower-http = { version = "0.5", features = ["trace"] }
 common_utils = { path = "../common" }
 
 [[bin]]
-name = "terra-ps-2"
+name = "surtr-ps"
 path = "src/main.rs"

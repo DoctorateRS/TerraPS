@@ -1424,39 +1424,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "prts-server"
-version = "0.6.11"
-dependencies = [
- "aes",
- "anyhow",
- "axum",
- "base64",
- "cbc",
- "chrono",
- "common_utils",
- "constcat",
- "env_logger",
- "h2",
- "libaes",
- "md-5",
- "rand",
- "reqwest",
- "ring",
- "serde",
- "serde_json",
- "serde_repr",
- "tokio",
- "tokio-util",
- "tower-http",
- "tracing",
- "tracing-futures",
- "tracing-log",
- "tracing-subscriber",
- "uuid",
- "zip",
-]
-
-[[package]]
 name = "quinn"
 version = "0.11.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1921,6 +1888,39 @@ name = "subtle"
 version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
+name = "surtr-ps"
+version = "0.6.11"
+dependencies = [
+ "aes",
+ "anyhow",
+ "axum",
+ "base64",
+ "cbc",
+ "chrono",
+ "common_utils",
+ "constcat",
+ "env_logger",
+ "h2",
+ "libaes",
+ "md-5",
+ "rand",
+ "reqwest",
+ "ring",
+ "serde",
+ "serde_json",
+ "serde_repr",
+ "tokio",
+ "tokio-util",
+ "tower-http",
+ "tracing",
+ "tracing-futures",
+ "tracing-log",
+ "tracing-subscriber",
+ "uuid",
+ "zip",
+]
 
 [[package]]
 name = "syn"

@@ -3,7 +3,7 @@ members = [
     "crates/common",
     "crates/narantuya",
     "crates/terraps",
-    "crates/prts-server",
+    "crates/surtrps",
     "crates/xtask",
 ]
 resolver = "2"
@@ -59,14 +59,6 @@ tracing-subscriber = { version = "0.3", features = [
     "tracing-log",
 ] }
 
-# Frida
-
-[profile.dev]
-strip = false
-lto = false
-opt-level = 0
-codegen-units = 16
-
 [profile.release]
 strip = true      # Automatically strip symbols from the binary.
 lto = true        # Link-time optimization.
@@ -74,21 +66,3 @@ opt-level = 3     # Optimize for speed.
 codegen-units = 1 # Maximum size reduction optimizations.
 debug = false     # Disable debug information.
 rpath = true      # Disable runtime path.
-
-# The profile that 'cargo dist' will build with
-[profile.dist]
-inherits = "release"
-lto = "thin"
-
-# Config for 'cargo dist'
-[workspace.metadata.dist]
-# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
-cargo-dist-version = "0.16"
-# The installers to generate for each app
-installers = ["msi"]
-# Target platforms to build apps for (Rust target-triple syntax)
-targets = [
-    "x86_64-pc-windows-msvc",
-    "x86_64-unknown-linux-gnu",
-    "x86_64-unknown-linux-musl",
-]
