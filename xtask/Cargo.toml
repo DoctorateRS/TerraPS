@@ -1,7 +1,0 @@
-[package]
-    name              = "xtask"
-    edition           = "2021"
-    version.workspace = true
-
-[dependencies]
-    anyhow.workspace = true

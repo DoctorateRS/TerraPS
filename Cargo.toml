@@ -1,5 +1,11 @@
 [workspace]
-members = ["common", "narantuya", "terraps", "prts-server", "xtask"]
+members = [
+    "crates/common",
+    "crates/narantuya",
+    "crates/terraps",
+    "crates/prts-server",
+    "crates/xtask",
+]
 resolver = "2"
 
 [workspace.package]
