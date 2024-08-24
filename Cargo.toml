@@ -12,7 +12,7 @@ resolver = "2"
 version = "0.6.11"
 
 [workspace.dependencies]
-openssl = "0.10"
+openssl = "0.10.66"
 env_logger = "0.11"
 anyhow = "1"
 chrono = "0.4"
