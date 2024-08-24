@@ -28,8 +28,8 @@ impl CharAddon {
 
 #[derive(Deserialize, Serialize)]
 pub struct CharStoryAddon {
-    fts: u64,
-    rts: u64,
+    pub fts: u64,
+    pub rts: u64,
 }
 
 impl Default for CharStoryAddon {
@@ -42,12 +42,12 @@ impl Default for CharStoryAddon {
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CharStageAddon {
-    start_times: u8,
-    complete_time: u8,
-    state: u8,
-    fts: u64,
-    rts: u64,
-    start_time: u8,
+    pub start_times: u8,
+    pub complete_time: u8,
+    pub state: u8,
+    pub fts: u64,
+    pub rts: u64,
+    pub start_time: u8,
 }
 
 impl Default for CharStageAddon {
