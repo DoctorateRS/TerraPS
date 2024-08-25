@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 
+pub mod curprop;
 pub mod current;
 
 #[derive(Deserialize, Serialize)]

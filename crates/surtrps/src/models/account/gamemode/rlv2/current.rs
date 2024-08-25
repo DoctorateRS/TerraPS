@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
+use super::curprop::Rlv2CurrentPlayerProperty;
+
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Rlv2Current {
@@ -28,35 +30,15 @@ pub struct Rlv2CurrentPlayer {
 }
 
 #[derive(Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Rlv2CurrentPlayerProperty {
-    pub exp: u16,
-    pub level: u8,
-    pub max_level: u8,
-    pub hp: Rlv2CurrentPlayerPropertyHp,
-    pub gold: u32,
-    pub shield: u16,
-    pub capacity: u16,
-    pub population: Rlv2CurrentPlayerPropertyPopulation,
-    pub con_perfect_battle: u16,
-}
-
-#[derive(Deserialize, Serialize)]
-pub struct Rlv2CurrentPlayerPropertyHp {
-    pub current: u16,
-    pub max: u16,
-}
-
-#[derive(Deserialize, Serialize)]
-pub struct Rlv2CurrentPlayerPropertyPopulation {
-    pub cost: u16,
-    pub max: u16,
-}
-
-#[derive(Deserialize, Serialize)]
 pub struct Rlv2CurrentPlayerCursor {
     pub zone: u32,
     pub position: Option<Rlv2CurrentPlayerCursorPos>,
+}
+
+impl Rlv2CurrentPlayerCursor {
+    pub fn set_cursor(&mut self, pos: Rlv2CurrentPlayerCursorPos) -> &mut Rlv2CurrentPlayerCursorPos {
+        self.position.insert(pos)
+    }
 }
 
 #[derive(Deserialize, Serialize)]
@@ -66,7 +48,13 @@ pub struct Rlv2CurrentPlayerCursorPos {
 }
 
 #[derive(Deserialize, Serialize)]
-#[serde(untagged)]
+#[serde(rename_all = "camelCase")]
+pub struct Rlv2CurrentPlayerPendingContentContainer {
+    pub index: String,
+}
+
+#[derive(Deserialize, Serialize)]
+#[serde(tag = "type", content = "content", rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum Rlv2CurrentPlayerPendingContent {
     InitRelic {},
 }
