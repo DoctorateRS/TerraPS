@@ -10,7 +10,6 @@ pub mod addon;
 pub mod char_tmpl;
 pub mod chara;
 pub mod squad;
-pub mod char_rlv2;
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]
