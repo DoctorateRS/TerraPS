@@ -11,8 +11,8 @@ pub struct ProdAndroidNetwork {
 
 impl ProdAndroidNetwork {
     pub fn load() -> Self {
-        let mode = &SERVER_CONFIG.mode;
-        let host = &SERVER_CONFIG.host;
+        let mode = SERVER_CONFIG.mode.as_str();
+        let host = SERVER_CONFIG.host.as_str();
         let port = SERVER_CONFIG.port;
 
         let cfg = read_json(CONFIG_PATH);

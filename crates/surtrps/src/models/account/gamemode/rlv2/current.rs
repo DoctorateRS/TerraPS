@@ -35,12 +35,6 @@ pub struct Rlv2CurrentPlayerCursor {
     pub position: Option<Rlv2CurrentPlayerCursorPos>,
 }
 
-impl Rlv2CurrentPlayerCursor {
-    pub fn set_cursor(&mut self, pos: Rlv2CurrentPlayerCursorPos) -> &mut Rlv2CurrentPlayerCursorPos {
-        self.position.insert(pos)
-    }
-}
-
 #[derive(Deserialize, Serialize)]
 pub struct Rlv2CurrentPlayerCursorPos {
     pub x: u32,
