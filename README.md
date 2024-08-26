@@ -33,6 +33,7 @@
 
 - [DICE_LAB](https://github.com/DICE-LAB-SYX) for DocPy.
 - [Insomnyawolf](https://github.com/insomnyawolf/) for DocCS.
+- [Xeondev](https://github.com/thexeondev/) for feedbacks.
 
 ## Guide
 
@@ -59,4 +60,4 @@ TBA
 
 ### Launching the game
 
-- Currently there's a plan for using `frida-gadget`. Will be reported further next time.
+`:shruggie:`
