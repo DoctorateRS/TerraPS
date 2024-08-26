@@ -19,7 +19,7 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-08-16-07-54-29-65dc0e",
+            "resVersion": "24-08-20-17-10-23-6de62c",
             "clientVersion": "2.3.21"
         }
     },
@@ -107,8 +107,8 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1721880000,
-        "activityMaxStartTs": 1724875199,
+        "activityMinStartTs": 1723708800,
+        "activityMaxStartTs": 1725739199,
         "secretary": "char_4058_pepe",
         "secretarySkinId": "char_4058_pepe#2",
         "background": "bg_sanrio_1",
