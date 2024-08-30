@@ -385,7 +385,7 @@ checksum = "d3fd119d74b830634cea2a0f58bbd0d54540518a14397557951e79340abc28c0"
 
 [[package]]
 name = "common_utils"
-version = "0.6.11"
+version = "0.6.12"
 dependencies = [
  "anyhow",
  "serde",
@@ -1204,7 +1204,7 @@ dependencies = [
 
 [[package]]
 name = "narantuya"
-version = "0.6.11"
+version = "0.6.12"
 dependencies = [
  "anyhow",
  "base64",
@@ -1891,7 +1891,7 @@ checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
 
 [[package]]
 name = "surtr-ps"
-version = "0.6.11"
+version = "0.6.12"
 dependencies = [
  "aes",
  "anyhow",
@@ -1995,7 +1995,7 @@ dependencies = [
 
 [[package]]
 name = "terra-ps"
-version = "0.6.11"
+version = "0.6.12"
 dependencies = [
  "aes",
  "anyhow",
@@ -2680,7 +2680,7 @@ dependencies = [
 
 [[package]]
 name = "xtask"
-version = "0.6.11"
+version = "0.6.12"
 dependencies = [
  "anyhow",
 ]
