@@ -25,7 +25,7 @@ rand = { version = "0.8", features = ["std_rng"] }
 
 # Crypto
 aes = "0.8"
-cbc = { version = "0.1", features = ["std"] }
+cbc = { version = "0.1", features = ["std", "alloc"] }
 libaes = "0.7"
 ring = "0.17"
 md-5 = "0.10"
