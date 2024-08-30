@@ -15,7 +15,7 @@ pub async fn prod_network() -> Json<ProdAndroidNetwork> {
 }
 
 pub async fn prod_remote() -> Json<ProdAndroidRemote> {
-    Json(ProdAndroidRemote::default())
+    Json(ProdAndroidRemote {})
 }
 
 pub async fn prod_announce() -> Json<AnnouncementMeta> {

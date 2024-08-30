@@ -9,6 +9,45 @@ pub struct ProdAndroidNetwork {
     content: String,
 }
 
+#[derive(Serialize, Deserialize)]
+struct V0531 {
+    network: Network1,
+    r#override: bool,
+}
+#[derive(Serialize, Deserialize)]
+struct Configs1 {
+    V053: V0531,
+}
+#[derive(Serialize, Deserialize)]
+struct Content1 {
+    configVer: String,
+    configs: Configs1,
+    funcVer: String,
+}
+#[derive(Serialize, Deserialize)]
+struct Root1 {
+    content: Content1,
+    sign: String,
+}
+
+#[derive(Serialize, Deserialize)]
+struct Network1 {
+    an: String,
+    #[serde(rename = "as")]
+    ax: String,
+    gs: String,
+    hu: String,
+    hv: String,
+    of: String,
+    pkgAd: (),
+    pkgIOS: (),
+    prean: String,
+    rc: String,
+    secure: bool,
+    sl: String,
+    u8: String,
+}
+
 impl ProdAndroidNetwork {
     pub fn load() -> Self {
         let mode = SERVER_CONFIG.mode.as_str();
@@ -30,14 +69,5 @@ impl ProdAndroidNetwork {
         let content = network_config["content"].to_string();
 
         Self { sign: String::from("sign"), content }
-    }
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ProdAndroidRemote {}
-
-impl ProdAndroidRemote {
-    pub fn default() -> Self {
-        Self {}
     }
 }
