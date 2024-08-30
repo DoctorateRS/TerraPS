@@ -17,27 +17,23 @@ pub struct BattleDataDecryptor {
     login_time: u64,
 }
 
+impl Default for BattleDataDecryptor {
+    fn default() -> Self {
+        Self { login_time: 1672502400 }
+    }
+}
+
 impl BattleDataDecryptor {
-    pub fn new(login_time: Option<u64>) -> Self {
-        Self {
-            login_time: if let Some(time) = login_time { time } else { 1672502400 },
-        }
+    pub fn new(login_time: u64) -> Self {
+        Self { login_time }
     }
 
     pub fn decrypt_battle_data<D: DeserializeOwned>(&self, data: String) -> Result<D> {
         let (data, iv) = data.split_at(data.len() - 32);
         let src = format!("{}{}", LOG_TOKEN_KEY, self.login_time);
 
-        let data = match from_hex(data) {
-            Ok(data) => data,
-            Err(e) => return Err(anyhow!(e)),
-        };
-
-        let iv = match from_hex(iv) {
-            Ok(iv) => iv,
-            Err(e) => return Err(anyhow!(e)),
-        };
-
+        let data = from_hex(data).map_err(|e| anyhow!(e))?;
+        let iv = from_hex(iv).map_err(|e| anyhow!(e))?;
         let key = md5_digest(src.as_bytes());
 
         let aes = Decryptor::<Aes128>::new(key.as_slice().into(), iv.as_slice().into());
