@@ -46,7 +46,7 @@ pub async fn account_sync_data() -> JSON {
     let display_meta_table = update_data(DM_TABLE_URL).await;
     let retro_table = update_data(RETRO_TABLE_URL).await;
     let charm_table = update_data(CHARM_TABLE_URL).await;
-    let acitivity_table = update_data(ACTIVITY_TABLE_URL).await;
+    let activity_table = update_data(ACTIVITY_TABLE_URL).await;
     let charword_table = update_data(CHARWORD_TABLE_URL).await;
     let story_review_table = update_data(STORY_REVIEW_TABLE_URL).await;
     let story_review_meta_table = update_data(STORY_REVIEW_META_TABLE_URL).await;
@@ -528,7 +528,7 @@ pub async fn account_sync_data() -> JSON {
     }
 
     // IDEAL CITY CARS
-    let car_table = acitivity_table["carData"]["carDict"].clone();
+    let car_table = activity_table["carData"]["carDict"].clone();
     for car_gear in get_keys(&car_table) {
         player_data["user"]["car"]["accessories"][&car_gear] = json!({
             "id": &car_gear,
@@ -536,7 +536,7 @@ pub async fn account_sync_data() -> JSON {
         })
     }
 
-    let act_table = acitivity_table["activity"]["TYPE_ACT17SIDE"]["act17side"].clone();
+    let act_table = activity_table["activity"]["TYPE_ACT17SIDE"]["act17side"].clone();
     for place in get_keys(&act_table["placeDataMap"]) {
         player_data["user"]["deepSea"]["places"][&place] = json!(2);
     }
@@ -710,11 +710,11 @@ pub async fn account_sync_data() -> JSON {
     }
     player_data["user"]["dexNav"]["enemy"]["enemies"] = enemies;
 
-    for act_id in get_keys(&acitivity_table["activity"]) {
+    for act_id in get_keys(&activity_table["activity"]) {
         if player_data["user"]["activity"].get(&act_id).is_none() {
             player_data["user"]["activity"][&act_id] = json!({});
         }
-        for act_data in get_keys(&acitivity_table["activity"][&act_id]) {
+        for act_data in get_keys(&activity_table["activity"][&act_id]) {
             if player_data["user"]["activity"][&act_id].get(&act_data).is_none() {
                 player_data["user"]["activity"][&act_id][&act_data] = json!({});
             }
