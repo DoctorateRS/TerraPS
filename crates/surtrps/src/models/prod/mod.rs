@@ -8,11 +8,10 @@ use crate::{cnst::config::CONFIG_PATH, SERVER_CONFIG};
 pub use network::ProdAndroidNetwork;
 
 #[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ProdAndroidVersion {
-    #[serde(rename = "resVersion")]
-    res_ver: String,
-    #[serde(rename = "clientVersion")]
-    clnt_ver: String,
+    res_version: String,
+    client_version: String,
 }
 
 impl ProdAndroidVersion {
@@ -26,9 +25,9 @@ impl ProdAndroidVersion {
 }
 
 #[derive(Serialize, Deserialize, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct ProdAndroidRefresh {
-    #[serde(rename = "resVersion")]
-    res_ver: (),
+    res_version: (),
 }
 
 #[derive(Serialize, Deserialize)]
@@ -50,12 +49,11 @@ struct Extra {
 }
 
 #[derive(Serialize, Deserialize, Default)]
+#[serde(rename_all = "camelCase")]
 pub struct AnnouncementMeta {
-    #[serde(rename = "announceList")]
-    list: Vec<Announce>,
+    announce_list: Vec<Announce>,
     extra: Extra,
-    #[serde(rename = "focusAnnounceId")]
-    focus_id: (),
+    focus_announce_id: (),
 }
 
 impl AnnouncementMeta {
