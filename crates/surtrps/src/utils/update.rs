@@ -29,7 +29,7 @@ pub enum Mode {
 }
 
 impl Mode {
-    fn to_str(&self) -> &'static str {
+    fn to_str(self) -> &'static str {
         match self {
             Mode::Cn => "cn",
             Mode::Global => "global",
@@ -97,18 +97,18 @@ pub async fn update() -> Result<()> {
     write_json(VERSION_CONFIG_PATH, old_ver_cfgs)?;
 
     let new_net_cfg = get(from_utf8(decrypt(NW_CONF)?.as_slice())?).await?.json::<ProdAndroidNetwork>().await?;
+
     let new_nwcfg_content = from_str::<NetworkConfigContent>(&new_net_cfg.content)?;
 
-    println!("x");
-
     let mut old_net_cfgs = from_str::<HashMap<String, ProdAndroidNetworkConfig>>(&read_to_string(File::open(NETWORK_CONFIG_TEMPLATE_PATH)?)?)?;
-
-    println!("y");
 
     let mut old_net_cfg = old_net_cfgs.remove(mode.to_str()).unwrap();
 
     if old_net_cfg.content.config_ver != new_nwcfg_content.config_ver {
-        let tmp_nwcfg = new_nwcfg_content.configs.get(&new_nwcfg_content.config_ver).unwrap().clone();
+        let mut tmp_nwcfg = new_nwcfg_content.configs.get(&new_nwcfg_content.config_ver).unwrap().clone();
+
+        tmp_nwcfg.network.pkg_ad = None;
+        tmp_nwcfg.network.pkg_ios = None;
 
         old_net_cfg.content.config_ver = new_nwcfg_content.config_ver.clone();
         old_net_cfg.content.configs.insert(new_nwcfg_content.config_ver, tmp_nwcfg);
@@ -116,8 +116,6 @@ pub async fn update() -> Result<()> {
 
     old_net_cfgs.insert(mode.to_str().to_string(), old_net_cfg);
     write_json(NETWORK_CONFIG_TEMPLATE_PATH, old_net_cfgs)?;
-
-    println!("z");
 
     if excel_update_required {
         update_excel().await?

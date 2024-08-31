@@ -57,8 +57,8 @@ impl NetworkConfigContent {
                                 prean,
                                 sl,
                                 of,
-                                pkg_ad: (),
-                                pkg_ios: (),
+                                pkg_ad: None,
+                                pkg_ios: None,
                                 secure,
                             },
                         },
@@ -99,8 +99,8 @@ pub struct NwCfgContent {
     pub prean: String,
     pub sl: String,
     pub of: String,
-    pkg_ad: (),
-    pkg_ios: (),
+    pub pkg_ad: Option<String>,
+    pub pkg_ios: Option<String>,
     secure: bool,
 }
 
