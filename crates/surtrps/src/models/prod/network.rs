@@ -7,15 +7,15 @@ use crate::SERVER_CONFIG;
 use common_utils::read_json;
 
 #[derive(Serialize, Deserialize)]
-struct ProdAndroidNetworkConfig {
+pub struct ProdAndroidNetworkConfig {
     sign: String,
     pub content: NetworkConfigContent,
 }
 
 #[derive(Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
-struct NetworkConfigContent {
-    config_ver: String,
+pub struct NetworkConfigContent {
+    pub config_ver: String,
     pub configs: HashMap<String, NwCfg>,
     func_ver: String,
 }
@@ -78,7 +78,7 @@ impl NetworkConfigContent {
 }
 
 #[derive(Serialize, Deserialize, Clone)]
-struct NwCfg {
+pub struct NwCfg {
     pub network: NwCfgContent,
     #[serde(rename = "override")]
     ord: bool,
@@ -86,7 +86,7 @@ struct NwCfg {
 
 #[derive(Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
-struct NwCfgContent {
+pub struct NwCfgContent {
     pub gs: String,
     #[serde(rename = "as")]
     pub ak_server: String,
@@ -106,8 +106,8 @@ struct NwCfgContent {
 
 #[derive(Serialize, Deserialize)]
 pub struct ProdAndroidNetwork {
-    sign: String,
-    content: String,
+    pub sign: String,
+    pub content: String,
 }
 
 impl ProdAndroidNetwork {
