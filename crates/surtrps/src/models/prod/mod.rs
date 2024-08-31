@@ -1,4 +1,4 @@
-mod network;
+pub mod network;
 
 use common_utils::read_json;
 use serde::{Deserialize, Serialize};
