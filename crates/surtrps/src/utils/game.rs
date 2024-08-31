@@ -2,6 +2,7 @@ use common_utils::read_json;
 use reqwest::get;
 use serde_json::Value;
 
+#[deprecated]
 pub async fn update_data(url: &str) -> Value {
     let local_path = url
         .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data")
