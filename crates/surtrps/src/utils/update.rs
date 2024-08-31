@@ -6,7 +6,7 @@ use std::{
 };
 
 use anyhow::{anyhow, Result};
-use common_utils::write_json;
+use common_utils::{decrypt, write_json};
 use reqwest::get;
 use serde::{Deserialize, Serialize};
 use serde_json::{from_str, Value};
@@ -24,8 +24,6 @@ use crate::{
     },
     SERVER_CONFIG,
 };
-
-use super::b64::decrypt;
 
 #[derive(Clone, Copy)]
 pub enum Mode {
