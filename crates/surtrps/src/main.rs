@@ -8,7 +8,6 @@ use utils::update::update;
 mod cnst;
 mod models;
 mod server;
-mod update;
 mod utils;
 
 static USER_CONFIG: LazyLock<UserConfig> = LazyLock::new(|| UserConfig::load().unwrap_or_default());

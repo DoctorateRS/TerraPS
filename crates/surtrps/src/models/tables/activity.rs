@@ -1,13 +1,15 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTable {
     pub basic_info: HashMap<String, BasicActivityInfo>,
-    pub home_act_config: HashMap<String, HomeActConf>,
-    pub zone_to_activity: HashMap<String, String>,
+    // TODO: Replace `Value` with a proper struct.
+    pub activity: HashMap<String, Value>,
+    pub car_data: CarData,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -35,10 +37,29 @@ pub struct BasicActivityInfo {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct HomeActConf {
-    pub act_id: String,
-    pub is_popup_after_checkin: bool,
-    pub show_top_bar_menu: bool,
-    pub act_top_bar_color: Option<String>,
-    pub act_top_bar_text: Option<String>,
+pub struct CarData {
+    pub car_dict: HashMap<String, Car>,
+}
+
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Car {
+    pub comp_id: String,
+    pub sort_id: i32,
+    #[serde(rename = "type")]
+    pub component_type: String,
+    pub pos_list: Vec<String>,
+    pub pos_id_dict: HashMap<String, Vec<String>>,
+    pub name: String,
+    pub icon: String,
+    pub show_scores: u16,
+    pub item_usage: String,
+    pub item_desc: String,
+    pub item_obtain: String,
+    pub rarity: u8,
+    pub detail_desc: String,
+    pub price: u16,
+    pub special_obtain: String,
+    pub obtain_in_random: bool,
+    pub additive_color: Option<String>,
 }
