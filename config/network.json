@@ -3,10 +3,8 @@
         "sign": "sign",
         "content": {
             "configVer": "5",
-            "funcVer": "V053",
             "configs": {
                 "V053": {
-                    "override": true,
                     "network": {
                         "gs": "{server}",
                         "as": "{server}",
@@ -19,21 +17,21 @@
                         "sl": "https://ak.hypergryph.com/protocol/service",
                         "of": "https://ak.hypergryph.com/index.html",
                         "pkgAd": null,
-                        "pkgIOS": null,
+                        "pkgIos": null,
                         "secure": false
-                    }
+                    },
+                    "override": true
                 }
-            }
+            },
+            "funcVer": "V053"
         }
     },
     "global": {
         "sign": "sign",
         "content": {
             "configVer": "1",
-            "funcVer": "V044",
             "configs": {
                 "V044": {
-                    "override": true,
                     "network": {
                         "gs": "{server}",
                         "as": "{server}",
@@ -46,11 +44,13 @@
                         "sl": "https://www.arknights.global/terms_of_service",
                         "of": "https://www.arknights.global",
                         "pkgAd": null,
-                        "pkgIOS": null,
+                        "pkgIos": null,
                         "secure": false
-                    }
+                    },
+                    "override": true
                 }
-            }
+            },
+            "funcVer": "V044"
         }
     }
 }
