@@ -388,6 +388,7 @@ name = "common_utils"
 version = "0.6.12"
 dependencies = [
  "anyhow",
+ "base64",
  "serde",
  "serde_json",
 ]
