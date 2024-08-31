@@ -10,8 +10,8 @@ pub use network::ProdAndroidNetwork;
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ProdAndroidVersion {
-    res_version: String,
-    client_version: String,
+    pub res_version: String,
+    pub client_version: String,
 }
 
 impl ProdAndroidVersion {

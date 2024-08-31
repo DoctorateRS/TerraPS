@@ -1,0 +1,14 @@
+{
+    "version": {
+        "android": {
+            "resVersion": "24-08-20-17-10-23-6de62c",
+            "clientVersion": "2.3.21"
+        }
+    },
+    "versionGlobal": {
+        "android": {
+            "resVersion": "24-04-26-14-20-27-ffbadc",
+            "clientVersion": "22.1.21"
+        }
+    }
+}

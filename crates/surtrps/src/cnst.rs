@@ -7,6 +7,8 @@ pub mod config {
     pub const RLV2_CONFIG_PATH: &str = "./config/rlv2Config.json";
     pub const ASSIST_JSON_PATH: &str = "./config/assist.json";
     pub const SQUADS_PATH: &str = "./config/squads.json";
+    pub const VERSION_CONFIG_PATH: &str = "./config/version.json";
+    pub const NETWORK_CONFIG_TEMPLATE_PATH: &str = "./config/network.json";
     pub const SYNC_DATA_TEMPLATE_PATH: &str = "./config/syncData.json";
 }
 
