@@ -187,6 +187,8 @@ async fn update_excel(mode: Mode) -> Result<()> {
         handle.await??
     }
 
+    println!("Excel data update succeed.");
+
     Ok(())
 }
 
