@@ -1,15 +1,13 @@
 use adb::Os;
 use anyhow::Result;
-use common_utils::ServerConfig;
+use common_utils::{decrypt, ServerConfig};
 use frida::{DeviceManager, Frida, ScriptOption, ScriptRuntime, Session, SpawnOptions};
 use scripts::{get_script, get_vision};
 use std::process::Command;
 
 mod adb;
-mod b64;
 mod config;
 mod scripts;
-use crate::b64::B64Decoder;
 
 const GLOBAL: &str = "Y29tLllvU3RhckVOLkFya25pZ2h0cw==";
 const CN: &str = "Y29tLmh5cGVyZ3J5cGguYXJrbmlnaHRz";
@@ -40,7 +38,7 @@ async fn main() -> Result<()> {
 
     let def = SpawnOptions::default();
 
-    let game = if &server_conf.mode == "cn" { B64Decoder::new(CN).decode()? } else { B64Decoder::new(GLOBAL).decode()? };
+    let game = String::from_utf8(if &server_conf.mode == "cn" { decrypt(CN)? } else { decrypt(GLOBAL)? })?;
 
     let game_pid = device.spawn(game, &def)?;
     let session = device.attach(game_pid)?;
