@@ -9,10 +9,15 @@ use anyhow::{anyhow, Result};
 use common_utils::write_json;
 use reqwest::get;
 use serde::{Deserialize, Serialize};
-use serde_json::from_str;
+use serde_json::{from_str, Value};
+use tokio::spawn;
 
 use crate::{
-    cnst::config::{NETWORK_CONFIG_TEMPLATE_PATH, VERSION_CONFIG_PATH},
+    cnst::{
+        config::{NETWORK_CONFIG_TEMPLATE_PATH, VERSION_CONFIG_PATH},
+        global_url::*,
+        url::*,
+    },
     models::prod::{
         network::{NetworkConfigContent, ProdAndroidNetworkConfig},
         ProdAndroidNetwork, ProdAndroidVersion,
@@ -118,12 +123,81 @@ pub async fn update() -> Result<()> {
     write_json(NETWORK_CONFIG_TEMPLATE_PATH, old_net_cfgs)?;
 
     if excel_update_required {
-        update_excel().await?
+        update_excel(mode).await?
     }
 
     Ok(())
 }
 
-async fn update_excel() -> Result<()> {
+async fn update_excel(mode: Mode) -> Result<()> {
+    let update_list = match mode {
+        Mode::Cn => [
+            ACTIVITY_TABLE_URL,
+            CHARM_TABLE_URL,
+            SKIN_TABLE_URL,
+            CHARACTER_TABLE_URL,
+            BATTLEEQUIP_TABLE_URL,
+            EQUIP_TABLE_URL,
+            STORY_TABLE_URL,
+            STAGE_TABLE_URL,
+            RL_TABLE_URL,
+            DM_TABLE_URL,
+            RETRO_TABLE_URL,
+            HANDBOOK_INFO_TABLE_URL,
+            TOWER_TABLE_URL,
+            BUILDING_TABLE_URL,
+            SANDBOX_TABLE_URL,
+            STORY_REVIEW_TABLE_URL,
+            STORY_REVIEW_META_TABLE_URL,
+            ENEMY_HANDBOOK_TABLE_URL,
+            MEDAL_TABLE_URL,
+            CHARWORD_TABLE_URL,
+            GACHA_TABLE_URL,
+            GAMEDATA_CONST_URL,
+        ],
+        Mode::Global => [
+            GLOBAL_ACTIVITY_TABLE_URL,
+            GLOBAL_CHARM_TABLE_URL,
+            GLOBAL_SKIN_TABLE_URL,
+            GLOBAL_CHARACTER_TABLE_URL,
+            GLOBAL_BATTLEEQUIP_TABLE_URL,
+            GLOBAL_EQUIP_TABLE_URL,
+            GLOBAL_STORY_TABLE_URL,
+            GLOBAL_STAGE_TABLE_URL,
+            GLOBAL_RL_TABLE_URL,
+            GLOBAL_DM_TABLE_URL,
+            GLOBAL_RETRO_TABLE_URL,
+            GLOBAL_HANDBOOK_INFO_TABLE_URL,
+            GLOBAL_TOWER_TABLE_URL,
+            GLOBAL_BUILDING_TABLE_URL,
+            GLOBAL_SANDBOX_TABLE_URL,
+            GLOBAL_STORY_REVIEW_TABLE_URL,
+            GLOBAL_STORY_REVIEW_META_TABLE_URL,
+            GLOBAL_ENEMY_HANDBOOK_TABLE_URL,
+            GLOBAL_MEDAL_TABLE_URL,
+            GLOBAL_CHARWORD_TABLE_URL,
+            GLOBAL_GACHA_TABLE_URL,
+            GLOBAL_GAMEDATA_CONST_URL,
+        ],
+    };
+
+    let handles = update_list.iter().map(|&link| spawn(update_excel_data(link))).collect::<Vec<_>>();
+
+    for handle in handles {
+        handle.await??
+    }
+
+    Ok(())
+}
+
+async fn update_excel_data(link: &str) -> Result<()> {
+    let path = link
+        .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data")
+        .replace("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android", "./data/announce")
+        .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/main/en_US/gamedata/", "./dataGB/")
+        .replace("| GLOBAL AK ANNOUNCE |", "./dataGB/announce");
+    let json = get(link).await?.json::<Value>().await?;
+    write_json(&path, json).unwrap_or(());
+    println!("Updated: {}", path.replace("./data/announce", "").replace("./data", ""));
     Ok(())
 }
