@@ -1,3 +1,6 @@
+// TODO: AFTER THE SERVER SUCCESSFULLY RAN, GET RID OF THIS
+#![allow(dead_code)]
+
 use std::{env::args, sync::LazyLock};
 
 use anyhow::Result;
