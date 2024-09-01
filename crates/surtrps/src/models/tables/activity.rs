@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTable {
     pub basic_info: HashMap<String, BasicActivityInfo>,
@@ -13,7 +13,7 @@ pub struct ActivityTable {
     pub sync_points: SyncPoints,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BasicActivityInfo {
     pub id: String,
@@ -36,7 +36,7 @@ pub struct BasicActivityInfo {
     pub is_page_entry: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct HomeActConf {
     pub act_id: String,
@@ -46,7 +46,7 @@ pub struct HomeActConf {
     pub act_top_bar_text: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionData {
     pub id: String,
@@ -70,7 +70,7 @@ pub struct MissionData {
     pub have_sub_mission_to_unlock: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Reward {
     #[serde(rename = "type")]
@@ -79,7 +79,7 @@ pub struct Reward {
     pub count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionGroup {
     pub id: String,
@@ -96,21 +96,20 @@ pub struct MissionGroup {
 
 // Start of Activity Structs
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityData {
-    pub replicate_missions: Option<Vec<ReplicateMission>>,
     pub activity: HashMap<String, HashMap<String, ActivityDetails>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityDetails {
-    pub zone_list: Vec<Zone>,
-    pub shop_list: Option<Vec<Shop>>,
+    #[serde(default)]
+    pub zone_list: Option<Vec<Zone>>
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Zone {
     pub zone_id: String,
@@ -120,32 +119,20 @@ pub struct Zone {
     pub item_drop_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Shop {
-
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ReplicateMission {
-
-}
-
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct CheckinOnlyActivities {
     pub checkin_only: HashMap<String, CheckinActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckinActivity {
     pub check_in_list: HashMap<String, CheckInDay>,
     pub ap_supply_out_of_date_dict: HashMap<String, i64>,
-    pub dyn_check_in_data: Option<DynCheckInData>,
-    pub extra_checkin_list: Option<Vec<ExtraCheckin>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInDay {
     pub item_list: Vec<CheckInItem>,
@@ -156,7 +143,7 @@ pub struct CheckInDay {
     pub is_dyn_item: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInItem {
     pub id: String,
@@ -165,23 +152,14 @@ pub struct CheckInItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct DynCheckInData {
 
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ExtraCheckin {
-
-}
-
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct CheckinAllPlayerActivities {
     pub checkin_all_player: HashMap<String, CheckinAllPlayerActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckinAllPlayerActivity {
     pub check_in_list: HashMap<String, CheckInAllPlayerDay>,
@@ -191,7 +169,7 @@ pub struct CheckinAllPlayerActivity {
     pub const_data: ConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PersonalBehavior {
     pub sort_id: i32,
@@ -201,13 +179,13 @@ pub struct PersonalBehavior {
     pub desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct CheckinVsActivities {
     pub checkin_vs: HashMap<String, CheckinVsActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckinVsActivity {
     pub check_in_dict: HashMap<String, CheckInVsDay>,
@@ -218,14 +196,14 @@ pub struct CheckinVsActivity {
     pub rule_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInVsDay {
     pub reward_list: Vec<CheckInVsReward>,
     pub order: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInVsReward {
     pub id: String,
@@ -234,7 +212,7 @@ pub struct CheckInVsReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct VoteTaste {
     pub pl_sweet_num: i32,
@@ -242,7 +220,7 @@ pub struct VoteTaste {
     pub pl_taste: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TasteInfo {
     pub pl_taste: i32,
@@ -250,14 +228,14 @@ pub struct TasteInfo {
     pub taste_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TasteReward {
     pub taste_type: TasteType,
     pub reward_item: RewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardItem {
     pub id: String,
@@ -266,7 +244,7 @@ pub struct RewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "UPPERCASE")]
 pub enum TasteType {
     Sweet,
@@ -274,14 +252,14 @@ pub enum TasteType {
     Draw,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct3d0Activities {
     pub type_act3d0: HashMap<String, Act3d0Activity>,
     pub limited_pool_list: HashMap<String, LimitedPool>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act3d0Activity {
     pub camp_basic_info: HashMap<String, CampBasicInfo>,
@@ -299,7 +277,7 @@ pub struct Act3d0Activity {
     pub favor_up_list: HashMap<String, FavorUp>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CampBasicInfo {
     pub camp_id: String,
@@ -308,14 +286,14 @@ pub struct CampBasicInfo {
     pub reward_desc: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct LimitedPool {
     pub pool_id: String,
     pub pool_item_info: Vec<PoolItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PoolItem {
     pub good_id: String,
@@ -329,7 +307,7 @@ pub struct PoolItem {
     pub order_id: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ItemInfo {
     pub id: String,
@@ -338,14 +316,14 @@ pub struct ItemInfo {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CampItemMap {
     pub good_id: String,
     pub item_dict: HashMap<String, CampItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CampItem {
     pub id: String,
@@ -354,7 +332,7 @@ pub struct CampItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ClueInfo {
     pub item_id: String,
@@ -363,7 +341,7 @@ pub struct ClueInfo {
     pub image_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GachaBoxInfo {
     pub gacha_box_id: String,
@@ -375,7 +353,7 @@ pub struct GachaBoxInfo {
     pub next_gacha_box_info_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TokenId {
     pub id: String,
@@ -384,7 +362,7 @@ pub struct TokenId {
     pub token_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ZoneDesc {
     pub zone_id: String,
@@ -392,7 +370,7 @@ pub struct ZoneDesc {
     pub display_start_time: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FavorUp {
     pub char_id: String,
@@ -400,13 +378,13 @@ pub struct FavorUp {
     pub display_end_time: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct4d0Activities {
     pub type_act4d0: HashMap<String, Act4d0Activity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act4d0Activity {
     pub mile_stone_item_list: Vec<MileStoneItem>,
@@ -419,7 +397,7 @@ pub struct Act4d0Activity {
     pub extra_drop_zones: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MileStoneItem {
     pub mile_stone_id: String,
@@ -428,7 +406,7 @@ pub struct MileStoneItem {
     pub item: RewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MileStoneStory {
     pub mile_stone_id: String,
@@ -438,7 +416,7 @@ pub struct MileStoneStory {
     pub desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StoryInfo {
     pub story_key: String,
@@ -449,7 +427,7 @@ pub struct StoryInfo {
     pub story_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageInfo {
     pub stage_key: String,
@@ -459,7 +437,7 @@ pub struct StageInfo {
     pub lock_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TokenItem {
     pub id: String,
@@ -468,13 +446,13 @@ pub struct TokenItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct5d0Activities {
     pub type_act5d0: HashMap<String, Act5d0Activity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act5d0Activity {
     pub mile_stone_info: Vec<MileStoneInfo>,
@@ -484,7 +462,7 @@ pub struct Act5d0Activity {
     pub sp_reward: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MileStoneInfo {
     pub mile_stone_id: String,
@@ -499,7 +477,7 @@ pub struct MileStoneInfo {
     pub mile_stone_stage: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct NormalItem {
     pub id: String,
@@ -508,7 +486,7 @@ pub struct NormalItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionExtra {
     pub difficult_level: i32,
@@ -516,26 +494,26 @@ pub struct MissionExtra {
     pub sort_id: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct5d1Activities {
     pub type_act5d1: HashMap<String, Value>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct CollectionActivities {
     pub collection: HashMap<String, CollectionActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CollectionActivity {
     pub collections: Vec<Collection>,
     pub ap_supply_out_of_date_dict: HashMap<String, i64>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Collection {
     pub id: i32,
@@ -552,13 +530,13 @@ pub struct Collection {
     pub show_icon_bg: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct9d0Activities {
     pub type_act9d0: HashMap<String, Act9d0Activity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act9d0Activity {
     pub token_item_id: String,
@@ -573,13 +551,13 @@ pub struct Act9d0Activity {
     pub const_data: ConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct12SideActivities {
     pub type_act12side: HashMap<String, Act12SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act12SideActivity {
     pub const_data: Act12SideConstData,
@@ -590,7 +568,7 @@ pub struct Act12SideActivity {
     pub recycle_dialog_dict: HashMap<String, Vec<RecycleDialog>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act12SideConstData {
     pub recycle_reward_threshold: i32,
@@ -605,7 +583,7 @@ pub struct Act12SideConstData {
     pub fog_unlock_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act12ZoneAdditionData {
     pub zone_id: String,
@@ -613,7 +591,7 @@ pub struct Act12ZoneAdditionData {
     pub zone_class: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionDesc {
     pub zone_class: String,
@@ -623,7 +601,7 @@ pub struct MissionDesc {
     pub unlock_stage: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Item {
     pub id: String,
@@ -632,7 +610,7 @@ pub struct Item {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Photo {
     pub pic_id: String,
@@ -642,7 +620,7 @@ pub struct Photo {
     pub jump_stage_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RecycleDialog {
     pub dialog_type: String,
@@ -650,13 +628,13 @@ pub struct RecycleDialog {
     pub dialog_express: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct13SideActivities {
     pub type_act13side: HashMap<String, Act13SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act13SideActivity {
     pub const_data: Act13SideConstData,
@@ -669,7 +647,7 @@ pub struct Act13SideActivity {
     pub zone_addition_data_map: HashMap<String, Act13ZoneAdditionData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act13SideConstData {
     pub prestige_desc_list: Vec<String>,
@@ -686,7 +664,7 @@ pub struct Act13SideConstData {
     pub hot_spot_show_flag: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ItemRandom {
     pub id: String,
@@ -695,7 +673,7 @@ pub struct ItemRandom {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct OrgData {
     pub org_id: String,
@@ -709,7 +687,7 @@ pub struct OrgData {
     pub principal_data_map: HashMap<String, PrincipalData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Prestige {
     pub rank: String,
@@ -720,7 +698,7 @@ pub struct Prestige {
     pub avg_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PrestigeItem {
     pub id: String,
@@ -729,7 +707,7 @@ pub struct PrestigeItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct OrgSection {
     pub section_name: String,
@@ -737,7 +715,7 @@ pub struct OrgSection {
     pub group_data: GroupData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GroupData {
     pub group_id: String,
@@ -746,7 +724,7 @@ pub struct GroupData {
     pub mission_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PrincipalData {
     pub principal_id: String,
@@ -756,7 +734,7 @@ pub struct PrincipalData {
     pub principal_desc_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct LongTermMissionData {
     pub mission_name: String,
@@ -768,7 +746,7 @@ pub struct LongTermMissionData {
     pub jump_stage_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DailyMissionData {
     pub id: String,
@@ -785,14 +763,14 @@ pub struct DailyMissionData {
     pub agenda_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DailyRewardGroupData {
     pub group_id: String,
     pub rewards: Vec<Reward>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act13SideActivityReward {
     pub id: String,
@@ -801,7 +779,7 @@ pub struct Act13SideActivityReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ArchiveItemUnlockData {
     pub item_id: String,
@@ -811,7 +789,7 @@ pub struct ArchiveItemUnlockData {
     pub param2: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct HiddenAreaData {
     pub name: String,
@@ -819,27 +797,27 @@ pub struct HiddenAreaData {
     pub preposed_stage: Vec<PreposedStage>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PreposedStage {
     pub stage_id: String,
     pub unlock_rank: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act13ZoneAdditionData {
     pub unlock_text: String,
     pub zone_class: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct17SideActivities {
     pub type_act17side: HashMap<String, Act17SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivity {
     pub place_data_map: HashMap<String, PlaceData>,
@@ -860,7 +838,7 @@ pub struct Act17SideActivity {
     pub const_data: Act17SideConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PlaceData {
     pub place_id: String,
@@ -871,7 +849,7 @@ pub struct PlaceData {
     pub visible_params: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct EventData {
     pub event_id: String,
@@ -893,7 +871,7 @@ pub struct EventData {
     pub lock_param: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct LandmarkNodeData {
     pub node_id: String,
@@ -904,7 +882,7 @@ pub struct LandmarkNodeData {
     pub landmark_des_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StoryNodeData {
     pub node_id: String,
@@ -916,14 +894,14 @@ pub struct StoryNodeData {
     pub story_des_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BattleNodeData {
     pub node_id: String,
     pub stage_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TreasureNodeData {
     pub node_id: String,
@@ -939,7 +917,7 @@ pub struct TreasureNodeData {
     pub treasure_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivityReward {
     pub id: String,
@@ -948,7 +926,7 @@ pub struct Act17SideActivityReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct EventNodeData {
     pub node_id: String,
@@ -956,7 +934,7 @@ pub struct EventNodeData {
     pub end_event_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TechNodeData {
     pub node_id: String,
@@ -970,7 +948,7 @@ pub struct TechNodeData {
     pub mission_id_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ChoiceNodeData {
     pub node_id: String,
@@ -984,7 +962,7 @@ pub struct ChoiceNodeData {
     pub option_list: Vec<ChoiceOption>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ChoiceOption {
     pub can_repeat: bool,
@@ -995,7 +973,7 @@ pub struct ChoiceOption {
     pub unlock_params: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivityArchiveItemUnlockData {
     pub item_id: String,
@@ -1006,7 +984,7 @@ pub struct Act17SideActivityArchiveItemUnlockData {
     pub chapter_id: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TechTreeData {
     pub tech_tree_id: String,
@@ -1016,7 +994,7 @@ pub struct TechTreeData {
     pub lock_des: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TechTreeBranchData {
     pub tech_tree_branch_id: String,
@@ -1027,7 +1005,7 @@ pub struct TechTreeBranchData {
     pub rune_data: Act17SideActivityRuneData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivityRuneData {
     pub key: String,
@@ -1035,7 +1013,7 @@ pub struct Act17SideActivityRuneData {
     pub blackboard: Vec<Act17SideActivityBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivityRuneSelector {
     pub profession_mask: i32,
@@ -1054,7 +1032,7 @@ pub struct Act17SideActivityRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideActivityBlackboardItem {
     pub key: String,
@@ -1062,7 +1040,7 @@ pub struct Act17SideActivityBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainlineChapterData {
     pub chapter_id: String,
@@ -1072,7 +1050,7 @@ pub struct MainlineChapterData {
     pub id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainlineData {
     pub mainline_id: String,
@@ -1084,7 +1062,7 @@ pub struct MainlineData {
     pub focus_node_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ZoneData {
     pub zone_id: String,
@@ -1092,45 +1070,45 @@ pub struct ZoneData {
     pub unlock_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideConstData {
     pub tech_tree_unlock_event_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct20SideActivities {
     pub type_act20side: HashMap<String, Act20SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act20SideActivity {
     pub zone_addition_data_map: HashMap<String, String>,
     pub resident_cart_datas: HashMap<String, ResidentCartData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ResidentCartData {
     pub resident_pic: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct21SideActivities {
     pub type_act21side: HashMap<String, Act21SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act21SideActivity {
     pub zone_addition_data_map: HashMap<String, ZoneAdditionData>,
     pub const_data: Act21SideConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ZoneAdditionData {
     pub zone_id: String,
@@ -1139,19 +1117,19 @@ pub struct ZoneAdditionData {
     pub entry_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act21SideConstData {
     pub line_connect_zone: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct LoginOnlyActivities {
     pub login_only: HashMap<String, LoginOnlyActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct LoginOnlyActivity {
     pub description: String,
@@ -1159,7 +1137,7 @@ pub struct LoginOnlyActivity {
     pub ap_supply_out_of_date_dict: HashMap<String, i64>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct LoginRewardItem {
     pub id: String,
@@ -1168,13 +1146,13 @@ pub struct LoginRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct SwitchOnlyActivities {
     pub switch_only: HashMap<String, SwitchOnlyActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SwitchOnlyActivity {
     pub const_data: SwitchOnlyConstData,
@@ -1183,14 +1161,14 @@ pub struct SwitchOnlyActivity {
     pub rewards_title: HashMap<String, String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SwitchOnlyConstData {
     pub activity_time: String,
     pub activity_rule: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SwitchRewardItem {
     pub id: String,
@@ -1199,13 +1177,13 @@ pub struct SwitchRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct MinistoryActivities {
     pub ministory: HashMap<String, MinistoryActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MinistoryActivity {
     pub token_item_id: String,
@@ -1214,21 +1192,21 @@ pub struct MinistoryActivity {
     pub extra_drop_zone_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MinistoryActivityZoneDesc {
     pub zone_id: String,
     pub unlock_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct ActivityTypes {
     pub roguelike: HashMap<String, Value>,
     pub multiplay_verify2: HashMap<String, MultiplayVerify2Activity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MultiplayVerify2Activity {
     pub select_step_data_list: Vec<SelectStepData>,
@@ -1250,7 +1228,7 @@ pub struct MultiplayVerify2Activity {
     pub buff_icon_datas: HashMap<String, BuffIconData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SelectStepData {
     pub step_type: String,
@@ -1261,7 +1239,7 @@ pub struct SelectStepData {
     pub desc: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct IdentityData {
     pub id: String,
@@ -1273,7 +1251,7 @@ pub struct IdentityData {
     pub color: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MapTypeData {
     #[serde(rename = "type")]
@@ -1286,7 +1264,7 @@ pub struct MapTypeData {
     pub mode_icon_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MapData {
     pub stage_id: String,
@@ -1298,7 +1276,7 @@ pub struct MapData {
     pub display_enemy_id_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TargetMissionData {
     pub id: String,
@@ -1309,7 +1287,7 @@ pub struct TargetMissionData {
     pub star_num: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MileStone {
     pub mile_stone_id: String,
@@ -1318,7 +1296,7 @@ pub struct MileStone {
     pub reward_item: MultiplayVerify2ActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MultiplayVerify2ActivityRewardItem {
     pub id: String,
@@ -1327,13 +1305,13 @@ pub struct MultiplayVerify2ActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageStarRewardData {
     pub star_reward_datas: Vec<StarRewardData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StarRewardData {
     pub star_num: i32,
@@ -1341,7 +1319,7 @@ pub struct StarRewardData {
     pub daily_mission_point: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct EmojiChatData {
     pub id: String,
@@ -1352,7 +1330,7 @@ pub struct EmojiChatData {
     pub desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CommentData {
     pub id: String,
@@ -1365,7 +1343,7 @@ pub struct CommentData {
     pub param_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TipData {
     pub id: String,
@@ -1373,7 +1351,7 @@ pub struct TipData {
     pub weight: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ReportData {
     pub id: String,
@@ -1382,7 +1360,7 @@ pub struct ReportData {
     pub desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TempCharData {
     pub char_id: String,
@@ -1395,7 +1373,7 @@ pub struct TempCharData {
     pub skin_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MultiplayVerify2ConstData {
     pub milestone_id: String,
@@ -1469,14 +1447,14 @@ pub struct MultiplayVerify2ConstData {
     pub train_partner_avatar_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PingCond {
     pub cond: i32,
     pub txt: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ConstToastData {
     pub no_room: String,
@@ -1508,34 +1486,34 @@ pub struct ConstToastData {
     pub difficult_unlock: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MapTypeNameData {
     pub map_type: String,
     pub type_name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DifficultyNameData {
     pub difficulty: String,
     pub difficulty_name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BuffIconData {
     pub buff_id: String,
     pub icon_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct InterlockActivities {
     pub interlock: HashMap<String, InterlockActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InterlockActivity {
     pub stage_addition_info_map: HashMap<String, StageAdditionInfo>,
@@ -1545,7 +1523,7 @@ pub struct InterlockActivity {
     pub final_stage_progress_map: HashMap<String, Vec<FinalStageProgress>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageAdditionInfo {
     pub stage_id: String,
@@ -1554,7 +1532,7 @@ pub struct StageAdditionInfo {
     pub lock_sort_index: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TreasureMonster {
     pub lock_stage_key: String,
@@ -1564,7 +1542,7 @@ pub struct TreasureMonster {
     pub enemy_description: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SpecialAssistData {
     pub char_id: String,
@@ -1584,14 +1562,14 @@ pub struct SpecialAssistData {
     pub tmpl: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Skill {
     pub skill_id: String,
     pub specialize_level: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InterlockActivityMileStoneItem {
     pub mile_stone_id: String,
@@ -1600,7 +1578,7 @@ pub struct InterlockActivityMileStoneItem {
     pub item: InterlockActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InterlockActivityRewardItem {
     pub id: String,
@@ -1609,7 +1587,7 @@ pub struct InterlockActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FinalStageProgress {
     pub stage_id: String,
@@ -1620,13 +1598,13 @@ pub struct FinalStageProgress {
     pub gold: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct BossRushActivities {
     pub boss_rush: HashMap<String, BossRushActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivity {
     pub zone_addition_data_map: HashMap<String, BossRushActivityZoneAdditionData>,
@@ -1642,14 +1620,14 @@ pub struct BossRushActivity {
     pub const_data: BossRushConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityZoneAdditionData {
     pub unlock_text: String,
     pub display_start_time: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageGroup {
     pub stage_group_id: String,
@@ -1662,7 +1640,7 @@ pub struct StageGroup {
     pub unlock_condition: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageAdditionData {
     pub stage_id: String,
@@ -1672,7 +1650,7 @@ pub struct StageAdditionData {
     pub unlock_text: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityStageDrop {
     pub clear_wave_count: i32,
@@ -1681,7 +1659,7 @@ pub struct BossRushActivityStageDrop {
     pub pass_rewards: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DisplayDetailReward {
     pub occ_percent: String,
@@ -1692,14 +1670,14 @@ pub struct DisplayDetailReward {
     pub drop_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionAdditionData {
     pub mission_id: String,
     pub is_relic_task: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TeamData {
     pub team_id: String,
@@ -1712,7 +1690,7 @@ pub struct TeamData {
     pub rune_data: BossRushActivityRuneData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityRuneData {
     pub id: String,
@@ -1722,7 +1700,7 @@ pub struct BossRushActivityRuneData {
     pub runes: Vec<Rune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityRune {
     pub key: String,
@@ -1730,7 +1708,7 @@ pub struct BossRushActivityRune {
     pub blackboard: Vec<BossRushActivityBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityRuneSelector {
     pub profession_mask: i32,
@@ -1749,7 +1727,7 @@ pub struct BossRushActivityRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityBlackboardItem {
     pub key: String,
@@ -1757,7 +1735,7 @@ pub struct BossRushActivityBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Relic {
     pub relic_id: String,
@@ -1767,14 +1745,14 @@ pub struct Relic {
     pub relic_task_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicLevelInfoData {
     pub relic_id: String,
     pub level_infos: HashMap<String, RelicLevelInfo>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicLevelInfo {
     pub level: i32,
@@ -1783,7 +1761,7 @@ pub struct RelicLevelInfo {
     pub need_item_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicRuneData {
     pub id: String,
@@ -1793,7 +1771,7 @@ pub struct RelicRuneData {
     pub runes: Vec<RelicRune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicRune {
     pub key: String,
@@ -1801,7 +1779,7 @@ pub struct RelicRune {
     pub blackboard: Vec<RelicBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicRuneSelector {
     pub profession_mask: i32,
@@ -1820,7 +1798,7 @@ pub struct RelicRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RelicBlackboardItem {
     pub key: String,
@@ -1828,7 +1806,7 @@ pub struct RelicBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityMileStone {
     pub mile_stone_id: String,
@@ -1837,7 +1815,7 @@ pub struct BossRushActivityMileStone {
     pub reward_item: BossRushActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityRewardItem {
     pub id: String,
@@ -1846,7 +1824,7 @@ pub struct BossRushActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivity2RuneData {
     pub id: String,
@@ -1856,7 +1834,7 @@ pub struct BossRushActivity2RuneData {
     pub runes: Vec<Rune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivity2Rune {
     pub key: String,
@@ -1864,7 +1842,7 @@ pub struct BossRushActivity2Rune {
     pub blackboard: Vec<BossRushActivity2BlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivity2RuneSelector {
     pub profession_mask: i32,
@@ -1883,7 +1861,7 @@ pub struct BossRushActivity2RuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivity2BlackboardItem {
     pub key: String,
@@ -1891,7 +1869,7 @@ pub struct BossRushActivity2BlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BossRushConstData {
     pub max_provided_char_num: i32,
@@ -1902,13 +1880,13 @@ pub struct BossRushConstData {
     pub reward_skin_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct FloatParadeActivities {
     pub float_parade: HashMap<String, FloatParadeActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FloatParadeActivity {
     pub const_data: FloatParadeConstData,
@@ -1918,7 +1896,7 @@ pub struct FloatParadeActivity {
     pub group_infos: HashMap<String, GroupInfo>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FloatParadeConstData {
     pub city_name: String,
@@ -1928,7 +1906,7 @@ pub struct FloatParadeConstData {
     pub rule_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DailyData {
     pub day_index: i32,
@@ -1940,12 +1918,12 @@ pub struct DailyData {
     pub ext_reward: Option<ExtReward>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ExtReward {
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RewardPool {
     pub grp_id: String,
@@ -1957,7 +1935,7 @@ pub struct RewardPool {
     pub reward: FloatParadeActivityReward,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FloatParadeActivityReward {
     pub id: String,
@@ -1966,7 +1944,7 @@ pub struct FloatParadeActivityReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Tactic {
     pub id: i32,
@@ -1976,7 +1954,7 @@ pub struct Tactic {
     pub reward_var: HashMap<String, f64>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GroupInfo {
     pub group_id: String,
@@ -1987,13 +1965,13 @@ pub struct GroupInfo {
     pub ext_reward_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct MainBuffActivities {
     pub main_buff: HashMap<String, MainBuffActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainBuffActivity {
     pub mission_group_list: HashMap<String, MainBuffActivityMissionGroup>,
@@ -2002,7 +1980,7 @@ pub struct MainBuffActivity {
     pub const_data: MainBuffConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainBuffActivityMissionGroup {
     pub id: String,
@@ -2012,7 +1990,7 @@ pub struct MainBuffActivityMissionGroup {
     pub mission_id_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainBuffActivityPeriodData {
     pub id: String,
@@ -2025,7 +2003,7 @@ pub struct MainBuffActivityPeriodData {
     pub step_data_list: Vec<StepData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StepData {
     pub is_block: bool,
@@ -2035,19 +2013,19 @@ pub struct StepData {
     pub block_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainBuffConstData {
     pub favor_up_stage_range: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct24SideActivities {
     pub type_act24side: HashMap<String, Act24SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivity {
     pub tool_data_list: HashMap<String, ToolData>,
@@ -2064,7 +2042,7 @@ pub struct Act24SideActivity {
     pub const_data: Act24SideConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ToolData {
     pub tool_id: String,
@@ -2079,7 +2057,7 @@ pub struct ToolData {
     pub tool_stage_id: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityRuneData {
     pub id: String,
@@ -2089,7 +2067,7 @@ pub struct Act24SideActivityRuneData {
     pub runes: Vec<Act24SideActivityRune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityRune {
     pub key: String,
@@ -2097,7 +2075,7 @@ pub struct Act24SideActivityRune {
     pub blackboard: Vec<Act24SideActivityBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityRuneSelector {
     pub profession_mask: i32,
@@ -2116,7 +2094,7 @@ pub struct Act24SideActivityRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityBlackboardItem {
     pub key: String,
@@ -2124,7 +2102,7 @@ pub struct Act24SideActivityBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MealData {
     pub meal_id: String,
@@ -2138,7 +2116,7 @@ pub struct MealData {
     pub meal_reward_item_info: Act24SideActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityRewardItem {
     pub id: String,
@@ -2147,7 +2125,7 @@ pub struct Act24SideActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MeldingData {
     pub melding_id: String,
@@ -2156,7 +2134,7 @@ pub struct MeldingData {
     pub rarity: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MeldingGachaBoxData {
     pub gacha_box_id: String,
@@ -2169,7 +2147,7 @@ pub struct MeldingGachaBoxData {
     pub remain_item_bg_color: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MeldingGachaBoxGoodData {
     pub good_id: String,
@@ -2186,7 +2164,7 @@ pub struct MeldingGachaBoxGoodData {
     pub gacha_num: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityZoneAdditionData {
     pub zone_id: String,
@@ -2195,7 +2173,7 @@ pub struct Act24SideActivityZoneAdditionData {
     pub display_time: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct QuestStage {
     pub stage_id: String,
@@ -2205,7 +2183,7 @@ pub struct QuestStage {
     pub is_dragon_stage: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityMissionData {
     pub task_type_name: String,
@@ -2216,7 +2194,7 @@ pub struct Act24SideActivityMissionData {
     pub task_client_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MeldingDropData {
     pub first_pass_rewards: Option<Vec<Reward>>,
@@ -2226,12 +2204,12 @@ pub struct MeldingDropData {
     pub display_rewards: Vec<DisplayReward>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityReward {
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DisplayReward {
     #[serde(rename = "type")]
@@ -2240,7 +2218,7 @@ pub struct DisplayReward {
     pub drop_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideConstData {
     pub stage_unlock_tool_desc: String,
@@ -2252,13 +2230,13 @@ pub struct Act24SideConstData {
     pub gacha_extra_prob: f64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct25SideActivities {
     pub type_act25side: HashMap<String, Act25SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivity {
     pub token_item_id: String,
@@ -2274,7 +2252,7 @@ pub struct Act25SideActivity {
     pub farm_list: Vec<FarmData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideConstData {
     pub get_daily_count: i32,
@@ -2290,7 +2268,7 @@ pub struct Act25SideConstData {
     pub harvest_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct HarvestReward {
     pub id: String,
@@ -2299,7 +2277,7 @@ pub struct HarvestReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityZoneDesc {
     pub zone_id: String,
@@ -2307,7 +2285,7 @@ pub struct Act25SideActivityZoneDesc {
     pub display_start_time: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ArchiveItemData {
     pub item_id: String,
@@ -2319,7 +2297,7 @@ pub struct ArchiveItemData {
     pub item_name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ArcMapInfoData {
     pub object_id: String,
@@ -2332,7 +2310,7 @@ pub struct ArcMapInfoData {
     pub has_dot: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaInfoData {
     pub area_id: String,
@@ -2349,7 +2327,7 @@ pub struct AreaInfoData {
     pub area_new_icon: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaMissionData {
     pub id: String,
@@ -2370,7 +2348,7 @@ pub struct AreaMissionData {
     pub archive_items: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityReward {
     pub id: String,
@@ -2379,7 +2357,7 @@ pub struct Act25SideActivityReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct BattlePerformanceData {
     pub item_id: String,
@@ -2391,7 +2369,7 @@ pub struct BattlePerformanceData {
     pub rune_data: Act25SideActivityRuneData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityRuneData {
     pub id: String,
@@ -2401,7 +2379,7 @@ pub struct Act25SideActivityRuneData {
     pub runes: Vec<Act25SideActivityRune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityRune {
     pub key: String,
@@ -2409,7 +2387,7 @@ pub struct Act25SideActivityRune {
     pub blackboard: Vec<Act25SideActivityBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityRuneSelector {
     pub profession_mask: String,
@@ -2428,7 +2406,7 @@ pub struct Act25SideActivityRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act25SideActivityBlackboardItem {
     pub key: String,
@@ -2436,7 +2414,7 @@ pub struct Act25SideActivityBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct KeyData {
     pub key_id: String,
@@ -2445,7 +2423,7 @@ pub struct KeyData {
     pub toast_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FogUnlockData {
     pub lock_id: String,
@@ -2453,20 +2431,20 @@ pub struct FogUnlockData {
     pub unlocked_collection_icon_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FarmData {
     pub transform: i32,
     pub unit_time: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct27SideActivities {
     pub type_act27side: HashMap<String, Act27SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act27SideActivity {
     pub good_data_map: HashMap<String, GoodData>,
@@ -2479,7 +2457,7 @@ pub struct Act27SideActivity {
     pub const_data: Act27SideConstData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GoodData {
     pub id: String,
@@ -2493,7 +2471,7 @@ pub struct GoodData {
     pub is_permanent: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GoodLaunchData {
     pub group_id: String,
@@ -2505,7 +2483,7 @@ pub struct GoodLaunchData {
     pub souvenir_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act27SideActivityMileStone {
     pub mile_stone_id: String,
@@ -2514,7 +2492,7 @@ pub struct Act27SideActivityMileStone {
     pub reward_item: Act27SideActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act27SideActivityRewardItem {
     pub id: String,
@@ -2523,7 +2501,7 @@ pub struct Act27SideActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ShopData {
     pub shop_id: String,
@@ -2532,14 +2510,14 @@ pub struct ShopData {
     pub icon_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InquireData {
     pub mile_stone_pt: i32,
     pub inquire_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DynEntrySwitchData {
     pub entry_id: String,
@@ -2547,7 +2525,7 @@ pub struct DynEntrySwitchData {
     pub signal_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act27SideActivityZoneAdditionData {
     pub zone_id: String,
@@ -2555,7 +2533,7 @@ pub struct Act27SideActivityZoneAdditionData {
     pub display_time: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act27SideConstData {
     pub stage_id: String,
@@ -2576,20 +2554,20 @@ pub struct Act27SideConstData {
     pub campaign_enemy_cnt: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FurniReward {
     pub furni_id: String,
     pub point_num: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct42D0Activities {
     pub type_act42d0: HashMap<String, Act42D0Activity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0Activity {
     pub area_info_data: HashMap<String, AreaInfo>,
@@ -2603,7 +2581,7 @@ pub struct Act42D0Activity {
     pub track_point_period_data: Vec<i64>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaInfo {
     pub area_id: String,
@@ -2618,7 +2596,7 @@ pub struct AreaInfo {
     pub next_area_stage: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0SideActivityStageInfo {
     pub stage_id: String,
@@ -2632,7 +2610,7 @@ pub struct Act42D0SideActivityStageInfo {
     pub loading_pic_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct EffectGroupInfo {
     pub effect_group_id: String,
@@ -2640,7 +2618,7 @@ pub struct EffectGroupInfo {
     pub effect_group_name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct EffectInfo {
     pub effect_id: String,
@@ -2655,7 +2633,7 @@ pub struct EffectInfo {
     pub rune_data: Act42D0ActivityRuneData,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityRuneData {
     pub id: String,
@@ -2665,7 +2643,7 @@ pub struct Act42D0ActivityRuneData {
     pub runes: Vec<Act42D0ActivityRune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityRune {
     pub key: String,
@@ -2673,7 +2651,7 @@ pub struct Act42D0ActivityRune {
     pub blackboard: Vec<Act42D0ActivityBlackboardItem>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityRuneSelector {
     pub profession_mask: i32,
@@ -2692,7 +2670,7 @@ pub struct Act42D0ActivityRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityBlackboardItem {
     pub key: String,
@@ -2700,7 +2678,7 @@ pub struct Act42D0ActivityBlackboardItem {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ChallengeInfo {
     pub stage_id: String,
@@ -2714,7 +2692,7 @@ pub struct ChallengeInfo {
     pub challenge_mission_data: Vec<ChallengeMission>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ChallengeMission {
     pub mission_id: String,
@@ -2724,7 +2702,7 @@ pub struct ChallengeMission {
     pub milestone_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageRatingInfo {
     pub stage_id: String,
@@ -2732,7 +2710,7 @@ pub struct StageRatingInfo {
     pub milestone_data: Vec<Act42D0ActivityMilestoneData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityMilestoneData {
     pub rating_level: i32,
@@ -2742,7 +2720,7 @@ pub struct Act42D0ActivityMilestoneData {
     pub milestone_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0Activity2MilestoneData {
     pub milestone_id: String,
@@ -2751,7 +2729,7 @@ pub struct Act42D0Activity2MilestoneData {
     pub item: Act42D0ActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ActivityRewardItem {
     pub id: String,
@@ -2760,7 +2738,7 @@ pub struct Act42D0ActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act42D0ConstData {
     pub milestone_id: String,
@@ -2773,13 +2751,13 @@ pub struct Act42D0ConstData {
     pub trauma_name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct29SideActivities {
     pub type_act29side: HashMap<String, Act29SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act29SideActivity {
     pub frag_data_map: HashMap<String, FragData>,
@@ -2796,7 +2774,7 @@ pub struct Act29SideActivity {
     pub music_data_map: Vec<MusicData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FragData {
     pub frag_id: String,
@@ -2806,7 +2784,7 @@ pub struct FragData {
     pub frag_store_icon: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct OrcheData {
     pub id: String,
@@ -2817,7 +2795,7 @@ pub struct OrcheData {
     pub orche_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ProductGroupData {
     pub group_id: String,
@@ -2845,7 +2823,7 @@ pub struct ProductGroupData {
     pub bag_theme_color: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ProductData {
     pub id: String,
@@ -2855,7 +2833,7 @@ pub struct ProductData {
     pub music_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FormData {
     pub form_id: String,
@@ -2867,7 +2845,7 @@ pub struct FormData {
     pub form_sort_id: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InvestResultData {
     pub result_id: String,
@@ -2876,7 +2854,7 @@ pub struct InvestResultData {
     pub result_desc2: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct InvestData {
     pub invest_id: String,
@@ -2893,7 +2871,7 @@ pub struct InvestData {
     pub invest_rare_result_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act29SideActivityReward {
     pub id: String,
@@ -2902,7 +2880,7 @@ pub struct Act29SideActivityReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act29SideConstData {
     pub major_invest_unlock_item_name: String,
@@ -2922,14 +2900,14 @@ pub struct Act29SideConstData {
     pub no_orche_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act29SideActivityZoneAdditionData {
     pub zone_id: String,
     pub unlock_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MusicData {
     pub group_id: String,
@@ -2937,20 +2915,20 @@ pub struct MusicData {
     pub music_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct Year5GeneralActivities {
     pub year_5_general: HashMap<String, Year5GeneralActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Year5GeneralActivity {
     pub const_data: Year5GeneralConstData,
     pub unlimited_ap_rewards: Vec<UnlimitedApReward>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Year5GeneralConstData {
     pub rew_point: i32,
@@ -2965,14 +2943,14 @@ pub struct Year5GeneralConstData {
     pub mission_archive_unlock_desc: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct UnlimitedApReward {
     pub reward_index: i32,
     pub reward_item: Year5GeneralActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Year5GeneralActivityRewardItem {
     pub id: String,
@@ -2981,13 +2959,13 @@ pub struct Year5GeneralActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct TypeAct35SideActivities {
     pub type_act35side: HashMap<String, Act35SideActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideActivity {
     pub challenge_data_map: HashMap<String, Act35SideActivityChallengeData>,
@@ -2999,7 +2977,7 @@ pub struct Act35SideActivity {
     pub zone_addition_data_map: HashMap<String, Act35SideActivityZoneAdditionData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideActivityChallengeData {
     pub challenge_id: String,
@@ -3015,7 +2993,7 @@ pub struct Act35SideActivityChallengeData {
     pub round_id_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CardData {
     pub card_id: String,
@@ -3026,7 +3004,7 @@ pub struct CardData {
     pub level_data_list: Vec<CardLevelData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CardLevelData {
     pub card_level: i32,
@@ -3036,7 +3014,7 @@ pub struct CardLevelData {
     pub output_material_list: Vec<MaterialData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MaterialData {
     pub material_id: String,
@@ -3046,7 +3024,7 @@ pub struct MaterialData {
     pub material_rating: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DialogueGroupData {
     #[serde(rename = "type")]
@@ -3054,7 +3032,7 @@ pub struct DialogueGroupData {
     pub dialog_data_list: Vec<DialogData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DialogData {
     pub sort_id: i32,
@@ -3064,7 +3042,7 @@ pub struct DialogData {
     pub bg_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideConstData {
     pub campaign_stage_id: String,
@@ -3085,14 +3063,14 @@ pub struct Act35SideConstData {
     pub carving_unlock_toast_text: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MilestoneGrandRewardInfo {
     pub item_name: String,
     pub level: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideActivityMileStone {
     pub mile_stone_id: String,
@@ -3101,7 +3079,7 @@ pub struct Act35SideActivityMileStone {
     pub reward_item: Act35SideActivityRewardItem,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideActivityRewardItem {
     pub id: String,
@@ -3110,7 +3088,7 @@ pub struct Act35SideActivityRewardItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Act35SideActivityZoneAdditionData {
     pub zone_id: String,
@@ -3119,13 +3097,13 @@ pub struct Act35SideActivityZoneAdditionData {
 
 // End of Activity Structs.
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MainlineBp {
     pub period_data_list: Vec<PeriodData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PeriodData {
     pub period_id: String,
@@ -3133,14 +3111,14 @@ pub struct PeriodData {
     pub end_ts: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityItems {
     #[serde(flatten)]
     pub items: HashMap<String, Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PubBehavior {
     pub sort_id: i32,
@@ -3153,7 +3131,7 @@ pub struct PubBehavior {
     pub rewards: Vec<PubBehaviorReward>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PubBehaviorReward {
     pub id: String,
@@ -3162,7 +3140,7 @@ pub struct PubBehaviorReward {
     pub reward_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInAllPlayerDay {
     pub item_list: Vec<CheckInAllPlayerItem>,
@@ -3171,7 +3149,7 @@ pub struct CheckInAllPlayerDay {
     pub show_item_order: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CheckInAllPlayerItem {
     pub id: String,
@@ -3180,7 +3158,7 @@ pub struct CheckInAllPlayerItem {
     pub item_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Car {
     pub comp_id: String,
@@ -3203,20 +3181,20 @@ pub struct Car {
     pub additive_color: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SyncPoints {
     #[serde(flatten)]
     pub activities: HashMap<String, Vec<i64>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DynActs {
     #[serde(flatten)]
     pub activities: HashMap<String, PrayActivity>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PrayActivity {
     pub rule1: String,
@@ -3224,13 +3202,13 @@ pub struct PrayActivity {
     pub slot_count: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageRewardsData {
     pub stage_rewards_dict: HashMap<String, HashMap<String, Vec<StageReward>>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageReward {
     pub occ_percent: String,
@@ -3240,7 +3218,7 @@ pub struct StageReward {
     pub drop_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActTheme {
     pub id: String,
@@ -3254,20 +3232,20 @@ pub struct ActTheme {
     pub start_ts: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeNode {
     pub title: String,
     pub ts: i64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActFunData {
     pub stages: HashMap<String, Stage>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Stage {
     pub stage_id: String,
@@ -3281,14 +3259,14 @@ pub struct Stage {
     pub stage_drop_info: Vec<StageDrop>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct UnlockCondition {
     pub stage_id: String,
     pub complete_state: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageDrop {
     pub id: String,
@@ -3297,14 +3275,14 @@ pub struct StageDrop {
     pub drop_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CarData {
     pub car_dict: HashMap<String, Car>,
     pub rune_data_dict: HashMap<String, RuneData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RuneData {
     pub id: String,
@@ -3314,7 +3292,7 @@ pub struct RuneData {
     pub runes: Vec<Rune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Rune {
     pub key: String,
@@ -3322,7 +3300,7 @@ pub struct Rune {
     pub blackboard: Vec<Blackboard>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Selector {
     pub profession_mask: String,
@@ -3341,7 +3319,7 @@ pub struct Selector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct Blackboard {
     pub key: String,
@@ -3349,13 +3327,13 @@ pub struct Blackboard {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CartStages {
     pub cart_stages: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ConstData {
     pub character_name: String,
@@ -3370,13 +3348,13 @@ pub struct ConstData {
     pub campaign_stage_id: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SiracusaData {
     pub area_data_map: HashMap<String, AreaData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaData {
     pub area_id: String,
@@ -3388,20 +3366,20 @@ pub struct AreaData {
     pub point_list: Vec<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct KvSwitchData {
     #[serde(flatten)]
     pub activities: HashMap<String, ActivityKvSwitch>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityKvSwitch {
     pub kv_switch_info: HashMap<String, KvSwitchInfo>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct KvSwitchInfo {
     pub is_default: bool,
@@ -3409,7 +3387,7 @@ pub struct KvSwitchInfo {
     pub zone_id: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct HiddenStage {
     pub stage_id: String,
@@ -3419,7 +3397,7 @@ pub struct HiddenStage {
     pub missions: Vec<HiddenStageMission>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct HiddenStageMission {
     pub unlock_stage_id: String,
@@ -3435,14 +3413,14 @@ pub struct HiddenStageMission {
     pub riddle: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionArchives {
     #[serde(flatten)]
     pub archives: HashMap<String, MissionArchive>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct MissionArchive {
     pub topic_id: String,
@@ -3450,7 +3428,7 @@ pub struct MissionArchive {
     pub nodes: Vec<ArchiveNode>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ArchiveNode {
     pub node_id: String,
@@ -3459,7 +3437,7 @@ pub struct ArchiveNode {
     pub clips: Vec<ArchiveClip>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ArchiveClip {
     pub char_id: String,
@@ -3467,13 +3445,13 @@ pub struct ArchiveClip {
     pub index: i32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FifthAnnivExploreData {
     pub explore_group_data: HashMap<String, ExploreGroup>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ExploreGroup {
     pub id: String,
@@ -3485,14 +3463,14 @@ pub struct ExploreGroup {
     pub heritage_value_type: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StringRes {
     #[serde(flatten)]
     pub activities: HashMap<String, ActivityStringRes>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct ActivityStringRes {
     pub text_progress_format_can_claim: String,
@@ -3501,20 +3479,20 @@ pub struct ActivityStringRes {
     pub text_detail_color_cannot_claim: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTraps {
     #[serde(flatten)]
     pub activities: HashMap<String, ActivityTrapData>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTrapData {
     pub template_traps: HashMap<String, TemplateTrap>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TemplateTrap {
     pub trap_id: String,
@@ -3527,14 +3505,14 @@ pub struct TemplateTrap {
     pub trap_buff_id: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TrapRuneDataDict {
     #[serde(flatten)]
     pub runes: HashMap<String, TrapRune>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TrapRune {
     pub id: String,
@@ -3544,7 +3522,7 @@ pub struct TrapRune {
     pub runes: Vec<TrapRuneEffect>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TrapRuneEffect {
     pub key: String,
@@ -3552,7 +3530,7 @@ pub struct TrapRuneEffect {
     pub blackboard: Vec<TrapRuneBlackboard>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TrapRuneSelector {
     pub profession_mask: i32,
@@ -3571,7 +3549,7 @@ pub struct TrapRuneSelector {
     pub map_tag_filter: Option<Vec<String>>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TrapRuneBlackboard {
     pub key: String,
@@ -3579,14 +3557,14 @@ pub struct TrapRuneBlackboard {
     pub value_str: Option<String>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTemplateMissionStyles {
     #[serde(flatten)]
     pub styles: HashMap<String, TemplateMissionStyle>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TemplateMissionStyle {
     pub big_reward_type: String,
