@@ -121,13 +121,11 @@ pub struct Zone {
 }
 
 #[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Shop {
 
 }
 
 #[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct ReplicateMission {
 
 }
@@ -168,13 +166,11 @@ pub struct CheckInItem {
 }
 
 #[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct DynCheckInData {
 
 }
 
 #[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct ExtraCheckin {
 
 }
