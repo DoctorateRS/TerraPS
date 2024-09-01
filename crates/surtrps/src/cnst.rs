@@ -117,3 +117,28 @@ pub mod global_url {
     pub const GLOBAL_GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
     pub const GLOBAL_GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
 }
+
+pub mod table_paths {
+    pub const CHARM_TABLE_PATH: &str = "./data/excel/charm_table.json";
+    pub const ACTIVITY_TABLE_PATH: &str = "./data/excel/activity_table.json";
+    pub const SKIN_TABLE_PATH: &str = "./data/excel/skin_table.json";
+    pub const CHARACTER_TABLE_PATH: &str = "./data/excel/character_table.json";
+    pub const BATTLEEQUIP_TABLE_PATH: &str = "./data/excel/battle_equip_table.json";
+    pub const EQUIP_TABLE_PATH: &str = "./data/excel/uniequip_table.json";
+    pub const STORY_TABLE_PATH: &str = "./data/excel/story_table.json";
+    pub const STAGE_TABLE_PATH: &str = "./data/excel/stage_table.json";
+    pub const RL_TABLE_PATH: &str = "./data/excel/roguelike_topic_table.json";
+    pub const DM_TABLE_PATH: &str = "./data/excel/display_meta_table.json";
+    pub const RETRO_TABLE_PATH: &str = "./data/excel/retro_table.json";
+    pub const HANDBOOK_INFO_TABLE_PATH: &str = "./data/excel/handbook_info_table.json";
+    pub const TOWER_TABLE_PATH: &str = "./data/excel/climb_tower_table.json";
+    pub const BUILDING_TABLE_PATH: &str = "./data/excel/building_data.json";
+    pub const SANDBOX_TABLE_PATH: &str = "./data/excel/sandbox_perm_table.json";
+    pub const STORY_REVIEW_TABLE_PATH: &str = "./data/excel/story_review_table.json";
+    pub const STORY_REVIEW_META_TABLE_PATH: &str = "./data/excel/story_review_meta_table.json";
+    pub const ENEMY_HANDBOOK_TABLE_PATH: &str = "./data/excel/enemy_handbook_table.json";
+    pub const MEDAL_TABLE_PATH: &str = "./data/excel/medal_table.json";
+    pub const CHARWORD_TABLE_PATH: &str = "./data/excel/charword_table.json";
+    pub const GACHA_TABLE_PATH: &str = "./data/excel/gacha_table.json";
+    pub const GAMEDATA_CONST_PATH: &str = "./data/excel/gamedata_const.json";
+}

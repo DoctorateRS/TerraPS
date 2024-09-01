@@ -1,16 +1,26 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use serde_json::{from_value, Value};
+
+use common_utils::read_json;
+
+use crate::cnst::table_paths::ACTIVITY_TABLE_PATH;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTable {
     pub basic_info: HashMap<String, BasicActivityInfo>,
-    // TODO: Replace `Value` with a proper struct.
-    pub activity: HashMap<String, ActivityDetails>,
+    pub activity: HashMap<String, Activity>,
     pub car_data: CarData,
     pub sync_points: SyncPoints,
+}
+
+impl ActivityTable {
+    pub fn load() -> Self {
+        let ct = read_json(ACTIVITY_TABLE_PATH);
+        from_value::<Self>(ct).unwrap()
+    }
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -36,77 +46,19 @@ pub struct BasicActivityInfo {
     pub is_page_entry: bool,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct HomeActConf {
-    pub act_id: String,
-    pub is_popup_after_checkin: bool,
-    pub show_top_bar_menu: bool,
-    pub act_top_bar_color: Option<String>,
-    pub act_top_bar_text: Option<String>,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct MissionData {
-    pub id: String,
-    pub sort_id: i32,
-    pub description: String,
-    #[serde(rename = "type")]
-    pub mission_type: String,
-    pub item_bg_type: String,
-    pub pre_mission_ids: Option<Vec<String>>,
-    pub template: String,
-    pub template_type: String,
-    pub param: Vec<String>,
-    pub unlock_condition: Option<String>,
-    pub unlock_param: Option<Vec<String>>,
-    pub mission_group: String,
-    pub to_page: Option<String>,
-    pub periodical_point: i32,
-    pub rewards: Vec<Reward>,
-    pub back_image_path: Option<String>,
-    pub fold_id: Option<String>,
-    pub have_sub_mission_to_unlock: bool,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct Reward {
-    #[serde(rename = "type")]
-    pub reward_type: String,
-    pub id: String,
-    pub count: i32,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct MissionGroup {
-    pub id: String,
-    pub title: Option<String>,
-    #[serde(rename = "type")]
-    pub group_type: String,
-    pub pre_mission_group: Option<String>,
-    pub period: Option<String>,
-    pub rewards: Vec<Reward>,
-    pub mission_ids: Vec<String>,
-    pub start_ts: i64,
-    pub end_ts: i64,
-}
-
 // Start of Activity Structs
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityData {
-    pub activity: HashMap<String, HashMap<String, ActivityDetails>>,
+    pub activity: HashMap<String, HashMap<String, Activity>>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct ActivityDetails {
+pub struct Activity {
     #[serde(default)]
-    pub zone_list: Option<Vec<Zone>>
+    pub zone_list: Option<Vec<Zone>>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -129,7 +81,7 @@ pub struct CheckinOnlyActivities {
 #[serde(rename_all = "camelCase")]
 pub struct CheckinActivity {
     pub check_in_list: HashMap<String, CheckInDay>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -152,7 +104,6 @@ pub struct CheckInItem {
     pub item_type: String,
 }
 
-
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub struct CheckinAllPlayerActivities {
@@ -163,7 +114,7 @@ pub struct CheckinAllPlayerActivities {
 #[serde(rename_all = "camelCase")]
 pub struct CheckinAllPlayerActivity {
     pub check_in_list: HashMap<String, CheckInAllPlayerDay>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
     pub pub_bhvs: HashMap<String, PubBehavior>,
     pub personal_bhvs: HashMap<String, PersonalBehavior>,
     pub const_data: ConstData,
@@ -172,7 +123,7 @@ pub struct CheckinAllPlayerActivity {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PersonalBehavior {
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub personal_behavior_id: String,
     pub display_order: i32,
     pub require_repeat_completion: bool,
@@ -191,7 +142,7 @@ pub struct CheckinVsActivity {
     pub check_in_dict: HashMap<String, CheckInVsDay>,
     pub vote_taste_list: Vec<VoteTaste>,
     pub taste_info_dict: HashMap<String, TasteInfo>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
     pub versus_total_days: i32,
     pub rule_text: String,
 }
@@ -367,15 +318,15 @@ pub struct TokenId {
 pub struct ZoneDesc {
     pub zone_id: String,
     pub locked_text: Option<String>,
-    pub display_start_time: i64,
+    pub display_start_time: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct FavorUp {
     pub char_id: String,
-    pub display_start_time: i64,
-    pub display_end_time: i64,
+    pub display_start_time: u64,
+    pub display_end_time: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -393,7 +344,7 @@ pub struct Act4d0Activity {
     pub stage_info: Vec<StageInfo>,
     pub token_item: TokenItem,
     pub char_stone_id: String,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
     pub extra_drop_zones: Vec<String>,
 }
 
@@ -491,7 +442,7 @@ pub struct NormalItem {
 pub struct MissionExtra {
     pub difficult_level: i32,
     pub level_desc: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -510,7 +461,7 @@ pub struct CollectionActivities {
 #[serde(rename_all = "camelCase")]
 pub struct CollectionActivity {
     pub collections: Vec<Collection>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -579,7 +530,7 @@ pub struct Act12SideConstData {
     pub auto_get_charm_id: String,
     pub fog_stage_id: String,
     pub fog_unlock_stage_id: String,
-    pub fog_unlock_ts: i64,
+    pub fog_unlock_ts: u64,
     pub fog_unlock_desc: String,
 }
 
@@ -661,7 +612,7 @@ pub struct Act13SideConstData {
     pub mission_board_max: i32,
     pub item_random_list: Vec<ItemRandom>,
     pub unlock_prestige_cond: String,
-    pub hot_spot_show_flag: i64,
+    pub hot_spot_show_flag: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -679,7 +630,7 @@ pub struct OrgData {
     pub org_id: String,
     pub org_name: String,
     pub org_en_name: String,
-    pub open_time: i64,
+    pub open_time: u64,
     pub principal_id_list: Vec<String>,
     pub prestige_list: Vec<Prestige>,
     pub agenda_count2_prestige_item_map: HashMap<String, PrestigeItem>,
@@ -711,7 +662,7 @@ pub struct PrestigeItem {
 #[serde(rename_all = "camelCase")]
 pub struct OrgSection {
     pub section_name: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub group_data: GroupData,
 }
 
@@ -741,7 +692,7 @@ pub struct LongTermMissionData {
     pub group_id: String,
     pub principal_id: String,
     pub finished_desc: String,
-    pub section_sort_id: i32,
+    pub section_sort_id: u16,
     pub have_stage_btn: bool,
     pub jump_stage_id: String,
 }
@@ -750,7 +701,7 @@ pub struct LongTermMissionData {
 #[serde(rename_all = "camelCase")]
 pub struct DailyMissionData {
     pub id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub description: String,
     pub mission_name: String,
     pub template: String,
@@ -988,7 +939,7 @@ pub struct Act17SideActivityArchiveItemUnlockData {
 #[serde(rename_all = "camelCase")]
 pub struct TechTreeData {
     pub tech_tree_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub tech_tree_name: String,
     pub default_branch_id: String,
     pub lock_des: String,
@@ -1055,7 +1006,7 @@ pub struct MainlineChapterData {
 pub struct MainlineData {
     pub mainline_id: String,
     pub node_id: Option<String>,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub mission_sort: String,
     pub zone_id: String,
     pub mainline_des: String,
@@ -1134,7 +1085,7 @@ pub struct LoginOnlyActivities {
 pub struct LoginOnlyActivity {
     pub description: String,
     pub item_list: Vec<LoginRewardItem>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -1157,7 +1108,7 @@ pub struct SwitchOnlyActivities {
 pub struct SwitchOnlyActivity {
     pub const_data: SwitchOnlyConstData,
     pub rewards: HashMap<String, Vec<SwitchRewardItem>>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
     pub rewards_title: HashMap<String, String>,
 }
 
@@ -1232,7 +1183,7 @@ pub struct MultiplayVerify2Activity {
 #[serde(rename_all = "camelCase")]
 pub struct SelectStepData {
     pub step_type: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub time: i32,
     pub hint_time: i32,
     pub title: String,
@@ -1243,7 +1194,7 @@ pub struct SelectStepData {
 #[serde(rename_all = "camelCase")]
 pub struct IdentityData {
     pub id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub pic_id: String,
     #[serde(rename = "type")]
     pub identity_type: String,
@@ -1269,7 +1220,7 @@ pub struct MapTypeData {
 pub struct MapData {
     pub stage_id: String,
     pub mode_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub mission_id_list: Vec<String>,
     pub stage_small_preview_id: String,
     pub stage_big_preview_id: String,
@@ -1280,7 +1231,7 @@ pub struct MapData {
 #[serde(rename_all = "camelCase")]
 pub struct TargetMissionData {
     pub id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub title: String,
     pub battle_desc: String,
     pub description: String,
@@ -1325,7 +1276,7 @@ pub struct EmojiChatData {
     pub id: String,
     #[serde(rename = "type")]
     pub emoji_type: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub pic_id: String,
     pub desc: String,
 }
@@ -1355,7 +1306,7 @@ pub struct TipData {
 #[serde(rename_all = "camelCase")]
 pub struct ReportData {
     pub id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub txt: String,
     pub desc: String,
 }
@@ -1624,14 +1575,14 @@ pub struct BossRushActivity {
 #[serde(rename_all = "camelCase")]
 pub struct BossRushActivityZoneAdditionData {
     pub unlock_text: String,
-    pub display_start_time: i64,
+    pub display_start_time: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StageGroup {
     pub stage_group_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub stage_group_name: String,
     pub stage_id_map: HashMap<String, String>,
     pub wave_boss_info: Vec<Vec<String>>,
@@ -1739,7 +1690,7 @@ pub struct BossRushActivityBlackboardItem {
 #[serde(rename_all = "camelCase")]
 pub struct Relic {
     pub relic_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub name: String,
     pub icon: String,
     pub relic_task_id: String,
@@ -1920,8 +1871,7 @@ pub struct DailyData {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct ExtReward {
-}
+pub struct ExtReward {}
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -1976,7 +1926,7 @@ pub struct MainBuffActivities {
 pub struct MainBuffActivity {
     pub mission_group_list: HashMap<String, MainBuffActivityMissionGroup>,
     pub period_data_list: Vec<MainBuffActivityPeriodData>,
-    pub ap_supply_out_of_date_dict: HashMap<String, i64>,
+    pub ap_supply_out_of_date_dict: HashMap<String, u64>,
     pub const_data: MainBuffConstData,
 }
 
@@ -1985,7 +1935,7 @@ pub struct MainBuffActivity {
 pub struct MainBuffActivityMissionGroup {
     pub id: String,
     pub bind_banner: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub zone_id: String,
     pub mission_id_list: Vec<String>,
 }
@@ -1994,8 +1944,8 @@ pub struct MainBuffActivityMissionGroup {
 #[serde(rename_all = "camelCase")]
 pub struct MainBuffActivityPeriodData {
     pub id: String,
-    pub start_time: i64,
-    pub end_time: i64,
+    pub start_time: u64,
+    pub end_time: u64,
     pub favor_up_char_desc: String,
     pub favor_up_img_name: String,
     pub new_chapter_img_name: String,
@@ -2046,7 +1996,7 @@ pub struct Act24SideActivity {
 #[serde(rename_all = "camelCase")]
 pub struct ToolData {
     pub tool_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub tool_name: String,
     pub tool_desc: String,
     pub tool_icon1: String,
@@ -2106,7 +2056,7 @@ pub struct Act24SideActivityBlackboardItem {
 #[serde(rename_all = "camelCase")]
 pub struct MealData {
     pub meal_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub meal_name: String,
     pub meal_effect_desc: String,
     pub meal_desc: String,
@@ -2129,7 +2079,7 @@ pub struct Act24SideActivityRewardItem {
 #[serde(rename_all = "camelCase")]
 pub struct MeldingData {
     pub melding_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub melding_price: i32,
     pub rarity: String,
 }
@@ -2138,7 +2088,7 @@ pub struct MeldingData {
 #[serde(rename_all = "camelCase")]
 pub struct MeldingGachaBoxData {
     pub gacha_box_id: String,
-    pub gacha_sort_id: i32,
+    pub gacha_sort_id: u16,
     pub gacha_icon: String,
     pub gacha_box_name: String,
     pub gacha_cost: i32,
@@ -2178,7 +2128,7 @@ pub struct Act24SideActivityZoneAdditionData {
 pub struct QuestStage {
     pub stage_id: String,
     pub stage_rank: i32,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub is_urgent_stage: bool,
     pub is_dragon_stage: bool,
 }
@@ -2206,8 +2156,7 @@ pub struct MeldingDropData {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct Act24SideActivityReward {
-}
+pub struct Act24SideActivityReward {}
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -2282,7 +2231,7 @@ pub struct HarvestReward {
 pub struct Act25SideActivityZoneDesc {
     pub zone_id: String,
     pub unlock_text: String,
-    pub display_start_time: i64,
+    pub display_start_time: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -2305,7 +2254,7 @@ pub struct ArcMapInfoData {
     pub info_type: String,
     pub number_id: String,
     pub area_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub position: i32,
     pub has_dot: bool,
 }
@@ -2314,7 +2263,7 @@ pub struct ArcMapInfoData {
 #[serde(rename_all = "camelCase")]
 pub struct AreaInfoData {
     pub area_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub area_icon: String,
     pub area_name: String,
     pub unlock_text: String,
@@ -2333,7 +2282,7 @@ pub struct AreaMissionData {
     pub id: String,
     pub area_id: String,
     pub preposed_mission_id: Option<String>,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub is_zone: bool,
     pub stage_id: String,
     pub cost_count: i32,
@@ -2361,7 +2310,7 @@ pub struct Act25SideActivityReward {
 #[serde(rename_all = "camelCase")]
 pub struct BattlePerformanceData {
     pub item_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub item_name: String,
     pub item_icon: String,
     pub item_desc: String,
@@ -2475,7 +2424,7 @@ pub struct GoodData {
 #[serde(rename_all = "camelCase")]
 pub struct GoodLaunchData {
     pub group_id: String,
-    pub start_time: i64,
+    pub start_time: u64,
     pub stage_id: Option<String>,
     pub code: Option<String>,
     pub drink_id: String,
@@ -2505,7 +2454,7 @@ pub struct Act27SideActivityRewardItem {
 #[serde(rename_all = "camelCase")]
 pub struct ShopData {
     pub shop_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub name: String,
     pub icon_id: String,
 }
@@ -2578,14 +2527,14 @@ pub struct Act42D0Activity {
     pub stage_rating_info_data: HashMap<String, StageRatingInfo>,
     pub milestone_data: Vec<Act42D0Activity2MilestoneData>,
     pub const_data: Act42D0ConstData,
-    pub track_point_period_data: Vec<i64>,
+    pub track_point_period_data: Vec<u64>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaInfo {
     pub area_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub area_code: String,
     pub area_name: String,
     pub difficulty: String,
@@ -2602,7 +2551,7 @@ pub struct Act42D0SideActivityStageInfo {
     pub stage_id: String,
     pub area_id: String,
     pub stage_code: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub stage_desc: Vec<String>,
     pub level_id: String,
     pub code: String,
@@ -2614,7 +2563,7 @@ pub struct Act42D0SideActivityStageInfo {
 #[serde(rename_all = "camelCase")]
 pub struct EffectGroupInfo {
     pub effect_group_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub effect_group_name: String,
 }
 
@@ -2629,7 +2578,7 @@ pub struct EffectInfo {
     pub effect_icon: String,
     pub cost: i32,
     pub effect_desc: String,
-    pub unlock_time: i64,
+    pub unlock_time: u64,
     pub rune_data: Act42D0ActivityRuneData,
 }
 
@@ -2683,8 +2632,8 @@ pub struct Act42D0ActivityBlackboardItem {
 pub struct ChallengeInfo {
     pub stage_id: String,
     pub stage_desc: String,
-    pub start_ts: i64,
-    pub end_ts: i64,
+    pub start_ts: u64,
+    pub end_ts: u64,
     pub level_id: String,
     pub code: String,
     pub name: String,
@@ -2696,7 +2645,7 @@ pub struct ChallengeInfo {
 #[serde(rename_all = "camelCase")]
 pub struct ChallengeMission {
     pub mission_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub stage_id: String,
     pub mission_desc: String,
     pub milestone_count: i32,
@@ -2778,7 +2727,7 @@ pub struct Act29SideActivity {
 #[serde(rename_all = "camelCase")]
 pub struct FragData {
     pub frag_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub frag_name: String,
     pub frag_icon: String,
     pub frag_store_icon: String,
@@ -2791,7 +2740,7 @@ pub struct OrcheData {
     pub name: String,
     pub desc: String,
     pub icon: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub orche_type: String,
 }
 
@@ -2810,7 +2759,7 @@ pub struct ProductGroupData {
     pub group_store_icon_id: String,
     pub group_type_base_pic: String,
     pub group_type_eye_icon: String,
-    pub group_sort_id: i32,
+    pub group_sort_id: u16,
     pub form_list: Vec<String>,
     pub sheet_id: String,
     pub sheet_num: i32,
@@ -2842,7 +2791,7 @@ pub struct FormData {
     pub product_id_dict: HashMap<String, String>,
     pub without_orche_product_id: String,
     pub group_id: String,
-    pub form_sort_id: i32,
+    pub form_sort_id: u16,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -2983,10 +2932,10 @@ pub struct Act35SideActivityChallengeData {
     pub challenge_id: String,
     pub challenge_name: String,
     pub challenge_desc: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub challenge_pic_id: String,
     pub challenge_icon_id: String,
-    pub open_time: i64,
+    pub open_time: u64,
     pub preposed_challenge_id: Option<String>,
     pub pass_round: i32,
     pub pass_round_score: i32,
@@ -2997,7 +2946,7 @@ pub struct Act35SideActivityChallengeData {
 #[serde(rename_all = "camelCase")]
 pub struct CardData {
     pub card_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub rank: i32,
     pub card_face: String,
     pub card_pic: String,
@@ -3035,7 +2984,7 @@ pub struct DialogueGroupData {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct DialogData {
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub icon_id: String,
     pub name: String,
     pub content: String,
@@ -3107,8 +3056,8 @@ pub struct MainlineBp {
 #[serde(rename_all = "camelCase")]
 pub struct PeriodData {
     pub period_id: String,
-    pub start_ts: i64,
-    pub end_ts: i64,
+    pub start_ts: u64,
+    pub end_ts: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -3121,11 +3070,11 @@ pub struct ActivityItems {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct PubBehavior {
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub all_behavior_id: String,
     pub display_order: i32,
     pub all_behavior_desc: String,
-    pub requiring_value: i64,
+    pub requiring_value: u64,
     pub require_repeat_completion: bool,
     pub reward_received_desc: String,
     pub rewards: Vec<PubBehaviorReward>,
@@ -3162,7 +3111,7 @@ pub struct CheckInAllPlayerItem {
 #[serde(rename_all = "camelCase")]
 pub struct Car {
     pub comp_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     #[serde(rename = "type")]
     pub component_type: String,
     pub pos_list: Vec<String>,
@@ -3184,7 +3133,7 @@ pub struct Car {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct SyncPoints {
     #[serde(flatten)]
-    pub activities: HashMap<String, Vec<i64>>,
+    pub activities: HashMap<String, Vec<u64>>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -3225,18 +3174,18 @@ pub struct ActTheme {
     #[serde(rename = "type")]
     pub theme_type: String,
     pub func_id: String,
-    pub end_ts: i64,
-    pub sort_id: i32,
+    pub end_ts: u64,
+    pub sort_id: u16,
     pub item_id: String,
     pub time_nodes: Vec<TimeNode>,
-    pub start_ts: i64,
+    pub start_ts: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeNode {
     pub title: String,
-    pub ts: i64,
+    pub ts: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -3383,7 +3332,7 @@ pub struct ActivityKvSwitch {
 #[serde(rename_all = "camelCase")]
 pub struct KvSwitchInfo {
     pub is_default: bool,
-    pub display_time: i64,
+    pub display_time: u64,
     pub zone_id: Option<String>,
 }
 
@@ -3496,7 +3445,7 @@ pub struct ActivityTrapData {
 #[serde(rename_all = "camelCase")]
 pub struct TemplateTrap {
     pub trap_id: String,
-    pub sort_id: i32,
+    pub sort_id: u16,
     pub trap_name: String,
     pub trap_desc: String,
     pub trap_text: String,
@@ -3581,4 +3530,13 @@ pub struct TemplateMissionStyle {
     pub title_type: String,
     pub coin_type: String,
     pub coin_back_color: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Reward {
+    #[serde(rename = "type")]
+    pub reward_type: String,
+    pub id: String,
+    pub count: i32,
 }
