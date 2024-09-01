@@ -2233,8 +2233,6 @@ pub struct MeldingDropData {
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Act24SideActivityReward {
-    // Define fields for Reward if needed
-    // This is left empty as the example shows null for these fields
 }
 
 #[derive(Serialize, Deserialize)]
