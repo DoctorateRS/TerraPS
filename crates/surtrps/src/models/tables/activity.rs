@@ -8,7 +8,7 @@ use serde_json::Value;
 pub struct ActivityTable {
     pub basic_info: HashMap<String, BasicActivityInfo>,
     // TODO: Replace `Value` with a proper struct.
-    pub activity: HashMap<String, Value>,
+    pub activity: HashMap<String, ActivityDetails>,
     pub car_data: CarData,
     pub sync_points: SyncPoints,
 }
