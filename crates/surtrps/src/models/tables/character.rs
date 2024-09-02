@@ -8,15 +8,15 @@ use serde::{
     Deserialize, Deserializer, Serialize, Serializer,
 };
 
+use crate::cnst::table_paths::CHARACTER_TABLE_PATH;
+
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CharacterTable {
     #[serde(flatten)]
     pub content: HashMap<String, Character>,
 }
 
-impl CharacterTable {
-    pub fn load() {}
-}
+impl_load!(CharacterTable, CHARACTER_TABLE_PATH);
 
 #[derive(Clone, Copy, Debug)]
 pub enum RarityTier {

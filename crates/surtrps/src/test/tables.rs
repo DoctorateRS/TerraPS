@@ -1,7 +1,4 @@
-use crate::{
-    cnst::table_paths::{ACTIVITY_TABLE_PATH, CHARACTER_TABLE_PATH},
-    models::tables::{activity::ActivityTable, character::CharacterTable},
-};
+use crate::models::tables::{ActivityTable, CharacterTable};
 
 #[test]
 fn activity() {

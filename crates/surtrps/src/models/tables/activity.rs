@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs::File, io::Read};
+use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 use serde_json::{from_str, Value};
@@ -14,17 +14,7 @@ pub struct ActivityTable {
     pub sync_points: SyncPoints,
 }
 
-impl ActivityTable {
-    pub fn load() -> Self {
-        &from_str(&{
-            let mut ct = String::new();
-            let mut f = File::open(ACTIVITY_TABLE_PATH).unwrap();
-            f.read_to_string(&mut ct).unwrap();
-            ct
-        })
-        .unwrap()
-    }
-}
+impl_load!(ActivityTable, ACTIVITY_TABLE_PATH);
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]

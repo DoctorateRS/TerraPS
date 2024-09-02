@@ -1,15 +1,25 @@
-use std::path::Path;
-
-use serde::Serialize;
-
-use common_utils::read_json;
-use serde_json::from_value;
-
-pub mod activity;
-pub mod character;
-pub mod crisisv2;
-pub mod stage;
-
+#[macro_export]
 macro_rules! impl_load {
-    () => {};
+    ($table:ident, $path:ident) => {
+        impl $table {
+            pub fn load() -> $table {
+                use std::io::Read;
+                serde_json::from_str(&{
+                    let mut ct = String::new();
+                    let mut f = std::fs::File::open($path).unwrap();
+                    f.read_to_string(&mut ct).unwrap();
+                    ct
+                })
+                .unwrap()
+            }
+        }
+    };
 }
+
+mod activity;
+mod character;
+mod crisisv2;
+mod stage;
+
+pub use activity::*;
+pub use character::*;
