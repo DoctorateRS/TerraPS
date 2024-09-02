@@ -38,7 +38,6 @@ use npc::NpcAudio;
 use skin::Skin;
 use social::{Social, SOCIAL_STATIC};
 use status::PlayerStatus;
-pub use sync::*;
 
 use serde::{Deserialize, Serialize};
 use theme::HomeTheme;

@@ -2,9 +2,6 @@ pub mod core;
 pub mod game;
 pub mod routes;
 
-#[macro_use]
-mod r#macro;
-
 use anyhow::{Error, Result};
 use axum::serve;
 use tokio::net::TcpListener;

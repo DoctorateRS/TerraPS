@@ -1,24 +1,24 @@
-use std::fmt::{Formatter, Result as FmtResult};
+use std::{
+    collections::HashMap,
+    fmt::{Formatter, Result as FmtResult},
+};
 
 use serde::{
     de::{Error as SerdeDeErr, Visitor},
     Deserialize, Deserializer, Serialize, Serializer,
 };
 
-#[derive(Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Character {
-    pub rarity: RarityTier,
-    pub phases: Vec<CharacterPhase>,
+#[derive(Debug, Deserialize, Serialize)]
+pub struct CharacterTable {
+    #[serde(flatten)]
+    pub content: HashMap<String, Character>,
 }
 
-#[derive(Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct CharacterPhase {
-    pub max_level: u8,
+impl CharacterTable {
+    pub fn load() {}
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
 pub enum RarityTier {
     Tier1,
     Tier2,
@@ -67,4 +67,24 @@ impl Serialize for RarityTier {
             RarityTier::Tier6 => "TIER_6",
         })
     }
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Character {
+    pub rarity: RarityTier,
+    pub phases: Vec<CharacterPhase>,
+    pub skills: Vec<CharacterSkill>,
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct CharacterPhase {
+    pub max_level: u8,
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct CharacterSkill {
+    pub skill_id: String,
 }

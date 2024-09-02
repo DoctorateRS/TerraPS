@@ -1,9 +1,7 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, fs::File, io::Read};
 
 use serde::{Deserialize, Serialize};
-use serde_json::{from_value, Value};
-
-use common_utils::read_json;
+use serde_json::{from_str, Value};
 
 use crate::cnst::table_paths::ACTIVITY_TABLE_PATH;
 
@@ -18,8 +16,13 @@ pub struct ActivityTable {
 
 impl ActivityTable {
     pub fn load() -> Self {
-        let ct = read_json(ACTIVITY_TABLE_PATH);
-        from_value::<Self>(ct).unwrap()
+        &from_str(&{
+            let mut ct = String::new();
+            let mut f = File::open(ACTIVITY_TABLE_PATH).unwrap();
+            f.read_to_string(&mut ct).unwrap();
+            ct
+        })
+        .unwrap()
     }
 }
 
