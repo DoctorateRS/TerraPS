@@ -3,8 +3,6 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::{from_str, Value};
 
-use crate::cnst::table_paths::ACTIVITY_TABLE_PATH;
-
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ActivityTable {
@@ -14,7 +12,7 @@ pub struct ActivityTable {
     pub sync_points: SyncPoints,
 }
 
-impl_load!(ActivityTable, ACTIVITY_TABLE_PATH);
+impl_load!(ActivityTable, ACTIVITY_TABLE);
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]

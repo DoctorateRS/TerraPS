@@ -1,16 +1,9 @@
 #[macro_export]
 macro_rules! impl_load {
-    ($table:ident, $path:ident) => {
+    ($table:ident, $ct:ident) => {
         impl $table {
             pub fn load() -> $table {
-                use std::io::Read;
-                serde_json::from_str(&{
-                    let mut ct = String::new();
-                    let mut f = std::fs::File::open($path).unwrap();
-                    f.read_to_string(&mut ct).unwrap();
-                    ct
-                })
-                .unwrap()
+                serde_json::from_str($ct).unwrap()
             }
         }
     };
