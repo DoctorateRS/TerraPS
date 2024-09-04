@@ -47,8 +47,7 @@
 
 #### Windows
 
-- Run `envsetup.nu` to setup the environment.
-- Just run `cargo br`.
+TBA (lol)
 
 #### Linux
 

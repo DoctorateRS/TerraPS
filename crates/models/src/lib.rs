@@ -10,6 +10,9 @@ pub mod response;
 pub mod social;
 pub mod tables;
 
+#[cfg(test)]
+mod test;
+
 pub use misc::*;
 
 /// Represent an empty Object.
