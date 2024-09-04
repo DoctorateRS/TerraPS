@@ -40,6 +40,7 @@ tracing-subscriber.workspace = true
 
 tower-http = { version = "0.5", features = ["trace"] }
 common_utils = { path = "../common" }
+models = { path = "../models" }
 
 [[bin]]
 name = "surtr-ps"

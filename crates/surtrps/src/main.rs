@@ -1,6 +1,3 @@
-// TODO: AFTER THE SERVER SUCCESSFULLY RAN, GET RID OF THIS
-#![allow(dead_code)]
-
 use std::{env::args, sync::LazyLock};
 
 use anyhow::Result;
@@ -9,12 +6,8 @@ use server::Server;
 use utils::update::update;
 
 mod cnst;
-mod models;
 mod server;
 mod utils;
-
-#[cfg(test)]
-mod test;
 
 static USER_CONFIG: LazyLock<UserConfig> = LazyLock::new(|| UserConfig::load().unwrap_or_default());
 static SERVER_CONFIG: LazyLock<ServerConfig> = LazyLock::new(|| ServerConfig::load().unwrap_or_default());

@@ -389,6 +389,7 @@ version = "0.6.12"
 dependencies = [
  "anyhow",
  "base64",
+ "chrono",
  "serde",
  "serde_json",
 ]
@@ -1188,6 +1189,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "models"
+version = "0.6.12"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "mozdevice"
 version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1906,6 +1915,7 @@ dependencies = [
  "h2",
  "libaes",
  "md-5",
+ "models",
  "rand",
  "reqwest",
  "ring",

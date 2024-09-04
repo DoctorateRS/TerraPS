@@ -1,6 +1,6 @@
 use axum::Json;
 
-use crate::models::prod::{AnnouncementMeta, PreannouncementMeta, ProdAndroidNetwork, ProdAndroidRefresh, ProdAndroidRemote, ProdAndroidVersion};
+use models::prod::{AnnouncementMeta, PreannouncementMeta, ProdAndroidNetwork, ProdAndroidRefresh, ProdAndroidRemote, ProdAndroidVersion};
 
 pub async fn prod_version() -> Json<ProdAndroidVersion> {
     Json(ProdAndroidVersion::load())

@@ -1,9 +1,6 @@
 use chrono::Utc;
 
-use crate::USER_CONFIG;
-
-pub fn time() -> u64 {
-    let faketime = USER_CONFIG.fake_time;
+pub fn time(faketime: i64) -> u64 {
     if faketime < 0 {
         Utc::now().timestamp() as u64
     } else {

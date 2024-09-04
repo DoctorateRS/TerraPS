@@ -2,6 +2,7 @@
 members = [
     "crates/common",
     "crates/narantuya",
+    "crates/models",
     "crates/terraps",
     "crates/surtrps",
     "crates/xtask",
