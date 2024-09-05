@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::NullObj;
+use crate::NullObj;
 
 #[derive(Deserialize, Serialize, Default)]
 #[serde(rename_all = "camelCase")]

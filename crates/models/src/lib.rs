@@ -4,6 +4,7 @@ pub mod account;
 pub mod gamemode;
 mod misc;
 pub mod online;
+pub mod pay;
 pub mod payload;
 pub mod prod;
 pub mod response;

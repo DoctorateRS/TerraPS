@@ -1192,8 +1192,10 @@ dependencies = [
 name = "models"
 version = "0.6.12"
 dependencies = [
+ "common_utils",
  "serde",
  "serde_json",
+ "serde_repr",
 ]
 
 [[package]]

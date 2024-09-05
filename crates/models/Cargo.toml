@@ -6,4 +6,5 @@ version.workspace = true
 [dependencies]
 serde.workspace = true
 serde_json.workspace = true
-common = { path = "../common" }
+serde_repr.workspace = true
+common_utils = { path = "../common" }

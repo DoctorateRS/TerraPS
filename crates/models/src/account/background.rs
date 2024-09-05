@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct Background {
@@ -31,6 +31,6 @@ pub struct Bg {
 
 impl Default for Bg {
     fn default() -> Self {
-        Self { unlock: time() }
+        Self { unlock: time(-1) }
     }
 }

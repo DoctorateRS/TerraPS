@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::NullObj;
+use crate::NullObj;
 
 #[derive(Serialize, Deserialize)]
 pub struct Mission {

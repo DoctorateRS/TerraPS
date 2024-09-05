@@ -8,8 +8,6 @@ use serde::{
     Deserialize, Deserializer, Serialize, Serializer,
 };
 
-use crate::cnst::table_paths::CHARACTER_TABLE_PATH;
-
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CharacterTable {
     #[serde(flatten)]

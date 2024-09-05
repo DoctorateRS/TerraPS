@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 use super::char_tmpl::CharTmpl;
 
@@ -61,7 +61,7 @@ impl Char {
             exp: 0,
             evolve_phase: 0,
             default_skill_index: -1,
-            gain_time: time(),
+            gain_time: time(-1),
             skills: Vec::new(),
             voice_lan: VoiceLan::Jp,
             current_equip: None,

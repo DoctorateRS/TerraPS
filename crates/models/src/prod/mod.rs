@@ -4,7 +4,6 @@ use common_utils::read_json;
 use serde::{Deserialize, Serialize};
 use serde_json::from_value;
 
-use crate::{cnst::config::CONFIG_PATH, SERVER_CONFIG};
 pub use network::ProdAndroidNetwork;
 
 #[derive(Serialize, Deserialize)]

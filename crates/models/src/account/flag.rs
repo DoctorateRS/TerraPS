@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 #[derive(Deserialize, Serialize)]
 pub struct PushFlags {

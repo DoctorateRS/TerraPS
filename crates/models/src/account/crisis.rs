@@ -2,10 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::{
-    models::{NullObj, NullVec},
-    utils::time::time,
-};
+use crate::{NullObj, NullVec};
 
 #[derive(Deserialize, Serialize)]
 pub struct Crisis {
@@ -15,7 +12,7 @@ pub struct Crisis {
 
 impl Default for Crisis {
     fn default() -> Self {
-        let time = time();
+        let time = time(-1);
         Self { lst: time, nst: time }
     }
 }

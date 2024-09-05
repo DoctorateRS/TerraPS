@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::NullVec;
+use crate::NullVec;
 
 #[derive(Deserialize, Serialize)]
 pub struct Mainline {

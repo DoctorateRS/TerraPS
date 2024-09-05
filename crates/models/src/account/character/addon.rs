@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct CharAddon {
@@ -34,7 +34,7 @@ pub struct CharStoryAddon {
 
 impl Default for CharStoryAddon {
     fn default() -> Self {
-        let time = time();
+        let time = time(-1);
         Self { fts: time, rts: time }
     }
 }
@@ -52,7 +52,7 @@ pub struct CharStageAddon {
 
 impl Default for CharStageAddon {
     fn default() -> Self {
-        let time = time();
+        let time = time(-1);
         Self {
             start_times: 0,
             complete_time: 1,

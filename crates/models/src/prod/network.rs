@@ -3,7 +3,6 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::{from_value, Serializer as JsonSer};
 
-use crate::SERVER_CONFIG;
 use common_utils::read_json;
 
 #[derive(Serialize, Deserialize)]

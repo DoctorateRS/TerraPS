@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::models::PlayerDataDeltaStatic;
+use crate::PlayerDataDeltaStatic;
 
 pub mod detail;
 pub mod keypoint;

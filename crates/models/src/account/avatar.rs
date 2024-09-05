@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 #[derive(Deserialize, Serialize)]
 pub struct AvatarIcon {
@@ -13,7 +13,7 @@ pub struct AvatarIcon {
 impl AvatarIcon {
     pub fn new(is_init: bool) -> Self {
         Self {
-            ts: time(),
+            ts: time(-1),
             src: String::from(if is_init { "initial" } else { "other" }),
         }
     }

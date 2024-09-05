@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
-use serde_json::{from_str, Value};
+use serde_json::Value;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -11,8 +11,6 @@ pub struct ActivityTable {
     pub car_data: CarData,
     pub sync_points: SyncPoints,
 }
-
-impl_load!(ActivityTable, ACTIVITY_TABLE);
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]

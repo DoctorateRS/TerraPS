@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::utils::time::time;
+use common_utils::time;
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
