@@ -34,7 +34,7 @@ pub struct AccountSyncStatus {
 impl AccountSyncStatus {
     pub fn new() -> Self {
         Self {
-            ts: time(),
+            ts: time(-1),
             result: HashMap::default(),
             pdd: PlayerDataDeltaStatic::default(),
         }

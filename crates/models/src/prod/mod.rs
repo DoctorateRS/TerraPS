@@ -15,10 +15,9 @@ pub struct ProdAndroidVersion {
 
 impl ProdAndroidVersion {
     pub fn load() -> Self {
-        if SERVER_CONFIG.mode == "cn" {
-            from_value(read_json(CONFIG_PATH)["version"]["android"].clone()).unwrap()
-        } else {
-            from_value(read_json(CONFIG_PATH)["versionGlobal"]["android"].clone()).unwrap()
+        Self {
+            res_version: String::new(),
+            client_version: String::new(),
         }
     }
 }

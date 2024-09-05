@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use serde_json::{from_value, Serializer as JsonSer};
 
-use common_utils::read_json;
+use common_utils::{read_json, ServerConfig};
 
 #[derive(Serialize, Deserialize)]
 pub struct ProdAndroidNetworkConfig {
@@ -111,9 +111,11 @@ pub struct ProdAndroidNetwork {
 
 impl ProdAndroidNetwork {
     pub fn load() -> Self {
-        let mode = SERVER_CONFIG.mode.to_lowercase();
-        let host = SERVER_CONFIG.host.as_str();
-        let port = SERVER_CONFIG.port;
+        let cfg = ServerConfig::load().unwrap_or_default();
+
+        let mode = cfg.mode.to_lowercase();
+        let host = cfg.host.as_str();
+        let port = cfg.port;
 
         let server = format!("http://{}:{}", host, port);
 

@@ -62,7 +62,7 @@ pub struct Avatar {
 
 impl Default for PlayerStatus {
     fn default() -> Self {
-        let time = time();
+        let time = time(-1);
         Self {
             nick_name: String::from("Terra"),
             nick_number: String::from("1111"),

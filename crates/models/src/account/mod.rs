@@ -42,6 +42,8 @@ use status::PlayerStatus;
 use serde::{Deserialize, Serialize};
 use theme::HomeTheme;
 
+use crate::PlayerDataDeltaStatic;
+
 use super::NullObj;
 
 #[derive(Serialize, Deserialize)]
@@ -85,6 +87,9 @@ pub struct User {
     pub home_theme: HomeTheme,
     pub campaign_v2: CampaignV2,
     pub inventory: NullObj,
+
+    #[serde(flatten)]
+    pdd: PlayerDataDeltaStatic,
 }
 
 impl Default for User {
@@ -112,6 +117,8 @@ impl Default for User {
             home_theme: HomeTheme::new(),
             campaign_v2: CampaignV2::new(),
             inventory: NullObj {},
+
+            pdd: PlayerDataDeltaStatic::default(),
         }
     }
 }

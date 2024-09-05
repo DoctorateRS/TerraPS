@@ -18,7 +18,7 @@ impl Default for PushFlags {
             has_clues: 0,
             has_free_level_gp: 0,
             has_friend_request: 0,
-            status: time(),
+            status: time(-1),
         }
     }
 }

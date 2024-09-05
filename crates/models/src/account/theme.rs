@@ -31,6 +31,6 @@ pub struct Theme {
 
 impl Default for Theme {
     fn default() -> Self {
-        Self { unlock: time() }
+        Self { unlock: time(-1) }
     }
 }

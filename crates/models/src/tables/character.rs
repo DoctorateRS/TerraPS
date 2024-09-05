@@ -14,8 +14,6 @@ pub struct CharacterTable {
     pub content: HashMap<String, Character>,
 }
 
-impl_load!(CharacterTable, CHARACTER_TABLE_PATH);
-
 #[derive(Clone, Copy, Debug)]
 pub enum RarityTier {
     Tier1,
