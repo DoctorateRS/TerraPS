@@ -6,7 +6,7 @@ use axum::{
 use tower_http::trace::{DefaultMakeSpan, DefaultOnEos, DefaultOnFailure, DefaultOnRequest, DefaultOnResponse, TraceLayer};
 use tracing::Level;
 
-use crate::models::PlayerDataDeltaStatic;
+use models::PlayerDataDeltaStatic;
 
 use super::{
     core::{asset, prod_cfg},
@@ -49,13 +49,12 @@ fn prod_config_routes() -> Router {
 }
 
 fn misc_routes() -> Router {
-    Router::new()
-        .route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
-        .route("/background/setBackground", post(bg::change_bg))
-        .route("/homeTheme/change", post(bg::change_theme))
-        .route("/event", post(misc::event))
-        .route("/batch_event", post(misc::batch_event))
-        .route("/beat", post(misc::beat))
+    Router::new().route("/assetbundle/official/Android/assets/:hash/:name", get(asset::get_file))
+    // .route("/background/setBackground", post(bg::change_bg))
+    // .route("/homeTheme/change", post(bg::change_theme))
+    // .route("/event", post(misc::event))
+    // .route("/batch_event", post(misc::batch_event))
+    // .route("/beat", post(misc::beat))
 }
 
 async fn fallback() -> Json<PlayerDataDeltaStatic> {

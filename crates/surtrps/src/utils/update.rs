@@ -18,11 +18,12 @@ use crate::{
         global_url::*,
         url::*,
     },
-    models::prod::{
-        network::{NetworkConfigContent, ProdAndroidNetworkConfig},
-        ProdAndroidNetwork, ProdAndroidVersion,
-    },
     SERVER_CONFIG,
+};
+
+use models::prod::{
+    network::{NetworkConfigContent, ProdAndroidNetworkConfig},
+    ProdAndroidNetwork, ProdAndroidVersion,
 };
 
 #[derive(Clone, Copy)]

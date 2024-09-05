@@ -2,10 +2,9 @@ use axum::Json;
 use common_utils::{read_json, write_json};
 use serde_json::{json, Value};
 
-use crate::{
-    cnst::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH},
-    models::payload::{BgPayload, ThemePayload},
-};
+use crate::cnst::{config::CONFIG_JSON_PATH, user::USER_JSON_PATH};
+
+use models::payload::{BgPayload, ThemePayload};
 
 pub async fn change_bg(Json(payload): Json<BgPayload>) -> Json<Value> {
     let id = payload.bg_id;

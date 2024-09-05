@@ -1,6 +1,6 @@
 use axum::Json;
 
-use crate::models::{EventResponse, MiscResponse, BATCH_EVENT, EVENT};
+use models::{EventResponse, MiscResponse, BATCH_EVENT, EVENT};
 
 pub async fn event<'a>() -> Json<EventResponse<'a>> {
     Json(EVENT)
