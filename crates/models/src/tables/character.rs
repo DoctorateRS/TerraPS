@@ -1,6 +1,8 @@
 use std::{
     collections::HashMap,
+    env::current_dir,
     fmt::{Formatter, Result as FmtResult},
+    fs::File,
 };
 
 use serde::{
@@ -8,10 +10,19 @@ use serde::{
     Deserialize, Deserializer, Serialize, Serializer,
 };
 
+use anyhow::Result;
+use serde_json::from_reader;
+
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CharacterTable {
     #[serde(flatten)]
     pub content: HashMap<String, Character>,
+}
+
+impl CharacterTable {
+    pub fn load() -> Result<Self> {
+        Ok(from_reader(File::open("./data/excel/character_table.json")?)?)
+    }
 }
 
 #[derive(Clone, Copy, Debug)]

@@ -76,12 +76,6 @@ impl Char {
         self.level = level
     }
 
-    /// Elite status:
-    /// ```
-    ///     0 => Elite 0
-    ///     1 => Elite 1
-    ///     2 => Elite 2
-    /// ```
     pub fn set_elite_status(&mut self, phase: u8) {
         self.evolve_phase = phase
     }

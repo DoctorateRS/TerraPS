@@ -1192,6 +1192,7 @@ dependencies = [
 name = "models"
 version = "0.6.12"
 dependencies = [
+ "anyhow",
  "common_utils",
  "serde",
  "serde_json",

@@ -1,6 +1,8 @@
 pub mod network;
 
-use common_utils::read_json;
+use std::collections::HashMap;
+
+use common_utils::{read_json, ServerConfig};
 use serde::{Deserialize, Serialize};
 use serde_json::from_value;
 
@@ -15,10 +17,10 @@ pub struct ProdAndroidVersion {
 
 impl ProdAndroidVersion {
     pub fn load() -> Self {
-        Self {
-            res_version: String::new(),
-            client_version: String::new(),
-        }
+        let mut versions = from_value::<HashMap<String, ProdAndroidVersion>>(read_json("./config/version.json")).unwrap();
+        let server = ServerConfig::load().unwrap_or_default();
+
+        versions.remove(&(if server.mode == "cn" { String::from("version") } else { String::from("versionGlobal") })).unwrap()
     }
 }
 

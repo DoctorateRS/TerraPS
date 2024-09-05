@@ -1,5 +1,6 @@
 use std::{collections::HashMap, fs::File};
 
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use serde_json::from_reader;
 
@@ -12,8 +13,8 @@ pub struct CrisisV2Table {
 }
 
 impl CrisisV2Table {
-    pub fn load() -> Self {
-        from_reader(File::open("./data/excel/crisis_v2_table.json").unwrap()).unwrap()
+    pub fn load() -> Result<Self> {
+        Ok(from_reader(File::open("./data/excel/crisis_v2_table.json")?)?)
     }
 }
 

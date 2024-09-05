@@ -1,7 +1,8 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, fs::File};
 
+use anyhow::Result;
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use serde_json::{from_reader, Value};
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -10,6 +11,12 @@ pub struct ActivityTable {
     pub activity: HashMap<String, Activity>,
     pub car_data: CarData,
     pub sync_points: SyncPoints,
+}
+
+impl ActivityTable {
+    pub fn load() -> Result<Self> {
+        Ok(from_reader(File::open("./data/excel/crisis_v2_table.json")?)?)
+    }
 }
 
 #[derive(Serialize, Deserialize, Debug)]
