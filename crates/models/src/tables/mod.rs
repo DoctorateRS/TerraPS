@@ -9,6 +9,7 @@ pub use activity::*;
 pub use character::*;
 pub use charword::*;
 pub use crisisv2::*;
+pub use skin::*;
 pub use stage::*;
 
 pub trait LoadTable: Sized {

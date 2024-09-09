@@ -1,6 +1,6 @@
 use anyhow::Error;
 use serde::{Deserialize, Serialize};
-use serde_json::{from_reader, Value};
+use serde_json::from_reader;
 use std::{collections::HashMap, fs::File};
 
 use super::LoadTable;
