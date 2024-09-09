@@ -1,4 +1,4 @@
-use std::fs::File;
+use std::{collections::HashMap, fs::File};
 
 use anyhow::Error;
 use serde::{Deserialize, Serialize};
@@ -8,7 +8,9 @@ use super::LoadTable;
 
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct StageTable {}
+pub struct StageTable {
+    pub stages: HashMap<String, Stage>,
+}
 
 impl LoadTable for StageTable {
     type Err = Error;
@@ -16,4 +18,10 @@ impl LoadTable for StageTable {
     fn load() -> Result<Self, Self::Err> {
         Ok(from_reader(File::open("../../data/excel/stage_table.json")?)?)
     }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Stage {
+    pub stage_id: String,
 }
