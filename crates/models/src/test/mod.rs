@@ -4,7 +4,7 @@
 mod tables {
     use std::{fs::File, io::Write};
 
-    use crate::tables::{ActivityTable, CharacterTable};
+    use crate::tables::{ActivityTable, CharacterTable, LoadTable};
 
     use common_utils::print_json;
 
