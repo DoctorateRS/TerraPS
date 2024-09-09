@@ -10,3 +10,4 @@
 *.txt
 *.log
 /dump
+/test

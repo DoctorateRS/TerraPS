@@ -42,8 +42,15 @@ pub struct BasicActivityInfo {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(untagged)]
+pub enum Activity {
+    Act17Side(Box<Act17Side>),
+    Others(OtherActs),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct Activity {
+pub struct OtherActs {
     #[serde(default)]
     pub zone_list: Option<Vec<Zone>>,
 }
@@ -68,4 +75,57 @@ pub struct CarData {
 #[serde(rename_all = "camelCase")]
 pub struct CarComponent {
     pub pos_list: Vec<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17Side {
+    pub place_data_map: HashMap<String, Act17SidePlace>,
+    pub node_info_data_map: HashMap<String, Act17SideInfoNode>,
+    pub choice_node_data_map: HashMap<String, Act17SideChoiceNode>,
+    pub treasure_node_data_map: HashMap<String, Act17SideTreasureNode>,
+    pub event_data_map: HashMap<String, Act17SideEvent>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SidePlace {
+    pub place_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideInfoNode {
+    pub node_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideStoryNode {
+    pub story_key: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideChoiceNode {
+    pub node_id: String,
+    pub option_list: Vec<Act17SideChoice>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideChoice {
+    pub event_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideTreasureNode {
+    pub node_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17SideEvent {
+    pub event_id: String,
 }
