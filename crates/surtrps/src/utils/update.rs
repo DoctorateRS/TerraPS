@@ -75,6 +75,7 @@ pub async fn update() -> Result<()> {
         Mode::Global => (old_ver_cfgs.remove("versionGlobal").unwrap(), old_ver_cfgs.remove("version").unwrap()),
     };
 
+    println!("Updating Version Config...");
     let new_ver_cfg = get(from_utf8(&decrypt(VER_CONF)?)?).await?.json::<ProdAndroidVersion>().await?;
 
     if old_ver_cfg.android.res_version != new_ver_cfg.res_version {
@@ -100,6 +101,7 @@ pub async fn update() -> Result<()> {
 
     write_json(VERSION_CONFIG_PATH, old_ver_cfgs)?;
 
+    println!("Updating Network Config...");
     let new_net_cfg = get(from_utf8(decrypt(NW_CONF)?.as_slice())?).await?.json::<ProdAndroidNetwork>().await?;
 
     let mut new_nwcfg_content = from_str::<NetworkConfigContent>(&new_net_cfg.content)?;
@@ -123,6 +125,7 @@ pub async fn update() -> Result<()> {
     old_net_cfgs.insert(mode.to_str().to_string(), old_net_cfg);
     write_json(NETWORK_CONFIG_TEMPLATE_PATH, old_net_cfgs)?;
 
+    println!("Updating Excel Data...");
     if excel_update_required {
         update_excel(mode).await?
     }
@@ -194,6 +197,7 @@ async fn update_excel(mode: Mode) -> Result<()> {
 }
 
 async fn update_excel_data(link: &str) -> Result<()> {
+    println!("Sending request to: {}", link);
     let path = link
         .replace("https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata", "./data")
         .replace("https://ak-conf.hypergryph.com/config/prod/announce_meta/Android", "./data/announce")
