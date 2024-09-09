@@ -2,10 +2,20 @@ use std::collections::HashMap;
 use serde::{Serialize, Deserialize};
 use serde_json::Value;
 
+use super::LoadTable;
+
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct RootSkinTableObject {
     pub char_skins: HashMap<String, CharSkinTable>,
+}
+
+impl LoadTable for RootSkinTableObject {
+    type Err = Error;
+
+    fn load() -> Result<Self> {
+        Ok(from_reader(File::open("../../data/excel/skin_table.json")?)?)
+    }
 }
 
 #[derive(Serialize, Deserialize, Debug)]
