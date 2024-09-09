@@ -6,11 +6,11 @@ use super::LoadTable;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct RootSkinTableObject {
+pub struct SkinTable {
     pub char_skins: HashMap<String, CharSkinTable>,
 }
 
-impl LoadTable for RootSkinTableObject {
+impl LoadTable for SkinTable {
     type Err = Error;
 
     fn load() -> Result<Self> {
