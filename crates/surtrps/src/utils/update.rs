@@ -158,6 +158,7 @@ async fn update_excel(mode: Mode) -> Result<()> {
             CHARWORD_TABLE_URL,
             GACHA_TABLE_URL,
             GAMEDATA_CONST_URL,
+            ZONE_TABLE_CONST_URL,
         ],
         Mode::Global => [
             GLOBAL_ACTIVITY_TABLE_URL,
@@ -182,6 +183,7 @@ async fn update_excel(mode: Mode) -> Result<()> {
             GLOBAL_CHARWORD_TABLE_URL,
             GLOBAL_GACHA_TABLE_URL,
             GLOBAL_GAMEDATA_CONST_URL,
+            GLOBAL_ZONE_TABLE_CONST_URL,
         ],
     };
 

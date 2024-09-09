@@ -2,8 +2,10 @@ use std::{collections::HashMap, fs::File};
 
 use serde::{Deserialize, Serialize};
 
-use anyhow::Result;
+use anyhow::{Error, Result};
 use serde_json::from_reader;
+
+use super::LoadTable;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CharacterTable {
@@ -18,8 +20,10 @@ pub enum CharType {
     Other {},
 }
 
-impl CharacterTable {
-    pub fn load() -> Result<Self> {
+impl LoadTable for CharacterTable {
+    type Err = Error;
+
+    fn load() -> Result<Self> {
         Ok(from_reader(File::open("../../data/excel/character_table.json")?)?)
     }
 }

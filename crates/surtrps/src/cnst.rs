@@ -85,6 +85,7 @@ pub mod url {
     pub const CHARWORD_TABLE_URL: &str = concat!(BASE_URL, "/excel/charword_table.json");
     pub const GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
     pub const GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
+    pub const ZONE_TABLE_CONST_URL: &str = concat!(BASE_URL, "/excel/zone_table.json");
 }
 
 #[allow(dead_code)]
@@ -116,4 +117,5 @@ pub mod global_url {
     pub const GLOBAL_CHARWORD_TABLE_URL: &str = concat!(BASE_URL, "/excel/charword_table.json");
     pub const GLOBAL_GACHA_TABLE_URL: &str = concat!(BASE_URL, "/excel/gacha_table.json");
     pub const GLOBAL_GAMEDATA_CONST_URL: &str = concat!(BASE_URL, "/excel/gamedata_const.json");
+    pub const GLOBAL_ZONE_TABLE_CONST_URL: &str = concat!(BASE_URL, "/excel/zone_table.json");
 }
