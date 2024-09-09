@@ -15,8 +15,15 @@ pub struct ProdAndroidNetworkConfig {
 #[serde(rename_all = "camelCase")]
 pub struct NetworkConfigContent {
     pub config_ver: String,
-    pub configs: HashMap<String, NwCfg>,
+    pub configs: HashMap<String, NwCfgEnum>,
     func_ver: String,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+#[serde(untagged)]
+pub enum NwCfgEnum {
+    NwCfg(Box<NwCfg>),
+    Other {},
 }
 
 impl NetworkConfigContent {
@@ -24,7 +31,7 @@ impl NetworkConfigContent {
         let cfgv = self.config_ver;
         let fv = self.func_ver;
         let cfg = self.configs.remove(&fv);
-        if let Some(cfg) = cfg {
+        if let Some(NwCfgEnum::NwCfg(cfg)) = cfg {
             let ord = cfg.ord;
             let secure = cfg.network.secure;
             let sl = cfg.network.sl;
@@ -43,7 +50,7 @@ impl NetworkConfigContent {
                     let mut cfgs = HashMap::new();
                     cfgs.insert(
                         fv.clone(),
-                        NwCfg {
+                        NwCfgEnum::NwCfg(Box::new(NwCfg {
                             ord,
                             network: NwCfgContent {
                                 gs,
@@ -60,7 +67,7 @@ impl NetworkConfigContent {
                                 pkg_ios: None,
                                 secure,
                             },
-                        },
+                        })),
                     );
                     cfgs
                 },
@@ -70,7 +77,7 @@ impl NetworkConfigContent {
             NetworkConfigContent {
                 config_ver: String::from("5"),
                 configs: HashMap::new(),
-                func_ver: String::from("052"),
+                func_ver: String::from("054"),
             }
         }
     }

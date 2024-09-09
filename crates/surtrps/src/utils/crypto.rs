@@ -10,6 +10,8 @@ use serde_json::from_str;
 
 use super::md5::md5_digest;
 
+pub const DEFAULT_BATTLE_DATA_DECRYPTOR: BattleDataDecryptor = BattleDataDecryptor::new(1672502400);
+
 const LOG_TOKEN_KEY: &str = "pM6Umv*^hVQuB6t&";
 
 #[derive(Debug, Clone, Copy)]
@@ -17,14 +19,8 @@ pub struct BattleDataDecryptor {
     login_time: u64,
 }
 
-impl Default for BattleDataDecryptor {
-    fn default() -> Self {
-        Self { login_time: 1672502400 }
-    }
-}
-
 impl BattleDataDecryptor {
-    pub fn new(login_time: u64) -> Self {
+    pub const fn new(login_time: u64) -> Self {
         Self { login_time }
     }
 
