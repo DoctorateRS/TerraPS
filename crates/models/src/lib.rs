@@ -7,7 +7,6 @@ pub mod online;
 pub mod pay;
 pub mod payload;
 pub mod prod;
-pub mod response;
 pub mod social;
 pub mod tables;
 

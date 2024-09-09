@@ -2,6 +2,7 @@ mod activity;
 mod character;
 mod charword;
 mod crisisv2;
+mod handbook;
 mod skin;
 mod stage;
 
