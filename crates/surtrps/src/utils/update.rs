@@ -125,8 +125,8 @@ pub async fn update() -> Result<()> {
     old_net_cfgs.insert(mode.to_str().to_string(), old_net_cfg);
     write_json(NETWORK_CONFIG_TEMPLATE_PATH, old_net_cfgs)?;
 
-    println!("Updating Excel Data...");
     if excel_update_required {
+        println!("Updating Excel Data...");
         update_excel(mode).await?
     }
 
