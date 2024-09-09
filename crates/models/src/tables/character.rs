@@ -8,7 +8,14 @@ use serde_json::from_reader;
 #[derive(Debug, Deserialize, Serialize)]
 pub struct CharacterTable {
     #[serde(flatten)]
-    pub content: HashMap<String, Character>,
+    pub table: HashMap<String, CharType>,
+}
+
+#[derive(Deserialize, Serialize, Debug)]
+#[serde(untagged)]
+pub enum CharType {
+    Character(Character),
+    Other {},
 }
 
 impl CharacterTable {

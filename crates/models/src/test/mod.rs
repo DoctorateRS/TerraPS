@@ -14,8 +14,7 @@ mod tables {
             Ok(t) => t,
             Err(e) => {
                 let e = e.to_string();
-                println!("{}", e);
-                panic!("failed to load");
+                panic!("failed to load: {}", e);
             }
         };
 

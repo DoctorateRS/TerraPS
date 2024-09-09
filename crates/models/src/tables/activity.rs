@@ -85,6 +85,7 @@ pub struct Act17Side {
     pub choice_node_data_map: HashMap<String, Act17SideChoiceNode>,
     pub treasure_node_data_map: HashMap<String, Act17SideTreasureNode>,
     pub event_data_map: HashMap<String, Act17SideEvent>,
+    pub story_node_data_map: HashMap<String, Act17SideStoryNode>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -128,4 +129,10 @@ pub struct Act17SideTreasureNode {
 #[serde(rename_all = "camelCase")]
 pub struct Act17SideEvent {
     pub event_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct Act17TechTree {
+    pub default_branch_id: String,
 }
