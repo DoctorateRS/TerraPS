@@ -98,7 +98,7 @@ pub async fn get_file(Path(asset): Path<Asset>) -> Response {
     }
     if name == "hot_update_list.json" {
         let hot_update_list = get(format!("{BASE_PATH_CN}{hash}/hot_update_list.json", hash = &hash)).await.unwrap().json::<Value>().await.unwrap();
-        write_json(&format!("{path}hot_update_list.json"), &hot_update_list).unwrap_or(());
+        write_json(format!("{path}hot_update_list.json"), &hot_update_list).unwrap_or(());
         asset.query_hot_update_list().await.into_response()
     } else {
         asset.query_local().await.into_response()

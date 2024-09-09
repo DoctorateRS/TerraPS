@@ -14,7 +14,7 @@ pub struct CrisisV2Table {
 
 impl CrisisV2Table {
     pub fn load() -> Result<Self> {
-        Ok(from_reader(File::open("./data/excel/crisis_v2_table.json")?)?)
+        Ok(from_reader(File::open("../../data/excel/crisis_v2_table.json")?)?)
     }
 }
 
