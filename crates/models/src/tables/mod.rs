@@ -2,6 +2,7 @@ mod activity;
 mod character;
 mod charword;
 mod crisisv2;
+mod skin;
 mod stage;
 
 pub use activity::*;
