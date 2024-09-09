@@ -1,4 +1,4 @@
-use crate::PlayerDataDeltaStatic;
+use crate::{NullObj, PlayerDataDeltaStatic};
 use common_utils::time;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -26,7 +26,7 @@ impl AccountLogin {
 #[derive(Serialize, Deserialize)]
 pub struct AccountSyncStatus {
     pub ts: u64,
-    pub result: HashMap<(), ()>,
+    pub result: NullObj,
     #[serde(rename = "playerDataDelta")]
     pub pdd: PlayerDataDeltaStatic,
 }
@@ -35,9 +35,15 @@ impl AccountSyncStatus {
     pub fn new() -> Self {
         Self {
             ts: time(-1),
-            result: HashMap::default(),
+            result: NullObj {},
             pdd: PlayerDataDeltaStatic::default(),
         }
+    }
+}
+
+impl Default for AccountSyncStatus {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

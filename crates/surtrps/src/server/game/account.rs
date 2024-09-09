@@ -2,12 +2,18 @@ use std::fs::exists;
 
 use axum::{http::HeaderMap, Json};
 use common_utils::write_json;
-use serde_json::json;
 use uuid::Uuid;
 
 use anyhow::Result;
 
-use models::{account::sync::AccountLogin, MiscResponse, BATCH_EVENT};
+use models::{
+    account::{
+        sync::{AccountLogin, AccountSyncStatus},
+        User,
+    },
+    tables::{CharacterTable, LoadTable, SkinTable},
+    MiscResponse, BATCH_EVENT,
+};
 
 use crate::cnst::user::USER_JSON_PATH;
 
@@ -20,13 +26,20 @@ pub async fn login(header: HeaderMap) -> Json<AccountLogin> {
 pub async fn sync_data() {
     fn sync_data_inner() -> Result<()> {
         if !exists(USER_JSON_PATH)? {
-            write_json(USER_JSON_PATH, json!({}))?;
+            write_json(USER_JSON_PATH, User::default())?;
         }
+
+        let skin_table = SkinTable::load()?;
+        let char_table = CharacterTable::load()?;
 
         Ok(())
     }
 
     sync_data_inner().unwrap();
+}
+
+pub async fn sync_status() -> Json<AccountSyncStatus> {
+    Json(AccountSyncStatus::default())
 }
 
 pub async fn sync_push_data<'a>() -> Json<MiscResponse<'a>> {

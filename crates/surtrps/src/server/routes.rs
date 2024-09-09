@@ -31,7 +31,11 @@ pub fn app() -> Router {
 }
 
 fn account_routes() -> Router {
-    Router::new().route("/syncPushMessage", post(account::sync_push_data))
+    Router::new()
+        .route("/syncPushMessage", post(account::sync_push_data))
+        .route("/login", post(account::login))
+        .route("/syncData", post(account::sync_data))
+        .route("/syncStatus", post(account::sync_status))
 }
 
 fn crisis_v2_routes() -> Router {
