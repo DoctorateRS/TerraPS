@@ -6,7 +6,7 @@ use axum::{
 use tower_http::trace::{DefaultMakeSpan, DefaultOnEos, DefaultOnFailure, DefaultOnRequest, DefaultOnResponse, TraceLayer};
 use tracing::Level;
 
-use models::PlayerDataDeltaStatic;
+use models::PlayerDataDelta;
 
 use super::{
     core::{asset, prod_cfg},
@@ -61,6 +61,6 @@ fn misc_routes() -> Router {
     // .route("/beat", post(misc::beat))
 }
 
-async fn fallback() -> Json<PlayerDataDeltaStatic> {
-    Json(PlayerDataDeltaStatic::default())
+async fn fallback() -> Json<PlayerDataDelta> {
+    Json(PlayerDataDelta::default())
 }

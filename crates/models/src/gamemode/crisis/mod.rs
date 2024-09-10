@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::PlayerDataDeltaStatic;
+use crate::PlayerDataDelta;
 
 pub mod detail;
 pub mod keypoint;
@@ -15,7 +15,7 @@ use stage::CrisisStageData;
 pub struct Crisis {
     info: CrisisInfo,
     ts: u64,
-    player_data_delta: PlayerDataDeltaStatic,
+    player_data_delta: PlayerDataDelta,
 }
 
 #[derive(Serialize, Deserialize)]

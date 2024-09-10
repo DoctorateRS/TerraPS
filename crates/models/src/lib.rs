@@ -28,7 +28,7 @@ impl NullObj {
 }
 
 #[derive(Serialize, Deserialize, Default)]
-pub struct PlayerDataDeltaStatic {
+pub struct PlayerDataDelta {
     #[serde(rename = "playerDataDelta")]
     pdt: PddInner,
 }
@@ -39,7 +39,7 @@ struct PddInner {
     deleted: NullObj,
 }
 
-impl PlayerDataDeltaStatic {
+impl PlayerDataDelta {
     pub const fn default() -> Self {
         Self {
             pdt: PddInner { modified: NullObj {}, deleted: NullObj {} },

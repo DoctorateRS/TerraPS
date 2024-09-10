@@ -2,34 +2,30 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use super::PlayerDataDeltaStatic;
+use crate::NullObj;
+
+use super::PlayerDataDelta;
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct PlayerSocial {
     players: [PlayerSocialProfile; 1],
-    #[serde(rename = "friendStatusList")]
     friend_status_list: [u8; 1],
-    #[serde(rename = "resultIdList")]
     result_id_list: [String; 1],
-    #[serde(rename = "playerDataDelta")]
-    player_data_delta: PlayerDataDeltaStatic,
+    player_data_delta: PlayerDataDelta,
 }
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 struct PlayerSocialProfile {
-    #[serde(rename = "nickName")]
     nick_name: String,
-    #[serde(rename = "nickNumber")]
     nick_number: String,
     uid: String,
-    #[serde(rename = "friendNumLimit")]
     friend_num_limit: u8,
-    #[serde(rename = "serverName")]
     server_name: String,
     level: u8,
-    #[serde(rename = "avatarId")]
     avatar_id: String,
-    avatar: HashMap<(), ()>,
+    avatar: NullObj,
     assist_char_list: [(); 1],
     last_online_time: u8,
     medal_board: MedalBoard,
@@ -60,7 +56,7 @@ impl PlayerSocialProfile {
             server_name: String::from("泰拉"),
             level: 120,
             avatar_id: String::from("0"),
-            avatar: HashMap::default(),
+            avatar: NullObj {},
             assist_char_list: [()],
             last_online_time: 0,
             medal_board: MedalBoard {
@@ -82,7 +78,7 @@ impl PlayerSocial {
             players: [PlayerSocialProfile::new(name)],
             friend_status_list: [0],
             result_id_list: [String::from("66666666")],
-            player_data_delta: PlayerDataDeltaStatic::default(),
+            player_data_delta: PlayerDataDelta::default(),
         }
     }
 }
