@@ -1,1 +1,4 @@
-max_width = 256
+max_width = 196
+merge_derives = true
+array_width = 128
+chain_width = 96
