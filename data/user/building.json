@@ -2434,6 +2434,25 @@
             },
             "workTime": 0
         },
+        "4144": {
+            "charId": "char_4144_chilc",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
         "308": {
             "charId": "char_308_swire",
             "lastApAddTime": 1695000000,
@@ -2569,6 +2588,25 @@
         },
         "508": {
             "charId": "char_508_aguard",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4142": {
+            "charId": "char_4142_laios",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -3994,6 +4032,25 @@
         },
         "4109": {
             "charId": "char_4109_baslin",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4143": {
+            "charId": "char_4143_sensi",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -5628,6 +5685,25 @@
         },
         "2015": {
             "charId": "char_2015_dusk",
+            "lastApAddTime": 1695000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {
+                "normal": {
+                    "add": -1,
+                    "ts": 0
+                },
+                "assist": {
+                    "add": -1,
+                    "ts": 0
+                }
+            },
+            "workTime": 0
+        },
+        "4141": {
+            "charId": "char_4141_marcil",
             "lastApAddTime": 1695000000,
             "ap": 8640000,
             "roomSlotId": "",
@@ -13644,6 +13720,78 @@
             "count": 9999,
             "inUse": 0
         },
+        "furni_MemoryCloister_ceilinglamp_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_mirror_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_stoneshelf_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_chess_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_altar_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_ceilingLight1_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_window_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_chair_L_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_carpet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_sculpture_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_ceilingLight2_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_walllamp_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_table_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_weaponRack_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_chair_R_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_clock_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_wallpaper_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_MemoryCloister_floor_01": {
+            "count": 9999,
+            "inUse": 0
+        },
         "furni_pepesroom_showcase_01": {
             "count": 9999,
             "inUse": 0
@@ -13849,6 +13997,82 @@
             "inUse": 0
         },
         "furni_amuselounge_floor_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_ceilingLight_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_dessertTable_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_setTable_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_dessertCabinet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_deliveryCar_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_boxLight_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_ceilingLight_02": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_spicesPlant_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_chair_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_chair_02": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_chair_03": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_festTable_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_fridge_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_ceilingCabinet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_stove_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_carpet_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_teaTable_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_wallpaper_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_rhodesKitchen_floor_01": {
             "count": 9999,
             "inUse": 0
         },
@@ -14737,6 +14961,10 @@
             "inUse": 0
         },
         "furni_annihilation_s23_01": {
+            "count": 9999,
+            "inUse": 0
+        },
+        "furni_annihilation_s24_01": {
             "count": 9999,
             "inUse": 0
         },
