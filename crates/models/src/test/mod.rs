@@ -105,4 +105,32 @@ mod tables {
 
         let _ = f.write_all(print_json(table).unwrap().as_bytes());
     }
+
+    #[test]
+    fn test_equip_table() {
+        let table = match EquipTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/equips.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
+
+    #[test]
+    fn test_battle_equip_table() {
+        let table = match BattleEquipTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/battle_equips.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
 }
