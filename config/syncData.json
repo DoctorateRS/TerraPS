@@ -224,20 +224,68 @@
             "squads": {
                 "0": {
                     "squadId": "0",
-                    "name": "Squad 1",
+                    "name": "Skibidi",
                     "slots": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
+                        {
+                            "charInstId": 474,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_glady"
+                        },
+                        {
+                            "charInstId": 1023,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_ghost2"
+                        },
+                        {
+                            "charInstId": 4145,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_ulpia"
+                        },
+                        {
+                            "charInstId": 263,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_003_skadi"
+                        },
+                        {
+                            "charInstId": 4141,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_marcil"
+                        },
+                        {
+                            "charInstId": 1012,
+                            "skillIndex": 2,
+                            "currentEquip": null
+                        },
+                        {
+                            "charInstId": 4123,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_ela"
+                        },
+                        {
+                            "charInstId": 171,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_bldsk"
+                        },
+                        {
+                            "charInstId": 1031,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_slent2"
+                        },
+                        {
+                            "charInstId": 174,
+                            "skillIndex": 1,
+                            "currentEquip": "uniequip_002_slbell"
+                        },
+                        {
+                            "charInstId": 180,
+                            "skillIndex": 2,
+                            "currentEquip": "uniequip_002_amgoat"
+                        },
+                        {
+                            "charInstId": 4072,
+                            "skillIndex": 0,
+                            "currentEquip": "uniequip_002_ironmn"
+                        }
                     ]
                 },
                 "1": {
@@ -262,36 +310,12 @@
                     "squadId": "2",
                     "name": "Squad 3",
                     "slots": [
-                        {
-                            "charInstId": 264,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_f12yin"
-                        },
-                        {
-                            "charInstId": 2025,
-                            "skillIndex": 0,
-                            "currentEquip": "uniequip_002_shu"
-                        },
-                        {
-                            "charInstId": 171,
-                            "skillIndex": 1,
-                            "currentEquip": "uniequip_002_bldsk"
-                        },
-                        {
-                            "charInstId": 4138,
-                            "skillIndex": 2,
-                            "currentEquip": null
-                        },
-                        {
-                            "charInstId": 225,
-                            "skillIndex": 2,
-                            "currentEquip": "uniequip_002_haak"
-                        },
-                        {
-                            "charInstId": 4087,
-                            "skillIndex": 2,
-                            "currentEquip": null
-                        },
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
                         null,
                         null,
                         null,
