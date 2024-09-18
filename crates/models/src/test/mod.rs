@@ -4,7 +4,7 @@
 mod tables {
     use std::{fs::File, io::Write};
 
-    use crate::tables::{ActivityTable, CharacterTable, HandbookEnemyTable, HandbookInfoTable, LoadTable, SkinTable, StageTable};
+    use crate::tables::*;
 
     use common_utils::print_json;
 
@@ -60,6 +60,20 @@ mod tables {
         };
 
         let mut f = File::create("../../test/tables/stages.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
+
+    #[test]
+    fn test_crisisv2_table() {
+        let table = match CrisisV2Table::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/crisis_v2.json").unwrap();
 
         let _ = f.write_all(print_json(table).unwrap().as_bytes());
     }

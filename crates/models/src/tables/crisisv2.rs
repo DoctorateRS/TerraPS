@@ -16,6 +16,7 @@ pub struct CrisisV2Table {
 
 impl LoadTable for CrisisV2Table {
     type Err = Error;
+
     fn load() -> Result<Self, Self::Err> {
         Ok(from_reader(File::open("../../data/excel/crisis_v2_table.json")?)?)
     }
@@ -24,7 +25,7 @@ impl LoadTable for CrisisV2Table {
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CrisisV2Appraisal {
-    pub appraisal_type: CrisisV2AppraisalType,
+    pub appraise_type: CrisisV2AppraisalType,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -35,8 +36,8 @@ pub enum CrisisV2AppraisalType {
     RankB,
     RankA,
     RankS,
-    RankSS,
-    RankSSS,
+    RankSs,
+    RankSss,
 }
 
 #[derive(Serialize, Deserialize)]
