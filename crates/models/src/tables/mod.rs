@@ -10,6 +10,7 @@ pub use activity::*;
 pub use character::*;
 pub use charword::*;
 pub use crisisv2::*;
+pub use handbook::*;
 pub use skin::*;
 pub use stage::*;
 

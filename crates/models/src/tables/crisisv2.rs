@@ -1,8 +1,10 @@
 use std::{collections::HashMap, fs::File};
 
-use anyhow::Result;
+use anyhow::Error;
 use serde::{Deserialize, Serialize};
 use serde_json::from_reader;
+
+use super::LoadTable;
 
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -12,8 +14,9 @@ pub struct CrisisV2Table {
     pub const_data: CrisisV2ConstData,
 }
 
-impl CrisisV2Table {
-    pub fn load() -> Result<Self> {
+impl LoadTable for CrisisV2Table {
+    type Err = Error;
+    fn load() -> Result<Self, Self::Err> {
         Ok(from_reader(File::open("../../data/excel/crisis_v2_table.json")?)?)
     }
 }
