@@ -16,8 +16,9 @@ mod test;
 pub use misc::*;
 
 /// Represent an empty Object.
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct NullObj {}
+
 /// Represent an empty Array.
 type NullVec = [u8; 0];
 
@@ -42,7 +43,10 @@ struct PddInner {
 impl PlayerDataDelta {
     pub const fn default() -> Self {
         Self {
-            pdt: PddInner { modified: NullObj {}, deleted: NullObj {} },
+            pdt: PddInner {
+                modified: NullObj {},
+                deleted: NullObj {},
+            },
         }
     }
 }

@@ -8,6 +8,7 @@ mod handbook;
 mod retro;
 mod skin;
 mod stage;
+mod story;
 
 pub use activity::*;
 pub use character::*;
@@ -19,6 +20,7 @@ pub use handbook::*;
 pub use retro::*;
 pub use skin::*;
 pub use stage::*;
+pub use story::*;
 
 /// The trait which defines the loading of tables.
 pub trait LoadTable: Sized {
