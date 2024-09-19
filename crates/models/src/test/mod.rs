@@ -147,4 +147,18 @@ mod tables {
 
         let _ = f.write_all(print_json(table).unwrap().as_bytes());
     }
+
+    #[test]
+    fn test_display_meta_table() {
+        let table = match DisplayMetaTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/display_meta.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
 }
