@@ -175,4 +175,32 @@ mod tables {
 
         let _ = f.write_all(print_json(table).unwrap().as_bytes());
     }
+
+    #[test]
+    fn test_story_review_table() {
+        let table = match StoryReviewTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/story_review.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
+
+    #[test]
+    fn test_story_review_meta_table() {
+        let table = match StoryReviewMetaTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/story_review_meta.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
 }

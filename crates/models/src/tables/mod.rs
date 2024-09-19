@@ -9,6 +9,7 @@ mod retro;
 mod skin;
 mod stage;
 mod story;
+mod story_review;
 
 pub use activity::*;
 pub use character::*;
@@ -21,6 +22,7 @@ pub use retro::*;
 pub use skin::*;
 pub use stage::*;
 pub use story::*;
+pub use story_review::*;
 
 /// The trait which defines the loading of tables.
 pub trait LoadTable: Sized {

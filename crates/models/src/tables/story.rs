@@ -11,6 +11,7 @@ use super::LoadTable;
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct StoryTable {
+    #[serde(flatten)]
     pub stories: HashMap<String, NullObj>,
 }
 
