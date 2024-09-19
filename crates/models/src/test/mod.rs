@@ -133,4 +133,18 @@ mod tables {
 
         let _ = f.write_all(print_json(table).unwrap().as_bytes());
     }
+
+    #[test]
+    fn test_retro_table() {
+        let table = match RetroTable::load() {
+            Ok(t) => t,
+            Err(e) => {
+                panic!("failed to load: {}", e);
+            }
+        };
+
+        let mut f = File::create("../../test/tables/retro.json").unwrap();
+
+        let _ = f.write_all(print_json(table).unwrap().as_bytes());
+    }
 }

@@ -4,6 +4,7 @@ mod charword;
 mod crisisv2;
 mod equip;
 mod handbook;
+mod retro;
 mod skin;
 mod stage;
 
@@ -13,9 +14,11 @@ pub use charword::*;
 pub use crisisv2::*;
 pub use equip::*;
 pub use handbook::*;
+pub use retro::*;
 pub use skin::*;
 pub use stage::*;
 
+/// The trait which defines the loading of tables.
 pub trait LoadTable: Sized {
     type Err;
 
