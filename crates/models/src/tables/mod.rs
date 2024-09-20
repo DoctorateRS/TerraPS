@@ -6,10 +6,13 @@ mod display_meta;
 mod equip;
 mod handbook;
 mod retro;
+mod rogue;
+mod sandbox;
 mod skin;
 mod stage;
 mod story;
 mod story_review;
+mod tower;
 
 pub use activity::*;
 pub use character::*;

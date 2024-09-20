@@ -1,9 +1,9 @@
 {
-    "recievedIDs": [
+    "receivedIds": [
         1,
         2
     ],
-    "deletedIDs": [],
+    "deletedIds": [],
     "mailList": {
         "1": {
             "from": "char_002_amiya",

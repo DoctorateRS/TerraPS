@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 
 pub mod account;
 pub mod gamemode;
+pub mod mail;
 mod misc;
 pub mod online;
 pub mod pay;

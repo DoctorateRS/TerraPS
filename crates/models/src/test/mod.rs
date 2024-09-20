@@ -1,6 +1,9 @@
 //! Testing
 
 #[cfg(test)]
+mod other;
+
+#[cfg(test)]
 mod tables {
     use std::{fs::File, io::Write};
 
