@@ -19,7 +19,7 @@
     },
     "version": {
         "android": {
-            "resVersion": "24-09-05-09-46-01-db17aa",
+            "resVersion": "24-09-12-10-45-00-b73864",
             "clientVersion": "2.3.61"
         }
     },
@@ -107,8 +107,8 @@
             "squadsAndFavs": false,
             "ui": false
         },
-        "activityMinStartTs": 1724644800,
-        "activityMaxStartTs": 1727035199,
+        "activityMinStartTs": 1726128000,
+        "activityMaxStartTs": 1728158399,
         "secretary": "char_4141_marcil",
         "secretarySkinId": "char_4141_marcil@dungeon#1",
         "background": "bg_sanrio_1",
