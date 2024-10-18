@@ -22,7 +22,7 @@ pub use misc::*;
 pub struct NullObj {}
 
 /// Represent an empty Array.
-type NullVec = [u8; 0];
+pub type NullVec = [u8; 0];
 
 impl NullObj {
     pub const fn new() -> Self {
