@@ -1,13 +1,12 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct OnlinePing {
-    #[serde(rename = "alertTime")]
     alert_time: u16,
     interval: u16,
     message: &'static str,
     result: u8,
-    #[serde(rename = "timeLeft")]
     time_left: i8,
 }
 
@@ -24,10 +23,10 @@ impl OnlinePing {
 }
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct OnlineLoginOut {
     error: &'static str,
     message: &'static str,
-    #[serde(rename = "statusCode")]
     status_code: u16,
 }
 
