@@ -1,11 +1,11 @@
 [workspace]
 members = [
-    "crates/common",
-    "crates/narantuya",
-    "crates/models",
-    "crates/terraps",
-    "crates/surtrps",
-    "crates/xtask",
+  "crates/common",
+  "crates/narantuya",
+  "crates/models",
+  "crates/terraps",
+  "crates/surtrps",
+  "crates/xtask",
 ]
 resolver = "2"
 
@@ -37,10 +37,10 @@ reqwest = { version = "0.12", features = ["json", "stream"] }
 # Tokio
 h2 = "0.4"
 tokio = { version = "1", default-features = false, features = [
-    "fs",
-    "io-std",
-    "macros",
-    "rt-multi-thread",
+  "fs",
+  "io-std",
+  "macros",
+  "rt-multi-thread",
 ] }
 tokio-util = { version = "0.7", features = ["io"] }
 
@@ -54,10 +54,10 @@ tracing = "0.1"
 tracing-futures = "0.2"
 tracing-log = { version = "0.2", features = ["log-tracer", "std"] }
 tracing-subscriber = { version = "0.3", features = [
-    "env-filter",
-    "std",
-    "tracing",
-    "tracing-log",
+  "env-filter",
+  "std",
+  "tracing",
+  "tracing-log",
 ] }
 
 [profile.release]
