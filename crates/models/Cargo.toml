@@ -1,11 +1,11 @@
 [package]
-name = "models"
-edition = "2021"
-version.workspace = true
+    edition           = "2021"
+    name              = "models"
+    version.workspace = true
 
 [dependencies]
-anyhow.workspace = true
-serde.workspace = true
-serde_json.workspace = true
-serde_repr.workspace = true
-common_utils = { path = "../common" }
+    anyhow.workspace     = true
+    common_utils         = { path = "../common" }
+    serde.workspace      = true
+    serde_json.workspace = true
+    serde_repr.workspace = true
