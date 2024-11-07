@@ -1,6 +1,7 @@
 use std::{fs::File, io::Write};
 
 use common_utils::print_json;
+use serde::{Deserialize, Serialize};
 
 use crate::mail::MailManager;
 
