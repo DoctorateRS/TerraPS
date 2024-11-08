@@ -10,7 +10,7 @@
     reorder_keys          = true
 
 [[rule]]
-    include = ["Cargo.toml"]
+    include = ["Cargo.toml", "cargo.toml"]
 
     [rule.schema]
         path = "https://json.schemastore.org/cargo.json"

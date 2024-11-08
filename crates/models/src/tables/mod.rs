@@ -1,5 +1,6 @@
 mod activity;
 mod character;
+mod charm;
 mod charword;
 mod crisisv2;
 mod display_meta;
@@ -16,6 +17,7 @@ mod tower;
 
 pub use activity::*;
 pub use character::*;
+pub use charm::*;
 pub use charword::*;
 pub use crisisv2::*;
 pub use display_meta::*;

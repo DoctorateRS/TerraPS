@@ -18,7 +18,11 @@ use models::{
 use crate::cnst::user::USER_JSON_PATH;
 
 pub async fn login(header: HeaderMap) -> Json<AccountLogin> {
-    let uid = header.get("Uid").and_then(|v| v.to_str().ok()).map(|s| s.to_string()).unwrap_or_else(|| Uuid::new_v4().to_string());
+    let uid = header
+        .get("Uid")
+        .and_then(|v| v.to_str().ok())
+        .map(|s| s.to_string())
+        .unwrap_or_else(|| Uuid::new_v4().to_string());
 
     Json(AccountLogin::new(uid))
 }
@@ -28,6 +32,8 @@ pub async fn sync_data() {
         if !exists(USER_JSON_PATH)? {
             write_json(USER_JSON_PATH, User::default())?;
         }
+
+        let mut player = User::default();
 
         let skin_table = SkinTable::load()?;
         let char_table = CharacterTable::load()?;

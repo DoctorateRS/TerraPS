@@ -3,10 +3,12 @@ use serde::{Deserialize, Serialize};
 use common_utils::time;
 
 #[derive(Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct PushFlags {
     pub has_gifts: u8,
     pub has_friend_request: u8,
     pub has_clues: u8,
+    #[serde(rename = "hasFreeLevelGP")]
     pub has_free_level_gp: u8,
     pub status: u64,
 }

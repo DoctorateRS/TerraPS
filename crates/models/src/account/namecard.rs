@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct NameCardStyle {
     pub component_order: Vec<String>,
     pub skin: NameCardSkin,
@@ -12,8 +13,17 @@ impl NameCardStyle {
     pub fn new() -> Self {
         Self {
             component_order: Vec::new(),
-            skin: NameCardSkin { selected: String::new(), state: HashMap::new() },
+            skin: NameCardSkin {
+                selected: String::new(),
+                state: HashMap::new(),
+            },
         }
+    }
+}
+
+impl Default for NameCardStyle {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

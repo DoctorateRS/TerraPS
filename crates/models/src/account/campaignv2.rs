@@ -40,6 +40,12 @@ impl CampaignV2 {
     }
 }
 
+impl Default for CampaignV2 {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct CampaignV2Instance {
@@ -49,7 +55,10 @@ pub struct CampaignV2Instance {
 
 impl Default for CampaignV2Instance {
     fn default() -> Self {
-        Self { max_kills: 400, reward_status: [1; 8] }
+        Self {
+            max_kills: 400,
+            reward_status: [1; 8],
+        }
     }
 }
 

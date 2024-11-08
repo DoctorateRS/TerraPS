@@ -116,30 +116,30 @@ impl Char {
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Skill {
-    id: String,
-    unlock: u8,
-    state: u8,
-    level: u8,
-    complete_time: i8,
+    pub skill_id: String,
+    pub state: u8,
+    pub unlock: u8,
+    pub specialize_level: u8,
+    pub complete_upgrade_time: i8,
 }
 
 impl Skill {
-    pub fn new(id: String, specializable: bool) -> Self {
+    pub fn new(skill_id: String, specializable: bool) -> Self {
         if !specializable {
             Self {
-                id,
+                skill_id,
                 unlock: 1,
                 state: 0,
-                level: 3,
-                complete_time: -1,
+                specialize_level: 3,
+                complete_upgrade_time: -1,
             }
         } else {
             Self {
-                id,
+                skill_id,
                 unlock: 1,
                 state: 0,
-                level: 0,
-                complete_time: -1,
+                specialize_level: 0,
+                complete_upgrade_time: -1,
             }
         }
     }
@@ -148,9 +148,9 @@ impl Skill {
 /// AKA Module.
 #[derive(Deserialize, Serialize)]
 pub struct Equip {
-    hide: u8,
-    locked: u8,
-    level: u8,
+    pub hide: u8,
+    pub locked: u8,
+    pub level: u8,
 }
 
 impl Equip {

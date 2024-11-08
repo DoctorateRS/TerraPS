@@ -4,6 +4,30 @@
 mod other;
 
 #[cfg(test)]
+mod user {
+    use std::{fs::File, io::Write};
+
+    use serde_json::from_reader;
+
+    use crate::account::UserData;
+    use common_utils::print_json;
+
+    #[test]
+    fn test_user() {
+        match from_reader::<_, UserData>(File::open("../../data/user/user.json").unwrap()) {
+            Ok(user) => {
+                let mut f = File::create("../../test/user/user.json").unwrap();
+
+                let _ = f.write_all(print_json(user).unwrap().as_bytes());
+            }
+            Err(e) => {
+                panic!("{}", e)
+            }
+        }
+    }
+}
+
+#[cfg(test)]
 mod tables {
     use std::{fs::File, io::Write};
 

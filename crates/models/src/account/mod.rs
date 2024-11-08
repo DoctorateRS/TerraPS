@@ -61,6 +61,15 @@ pub struct Backflow {
 
 const BACKFLOW: Backflow = Backflow { open: true, current: None };
 
+#[derive(Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct UserData {
+    pub result: u8,
+    pub ts: u64,
+    pub user: User,
+    pub player_data_delta: PlayerDataDelta,
+}
+
 /// Userdata.
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -85,11 +94,8 @@ pub struct User {
     pub background: Background,
     pub medal: Medal,
     pub home_theme: HomeTheme,
-    pub campaign_v2: CampaignV2,
+    pub campaigns_v2: CampaignV2,
     pub inventory: NullObj,
-
-    #[serde(flatten)]
-    pdd: PlayerDataDelta,
 }
 
 impl Default for User {
@@ -115,10 +121,8 @@ impl Default for User {
             background: Background::new(),
             medal: Medal::new(),
             home_theme: HomeTheme::new(),
-            campaign_v2: CampaignV2::new(),
+            campaigns_v2: CampaignV2::new(),
             inventory: NullObj {},
-
-            pdd: PlayerDataDelta::default(),
         }
     }
 }

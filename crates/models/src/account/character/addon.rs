@@ -43,7 +43,7 @@ impl Default for CharStoryAddon {
 #[serde(rename_all = "camelCase")]
 pub struct CharStageAddon {
     pub start_times: u8,
-    pub complete_time: u8,
+    pub complete_times: u8,
     pub state: u8,
     pub fts: u64,
     pub rts: u64,
@@ -55,7 +55,7 @@ impl Default for CharStageAddon {
         let time = time(-1);
         Self {
             start_times: 0,
-            complete_time: 1,
+            complete_times: 1,
             state: 3,
             fts: time,
             rts: time,

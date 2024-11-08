@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 
 pub mod account;
 pub mod building;
+pub mod delta;
 pub mod gamemode;
 pub mod mail;
 mod misc;
@@ -18,7 +19,7 @@ mod test;
 pub use misc::*;
 
 /// Represent an empty Object.
-#[derive(Serialize, Deserialize, Default, Debug)]
+#[derive(Serialize, Deserialize, Default, Debug, Clone, Copy)]
 pub struct NullObj {}
 
 /// Represent an empty Array.
@@ -30,14 +31,8 @@ impl NullObj {
     }
 }
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Clone, Copy)]
 pub struct PlayerDataDelta {
-    #[serde(rename = "playerDataDelta")]
-    pdt: PddInner,
-}
-
-#[derive(Serialize, Deserialize, Default)]
-struct PddInner {
     modified: NullObj,
     deleted: NullObj,
 }
@@ -45,10 +40,8 @@ struct PddInner {
 impl PlayerDataDelta {
     pub const fn default() -> Self {
         Self {
-            pdt: PddInner {
-                modified: NullObj {},
-                deleted: NullObj {},
-            },
+            modified: NullObj {},
+            deleted: NullObj {},
         }
     }
 }
