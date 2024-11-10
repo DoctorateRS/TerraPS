@@ -19,13 +19,15 @@ pub mod status;
 pub mod sync;
 pub mod theme;
 
-use std::collections::HashMap;
+use std::{collections::HashMap, fs::File, path::Path};
 
 use activity::ActivityEnum;
+use anyhow::Result;
 use avatar::Avatar;
 use background::Background;
 use campaignv2::CampaignV2;
 use character::Troop;
+use common_utils::time;
 use crisis::{Crisis, CrisisV2};
 use dexnav::DexNav;
 use dungeon::Dungeon;
@@ -35,6 +37,7 @@ use medal::Medal;
 use mission::{Mission, STATIC_MISSION};
 use namecard::NameCardStyle;
 use npc::NpcAudio;
+use serde_json::from_reader;
 use skin::Skin;
 use social::{Social, SOCIAL_STATIC};
 use status::PlayerStatus;
@@ -68,6 +71,24 @@ pub struct UserData {
     pub ts: u64,
     pub user: User,
     pub player_data_delta: PlayerDataDelta,
+}
+
+impl UserData {
+    /// Load the Userdata from a file.
+    pub fn from_file<P: AsRef<Path>>(path: P) -> Result<Self> {
+        Ok(from_reader(File::open(path)?)?)
+    }
+}
+
+impl Default for UserData {
+    fn default() -> Self {
+        Self {
+            result: 0,
+            ts: time(-1),
+            user: User::default(),
+            player_data_delta: PlayerDataDelta::default(),
+        }
+    }
 }
 
 /// Userdata.
