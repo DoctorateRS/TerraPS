@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, convert::Infallible, str::FromStr};
 
 use serde::{Deserialize, Serialize};
 
@@ -16,6 +16,20 @@ pub enum VoiceLan {
     Kr,
     #[serde(untagged)]
     Other(String),
+}
+
+impl FromStr for VoiceLan {
+    type Err = Infallible;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "jp" | "Jp" | "jP" | "JP" => Ok(VoiceLan::Jp),
+            "en" | "En" | "eN" | "EN" => Ok(VoiceLan::En),
+            "cn" | "Cn" | "cN" | "CN" => Ok(VoiceLan::Cn),
+            "kr" | "Kr" | "kR" | "KR" => Ok(VoiceLan::Kr),
+            o => Ok(VoiceLan::Other(o.to_string())),
+        }
+    }
 }
 
 #[derive(Deserialize, Serialize, Default)]
@@ -94,6 +108,10 @@ impl Char {
 
     pub fn add_equip(&mut self, id: String, equip: Equip) {
         self.equip.insert(id, equip);
+    }
+
+    pub fn set_voice_lan(&mut self, vlan: VoiceLan) {
+        self.voice_lan = vlan
     }
 
     pub fn set_equip(&mut self, equip_id: String) {
