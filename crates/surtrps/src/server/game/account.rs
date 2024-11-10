@@ -9,10 +9,7 @@ use anyhow::Result;
 
 use models::{
     account::{
-        character::{
-            self,
-            chara::{Char as Chara, Equip, Skill, VoiceLan},
-        },
+        character::chara::{Char as Chara, Equip, Skill, VoiceLan},
         sync::{AccountLogin, AccountSyncStatus},
         User, UserData,
     },
@@ -86,8 +83,9 @@ pub async fn sync_data() -> impl IntoResponse {
                 character.set_voice_lan(vlan.parse::<VoiceLan>().unwrap_or(VoiceLan::Jp));
                 character.set_default_skill_index(char.skills.len() as i8 - 1);
 
-                if !["char_508_aguard", "char_509_acast", "char_510_amedic", "char_511_asnipe"].contains(&&**char_key) {
-                    character.set_skin(format!("{}#2", char_key));
+                match &**char_key {
+                    "char_508_aguard" | "char_509_acast" | "char_510_amedic" | "char_511_asnipe" => (),
+                    key => character.set_skin(format!("{}#2", key)),
                 }
 
                 if let Some(skin) = temp_skins.get(char_key) {
